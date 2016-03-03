@@ -1,0 +1,2965 @@
+% -------------------------------------------------------------
+% NOTE ON THE DETAILED AND SHORT VERSIONS:
+% -------------------------------------------------------------
+% This paper comes in two versions, a detailed and a short one.
+% The short version should be more than sufficient for any
+% reasonable use; the detailed one was written purely to
+% convince the author of its correctness.
+% To switch between the two versions, find the line containing
+% "\newenvironment{noncompile}{}{}" in this LaTeX file.
+% Look at the two lines right beneath this line.
+% To compile the detailed version, they should be as follows:
+%   \includecomment{verlong}
+%   \excludecomment{vershort}
+% To compile the short version, they should be as follows:
+%   \excludecomment{verlong}
+%   \includecomment{vershort}
+% As a rule, the line
+%   \excludecomment{noncompile}
+% should stay as it is.
+% -------------------------------------------------------------
+% NOTES ON SOME HACKS USED IN THIS FILE:
+% -------------------------------------------------------------
+% One of my pet peeves with amsthm is its use of italics in the theorem and
+% proposition environments; this makes math and text indistinguishable in said
+% enviroments. To avoid this, I redefine the enviroments to use the standard
+% font and to use a hanging indent, along with a bold vertical bar to its
+% left, to distinguish these environments from surrounding text. (Along with
+% the advantage of distinguishing math from text, this also allows nesting
+% several such environments inside each other, like a definition inside a
+% remark. I'm not sure how good of an idea this is, though. There are also
+% downsides related to the hanging indentation, such as footnotes out of it
+% being painful to do right.) This is done starting from the line
+%   \theoremstyle{definition}
+% and until the line
+%   {\end{leftbar}\end{exmp}}
+
+\documentclass[numbers=enddot,12pt,final,onecolumn,notitlepage]{scrartcl}%
+\usepackage[headsepline,footsepline,manualmark]{scrlayer-scrpage}
+\usepackage[all,cmtip]{xy}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{framed}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{tabu}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{needspace}
+\usepackage{hyperref}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{LastRevised=Monday, September 21, 2015 16:27:34}
+%TCIDATA{SuppressPackageManagement}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Language=American English}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newcounter{exer}
+\theoremstyle{definition}
+\newtheorem{theo}{Theorem}[section]
+\newenvironment{theorem}[1][]
+{\begin{theo}[#1]\begin{leftbar}}
+{\end{leftbar}\end{theo}}
+\newtheorem{lem}[theo]{Lemma}
+\newenvironment{lemma}[1][]
+{\begin{lem}[#1]\begin{leftbar}}
+{\end{leftbar}\end{lem}}
+\newtheorem{prop}[theo]{Proposition}
+\newenvironment{proposition}[1][]
+{\begin{prop}[#1]\begin{leftbar}}
+{\end{leftbar}\end{prop}}
+\newtheorem{defi}[theo]{Definition}
+\newenvironment{definition}[1][]
+{\begin{defi}[#1]\begin{leftbar}}
+{\end{leftbar}\end{defi}}
+\newtheorem{remk}[theo]{Remark}
+\newenvironment{remark}[1][]
+{\begin{remk}[#1]\begin{leftbar}}
+{\end{leftbar}\end{remk}}
+\newtheorem{coro}[theo]{Corollary}
+\newenvironment{corollary}[1][]
+{\begin{coro}[#1]\begin{leftbar}}
+{\end{leftbar}\end{coro}}
+\newtheorem{conv}[theo]{Convention}
+\newenvironment{condition}[1][]
+{\begin{conv}[#1]\begin{leftbar}}
+{\end{leftbar}\end{conv}}
+\newtheorem{quest}[theo]{Question}
+\newenvironment{algorithm}[1][]
+{\begin{quest}[#1]\begin{leftbar}}
+{\end{leftbar}\end{quest}}
+\newtheorem{warn}[theo]{Warning}
+\newenvironment{conclusion}[1][]
+{\begin{warn}[#1]\begin{leftbar}}
+{\end{leftbar}\end{warn}}
+\newtheorem{soln}{Solution}
+\newenvironment{solution}[1][]
+{\begin{soln}[#1]}
+{\end{soln}}
+\newtheorem{conj}[theo]{Conjecture}
+\newenvironment{conjecture}[1][]
+{\begin{conj}[#1]\begin{leftbar}}
+{\end{leftbar}\end{conj}}
+\newtheorem{exam}[theo]{Example}
+\newenvironment{example}[1][]
+{\begin{exam}[#1]\begin{leftbar}}
+{\end{leftbar}\end{exam}}
+\newtheorem{exmp}[exer]{Exercise}
+\newenvironment{exercise}[1][]
+{\begin{exmp}[#1]\begin{leftbar}}
+{\end{leftbar}\end{exmp}}
+\iffalse
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\fi
+\let\sumnonlimits\sum
+\let\prodnonlimits\prod
+\renewcommand{\sum}{\sumnonlimits\limits}
+\renewcommand{\prod}{\prodnonlimits\limits}
+\voffset=0cm
+\hoffset=-0.7cm
+\setlength\textheight{22.5cm}
+\setlength\textwidth{15.5cm}
+\newenvironment{verlong}{}{}
+\newenvironment{vershort}{}{}
+\newenvironment{noncompile}{}{}
+\excludecomment{verlong}
+\includecomment{vershort}
+\excludecomment{noncompile}
+\newcommand{\kk}{{\mathbf{k}}}
+\newcommand{\xx}{{\mathbf{x}}}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\Adm}{\operatorname{Adm}}
+\newcommand{\pack}{\operatorname{pack}}
+\newcommand{\Comp}{{\operatorname{Comp}}}
+\newcommand{\QSym}{{\operatorname{QSym}}}
+\newcommand{\QSYM}{{\operatorname{QSYM}}}
+\newcommand{\Powser}{\mathbf{k}\left[\left[x_1,x_2,x_3,...\right]\right]}
+\newcommand{\Par}{\operatorname{Par}}
+\newcommand{\bdd}{{\operatorname{bdd}}}
+\newcommand{\Bdd}{{\Powser_{\bdd}}}
+\newcommand{\bD}{{\mathbf{D}}}
+\newcommand{\EE}{{\mathbf{E}}}
+\newcommand{\FF}{{\mathbf{F}}}
+\newcommand{\bk}{{\mathbf{k}}}
+%\newcommand{\Nplus}{{\mathbb{N}_{+}}}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\QQ}{{\mathbb{Q}}}
+\ihead{Double posets and the antipode of $\QSym$}
+\ohead{page \thepage}
+\cfoot{}
+\begin{document}
+
+\author{Darij Grinberg}
+
+\title{Double posets and the antipode of $\QSym$}
+
+\date{version 1.1 (\today)}
+
+\begin{comment}
+\keywords{
+antipodes,
+double posets,
+Hopf algebras,
+posets,
+P-partitions,
+quasisymmetric functions
+}
+\end{comment}
+
+\maketitle
+
+\begin{abstract}
+\textbf{Abstract.}
+
+We assign a quasisymmetric function to any double poset (that is,
+every finite set endowed with two partial orders) and any weight function
+on its ground set. This generalizes well-known objects such as monomial
+and fundamental quasisymmetric functions, (skew) Schur functions, dual
+immaculate functions, and quasisymmetric
+$\left(P, \omega\right)$-partition enumerators.
+We then prove a formula for the antipode of this function that
+holds under certain conditions (which are satisfied when the second order
+of the double poset is total, but also in some other cases); this
+restates (in a way that to us seems more natural) a
+result by Malvenuto and Reutenauer, but our proof is new and
+self-contained. We generalize it further to an even more comprehensive
+setting, where a group acts on the double poset by automorphisms.
+\end{abstract}
+
+\begin{comment}
+OLD ABSTRACT:
+
+\begin{abstract}
+\textbf{Abstract.}
+
+We assign a quasisymmetric function to any double poset (that is,
+every finite set endowed with two partial orders) and any weight function
+on its ground set. This generalizes well-known objects such as monomial
+and fundamental quasisymmetric functions, (skew) Schur functions, dual
+immaculate functions, and quasisymmetric
+$\left(P, \omega\right)$-partition enumerators.
+We then prove a formula for the antipode of this function, which
+restates (in a way that to us seems more natural) a result by
+Malvenuto and Reutenauer; we give a new and self-contained proof for
+this formula. We also generalize it to an even more comprehensive
+setting, where a group acts on the double poset by automorphisms.
+
+% Here goes the French abstract
+\textbf{R\'esum\'e.}
+
+Nous attribuons une fonction quasi-symétrique à chaque ``double
+poset'' (c'est-à-dire, ensemble fini doté de deux ordres
+partiels) et chaque fonction de poids sur son ensemble
+sous-jacent. Cela généralise des objets bien connus tels que les
+fonctions quasi-symétriques fondamentales et monomiales, les
+fonctions de Schur obliques, les fonctions immaculées duales,
+et les $\left(P, \omega \right)$-partition enumerateurs
+quasi-symétriques.
+Nous démontrons alors une formule pour l'antipode de cette fonction, qui
+réaffirme (d'une manière qui nous semble plus naturelle) un résultat par
+Malvenuto et Reutenauer; nous donnons une nouvelle preuve
+autonome de cette formule. Nous généralisons également à un
+encore plus complet
+réglage, où un groupe agit sur le ``double poset'' par
+automorphismes.
+\end{abstract}
+\end{comment}
+
+\section{Introduction}
+\label{sec:in}
+
+Double posets and $\EE$-partitions (for $\EE$ a double poset)
+have been introduced by Claudia Malvenuto and Christophe
+Reutenauer \cite{Mal-Reu-DP} in order to construct a combinatorial
+Hopf algebra which harbors a noticeable amount of
+structure, including an analogue of the Littlewood-Richardson
+rule and a lift of the internal product operation of the
+Malvenuto-Reutenauer Hopf algebra of permutations. In this note,
+we shall employ these same notions to restate in a simpler form,
+and reprove in a more elementary fashion, a formula for the
+antipode in the Hopf algebra $\QSym$ of quasisymmetric functions
+due to (the same) Malvenuto and Reutenauer (generalizing
+an earlier result by Gessel), and extend it further to a case in
+which a group acts on the double poset. The proofs are sketched
+here, and will be detailed in a forthcoming paper.
+
+\subsection{Acknowledgments}
+
+Katharina Jochemko's work \cite{Joch} provoked this research.
+I learnt a lot about $\QSym$ from Victor Reiner.
+
+\section{Quasisymmetric functions}
+\label{sect.qsym}
+
+Let us first briefly introduce the notations that will be used in the
+following.
+We set $\NN = \left\{0, 1, 2, \ldots\right\}$. A \textit{composition}
+means a finite sequence of positive integers. We let $\Comp$ be the set
+of all compositions. For $n \in \NN$, a \textit{composition of $n$}
+means a composition whose entries sum to $n$.
+
+Let $\kk$ be an arbitrary
+commutative ring. We consider the $\kk$-algebra $\Powser$ of formal
+power series in infinitely many (commuting) indeterminates
+$x_1, x_2, x_3, \ldots$ over $\kk$. A \textit{monomial} shall always
+mean a monomial (without coefficients) in the variables
+$x_1, x_2, x_3, \ldots$. (See \cite[\S 2]{Gri-dimm} for details
+about the definition of monomials, and about some other notions that
+will be used below.)
+
+Inside the $\kk$-algebra $\Powser$ is a
+subalgebra $\Powser_\bdd$ of \textit{bounded-degree} formal power
+series; these are the power series $f$ for which there exists a
+$d \in \NN$ such that no monomial of degree $> d$ appears in $f$.
+We consider $\Powser$ as a topological
+$\kk$-algebra\footnote{The topology on $\Powser$ is
+defined by regarding $\Powser$ as a Cartesian product of infinitely
+many copies of $\kk$ (one for each monomial). Once again, see
+\cite[\S 2]{Gri-dimm} for details.}; its subalgebra
+$\Powser_\bdd$ inherits the topology from it.
+
+Two monomials $\mathfrak{m}$ and $\mathfrak{n}$ are said to be
+\textit{pack-equivalent}\footnote{Pack-equivalence and the related
+notions of packed combinatorial objects that we will encounter below
+originate in work of Hivert, Novelli and Thibon
+\cite{Nov-Thi}. Simple as they are, they are of great help in dealing
+with quasisymmetric functions.} if they have the forms
+$x_{i_1}^{a_1} x_{i_2}^{a_2} \cdots x_{i_\ell}^{a_\ell}$ and
+$x_{j_1}^{a_1} x_{j_2}^{a_2} \cdots x_{j_\ell}^{a_\ell}$ for two
+strictly increasing sequences
+$\left(i_1 < i_2 < \cdots < i_\ell\right)$
+and $\left(j_1 < j_2 < \cdots < j_\ell\right)$ of positive integers and
+one (common) sequence $\left(a_1, a_2, \ldots, a_\ell\right)$ of
+positive integers.\footnote{For instance, $x_2^2 x_3 x_4^2$ is
+pack-equivalent to $x_1^2 x_4 x_8^2$ but not to $x_2 x_3^2 x_4^2$.}
+A power series $f \in \Powser$ is said to be \textit{quasisymmetric}
+if every two pack-equivalent monomials have equal coefficients in
+front of them in $f$. It is easy to see that the quasisymmetric
+power series form a $\kk$-subalgebra of $\Powser$; but usually one
+is interested in the set of quasisymmetric bounded-degree power
+series. This latter set is a $\kk$-subalgebra of $\Powser_\bdd$, and
+is known as the \textit{$\kk$-algebra of quasisymmetric functions
+over $\kk$}. It is denoted by $\QSym$.
+It is clear that symmetric functions (in the
+usual sense of this word in combinatorics -- so, really, symmetric
+bounded-degree power series in $\Powser$) form a $\kk$-subalgebra
+of $\QSym$. The quasisymmetric functions have a rich theory which
+is related to, and often sheds new light on, the classical theory of
+symmetric functions; expositions can be found in
+\cite[\S\S 7.19, 7.23]{Stanley-EC2} and \cite[\S\S 5-6]{Reiner} and
+other sources.
+
+As a $\kk$-module, $\QSym$ has a basis
+$\left(M_\alpha\right)_{\alpha \in \Comp}$ indexed by all
+compositions, where the quasisymmetric function $M_\alpha$ for a
+given composition $\alpha$ is defined as follows: Writing $\alpha$
+as $\left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$, we set
+\[
+M_\alpha
+= \sum_{i_1 < i_2 < \cdots < i_\ell}
+ x_{i_1}^{\alpha_1} x_{i_2}^{\alpha_2} \cdots x_{i_\ell}^{\alpha_\ell}
+= \sum_{\substack{\mathfrak{m}\text{ is a monomial pack-equivalent} \\
+                  \text{to }
+                  x_1^{\alpha_1} x_2^{\alpha_2} \cdots x_\ell^{\alpha_\ell}}}
+  \mathfrak{m}
+\]
+(where the $i_k$ in the first sum are positive integers). This
+basis $\left(M_\alpha\right)_{\alpha \in \Comp}$ is known as the
+\textit{monomial basis} of $\QSym$, and is the simplest to
+define among many. (We shall briefly encounter another basis in
+Example~\ref{exam.Gamma}.)
+
+The $\kk$-algebra $\QSym$ can be endowed with a structure of a
+$\kk$-coalgebra which, combined with its $\kk$-algebra structure,
+turns it into a Hopf algebra. We refer to the literature both for
+the theory of coalgebras and Hopf algebras
+(see
+\cite{Montg-Hopf}, \cite[\S 1]{Reiner}, \cite[\S 1-\S 2]{Manchon-HA},
+\cite{Abe-HA}, \cite{Sweedler-HA}, \cite{Dasca-HA} or \cite[Chapter
+7]{Fresse-Op})
+and for a deeper study of the Hopf algebra $\QSym$ (see
+\cite{Malve-Thesis}, \cite[Chp. 6]{HaGuKi} or
+\cite[\S 5]{Reiner}); in this note we shall need but the very
+basics of this structure, and so it is only them that we introduce.
+
+We define a $\kk$-linear map $\Delta : \QSym \to \QSym \otimes \QSym$
+(here and in the following, all tensor products are over $\kk$ by
+default)
+by requiring that
+\begin{align}
+\label{eq.coproduct.M}
+\Delta \left( M_{\left( \alpha_1, \alpha_2, \ldots, \alpha_\ell
+\right) }\right)
+&= \sum_{k=0}^{\ell} M_{\left( \alpha_1, \alpha_2, \ldots,
+\alpha_k \right) } \otimes M_{\left( \alpha_{k+1}, \alpha_{k+2},
+\ldots, \alpha_\ell \right) } \\
+& \qquad \text{ for every } \left(\alpha_1, \alpha_2,
+\ldots, \alpha_\ell\right) \in \Comp \nonumber
+\end{align}
+\footnote{This definition relies on the fact that
+$\left(M_\alpha\right)_{\alpha \in \Comp}$ is a basis of the
+$\kk$-module $\QSym$.}. We further define a $\kk$-linear map
+$\varepsilon : \QSym \to \kk$ by requiring that
+\[
+\varepsilon\left(  M_{\left(
+\alpha_1, \alpha_2, \ldots, \alpha_\ell \right) }\right)
+= \delta_{\ell, 0}
+\qquad \text{ for every } \left(\alpha_1, \alpha_2,
+\ldots, \alpha_\ell\right) \in \Comp
+\]
+\footnote{Here, $\delta_{u,v}$ is defined to be
+$\begin{cases}
+1, & \text{if }u = v \text{;}\\
+0, & \text{if }u \neq v
+\end{cases}$
+whenever $u$ and $v$ are two objects.}.
+(Equivalently, $\varepsilon$ sends every power series $f \in \QSym$
+to the result $f\left(0,0,0,\ldots\right)$ of substituting zeroes
+for the variables $x_1, x_2, x_3, \ldots$ in $f$. The map $\Delta$
+can also be described in such terms, but with greater difficulty
+\cite[(5.3)]{Reiner}.) It is well-known that these maps $\Delta$ and
+$\varepsilon$ make the three diagrams
+\begin{align*}
+& \xymatrixcolsep{5pc}\xymatrix{
+\QSym\ar[r]^-{\Delta} \ar[d]_{\Delta} & \QSym\otimes\QSym\ar[d]^{\Delta
+\otimes\id} \\
+\QSym\otimes\QSym\ar[r]_-{\id\otimes\Delta} & \QSym\otimes\QSym\otimes\QSym}
+, \\
+& \xymatrixcolsep{3pc}
+\xymatrix{
+\QSym\ar[dr]_{\cong} \ar[r]^-{\Delta} & \QSym\otimes\QSym\ar[d]^-{\varepsilon
+\otimes\id} \\
+& \bk\otimes\QSym}
+,
+\qquad
+\xymatrixcolsep{3pc}
+\xymatrix{
+\QSym\ar[dr]_{\cong} \ar[r]^-{\Delta} & \QSym\otimes\QSym\ar[d]^-{\id
+\otimes\varepsilon} \\
+& \QSym\otimes\bk}
+\end{align*}
+(where the $\cong$ arrows are the canonical isomorphisms)
+commutative, and so $\left(\QSym, \Delta, \varepsilon\right)$ is what
+is commonly called a \textit{$\kk$-coalgebra}. Furthermore, $\Delta$
+and $\varepsilon$ are $\kk$-algebra homomorphisms, which is what makes
+this $\kk$-coalgebra $\QSym$ into a \textit{$\kk$-bialgebra}. Finally,
+let $m : \QSym \otimes \QSym \to \QSym$ be the $\kk$-linear map sending
+every pure tensor $a \otimes b$ to $ab$, and let $u : \kk \to \QSym$ be
+the $\kk$-linear map sending $1 \in \kk$ to $1 \in \QSym$. Then, there
+exists a unique $\kk$-linear map $S : \QSym \to \QSym$ making the
+diagram
+\begin{equation}
+\xymatrix{
+& \QSym \otimes \QSym \ar[rr]^{S \otimes \id} & & \QSym \otimes \QSym \ar[dr]^{m} & \\
+\QSym \ar[ur]^{\Delta} \ar[rr]^{\varepsilon} \ar[dr]_{\Delta} & & \kk \ar[rr]^{u} & & \QSym \\
+& \QSym \otimes \QSym \ar[rr]^{\id \otimes S} & & \QSym \otimes \QSym \ar[ur]^{m} & 
+}
+\label{eq.antipode}
+\end{equation}
+commutative. This map $S$ is known as the \textit{antipode} of $\QSym$.
+It is known to be an involution and an algebra automorphism of $\QSym$,
+and its action on the various quasisymmetric functions defined
+combinatorially is the main topic of this note.
+The existence of the antipode $S$ makes $\QSym$ into a
+\textit{Hopf algebra}.
+
+\section{Double posets}
+\label{sect.double-posets}
+
+Next, we shall introduce the notion of a double poset, following
+Malvenuto and Reutenauer \cite{Mal-Reu-DP}.
+
+\begin{definition}
+\label{def.double-poset}
+\begin{itemize}
+
+\item[(a)] We shall encode posets as pairs $\left(P, <\right)$,
+where $P$ is a set and $<$ is a strict partial order
+relation (i.e., an irreflexive, transitive and antisymmetric
+binary relation) on the set $P$; this relation $<$ will be regarded
+as the smaller relation of the poset. (All binary relations will be
+written in infix notation: i.e., we write ``$a < b$'' for ``$a$ is
+related to $b$ by the relation $<$''.)
+
+\item[(b)] If $<$ is a strict partial order relation on a set $P$,
+and if $a$ and $b$ are two elements of $P$, then we say that
+$a$ and $b$ are \textit{$<$-comparable} if we have either $a < b$
+or $a = b$ or $b < a$. (Thus, the order $<$ is total if and only
+if every two elements of $P$ are $<$-comparable.)
+
+\item[(c)] If $<$ is a strict partial order relation on a set $P$,
+and if $a$ and $b$ are two elements of $P$, then we say that
+$a$ is \textit{$<$-covered by $b$} if we have $a < b$ and there
+exists no $c \in P$ satisfying $a < c < b$. (For instance, if $<$
+is the standard smaller relation on $\ZZ$, then each
+$i \in \ZZ$ is $<$-covered by $i+1$.)
+
+\item[(d)] A \textit{double poset} is defined as a triple
+$\left(E, <_1, <_2\right)$ where $E$ is a finite set and $<_1$ and
+$<_2$ are two strict partial order relations on $E$.
+
+\item[(e)] A double poset
+$\left(E, <_1, <_2\right)$ is said to be \textit{special} if
+the order $<_2$ is total.
+
+\item[(f)] A double poset
+$\left(E, <_1, <_2\right)$ is said to be \textit{semispecial} if
+every two $<_1$-comparable elements of $E$ are $<_2$-comparable.
+
+\item[(g)] A double poset
+$\left(E, <_1, <_2\right)$ is said to be \textit{tertispecial} if
+it satisfies the following condition: If $a$ and $b$ are two
+elements of $E$ such that $a$ is $<_1$-covered by $b$, then $a$
+and $b$ are $<_2$-comparable.
+\end{itemize}
+\end{definition}
+
+Clearly, every special double poset is semispecial, and every
+semispecial double poset is tertispecial.\footnote{The notions of a
+double poset and of a special double poset come from
+\cite{Mal-Reu-DP}. The notion of a ``tertispecial double poset''
+appears to be new and arguably sounds artificial, but is the
+most suitable setting for some of the results below (and appears
+in nature, beyond the particular case of special double posets
+-- see Example~\ref{exam.dp}). We shall not use semispecial
+double posets in the following; they were only introduced as a
+middle ground between special and tertispecial double posets
+with a less daunting definition.}
+
+\begin{definition}
+\label{def.E-partition}
+If $\EE = \left(E, <_1, <_2\right)$ is a double poset, then
+an \textit{$\EE$-partition} shall mean a map
+$\phi : E \to \left\{ 1,2,3,\ldots\right\}$ such that:
+\begin{itemize}
+\item every $e \in E$ and $f \in E$ satisfying $e <_1 f$ satisfy
+$\phi\left(e\right) \leq \phi\left(f\right)$;
+\item every $e \in E$ and $f \in E$ satisfying $e <_1 f$ and
+$f <_2 e$ satisfy $\phi\left(e\right) < \phi\left(f\right)$.
+\end{itemize}
+\end{definition}
+
+\begin{example}
+\label{exam.dp}
+The notion of an $\EE$-partition (which was inspired by the earlier
+notions of $P$-partitions and $\left(P,\omega\right)$-partitions
+as studied by Gessel and Stanley\footnotemark)
+generalizes various well-known
+combinatorial concepts. For example:
+\begin{itemize}
+\item If $<_2$ is the same order
+as $<_1$ (or any extension of this order), then
+$\EE$-partitions are weakly increasing maps from the poset
+$\left(E, <_1\right)$ to the totally ordered set
+$\left\{1, 2, 3, \ldots\right\}$.
+\item If $<_2$ is the opposite order of
+$<_1$ (or any extension of this opposite order), then
+$\EE$-partitions are strictly increasing maps from the
+poset $\left(E, <_1\right)$ to the totally ordered set
+$\left\{1, 2, 3, \ldots\right\}$.
+\end{itemize}
+
+For a more interesting example,
+let $\mu = \left(\mu_1, \mu_2, \mu_3, \ldots\right)$ and
+$\lambda = \left(\lambda_1, \lambda_2, \lambda_3, \ldots\right)$ be
+two partitions such that $\mu \subseteq \lambda$.
+(See \cite[\S 2]{Reiner} for the notations we are using
+here.)
+The skew Young
+diagram $Y\left(\lambda / \mu\right)$ is then defined as the set of all
+$\left(i, j\right) \in \left\{ 1, 2, 3, \ldots \right\}^2$ satisfying
+$\mu_i < j \leq \lambda_i$. On this set $Y\left(\lambda / \mu\right)$,
+we define two partial order relations $<_1$ and $<_2$ by
+\[
+\left(i,j\right) <_1 \left(i',j'\right) \Longleftrightarrow
+\left( i \leq i' \text{ and } j \leq j' \text{ and }
+\left(i,j\right) \neq \left(i',j'\right) \right)
+\]
+and
+\[
+\left(i,j\right) <_2 \left(i',j'\right) \Longleftrightarrow
+\left( i \geq i' \text{ and } j \leq j' \text{ and }
+\left(i,j\right) \neq \left(i',j'\right) \right) .
+\]
+The resulting double poset
+$\mathbf{Y}\left(\lambda / \mu\right)
+= \left(Y\left(\lambda / \mu\right), <_1, <_2\right)$ has the
+property that the $\mathbf{Y}\left(\lambda / \mu\right)$-partitions
+are precisely the semistandard tableaux of shape
+$\lambda / \mu$. (Again, see \cite[\S 2]{Reiner} for the meaning
+of these words.)
+
+This double poset $\mathbf{Y}\left(\lambda / \mu\right)$
+is not special (in general), but it is tertispecial. (Indeed,
+if $a$ and $b$ are two elements of $Y\left(\lambda / \mu\right)$
+such that $a$ is $<_1$-covered by $b$, then $a$ is either the left
+neighbor of $b$ or the top neighbor of $b$, and thus we have
+either $a <_2 b$ (in the former case) or $b <_2 a$ (in the latter
+case).) Some authors prefer to use a special double poset instead,
+which is defined as follows: We define a total
+order $<_h$ on $Y\left(\lambda / \mu\right)$ by
+\[
+\left(i,j\right) <_h \left(i',j'\right) \Longleftrightarrow
+\left( i > i' \text{ or } \left( i = i' \text{ and }
+j < j' \right) \right) .
+\]
+Then, $\mathbf{Y}_h\left(\lambda / \mu\right)
+= \left(Y\left(\lambda / \mu\right), <_1, <_h\right)$ is a special
+double poset, and the
+$\mathbf{Y}_h\left(\lambda / \mu\right)$-partitions
+are precisely the semistandard tableaux of shape
+$\lambda / \mu$.
+\end{example}
+\footnotetext{See \cite{Gessel-Ppar}
+for the history of these notions, and see \cite{Gessel-multipar},
+\cite{Stanley-Thes}, \cite[\S 3.15]{Stanley-EC1} and
+\cite[\S 7.19]{Stanley-EC2} for
+some of their theory. Mind that these sources use different and
+sometimes incompatible notations -- e.g., the $P$-partitions of
+\cite[\S 3.15]{Stanley-EC1} and \cite{Gessel-Ppar} differ from
+those of \cite{Gessel-multipar} by a sign reversal.}
+
+We now assign a certain formal power series to every double poset:
+
+\begin{definition}
+\label{def.Gammaw}
+If $\EE = \left(E, <_1, <_2\right)$ is a double poset, and
+$w : E \to \left\{1, 2, 3, \ldots\right\}$ is a map, then we define
+a power series $\Gamma\left(\EE , w\right) \in \Powser$ by
+\[
+\Gamma\left(\EE , w\right)
+= \sum_{\pi\text{ is an }\EE\text{-partition}}
+  \xx_{\pi, w} ,
+\qquad
+\text{where } \xx_{\pi, w}
+= \prod_{e \in E} x_{\pi\left(e\right)}^{w\left(e\right)} .
+\]
+\end{definition}
+
+The following fact is easy to see (but will be reproven below):
+
+\begin{proposition}
+\label{prop.Gammaw.qsym}
+Let $\EE = \left(E, <_1, <_2\right)$ be a double poset, and
+$w : E \to \left\{1, 2, 3, \ldots\right\}$ be a map. Then,
+$\Gamma\left(\EE , w\right) \in \QSym$.
+\end{proposition}
+
+\begin{example}
+\label{exam.Gamma}
+The power series $\Gamma\left(\EE , w\right)$ generalize various
+well-known quasisymmetric functions.
+
+\begin{enumerate}
+\item[(a)] If $\EE = \left(E, <_1, <_2\right)$ is a double poset, and
+$w : E \to \left\{1, 2, 3, \ldots\right\}$ is the constant
+function sending everything to $1$, then
+$\Gamma\left(\EE , w\right)
+= \sum_{\pi\text{ is an }\EE\text{-partition}} \xx_{\pi}$,
+where $\xx_{\pi} = \prod_{e \in E} x_{\pi\left(e\right)}$.
+We shall denote this power series $\Gamma\left(\EE , w\right)$
+by $\Gamma\left(\EE\right)$; it is exactly what has been called
+$\Gamma\left(\EE\right)$ in \cite[\S 2.2]{Mal-Reu-DP}. All results
+proven below for $\Gamma\left(\EE , w\right)$ can be applied to
+$\Gamma\left(\EE\right)$, yielding simpler (but less general)
+statements.
+
+\item[(b)] If $E = \left\{1, 2, \ldots, \ell\right\}$ for some
+$\ell \in \NN$, if $<_1$ is the usual total order inherited from
+$\ZZ$, and if $<_2$ is the opposite order to $<_1$, then the
+special double poset $\EE = \left(E, <_1, <_2\right)$ satisfies
+$\Gamma\left(\EE, w\right) = M_\alpha$, where $\alpha$ is the
+composition $\left(w\left(1\right), w\left(2\right), \ldots,
+w\left(\ell\right)\right)$. Thus, the elements of the monomial
+basis $\left(M_\alpha\right)_{\alpha \in \Comp}$ are special
+cases of the functions $\Gamma\left(\EE, w\right)$.
+
+\item[(c)] Let
+$\alpha = \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$
+be a composition of a nonnegative integer $n$. Let
+$D\left(\alpha\right)$ be the set
+$\left\{\alpha_1, \alpha_1 + \alpha_2, \alpha_1 + \alpha_2
++ \alpha_3, \ldots, \alpha_1 + \alpha_2 + \cdots + \alpha_{\ell-1}
+\right\}$.
+Let $E$ be the set $\left\{1, 2, \ldots, n\right\}$, and let
+$<_1$ be the total order inherited on $E$ from $\ZZ$. Let $<_2$ be some
+partial order on $E$ with the property that an $i \in \left\{
+1,2,\ldots,n-1\right\}$ satisfies
+\[
+i+1 <_2 i \qquad \text{ for every } i \in D\left(\alpha\right)
+\]
+and
+\[
+i <_2 i+1 \qquad \text{ for every }
+i \in \left\{1, 2, \ldots, n-1\right\}
+\setminus D\left(\alpha\right) .
+\]
+(There are several choices for such an order; in particular, we
+can find one which is a total order.) Then,
+\begin{align*}
+\Gamma\left(\left(E, <_1, <_2\right)\right)
+&= \sum_{\substack{i_1 \leq i_2 \leq \cdots \leq i_n; \\
+                  i_j < i_{j+1} \text{ whenever } j \in D\left(\alpha\right)}}
+  x_{i_1} x_{i_2} \cdots x_{i_n} \\
+&= \sum_{\beta\text{ is a composition of }n;
+        \ D\left(\beta\right) \supseteq D\left(\alpha\right)}
+  M_\beta .
+\end{align*}
+This power series is known as the $\alpha$-th
+\textit{fundamental quasisymmetric function}, usually called
+$F_\alpha$ (in \cite[\S 2.4]{BBSSZ} and \cite[\S 2]{Gri-dimm})
+or $L_\alpha$ (in \cite[\S 7.19]{Stanley-EC2} or
+\cite[Def. 5.15]{Reiner}).
+
+\item[(d)] Let $\EE$ be one of the two double posets
+$\mathbf{Y}\left(\lambda / \mu\right)$ and
+$\mathbf{Y}_h\left(\lambda / \mu\right)$
+defined as in Example \ref{exam.dp} for two partitions $\mu$
+and $\lambda$. Then, $\Gamma\left(\EE\right)$ is the skew
+Schur function $s_{\lambda / \mu}$.
+
+\item[(e)] Similarly, \textit{dual immaculate functions} as defined in
+\cite[\S 3.7]{BBSSZ} can be realized as $\Gamma\left(\EE\right)$
+for conveniently chosen $\EE$ (see \cite[Proposition 4.4]{Gri-dimm}), which
+helped the author to prove one of their properties \cite{Gri-dimm}.
+(The $\EE$-partitions here are the so-called
+\textit{immaculate tableaux}.)
+
+\item[(f)] When the order $<_2$ of a double poset
+$\EE = \left(E, <_1, <_2\right)$ is a total order (i.e.,
+when the double poset $\EE$ is special), the
+$\EE$-partitions are precisely the
+reverse $\left(P, \omega\right)$-partitions (for $P =
+\left(E, <_1\right)$ and $\omega$ being a labelling of $P$
+dictated by $<_2$) in the terminology
+of \cite[\S 7.19]{Stanley-EC2}, and the power series
+$\Gamma\left(\EE\right)$ is the $K_{P, \omega}$ of
+\cite[\S 7.19]{Stanley-EC2}.
+This can also be rephrased using
+the notations of \cite[\S 5.2]{Reiner}: When the order $<_2$ of a
+double poset $\EE = \left(E, <_1, <_2\right)$ is a total order, we can
+relabel the elements of $E$ by the integers $1, 2, \ldots, n$ in such
+a way that $1 <_2 2 <_2 \cdots <_2 n$; then, the $\EE$-partitions are
+the $P$-partitions in the terminology of \cite[Def. 5.12]{Reiner},
+where $P$ is the labelled poset $\left(E, <_1\right)$; and furthermore,
+our $\Gamma\left(\EE\right)$ is the $F_P\left(\xx\right)$ of
+\cite[Def. 5.12]{Reiner}. Conversely, if $P$ is a labelled poset, then
+the $F_P\left(\xx\right)$ of \cite[Def. 5.12]{Reiner} is our
+$\Gamma\left(\left(P, <_P, <_\ZZ\right)\right)$.
+\end{enumerate}
+\end{example}
+
+\section{The antipode theorem}
+\label{sect.antipode}
+
+We now come to the main results of this note. We first state a
+theorem and a corollary which are not new, but will be reproven in
+a more self-contained way which allows them to take their
+(well-deserved) place as fundamental results rather than
+afterthoughts in the theory of $\QSym$.
+
+We recall that $S$ denotes the antipode of $\QSym$.
+
+\begin{theorem}
+\label{thm.antipode.Gammaw}
+Let $\left(E, <_1, <_2\right)$ be a tertispecial double poset.
+Let $w : E \to \left\{1, 2, 3, \ldots\right\}$. Then,
+$S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right)\right)
+= \left(-1\right)^{\left|E\right|}
+\Gamma\left(\left(E, >_1, <_2\right), w\right)$,
+where $>_1$ denotes the order relation opposite to
+$<_1$.
+\end{theorem}
+
+\begin{corollary}
+\label{cor.antipode.Gamma}
+Let $\left(E, <_1, <_2\right)$ be a tertispecial double poset.
+Then, $S\left(\Gamma\left(\left(E, <_1, <_2\right)\right)\right)
+= \left(-1\right)^{\left|E\right|}
+\Gamma\left(\left(E, >_1, <_2\right)\right)$,
+where $>_1$ denotes the order relation opposite to
+$<_1$.
+\end{corollary}
+
+We shall give examples for consequences of these facts shortly
+(Example~\ref{exam.antipode.Gammaw}), but
+let us first explain where they have already appeared.
+Corollary~\ref{cor.antipode.Gamma} is equivalent to
+\cite[Corollary 5.27]{Reiner}\footnote{It is easiest to derive
+\cite[Corollary 5.27]{Reiner} from our Corollary~\ref{cor.antipode.Gamma},
+as this only requires setting $\EE = \left(P, <_P, <_\ZZ\right)$
+(this is a special double poset, thus in particular a tertispecial
+one) and noticing that
+$\Gamma\left(\left(P, <_P, <_\ZZ\right)\right)
+= F_P\left(\xx\right)$ and
+$\Gamma\left(\left(P, >_P, <_\ZZ\right)\right)
+= F_{P^{\operatorname{opp}}}\left(\xx\right)$, where all unexplained
+notations are defined in \cite[Chp. 5]{Reiner}. But one can also
+proceed in the opposite direction.}
+(a result apparently due to Gessel).
+Theorem~\ref{thm.antipode.Gammaw} is equivalent to Malvenuto's
+and Reutenauer's \cite[Theorem 3.1]{Mal-Reu}\footnote{This equivalence
+requires a bit of work to set up. To derive \cite[Theorem 3.1]{Mal-Reu}
+from our Theorem~\ref{thm.antipode.Gammaw}, it is enough to contract
+all undirected edges in $G$, denoting the vertex set of the new
+graph by $E$, and then define two order relations $<_1$ and $<_2$ on
+$E$ by
+\[
+\left(a <_1 b\right) \Longleftrightarrow \left(a \neq b,
+\text{ and there exists a path from } a \text{ to } b \text{ in }
+G \right)
+\]
+and
+\[
+\left(a <_2 b\right) \Longleftrightarrow \left(a \neq b,
+\text{ and there exists a path from } a \text{ to } b \text{ in }
+G' \right) .
+\]
+The map $w$ sends every $e \in E$ to the number of vertices
+of $G$ that became $e$ when the edges were contracted. To show that
+the resulting double poset $\left(E, <_1, <_2\right)$ is
+tertispecial, we must notice that if $a$ is $<_1$-covered by $b$,
+then $G$ had an edge from one of the vertices that became $a$ to
+one of the vertices that became $b$.
+With some harder work, one can conversely derive
+our Theorem~\ref{thm.antipode.Gammaw} from
+\cite[Theorem 3.1]{Mal-Reu}.}. We
+nevertheless believe that our versions of these facts are more
+natural and simpler than the ones appearing in existing
+literature\footnote{although the identity of the authors of
+\cite{Mal-Reu} with those of \cite{Mal-Reu-DP} suggests that these
+versions have already been found}, and if not,
+then at least their proofs below are more in the nature of things.
+% [todo: check that the equivalence to Malvenuto-Reutenauer is
+% correct!]
+
+To these known results, we add another, which seems to be unknown so
+far (probably because it is far harder to state in the terminologies
+of $\left(P, \omega\right)$-partitions or
+equality-and-inequality conditions appearing in literature):
+
+\begin{definition}
+Let $G$ be a group, and let $E$ be a $G$-set.
+
+\begin{itemize}
+
+\item[(a)] Let $<$ be a
+strict partial order relation on $E$. We say that $G$
+\textit{preserves the relation $<$} if the following holds:
+For every $g \in G$, $a \in E$ and $b \in E$ satisfying $a < b$,
+we have $ga < gb$.
+
+\item[(b)] Let $w : E \to \left\{1, 2, 3, \ldots\right\}$. We
+say that $G$ \textit{preserves $w$} if every $g \in G$ and
+$e \in E$ satisfy $w\left(ge\right) = w\left(e\right)$.
+
+\item[(c)] Let $g \in G$. We say that $g$ is \textit{$E$-even}
+if the action of $g$ on $E$ (that is, the permutation of $E$
+that sends every $e \in E$ to $ge$) is an even permutation
+of $E$.
+
+\end{itemize}
+\end{definition}
+
+\begin{theorem}
+\label{thm.antipode.GammawG}
+Let $\EE = \left(E, <_1, <_2\right)$ be a tertispecial double poset.
+Let $\Par \EE$ denote the set of all $\EE$-partitions.
+Let $w : E \to \left\{1, 2, 3, \ldots\right\}$. Let $G$ be a finite
+group which acts on $E$. Assume that $G$ preserves both
+relations $<_1$ and $<_2$, and also preserves $w$.
+Then, $G$ acts also on the set $\Par \EE$ of all
+$\EE$-partitions. We say that an $\EE$-partition $\pi$ is
+\textit{even} if every $g \in G$ satisfying $g \pi = \pi$
+is $E$-even. We say that a $G$-orbit $O$ on
+$\Par \EE$ is \textit{even} if its elements are
+even (or, equivalently, one of its elements is even).
+For any $G$-orbit $O$ on
+$\operatorname{Par}\EE$, we define a monomial $\xx_{O, w}$
+by
+\[ \xx_{O, w} = \xx_{\pi, w} \qquad \text{ for some element }
+\pi \text{ of } O
+\]
+(this does not depend on the choice of $\pi$).
+Let
+\[
+\Gamma\left(\EE, w, G\right) = \sum_{O\text{ is a }
+G\text{-orbit on } \operatorname{Par}\EE} \xx_{O, w}
+\]
+and
+\[
+\Gamma^+\left(\EE, w, G\right) = \sum_{O\text{ is an even }
+G\text{-orbit on } \operatorname{Par}\EE} \xx_{O, w} .
+\]
+Then, $\Gamma\left(\EE, w, G\right)$ and
+$\Gamma^+\left(\EE, w, G\right)$ belong to $\QSym$ and satisfy
+\[
+S\left(\Gamma\left(\EE, w, G\right)\right)
+= \left(-1\right)^{\left|E\right|}
+\Gamma^+\left(\left(E, >_1, <_2\right), w, G\right) .
+\]
+\end{theorem}
+
+This theorem, which combines Theorem~\ref{thm.antipode.Gammaw} with the
+ideas of P\'olya enumeration, is inspired by Jochemko's reciprocity
+results for order polynomials \cite[Theorem 2.8]{Joch}, which can be
+obtained from it by multiple specializations.
+
+We shall now review a number of particular cases of
+Theorem~\ref{thm.antipode.Gammaw}. Details on most of them will
+be provided in a forthcoming paper.
+
+\begin{example}
+\label{exam.antipode.Gammaw}
+
+\begin{enumerate}
+
+\item[(a)] Corollary~\ref{cor.antipode.Gamma}
+follows from Theorem~\ref{thm.antipode.Gammaw} by letting $w$
+be the function which is constantly $1$.
+
+\item[(b)] Let
+$\alpha = \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$
+be a composition of a nonnegative integer $n$, and let
+$\EE$ be the double poset defined
+in Example~\ref{exam.Gamma} (b). Let
+$w : \left\{1, 2, \ldots, \ell\right\} \to \left\{ 1, 2, 3,
+\ldots \right\}$ be the map sending every $i$ to $\alpha_i$.
+As Example~\ref{exam.Gamma} (b) shows, we have
+$\Gamma\left(\EE, w\right) = M_\alpha$.
+%But it is also easy
+%to see that $\Gamma\left(\left(
+%\left\{1, 2, \ldots, \ell\right\}, <_1, <_2\right)\right)
+%= \sum_{\gamma \text{ is a composition of } n
+% [todo: details!]
+Thus, applying Theorem~\ref{thm.antipode.Gammaw} to these $\EE$
+and $w$ yields
+\begin{align*}
+S\left(M_\alpha\right)
+&= \left(-1\right)^\ell
+   \Gamma\left(\left(E, >_1, <_2\right), w\right)
+= \left(-1\right)^\ell
+  \sum_{i_1 \geq i_2 \geq \cdots \geq i_\ell}
+  x_{i_1}^{\alpha_1} x_{i_2}^{\alpha_2} \cdots
+      x_{i_\ell}^{\alpha_\ell} \\
+&= \left(-1\right)^\ell
+  \sum_{i_1 \leq i_2 \leq \cdots \leq i_\ell}
+  x_{i_1}^{\alpha_\ell} x_{i_2}^{\alpha_{\ell-1}} \cdots
+      x_{i_\ell}^{\alpha_1}
+= \left(-1\right)^\ell
+  \sum_{\substack{\gamma \in \Comp ; \\
+        D\left(\gamma\right) \subseteq
+        D\left(\left(\alpha_\ell, \alpha_{\ell-1},
+                     \ldots, \alpha_1\right)\right)}}
+  M_\gamma .
+\end{align*}
+This is the formula for $S\left(M_\alpha\right)$
+given in \cite[Theorem 5.11]{Reiner} (originally due to Ehrenborg
+and to Malvenuto and Reutenauer). It also shows that the
+$\Gamma\left(\EE, w\right)$ for varying $\EE$ and $w$ span
+the $\kk$-module $\QSym$.
+
+\item[(c)] Applying Corollary~\ref{cor.antipode.Gamma} to the
+double poset of Example~\ref{exam.Gamma} (c) (where the order
+$<_2$ is chosen to be total) yields the
+formula for the antipode of a fundamental quasisymmetric function
+\cite[(5.9)]{Reiner}.
+
+\item[(d)] Applying Corollary~\ref{cor.antipode.Gamma} to the
+tertispecial double poset $\mathbf{Y}\left(\lambda / \mu\right)$
+of Example~\ref{exam.Gamma} (d) (or to the special double
+poset $\mathbf{Y}_h\left(\lambda / \mu\right)$
+of Example~\ref{exam.Gamma} (d)) yields the
+well-known formula $S\left(s_{\lambda / \mu}\right)
+= \left(-1\right)^{\left|\lambda / \mu\right|}
+s_{\lambda^t / \mu^t}$ for any two partitions $\lambda$ and $\mu$
+satisfying $\mu \subseteq \lambda$ (where $\lambda^t$ denotes the
+conjugate partition of $\lambda$). This formula is usually stated
+for $S$ being the antipode of the Hopf algebra of symmetric
+(rather than quasisymmetric) functions, but the latter antipode
+is a restriction of the antipode of $\QSym$.
+
+\item[(e)] Two results of Benedetti and Sagan
+\cite[Thms. 4.1--4.2]{BenSag} on the antipodes of immaculate
+functions can be obtained from Corollary~\ref{cor.antipode.Gamma}
+using dualization.
+
+\end{enumerate}
+
+\end{example}
+
+\section{Lemmas: packed $\EE$-partitions and comultiplications}
+\label{sect.lemmas}
+
+We shall now prepare for the proofs of our results. To this end,
+we introduce the notion of a \textit{packed map}.
+
+\begin{definition}
+\begin{itemize}
+
+\item[(a)]
+An \textit{initial interval} will mean a set of the form
+$\left\{1, 2, \ldots, \ell\right\}$ for some $\ell \in \NN$.
+
+\item[(b)]
+If $S$ is a set and $\pi : S \to \left\{1, 2, 3, \ldots\right\}$ is
+a map, then $\pi$ is said to be \textit{packed} if $\pi\left(S\right)$
+is an initial interval. Clearly, this initial interval must be
+$\left\{1, 2, \ldots, \left|\pi\left(S\right)\right|\right\}$.
+
+\end{itemize}
+\end{definition}
+
+\begin{proposition}
+\label{prop.Gammaw.packed}
+Let $\EE = \left(E, <_1, <_2\right)$ be a double poset. Let
+$w : E \to \left\{1, 2, 3, \ldots\right\}$ be a map.
+For every packed map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$,
+we define $\ev_w \pi$ to be the composition
+$\left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$, where
+$\ell = \left|\pi\left(E\right)\right|$ (so that
+$\pi\left(E\right) = \left\{1, 2, \ldots, \ell\right\}$, since
+$\pi$ is packed),
+and where each
+$\alpha_i$ is defined as $\sum_{e \in \pi^{-1}\left(i\right)}
+w\left(e\right)$.
+Then,
+\begin{equation}
+\label{eq.prop.Gammaw.packed}
+\Gamma\left(\EE , w\right)
+= \sum_{\varphi \text{ is a packed } \EE\text{-partition}}
+M_{\ev_w \varphi} .
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Proof of Proposition~\ref{prop.Gammaw.packed}.]
+For every finite subset $S$ of
+$\left\{1, 2, 3, \ldots\right\}$, there exists a unique strictly
+increasing bijection $\left\{1, 2, \ldots,
+\left|S\right|\right\} \to S$. We shall denote this bijection by
+$r_S$.
+For every map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$, we
+define the \textit{packing of $\pi$} as the map
+$r_{\pi\left(E\right)}^{-1} \circ \pi : E \to
+\left\{1, 2, 3, \ldots\right\}$; this is a packed map (indeed,
+its image is
+$\left\{1, 2, \ldots, \left|\pi\left(E\right)\right|\right\}$),
+and will be
+denoted by $\pack \pi$. This map $\pack \pi$ is an $\EE$-partition
+if and only if $\pi$ is an $\EE$-partition\footnote{Indeed,
+$\pack \pi = r_{\pi\left(E\right)}^{-1} \circ \pi$. Since
+$r_{\pi\left(E\right)}$ is strictly increasing, we thus see that,
+for any given $e \in E$ and $f \in E$, the equivalences
+\[
+\left(\left(\pack \pi\right)\left(e\right)
+      \leq \left(\pack \pi\right)\left(f\right)\right)
+\Longleftrightarrow
+\left( \pi\left(e\right) \leq \pi\left(f\right) \right)
+\]
+and
+\[
+\left(\left(\pack \pi\right)\left(e\right)
+      < \left(\pack \pi\right)\left(f\right)\right)
+\Longleftrightarrow
+\left( \pi\left(e\right) < \pi\left(f\right) \right)
+\]
+hold. Hence, $\pack \pi$ is an $\EE$-partition
+if and only if $\pi$ is an $\EE$-partition.}.
+
+We shall show that for every packed $\EE$-partition $\varphi$, we
+have
+\begin{equation}
+\sum_{\pi\text{ is an }\EE\text{-partition; } \pack \pi = \varphi}
+\xx_{\pi, w} = M_{\ev_w \varphi} .
+\label{pf.prop.Gammaw.packed.1}
+\end{equation}
+Once this is proven, it will follow that
+\begin{align*}
+\Gamma\left(\EE , w\right)
+&= \sum_{\pi\text{ is an }\EE\text{-partition}}
+  \xx_{\pi, w}
+= \sum_{\varphi \text{ is a packed } \EE\text{-partition}}
+  \underbrace{\sum_{\pi\text{ is an }\EE\text{-partition; } \pack \pi = \varphi}
+              \xx_{\pi, w}}_{\substack{ = M_{\ev_w \varphi} \\
+                             \text{(by \eqref{pf.prop.Gammaw.packed.1})}
+                             }} \\
+& \qquad \left(\text{since } \pack \pi \text{ is a packed }
+             \EE\text{-partition for every }
+             \EE\text{-partition } \pi\right) \\
+&= \sum_{\varphi \text{ is a packed } \EE\text{-partition}}
+M_{\ev_w \varphi} ,
+\end{align*}
+and Proposition~\ref{prop.Gammaw.packed} will be proven.
+
+So it remains to prove \eqref{pf.prop.Gammaw.packed.1}. Let $\varphi$
+be a packed $\EE$-partition. Let
+$\ell = \left|\varphi\left(E\right)\right|$; thus
+$\varphi\left(E\right) = \left\{1, 2, \ldots, \ell\right\}$.
+Let $\alpha_i = \sum_{e \in \varphi^{-1}\left(i\right)}
+w\left(e\right)$ for every $1 \leq i \leq \ell$, so that
+$\ev_w \varphi = \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$.
+Then, the right hand side of
+\eqref{pf.prop.Gammaw.packed.1} rewrites as follows:
+\begin{align}
+M_{\ev_w \varphi}
+&= \sum_{i_1 < i_2 < \cdots < i_\ell}
+\underbrace{x_{i_1}^{\alpha_1} x_{i_2}^{\alpha_2} \cdots x_{i_\ell}^{\alpha_\ell}}
+_{= \prod_{k = 1}^\ell x_{i_k}^{\alpha_k}}
+= \sum_{i_1 < i_2 < \cdots < i_\ell}
+\prod_{k = 1}^\ell \underbrace{x_{i_k}^{\alpha_k}}
+                              _{\substack{= x_{i_k}^{\sum_{e \in \varphi^{-1}\left(k\right)}
+                                w\left(e\right)} \\
+                                = \prod_{e \in \varphi^{-1}\left(k\right)}
+                                x_{i_k}^{w\left(e\right)}}}
+\nonumber \\
+&= \sum_{i_1 < i_2 < \cdots < i_\ell}
+\underbrace{\prod_{k = 1}^\ell \prod_{e \in \varphi^{-1}\left(k\right)}
+x_{i_k}^{w\left(e\right)}}
+_{ = \prod_{e \in E} x_{i_{\varphi\left(e\right)}}^{w\left(e\right)}}
+= \sum_{i_1 < i_2 < \cdots < i_\ell}
+\prod_{e \in E} x_{i_{\varphi\left(e\right)}}^{w\left(e\right)}
+\nonumber \\
+&= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
+\underbrace{\prod_{e \in E} x_{r_S\left(\varphi\left(e\right)\right)}^{w\left(e\right)}}
+           _{=\xx_{r_S\circ\varphi,w}}
+= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
+\xx_{r_S\circ\varphi,w}
+\label{pf.prop.Gammaw.packed.1.pf.1}
+\end{align}
+\footnote{In the second-to-last equality, we have used the fact that
+the strictly increasing sequences
+$\left(i_1 < i_2 < \cdots < i_\ell\right)$ of positive integers are
+in bijection with the subsets
+$S \subseteq \left\{1, 2, 3, \ldots\right\}$
+such that $\left|S\right| = \ell$. The bijection sends a sequence
+$\left(i_1 < i_2 < \cdots < i_\ell\right)$ to the set of its entries;
+its inverse map sends every $S$ to the sequence
+$\left(r_S\left(1\right), r_S\left(2\right), \ldots,
+r_S\left(\left|S\right|\right)\right)$.}.
+
+On the other hand, recall that $\varphi$ is an $\EE$-partition.
+Hence, every map $\pi$ satisfying $\pack \pi = \varphi$
+is an $\EE$-partition (because, as we know, $\pack \pi$ is an
+$\EE$-partition if and only if $\pi$ is an $\EE$-partition).
+Thus, the $\EE$-partitions $\pi$ satisfying
+$\pack \pi = \varphi$ are precisely the maps
+$\pi : E \to \left\{1, 2, 3, \ldots\right\}$ satisfying
+$\pack \pi = \varphi$. Hence,
+\begin{align*}
+\sum_{\pi\text{ is an }\EE\text{-partition; } \pack \pi = \varphi}
+\xx_{\pi, w}
+&= \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\} \text{; } \pack \pi = \varphi}
+\xx_{\pi, w} \\
+&= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
+\sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\} \text{; } \pack \pi = \varphi
+\text{; } \pi\left(E\right) = S}
+\xx_{\pi, w}
+\end{align*}
+(because if $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ is a map
+satisfying $\pack \pi = \varphi$, then
+$\left|\pi\left(E\right)\right| = \ell$). But for every
+$\ell$-element subset $S$ of
+$\left\{1, 2, 3, \ldots\right\}$, there exists exactly
+one $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ satisfying
+$\pack \pi = \varphi$ and $\pi\left(E\right) = S$ (namely,
+$\pi = r_S \circ \varphi$), and therefore we have
+\[
+\sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\} \text{; } \pack \pi = \varphi
+\text{; } \pi\left(E\right) = S}
+\xx_{\pi, w}
+= \xx_{r_S\circ\varphi,w} .
+\]
+Hence,
+\begin{align*}
+\sum_{\pi\text{ is an }\EE\text{-partition; } \pack \pi = \varphi}
+\xx_{\pi, w}
+&= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
+\underbrace{\sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\} \text{; } \pack \pi = \varphi
+\text{; } \pi\left(E\right) = S}
+\xx_{\pi, w}}_{= \xx_{r_S\circ\varphi,w}} \\
+&= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
+\xx_{r_S\circ\varphi,w}
+= M_{\ev_w \varphi}
+\end{align*}
+(by \eqref{pf.prop.Gammaw.packed.1.pf.1}).
+Thus, \eqref{pf.prop.Gammaw.packed.1}
+is proven, and with it Proposition~\ref{prop.Gammaw.packed}.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop.Gammaw.qsym}.]
+Proposition~\ref{prop.Gammaw.qsym} follows immediately from
+Proposition~\ref{prop.Gammaw.packed}.
+\end{proof}
+
+We shall now describe the coproduct of $\Gamma\left(\EE, w\right)$,
+essentially giving the proof that is left to the reader in
+\cite[Theorem 2.2]{Mal-Reu-DP}.
+
+\begin{definition}
+Let $\EE = \left(E, <_1, <_2\right)$ be a double poset.
+
+\begin{itemize}
+
+\item[(a)]
+Then, $\Adm \EE$ will mean the set of all pairs
+$\left(P, Q\right)$, where $P$ and $Q$ are subsets of $E$ satisfying
+$P \cap Q = \varnothing$ and $P \cup Q = E$ and having the property
+that no $p \in P$ and $q \in Q$ satisfy $q <_1 p$. These pairs
+$\left(P, Q\right)$ are
+called the \textit{admissible partitions} of $\EE$. (In the
+terminology of \cite{Mal-Reu-DP}, they are the
+\textit{decompositions} of $\left(E, <_1\right)$.)
+
+\item[(b)] For
+any subset $S$ of $E$, we let $\EE\mid_S$ denote the double poset
+$\left(S, <_1, <_2\right)$, where $<_1$ and $<_2$ (by abuse of
+notation) denote the restrictions of the relations $<_1$ and $<_2$
+to $S$.
+
+\end{itemize}
+\end{definition}
+
+\begin{proposition}
+\label{prop.Gammaw.coprod}
+Let $\EE = \left(E, <_1, <_2\right)$ be a double poset. Let
+$w : E \to \left\{1, 2, 3, \ldots\right\}$ be a map.
+Then,
+\begin{equation}
+\label{eq.prop.Gammaw.coprod}
+\Delta\left(\Gamma\left(\EE, w\right)\right)
+= \sum_{\left(P, Q\right) \in \Adm \EE}
+\Gamma\left(\EE\mid_P, w\mid_P\right)
+\otimes \Gamma\left(\EE\mid_Q, w\mid_Q\right) .
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Proof of Proposition~\ref{prop.Gammaw.coprod}.]
+Whenever
+$\alpha = \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$
+is a composition and $k \in \left\{0, 1, \ldots, \ell\right\}$,
+we introduce the notation
+$\alpha\left[:k\right]$ for the composition
+$\left(\alpha_1, \alpha_2, \ldots, \alpha_k\right)$, and the
+notation $\alpha\left[k:\right]$ for the composition
+$\left(\alpha_{k+1}, \alpha_{k+2}, \ldots, \alpha_\ell\right)$.
+Now, the formula \eqref{eq.coproduct.M} can be rewritten as
+follows:
+\begin{align}
+\label{pf.prop.Gammaw.coprod.DeltaM}
+\Delta \left( M_\alpha \right)
+&= \sum_{k=0}^{\ell} M_{\alpha\left[:k\right]}
+\otimes M_{\alpha\left[k:\right]} \\
+& \qquad \text{ for every } \ell \in \NN \text{ and every composition } \alpha
+\text{ with } \ell \text{ entries.} \nonumber
+\end{align}
+
+Now, applying $\Delta$ to the equality
+\eqref{eq.prop.Gammaw.packed} yields
+\begin{align}
+\Delta\left(\Gamma\left(\EE , w\right)\right)
+&= \sum_{\varphi \text{ is a packed } \EE\text{-partition}}
+\underbrace{\Delta\left(M_{\ev_w \varphi}\right)}_{
+  \substack{ = \sum_{k=0}^{\left|\varphi\left(E\right)\right|}
+  M_{\left(\ev_w \varphi\right)\left[:k\right]} \otimes
+  M_{\left(\ev_w \varphi\right)\left[k:\right]} \\
+  \text{(by \eqref{pf.prop.Gammaw.coprod.DeltaM})} }}
+ \nonumber \\
+&= \sum_{\varphi \text{ is a packed } \EE\text{-partition}}
+\sum_{k=0}^{\left|\varphi\left(E\right)\right|}
+M_{\left(\ev_w \varphi\right)\left[:k\right]} \otimes
+M_{\left(\ev_w \varphi\right)\left[k:\right]} .
+\label{pf.Gammaw.coprod.lhs}
+\end{align}
+
+On the other hand, rewriting each of the tensorands on the right
+hand side of \eqref{eq.prop.Gammaw.coprod} using
+\eqref{eq.prop.Gammaw.packed}, we obtain
+\begin{align*}
+%\label{pf.Gammaw.coprod.rhs}
+& \sum_{\left(P, Q\right) \in \Adm \EE}
+\Gamma\left(\EE\mid_P, w\mid_P\right)
+\otimes \Gamma\left(\EE\mid_Q, w\mid_Q\right) \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(\sum_{\varphi \text{ is a packed } \EE\mid_P\text{-partition}}
+M_{\ev_{w\mid_P} \varphi}\right)
+\otimes
+\left(\sum_{\varphi \text{ is a packed } \EE\mid_Q\text{-partition}}
+M_{\ev_{w\mid_Q} \varphi}\right) \\
+& = \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(\sum_{\sigma \text{ is a packed } \EE\mid_P\text{-partition}}
+M_{\ev_{w\mid_P} \sigma}\right)
+\otimes
+\left(\sum_{\tau \text{ is a packed } \EE\mid_Q\text{-partition}}
+M_{\ev_{w\mid_Q} \tau}\right) \\
+& = \sum_{\left(P, Q\right) \in \Adm \EE}
+\sum_{\sigma \text{ is a packed } \EE\mid_P\text{-partition}}
+\sum_{\tau \text{ is a packed } \EE\mid_Q\text{-partition}}
+M_{\ev_{w\mid_P} \sigma}
+\otimes
+M_{\ev_{w\mid_Q} \tau} .
+\end{align*}
+We need to prove that the right hand sides of this equality and of
+\eqref{pf.Gammaw.coprod.lhs} are equal (because then, it will follow
+that so are the left hand sides, and thus
+Proposition~\ref{prop.Gammaw.coprod} will be proven). For this, it
+is clearly enough to exhibit a bijection between
+\begin{itemize}
+\item the pairs
+$\left(\varphi, k\right)$ consisting of a packed $\EE$-partition
+$\varphi$ and a
+$k \in \left\{0, 1, \ldots, \left|\varphi\left(E\right)\right|
+\right\}$
+\end{itemize}
+and
+\begin{itemize}
+\item the triples $\left(\left(P, Q\right), \sigma, \tau
+\right)$ consisting of a $\left(P, Q\right) \in \Adm \EE$, a packed
+$\EE\mid_P$-partition $\sigma$ and a packed $\EE\mid_Q$-partition
+$\tau$
+\end{itemize}
+which bijection has the property that
+whenever it maps $\left(\varphi, k\right)$ to
+$\left(\left(P, Q\right), \sigma, \tau\right)$,
+we have the equalities
+$\left(\ev_w \varphi\right)\left[:k\right]
+= \ev_{w\mid_P}\sigma$
+and
+$\left(\ev_w \varphi\right)\left[k:\right]
+= \ev_{w\mid_Q}\tau$.
+Such a bijection is easy to construct: Given
+$\left(\varphi, k\right)$, it sets
+$P = \varphi^{-1}\left(\left\{1, 2, \ldots, k\right\}\right)$,
+$Q = \varphi^{-1}\left(\left\{k+1, k+2, \ldots, \left|\varphi\left(E\right)\right|\right\}\right)$,
+$\sigma = \varphi\mid_P$ and
+$\tau = \pack \left(\varphi\mid_Q\right)$\ \ \ \ \footnote{We
+notice that these $P$, $Q$, $\sigma$ and $\tau$ satisfy
+$\sigma\left(e\right) = \varphi\left(e\right)$ for every
+$e \in P$, and $\tau\left(e\right) = \varphi\left(e\right) - k$
+for every $e \in Q$.}. Conversely, given
+$\left(\left(P, Q\right), \sigma, \tau\right)$,
+the inverse bijection
+sets $k = \left|\sigma\left(P\right)\right|$ and constructs
+$\varphi$ as the map $E \to \left\{1, 2, 3, \ldots\right\}$
+which sends every $e \in E$ to
+$\begin{cases} \sigma\left(e\right), &\mbox{if } e \in P; \\
+\tau\left(e\right) + k, &\mbox{if } e \in Q \end{cases}$.
+Proving that this alleged bijection and its alleged inverse
+bijection are well-defined and actually mutually inverse is
+straightforward and left to the reader\footnote{The only
+part of the argument that is a bit trickier is proving the
+well-definedness of the inverse bijection: We need to show
+that if $\left(\left(P, Q\right), \sigma, \tau
+\right)$ is a triple consisting of a
+$\left(P, Q\right) \in \Adm \EE$, a packed
+$\EE\mid_P$-partition $\sigma$ and a packed $\EE\mid_Q$-partition
+$\tau$, and if we set $k = \left|\sigma\left(P\right)\right|$,
+then the map $\varphi : E \to \left\{1, 2, 3, \ldots\right\}$
+which sends every $e \in E$ to
+$\begin{cases} \sigma\left(e\right), &\mbox{if } e \in P; \\
+\tau\left(e\right) + k, &\mbox{if } e \in Q \end{cases}$
+is actually a packed $\EE$-partition.
+
+Indeed, it is clear that this map $\varphi$ is packed. It remains
+to show that it is an $\EE$-partition. To do so, we must prove
+the following two claims:
+
+\textit{Claim 1:} Every $e \in E$ and $f \in E$ satisfying
+$e <_1 f$ satisfy
+$\varphi\left(e\right) \leq \varphi\left(f\right)$.
+
+\textit{Claim 2:} Every $e \in E$ and $f \in E$ satisfying
+$e <_1 f$ and $f <_2 e$ satisfy
+$\varphi\left(e\right) < \varphi\left(f\right)$.
+
+We shall only prove Claim 1 (as the proof of Claim 2 is
+similar). So let $e \in E$ and $f \in E$ be such that
+$e <_1 f$. We need to show that
+$\varphi\left(e\right) \leq \varphi\left(f\right)$.
+We are in one of the following four cases:
+
+\textit{Case 1:} We have $e \in P$ and $f \in P$.
+
+\textit{Case 2:} We have $e \in P$ and $f \in Q$.
+
+\textit{Case 3:} We have $e \in Q$ and $f \in P$.
+
+\textit{Case 4:} We have $e \in Q$ and $f \in Q$.
+
+In Case 1, our claim
+$\varphi\left(e\right) \leq \varphi\left(f\right)$ follows
+from the assumption that $\sigma$ is an
+$\EE\mid_P$-partition (because in Case 1,
+we have $\varphi\left(e\right) = \sigma\left(e\right)$
+and $\varphi\left(f\right) = \sigma\left(f\right)$).
+In Case 4, it follows from the
+assumption that $\tau$ is an $\EE\mid_Q$-partition
+(since in Case 4, we have
+$\varphi\left(e\right) = \tau\left(e\right) + k$ and
+$\varphi\left(f\right) = \tau\left(f\right) + k$). In
+Case 2, it clearly holds (indeed,
+if $e \in P$, then the definition of $\varphi$ yields
+$\varphi\left(e\right) = \sigma\left(e\right) \leq k$,
+and if $f \in Q$, then
+the definition of $\varphi$ yields
+$\varphi\left(f\right) = \tau\left(f\right) + k > k$;
+therefore, in Case 2, we have
+$\varphi\left(e\right) \leq k < \varphi\left(f\right)$).
+Finally, Case 3 is impossible (because having $e \in Q$
+and $f \in P$ and $e <_1 f$ would contradict
+$\left(P, Q\right) \in \Adm \EE$). Thus, we have proven the
+claim in each of the four cases, and consequently Claim 1 is
+proven. As we have said above, Claim 2 is proven similarly.}.
+\end{proof}
+
+We note in passing that there is also a rule for multiplying
+quasisymmetric functions of the form $\Gamma\left(\EE, w\right)$.
+Namely, if $\EE$ and $\FF$ are two double posets and $u$ and $v$
+are corresponding maps, then $\Gamma\left(\EE, u\right)
+\Gamma\left(\FF, v\right) = \Gamma\left(\EE \FF, w\right)$ for a
+map $w$ which is defined to be $u$ on the subset $\EE$ of
+$\EE \FF$, and $v$ on the subset $\FF$ of $\EE \FF$. Here, $\EE \FF$
+is a double poset defined as in \cite[\S 2.1]{Mal-Reu-DP}, and we
+refer to the forthcoming paper for the details of this simple fact.
+Combined with Proposition~\ref{prop.Gammaw.qsym}, this fact gives
+a combinatorial proof for the fact that $\QSym$ is a $\kk$-algebra,
+as well as for some standard formulas for multiplications of
+quasisymmetric functions; similarly,
+Proposition~\ref{prop.Gammaw.coprod} can be used to derive the
+well-known formulas for $\Delta M_\alpha$, $\Delta L_\alpha$,
+$\Delta s_{\lambda / \mu}$ etc.
+
+\section{Proof of Theorem~\ref{thm.antipode.Gammaw}}
+\label{sect.proof}
+
+Before we come to the proof of Theorem~\ref{thm.antipode.Gammaw},
+let us state a simple lemma:
+
+\begin{lemma}
+\label{lem.admissible.cover}
+Let $\EE = \left(E, <_1, <_2\right)$ be a double poset.
+Let $P$ and $Q$ be subsets of $E$ such that
+$P \cap Q = \varnothing$ and $P \cup Q = E$.
+Assume that there exist no $p \in P$ and $q \in Q$ such that
+$q$ is $<_1$-covered by $p$. Then, $\left(P, Q\right) \in
+\Adm \EE$.
+\end{lemma}
+
+\begin{proof}[Proof of Lemma~\ref{lem.admissible.cover}.]
+For any $a \in E$ and $b \in E$, we let $\left[a, b\right]$
+denote the subset \newline
+$\left\{e \in E \mid a <_1 e <_1 b\right\}$ of $E$. It is
+clear that if $a$, $b$ and $c$ are three elements of $E$
+satisfying $a <_1 c <_1 b$, then
+both $\left[a, c\right]$ and $\left[c, b\right]$ are proper
+subsets of $\left[a, b\right]$, and therefore
+\begin{equation}
+\text{both numbers }
+\left|\left[a, c\right]\right| \text{ and }
+\left|\left[c, b\right]\right| \text{ are smaller than }
+\left|\left[a, b\right]\right|.
+\label{pf.lem.admissible.cover.1}
+\end{equation}
+
+A pair $\left(p, q\right) \in P \times Q$ is said to be a
+\textit{malposition} if it satisfies $q <_1 p$. Now, let us
+assume (for the sake of contradiction) that there exists a
+malposition. Fix a malposition $\left(u, v\right)$ for which the
+value $\left|\left[u, v\right]\right|$ is minimum. Thus,
+$u \in P$, $v \in Q$ and $v <_1 u$, but $v$ is not
+$<_1$-covered by $u$ (since there exist no $p \in P$ and $q \in Q$
+such that $q$ is $<_1$-covered by $p$). Hence, there exists a
+$w \in E$ such that $v <_1 w <_1 u$ (since $v <_1 u$). Consider
+this $w$. Applying \eqref{pf.lem.admissible.cover.1} to $a = v$,
+$c = w$ and $b = u$, we see that both numbers
+$\left|\left[u, w\right]\right|$ and
+$\left|\left[w, v\right]\right|$ are smaller than
+$\left|\left[u, v\right]\right|$, and therefore neither
+$\left(u, w\right)$ nor $\left(w, v\right)$ is a malposition
+(since we picked $\left(u, v\right)$ to be a malposition with
+minimum $\left|\left[u, v\right]\right|$). But
+$w \in E = P \cup Q$, so that either $w \in P$ or $w \in Q$.
+If $w \in P$, then $\left(w, v\right)$ is a malposition;
+if $w \in Q$, then $\left(u, w\right)$ is a malposition. In
+either case, we obtain a contradiction to the fact that
+neither $\left(u, w\right)$ nor $\left(w, v\right)$ is a malposition.
+This contradiction shows that our assumption was wrong.
+Hence, there exists no malposition. Consequently,
+$\left(P, Q\right) \in \Adm \EE$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm.antipode.Gammaw}.]
+We shall
+prove Theorem~\ref{thm.antipode.Gammaw} by induction over
+$\left|E\right|$. The induction base ($\left|E\right|=0$) is left to
+the reader; we start with the induction step. Consider a
+tertispecial double
+poset $\EE = \left(E, <_1, <_2\right)$ with $\left|E\right| > 0$ and
+a map $w : E \to \left\{1, 2, 3, \ldots\right\}$, and
+assume that Theorem~\ref{thm.antipode.Gammaw} is proven for all
+tertispecial double posets of smaller size.
+
+The upper commutative pentagon of \eqref{eq.antipode} shows that
+$u \circ \varepsilon = m \circ \left(S \otimes \id\right) \circ
+\Delta$. Applying both sides of this equality to
+$\Gamma\left(\EE, w\right)$, we obtain
+$\left(u \circ \varepsilon\right)
+\left(\Gamma\left(\EE, w\right)\right)
+= \left(m \circ \left(S \otimes \id\right) \circ
+\Delta\right) \left(\Gamma\left(\EE, w\right)\right)$.
+Since
+$\left(u \circ \varepsilon\right)
+\left(\Gamma\left(\EE, w\right)\right) = 0$ (because
+$\Gamma\left(\EE, w\right)$ is a homogeneous power series of
+positive degree, and thus is annihilated by $\varepsilon$), this
+becomes
+\begin{align}
+0
+&= \left(m \circ \left(S \otimes \id\right) \circ
+\Delta\right) \left(\Gamma\left(\EE, w\right)\right)
+= m \left(\left(S \otimes \id\right) \left(
+\Delta \left(\Gamma\left(\EE, w\right)\right)\right)\right)
+\nonumber\\
+&= m \left(\left(S \otimes \id\right) \left(
+\sum_{\left(P, Q\right) \in \Adm \EE}
+\Gamma\left(\EE\mid_P, w\mid_P\right)
+\otimes \Gamma\left(\EE\mid_Q, w\mid_Q\right) \right) \right)
+\qquad \left(\text{by \eqref{eq.prop.Gammaw.coprod}}\right)
+\nonumber\\
+&= m \left(\sum_{\left(P, Q\right) \in \Adm \EE}
+S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+\otimes
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)\right)
+\nonumber\\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\nonumber \\
+&= S \left(\Gamma\left(\EE\mid_E, w\mid_E\right)\right)
+\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
++ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\label{pf.thm.antipode.Gammaw.Req.1}
+\end{align}
+(since the only pair $\left(P, Q\right) \in \Adm \EE$ satisfying
+$\left|P\right| = \left|E\right|$ is $\left(E, \varnothing\right)$,
+whereas all other pairs $\left(P, Q\right) \in \Adm \EE$
+satisfy $\left|P\right| < \left|E\right|$).
+
+But whenever $\left(P, Q\right) \in \Adm \EE$ is such that
+$\left|P\right| < \left|E\right|$, the double poset
+$\EE\mid_P = \left(P, <_1, <_2\right)$ is tertispecial
+(because if $a$ and $b$ are two
+elements of $P$ such that $a$ is $<_1$-covered by $b$ with
+respect to $P$, then $a$ is also $<_1$-covered by $b$ with
+respect to $E$\ \ \ \ \footnote{Indeed, $a <_1 b$, and there
+exists no $c \in E$ satisfying $a <_1 c <_1 b$ (because any
+such $c$ would have to lie in $P$ -- because
+$\left(P, Q\right) \in \Adm \EE$ rules out the possibility that
+$c \in Q$ -- and then $a <_1 c <_1 b$ contradicts the fact that
+$a$ is $<_1$-covered by $b$ with respect to $P$).}), and
+therefore we have
+$S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+= S\left(\Gamma\left(\left(P, <_1, <_2\right), w\mid_P\right)\right)
+= \left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)$ (by the
+induction hypothesis). Hence,
+\eqref{pf.thm.antipode.Gammaw.Req.1} rewrites as
+\begin{align}
+0
+&= S \left(\Gamma\left(\underbrace{\EE\mid_E}_{=\EE},
+           \underbrace{w\mid_E}_{=w}\right)\right)
+\underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
+           }_{
+           =\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
+           =1}
+   \nonumber \\
+& \qquad + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\nonumber \\
+& = S\left(\Gamma\left(\EE, w\right)\right)
++ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
+\nonumber
+\end{align}
+Thus,
+\begin{equation}
+S\left(\Gamma\left(\EE, w\right)\right)
+= - \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
+\label{pf.thm.antipode.Gammaw.Seq}
+\end{equation}
+We shall now prove that
+\begin{equation}
+0 = \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
+\label{pf.thm.antipode.Gammaw.Req}
+\end{equation}
+But first, let us explain how this will complete our proof. In fact,
+the only pair $\left(P, Q\right) \in \Adm \EE$ satisfying
+$\left|P\right| = \left|E\right|$ is $\left(E, \varnothing\right)$,
+whereas all other pairs $\left(P, Q\right) \in \Adm \EE$
+satisfy $\left|P\right| < \left|E\right|$. Hence,
+if \eqref{pf.thm.antipode.Gammaw.Req} is proven, then we can
+conclude that
+\begin{align*}
+0 &= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) \\
+&= \left(-1\right)^{\left|E\right|}
+\Gamma\left(\left(E, >_1, <_2\right), \underbrace{w\mid_E}_{=w}\right)
+\underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
+           }_{
+           =\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
+           =1}
+\\
+&\qquad + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\\
+&= \left(-1\right)^{\left|E\right|} \Gamma\left(\left(E, >_1, <_2\right), w\right) \\
+& \qquad
++ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) ,
+\end{align*}
+so that
+\begin{align*}
+\left(-1\right)^{\left|E\right|} \Gamma\left(\left(E, >_1, <_2\right), w\right)
+&= - \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) \\
+&= S\left(\Gamma\left(\underbrace{\EE}_{=\left(E, <_1, <_2\right)}, w\right)\right)
+\qquad \left(\text{by \eqref{pf.thm.antipode.Gammaw.Seq}}\right) \\
+&= S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right)\right) ,
+\end{align*}
+and thus
+$S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
+= \left(-1\right)^{\left|E\right|}
+\Gamma\left(\left(E, >_1, <_2\right), w\right)$, which completes the
+induction step and thus the proof of Theorem~\ref{thm.antipode.Gammaw}.
+It thus remains to prove \eqref{pf.thm.antipode.Gammaw.Req}.
+
+We have
+\begin{align*}
+& \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\underbrace{\EE\mid_Q}_{=\left(Q, <_1, <_2\right)}, w\mid_Q\right) \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right) \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\left(\sum_{\pi \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\xx_{\pi, w\mid_P}\right)
+\left(\sum_{\pi \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\pi, w\mid_Q}\right) \\
+& \qquad \left(\text{by the definitions of }
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\text{ and }
+\Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right)
+\right) \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\left(\sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\xx_{\sigma, w\mid_P}\right)
+\left(\sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\tau, w\mid_Q}\right) \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q} \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\sum_{\substack{\left(\sigma, \tau\right); \\
+                \sigma : P \to \left\{1, 2, 3, \ldots\right\}; \\
+                \tau : Q \to \left\{1, 2, 3, \ldots\right\}; \\
+                \sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q} \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\underbrace{\xx_{\pi\mid_P, w\mid_P} \xx_{\pi\mid_Q, w\mid_Q}}_{=\xx_{\pi, w}} \\
+& \qquad \left(
+ \begin{array}{c}
+ \text{here, we have substituted } \left(\pi\mid_P, \pi\mid_Q\right)
+ \text{ for } \left(\sigma, \tau\right) \text{ in the inner sum,} \\
+ \text{ since every pair } \left(\sigma, \tau\right)
+ \text{ consisting of a map }
+ \sigma : P \to \left\{1, 2, 3, \ldots\right\} \\
+ \text{ and a map } \tau : Q \to \left\{1, 2, 3, \ldots\right\} \\
+ \text{ can be written as } \left(\pi\mid_P, \pi\mid_Q\right)
+ \text{ for a unique }
+ \pi : E \to \left\{1, 2, 3, \ldots\right\} \\
+ \text{(namely, for the }
+ \sigma : E \to \left\{1, 2, 3, \ldots\right\}
+ \text{ that is defined to send every } \\
+ e \in P \text{ to }
+ \sigma\left(e\right) \text{ and to send every } e \in Q
+ \text{ to } \tau\left(e\right) \text{)}
+ \end{array}
+ \right) \\
+& = \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\pi, w} \\
+& = \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}}
+\left(
+\sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\left(-1\right)^{\left|P\right|}
+\right)
+\xx_{\pi, w} .
+\end{align*}
+%\footnote{Here, for the third-to-last equality sign, we have
+%replaced the indices $\sigma$ and $\tau$ by a single index
+%$\pi$, which is the map $E \to \left\{1, 2, 3, \ldots\right\}$ which
+%is defined to send every $e \in P$ to $\sigma\left(e\right)$ and to
+%send every $e \in Q$ to $\tau\left(e\right)$.}.
+In order to prove
+that this sum is $0$ (and thus to prove
+\eqref{pf.thm.antipode.Gammaw.Req} and finish our proof of
+Theorem~\ref{thm.antipode.Gammaw}), it therefore is enough to show
+that for every map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$, we
+have
+\begin{equation}
+\sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\left(-1\right)^{\left|P\right|}
+= 0 .
+\label{pf.thm.antipode.Gammaw.signrev}
+\end{equation}
+
+Hence, let us fix a map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$.
+Our goal is now to prove \eqref{pf.thm.antipode.Gammaw.signrev}.
+To do so, we denote by $Z$ the set of all
+$\left(P, Q\right) \in \Adm \EE$ such that
+$\pi\mid_P$ is a $\left(P, >_1, <_2\right)$-partition and
+$\pi\mid_Q$ is a $\left(Q, <_1, <_2\right)$-partition. We are going
+to define an involution $T : Z \to Z$ of the set $Z$ having the
+property that, for any $\left(P, Q\right) \in Z$, if we write
+$T\left(\left(P, Q\right)\right)$ in the form
+$\left(P', Q'\right)$, then
+$\left(-1\right)^{\left|P'\right|}
+= - \left(-1\right)^{\left|P\right|}$. Once such an involution $T$
+is found, it will be clear that it matches the addends on the left
+hand side of \eqref{pf.thm.antipode.Gammaw.signrev} into pairs of
+mutually cancelling addends\footnote{In fact, the
+$\left(-1\right)^{\left|P'\right|}
+= - \left(-1\right)^{\left|P\right|}$ condition makes it clear that
+$T$ has no fixed points. Therefore, to each addend on the left
+hand side of \eqref{pf.thm.antipode.Gammaw.signrev} corresponds an
+addend with opposite sign -- namely, the addend for
+$T\left(\left(P, Q\right)\right)$, if the former addend was the
+addend for $\left(P, Q\right)$.}), and so
+\eqref{pf.thm.antipode.Gammaw.signrev}
+will follow and we will be done. It thus remains to find $T$.
+
+The definition of $T$ is simple (although it will take us a while to prove
+that it is well-defined): Let $F$ be the subset of $E$ consisting of those
+$e\in E$ which have minimum $\pi\left(  e\right)  $. Then, $F$ is a nonempty
+subposet of the poset $\left(  E,<_{2}\right)  $, and hence has a minimal
+element $f$ (that is, an element $f$ such that no $g\in F$ satisfies $g<_{2}
+f$). Fix such an $f$. Now, the map $T$ sends a $\left(  P,Q\right)  \in Z$ to
+$
+\begin{cases}
+\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)  , &
+\text{if }f\notin P;\\
+\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)  , &
+\text{if }f\in P
+\end{cases}
+$.
+
+In order to prove that the map $T$ is well-defined, we need to prove that its
+output values all belong to $Z$. In other words, we need to prove that
+\begin{equation}
+\begin{cases}
+\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)  , &
+\text{if }f\notin P;\\
+\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)  , &
+\text{if }f\in P
+\end{cases}
+\in Z
+\label{pf.thm.antipode.Gammaw.Zwd}
+\end{equation}
+for every $\left(  P,Q\right)  \in Z$.
+
+\textit{Proof of \eqref{pf.thm.antipode.Gammaw.Zwd}:} Fix $\left(  P,Q\right)
+\in Z$. Thus, $\left(  P,Q\right)  $ is an element of
+$\operatorname{Adm} \EE$ with the property that
+$\pi\mid_{P}$ is a $\left(  P,>_{1},<_{2}\right)  $-partition
+and $\pi\mid_{Q}$ is a $\left(  Q,<_{1},<_{2}\right)  $-partition.
+
+From $\left(  P,Q\right)  \in\operatorname{Adm}{ \EE }$, we see that
+$P\cap Q=\varnothing$ and $P\cup Q=E$, and furthermore that
+\begin{equation}
+\text{no }p\in P\text{ and }q\in Q\text{ satisfy }q<_{1}
+p.
+\label{pf.thm.antipode.Gammaw.Zwd.pf.Adm}
+\end{equation}
+
+
+We know that $f$ belongs to the set $F$, which is the subset of $E$ consisting
+of those $e\in E$ which have minimum $\pi\left(  e\right)  $. Thus,
+\begin{equation}
+\pi\left(  f\right)  \leq\pi\left(  h\right)  \qquad\text{for every }h\in
+E.
+\label{pf.thm.antipode.Gammaw.Zwd.pf.min}
+\end{equation}
+
+
+Moreover,
+\begin{equation}
+\pi\left(  f\right)  <\pi\left(  h\right)
+\qquad\text{for every } h\in E \text{ satisfying } h<_{2}f
+\label{pf.thm.antipode.Gammaw.Zwd.pf.min2}
+\end{equation}
+\footnote{\textit{Proof of \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2}:} Let
+$h\in E$ be such that $h<_{2}f$. We must prove
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2}. Indeed, assume the contrary. Thus,
+$\pi\left(  f\right)  \geq\pi\left(  h\right)  $. Combined with
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.min}, this shows that $\pi\left(
+f\right)  =\pi\left(  h\right)  $. Our definition of $F$ shows that $F$ is the
+subset of $E$ consisting of those $e\in E$ satisfying $\pi\left(  e\right)
+=\pi\left(  f\right)  $ (since $f\in F$). Therefore, $h\in F$ (since
+$\pi\left(  h\right)  =\pi\left(  f\right)  $). But $f$ is a minimal element
+of $F$. In other words, no $g\in F$ satisfies $g<_{2}f$. This contradicts the
+fact that $h\in F$ satisfies $h<_{2}f$. This contradiction proves that our
+assumption was wrong, qed.}.
+
+We need to prove \eqref{pf.thm.antipode.Gammaw.Zwd}. We are in one of the
+following two cases:
+
+\textit{Case 1:} We have $f\in P$.
+
+\textit{Case 2:} We have $f\notin P$.
+
+Let us first consider Case 1. In this case, we have $f\in P$.
+
+Recall that $P\cap Q=\varnothing$ and $P\cup Q=E$. From this, we easily obtain
+$\left(  P\setminus\left\{  f\right\}  \right)  \cap\left(  Q\cup\left\{
+f\right\}  \right)  =\varnothing$ and $\left(  P\setminus\left\{  f\right\}
+\right)  \cup\left(  Q\cup\left\{  f\right\}  \right)  =E$.
+
+Furthermore, there exist no $p\in P\setminus\left\{  f\right\}  $ and $q\in
+Q\cup\left\{  f\right\}  $ such that $q$ is $<_{1}$-covered by
+$p$\ \ \ \ \footnote{\textit{Proof.}
+Assume the contrary. Thus, there exist $p\in
+P\setminus\left\{  f\right\}  $ and $q\in Q\cup\left\{  f\right\}  $ such that
+$q$ is $<_{1}$-covered by $p$. Consider such $p$ and $q$.
+\par
+We know that $q$ is $<_{1}$-covered by $p$, and thus we have $q<_{1}p$. Also,
+$p\in P\setminus\left\{  f\right\}  \subseteq P$. Hence, if we had $q\in Q$,
+then we would obtain a contradiction to
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm}. Hence, we cannot have $q\in Q$.
+Therefore, $q=f$ (since $q\in Q\cup\left\{  f\right\}  $ but not $q\in Q$).
+Hence, $f=q<_{1}p$, so that $p>_{1}f$. Therefore, $\pi\left(  p\right)
+\leq\pi\left(  f\right)  $ (since $\pi\mid_{P}$ is a
+$\left(  P,>_{1},<_{2}\right)  $-partition, and since both $f$
+and $p$ belong to $P$).
+\par
+Now, recall that $q$ is $<_{1}$-covered by $p$. Hence, $q$ and $p$ are
+$<_{2}$-comparable (since $E$ is tertispecial).
+In other words, $f$ and $p$ are
+$<_{2}$-comparable (since $q=f$). In other words, either $f<_{2}p$ or $f=p$ or
+$p<_{2}f$. But $p<_{2}f$ cannot hold (because if we had $p<_{2}f$, then
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2} (applied to $h=p$) would lead to
+$\pi\left(  f\right)  <\pi\left(  p\right)  $, which would contradict
+$\pi\left(  p\right)  \leq\pi\left(  f\right)  $), and $f=p$ cannot hold
+either (since $f<_{1}p$). Thus, we must have $f<_{2}p$.
+\par
+Now, $\pi\mid_{P}$ is a $\left(  P,>_{1},<_{2}\right)  $-partition. Hence,
+$\pi\left(  p\right)  <\pi\left(  f\right)  $ (since $p>_{1}f$ and $f<_{2}p$,
+and since $p$ and $f$ both lie in $P$).
+But \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min} (applied to $h=p$) shows that
+$\pi\left(  f\right)  \leq\pi\left(  p\right)  $. Hence, $\pi\left(  p\right)
+<\pi\left(  f\right)  \leq\pi\left(  p\right)  $, a contradiction. Thus, our
+assumption was wrong, qed.}. Hence, Lemma \ref{lem.admissible.cover} (applied
+to $P\setminus\left\{  f\right\}  $ and $Q\cup\left\{  f\right\}  $ instead of
+$P$ and $Q$) shows that $\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{
+f\right\}  \right)  \in\operatorname{Adm}{ \EE }$.
+
+Furthermore, $\pi\mid_{P}$ is a $\left(  P,>_{1},<_{2}\right)  $-partition,
+and therefore $\pi\mid_{P\setminus\left\{  f\right\}  }$ is a $\left(
+P\setminus\left\{  f\right\}  ,>_{1},<_{2}\right)  $-partition (since
+$P\setminus\left\{  f\right\}  \subseteq P$).
+
+Furthermore, $\pi\mid_{Q\cup\left\{  f\right\}  }$ is a $\left(  Q\cup\left\{
+f\right\}  ,<_{1},<_{2}\right)  $-partition\footnote{\textit{Proof.} In order
+to prove this, we need to verify the following two claims:
+\par
+\textit{Claim 1:} Every $a\in Q\cup\left\{  f\right\}  $ and $b\in
+Q\cup\left\{  f\right\}  $ satisfying $a<_{1}b$ satisfy $\pi\left(  a\right)
+\leq\pi\left(  b\right)  $;
+\par
+\textit{Claim 2:} Every $a\in Q\cup\left\{  f\right\}  $ and $b\in
+Q\cup\left\{  f\right\}  $ satisfying $a<_{1}b$ and $b<_{2}a$ satisfy
+$\pi\left(  a\right)  <\pi\left(  b\right)  $.
+\par
+\textit{Proof of Claim 1:} Let $a\in Q\cup\left\{  f\right\}  $ and $b\in
+Q\cup\left\{  f\right\}  $ be such that $a<_{1}b$. We need to prove that
+$\pi\left(  a\right)  \leq\pi\left(  b\right)  $. If $a=f$, then this follows
+immediately from \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min} (applied to $h=b$).
+Hence, we WLOG assume that $a\neq f$. Thus, $a\in Q$ (since $a\in
+Q\cup\left\{  f\right\}  $). Now, if $b\in P$, then $a<_{1}b$ contradicts
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm} (applied to $p=b$ and $q=a$). Hence,
+we cannot have $b\in P$. Therefore, $b\in E\setminus P=Q$ (since $P\cap
+Q=\varnothing$ and $P\cup Q=E$). Thus, $\pi\left(  a\right)  \leq\pi\left(
+b\right)  $ follows immediately from the fact that $\pi\mid_{Q}$ is a $\left(
+Q,<_{1},<_{2}\right)  $-partition (since $a \in Q$ and $b \in Q$).
+This proves Claim 1.
+\par
+\textit{Proof of Claim 2:} Let $a\in Q\cup\left\{  f\right\}  $ and $b\in
+Q\cup\left\{  f\right\}  $ be such that $a<_{1}b$ and $b<_{2}a$. We need to
+prove that $\pi\left(  a\right)  <\pi\left(  b\right)  $. If $a=f$, then this
+follows immediately from \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2} (applied
+to $h=b$). Hence, we WLOG assume that $a\neq f$. Thus, $a\in Q$ (since $a\in
+Q\cup\left\{  f\right\}  $). Now, if $b\in P$, then $a<_{1}b$ contradicts
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm} (applied to $p=b$ and $q=a$). Hence,
+we cannot have $b\in P$. Therefore, $b\in E\setminus P=Q$ (since $P\cap
+Q=\varnothing$ and $P\cup Q=E$). Thus, $\pi\left(  a\right)  <\pi\left(
+b\right)  $ follows immediately from the fact that $\pi\mid_{Q}$ is a $\left(
+Q,<_{1},<_{2}\right)  $-partition (since $a \in Q$ and $b \in Q$).
+This proves Claim 2.
+\par
+Now, both Claim 1 and Claim 2 are proven, and we are done.}.
+
+Altogether, we now know that $\left(  P\setminus\left\{  f\right\}
+,Q\cup\left\{  f\right\}  \right)  \in\operatorname{Adm}{ \EE }$, that
+$\pi\mid_{P\setminus\left\{  f\right\}  }$ is a $\left(  P\setminus\left\{
+f\right\}  ,>_{1},<_{2}\right)  $-partition, and that $\pi\mid_{Q\cup\left\{
+f\right\}  }$ is a $\left(  Q\cup\left\{  f\right\}  ,<_{1},<_{2}\right)
+$-partition. In other words, $\left(  P\setminus\left\{  f\right\}
+,Q\cup\left\{  f\right\}  \right)  \in Z$ (by the definition of $Z$). Thus,
+\begin{align*}
+\begin{cases}
+\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)  , &
+\text{if }f\notin P;\\
+\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)  , &
+\text{if }f\in P
+\end{cases}
+& =\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\in P\right)  \\
+& \in Z.
+\end{align*}
+Hence, \eqref{pf.thm.antipode.Gammaw.Zwd} is proven in Case 1.
+
+Let us next consider Case 2. In this case, we have $f\notin P$.
+
+Recall that $P\cap Q=\varnothing$ and $P\cup Q=E$. From this, we easily obtain
+$\left(  P\cup\left\{  f\right\}  \right)  \cap\left(  Q\setminus\left\{
+f\right\}  \right)  =\varnothing$ and $\left(  P\cup\left\{  f\right\}
+\right)  \cup\left(  Q\setminus\left\{  f\right\}  \right)  =E$.
+
+Furthermore, there exist no $p\in P\cup\left\{  f\right\}  $ and $q\in
+Q\setminus\left\{  f\right\}  $ such that $q$ is $<_{1}$-covered by
+$p$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus, there exist
+$p\in P\cup\left\{  f\right\}  $ and $q\in Q\setminus\left\{  f\right\}  $
+such that $q$ is $<_{1}$-covered by $p$. Consider such $p$ and $q$.
+\par
+We have $f\notin P$ and thus $f\in E\setminus P=Q$ (since $P\cap
+Q=\varnothing$ and $P\cup Q=E$).
+\par
+We know that $q$ is $<_{1}$-covered by $p$, and thus we have $q<_{1}p$. Also,
+$q\in Q\setminus\left\{  f\right\}  \subseteq Q$. Hence, if we had $p\in P$,
+then we would obtain a contradiction to
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm}. Hence, we cannot have $p\in P$.
+Therefore, $p=f$ (since $p\in P\cup\left\{  f\right\}  $ but not $p\in P$).
+Hence, $q<_{1}p=f$. Therefore, $\pi\left(  q\right)  \leq\pi\left(  f\right)
+$ (since $q\in Q$ and $f\in Q$, and since $\pi\mid_{Q}$ is a $\left(
+Q,<_{1},<_{2}\right)  $-partition). Thus, we cannot have $q<_{2}f$ (because if
+we had $q<_{2}f$, then \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2} (applied to
+$h=q$) would show that $\pi\left(  f\right)  <\pi\left(  q\right)  $, which
+would contradict $\pi\left(  q\right)  \leq\pi\left(  f\right)  $).
+\par
+Now, recall that $q$ is $<_{1}$-covered by $p$. Hence, $q$ and $p$ are
+$<_{2}$-comparable (since $E$ is tertispecial).
+In other words, $q$ and $f$ are
+$<_{2}$-comparable (since $p=f$). In other words, either $q<_{2}f$ or $q=f$ or
+$f<_{2}q$. But we cannot have $q<_{2}f$ (as we have just shown), and we cannot
+have $q=f$ either (since $q<_{1}f$). Thus, we must have $f<_{2}q$.
+\par
+From $q<_{1}f$ and $f<_{2}q$, we conclude that $\pi\left(  q\right)
+<\pi\left(  f\right)  $ (since $\pi\mid_{Q}$ is a
+$\left(  Q,<_{1},<_{2}\right)  $-partition, and since
+$q\in Q$ and $f\in Q$). But
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.min} (applied to $h=q$) shows that
+$\pi\left(  f\right)  \leq\pi\left(  q\right)  $. Hence, $\pi\left(  q\right)
+<\pi\left(  f\right)  \leq\pi\left(  q\right)  $, a contradiction. Thus, our
+assumption was wrong, qed.}. Hence, Lemma \ref{lem.admissible.cover} (applied
+to $P\cup\left\{  f\right\}  $ and $Q\setminus\left\{  f\right\}  $ instead of
+$P$ and $Q$) shows that $\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{
+f\right\}  \right)  \in\operatorname{Adm}{ \EE }$.
+
+Furthermore, $\pi\mid_{Q}$ is a $\left(  Q,<_{1},<_{2}\right)  $-partition,
+and therefore $\pi\mid_{Q\setminus\left\{  f\right\}  }$ is a $\left(
+Q\setminus\left\{  f\right\}  ,<_{1},<_{2}\right)  $-partition (since
+$Q\setminus\left\{  f\right\}  \subseteq Q$).
+
+Furthermore, $\pi\mid_{P\cup\left\{  f\right\}  }$ is a $\left(  P\cup\left\{
+f\right\}  ,>_{1},<_{2}\right)  $-partition\footnote{\textit{Proof.} In order
+to prove this, we need to verify the following two claims:
+\par
+\textit{Claim 1:} Every $a\in P\cup\left\{  f\right\}  $ and $b\in
+P\cup\left\{  f\right\}  $ satisfying $a>_{1}b$ satisfy $\pi\left(  a\right)
+\leq\pi\left(  b\right)  $;
+\par
+\textit{Claim 2:} Every $a\in P\cup\left\{  f\right\}  $ and $b\in
+P\cup\left\{  f\right\}  $ satisfying $a>_{1}b$ and $b<_{2}a$ satisfy
+$\pi\left(  a\right)  <\pi\left(  b\right)  $.
+\par
+\textit{Proof of Claim 1:} Let $a\in P\cup\left\{  f\right\}  $ and $b\in
+P\cup\left\{  f\right\}  $ be such that $a>_{1}b$. We need to prove that
+$\pi\left(  a\right)  \leq\pi\left(  b\right)  $. If $a=f$, then this follows
+immediately from \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min} (applied to $h=b$).
+Hence, we WLOG assume that $a\neq f$. Thus, $a\in P$ (since $a\in
+P\cup\left\{  f\right\}  $). Now, if $b\in Q$, then $b<_{1}a$ contradicts
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm} (applied to $p=a$ and $q=b$). Hence,
+we cannot have $b\in Q$. Therefore, $b\in E\setminus Q=P$ (since $P\cap
+Q=\varnothing$ and $P\cup Q=E$). Thus, $\pi\left(  a\right)  \leq\pi\left(
+b\right)  $ follows immediately from the fact that $\pi\mid_{P}$ is a $\left(
+P,>_{1},<_{2}\right)  $-partition (since $a \in P$ and $b \in P$).
+This proves Claim 1.
+\par
+\textit{Proof of Claim 2:} Let $a\in P\cup\left\{  f\right\}  $ and $b\in
+P\cup\left\{  f\right\}  $ be such that $a>_{1}b$ and $b<_{2}a$. We need to
+prove that $\pi\left(  a\right)  <\pi\left(  b\right)  $. If $a=f$, then this
+follows immediately from \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2} (applied
+to $h=b$). Hence, we WLOG assume that $a\neq f$. Thus, $a\in P$ (since $a\in
+P\cup\left\{  f\right\}  $). Now, if $b\in Q$, then $b<_{1}a$ contradicts
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm} (applied to $p=a$ and $q=b$). Hence,
+we cannot have $b\in Q$. Therefore, $b\in E\setminus Q=P$ (since $P\cap
+Q=\varnothing$ and $P\cup Q=E$). Thus, $\pi\left(  a\right)  <\pi\left(
+b\right)  $ follows immediately from the fact that $\pi\mid_{P}$ is a $\left(
+P,>_{1},<_{2}\right)  $-partition (since $a \in P$ and $b \in P$).
+This proves Claim 2.
+\par
+Now, both Claim 1 and Claim 2 are proven, and we are done.}.
+
+Altogether, we now know that $\left(  P\cup\left\{  f\right\}  ,Q\setminus
+\left\{  f\right\}  \right)  \in\operatorname{Adm}{ \EE }$, that $\pi
+\mid_{P\cup\left\{  f\right\}  }$ is a $\left(  P\cup\left\{  f\right\}
+,>_{1},<_{2}\right)  $-partition, and that $\pi\mid_{Q\setminus\left\{
+f\right\}  }$ is a $\left(  Q\setminus\left\{  f\right\}  ,<_{1},<_{2}\right)
+$-partition. In other words, $\left(  P\cup\left\{  f\right\}  ,Q\setminus
+\left\{  f\right\}  \right)  \in Z$ (by the definition of $Z$). Thus,
+\begin{align*}
+\begin{cases}
+\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)  , &
+\text{if }f\notin P;\\
+\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)  , &
+\text{if }f\in P
+\end{cases}
+& =\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\notin P\right)  \\
+& \in Z.
+\end{align*}
+Hence, \eqref{pf.thm.antipode.Gammaw.Zwd} is proven in Case 2.
+
+We have now proven \eqref{pf.thm.antipode.Gammaw.Zwd} in both Cases 1 and 2.
+Thus, \eqref{pf.thm.antipode.Gammaw.Zwd} always holds. In other words, the map
+$T$ is well-defined.
+
+What the map $T$ does to a pair $\left(  P,Q\right)  \in Z$ can be described
+as moving the element $f$ from the set where it resides (either $P$ or $Q$) to
+the other set. Clearly, doing this twice gives us the original pair back.
+Hence, the map $T$ is an involution. Furthermore, for any $\left(  P,Q\right)
+\in Z$, if we write $T\left(  \left(  P,Q\right)  \right)  $ in the form
+$\left(  P^{\prime},Q^{\prime}\right)  $, then $\left(  -1\right)
+^{\left\vert P^{\prime}\right\vert }=-\left(  -1\right)  ^{\left\vert
+P\right\vert }$ (because $P^{\prime}=
+\begin{cases}
+P\cup\left\{  f\right\}  , & \text{if }f\notin P;\\
+P\setminus\left\{  f\right\}  , & \text{if }f\in P
+\end{cases}
+$). As we have already explained, this proves
+\eqref{pf.thm.antipode.Gammaw.signrev}. And this, in turn, completes the
+induction step of the proof of Theorem~\ref{thm.antipode.Gammaw}.
+\end{proof}
+
+\section{Proof of Theorem~\ref{thm.antipode.GammawG}}
+\label{sect.proofG}
+
+Before we begin proving Theorem~\ref{thm.antipode.GammawG}, we state a
+criterion for $\EE$-partitions that is less wasteful (in the sense that
+it requires fewer verifications) than the definition:
+
+\begin{lemma}
+\label{lem.Epartition.cover}
+Let $\EE = \left(E, <_1, <_2\right)$ be a tertispecial double poset.
+Let $\phi : E \to \left\{1, 2, 3, \ldots\right\}$ be a map. Assume
+that the following two conditions hold:
+
+\begin{itemize}
+
+\item \textit{Condition 1:} If $e \in E$ and $f \in E$ are such that
+$e$ is $<_1$-covered by $f$, and if we have $e <_2 f$, then
+$\phi\left(e\right) \leq \phi\left(f\right)$.
+
+\item \textit{Condition 2:} If $e \in E$ and $f \in E$ are such that
+$e$ is $<_1$-covered by $f$, and if we have $f <_2 e$, then
+$\phi\left(e\right) < \phi\left(f\right)$.
+
+\end{itemize}
+
+Then, $\phi$ is an $\EE$-partition.
+\end{lemma}
+
+\begin{proof}[Proof of Lemma~\ref{lem.Epartition.cover}.]
+For any $a \in E$ and $b \in E$, we define a subset
+$\left[a, b\right]$ of $E$ as in the proof of
+Lemma~\ref{lem.admissible.cover}.
+
+We need to show that $\phi$ is an $\EE$-partition. In other words,
+we need to prove the following two claims:
+
+\textit{Claim 1:} Every $e \in E$ and $f \in E$ satisfying
+$e <_1 f$ satisfy $\phi\left(e\right) \leq \phi\left(f\right)$.
+
+\textit{Claim 2:} Every $e \in E$ and $f \in E$ satisfying
+$e <_1 f$ and $f <_2 e$ satisfy
+$\phi\left(e\right) < \phi\left(f\right)$.
+
+\textit{Proof of Claim 1:} Assume the contrary. Thus, there
+exists a pair $\left(e, f\right) \in E \times E$ satisfying
+$e <_1 f$ but not $\phi\left(e\right) \leq \phi\left(f\right)$.
+Such a pair will be called a \textit{malrelation}. Fix a
+malrelation $\left(u, v\right)$ for which the value
+$\left|\left[u, v\right]\right|$ is minimum (such a
+$\left(u, v\right)$ exists, since there exists a malrelation).
+Thus, $u \in E$ and $v \in E$ and $u <_1 v$ but not
+$\phi\left(u\right) \leq \phi\left(v\right)$.
+
+If $u$ was $<_1$-covered by $v$, then we would obtain
+$\phi\left(u\right) \leq \phi\left(v\right)$
+\ \ \ \ \footnote{\textit{Proof.} Assume that $u$ is
+$<_1$-covered by $v$. Thus, $u$ and $v$ are $<_2$-comparable
+(since the poset $\EE$ is tertispecial). In other words,
+we have either $u <_2 v$ or $u = v$ or $v <_2 u$. In the
+first of these three cases, we obtain
+$\phi\left(u\right) \leq \phi\left(v\right)$ by applying
+Condition 1 to $e = u$ and $f = v$. In the third of these
+cases, we obtain
+$\phi\left(u\right) < \phi\left(v\right)$ (and thus
+$\phi\left(u\right) \leq \phi\left(v\right)$) 
+by applying Condition 2 to $e = u$ and $f = v$. The second
+of these cases cannot happen because $u <_1 v$. Thus, we
+always have $\phi\left(u\right) \leq \phi\left(v\right)$,
+qed.}, which would
+contradict the assumption that we do not have
+$\phi\left(u\right) \leq \phi\left(v\right)$. Hence, $u$ is not
+$<_1$-covered by $v$. Consequently, there exists a $w \in E$
+such that $u <_1 w <_1 v$ (since $u <_1 v$). Consider this
+$w$. Applying \eqref{pf.lem.admissible.cover.1} to $a = u$,
+$c = w$ and $b = v$, we see that both numbers
+$\left|\left[u, w\right]\right|$ and
+$\left|\left[w, v\right]\right|$ are smaller than
+$\left|\left[u, v\right]\right|$, and therefore neither
+$\left(u, w\right)$ nor $\left(w, v\right)$ is a malrelation
+(since we picked $\left(u, v\right)$ to be a malrelation with
+minimum $\left|\left[u, v\right]\right|$). Therefore, we have
+$\phi\left(u\right) \leq \phi\left(w\right)$ and
+$\phi\left(w\right) \leq \phi\left(v\right)$ (since $u <_1 w$
+and $w <_1 v$). Combining these two inequalities, we obtain
+$\phi\left(u\right) \leq \phi\left(v\right)$. This contradicts
+the assumption that we do not have
+$\phi\left(u\right) \leq \phi\left(v\right)$. This contradiction
+concludes the proof of Claim 1.
+
+Instead of Claim 2, we shall prove the following stronger claim:
+
+\textit{Claim 3:} Every $e \in E$ and $f \in E$ satisfying
+$e <_1 f$ and not $e <_2 f$ satisfy
+$\phi\left(e\right) < \phi\left(f\right)$.
+
+\textit{Proof of Claim 3:} Assume the contrary. Thus, there
+exists a pair $\left(e, f\right) \in E \times E$ satisfying
+$e <_1 f$ and not $e <_2 f$ but not
+$\phi\left(e\right) < \phi\left(f\right)$.
+Such a pair will be called a \textit{malrelation}. Fix a
+malrelation $\left(u, v\right)$ for which the value
+$\left|\left[u, v\right]\right|$ is minimum (such a
+$\left(u, v\right)$ exists, since there exists a malrelation).
+Thus, $u \in E$ and $v \in E$ and $u <_1 v$ and not $u <_2 v$
+but not $\phi\left(u\right) < \phi\left(v\right)$.
+
+If $u$ was $<_1$-covered by $v$, then we would obtain
+$\phi\left(u\right) < \phi\left(v\right)$
+easily\footnote{\textit{Proof.} Assume that $u$ is
+$<_1$-covered by $v$. Thus, $u$ and $v$ are $<_2$-comparable
+(since the poset $\EE$ is tertispecial). In other words,
+we have either $u <_2 v$ or $u = v$ or $v <_2 u$. Since
+neither $u <_2 v$ nor $u = v$ can hold (indeed, $u <_2 v$
+is ruled out by assumption, whereas $u = v$ is ruled out by
+$u <_1 v$), we thus have $v <_2 u$. Therefore,
+$\phi\left(u\right) < \phi\left(v\right)$
+by Condition 2 (applied to $e = u$ and $f = v$), qed.}, which
+would contradict the assumption that we do not have
+$\phi\left(u\right) < \phi\left(v\right)$. Hence, $u$ is not
+$<_1$-covered by $v$. Consequently, there exists a $w \in E$
+such that $u <_1 w <_1 v$ (since $u <_1 v$). Consider this
+$w$. Applying \eqref{pf.lem.admissible.cover.1} to $a = u$,
+$c = w$ and $b = v$, we see that both numbers
+$\left|\left[u, w\right]\right|$ and
+$\left|\left[w, v\right]\right|$ are smaller than
+$\left|\left[u, v\right]\right|$, and therefore neither
+$\left(u, w\right)$ nor $\left(w, v\right)$ is a malrelation
+(since we picked $\left(u, v\right)$ to be a malrelation with
+minimum $\left|\left[u, v\right]\right|$).
+
+But $\phi\left(v\right) \leq \phi\left(u\right)$ (since we do
+not have $\phi\left(u\right) < \phi\left(v\right)$). On the
+other hand, $u <_1 w$ and therefore $\phi\left(u\right) \leq
+\phi\left(w\right)$ (by Claim 1). Furthermore, $w <_1 v$ and
+thus $\phi\left(w\right) \leq \phi\left(v\right)$ (by Claim 1).
+The chain of inequalities
+$\phi\left(v\right) \leq \phi\left(u\right)
+\leq \phi\left(w\right) \leq \phi\left(v\right)$ ends with
+the same term that it begins with; therefore, it must be a chain
+of equalities. In other words, we have
+$\phi\left(v\right) = \phi\left(u\right)
+= \phi\left(w\right) = \phi\left(v\right)$.
+
+Now, using $\phi\left(w\right) = \phi\left(v\right)$, we can
+see that $w <_2 v$\ \ \ \ \footnote{\textit{Proof.} Assume
+the contrary. Thus, we do not have $w <_2 v$. But
+$\phi\left(w\right) = \phi\left(v\right)$ shows that we do not
+have $\phi\left(w\right) < \phi\left(v\right)$. Hence,
+$\left(w, v\right)$ is a malrelation (since $w <_1 v$ and not
+$w <_2 v$ but not $\phi\left(w\right) < \phi\left(v\right)$).
+This contradicts the fact that $\left(w, v\right)$ is not
+a malrelation. This contradiction completes the proof.}.
+The same argument (applied to $u$ and $w$ instead of $w$ and
+$v$) shows that $u <_2 w$. Thus, $u <_2 w <_2 v$, which
+contradicts the fact that we do not have $u <_2 v$. This
+contradiction proves Claim 3.
+
+\textit{Proof of Claim 2:} The condition ``$f <_2 e$'' is stronger
+than ``not $e <_2 f$''. Thus, Claim 2 follows from Claim 3.
+
+Claims 1 and 2 are now both proven, and so
+Lemma~\ref{lem.Epartition.cover} follows.
+\end{proof}
+
+\begin{proof}
+[Proof of Theorem~\ref{thm.antipode.GammawG} (sketched).]For every $g\in G$,
+define a double poset
+$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $ as follows:
+
+Let $E^{g}$ be the set of all orbits under the action of $g$ on $E$. Define a
+binary relation $<_{1}^{g}$ on $E^{g}$ by
+\[
+\left(  u<_{1}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
+u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
+\]
+It is easy to see that $<_{1}^{g}$ is a strict partial order
+relation\footnote{\textit{Proof.} This is precisely \cite[Lemma 2.4]{Joch},
+but let us outline the proof for the sake of completeness.
+\par
+Let us first show that the relation $<_{1}^{g}$ is irreflexive. Indeed, assume
+the contrary. Thus, there exists a $u\in E^{g}$ such that $u<_{1}^{g}u$.
+Consider this $u$. Since $u<_{1}^{g}u$, there exist $a\in u$ and $b\in u$ with
+$a<_{1}b$. Consider these $a$ and $b$. There exists a $k\in\mathbb{N}$ such
+that $b=g^{k}a$ (since $a$ and $b$ both lie in one and the same $g$-orbit
+$u$). Consider this $k$.
+\par
+The $g$-orbit $u$ of $a$ is finite. Thus, there exists a positive integer $n$
+such that $g^{n}a=a$. Consider this $n$. Notice that $g^{np}a=\left(
+g^{n}\right)  ^{p}a=a$ for every $p\in\mathbb{N}$ (since $g^{n}a=a$).
+\par
+Now, $a<_{1}b=g^{k}a$. Since $G$ preserves the relation $<_{1}$, this shows
+that $ha<_{1}hg^{k}a$ for every $h\in G$. Thus, $g^{\ell k}a<_{1}g^{\ell
+k}g^{k}a$ for every $\ell\in\mathbb{N}$. Hence, $g^{\ell k}a<_{1}g^{\ell
+k}g^{k}a=g^{\left(  \ell+1\right)  k}a$ for every $\ell\in\mathbb{N}$.
+Consequently, $g^{0k}a<_{1}g^{1k}a<_{1}g^{2k}a<_{1}\cdots<_{1}g^{nk}a$. Thus,
+$g^{0k}a<_{1}g^{nk}a=a$ (since $g^{np}a=a$ for every $p\in\mathbb{N}$), which
+contradicts $g^{0k}a=1_Ga=a$. This contradiction proves that our assumption was
+wrong. Hence, the relation $<_{1}^{g}$ is irreflexive.
+\par
+Let us next show that the relation $<_{1}^{g}$ is transitive. Indeed, let $u$,
+$v$ and $w$ be three elements of $E^{g}$ such that $u<_{1}^{g}v$ and
+$v<_{1}^{g}w$. We must prove that $u<_{1}^{g}w$.
+\par
+There exist $a\in u$ and $b\in v$ with $a<_{1}b$ (since $u<_{1}^{g}v$).
+Consider these $a$ and $b$.
+\par
+There exist $a^{\prime}\in v$ and $b^{\prime}\in w$ with $a^{\prime}
+<_{1}b^{\prime}$ (since $v<_{1}^{g}w$). Consider these $a^{\prime}$ and
+$b^{\prime}$.
+\par
+The elements $b$ and $a^{\prime}$ lie in one and the same $g$-orbit (namely,
+in $v$). Hence, there exists some $k\in\mathbb{N}$ such that $a^{\prime}
+=g^{k}b$. Consider this $k$. We have $a<_{1}b$ and thus $g^{k}a<_{1}g^{k}b$
+(since $G$ preserves the relation $<_{1}$). Hence,
+$g^{k}a<_{1}g^{k}b=a^{\prime}<_{1}b^{\prime}$.
+Since $g^{k}a\in u$ (because $a\in u$) and
+$b^{\prime}\in w$, this shows that $u<_{1}^{g}w$. We thus have proven that the
+relation $<_{1}^{g}$ is transitive.
+\par
+Now, we know that the relation $<_{1}^{g}$ is irreflexive and transitive, and
+thus also antisymmetric (since every irreflexive and transitive binary
+relation is antisymmetric). In other words, $<_{1}^{g}$ is a strict partial
+order relation, qed.}. Similarly, we define a strict partial order relation
+$<_{2}^{g}$ on $E^{g}$ by
+\[
+\left(  u<_{2}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
+u\text{ and }b\in v\text{ with }a<_{2}b\right)  .
+\]
+Finally, we define a double poset
+$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $.
+This double poset $ \EE ^{g}$ is
+tertispecial\footnote{\textit{Proof.} Let $u$ and $v$ be two elements of
+$E^{g}$ such that $u$ is $<_{1}^{g}$-covered by $v$. We must prove that $u$
+and $v$ are $<_{2}^{g}$-comparable.
+\par
+We have $u<_{1}^{g}v$ (since $u$ is $<_{1}^{g}$-covered by $v$). In other
+words, there exist $a\in u$ and $b\in v$ with $a<_{1}b$. Consider these $a$
+and $b$.
+\par
+If there was a $c\in E^{g}$ satisfying $a<_{1}c<_{1}b$, then we would have
+$u<_{1}^{g}w<_{1}^{g}v$ with $w$ being the $g$-orbit of $c$, and this would
+contradict the condition that $u$ is $<_{1}^{g}$-covered by $v$. Hence, no
+such $c$ can exist. In other words, $a$ is $<_{1}$-covered by $b$. Thus, $a$
+and $b$ are $<_{2}$-comparable (since the double poset $ \EE $ is
+tertispecial). Consequently, $u$ and $v$ are $<_{2}^{g}$-comparable, qed.}.
+
+Furthermore, for every $g\in G$, define a map $w^{g}:E^{g}\rightarrow
+\left\{1,2,3,\ldots\right\}$
+by $w^{g}\left(  u\right)  =\sum\limits_{a\in u}w\left(
+a\right)  $. (Since $G$ preserves $w$, the numbers $w\left(  a\right)  $ for
+all $a\in u$ are equal (for given $u$), and thus $\sum\limits_{a\in u}w\left(
+a\right)  $ can be rewritten as $\left\vert u\right\vert \cdot w\left(
+b\right)  $ for any particular $b\in u$.)
+Now,
+\begin{equation}
+S\left(  \Gamma\left(  \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
+,w^{g}\right)  \right)  =\left(  -1\right)  ^{\left\vert E^{g}\right\vert
+}\Gamma\left(  \left(  E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)
+\label{pf.thm.antipode.GammawG.S1}
+\end{equation}
+(by Theorem \ref{thm.antipode.Gammaw}, applied to
+$\left(  \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  $
+instead of $\left(  \left( E,<_{1},<_{2}\right)  ,w\right)  $).
+
+For every $g\in G$, we have
+\begin{equation}
+\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
+}}\mathbf{x}_{\pi,w}=\Gamma\left(   \EE ^{g},w^{g}\right)
+\label{pf.thm.antipode.GammawG.red}
+\end{equation}
+\footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.red}:} Let $g\in G$.
+There is a bijection $\Phi$ between
+\par
+\begin{itemize}
+\item the maps $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying
+$g\pi=\pi$
+\end{itemize}
+\par
+and
+\par
+\begin{itemize}
+\item the maps $\overline{\pi}:E^{g}\rightarrow\left\{  1,2,3,\ldots\right\}
+$.
+\end{itemize}
+\par
+(This bijection $\Phi$ sends any map $\pi:E\rightarrow\left\{  1,2,3,\ldots
+\right\}  $ satisfying $g\pi=\pi$ to the map $\overline{\pi}:E^{g}
+\rightarrow\left\{  1,2,3,\ldots\right\}  $ defined by
+\[
+\overline{\pi}\left(  a\right)  =\pi\left(  u\right)  \qquad\text{for every
+}a\in E^{g}\text{ and }u\in a.
+\]
+The well-definedness of this map $\overline{\pi}$ follows from $g\pi=\pi$.)
+\par
+It is easy to see that $\Phi$ restricts to a bijection between
+\par
+\begin{itemize}
+\item the $ \EE $-partitions $\pi:E\rightarrow\left\{  1,2,3,\ldots
+\right\}  $ satisfying $g\pi=\pi$
+\end{itemize}
+\par
+and
+\par
+\begin{itemize}
+\item the $ \EE ^{g}$-partitions $\overline{\pi}:E^{g}\rightarrow\left\{
+1,2,3,\ldots\right\}  $.
+\end{itemize}
+\par
+[\textit{Proof.} Let $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ be a
+map satisfying $g\pi=\pi$. We need to prove that $\pi$ is an
+$\mathbf{E}$-partition if and only if $\Phi\left(  \pi\right)  $
+is an ${\mathbf{E}}^{g}$-partition. In other words, we need to
+prove the following two claims:
+
+\textit{Claim 1:} If $\pi$ is an $\EE$-partition, then $\Phi\left(
+\pi\right)  $ is an ${\mathbf{E}}^{g}$-partition.
+
+\textit{Claim 2:} If $\Phi\left(  \pi\right)  $ is an
+$\mathbf{E}^{g}$-partition, then $\pi$ is an $\EE$-partition.
+
+\textit{Proof of Claim 1:} Assume that $\pi$ is an $\mathbf{E}$-partition. We
+want to show that $\Phi\left(  \pi\right)  $ is an
+${\mathbf{E}}^{g}$-partition. In order to do so, we can
+use Lemma \ref{lem.Epartition.cover}
+(applied to $\mathbf{E}^{g}$, $\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $ and
+$\Phi\left(  \pi\right)  $ instead of $\mathbf{E}$,
+$\left(  E,<_{1},<_{2}\right)  $ and $\phi$); we only need to
+check the following two conditions:
+
+\textit{Condition 1:} If $e\in E^{g}$ and $f\in E^{g}$ are such that $e$ is
+$<_{1}^{g}$-covered by $f$, and if we have $e<_{2}^{g}f$, then $\left(
+\Phi\left(  \pi\right)  \right)  \left(  e\right)  \leq\left(  \Phi\left(
+\pi\right)  \right)  \left(  f\right)  $.
+
+\textit{Condition 2:} If $e\in E^{g}$ and $f\in E^{g}$ are such that $e$ is
+$<_{1}^{g}$-covered by $f$, and if we have $f<_{2}^{g}e$, then $\left(
+\Phi\left(  \pi\right)  \right)  \left(  e\right)  <\left(  \Phi\left(
+\pi\right)  \right)  \left(  f\right)  $.
+
+\textit{Proof of Condition 1:} Let $e\in E^{g}$ and $f\in E^{g}$ be such that
+$e$ is $<_{1}^{g}$-covered by $f$. Assume that we have $e<_{2}^{g}f$.
+
+We have $e<_{1}^{g}f$ (because $e$ is $<_{1}^{g}$-covered by $f$). In other
+words, there exist $a\in e$ and $b\in f$ satisfying $a<_{1}b$. Consider these
+$a$ and $b$. Since $\pi$ is an $\mathbf{E}$-partition, we have $\pi\left(
+a\right)  \leq\pi\left(  b\right)  $ (since $a<_{1}b$). But the definition of
+$\Phi\left(  \pi\right)  $ shows that $\left(  \Phi\left(  \pi\right)
+\right)  \left(  e\right)  =\pi\left(  a\right)  $ (since $a\in e$) and
+$\left(  \Phi\left(  \pi\right)  \right)  \left(  f\right)  =\pi\left(
+b\right)  $ (since $b\in f$). Thus, $\left(  \Phi\left(  \pi\right)  \right)
+\left(  e\right)  =\pi\left(  a\right)  \leq\pi\left(  b\right)  =\left(
+\Phi\left(  \pi\right)  \right)  \left(  f\right)  $. Hence, Condition 1 is proven.
+
+\textit{Proof of Condition 2:} Let $e\in E^{g}$ and $f\in E^{g}$ be such that
+$e$ is $<_{1}^{g}$-covered by $f$. Assume that we have $f<_{2}^{g}e$.
+
+We have $e<_{1}^{g}f$ (because $e$ is $<_{1}^{g}$-covered by $f$). In other
+words, there exist $a\in e$ and $b\in f$ satisfying $a<_{1}b$. Consider these
+$a$ and $b$.
+
+If there was a $c\in E$ satisfying $a<_{1}c<_{1}b$, then the $g$-orbit $w$ of
+this $c$ would satisfy $e<_{1}^{g}w<_{1}^{g}f$, which would contradict the
+fact that $e$ is $<_{1}^{g}$-covered by $f$. Hence, there exists no such $c$.
+In other words, $a$ is $<_{1}$-covered by $b$ (since $a<_{1}b$). Therefore,
+$a$ and $b$ are $<_{2}$-comparable (since $\mathbf{E}$ is tertispecial). In
+other words, we have either $a<_{2}b$ or $a=b$ or $b<_{2}a$. Since $a<_{2}b$
+is impossible (because if we had $a<_{2}b$, then we would have $e<_{2}^{g}f$
+(since $a\in e$ and $b\in f$), which would contradict $f<_{2}^{g}e$ (since
+$<_{2}^{g}$ is a strict partial order relation)), and since $a=b$ is
+impossible (because $a<_{1}b$), we therefore must have $b<_{2}a$. But since
+$\pi$ is an $\mathbf{E}$-partition, we have $\pi\left(  a\right)  <\pi\left(
+b\right)  $ (since $a<_{1}b$ and $b<_{2}a$). But the definition of
+$\Phi\left(  \pi\right)  $ shows that $\left(  \Phi\left(  \pi\right)
+\right)  \left(  e\right)  =\pi\left(  a\right)  $ (since $a\in e$) and
+$\left(  \Phi\left(  \pi\right)  \right)  \left(  f\right)  =\pi\left(
+b\right)  $ (since $b\in f$). Thus, $\left(  \Phi\left(  \pi\right)  \right)
+\left(  e\right)  =\pi\left(  a\right)  <\pi\left(  b\right)  =\left(
+\Phi\left(  \pi\right)  \right)  \left(  f\right)  $. Hence, Condition 2 is proven.
+
+Thus, Condition 1 and Condition 2 are proven. Hence, Claim 1 is proven.
+
+\textit{Proof of Claim 2:} Assume that $\Phi\left(  \pi\right)  $ is an
+$\mathbf{E}^{g}$-partition. We want to show that $\pi$ is an
+$\EE$-partition. In order to do so, we can use
+Lemma \ref{lem.Epartition.cover}
+(applied to $\phi=\pi$); we only need to check the following two conditions:
+
+\textit{Condition 1:} If $e\in E$ and $f\in E$ are such that $e$ is
+$<_{1}$-covered by $f$, and if we have $e<_{2}f$, then
+$\pi\left(  e\right)  \leq \pi\left(  f\right)  $.
+
+\textit{Condition 2:} If $e\in E$ and $f\in E$ are such that $e$ is
+$<_{1}$-covered by $f$, and if we have $f<_{2}e$, then
+$\pi\left(  e\right) <\pi\left(  f\right)  $.
+
+\textit{Proof of Condition 1:} Let $e\in E$ and $f\in E$ be such that $e$ is
+$<_{1}$-covered by $f$. Assume that we have $e<_{2}f$.
+
+We have $e<_{1}f$ (since $e$ is $<_{1}$-covered by $f$). Let $u$ and $v$ be
+the $g$-orbits of $e$ and $f$, respectively. Thus, $u$ and $v$ belong to
+$E^{g}$, and satisfy $u<_{1}v$ (since $e<_{1}f$). Hence, $\left(  \Phi\left(
+\pi\right)  \right)  \left(  u\right)  \leq\left(  \Phi\left(  \pi\right)
+\right)  \left(  v\right)  $ (since $\Phi\left(  \pi\right)  $ is an
+$\mathbf{E}^{g}$-partition). But the definition of $\Phi\left(  \pi\right)  $
+shows that $\left(  \Phi\left(  \pi\right)  \right)  \left(  u\right)
+=\pi\left(  e\right)  $ (since $e\in u$) and $\left(  \Phi\left(  \pi\right)
+\right)  \left(  v\right)  =\pi\left(  f\right)  $ (since $f\in v$). Thus,
+$\pi\left(  e\right)  =\left(  \Phi\left(  \pi\right)  \right)  \left(
+u\right)  \leq\left(  \Phi\left(  \pi\right)  \right)  \left(  v\right)
+=\pi\left(  f\right)  $. Hence, Condition 1 is proven.
+
+\textit{Proof of Condition 2:} Let $e\in E$ and $f\in E$ be such that $e$ is
+$<_{1}$-covered by $f$. Assume that we have $f<_{2}e$.
+
+We have $e<_{1}f$ (since $e$ is $<_{1}$-covered by $f$). Let $u$ and $v$ be
+the $g$-orbits of $e$ and $f$, respectively. Thus, $u$ and $v$ belong to
+$E^{g}$, and satisfy $u<_{1}v$ (since $e<_{1}f$) and $v<_{2}u$ (since
+$f<_{2}e$). Hence, $\left(  \Phi\left(  \pi\right)  \right)  \left(  u\right)
+<\left(  \Phi\left(  \pi\right)  \right)  \left(  v\right)  $ (since
+$\Phi\left(  \pi\right)  $ is an $\mathbf{E}^{g}$-partition). But the
+definition of $\Phi\left(  \pi\right)  $ shows that $\left(  \Phi\left(
+\pi\right)  \right)  \left(  u\right)  =\pi\left(  e\right)  $ (since $e\in
+u$) and $\left(  \Phi\left(  \pi\right)  \right)  \left(  v\right)
+=\pi\left(  f\right)  $ (since $f\in v$). Thus, $\pi\left(  e\right)  =\left(
+\Phi\left(  \pi\right)  \right)  \left(  u\right)  <\left(  \Phi\left(
+\pi\right)  \right)  \left(  v\right)  =\pi\left(  f\right)  $. Hence,
+Condition 2 is proven.
+
+Thus, Condition 1 and Condition 2 are proven. Hence, Claim 2 is proven.
+
+Now, both Claims 1 and 2 are proven. In other words, we have shown that $\pi$
+is an $\mathbf{E}$-partition if and only if $\Phi\left(  \pi\right)  $ is an
+${\mathbf{E}}^{g}$-partition. Qed.]
+
+We thus have proven that $\Phi$ restricts to a bijection between
+
+\begin{itemize}
+\item the ${\mathbf{E}}$-partitions $\pi:E\rightarrow\left\{  1,2,3,\ldots
+\right\}  $ satisfying $g\pi=\pi$
+\end{itemize}
+
+and
+
+\begin{itemize}
+\item the ${\mathbf{E}}^{g}$-partitions $\overline{\pi}:E^{g}\rightarrow
+\left\{  1,2,3,\ldots\right\}  $.
+\end{itemize}
+\par
+Hence,
+\[
+\sum_{\pi\text{ is an } \EE ^{g}\text{-partition}}
+\mathbf{x}_{\pi,w^{g}}
+=\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
+}}\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}.
+\]
+\par
+But it is also easy to see that every $ \EE $-partition $\pi$ satisfying
+$g\pi=\pi$ satisfies $\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}
+=\mathbf{x}_{\pi,w}$. Thus,
+\[
+\sum_{\pi\text{ is an } \EE ^{g}\text{-partition}}
+\mathbf{x}_{\pi,w^{g}}
+=\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
+}}
+\underbrace{\xx_{\Phi\left(  \pi\right)  ,w^{g}}}_{
+=\mathbf{x}_{\pi,w}}=\sum_{\substack{\pi\text{ is an }
+ \EE \text{-partition;}
+\\g\pi=\pi}}\mathbf{x}_{\pi,w},
+\]
+whence $\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
+\\g\pi=\pi}}\mathbf{x}_{\pi,w}=\sum_{\pi\text{ is an }
+\EE ^{g}\text{-partition}}\mathbf{x}_{\pi,w^{g}}
+=\Gamma\left(  \EE^{g},w^{g}\right)  $.
+This proves \eqref{pf.thm.antipode.GammawG.red}.}.
+
+It is clearly sufficient to prove
+Theorem~\ref{thm.antipode.GammawG} for $\kk = \ZZ$ (since all
+the power series that we are discussing are defined functorially
+in $\kk$, and thus any identity between these series that holds
+over $\ZZ$ must hold over any $\kk$). Therefore, it is sufficient
+to prove Theorem~\ref{thm.antipode.GammawG} for $\kk = \QQ$ (since
+$\QSym_\ZZ$ embeds into $\QSym_\QQ$\ \ \ \ \footnote{Here, we are using
+the notation $\QSym_\kk$ for the Hopf algebra $\QSym$ defined over a
+base ring $\kk$.}). Thus, we WLOG assume that $\kk = \QQ$.
+This will allow us to divide by positive integers.
+
+What follows is a use of the standard argument that goes into the proof of
+Burnside's lemma. For every $\pi\in\Par \EE $, let
+$\operatorname*{Stab}\nolimits_{G}\pi$ denote the stabilizer of $\pi$; this is
+the subgroup $\left\{  g\in G\ \mid\ g\pi=\pi\right\}  $ of $G$. Every
+$G$-orbit $O$ on $\Par \EE $ and every $\pi\in O$ satisfy
+\[
+\left\vert O\right\vert =\left\vert G\pi\right\vert =\dfrac{\left\vert
+G\right\vert }{\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert }
+\]
+(by the orbit-stabilizer theorem) and thus
+\begin{equation}
+\dfrac{1}{\left\vert O\right\vert }=\dfrac{\left\vert
+\operatorname{Stab}_{G}\pi\right\vert }{
+\left\vert G\right\vert } .
+\label{pf.thm.antipode.GammawG.os2}
+\end{equation}
+Also, every $G$-orbit $O$ on $\Par \EE$ satisfies
+\begin{equation}
+\dfrac{1}{\left|O\right|} \sum_{\pi \in O}
+\underbrace{\xx_{\pi, w}}_{\substack{= \xx_{O, w} \\
+                           \text{(since } \xx_{O, w}
+                           \text{ is defined} \\
+                           \text{to be } \xx_{\pi, w}
+                           \text{)}}}
+= \dfrac{1}{\left|O\right|} \underbrace{\sum_{\pi \in O} \xx_{O, w}}_{
+                                        = \left|O\right| \xx_{O, w}}
+= \dfrac{1}{\left|O\right|} \left|O\right| \xx_{O, w}
+= \xx_{O, w} .
+\label{pf.thm.antipode.GammawG.averaging}
+\end{equation}
+Now,
+\begin{align}
+\Gamma\left(  { \EE },w,G\right)   &  =\sum_{O\text{ is a }G\text{-orbit
+on }\Par \EE }\underbrace{\xx_{O,w}}_{\substack{
+=\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in
+O}\mathbf{x}_{\pi,w}\\
+\text{(by \eqref{pf.thm.antipode.GammawG.averaging})}}}
+=\sum_{O\text{ is a }G\text{-orbit on
+}\operatorname{Par}{ \EE }}\dfrac{1}{\left\vert O\right\vert }
+\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\nonumber\\
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{ \EE }}
+\sum\limits_{\pi\in O}
+\underbrace{\dfrac{1}{\left\vert O\right\vert }}_{\substack{
+=\dfrac{\left\vert \operatorname{Stab}_{G} \pi\right\vert }{
+\left\vert G\right\vert }\\\text{(by
+\eqref{pf.thm.antipode.GammawG.os2})}}}\mathbf{x}_{\pi,w}\nonumber\\
+&  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\Par \EE }
+\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\Par \EE }
+=\sum_{\pi\text{ is an } \EE \text{-partition}}}
+\dfrac{\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert }{\left\vert
+G\right\vert }\mathbf{x}_{\pi,w}\nonumber\\
+&  =\sum_{\pi\text{ is an } \EE \text{-partition}}\dfrac{\left\vert
+\operatorname*{Stab}\nolimits_{G}\pi\right\vert }{\left\vert G\right\vert
+}\mathbf{x}_{\pi,w}=\dfrac{1}{\left\vert G\right\vert }\sum_{\pi\text{ is an
+} \EE \text{-partition}}\underbrace{\left\vert
+\operatorname{Stab}_{G}\pi\right\vert }_{
+=\sum_{g\in\operatorname*{Stab}\nolimits_{G} \pi}1}
+\mathbf{x}_{\pi,w}\nonumber\\
+&  =\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{\pi\text{ is an
+} \EE \text{-partition}}\sum_{g\in\operatorname{Stab}_{G}\pi}}_{
+=\sum_{g\in G}\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
+\\g\pi=\pi}}}\mathbf{x}_{\pi,w}=\dfrac{1}{\left\vert G\right\vert }\sum_{g\in
+G}\underbrace{\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
+\\g\pi=\pi}}\mathbf{x}_{\pi,w}}_{\substack{=\Gamma\left(   \EE ^{g}
+,w^{g}\right)  \\\text{(by \eqref{pf.thm.antipode.GammawG.red})}}}
+\nonumber\\
+&  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\Gamma\left(
+\underbrace{ \EE ^{g}}_{=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
+},w^{g}\right)  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\Gamma\left(
+\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)
+.
+\label{pf.thm.antipode.GammawG.1}
+\end{align}
+Hence, $\Gamma\left(  { \EE },w,G\right) \in \QSym$
+(by Proposition~\ref{prop.Gammaw.qsym}).
+
+Applying the map $S$ to both sides of the equality
+\eqref{pf.thm.antipode.GammawG.1}, we obtain
+\begin{align}
+S\left(  \Gamma\left(  { \EE },w,G\right)  \right)    & =\dfrac
+{1}{\left\vert G\right\vert }\sum_{g\in G}\underbrace{S\left(  \Gamma\left(
+\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  \right)
+}_{\substack{=\left(  -1\right)  ^{\left\vert E^{g}\right\vert }\Gamma\left(
+\left(  E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  \\\text{(by
+\eqref{pf.thm.antipode.GammawG.S1})}}}\nonumber\\
+& =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
+^{\left\vert E^{g}\right\vert }
+\Gamma\left(  \left(  E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)
+.
+\label{pf.thm.antipode.GammawG.1S}
+\end{align}
+
+On the other hand, for every $g\in G$, let $\operatorname{sign}_{E}g$
+denote the sign of the permutation of $E$ that sends every
+$e\in E$ to $ge$. Thus, $g\in G$ is $E$-even if and only if $\operatorname*{sign}%
+\nolimits_{E}g=1$. Now, every $G$-orbit $O$ on $\Par \EE $
+and every $\pi\in O$ satisfy%
+\begin{equation}%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
+0, & \text{if }O\text{ is odd}%
+\end{cases}
+=\dfrac{1}{\left\vert G\right\vert }\sum_{g\in\operatorname*{Stab}%
+\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}%
+g\label{pf.thm.antipode.GammawG.signed}%
+\end{equation}
+\footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.signed}:} Let $O$ be
+a $G$-orbit on $\Par \EE $, and let $\pi\in O$.
+\par
+Assume first that $O$ is even. Thus, $\pi$ is even (by the definition of what
+it means for $O$ to be even); this means that every $g\in\operatorname*{Stab}%
+\nolimits_{G}\pi$ is $E$-even. Hence, every $g\in\operatorname*{Stab}%
+\nolimits_{G}\pi$ satisfies $\operatorname*{sign}\nolimits_{E}g=1$. Thus,
+\begin{align*}
+\dfrac{1}{\left\vert G\right\vert }\sum_{g\in\operatorname*{Stab}%
+\nolimits_{G}\pi}\underbrace{\operatorname*{sign}\nolimits_{E}g}_{=1}  &
+=\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{g\in\operatorname*{Stab}%
+\nolimits_{G}\pi}1}_{=\left\vert \operatorname*{Stab}\nolimits_{G}%
+\pi\right\vert }=\dfrac{\left\vert \operatorname*{Stab}\nolimits_{G}%
+\pi\right\vert }{\left\vert G\right\vert }=\dfrac{1}{\left\vert O\right\vert
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{by \eqref{pf.thm.antipode.GammawG.os2}}
+\right)  \\
+& =%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
+0, & \text{if }O\text{ is odd}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is even}\right)  .
+\end{align*}
+\par
+Thus, we have proven \eqref{pf.thm.antipode.GammawG.signed} under the
+assumption that $O$ is even. We can therefore WLOG assume the opposite now.
+Thus, assume that $O$ is odd. Hence, $\pi$ is odd. In other words, not every
+$g\in\operatorname*{Stab}\nolimits_{G}\pi$ is $E$-even. Now, the map
+\[
+\operatorname*{Stab}\nolimits_{G}\pi\rightarrow\left\{  1,-1\right\}
+,\ \ \ \ \ \ \ \ \ \ g\mapsto\operatorname*{sign}\nolimits_{E}g
+\]
+is a group homomorphism (since the sign of a permutation is multiplicative)
+and is not the trivial homomorphism (since not every $g\in\operatorname*{Stab}%
+\nolimits_{G}\pi$ is $E$-even). Hence, it must send exactly half the elements of
+$\operatorname*{Stab}\nolimits_{G}\pi$ to $1$ and the other half to $-1$.
+Therefore, the addends in the sum $\sum_{g\in\operatorname*{Stab}%
+\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g$ cancel each other out
+(one half of them are $1$, and the others are $-1$). Therefore, $\sum
+_{g\in\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}%
+g=0$, so that
+\[
+\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{g\in\operatorname*{Stab}%
+\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g}_{=0}=0=%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
+0, & \text{if }O\text{ is odd}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is odd}\right)  .
+\]
+This proves \eqref{pf.thm.antipode.GammawG.signed}.}. Furthermore,%
+\begin{equation}
+\operatorname*{sign}\nolimits_{E}g=\left(  -1\right)  ^{\left\vert
+E\right\vert -\left\vert E^{g}\right\vert }%
+\label{pf.thm.antipode.GammawG.sign}%
+\end{equation}
+for every $g\in G$\ \ \ \ \footnote{\textit{Proof of
+\eqref{pf.thm.antipode.GammawG.sign}:} Let $g\in G$. Recall that
+$\operatorname*{sign}\nolimits_{E}g$ is the sign of the permutation of $E$
+that sends every $e\in E$ to $ge$. But if $\sigma$ is a permutation of a
+finite set $X$, then the sign of $\sigma$ is $\left(  -1\right)  ^{\left\vert
+X\right\vert -\left\vert X^{\sigma}\right\vert }$, where $X^{\sigma}$ is the
+set of all cycles of $\sigma$. Applying this to $X=E$, $\sigma=\left(
+\text{the permutation of }E\text{ that sends every }e\in E\text{ to
+}ge\right)  $ and $X^{\sigma}=E^{g}$, we see that the sign of the permutation
+of $E$ that sends every $e\in E$ to $ge$ is $\left(  -1\right)  ^{\left\vert
+E\right\vert -\left\vert E^{g}\right\vert }$. In other words,
+$\operatorname*{sign}\nolimits_{E}g=\left(  -1\right)  ^{\left\vert
+E\right\vert -\left\vert E^{g}\right\vert }$, qed.}.
+
+Now,%
+\begin{align}
+&  \Gamma^{+}\left(   \EE ,w,G\right) 
+\nonumber \\
+&  =\sum_{O\text{ is an even }G\text{-orbit on }\operatorname{Par} \EE %
+}\underbrace{{\mathbf{x}}_{O,w}}_{\substack{=\dfrac{1}{\left\vert O\right\vert
+}\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\
+\text{(by \eqref{pf.thm.antipode.GammawG.averaging})}}}
+=\sum_{O\text{ is
+an even }G\text{-orbit on }\operatorname{Par} \EE }\dfrac{1}{\left\vert
+O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}
+\nonumber \\
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
+0, & \text{if }O\text{ is odd}%
+\end{cases}
+\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w} \nonumber \\
+& \qquad \left(
+\begin{array}{c}
+\text{here, we have extended the sum to all } G\text{-orbits} \\
+\text{on } \Par \EE \text{ (not just the even ones) ; but all new addends are } 0 \\
+\text{and therefore do not influence the value of the sum}
+\end{array}
+\right) \nonumber \\
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
+\sum\limits_{\pi\in O}\underbrace{%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
+0, & \text{if }O\text{ is odd}%
+\end{cases}
+}_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{g\in
+\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}%
+g\\\text{(by \eqref{pf.thm.antipode.GammawG.signed})}}}\mathbf{x}_{\pi,w}
+\nonumber \\
+&  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}%
+{ \EE }}\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\Par %
+ \EE }=\sum_{\pi\text{ is an } \EE \text{-partition}}}\left(
+\dfrac{1}{\left\vert G\right\vert }\sum_{g\in\operatorname*{Stab}%
+\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi
+,w} \nonumber \\
+&  =\sum_{\pi\text{ is an } \EE \text{-partition}}\left(  \dfrac
+{1}{\left\vert G\right\vert }\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi
+}\operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi,w}=\dfrac
+{1}{\left\vert G\right\vert }\underbrace{\sum_{\pi\text{ is an }%
+ \EE \text{-partition}}\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}%
+}_{=\sum_{g\in G}\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}%
+\\g\pi=\pi}}}\left(  \operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}%
+_{\pi,w} \nonumber\\
+&  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}%
+\underbrace{\operatorname*{sign}\nolimits_{E}g}_{\substack{=\left(  -1\right)
+^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\\\text{(by
+\eqref{pf.thm.antipode.GammawG.sign})}}}\underbrace{\sum_{\substack{\pi\text{
+is an } \EE \text{-partition;}\\g\pi=\pi}}\mathbf{x}_{\pi,w}%
+}_{\substack{=\Gamma\left(   \EE ^{g},w^{g}\right)  \\\text{(by
+\eqref{pf.thm.antipode.GammawG.red})}}} \nonumber \\
+&  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
+^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\Gamma\left(
+ \EE ^{g},w^{g}\right)  .
+\label{pf.thm.antipode.GammawG.Gammaplus}
+\end{align}
+Hence, $\Gamma^+\left(  { \EE },w,G\right) \in \QSym$
+(by Proposition~\ref{prop.Gammaw.qsym}).
+
+The group $G$ preserves the relation $>_1$ (since it preserves the
+relation $<_1$). Hence, applying
+\eqref{pf.thm.antipode.GammawG.Gammaplus}
+to $\left(  E,>_{1},<_{2}\right)  $ instead of $ \EE $, we
+obtain
+\[
+\Gamma^{+}\left(  \left(  E,>_{1},<_{2}\right)  ,w,G\right)  =\dfrac
+{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)  ^{\left\vert
+E\right\vert -\left\vert E^{g}\right\vert }\Gamma\left(  \left(  E^{g}%
+,>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  .
+\]
+Multiplying both sides of this equality by $\left(  -1\right)  ^{\left\vert
+E\right\vert }$, we transform it into%
+\begin{align*}
+\left(  -1\right)  ^{\left\vert E\right\vert }\Gamma^{+}\left(  \left(
+E,>_{1},<_{2}\right)  ,w,G\right)    & =\dfrac{1}{\left\vert G\right\vert
+}\sum_{g\in G}\underbrace{\left(  -1\right)  ^{\left\vert E\right\vert
+}\left(  -1\right)  ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }%
+}_{=\left(  -1\right)  ^{\left\vert E^{g}\right\vert }}\Gamma\left(  \left(
+E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  \\
+& =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
+^{\left\vert E^{g}\right\vert }\Gamma\left(  \left(  E^{g},>_{1}^{g},<_{2}%
+^{g}\right)  ,w^{g}\right)  \\
+& =S\left(  \Gamma\left(  { \EE },w,G\right)  \right)
+\ \ \ \ \ \ \ \ \ \ 
+\left(  \text{by \eqref{pf.thm.antipode.GammawG.1S}}\right)  .
+\end{align*}
+This proves Theorem~\ref{thm.antipode.GammawG}.
+\end{proof}
+
+
+\nocite{*}
+\bibliographystyle{abbrvnat}
+% use the following instead if you encounter problems 
+%\bibliographystyle{alpha}
+\bibliography{sample}
+\label{sec:biblio}
+
+\begin{thebibliography}{99999999}                                                                                         %
+
+\bibitem[Abe77]{Abe-HA}Eiichi Abe, \textit{Hopf Algebras}, CUP 1977.
+
+%\bibitem[ABS03]{ABS}Marcelo Aguiar, Nantel Bergeron, Frank Sottile,
+%\textit{Combinatorial Hopf algebras and generalized Dehn-Sommerville
+%relations}, Compositio Mathematica, vol. 142, Issue 01, January 2006, pp.
+%1--30.\newline Also available as arXiv:math/0310016.\newline Newer version at
+%\texttt{\href{http://www.math.tamu.edu/~maguiar/CHalgebra.pdf}{\texttt{http://www.math.tamu.edu/\symbol{126}%
+%maguiar/CHalgebra.pdf}}}
+
+\bibitem[BenSag14]{BenSag}Carolina Benedetti, Bruce Sagan, \textit{Antipodes
+and involutions}, arXiv:1410.5023v2.\newline%
+\texttt{\url{http://arxiv.org/abs/1410.5023v2}}
+
+\bibitem[BBSSZ13]{BBSSZ}Chris Berg, Nantel Bergeron, Franco Saliola, Luis
+Serrano, Mike Zabrocki, \textit{A lift of the Schur and Hall-Littlewood bases
+to non-commutative symmetric functions}, Canadian Journal of Mathematics,
+\newline%
+\texttt{\url{http://dx.doi.org/10.4153/CJM-2013-013-0}}
+\newline Also available as arXiv:1208.5191v3.\newline%
+\texttt{\url{http://arxiv.org/abs/1208.5191v3}}
+
+\bibitem[DNR01]{Dasca-HA}Sorin D\u{a}sc\u{a}lescu, Constantin
+N\u{a}st\u{a}sescu, \c{S}erban Raianu, \textit{Hopf Algebras}, Marcel Dekker 2001.
+
+\bibitem[Fresse14]{Fresse-Op}Benoit Fresse, \textit{Homotopy of operads and
+Grothendieck-Teichm\"{u}ller groups, Part I: From operads to
+Grothendieck-Teichm\"{u}ller groups}, preprint, March 2, 2014.\newline%
+\texttt{\url{http://math.univ-lille1.fr/~fresse/OperadGT-December2012Preprint.pdf}}
+
+\bibitem[Gessel84]{Gessel-multipar}Ira M. Gessel, \textit{Multipartite
+P-partitions and Inner Products of Skew Schur Functions}, Contemporary
+Mathematics, vol. 34, 1984, pp. 289--301.\newline%
+\texttt{\url{http://people.brandeis.edu/~gessel/homepage/papers/multipartite.pdf}}
+
+\bibitem[Gessel15]{Gessel-Ppar}Ira M. Gessel, \textit{A Historical Survey of
+$P$-Partitions}, to be published in Richard Stanley's 70th Birthday Festschrift,
+arXiv:1506.03508v1.\newline%
+\texttt{\url{http://arxiv.org/abs/1506.03508v1}}
+
+%\bibitem[GesReu93]{Gessel-Reutenauer}Ira M. Gessel, Christophe Reutenauer,
+%\textit{Counting Permutations with Given Cycle Structure
+%and Descent Set},
+%Journal of Combinatorial Theory, Series A 64, pp. 189--215 (1993).
+
+\bibitem[Grin14]{Gri-dimm}Darij Grinberg,
+\textit{Dual immaculate creation operators and a dendriform algebra structure on the quasisymmetric functions},
+\href{http://arxiv.org/abs/1410.0079v5}{arXiv preprint arXiv:1410.0079v5}.
+
+\bibitem[GriRei14]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
+in Combinatorics}, August 25, 2015, arXiv:1409.8356v3.\newline%
+\texttt{\url{http://www.math.umn.edu/~reiner/Classes/HopfComb.pdf}}
+
+\bibitem[HaGuKi10]{HaGuKi}Michiel Hazewinkel, Nadiya Gubareni, V. V. Kirichenko,
+\textit{Algebras, Rings and Modules: Lie Algebras and Hopf Algebras},
+AMS 2010.
+
+%\bibitem[Hivert99]{Hivert-CQS}Florent Hivert, \textit{Combinatoire des
+%fonctions quasi-sym\'{e}triques}, PhD thesis, defended 1999, January the
+%15.\newline%
+%\texttt{\url{https://www.lri.fr/~hivert/PAPER/these.ps}}
+
+\bibitem[Joch13]{Joch}Katharina Jochemko, \textit{Order polynomials and
+P\'{o}lya's enumeration theorem},
+The Electronic Journal of Combinatorics 21(2) (2014), P2.52.
+See also
+\texttt{\href{http://arxiv.org/abs/1310.0838v2}{arXiv:1310.0838v2}}
+for a preprint.
+
+%\bibitem[LMvW13]{LMvW}Kurt Luoto, Stefan Mykytiuk and Stephanie van
+%Willigenburg, \textit{An introduction to quasisymmetric Schur functions --
+%Hopf algebras, quasisymmetric functions, and Young composition tableaux}, May
+%23, 2013.\newline
+%\texttt{\url{http://www.math.ubc.ca/~steph/papers/QuasiSchurBook.pdf}}
+%% [todo: get rid of this if not enough space, else expand it]
+
+\bibitem[Malve93]{Malve-Thesis}Claudia Malvenuto, \textit{Produits et
+coproduits des fonctions quasi-sym\'{e}triques et de l'alg\`{e}bre des
+descentes}, thesis, defended November 1993.\newline%
+\texttt{\url{http://www1.mat.uniroma1.it/people/malvenuto/Thesis.pdf}}
+
+\bibitem[MalReu98]{Mal-Reu}Claudia Malvenuto, Christophe Reutenauer,
+\textit{Plethysm and conjugation of quasi-symmetric functions}, Discrete
+Mathematics, Volume 193, Issues 1--3, 28 November 1998, Pages
+225--233.\newline%
+\texttt{\url{http://www.sciencedirect.com/science/article/pii/S0012365X98001423}}
+
+\bibitem[MalReu09]{Mal-Reu-DP}Claudia Malvenuto, Christophe Reutenauer,
+\textit{A self paired Hopf algebra on double posets and
+a Littlewood-Richardson rule},
+Journal of Combinatorial Theory, Series A 118 (2011) 1322-1333.
+A preprint version appeared as arXiv:0905.3508v1.
+
+\bibitem[Manchon04]{Manchon-HA}Dominique Manchon, \textit{Hopf algebras, from
+basics to applications to renormalization}, Comptes Rendus des Rencontres
+Mathematiques de Glanon 2001 (published in 2003).\newline%
+\texttt{\url{http://arxiv.org/abs/math/0408405v2}}
+
+\bibitem[Montg93]{Montg-Hopf}Susan Montgomery, \textit{Hopf Algebras and their
+Actions on Rings}, Regional Conference Series in Mathematics Nr. 82, AMS 1993.
+
+\bibitem[NovThi05]{Nov-Thi} Jean-Christophe Novelli, Jean-Yves Thibon,
+\textit{Hopf algebras and dendriform structures arising from parking functions},
+Fundamenta Mathematicae 193 (2007), 189--241. A preprint also appears
+on arXiv as \href{http://arxiv.org/abs/math/0511200v1}{arXiv:math/0511200v1}.
+
+\bibitem[Stan11]{Stanley-EC1}Richard Stanley, \textit{Enumerative
+Combinatorics, volume 1}, Cambridge University Press, 2011. \newline%
+\texttt{\url{http://math.mit.edu/~rstan/ec/ec1/}}
+
+\bibitem[Stan99]{Stanley-EC2}Richard Stanley, \textit{Enumerative
+Combinatorics, volume 2}, Cambridge University Press, 1999.
+
+\bibitem[Stan71]{Stanley-Thes}Richard Stanley, \textit{Ordered Structures and
+Partitions}, Memoirs of the American Mathematical Society, No. 119, American
+Mathematical Society, Providence, R.I., 1972. \newline%
+\texttt{\url{http://www-math.mit.edu/~rstan/pubs/pubfiles/9.pdf}}
+
+\bibitem[Sweed69]{Sweedler-HA}Moss E. Sweedler, \textit{Hopf Algebras}, W. A.
+Benjamin 1969.
+
+\end{thebibliography}
+
+
+\end{document}
