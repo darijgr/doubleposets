@@ -160,7 +160,7 @@
 
 \title{Double posets and the antipode of $\QSym$}
 
-\date{version 1.1 (\today)}
+\date{version 1.2 (\today)}
 
 \begin{comment}
 \keywords{
@@ -806,6 +806,7 @@ of $\left(P, \omega\right)$-partitions or
 equality-and-inequality conditions appearing in literature):
 
 \begin{definition}
+\label{def.G-sets.terminology}
 Let $G$ be a group, and let $E$ be a $G$-set.
 
 \begin{itemize}
@@ -825,8 +826,28 @@ if the action of $g$ on $E$ (that is, the permutation of $E$
 that sends every $e \in E$ to $ge$) is an even permutation
 of $E$.
 
+\item[(d)] If $X$ is any set, then the set $X^E$ of all maps
+$E \to X$ becomes a $G$-set in the following way: For any
+$\pi \in X^E$ and $g \in G$, we define the element $g\pi \in X^E$
+to be the map sending each $e \in E$ to $\pi\left(g^{-1}e\right)$.
+
+\item[(e)] Let $F$ be a further $G$-set. An element $\pi \in F$
+is said to be \textit{$E$-coeven} if every $g \in G$
+satisfying $g\pi = \pi$ is $E$-even. A $G$-orbit $O$ on $F$ is said
+to be \textit{$E$-coeven} if all elements of $O$ are $E$-coeven.
+
 \end{itemize}
 \end{definition}
+
+Before we come to the promised result, let us state a simple fact
+(which will be used without mention):
+
+\begin{lemma}
+\label{lem.coeven.all-one}
+Let $G$ be a group. Let $F$ and $E$ be $G$-sets. Let $O$ be a
+$G$-orbit on $F$. Then, $O$ is $E$-coeven if and only if at least
+one element of $O$ is $E$-coeven.
+\end{lemma}
 
 \begin{theorem}
 \label{thm.antipode.GammawG}
@@ -836,11 +857,15 @@ Let $w : E \to \left\{1, 2, 3, \ldots\right\}$. Let $G$ be a finite
 group which acts on $E$. Assume that $G$ preserves both
 relations $<_1$ and $<_2$, and also preserves $w$.
 Then, $G$ acts also on the set $\Par \EE$ of all
-$\EE$-partitions. We say that an $\EE$-partition $\pi$ is
-\textit{even} if every $g \in G$ satisfying $g \pi = \pi$
-is $E$-even. We say that a $G$-orbit $O$ on
-$\Par \EE$ is \textit{even} if its elements are
-even (or, equivalently, one of its elements is even).
+$\EE$-partitions; namely, $\Par \EE$ is a $G$-subset of the $G$-set
+$E^{\left\{1, 2, 3, \ldots\right\}}$ (see
+Definition~\ref{def.G-sets.terminology} (d) for the definition of
+the latter).
+%We say that an $\EE$-partition $\pi$ is
+%\textit{even} if every $g \in G$ satisfying $g \pi = \pi$
+%is $E$-even. We say that a $G$-orbit $O$ on
+%$\Par \EE$ is \textit{even} if its elements are
+%even (or, equivalently, one of its elements is even).
 For any $G$-orbit $O$ on
 $\operatorname{Par}\EE$, we define a monomial $\xx_{O, w}$
 by
@@ -855,7 +880,7 @@ G\text{-orbit on } \operatorname{Par}\EE} \xx_{O, w}
 \]
 and
 \[
-\Gamma^+\left(\EE, w, G\right) = \sum_{O\text{ is an even }
+\Gamma^+\left(\EE, w, G\right) = \sum_{O\text{ is an }E\text{-coeven }
 G\text{-orbit on } \operatorname{Par}\EE} \xx_{O, w} .
 \]
 Then, $\Gamma\left(\EE, w, G\right)$ and
@@ -2238,6 +2263,70 @@ Lemma~\ref{lem.Epartition.cover} follows.
 \end{proof}
 
 \begin{proof}
+[Proof of Lemma \ref{lem.coeven.all-one}.] Consider the following three
+logical statements:
+
+\textit{Statement 1:} The orbit $O$ is $E$-coeven.
+
+\textit{Statement 2:} All elements of $O$ are $E$-coeven.
+
+\textit{Statement 3:} At least one element of $O$ is $E$-coeven.
+
+Statements 1 and 2 are equivalent (according to the definition of when an
+orbit is $E$-coeven). Our goal is to prove that Statements 1 and 3 are
+equivalent (because this is precisely what Lemma \ref{lem.coeven.all-one}
+says). Thus, it clearly suffices to show that Statements 2 and 3 are
+equivalent. Since Statement 2 obviously implies Statement 3, we therefore only
+need to show that Statement 3 implies Statement 2. Thus, assume that Statement
+3 holds. We need to prove that Statement 2 holds.
+
+There exists at least one $E$-coeven $\phi\in O$ (because we assumed that
+Statement 3 holds). Consider this $\phi$. Now, let $\pi\in O$ be arbitrary. We
+shall show that $\pi$ is $E$-coeven.
+
+We know that $\phi$ is $E$-coeven. In other words,
+\begin{equation}
+\text{every }g\in G\text{ satisfying }g\phi=\phi\text{ is }E\text{-even.}%
+\label{pf.lem.coeven-all-one.1}%
+\end{equation}
+
+
+Now, let $g\in G$ be such that $g\pi=\pi$. Since $\phi$ belongs to the
+$G$-orbit $O$, we have $O=G\phi$. Now, $\pi\in O=G\phi$. In other words, there
+exists some $h\in G$ such that $\pi=h\phi$. Consider this $h$. We have
+$g\pi=\pi$. Since $\pi=h\phi$, this rewrites as $gh\phi=h\phi$. In other
+words, $h^{-1}gh\phi=\phi$. Thus, (\ref{pf.lem.coeven-all-one.1}) (applied to
+$h^{-1}gh$ instead of $g$) shows that $h^{-1}gh$ is $E$-even. In other words,%
+\begin{equation}
+\text{the action of }h^{-1}gh\text{ on }E\text{ is an even permutation of
+}E\text{.}\label{pf.lem.coeven-all-one.2}%
+\end{equation}
+
+
+Now, let $\varepsilon$ be the group homomorphism from $G$ to
+$\operatorname*{Aut}E$ which describes the $G$-action on $E$. Then,
+$\varepsilon\left(  h^{-1}gh\right)  $ is the action of $h^{-1}gh$ on $E$, and
+thus is an even permutation of $E$ (by (\ref{pf.lem.coeven-all-one.2})).
+
+But since $\varepsilon$ is a group homomorphism, we have $\varepsilon\left(
+h^{-1}gh\right)  =\varepsilon\left(  h\right)  ^{-1}\varepsilon\left(
+g\right)  \varepsilon\left(  h\right)  $. Thus, the permutations
+$\varepsilon\left(  h^{-1}gh\right)  $ and $\varepsilon\left(  g\right)  $ of
+$E$ are conjugate. Since the permutation $\varepsilon\left(  h^{-1}gh\right)
+$ is even, this shows that the permutation $\varepsilon\left(  g\right)  $ is
+even. In other words, the action of $g$ on $E$ is an even permutation of $E$.
+In other words, $g$ is $E$-even.
+
+Now, let us forget that we fixed $g$. We thus have shown that every $g\in G$
+satisfying $g\pi=\pi$ is $E$-even. In other words, $\pi$ is $E$-coeven.
+
+Let us now forget that we fixed $\pi$. Thus, we have proven that every $\pi\in
+O$ is $E$-coeven. In other words, Statement 2 holds. We have thus shown that
+Statement 3 implies Statement 2. Consequently, Statements 2 and 3 are
+equivalent, and so the proof of Lemma \ref{lem.coeven.all-one} is complete.
+\end{proof}
+
+\begin{proof}
 [Proof of Theorem~\ref{thm.antipode.GammawG} (sketched).]For every $g\in G$,
 define a double poset
 $ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $ as follows:
@@ -2561,7 +2650,7 @@ This will allow us to divide by positive integers.
 
 What follows is a use of the standard argument that goes into the proof of
 Burnside's lemma. For every $\pi\in\Par \EE $, let
-$\operatorname*{Stab}\nolimits_{G}\pi$ denote the stabilizer of $\pi$; this is
+$\operatorname{Stab}_{G}\pi$ denote the stabilizer of $\pi$; this is
 the subgroup $\left\{  g\in G\ \mid\ g\pi=\pi\right\}  $ of $G$. Every
 $G$-orbit $O$ on $\Par \EE $ and every $\pi\in O$ satisfy
 \[
@@ -2589,6 +2678,12 @@ Also, every $G$-orbit $O$ on $\Par \EE$ satisfies
 = \xx_{O, w} .
 \label{pf.thm.antipode.GammawG.averaging}
 \end{equation}
+
+Notice that the notion of stabilizers allows us to rewrite the definition
+of $E$-coeven elements of $\Par\EE$: Namely, an element $\pi \in \Par\EE$
+is $E$-coeven if and only if every $g \in \operatorname{Stab}_G \pi$
+is $E$-even. This shall be used in the following.
+
 Now,
 \begin{align}
 \Gamma\left(  { \EE },w,G\right)   &  =\sum_{O\text{ is a }G\text{-orbit
@@ -2658,8 +2753,8 @@ $e\in E$ to $ge$. Thus, $g\in G$ is $E$-even if and only if $\operatorname*{sign
 and every $\pi\in O$ satisfy%
 \begin{equation}%
 \begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
-0, & \text{if }O\text{ is odd}%
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
 =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in\operatorname*{Stab}%
 \nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}%
@@ -2668,8 +2763,8 @@ g\label{pf.thm.antipode.GammawG.signed}%
 \footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.signed}:} Let $O$ be
 a $G$-orbit on $\Par \EE $, and let $\pi\in O$.
 \par
-Assume first that $O$ is even. Thus, $\pi$ is even (by the definition of what
-it means for $O$ to be even); this means that every $g\in\operatorname*{Stab}%
+Assume first that $O$ is $E$-coeven. Thus, $\pi$ is even (by the definition of what
+it means for $O$ to be $E$-coeven); this means that every $g\in\operatorname*{Stab}%
 \nolimits_{G}\pi$ is $E$-even. Hence, every $g\in\operatorname*{Stab}%
 \nolimits_{G}\pi$ satisfies $\operatorname*{sign}\nolimits_{E}g=1$. Thus,
 \begin{align*}
@@ -2683,15 +2778,17 @@ it means for $O$ to be even); this means that every $g\in\operatorname*{Stab}%
 \right)  \\
 & =%
 \begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
-0, & \text{if }O\text{ is odd}%
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is even}\right)  .
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is }E\text{-coeven}\right)  .
 \end{align*}
 \par
 Thus, we have proven \eqref{pf.thm.antipode.GammawG.signed} under the
-assumption that $O$ is even. We can therefore WLOG assume the opposite now.
-Thus, assume that $O$ is odd. Hence, $\pi$ is odd. In other words, not every
+assumption that $O$ is $E$-coeven. We can therefore WLOG assume the opposite now.
+Thus, assume that $O$ is not $E$-coeven. Hence, $\pi$ is not
+$E$-coeven.
+In other words, not every
 $g\in\operatorname*{Stab}\nolimits_{G}\pi$ is $E$-even. Now, the map
 \[
 \operatorname*{Stab}\nolimits_{G}\pi\rightarrow\left\{  1,-1\right\}
@@ -2710,10 +2807,10 @@ g=0$, so that
 \dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{g\in\operatorname*{Stab}%
 \nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g}_{=0}=0=%
 \begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
-0, & \text{if }O\text{ is odd}%
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is odd}\right)  .
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is not }E\text{-coeven}\right)  .
 \]
 This proves \eqref{pf.thm.antipode.GammawG.signed}.}. Furthermore,%
 \begin{equation}
@@ -2739,32 +2836,33 @@ Now,%
 \begin{align}
 &  \Gamma^{+}\left(   \EE ,w,G\right) 
 \nonumber \\
-&  =\sum_{O\text{ is an even }G\text{-orbit on }\operatorname{Par} \EE %
-}\underbrace{{\mathbf{x}}_{O,w}}_{\substack{=\dfrac{1}{\left\vert O\right\vert
+&  =\sum_{O\text{ is an }E\text{-coeven }
+          G\text{-orbit on }\operatorname{Par} \EE }
+\underbrace{{\mathbf{x}}_{O,w}}_{\substack{=\dfrac{1}{\left\vert O\right\vert
 }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\
 \text{(by \eqref{pf.thm.antipode.GammawG.averaging})}}}
-=\sum_{O\text{ is
-an even }G\text{-orbit on }\operatorname{Par} \EE }\dfrac{1}{\left\vert
+=\sum_{O\text{ is an }E\text{-coeven }
+G\text{-orbit on }\operatorname{Par} \EE }\dfrac{1}{\left\vert
 O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}
 \nonumber \\
 &  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
 \begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
-0, & \text{if }O\text{ is odd}%
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
 \sum\limits_{\pi\in O}\mathbf{x}_{\pi,w} \nonumber \\
 & \qquad \left(
 \begin{array}{c}
 \text{here, we have extended the sum to all } G\text{-orbits} \\
-\text{on } \Par \EE \text{ (not just the even ones) ; but all new addends are } 0 \\
+\text{on } \Par \EE \text{ (not just the }E\text{-coeven ones); but all new addends are } 0 \\
 \text{and therefore do not influence the value of the sum}
 \end{array}
 \right) \nonumber \\
 &  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
 \sum\limits_{\pi\in O}\underbrace{%
 \begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is even};\\
-0, & \text{if }O\text{ is odd}%
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
 }_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{g\in
 \operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}%
