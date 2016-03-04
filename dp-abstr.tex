@@ -994,10 +994,10 @@ An \textit{initial interval} will mean a set of the form
 $\left\{1, 2, \ldots, \ell\right\}$ for some $\ell \in \NN$.
 
 \item[(b)]
-If $S$ is a set and $\pi : S \to \left\{1, 2, 3, \ldots\right\}$ is
-a map, then $\pi$ is said to be \textit{packed} if $\pi\left(S\right)$
+If $T$ is a set and $\pi : T \to \left\{1, 2, 3, \ldots\right\}$ is
+a map, then $\pi$ is said to be \textit{packed} if $\pi\left(T\right)$
 is an initial interval. Clearly, this initial interval must be
-$\left\{1, 2, \ldots, \left|\pi\left(S\right)\right|\right\}$.
+$\left\{1, 2, \ldots, \left|\pi\left(T\right)\right|\right\}$.
 
 \end{itemize}
 \end{definition}
@@ -1025,11 +1025,11 @@ M_{\ev_w \varphi} .
 \end{proposition}
 
 \begin{proof}[Proof of Proposition~\ref{prop.Gammaw.packed}.]
-For every finite subset $S$ of
+For every finite subset $T$ of
 $\left\{1, 2, 3, \ldots\right\}$, there exists a unique strictly
 increasing bijection $\left\{1, 2, \ldots,
-\left|S\right|\right\} \to S$. We shall denote this bijection by
-$r_S$.
+\left|T\right|\right\} \to T$. We shall denote this bijection by
+$r_T$.
 For every map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$, we
 define the \textit{packing of $\pi$} as the map
 $r_{\pi\left(E\right)}^{-1} \circ \pi : E \to
@@ -1111,23 +1111,23 @@ _{ = \prod_{e \in E} x_{i_{\varphi\left(e\right)}}^{w\left(e\right)}}
 = \sum_{i_1 < i_2 < \cdots < i_\ell}
 \prod_{e \in E} x_{i_{\varphi\left(e\right)}}^{w\left(e\right)}
 \nonumber \\
-&= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
-\underbrace{\prod_{e \in E} x_{r_S\left(\varphi\left(e\right)\right)}^{w\left(e\right)}}
-           _{=\xx_{r_S\circ\varphi,w}}
-= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
-\xx_{r_S\circ\varphi,w}
+&= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
+\underbrace{\prod_{e \in E} x_{r_T\left(\varphi\left(e\right)\right)}^{w\left(e\right)}}
+           _{=\xx_{r_T\circ\varphi,w}}
+= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
+\xx_{r_T\circ\varphi,w}
 \label{pf.prop.Gammaw.packed.1.pf.1}
 \end{align}
 \footnote{In the second-to-last equality, we have used the fact that
 the strictly increasing sequences
 $\left(i_1 < i_2 < \cdots < i_\ell\right)$ of positive integers are
 in bijection with the subsets
-$S \subseteq \left\{1, 2, 3, \ldots\right\}$
-such that $\left|S\right| = \ell$. The bijection sends a sequence
+$T \subseteq \left\{1, 2, 3, \ldots\right\}$
+such that $\left|T\right| = \ell$. The bijection sends a sequence
 $\left(i_1 < i_2 < \cdots < i_\ell\right)$ to the set of its entries;
-its inverse map sends every $S$ to the sequence
-$\left(r_S\left(1\right), r_S\left(2\right), \ldots,
-r_S\left(\left|S\right|\right)\right)$.}.
+its inverse map sends every $T$ to the sequence
+$\left(r_T\left(1\right), r_T\left(2\right), \ldots,
+r_T\left(\left|T\right|\right)\right)$.}.
 
 On the other hand, recall that $\varphi$ is an $\EE$-partition.
 Hence, every map $\pi$ satisfying $\pack \pi = \varphi$
@@ -1142,35 +1142,35 @@ $\pack \pi = \varphi$. Hence,
 \xx_{\pi, w}
 &= \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\} \text{; } \pack \pi = \varphi}
 \xx_{\pi, w} \\
-&= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
+&= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
 \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\} \text{; } \pack \pi = \varphi
-\text{; } \pi\left(E\right) = S}
+\text{; } \pi\left(E\right) = T}
 \xx_{\pi, w}
 \end{align*}
 (because if $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ is a map
 satisfying $\pack \pi = \varphi$, then
 $\left|\pi\left(E\right)\right| = \ell$). But for every
-$\ell$-element subset $S$ of
+$\ell$-element subset $T$ of
 $\left\{1, 2, 3, \ldots\right\}$, there exists exactly
 one $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ satisfying
-$\pack \pi = \varphi$ and $\pi\left(E\right) = S$ (namely,
-$\pi = r_S \circ \varphi$), and therefore we have
+$\pack \pi = \varphi$ and $\pi\left(E\right) = T$ (namely,
+$\pi = r_T \circ \varphi$), and therefore we have
 \[
 \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\} \text{; } \pack \pi = \varphi
-\text{; } \pi\left(E\right) = S}
+\text{; } \pi\left(E\right) = T}
 \xx_{\pi, w}
-= \xx_{r_S\circ\varphi,w} .
+= \xx_{r_T\circ\varphi,w} .
 \]
 Hence,
 \begin{align*}
 \sum_{\pi\text{ is an }\EE\text{-partition; } \pack \pi = \varphi}
 \xx_{\pi, w}
-&= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
+&= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
 \underbrace{\sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\} \text{; } \pack \pi = \varphi
-\text{; } \pi\left(E\right) = S}
-\xx_{\pi, w}}_{= \xx_{r_S\circ\varphi,w}} \\
-&= \sum_{S \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|S\right| = \ell}
-\xx_{r_S\circ\varphi,w}
+\text{; } \pi\left(E\right) = T}
+\xx_{\pi, w}}_{= \xx_{r_T\circ\varphi,w}} \\
+&= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
+\xx_{r_T\circ\varphi,w}
 = M_{\ev_w \varphi}
 \end{align*}
 (by \eqref{pf.prop.Gammaw.packed.1.pf.1}).
@@ -1203,10 +1203,10 @@ terminology of \cite{Mal-Reu-DP}, they are the
 \textit{decompositions} of $\left(E, <_1\right)$.)
 
 \item[(b)] For
-any subset $S$ of $E$, we let $\EE\mid_S$ denote the double poset
-$\left(S, <_1, <_2\right)$, where $<_1$ and $<_2$ (by abuse of
+any subset $T$ of $E$, we let $\EE\mid_T$ denote the double poset
+$\left(T, <_1, <_2\right)$, where $<_1$ and $<_2$ (by abuse of
 notation) denote the restrictions of the relations $<_1$ and $<_2$
-to $S$.
+to $T$.
 
 \end{itemize}
 \end{definition}
