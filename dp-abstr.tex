@@ -1225,6 +1225,15 @@ Then,
 \end{equation}
 \end{proposition}
 
+\begin{vershort}
+We shall now outline a proof of this fact. The proof relies on
+a simple bijection that an experienced combinatorialist will
+have no trouble finding (and proving even less); let us just
+give a brief outline of the argument\footnote{See the detailed
+version of this note for an (almost) completely written-out
+proof; I am afraid that the additional level of detail is of
+no help to the understanding.}
+
 \begin{proof}[Proof of Proposition~\ref{prop.Gammaw.coprod}.]
 Whenever
 $\alpha = \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$
@@ -1402,6 +1411,882 @@ $\left(P, Q\right) \in \Adm \EE$). Thus, we have proven the
 claim in each of the four cases, and consequently Claim 1 is
 proven. As we have said above, Claim 2 is proven similarly.}.
 \end{proof}
+\end{vershort}
+
+\begin{verlong}
+The proof of Proposition \ref{prop.Gammaw.coprod} is based upon a simple
+bijection. We shall introduce it after some preparations.
+
+\begin{lemma}
+\label{lem.Gammaw.coprod.bij.a}Let ${\mathbf{E}}=\left(  E,<_{1},<_{2}\right)
+$ be a double poset.
+
+Let $\mathcal{S}$ be the set of all pairs $\left(  \varphi,k\right)  $
+consisting of a packed ${\mathbf{E}}$-partition $\varphi$ and a $k\in\left\{
+0,1,\ldots,\left\vert \varphi\left(  E\right)  \right\vert \right\}  $.
+
+Let $\mathcal{T}$ be the set of all triples $\left(  \left(  P,Q\right)
+,\sigma,\tau\right)  $ consisting of a $\left(  P,Q\right)  \in
+\operatorname{Adm}{\mathbf{E}}$, a packed ${\mathbf{E}}\mid_{P}$-partition
+$\sigma$ and a packed ${\mathbf{E}}\mid_{Q}$-partition $\tau$.
+
+For every $\ell\in\mathbb{Z}$, we let $\operatorname*{add}\nolimits_{\ell}$
+denote the bijective map $\mathbb{Z}\rightarrow\mathbb{Z},\ z\mapsto z+\ell$.
+
+Fix $\left(  \varphi,k\right)  \in\mathcal{S}$. Set%
+\begin{align}
+P  &  =\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
+,\ \ \ \ \ \ \ \ \ \ Q=\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  \right)
+,\label{eq.lem.Gammaw.coprod.bij.def1}\\
+\sigma &  =\varphi\mid_{P}\ \ \ \ \ \ \ \ \ \ \text{and}%
+\ \ \ \ \ \ \ \ \ \ \tau=\operatorname*{add}\nolimits_{-k}\circ\left(
+\varphi\mid_{Q}\right)  . \label{eq.lem.Gammaw.coprod.bij.def2}%
+\end{align}
+Then, $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$.
+\end{lemma}
+
+\begin{lemma}
+\label{lem.Gammaw.coprod.bij.b}Let $\mathbf{E}=\left(  E,<_{1},<_{2}\right)  $
+be a double poset. Let $\mathcal{S}$ and $\mathcal{T}$ be defined as in Lemma
+\ref{lem.Gammaw.coprod.bij.a}.
+
+Fix $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$. Set
+$k=\left\vert \sigma\left(  P\right)  \right\vert $, and let $\varphi$ be the
+map $E\rightarrow\left\{  1,2,3,\ldots\right\}  $ which sends every $e\in E$
+to $%
+\begin{cases}
+\sigma\left(  e\right)  , & \text{if }e\in P;\\
+\tau\left(  e\right)  +k, & \text{if }e\in Q
+\end{cases}
+$. Then, $\left(  \varphi,k\right)  \in\mathcal{S}$.
+\end{lemma}
+
+\begin{lemma}
+\label{lem.Gammaw.coprod.bij}Let $\mathbf{E}=\left(  E,<_{1},<_{2}\right)  $
+be a double poset. Let $\mathcal{S}$, $\mathcal{T}$ and $\operatorname*{add}%
+\nolimits_{\ell}$ be defined as in Lemma \ref{lem.Gammaw.coprod.bij.a}.
+
+Define a map $\Phi:\mathcal{S}\rightarrow\mathcal{T}$ as follows: Let $\left(
+\varphi,k\right)  \in\mathcal{S}$. Then, define $P$, $Q$, $\sigma$ and $\tau$
+by (\ref{eq.lem.Gammaw.coprod.bij.def1}) and
+(\ref{eq.lem.Gammaw.coprod.bij.def2}). From Lemma
+\ref{lem.Gammaw.coprod.bij.a}, we know that $\left(  \left(  P,Q\right)
+,\sigma,\tau\right)  \in\mathcal{T}$. Define $\Phi\left(  \varphi,k\right)  $
+to be $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  $. Thus, a map
+$\Phi:\mathcal{S}\rightarrow\mathcal{T}$ is defined.
+
+Define a map $\Psi:\mathcal{T}\rightarrow\mathcal{S}$ as follows: Let $\left(
+\left(  P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$. Set $k=\left\vert
+\sigma\left(  P\right)  \right\vert $, and let $\varphi$ be the map
+$E\rightarrow\left\{  1,2,3,\ldots\right\}  $ which sends every $e\in E$ to $%
+\begin{cases}
+\sigma\left(  e\right)  , & \text{if }e\in P;\\
+\tau\left(  e\right)  +k, & \text{if }e\in Q
+\end{cases}
+$. From Lemma \ref{lem.Gammaw.coprod.bij.b}, we know that $\left(
+\varphi,k\right)  \in\mathcal{S}$. Set $\Psi\left(  \left(  P,Q\right)
+,\sigma,\tau\right)  =\left(  \varphi,k\right)  $. Thus, a map $\Psi
+:\mathcal{T}\rightarrow\mathcal{S}$ is defined.
+
+The maps $\Phi:\mathcal{S}\rightarrow\mathcal{T}$ and $\Psi:\mathcal{T}%
+\rightarrow\mathcal{S}$ are mutually inverse.
+\end{lemma}
+
+The preceding three lemmas should be obvious if the reader has
+\textquotedblleft the right picture in their mind\textquotedblright. The
+following proof is merely a formalization of the argument that such a picture
+would straightforwardly produce; we are not sure whether it is actually worth
+reading (as opposed to trying to conjure \textquotedblleft the right
+picture\textquotedblright).
+
+\begin{proof}
+[Proof of Lemma \ref{lem.Gammaw.coprod.bij.a}.]We have $\left(  \varphi
+,k\right)  \in\mathcal{S}$. Thus, $\varphi$ is a packed $\mathbf{E}%
+$-partition, and $k$ is an element of $\left\{  0,1,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  $ (by the definition of
+$\mathcal{S}$).
+
+We have $\varphi\left(  E\right)  =\left\{  1,2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  $ (since $\varphi$ is packed).
+
+Now, $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$%
+\ \ \ \ \footnote{\textit{Proof.} It is clear that $P$ and $Q$ are subsets of
+$E$. Also, from (\ref{eq.lem.Gammaw.coprod.bij.def1}), we obtain%
+\begin{align*}
+P\cap Q  &  =\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
+\cap\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  \right) \\
+&  =\varphi^{-1}\left(  \underbrace{\left\{  1,2,\ldots,k\right\}
+\cap\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+\right\}  }_{=\varnothing}\right)  =\varphi^{-1}\left(  \varnothing\right)
+=\varnothing
+\end{align*}
+and%
+\begin{align*}
+P\cup Q  &  =\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
+\cup\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  \right) \\
+&  =\varphi^{-1}\left(  \underbrace{\left\{  1,2,\ldots,k\right\}
+\cup\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+\right\}  }_{\substack{=\left\{  1,2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  =\varphi\left(  E\right)  \\\text{(since
+}\varphi\text{ is packed)}}}\right)  =\varphi^{-1}\left(  \varphi\left(
+E\right)  \right)  =E.
+\end{align*}
+Hence, in order to prove that $\left(  P,Q\right)  \in\operatorname*{Adm}%
+\mathbf{E}$, it remains to show that no $p\in P$ and $q\in Q$ satisfy
+$q<_{1}p$.
+\par
+Let us assume the contrary (for the sake of contradiction). Thus, let $p\in P$
+and $q\in Q$ be such that $q<_{1}p$. Since $\varphi$ is an $\mathbf{E}%
+$-partition, we have $\varphi\left(  q\right)  \leq\varphi\left(  p\right)  $
+(because $q<_{1}p$). But $p\in P=\varphi^{-1}\left(  \left\{  1,2,\ldots
+,k\right\}  \right)  $, so that $\varphi\left(  p\right)  \leq k$. On the
+other hand, $q\in Q=\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  \right)  $, so that
+$\varphi\left(  q\right)  >k$. This contradicts $\varphi\left(  q\right)
+\leq\varphi\left(  p\right)  \leq k$. This contradiction shows that our
+assumption was false. Hence, the proof of $\left(  P,Q\right)  \in
+\operatorname*{Adm}\mathbf{E}$ is complete.}. Furthermore, it is
+straightforward to see that for every subset $T$ of $E$,%
+\begin{equation}
+\text{the map }\varphi\mid_{T}\text{ is an }\mathbf{E}\mid_{T}%
+\text{-partition} \label{pf.lem.Gammaw.coprod.bij.a.1}%
+\end{equation}
+Applying this to $T=P$, we conclude that $\varphi\mid_{P}$ is an
+$\mathbf{E}\mid_{P}$-partition.
+
+Since $P=\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)  $, we
+have $\varphi\left(  P\right)  \subseteq\left\{  1,2,\ldots,k\right\}  $.
+Moreover, this inclusion is actually an equality (since $\varphi\left(
+E\right)  =\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+\right\}  $)\ \ \ \ \footnote{The proof in more detail: Let $g\in\left\{
+1,2,\ldots,k\right\}  $. Then, $g\in\left\{  1,2,\ldots,k\right\}
+\subseteq\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+\right\}  =\varphi\left(  E\right)  $. Thus, there exists some $e\in E$ such
+that $g=\varphi\left(  e\right)  $. Consider this $e$. From $\varphi\left(
+e\right)  =g\in\left\{  1,2,\ldots,k\right\}  $, we obtain $e\in\varphi
+^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)  =P$. Thus, $\varphi
+\left(  e\right)  \in\varphi\left(  P\right)  $, so that $g=\varphi\left(
+e\right)  \in\varphi\left(  P\right)  $. Now, let us forget that we fixed $g$.
+We thus have proven that $g\in\varphi\left(  P\right)  $ for every
+$g\in\left\{  1,2,\ldots,k\right\}  $. In other words, $\left\{
+1,2,\ldots,k\right\}  \subseteq\varphi\left(  P\right)  $. Combining this with
+$\varphi\left(  P\right)  \subseteq\left\{  1,2,\ldots,k\right\}  $, we obtain
+$\varphi\left(  P\right)  =\left\{  1,2,\ldots,k\right\}  $, qed.}. In other
+words, we have%
+\begin{equation}
+\varphi\left(  P\right)  =\left\{  1,2,\ldots,k\right\}  .
+\label{pf.lem.Gammaw.coprod.bij.a.3}%
+\end{equation}
+Similarly,
+\begin{equation}
+\varphi\left(  Q\right)  =\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  . \label{pf.lem.Gammaw.coprod.bij.a.4}%
+\end{equation}
+Hence,%
+\begin{align*}
+\left(  \operatorname*{add}\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)
+\right)  \left(  Q\right)   &  =\operatorname*{add}\nolimits_{-k}\left(
+\underbrace{\left(  \varphi\mid_{Q}\right)  \left(  Q\right)  }_{=\varphi
+\left(  Q\right)  =\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)
+\right\vert \right\}  }\right)  =\operatorname*{add}\nolimits_{-k}\left(
+\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+\right\}  \right) \\
+&  =\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+-k\right\}
+\end{align*}
+(by the definition of $\operatorname*{add}\nolimits_{-k}$). Since $\left(
+\varphi\mid_{P}\right)  \left(  P\right)  =\varphi\left(  P\right)  =\left\{
+1,2,\ldots,k\right\}  $ is an initial interval, we deduce that the
+$\mathbf{E}\mid_{P}$-partition $\varphi\mid_{P}$ is packed. Thus,
+$\sigma=\varphi\mid_{P}$ is a packed $\mathbf{E}\mid_{P}$-partition.
+
+On the other hand, (\ref{pf.lem.Gammaw.coprod.bij.a.1}) (applied to $T=Q$)
+shows that $\varphi\mid_{Q}$ is an $\mathbf{E}\mid_{Q}$-partition. Hence, the
+map $\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  $
+is an $\mathbf{E}\mid_{Q}$-partition (since the map $\operatorname*{add}%
+\nolimits_{-k}$ is strictly increasing, and since $\left(  \operatorname*{add}%
+\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  \right)  \left(  Q\right)
+=\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+-k\right\}  \subseteq\left\{  1,2,3,\ldots\right\}  $). This $\mathbf{E}%
+\mid_{Q}$-partition $\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi
+\mid_{Q}\right)  $ is packed (since $\left(  \operatorname*{add}%
+\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  \right)  \left(  Q\right)
+=\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+-k\right\}  $ is an initial interval). Thus, $\tau=\operatorname*{add}%
+\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  $ is a packed
+$\mathbf{E}\mid_{Q}$-partition.
+
+We now know that $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, that
+$\sigma$ is a packed $\mathbf{E}\mid_{P}$-partition, and that $\tau$ is a
+packed $\mathbf{E}\mid_{Q}$-partition. In other words, we know that $\left(
+\left(  P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$. This proves Lemma
+\ref{lem.Gammaw.coprod.bij.a}.
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.Gammaw.coprod.bij.b}.]We have $\left(  \left(
+P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$. According to the definition
+of $\mathcal{T}$, this means that $\left(  P,Q\right)  \in\operatorname{Adm}%
+{\mathbf{E}}$, that $\sigma$ is a packed ${\mathbf{E}}\mid_{P}$-partition
+$\sigma$, and that $\tau$ is a packed ${\mathbf{E}}\mid_{Q}$-partition.
+
+From $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, we conclude that
+$P$ and $Q$ are subsets of $E$ satisfying $P\cap Q=\varnothing$ and $P\cup
+Q=E$ and having the property that
+\begin{equation}
+\text{no }p\in P\text{ and }q\in Q\text{ satisfy }q<_{1}p.
+\label{pf.lem.Gammaw.coprod.bij.b.Adm}%
+\end{equation}
+Since the map $\sigma$ is packed, we have $\sigma\left(  P\right)  =\left\{
+1,2,\ldots,\left\vert \sigma\left(  P\right)  \right\vert \right\}  =\left\{
+1,2,\ldots,k\right\}  $ (since $\left\vert \sigma\left(  P\right)  \right\vert
+=k$).
+
+Since the map $\tau$ is packed, we have $\tau\left(  P\right)  =\left\{
+1,2,\ldots,\left\vert \tau\left(  P\right)  \right\vert \right\}  $.
+
+The definition of $\varphi$ shows that%
+\begin{equation}
+\varphi\left(  e\right)  =\sigma\left(  e\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }e\in P.
+\label{pf.lem.Gammaw.coprod.bij.b.1o}%
+\end{equation}
+for every $e\in P$. Hence, $\varphi\left(  P\right)  =\sigma\left(  P\right)
+=\left\{  1,2,\ldots,k\right\}  $.
+
+Also, the definition of $\varphi$ shows that%
+\begin{equation}
+\varphi\left(  e\right)  =\tau\left(  e\right)
++k\ \ \ \ \ \ \ \ \ \ \text{for every }e\in Q.
+\label{pf.lem.Gammaw.coprod.bij.b.2o}%
+\end{equation}
+Thus,
+\begin{align*}
+\varphi\left(  Q\right)   &  =\left\{  u+k\ \mid\ u\in\underbrace{\tau\left(
+Q\right)  }_{=\left\{  1,2,\ldots,\left\vert \tau\left(  P\right)  \right\vert
+\right\}  }\right\}  =\left\{  u+k\ \mid\ u\in\left\{  1,2,\ldots,\left\vert
+\tau\left(  P\right)  \right\vert \right\}  \right\} \\
+&  =\left\{  k+1,k+2,\ldots,k+\left\vert \tau\left(  P\right)  \right\vert
+\right\}  .
+\end{align*}
+Now, $E=P\cup Q$, so that%
+\begin{align}
+\varphi\left(  E\right)   &  =\varphi\left(  P\cup Q\right)
+=\underbrace{\varphi\left(  P\right)  }_{=\left\{  1,2,\ldots,k\right\}  }%
+\cup\underbrace{\varphi\left(  Q\right)  }_{=\left\{  k+1,k+2,\ldots
+,k+\left\vert \tau\left(  P\right)  \right\vert \right\}  }\nonumber\\
+&  =\left\{  1,2,\ldots,k\right\}  \cup\left\{  k+1,k+2,\ldots,k+\left\vert
+\tau\left(  P\right)  \right\vert \right\}  =\left\{  1,2,\ldots,k+\left\vert
+\tau\left(  P\right)  \right\vert \right\}  .
+\label{pf.lem.Gammaw.coprod.bij.b.3o}%
+\end{align}
+Thus, $\varphi\left(  E\right)  $ is an initial interval; in other words, the
+map $\varphi$ is packed. Furthermore, (\ref{pf.lem.Gammaw.coprod.bij.b.3o})
+shows that $\left\vert \varphi\left(  E\right)  \right\vert
+=k+\underbrace{\left\vert \tau\left(  P\right)  \right\vert }_{\geq0}\geq k$,
+so that $k\in\left\{  0,1,\ldots,\left\vert \varphi\left(  E\right)
+\right\vert \right\}  $.
+
+We shall now show that $\varphi$ is an $\mathbf{E}$-partition. To do so, we
+must prove the following two claims:
+
+\textit{Claim 1:} Every $e\in E$ and $f\in E$ satisfying $e<_{1}f$ satisfy
+$\varphi\left(  e\right)  \leq\varphi\left(  f\right)  $.
+
+\textit{Claim 2:} Every $e\in E$ and $f\in E$ satisfying $e<_{1}f$ and
+$f<_{2}e$ satisfy $\varphi\left(  e\right)  <\varphi\left(  f\right)  $.
+
+We shall only prove Claim 1 (as the proof of Claim 2 is similar). So let $e\in
+E$ and $f\in E$ be such that $e<_{1}f$. We need to show that $\varphi\left(
+e\right)  \leq\varphi\left(  f\right)  $. We are in one of the following four cases:
+
+\textit{Case 1:} We have $e\in P$ and $f\in P$.
+
+\textit{Case 2:} We have $e\in P$ and $f\in Q$.
+
+\textit{Case 3:} We have $e\in Q$ and $f\in P$.
+
+\textit{Case 4:} We have $e\in Q$ and $f\in Q$.
+
+In Case 1, our claim $\varphi\left(  e\right)  \leq\varphi\left(  f\right)  $
+follows from the assumption that $\sigma$ is an ${\mathbf{E}}\mid_{P}%
+$-partition (because in Case 1, we have $\varphi\left(  e\right)
+=\sigma\left(  e\right)  $ and $\varphi\left(  f\right)  =\sigma\left(
+f\right)  $). In Case 4, it follows from the assumption that $\tau$ is an
+${\mathbf{E}}\mid_{Q}$-partition (since in Case 4, we have $\varphi\left(
+e\right)  =\tau\left(  e\right)  +k$ and $\varphi\left(  f\right)
+=\tau\left(  f\right)  +k$). In Case 2, it clearly holds (indeed, if $e\in P$,
+then the definition of $\varphi$ yields $\varphi\left(  e\right)
+=\sigma\left(  e\right)  \leq k$, and if $f\in Q$, then the definition of
+$\varphi$ yields $\varphi\left(  f\right)  =\tau\left(  f\right)  +k>k$;
+therefore, in Case 2, we have $\varphi\left(  e\right)  \leq k<\varphi\left(
+f\right)  $). Finally, Case 3 is impossible (because having $e\in Q$ and $f\in
+P$ and $e<_{1}f$ would contradict (\ref{pf.lem.Gammaw.coprod.bij.b.Adm})).
+Thus, we have proven the claim in each of the four cases, and consequently
+Claim 1 is proven. As we have said above, Claim 2 is proven similarly. Thus,
+we have proven that $\varphi$ is an $\mathbf{E}$-partition.
+
+Altogether, we now know that $\varphi$ is a packed ${\mathbf{E}}$-partition,
+and that $k\in\left\{  0,1,\ldots,\left\vert \varphi\left(  E\right)
+\right\vert \right\}  $. In other words, $\left(  \varphi,k\right)
+\in\mathcal{S}$. This proves Lemma \ref{lem.Gammaw.coprod.bij.b}.
+\end{proof}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.Gammaw.coprod.bij}.]We need to prove the following
+two claims:
+
+\textit{Claim 1:} We have $\Phi\circ\Psi=\operatorname*{id}$.
+
+\textit{Claim 2:} We have $\Psi\circ\Phi=\operatorname*{id}$.
+
+\textit{Proof of Claim 1:} Fix $\left(  \left(  P,Q\right)  ,\sigma
+,\tau\right)  \in\mathcal{T}$. Set $k=\left\vert \sigma\left(  P\right)
+\right\vert $, and let $\varphi$ be the map $E\rightarrow\left\{
+1,2,3,\ldots\right\}  $ which sends every $e\in E$ to $%
+\begin{cases}
+\sigma\left(  e\right)  , & \text{if }e\in P;\\
+\tau\left(  e\right)  +k, & \text{if }e\in Q
+\end{cases}
+$. The definition of $\Psi$ thus yields $\Psi\left(  \left(  P,Q\right)
+,\sigma,\tau\right)  =\left(  \varphi,k\right)  $. We shall now show that
+$\Phi\left(  \varphi,k\right)  =\left(  \left(  P,Q\right)  ,\sigma
+,\tau\right)  $.
+
+Lemma \ref{lem.Gammaw.coprod.bij.b} shows that $\left(  \varphi,k\right)
+\in\mathcal{S}$. In other words, $\varphi$ is a packed ${\mathbf{E}}%
+$-partition, and we have $k\in\left\{  0,1,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  $. Since $\varphi$ is packed, we have
+$\varphi\left(  E\right)  =\left\{  1,2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  $.
+
+The map $\operatorname*{add}\nolimits_{k}:\mathbb{Z}\rightarrow\mathbb{Z}$ is
+a bijection, and its inverse is $\left(  \operatorname*{add}\nolimits_{k}%
+\right)  ^{-1}=\operatorname*{add}\nolimits_{-k}$.
+
+Since the map $\sigma$ is packed, we have $\sigma\left(  P\right)  =\left\{
+1,2,\ldots,\left\vert \sigma\left(  P\right)  \right\vert \right\}  =\left\{
+1,2,\ldots,k\right\}  $ (since $\left\vert \sigma\left(  P\right)  \right\vert
+=k$).
+
+From $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, we conclude that
+$P$ and $Q$ are subsets of $E$ satisfying $P\cap Q=\varnothing$ and $P\cup
+Q=E$. Hence, $Q=E\setminus P$ and $P=E\setminus Q$.
+
+The definition of $\varphi$ shows that%
+\begin{equation}
+\varphi\left(  e\right)  =\sigma\left(  e\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }e\in P.
+\label{pf.lem.Gammaw.coprod.bij.c.1}%
+\end{equation}
+Hence, $\varphi\mid_{P}=\sigma$. Also, the definition of $\varphi$ shows that%
+\begin{equation}
+\varphi\left(  e\right)  =\tau\left(  e\right)
++k\ \ \ \ \ \ \ \ \ \ \text{for every }e\in Q.
+\label{pf.lem.Gammaw.coprod.bij.c.2}%
+\end{equation}
+Thus, every $e\in Q$ satisfies%
+\begin{align}
+\varphi\left(  e\right)   &  =\tau\left(  e\right)  +k=\operatorname*{add}%
+\nolimits_{k}\left(  \tau\left(  e\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{add}\nolimits_{k}%
+\left(  \tau\left(  e\right)  \right)  \text{ is defined to be }\tau\left(
+e\right)  +k\right) \nonumber\\
+&  =\left(  \operatorname*{add}\nolimits_{k}\circ\tau\right)  \left(
+e\right)  . \label{pf.lem.Gammaw.coprod.bij.c.2b}%
+\end{align}
+Hence, $\varphi\mid_{E}=\operatorname*{add}\nolimits_{k}\circ\tau$, so that
+$\tau=\underbrace{\left(  \operatorname*{add}\nolimits_{k}\right)  ^{-1}%
+}_{=\operatorname*{add}\nolimits_{-k}}\circ\left(  \varphi\mid_{E}\right)
+=\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi\mid_{E}\right)  $.
+
+Furthermore, $P=\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
+$\ \ \ \ \footnote{\textit{Proof.} Let $e\in\varphi^{-1}\left(  \left\{
+1,2,\ldots,k\right\}  \right)  $. Thus, $e\in E$ and $\varphi\left(  e\right)
+\in\left\{  1,2,\ldots,k\right\}  $. If we had $e\in Q$, then we would have
+\begin{align*}
+\varphi\left(  e\right)   &  =\underbrace{\tau\left(  e\right)  }%
+_{>0}+k\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.lem.Gammaw.coprod.bij.c.2})}\right) \\
+&  >k,
+\end{align*}
+which would contradict $\varphi\left(  e\right)  \in\left\{  1,2,\ldots
+,k\right\}  $. Hence, we cannot have $e\in Q$. Thus, $e\in E\setminus Q=P$.
+\par
+Now, let us forget that we fixed $e$. Thus we have proven that $e\in P$ for
+every $e\in\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)  $. In
+other words, $\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
+\subseteq P$.
+\par
+On the other hand, fix $p\in P$. Then, $\varphi\left(  p\right)
+=\sigma\left(  p\right)  $ (by (\ref{pf.lem.Gammaw.coprod.bij.c.1})). Hence,
+$\varphi\left(  p\right)  =\sigma\left(  p\right)  \in\sigma\left(  P\right)
+=\left\{  1,2,\ldots,k\right\}  $, so that $p\in\varphi^{-1}\left(  \left\{
+1,2,\ldots,k\right\}  \right)  $.
+\par
+Now, let us forget that we fixed $p$. Thus we have proven that $p\in
+\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)  $ for every $p\in
+P$. In other words, $P\subseteq\varphi^{-1}\left(  \left\{  1,2,\ldots
+,k\right\}  \right)  $. Combining this with $\varphi^{-1}\left(  \left\{
+1,2,\ldots,k\right\}  \right)  \subseteq P$, we obtain $P=\varphi^{-1}\left(
+\left\{  1,2,\ldots,k\right\}  \right)  $, qed.} and $Q=\varphi^{-1}\left(
+\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+\right\}  \right)  $\ \ \ \ \footnote{\textit{Proof.} Let $e\in\varphi
+^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)
+\right\vert \right\}  \right)  $. Thus, $e\in E$ and $\varphi\left(  e\right)
+\in\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
+\right\}  $. If we had $e\in P$, then we would have
+\begin{align*}
+\varphi\left(  e\right)   &  =\sigma\left(  e\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.Gammaw.coprod.bij.c.1}%
+)}\right) \\
+&  \in\sigma\left(  P\right)  =\left\{  1,2,\ldots,k\right\}
+\end{align*}
+and therefore $\varphi\left(  e\right)  \leq k$, which would contradict
+$\varphi\left(  e\right)  \in\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  $. Hence, we cannot have $e\in P$. Thus, $e\in
+E\setminus P=Q$.
+\par
+Now, let us forget that we fixed $e$. Thus we have proven that $e\in Q$ for
+every $e\in\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  \right)  $. In other words,
+$\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  \right)  \subseteq Q$.
+\par
+On the other hand, fix $q\in Q$. Then, $\varphi\left(  q\right)  =\tau\left(
+q\right)  +k$ (by (\ref{pf.lem.Gammaw.coprod.bij.c.2})). Hence, $\varphi
+\left(  q\right)  =\underbrace{\tau\left(  q\right)  }_{>0}+k>k$. Combining
+this with $\varphi\left(  q\right)  \in\varphi\left(  E\right)  =\left\{
+1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert \right\}  $, we
+obtain $\varphi\left(  q\right)  \in\left\{  k+1,k+2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  $. Hence, $q\in\varphi
+^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)
+\right\vert \right\}  \right)  $.
+\par
+Now, let us forget that we fixed $q$. Thus we have proven that $q\in
+\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  \right)  $ for every $q\in Q$. In other words,
+$Q\subseteq\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  \right)  $. Combining this with
+$\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  \right)  \subseteq Q$, we obtain
+$Q=\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
+E\right)  \right\vert \right\}  \right)  $, qed.}. Altogether, we thus know
+that
+\begin{align*}
+P  &  =\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
+,\ \ \ \ \ \ \ \ \ \ Q=\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  \right)  ,\\
+\sigma &  =\varphi\mid_{P}\ \ \ \ \ \ \ \ \ \ \text{and}%
+\ \ \ \ \ \ \ \ \ \ \tau=\operatorname*{add}\nolimits_{-k}\circ\left(
+\varphi\mid_{Q}\right)  .
+\end{align*}
+These equations are identical with the equations
+(\ref{eq.lem.Gammaw.coprod.bij.def1}) and (\ref{eq.lem.Gammaw.coprod.bij.def2}%
+) that were used in the definition of $\Phi\left(  \varphi,k\right)  $. Hence,
+the definition of $\Phi$ shows that $\Phi\left(  \varphi,k\right)  =\left(
+\left(  P,Q\right)  ,\sigma,\tau\right)  $. Thus, $\left(  \left(  P,Q\right)
+,\sigma,\tau\right)  =\Phi\underbrace{\left(  \varphi,k\right)  }%
+_{=\Psi\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  }=\Phi\left(
+\Psi\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  \right)  $.
+
+Now, let us forget that we fixed $\left(  \left(  P,Q\right)  ,\sigma
+,\tau\right)  $. We thus have shown that $\Phi\left(  \Psi\left(  \left(
+P,Q\right)  ,\sigma,\tau\right)  \right)  =\left(  \left(  P,Q\right)
+,\sigma,\tau\right)  $ for every $\left(  \left(  P,Q\right)  ,\sigma
+,\tau\right)  \in\mathcal{T}$. In other words, $\Phi\circ\Psi
+=\operatorname*{id}$. This proves Claim 1.
+
+\textit{Proof of Claim 2:} Fix $\left(  \varphi,k\right)  \in\mathcal{S}$.
+Define $P$, $Q$, $\sigma$ and $\tau$ by (\ref{eq.lem.Gammaw.coprod.bij.def1})
+and (\ref{eq.lem.Gammaw.coprod.bij.def2}). The definition of $\Phi$ shows that
+$\Phi\left(  \varphi,k\right)  =\left(  P,Q,\sigma,\tau\right)  $. From Lemma
+\ref{lem.Gammaw.coprod.bij.a}, we know that $\left(  \left(  P,Q\right)
+,\sigma,\tau\right)  \in\mathcal{T}$. In other words, we know that $\left(
+P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}$, that $\sigma$ is a packed
+${\mathbf{E}}\mid_{P}$-partition, and that $\tau$ is a packed ${\mathbf{E}%
+}\mid_{Q}$-partition.
+
+From $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, we conclude that
+$P$ and $Q$ are subsets of $E$ satisfying $P\cap Q=\varnothing$ and $P\cup
+Q=E$.
+
+We have $\varphi\left(  P\right)  =\left\{  1,2,\ldots,k\right\}  $. (This was
+proven in our proof of Lemma \ref{lem.Gammaw.coprod.bij.a} above; see the
+equality (\ref{pf.lem.Gammaw.coprod.bij.a.3}).)
+
+We have $\sigma=\varphi\mid_{P}$. Thus, for every $e\in P$, we have
+$\sigma\left(  e\right)  =\left(  \varphi\mid_{P}\right)  \left(  e\right)
+=\varphi\left(  e\right)  $. In other words, for every $e\in P$, we have
+\begin{equation}
+\varphi\left(  e\right)  =\sigma\left(  e\right)  .
+\label{pf.lem.Gammaw.coprod.bij.c.11}%
+\end{equation}
+Also, $\tau=\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi\mid
+_{Q}\right)  $. Hence, for every $e\in Q$, we have%
+\begin{align*}
+\tau\left(  e\right)   &  =\left(  \operatorname*{add}\nolimits_{-k}%
+\circ\left(  \varphi\mid_{Q}\right)  \right)  \left(  e\right)
+=\operatorname*{add}\nolimits_{-k}\left(  \underbrace{\left(  \varphi\mid
+_{Q}\right)  \left(  e\right)  }_{=\varphi\left(  e\right)  }\right) \\
+&  =\operatorname*{add}\nolimits_{-k}\left(  \varphi\left(  e\right)  \right)
+=\varphi\left(  e\right)  +\left(  -k\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by the definition of }\operatorname*{add}\nolimits_{-k}\right) \\
+&  =\varphi\left(  e\right)  -k.
+\end{align*}
+Thus, for every $e\in Q$, we have%
+\[
+\varphi\left(  e\right)  =\tau\left(  e\right)  +k.
+\]
+Combining this with (\ref{pf.lem.Gammaw.coprod.bij.c.11}), we conclude that%
+\begin{equation}
+\varphi\left(  e\right)  =%
+\begin{cases}
+\sigma\left(  e\right)  , & \text{if }e\in P;\\
+\tau\left(  e\right)  +k, & \text{if }e\in Q
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \text{for every }e\in E
+\label{pf.lem.Gammaw.coprod.bij.c.12}%
+\end{equation}
+\footnote{The right hand side of this equality makes sense because $P\cap
+Q=\varnothing$ and $P\cup Q=E$.}. Moreover, $\sigma$ is a packed map; thus,
+$\sigma\left(  P\right)  =\left\{  1,2,\ldots,\left\vert \sigma\left(
+P\right)  \right\vert \right\}  $. Hence,%
+\[
+\left\{  1,2,\ldots,\left\vert \sigma\left(  P\right)  \right\vert \right\}
+=\underbrace{\sigma}_{=\varphi\mid_{P}}\left(  P\right)  =\left(  \varphi
+\mid_{P}\right)  \left(  P\right)  =\varphi\left(  P\right)  =\left\{
+1,2,\ldots,k\right\}  .
+\]
+Thus, $\left\vert \sigma\left(  P\right)  \right\vert =k$.
+
+So we know that $k=\left\vert \sigma\left(  P\right)  \right\vert $, and that
+$\varphi$ is the map $E\rightarrow\left\{  1,2,3,\ldots\right\}  $ which sends
+every $e\in E$ to $%
+\begin{cases}
+\sigma\left(  e\right)  , & \text{if }e\in P;\\
+\tau\left(  e\right)  +k, & \text{if }e\in Q
+\end{cases}
+$ (because of (\ref{pf.lem.Gammaw.coprod.bij.c.12})). Thus, our $k$ and our
+$\varphi$ are precisely the $k$ and the $\varphi$ in the definition of
+$\Psi\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  $. Hence, $\Psi\left(
+\left(  P,Q\right)  ,\sigma,\tau\right)  =\left(  \varphi,k\right)  $. Thus,
+$\left(  \varphi,k\right)  =\Psi\underbrace{\left(  \left(  P,Q\right)
+,\sigma,\tau\right)  }_{=\Phi\left(  \varphi,k\right)  }=\Psi\left(
+\Phi\left(  \varphi,k\right)  \right)  $.
+
+Now, let us forget that we fixed $\left(  \varphi,k\right)  $. We thus have
+shown that $\Psi\left(  \Phi\left(  \varphi,k\right)  \right)  =\left(
+\varphi,k\right)  $ for every $\left(  \varphi,k\right)  \in\mathcal{S}$. In
+other words, $\Psi\circ\Phi=\operatorname*{id}$. This proves Claim 2.
+
+Now, both Claims 1 and 2 are proven. Thus, the maps $\Phi$ and $\Psi$ are
+mutually inverse. This proves Lemma \ref{lem.Gammaw.coprod.bij}.
+\end{proof}
+
+\begin{proof}
+[Proof of Proposition~\ref{prop.Gammaw.coprod}.]Define $\mathcal{S}$,
+$\mathcal{T}$, $\Phi$ and $\Psi$ as in Lemma \ref{lem.Gammaw.coprod.bij}. From
+Lemma \ref{lem.Gammaw.coprod.bij}, we know that the maps $\Phi$ and $\Psi$ are
+mutually inverse. Hence, $\Phi$ is a bijection from $\mathcal{S}$ to
+$\mathcal{T}$.
+
+Whenever $\alpha=\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $
+is a composition and $k\in\left\{  0,1,\ldots,\ell\right\}  $, we introduce
+the notation $\alpha\left[  :k\right]  $ for the composition $\left(
+\alpha_{1},\alpha_{2},\ldots,\alpha_{k}\right)  $, and the notation
+$\alpha\left[  k:\right]  $ for the composition $\left(  \alpha_{k+1}%
+,\alpha_{k+2},\ldots,\alpha_{\ell}\right)  $. Now, the formula
+\eqref{eq.coproduct.M} can be rewritten as follows:
+\begin{align}
+\Delta\left(  M_{\alpha}\right)   &  =\sum_{k=0}^{\ell}M_{\alpha\left[
+:k\right]  }\otimes M_{\alpha\left[  k:\right]  }%
+\label{pf.prop.Gammaw.coprod.long.DeltaM}\\
+&  \qquad\text{ for every }\ell\in{\mathbb{N}}\text{ and every composition
+}\alpha\text{ with }\ell\text{ entries.}\nonumber
+\end{align}
+
+
+Let us observe a simple fact: For any $\left(  \varphi,k\right)
+\in\mathcal{S}$, we have%
+\begin{equation}
+\left(  \operatorname{ev}_{w}\varphi\right)  \left[  :k\right]
+=\operatorname{ev}_{w\mid_{P}}\sigma\ \ \ \ \ \ \ \ \ \ \text{and}%
+\ \ \ \ \ \ \ \ \ \ \left(  \operatorname{ev}_{w}\varphi\right)  \left[
+k:\right]  =\operatorname{ev}_{w\mid_{Q}}\tau,
+\label{pf.prop.Gammaw.coprod.evs}%
+\end{equation}
+where $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  =\Phi\left(
+\varphi,k\right)  $\ \ \ \ \footnote{\textit{Proof of
+(\ref{pf.prop.Gammaw.coprod.evs}):} Let $\left(  \varphi,k\right)
+\in\mathcal{S}$. Let $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)
+=\Phi\left(  \varphi,k\right)  $. We must prove the equalities
+(\ref{pf.prop.Gammaw.coprod.evs}).
+\par
+For every $\ell\in\mathbb{Z}$, define the map $\operatorname*{add}%
+\nolimits_{\ell}:\mathbb{Z}\rightarrow\mathbb{Z}$ as in Lemma
+\ref{lem.Gammaw.coprod.bij.a}.
+\par
+Let $\ell=\left\vert \varphi\left(  E\right)  \right\vert $; thus,
+$\varphi\left(  E\right)  =\left\{  1,2,\ldots,\ell\right\}  $ (since
+$\varphi$ is packed). For each $i\in\left\{  1,2,\ldots,\ell\right\}  $,
+define $\alpha_{i}\in\mathbb{N}$ by
+\begin{equation}
+\alpha_{i}=\sum_{e\in\varphi^{-1}\left(  i\right)  }w\left(  e\right)  .
+\label{pf.prop.Gammaw.coprod.evs.pf.alphai}%
+\end{equation}
+Then, $\operatorname*{ev}\nolimits_{w}\varphi=\left(  \alpha_{1},\alpha
+_{2},\ldots,\alpha_{\ell}\right)  $ (by the definition of $\operatorname*{ev}%
+\nolimits_{w}\varphi$).
+\par
+We have $\left(  \varphi,k\right)  \in\mathcal{S}$. Thus, $\varphi$ is a
+packed $\mathbf{E}$-partition, and $k$ is an element of $\left\{
+0,1,\ldots,\left\vert \varphi\left(  E\right)  \right\vert \right\}  $ (by the
+definition of $\mathcal{S}$). Thus, $k\in\left\{  0,1,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  =\left\{  0,1,\ldots
+,\ell\right\}  $ (since $\left\vert \varphi\left(  E\right)  \right\vert
+=\ell$).
+\par
+Now, from $\operatorname*{ev}\nolimits_{w}\varphi=\left(  \alpha_{1}%
+,\alpha_{2},\ldots,\alpha_{\ell}\right)  $, we obtain%
+\[
+\left(  \operatorname{ev}_{w}\varphi\right)  \left[  :k\right]  =\left(
+\alpha_{1},\alpha_{2},\ldots,\alpha_{k}\right)  \ \ \ \ \ \ \ \ \ \ \text{and}%
+\ \ \ \ \ \ \ \ \ \ \left(  \operatorname{ev}_{w}\varphi\right)  \left[
+k:\right]  =\left(  \alpha_{k+1},\alpha_{k+2},\ldots,\alpha_{\ell}\right)  .
+\]
+\par
+Recall that $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  =\Phi\left(
+\varphi,k\right)  $. Hence, $P$, $Q$, $\sigma$ and $\tau$ are defined by
+(\ref{eq.lem.Gammaw.coprod.bij.def1}) and (\ref{eq.lem.Gammaw.coprod.bij.def2}%
+) (according to the definition of $\Phi$). We know (from Lemma
+\ref{lem.Gammaw.coprod.bij.a}) that $\left(  \left(  P,Q\right)  ,\sigma
+,\tau\right)  \in\mathcal{T}$. In other words, we know that $\left(
+P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}$, that $\sigma$ is a packed
+${\mathbf{E}}\mid_{P}$-partition, and that $\tau$ is a packed ${\mathbf{E}%
+}\mid_{Q}$-partition.
+\par
+For every $e\in P$, we have%
+\begin{equation}
+\underbrace{\sigma}_{\substack{=\varphi\mid_{P}\\\text{(by
+(\ref{eq.lem.Gammaw.coprod.bij.def2}))}}}\left(  e\right)  =\left(
+\varphi\mid_{P}\right)  \left(  e\right)  =\varphi\left(  e\right)  .
+\label{pf.prop.Gammaw.coprod.evs.pf.1}%
+\end{equation}
+\par
+For every $e\in Q$, we have%
+\begin{align}
+\underbrace{\tau}_{\substack{=\operatorname*{add}\nolimits_{-k}\circ\left(
+\varphi\mid_{Q}\right)  \\\text{(by (\ref{eq.lem.Gammaw.coprod.bij.def2}))}%
+}}\left(  e\right)   &  =\left(  \operatorname*{add}\nolimits_{-k}\circ\left(
+\varphi\mid_{Q}\right)  \right)  \left(  e\right)  =\operatorname*{add}%
+\nolimits_{-k}\left(  \left(  \varphi\mid_{Q}\right)  \left(  e\right)
+\right) \nonumber\\
+&  =\underbrace{\left(  \varphi\mid_{Q}\right)  \left(  e\right)  }%
+_{=\varphi\left(  e\right)  }+\left(  -k\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by the definition of }\operatorname*{add}\nolimits_{-k}\right)
+\nonumber\\
+&  =\varphi\left(  e\right)  -k. \label{pf.prop.Gammaw.coprod.evs.pf.2}%
+\end{align}
+\par
+For every $i\in\left\{  1,2,\ldots,k\right\}  $, we have%
+\begin{align}
+\sigma^{-1}\left(  i\right)   &  =\left\{  e\in P\ \mid\ \underbrace{\sigma
+\left(  e\right)  }_{\substack{=\varphi\left(  e\right)  \\\text{(by
+(\ref{pf.prop.Gammaw.coprod.evs.pf.1}))}}}=i\right\}  =\left\{  e\in
+P\ \mid\ \varphi\left(  e\right)  =i\right\} \nonumber\\
+&  =\underbrace{\left\{  e\in E\ \mid\ \varphi\left(  e\right)  =i\right\}
+}_{=\varphi^{-1}\left(  i\right)  }\cap\underbrace{P}_{=\varphi^{-1}\left(
+\left\{  1,2,\ldots,k\right\}  \right)  }\nonumber\\
+&  =\varphi^{-1}\left(  i\right)  \cap\varphi^{-1}\left(  \left\{
+1,2,\ldots,k\right\}  \right)  =\varphi^{-1}\left(  i\right)
+\label{pf.prop.Gammaw.coprod.evs.pf.3}%
+\end{align}
+(since $\varphi^{-1}\left(  i\right)  \subseteq\varphi^{-1}\left(  \left\{
+1,2,\ldots,k\right\}  \right)  $ (because $i\in\left\{  1,2,\ldots,k\right\}
+$).
+\par
+For every $i\in\left\{  1,2,\ldots,\ell-k\right\}  $, we have%
+\begin{align}
+\tau^{-1}\left(  i\right)   &  =\left\{  e\in Q\ \mid\ \underbrace{\tau\left(
+e\right)  }_{\substack{=\varphi\left(  e\right)  -k\\\text{(by
+(\ref{pf.prop.Gammaw.coprod.evs.pf.2}))}}}=i\right\}  =\left\{  e\in
+Q\ \mid\ \underbrace{\varphi\left(  e\right)  -k=i}_{\Longleftrightarrow
+\ \left(  \varphi\left(  e\right)  =k+i\right)  }\right\} \nonumber\\
+&  =\left\{  e\in Q\ \mid\ \varphi\left(  e\right)  =k+i\right\}
+=\underbrace{\left\{  e\in E\ \mid\ \varphi\left(  e\right)  =k+i\right\}
+}_{=\varphi^{-1}\left(  k+i\right)  }\cap\underbrace{Q}_{\substack{=\varphi
+^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)
+\right\vert \right\}  \right)  \\=\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots
+,\ell\right\}  \right)  \\\text{(since }\left\vert \varphi\left(  E\right)
+\right\vert =\ell\text{)}}}\nonumber\\
+&  =\varphi^{-1}\left(  k+i\right)  \cap\varphi^{-1}\left(  \left\{
+k+1,k+2,\ldots,\ell\right\}  \right)  =\varphi^{-1}\left(  k+i\right)
+\label{pf.prop.Gammaw.coprod.evs.pf.4}%
+\end{align}
+(since $\varphi^{-1}\left(  k+i\right)  \subseteq\varphi^{-1}\left(  \left\{
+k+1,k+2,\ldots,\ell\right\}  \right)  $ (since $k+i\in\left\{  k+1,k+2,\ldots
+,\ell\right\}  $ (since $i\in\left\{  1,2,\ldots,\ell-k\right\}  $))).
+\par
+We have $\varphi\left(  Q\right)  =\left\{  1,2,\ldots,k\right\}  $. (This was
+proven in our proof of Lemma \ref{lem.Gammaw.coprod.bij.a} above; see the
+equality (\ref{pf.lem.Gammaw.coprod.bij.a.3}).) But $\sigma=\varphi\mid_{P}$,
+so that $\sigma\left(  P\right)  =\left(  \varphi\mid_{P}\right)  \left(
+P\right)  =\varphi\left(  P\right)  =\left\{  1,2,\ldots,k\right\}  $. Hence,
+$\left\vert \sigma\left(  P\right)  \right\vert =\left\vert \left\{
+1,2,\ldots,k\right\}  \right\vert =k$. Therefore, the definition of
+$\operatorname{ev}_{w\mid_{P}}\sigma$ shows that $\operatorname{ev}_{w\mid
+_{P}}\sigma=\left(  \beta_{1},\beta_{2},\ldots,\beta_{k}\right)  $, where each
+$\beta_{i}$ is defined as $\sum_{e\in\sigma^{-1}\left(  i\right)  }\left(
+w\mid_{P}\right)  \left(  e\right)  $. Thus, every $i\in\left\{
+1,2,\ldots,k\right\}  $ satisfies%
+\[
+\beta_{i}=\underbrace{\sum_{e\in\sigma^{-1}\left(  i\right)  }}%
+_{\substack{=\sum_{e\in\varphi^{-1}\left(  i\right)  }\\\text{(by
+(\ref{pf.prop.Gammaw.coprod.evs.pf.3}))}}}\underbrace{\left(  w\mid
+_{P}\right)  \left(  e\right)  }_{=w\left(  e\right)  }=\sum_{e\in\varphi
+^{-1}\left(  i\right)  }w\left(  e\right)  =\alpha_{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.prop.Gammaw.coprod.evs.pf.alphai})}\right)  .
+\]
+Hence, $\left(  \beta_{1},\beta_{2},\ldots,\beta_{k}\right)  =\left(
+\alpha_{1},\alpha_{2},\ldots,\alpha_{k}\right)  =\left(  \operatorname{ev}%
+_{w}\varphi\right)  \left[  :k\right]  $, so that $\left(  \operatorname{ev}%
+_{w}\varphi\right)  \left[  :k\right]  =\left(  \beta_{1},\beta_{2}%
+,\ldots,\beta_{k}\right)  =\operatorname{ev}_{w\mid_{P}}\sigma$.
+\par
+We have $\varphi\left(  Q\right)  =\left\{  k+1,k+2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  $. (This was proven in our
+proof of Lemma \ref{lem.Gammaw.coprod.bij.a} above; see the equality
+(\ref{pf.lem.Gammaw.coprod.bij.a.4}).) But
+\begin{align*}
+\tau\left(  Q\right)   &  =\left\{  \underbrace{\tau\left(  e\right)
+}_{\substack{=\varphi\left(  e\right)  -k\\\text{(by
+(\ref{pf.prop.Gammaw.coprod.evs.pf.2}))}}}\ \mid\ e\in Q\right\}  =\left\{
+\varphi\left(  e\right)  -k\ \mid\ e\in Q\right\} \\
+&  =\left\{  u-k\ \mid\ u\in\varphi\left(  Q\right)  \right\}  .
+\end{align*}
+Thus,
+\begin{align*}
+\left\vert \tau\left(  Q\right)  \right\vert  &  =\left\vert \varphi\left(
+Q\right)  \right\vert =\left\vert \left\{  k+1,k+2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  \right\vert
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\varphi\left(  Q\right)  =\left\{
+k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert \right\}
+\right) \\
+&  =\underbrace{\left\vert \varphi\left(  E\right)  \right\vert }_{=\ell
+}-k=\ell-k.
+\end{align*}
+Therefore, the definition of $\operatorname{ev}_{w\mid_{Q}}\tau$ shows that
+$\operatorname{ev}_{w\mid_{Q}}\tau=\left(  \gamma_{1},\gamma_{2},\ldots
+,\gamma_{\ell-k}\right)  $, where each $\gamma_{i}$ is defined as $\sum
+_{e\in\tau^{-1}\left(  i\right)  }\left(  w\mid_{Q}\right)  \left(  e\right)
+$. Thus, every $i\in\left\{  1,2,\ldots,\ell-k\right\}  $ satisfies%
+\begin{align*}
+\gamma_{i}  &  =\underbrace{\sum_{e\in\tau^{-1}\left(  i\right)  }%
+}_{\substack{=\sum_{e\in\varphi^{-1}\left(  k+i\right)  }\\\text{(by
+(\ref{pf.prop.Gammaw.coprod.evs.pf.4}))}}}\underbrace{\left(  w\mid
+_{Q}\right)  \left(  e\right)  }_{=w\left(  e\right)  }=\sum_{e\in\varphi
+^{-1}\left(  k+i\right)  }w\left(  e\right)  =\alpha_{k+i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since (\ref{pf.prop.Gammaw.coprod.evs.pf.alphai}) (applied to }k+i\text{
+instead of }i\text{)}\\
+\text{shows that }\alpha_{k+i}=\sum_{e\in\varphi^{-1}\left(  k+i\right)
+}w\left(  e\right)
+\end{array}
+\right)  .
+\end{align*}
+Hence, $\left(  \gamma_{1},\gamma_{2},\ldots,\gamma_{\ell-k}\right)  =\left(
+\alpha_{k+1},\alpha_{k+2},\ldots,\alpha_{\ell}\right)  =\left(
+\operatorname{ev}_{w}\varphi\right)  \left[  k:\right]  $, so that $\left(
+\operatorname{ev}_{w}\varphi\right)  \left[  k:\right]  =\left(  \gamma
+_{1},\gamma_{2},\ldots,\gamma_{\ell-k}\right)  =\operatorname{ev}_{w\mid_{Q}%
+}\tau$.
+\par
+Thus, both parts of (\ref{pf.prop.Gammaw.coprod.evs}) are proven.}.
+
+Now, applying $\Delta$ to the equality \eqref{eq.prop.Gammaw.packed} yields
+\begin{align}
+\Delta\left(  \Gamma\left(  {\mathbf{E}},w\right)  \right)   &  =\sum
+_{\varphi\text{ is a packed }{\mathbf{E}}\text{-partition}}\underbrace{\Delta
+\left(  M_{\operatorname{ev}_{w}\varphi}\right)  }_{\substack{=\sum
+_{k=0}^{\left\vert \varphi\left(  E\right)  \right\vert }M_{\left(
+\operatorname{ev}_{w}\varphi\right)  \left[  :k\right]  }\otimes M_{\left(
+\operatorname{ev}_{w}\varphi\right)  \left[  k:\right]  }\\\text{(by
+\eqref{pf.prop.Gammaw.coprod.long.DeltaM}, applied to }\alpha
+=\operatorname*{ev}\nolimits_{w}\varphi\text{ and }\ell=\left\vert
+\varphi\left(  E\right)  \right\vert \text{)}}}\nonumber\\
+&  =\underbrace{\sum_{\varphi\text{ is a packed }{\mathbf{E}}\text{-partition}%
+}\sum_{k=0}^{\left\vert \varphi\left(  E\right)  \right\vert }}%
+_{\substack{=\sum_{\left(  \varphi,k\right)  \in\mathcal{S}}\\\text{(by the
+definition of }\mathcal{S}\text{)}}}M_{\left(  \operatorname{ev}_{w}%
+\varphi\right)  \left[  :k\right]  }\otimes M_{\left(  \operatorname{ev}%
+_{w}\varphi\right)  \left[  k:\right]  }\nonumber\\
+&  =\sum_{\left(  \varphi,k\right)  \in\mathcal{S}}M_{\left(
+\operatorname{ev}_{w}\varphi\right)  \left[  :k\right]  }\otimes M_{\left(
+\operatorname{ev}_{w}\varphi\right)  \left[  k:\right]  }%
+.\label{pf.Gammaw.coprod.long.lhs}%
+\end{align}
+
+
+On the other hand, rewriting each of the tensorands on the right hand side of
+\eqref{eq.prop.Gammaw.coprod} using \eqref{eq.prop.Gammaw.packed}, we obtain
+\begin{align*}
+&  \sum_{\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}}%
+\underbrace{\Gamma\left(  {\mathbf{E}}\mid_{P},w\mid_{P}\right)
+}_{\substack{=\sum_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{P}%
+\text{-partition}}M_{\operatorname{ev}_{w\mid_{P}}\varphi}\\\text{(by
+\eqref{eq.prop.Gammaw.packed})}}}\otimes\underbrace{\Gamma\left(  {\mathbf{E}%
+}\mid_{Q},w\mid_{Q}\right)  }_{\substack{=\sum_{\varphi\text{ is a packed
+}{\mathbf{E}}\mid_{Q}\text{-partition}}M_{\operatorname{ev}_{w\mid_{Q}}%
+\varphi}\\\text{(by \eqref{eq.prop.Gammaw.packed})}}}\\
+&  =\sum_{\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}}\left(
+\sum_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}%
+}M_{\operatorname{ev}_{w\mid_{P}}\varphi}\right)  \otimes\left(  \sum
+_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}%
+}M_{\operatorname{ev}_{w\mid_{Q}}\varphi}\right)  \\
+&  =\sum_{\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}}\left(
+\sum_{\sigma\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}%
+}M_{\operatorname{ev}_{w\mid_{P}}\sigma}\right)  \otimes\left(  \sum
+_{\tau\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}}%
+M_{\operatorname{ev}_{w\mid_{Q}}\tau}\right)  \\
+&  =\underbrace{\sum_{\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}%
+}\sum_{\sigma\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}}%
+\sum_{\tau\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}}%
+}_{\substack{=\sum_{\left(  \left(  P,Q\right)  ,\sigma,\tau\right)
+\in\mathcal{T}}\\\text{(by the definition of }\mathcal{T}\text{)}%
+}}M_{\operatorname{ev}_{w\mid_{P}}\sigma}\otimes M_{\operatorname{ev}%
+_{w\mid_{Q}}\tau}\\
+&  =\sum_{\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}%
+}M_{\operatorname{ev}_{w\mid_{P}}\sigma}\otimes M_{\operatorname{ev}%
+_{w\mid_{Q}}\tau}\\
+&  =\sum_{\left(  \varphi,k\right)  \in\mathcal{S}}M_{\left(
+\operatorname{ev}_{w}\varphi\right)  \left[  :k\right]  }\otimes M_{\left(
+\operatorname{ev}_{w}\varphi\right)  \left[  k:\right]  }%
+\end{align*}
+(here, we have substituted $\Phi\left(  \varphi,k\right)  $ for $\left(
+\left(  P,Q\right)  ,\sigma,\tau\right)  $ in the sum, using the fact that
+$\Phi$ is a bijection from $\mathcal{S}$ to $\mathcal{T}$, and using the
+equalities (\ref{pf.prop.Gammaw.coprod.evs}) to rewrite the addend
+$M_{\operatorname{ev}_{w\mid_{P}}\sigma}\otimes M_{\operatorname{ev}%
+_{w\mid_{Q}}\tau}$ as $M_{\left(  \operatorname{ev}_{w}\varphi\right)  \left[
+:k\right]  }\otimes M_{\left(  \operatorname{ev}_{w}\varphi\right)  \left[
+k:\right]  }$). Comparing this with (\ref{pf.Gammaw.coprod.long.lhs}), we
+obtain%
+\[
+\Delta\left(  \Gamma\left(  {\mathbf{E}},w\right)  \right)  =\sum_{\left(
+P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}}\Gamma\left(  {\mathbf{E}}%
+\mid_{P},w\mid_{P}\right)  \otimes\Gamma\left(  {\mathbf{E}}\mid_{Q},w\mid
+_{Q}\right)  .
+\]
+This proves Proposition \ref{prop.Gammaw.coprod}.
+\end{proof}
+\end{verlong}
 
 We note in passing that there is also a rule for multiplying
 quasisymmetric functions of the form $\Gamma\left(\EE, w\right)$.
