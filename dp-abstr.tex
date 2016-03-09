@@ -151,6 +151,8 @@
 \newcommand{\NN}{{\mathbb{N}}}
 \newcommand{\ZZ}{{\mathbb{Z}}}
 \newcommand{\QQ}{{\mathbb{Q}}}
+\newcommand{\arr}{\ar@{=>}}
+\newcommand{\bluenum}[1]{{\color{blue} #1 }}
 \ihead{Double posets and the antipode of $\QSym$}
 \ohead{page \thepage}
 \cfoot{}
@@ -839,8 +841,7 @@ to be \textit{$E$-coeven} if all elements of $O$ are $E$-coeven.
 \end{itemize}
 \end{definition}
 
-Before we come to the promised result, let us state a simple fact
-(which will be used without mention):
+Before we come to the promised result, let us state a simple fact:
 
 \begin{lemma}
 \label{lem.coeven.all-one}
@@ -1086,10 +1087,13 @@ and Proposition~\ref{prop.Gammaw.packed} will be proven.
 So it remains to prove \eqref{pf.prop.Gammaw.packed.1}. Let $\varphi$
 be a packed $\EE$-partition. Let
 $\ell = \left|\varphi\left(E\right)\right|$; thus
-$\varphi\left(E\right) = \left\{1, 2, \ldots, \ell\right\}$.
+$\varphi\left(E\right) = \left\{1, 2, \ldots, \ell\right\}$
+(since $\varphi$ is packed).
 Let $\alpha_i = \sum_{e \in \varphi^{-1}\left(i\right)}
-w\left(e\right)$ for every $1 \leq i \leq \ell$, so that
-$\ev_w \varphi = \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$.
+w\left(e\right)$ for every $i \in \left\{ 1, 2, \ldots, \ell \right\}$;
+thus,
+$\ev_w \varphi = \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$
+(by the definition of $\ev_w \varphi$).
 Then, the right hand side of
 \eqref{pf.prop.Gammaw.packed.1} rewrites as follows:
 \begin{align}
@@ -1101,19 +1105,34 @@ _{= \prod_{k = 1}^\ell x_{i_k}^{\alpha_k}}
 \prod_{k = 1}^\ell \underbrace{x_{i_k}^{\alpha_k}}
                               _{\substack{= x_{i_k}^{\sum_{e \in \varphi^{-1}\left(k\right)}
                                 w\left(e\right)} \\
-                                = \prod_{e \in \varphi^{-1}\left(k\right)}
-                                x_{i_k}^{w\left(e\right)}}}
+                                \text{(since } \alpha_k = \sum_{e \in \varphi^{-1}\left(k\right)}
+                                w\left(e\right) \text{)}}}
 \nonumber \\
 &= \sum_{i_1 < i_2 < \cdots < i_\ell}
-\underbrace{\prod_{k = 1}^\ell \prod_{e \in \varphi^{-1}\left(k\right)}
-x_{i_k}^{w\left(e\right)}}
+\prod_{k = 1}^\ell \underbrace{x_{i_k}^{\sum_{e \in \varphi^{-1}\left(k\right)}
+                                w\left(e\right)}}
+                              _{\substack{= \prod_{e \in \varphi^{-1}\left(k\right)}
+                                x_{i_k}^{w\left(e\right)} \\
+                                = \prod_{e \in E;\ \varphi\left(e\right) = k}
+                                x_{i_k}^{w\left(e\right)} }}
+= \sum_{i_1 < i_2 < \cdots < i_\ell}
+\prod_{k = 1}^\ell \prod_{e \in E;\ \varphi\left(e\right) = k}
+\underbrace{x_{i_k}^{w\left(e\right)}}_{\substack{
+         =x_{i_{\varphi\left(e\right)}}^{w\left(e\right)} \\
+         \text{(since } k = \varphi\left(e\right) \text{)}
+         }}
+\nonumber \\
+&= \sum_{i_1 < i_2 < \cdots < i_\ell}
+\underbrace{\prod_{k = 1}^\ell \prod_{e \in E;\ \varphi\left(e\right) = k}
+x_{i_{\varphi\left(e\right)}}^{w\left(e\right)}}
 _{ = \prod_{e \in E} x_{i_{\varphi\left(e\right)}}^{w\left(e\right)}}
 = \sum_{i_1 < i_2 < \cdots < i_\ell}
 \prod_{e \in E} x_{i_{\varphi\left(e\right)}}^{w\left(e\right)}
 \nonumber \\
 &= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
 \underbrace{\prod_{e \in E} x_{r_T\left(\varphi\left(e\right)\right)}^{w\left(e\right)}}
-           _{=\xx_{r_T\circ\varphi,w}}
+           _{= \prod_{e \in E} x_{\left(r_T\circ \varphi\right)\left(e\right)}^{w\left(e\right)}
+             = \xx_{r_T\circ\varphi,w}}
 = \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
 \xx_{r_T\circ\varphi,w}
 \label{pf.prop.Gammaw.packed.1.pf.1}
@@ -1149,12 +1168,72 @@ $\pack \pi = \varphi$. Hence,
 \end{align*}
 (because if $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ is a map
 satisfying $\pack \pi = \varphi$, then
-$\left|\pi\left(E\right)\right| = \ell$). But for every
+$\left|\pi\left(E\right)\right| = \ell$\ \ \ \ \footnote{\textit{Proof.}
+Let $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ be a map
+satisfying $\pack \pi = \varphi$. The definition of $\pack \pi$
+yields $\pack \pi = r_{\pi\left(E\right)}^{-1} \circ \pi$. Hence,
+$\left|\left(\pack \pi\right)\left(E\right)\right|
+= \left|\left(r_{\pi\left(E\right)}^{-1} \circ \pi\right)\left(E\right)\right|
+= \left|r_{\pi\left(E\right)}^{-1} \left(\pi\left(E\right)\right)\right|
+= \left|\pi\left(E\right)\right|$
+(since $r_{\pi\left(E\right)}^{-1}$ is a bijection). Since
+$\pack \pi = \varphi$, this rewrites as
+$\left|\varphi\left(E\right)\right| = \left|\pi\left(E\right)\right|$.
+Hence, $ \left|\pi\left(E\right)\right|
+= \left|\varphi\left(E\right)\right| = \ell$, qed.}). But for every
 $\ell$-element subset $T$ of
 $\left\{1, 2, 3, \ldots\right\}$, there exists exactly
 one $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ satisfying
-$\pack \pi = \varphi$ and $\pi\left(E\right) = T$ (namely,
-$\pi = r_T \circ \varphi$), and therefore we have
+$\pack \pi = \varphi$ and $\pi\left(E\right) = T$: namely,
+$\pi = r_T \circ \varphi$\ \ \ \ \footnote{\textit{Proof.}
+Let $T$ be an $\ell$-element subset of $\left\{
+1,2,3,\ldots\right\}  $. We need to show that there exists exactly one
+$\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying
+$\operatorname{pack}\pi=\varphi$ and $\pi\left(  E\right)  =T$: namely,
+$\pi=r_{T}\circ\varphi$. In other words, we need to prove the following two claims:
+
+\textit{Claim 1:} The map $r_{T}\circ\varphi$ is a map $\pi:E\rightarrow
+\left\{  1,2,3,\ldots\right\}  $ satisfying $\operatorname{pack}\pi=\varphi$
+and $\pi\left(  E\right)  =T$.
+
+\textit{Claim 2:} If $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ is a
+map satisfying $\operatorname{pack}\pi=\varphi$ and $\pi\left(  E\right)  =T$,
+then $\pi=r_{T}\circ\varphi$.
+
+\textit{Proof of Claim 1.} We have $\left(  r_{T}\circ\varphi\right)  \left(
+E\right)  =r_{T}\left(  \underbrace{\varphi\left(  E\right)  }_{=\left\{
+1,2,\ldots,\ell\right\}  }\right)  =r_{T}\left(  \left\{  1,2,\ldots
+,\underbrace{\ell}_{\substack{=\left\vert T\right\vert \\\text{(since }T\text{
+is }\ell\text{-element)}}}\right\}  \right)  =r_{T}\left(  \left\{
+1,2,\ldots,\left\vert T\right\vert \right\}  \right)  =T$ (by the definition
+of $r_{T}$). Now, the definition of $\operatorname{pack}\left(  r_{T}%
+\circ\varphi\right)  $ shows that
+\begin{align*}
+\operatorname{pack}\left(  r_{T}\circ\varphi\right)   & =r_{\left(  r_{T}%
+\circ\varphi\right)  \left(  E\right)  }^{-1}\circ\left(  r_{T}\circ
+\varphi\right)  =r_{T}^{-1}\circ\left(  r_{T}\circ\varphi\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  r_{T}\circ\varphi\right)
+\left(  E\right)  =T\right) \\
+& =\varphi.
+\end{align*}
+Thus, the map $r_{T}\circ\varphi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $
+satisfies $\operatorname{pack}\left(  r_{T}\circ\varphi\right)  =\varphi$ and
+$\left(  r_{T}\circ\varphi\right)  \left(  E\right)  =T$. In other words,
+$r_{T}\circ\varphi$ is a map $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $
+satisfying $\operatorname{pack}\pi=\varphi$ and $\pi\left(  E\right)  =T$.
+This proves Claim 1.
+
+\textit{Proof of Claim 2.} Let $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}
+$ be a map satisfying $\operatorname{pack}\pi=\varphi$ and $\pi\left(
+E\right)  =T$. The definition of $\operatorname{pack}\pi$ shows that
+$\operatorname{pack}\pi=r_{\pi\left(  E\right)  }^{-1}\circ\pi=r_{T}^{-1}%
+\circ\pi$ (since $\pi\left(  E\right)  =T$). Hence, $r_{T}^{-1}\circ
+\pi=\operatorname*{pack}\pi=\varphi$, so that $\pi=r_{T}\circ\varphi$. This
+proves Claim 2.
+
+Now, both Claims 1 and 2 are proven; hence, our proof is complete.
+}. Therefore, for every $\ell$-element subset $T$ of
+$\left\{1, 2, 3, \ldots\right\}$, we have
 \[
 \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\} \text{; } \pack \pi = \varphi
 \text{; } \pi\left(E\right) = T}
@@ -3648,7 +3727,8 @@ g\label{pf.thm.antipode.GammawG.signed}%
 \footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.signed}:} Let $O$ be
 a $G$-orbit on $\Par \EE $, and let $\pi\in O$.
 \par
-Assume first that $O$ is $E$-coeven. Thus, $\pi$ is even (by the definition of what
+Assume first that $O$ is $E$-coeven. Thus, $\pi$ is $E$-coeven
+(by the definition of what
 it means for $O$ to be $E$-coeven); this means that every $g\in\operatorname*{Stab}%
 \nolimits_{G}\pi$ is $E$-even. Hence, every $g\in\operatorname*{Stab}%
 \nolimits_{G}\pi$ satisfies $\operatorname*{sign}\nolimits_{E}g=1$. Thus,
@@ -3671,8 +3751,9 @@ it means for $O$ to be $E$-coeven); this means that every $g\in\operatorname*{St
 \par
 Thus, we have proven \eqref{pf.thm.antipode.GammawG.signed} under the
 assumption that $O$ is $E$-coeven. We can therefore WLOG assume the opposite now.
-Thus, assume that $O$ is not $E$-coeven. Hence, $\pi$ is not
-$E$-coeven.
+Thus, assume that $O$ is not $E$-coeven. Hence, no element of $O$ is $E$-coeven
+(due to the contrapositive of Lemma~\ref{lem.coeven.all-one}). In particular,
+$\pi$ is not $E$-coeven.
 In other words, not every
 $g\in\operatorname*{Stab}\nolimits_{G}\pi$ is $E$-even. Now, the map
 \[
