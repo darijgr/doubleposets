@@ -2628,27 +2628,51 @@ $S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
 induction step and thus the proof of Theorem~\ref{thm.antipode.Gammaw}.
 It thus remains to prove \eqref{pf.thm.antipode.Gammaw.Req}.
 
-We have
+For every subset $P$ of $E$, we have
+
+\begin{align}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+&= \sum_{\pi \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\xx_{\pi, w\mid_P}
+\nonumber \\
+& \qquad \left(\text{by the definition of }
+ \Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right) \right)
+\nonumber \\
+& = \sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\xx_{\sigma, w\mid_P} .
+\label{pf.thm.antipode.Gammaw.Req.pf.Gamma1}
+\end{align}
+
+For every subset $Q$ of $E$, we have
+
+\begin{align}
+\Gamma\left(\underbrace{\EE\mid_Q}_{=\left(Q, <_1, <_2\right)}, w\mid_Q\right)
+&= \Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right)
+\nonumber \\
+&= \sum_{\pi \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\pi, w\mid_Q}
+\nonumber \\
+& \qquad \left(\text{by the definition of }
+ \Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right) \right)
+\nonumber \\
+& = \sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\tau, w\mid_Q} .
+\label{pf.thm.antipode.Gammaw.Req.pf.Gamma2}
+\end{align}
+
+Now,
 \begin{align*}
 & \sum_{\left(P, Q\right) \in \Adm \EE}
 \left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\underbrace{\EE\mid_Q}_{=\left(Q, <_1, <_2\right)}, w\mid_Q\right) \\
-&= \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right) \\
-&= \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\left(\sum_{\pi \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
-\xx_{\pi, w\mid_P}\right)
-\left(\sum_{\pi \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
-\xx_{\pi, w\mid_Q}\right) \\
-& \qquad \left(\text{by the definitions of }
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\text{ and }
-\Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right)
-\right) \\
+\underbrace{\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)}_{
+ \substack{ = \sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+            \xx_{\sigma, w\mid_P} \\
+            \text{(by \eqref{pf.thm.antipode.Gammaw.Req.pf.Gamma1})}}}
+\underbrace{\Gamma\left(\EE\mid_Q, w\mid_Q\right)}_{
+ \substack{ = \sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+            \xx_{\tau, w\mid_Q} \\
+            \text{(by \eqref{pf.thm.antipode.Gammaw.Req.pf.Gamma2})}}}
+\\
 &= \sum_{\left(P, Q\right) \in \Adm \EE}
 \left(-1\right)^{\left|P\right|}
 \left(\sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
@@ -2749,7 +2773,7 @@ $T$ has no fixed points. Therefore, to each addend on the left
 hand side of \eqref{pf.thm.antipode.Gammaw.signrev} corresponds an
 addend with opposite sign -- namely, the addend for
 $T\left(\left(P, Q\right)\right)$, if the former addend was the
-addend for $\left(P, Q\right)$.}), and so
+addend for $\left(P, Q\right)$.}, and so
 \eqref{pf.thm.antipode.Gammaw.signrev}
 will follow and we will be done. It thus remains to find $T$.
 
