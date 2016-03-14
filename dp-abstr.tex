@@ -983,19 +983,55 @@ $<_2$ is chosen to be total) yields the formula for the
 antipode of a fundamental quasisymmetric function
 (\cite[(4.27)]{Malve-Thesis}, \cite[(5.9)]{Reiner}, \cite[Theorem 5.1]{BenSag}).
 
-\item[(d)] Applying Corollary~\ref{cor.antipode.Gamma} to the
-tertispecial double poset $\mathbf{Y}\left(\lambda / \mu\right)$
-of Example~\ref{exam.Gamma} (d) (or to the special double
-poset $\mathbf{Y}_h\left(\lambda / \mu\right)$
-of Example~\ref{exam.Gamma} (d)) yields the
-well-known formula $S\left(s_{\lambda / \mu}\right)
+\item[(d)] Let us use the notations of Example~\ref{exam.dp}.
+For any partition $\lambda$, let $\lambda^t$ denote the
+conjugate partition of $\lambda$.
+Let $\mu$ and $\lambda$ be two partitions satisfying
+$\mu \subseteq \lambda$. Then, there is a bijection
+$\tau : Y\left(\lambda / \mu\right) \to
+Y\left(\lambda^t / \mu^t\right)$ sending each
+$\left(i, j\right) \in Y\left(\lambda / \mu\right)$
+to $\left(j, i\right)$. This bijection is an isomorphism
+of double posets from
+$\left(Y\left(\lambda / \mu\right), >_1, <_2\right)$
+to
+$\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)$.
+Thus, applying Corollary~\ref{cor.antipode.Gamma} to the
+tertispecial double poset $\mathbf{Y}\left(\lambda / \mu\right)$,
+we obtain
+\begin{align}
+S\left(\Gamma\left(\mathbf{Y}\left(\lambda / \mu\right)\right)\right)
+&= \left(-1\right)^{\left|\lambda / \mu\right|}
+\Gamma\left(\left(Y\left(\lambda / \mu\right), >_1, <_2\right)\right)
+\nonumber \\
+&= \left(-1\right)^{\left|\lambda / \mu\right|}
+\Gamma\left(\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)\right)
+.
+\label{eq.exam.antipode.Gammaw.schur.1}
+\end{align}
+But from Example~\ref{exam.Gamma} (d), we know that
+$\Gamma\left(\mathbf{Y}\left(\lambda / \mu\right)\right)
+= s_{\lambda / \mu}$. Moreover, a similar argument using
+\cite[Remark 2.12]{Reiner} shows that
+$\Gamma\left(\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)\right)
+= s_{\lambda^t / \mu^t}$. Hence,
+\eqref{eq.exam.antipode.Gammaw.schur.1} rewrites as
+\begin{equation}
+S\left(s_{\lambda / \mu}\right)
 = \left(-1\right)^{\left|\lambda / \mu\right|}
-s_{\lambda^t / \mu^t}$ for any two partitions $\lambda$ and $\mu$
-satisfying $\mu \subseteq \lambda$ (where $\lambda^t$ denotes the
-conjugate partition of $\lambda$). This formula is usually stated
+s_{\lambda^t / \mu^t} .
+\label{eq.exam.antipode.Gammaw.schur.1}
+\end{equation}
+This is a well-known formula, and is usually stated
 for $S$ being the antipode of the Hopf algebra of symmetric
 (rather than quasisymmetric) functions, but the latter antipode
 is a restriction of the antipode of $\QSym$.
+
+It is also possible (but more difficult) to derive
+\eqref{eq.exam.antipode.Gammaw.schur.1} by using the double
+poset $\mathbf{Y}_h\left(\lambda / \mu\right)$ instead of
+$\mathbf{Y}\left(\lambda / \mu\right)$. (This boils down to what
+was done in \cite[proof of Corollary 5.29]{Reiner}.)
 
 \item[(e)] Two results of Benedetti and Sagan
 \cite[Theorems 8.1--8.2]{BenSag} on the antipodes of immaculate
