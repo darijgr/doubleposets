@@ -3376,21 +3376,27 @@ Statement 3 implies Statement 2. Consequently, Statements 2 and 3 are
 equivalent, and so the proof of Lemma \ref{lem.coeven.all-one} is complete.
 \end{proof}
 
-\begin{proof}
-[Proof of Theorem~\ref{thm.antipode.GammawG} (sketched).]For every $g\in G$,
-define a double poset
-$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $ as follows:
+Next, we will show two simple properties of posets on which groups act.
 
-Let $E^{g}$ be the set of all orbits under the action of $g$ on $E$. Define a
-binary relation $<_{1}^{g}$ on $E^{g}$ by
+\begin{proposition}
+\label{prop.G-poset.quot.poset}
+Let $E$ be a set. Let $<_1$ be a strict partial order relation on $E$.
+Let $G$ be a finite group which acts on $E$. Assume that $G$ preserves
+the relation $<_1$.
+
+Let $g \in G$. Let $E^{g}$ be the set of all orbits under the action of
+$g$ on $E$. Define a binary relation $<_{1}^{g}$ on $E^{g}$ by
 \[
 \left(  u<_{1}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
 u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
 \]
-It is easy to see that $<_{1}^{g}$ is a strict partial order
-relation\footnote{\textit{Proof.} This is precisely \cite[Lemma 2.4]{Joch},
-but let us outline the proof for the sake of completeness.
-\par
+Then, $<_1^g$ is a strict partial order relation.
+\end{proposition}
+
+Proposition~\ref{prop.G-poset.quot.poset} is precisely \cite[Lemma 2.4]{Joch},
+but let us outline the proof for the sake of completeness:
+
+\begin{proof}[Proof of Proposition~\ref{prop.G-poset.quot.poset}.]
 Let us first show that the relation $<_{1}^{g}$ is irreflexive. Indeed, assume
 the contrary. Thus, there exists a $u\in E^{g}$ such that $u<_{1}^{g}u$.
 Consider this $u$. Since $u<_{1}^{g}u$, there exist $a\in u$ and $b\in u$ with
@@ -3398,7 +3404,8 @@ $a<_{1}b$. Consider these $a$ and $b$. There exists a $k\in\mathbb{N}$ such
 that $b=g^{k}a$ (since $a$ and $b$ both lie in one and the same $g$-orbit
 $u$). Consider this $k$.
 \par
-The $g$-orbit $u$ of $a$ is finite. Thus, there exists a positive integer $n$
+The $g$-orbit $u$ of $a$ is finite (since $g$ is finite).
+Thus, there exists a positive integer $n$
 such that $g^{n}a=a$. Consider this $n$. Notice that $g^{np}a=\left(
 g^{n}\right)  ^{p}a=a$ for every $p\in\mathbb{N}$ (since $g^{n}a=a$).
 \par
@@ -3434,29 +3441,83 @@ relation $<_{1}^{g}$ is transitive.
 Now, we know that the relation $<_{1}^{g}$ is irreflexive and transitive, and
 thus also antisymmetric (since every irreflexive and transitive binary
 relation is antisymmetric). In other words, $<_{1}^{g}$ is a strict partial
-order relation, qed.}. Similarly, we define a strict partial order relation
-$<_{2}^{g}$ on $E^{g}$ by
+order relation. This proves Proposition~\ref{prop.G-poset.quot.poset}.
+\end{proof}
+
+\begin{proposition}
+\label{prop.G-poset.quot.double}
+Let $\EE = \left(E, <_1, <_2\right)$ be a tertispecial double poset.
+Let $G$ be a finite group which acts on $E$. Assume that $G$ preserves
+both relations $<_1$ and $<_2$.
+
+Let $g \in G$. Let $E^{g}$ be the set of all orbits under the action of
+$g$ on $E$. Define a binary relation $<_{1}^{g}$ on $E^{g}$ by
+\[
+\left(  u<_{1}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
+u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
+\]
+Define a binary relation $<_{2}^{g}$ on $E^{g}$ by
 \[
 \left(  u<_{2}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
 u\text{ and }b\in v\text{ with }a<_{2}b\right)  .
 \]
-Finally, we define a double poset
-$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $.
-This double poset $ \EE ^{g}$ is
-tertispecial\footnote{\textit{Proof.} Let $u$ and $v$ be two elements of
-$E^{g}$ such that $u$ is $<_{1}^{g}$-covered by $v$. We must prove that $u$
+Let $\EE^g$ be the triple $\left(E^g, <_1^g, <_2^g\right)$. Then,
+$\EE^g$ is a tertispecial double poset.
+\end{proposition}
+
+\begin{proof}[Proof of Proposition~\ref{prop.G-poset.quot.double}.]
+Both relations $<_1$ and $<_2$ are strict partial order relations
+(since $\EE$ is a double poset).
+Proposition~\ref{prop.G-poset.quot.poset} shows that $<_{1}^{g}$ is a
+strict partial order relation.
+Proposition~\ref{prop.G-poset.quot.poset} (applied to $<_2$ and
+$<_2^g$ instead of $<_1$ and $<_1^g$) shows that $<_{2}^{g}$ is a
+strict partial order relation. Thus, $\EE^g
+= \left(E^g, <_1^g, <_2^g\right)$ is a double poset. It remains
+to show that this double poset $\EE^g$ is tertispecial.
+
+Let $u$ and $v$ be two elements of
+$E^{g}$ such that $u$ is $<_{1}^{g}$-covered by $v$. We shall prove that $u$
 and $v$ are $<_{2}^{g}$-comparable.
-\par
+
 We have $u<_{1}^{g}v$ (since $u$ is $<_{1}^{g}$-covered by $v$). In other
 words, there exist $a\in u$ and $b\in v$ with $a<_{1}b$. Consider these $a$
 and $b$.
-\par
+
 If there was a $c\in E^{g}$ satisfying $a<_{1}c<_{1}b$, then we would have
 $u<_{1}^{g}w<_{1}^{g}v$ with $w$ being the $g$-orbit of $c$, and this would
 contradict the condition that $u$ is $<_{1}^{g}$-covered by $v$. Hence, no
 such $c$ can exist. In other words, $a$ is $<_{1}$-covered by $b$. Thus, $a$
 and $b$ are $<_{2}$-comparable (since the double poset $ \EE $ is
-tertispecial). Consequently, $u$ and $v$ are $<_{2}^{g}$-comparable, qed.}.
+tertispecial). Consequently, $u$ and $v$ are $<_{2}^{g}$-comparable.
+
+Now, let us forget that we fixed $u$ and $v$. We thus have shown that if
+$u$ and $v$ are two elements of $E^{g}$ such that $u$ is $<_{1}^{g}$-covered
+by $v$, then $u$ and $v$ are $<_{2}^{g}$-comparable. In other words, the
+double poset $\EE^g = \left(E^g, <_1^g, <_2^g\right)$ is tertispecial. This
+proves Proposition~\ref{prop.G-poset.quot.double}.
+\end{proof}
+
+\begin{proof}
+[Proof of Theorem~\ref{thm.antipode.GammawG} (sketched).]For every $g\in G$,
+define a tertispecial double poset
+$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $ as follows:
+
+Let $E^{g}$ be the set of all orbits under the action of $g$ on $E$. Define a
+binary relation $<_{1}^{g}$ on $E^{g}$ by
+\[
+\left(  u<_{1}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
+u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
+\]
+Similarly, define a strict partial order relation $<_{2}^{g}$ on $E^{g}$ by
+\[
+\left(  u<_{2}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
+u\text{ and }b\in v\text{ with }a<_{2}b\right)  .
+\]
+Finally, set
+$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $.
+Proposition~\ref{prop.G-poset.quot.double} shows that this $ \EE ^{g}$ is
+a tertispecial double poset.
 
 Furthermore, for every $g\in G$, define a map $w^{g}:E^{g}\rightarrow
 \left\{1,2,3,\ldots\right\}$
