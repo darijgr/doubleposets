@@ -4093,6 +4093,237 @@ This proves Theorem~\ref{thm.antipode.GammawG}.
 \end{proof}
 
 
+\section{Application: Jochemko's theorem}
+
+We shall now demonstrate an application of Theorem \ref{thm.antipode.GammawG}:
+namely, we will use it to provide an alternative proof of \cite[Theorem
+2.13]{Joch}. The way we derive \cite[Theorem 2.13]{Joch} from Theorem
+\ref{thm.antipode.GammawG} is classical, and in fact was what originally
+motivated the discovery of Theorem \ref{thm.antipode.GammawG} (although, of
+course, it cannot be conversely derived from \cite[Theorem 2.13]{Joch}, so it
+is an actual generalization).
+
+An intermediate step between \cite[Theorem 2.13]{Joch} and Theorem
+\ref{thm.antipode.GammawG} will be the following fact:
+
+\begin{corollary}
+\label{cor.reciprocity.GammawG}Let ${\mathbf{E}}=\left(  E,<_{1},<_{2}\right)
+$ be a tertispecial double poset. Let $w:E\rightarrow\left\{  1,2,3,\ldots
+\right\}  $. Let $G$ be a finite group which acts on $E$. Assume that $G$
+preserves both relations $<_{1}$ and $<_{2}$, and also preserves $w$. For
+every $q\in\mathbb{N}$, let $\operatorname*{Par}\nolimits_{q}\mathbf{E}$
+denote the set of all $\mathbf{E}$-partitions whose image is contained in
+$\left\{  1,2,\ldots,q\right\}  $. Then, the group $G$ also acts on
+$\operatorname*{Par}\nolimits_{q}\mathbf{E}$; namely, $\operatorname{Par}%
+_{q}{\mathbf{E}}$ is a $G$-subset of the $G$-set $\left\{  1,2,\ldots
+,q\right\}  ^{E}$ (see Definition~\ref{def.G-sets.terminology} (d) for the
+definition of the latter).
+
+\begin{enumerate}
+\item[(a)] There exists a unique polynomial $\Omega_{\mathbf{E},G}%
+\in\mathbb{Q}\left[  X\right]  $ such that every $q\in\mathbb{N}$ satisfies%
+\begin{equation}
+\Omega_{\mathbf{E},G}\left(  q\right)  =\left(  \text{the number of all
+}G\text{-orbits on }\operatorname*{Par}\nolimits_{q}\mathbf{E}\right)  .
+\label{eq.cor.reciprocity.GammawG.a.def}%
+\end{equation}
+
+
+\item[(b)] This polynomial satisfies%
+\begin{align}
+&  \Omega_{\mathbf{E},G}\left(  -q\right) \nonumber\\
+&  =\left(  -1\right)  ^{\left\vert E\right\vert }\left(  \text{the number of
+all even }G\text{-orbits on }\operatorname*{Par}\nolimits_{q}\left(
+E,>_{1},<_{2}\right)  \right) \nonumber\\
+&  =\left(  -1\right)  ^{\left\vert E\right\vert }\left(  \text{the number of
+all even }G\text{-orbits on }\operatorname*{Par}\nolimits_{q}\left(
+E,<_{1},>_{2}\right)  \right)  \label{eq.cor.reciprocity.GammawG.b.2}%
+\end{align}
+for all $q\in\mathbb{N}$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+[Proof of Corollary \ref{cor.reciprocity.GammawG} (sketched).]Set
+$\mathbf{k}=\mathbb{Q}$. For any $f\in\operatorname*{QSym}$ and any
+$q\in\mathbb{N}$, we define an element $\operatorname*{ps}\nolimits^{1}\left(
+f\right)  \left(  q\right)  \in\mathbb{Q}$ by%
+\[
+\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)  =f\left(
+\underbrace{1,1,\ldots,1}_{q\text{ times}},0,0,0,\ldots\right)
+\]
+(that is, $\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)
+$ is the result of substituting $1$ for $x_{1},x_{2},\ldots,x_{q}$ and $0$ for
+$x_{q+1},x_{q+2},x_{q+3},\ldots$ in the power series $f$).
+
+(a) Consider the elements $\Gamma\left(  {\mathbf{E}},w,G\right)  $ and
+$\Gamma^{+}\left(  {\mathbf{E}},w,G\right)  $ of ${\operatorname{QSym}}$
+defined in Theorem \ref{thm.antipode.GammawG}. Observe that
+$\operatorname*{Par}\nolimits_{q}\mathbf{E}$ is a $G$-subset of
+$\operatorname*{Par}\mathbf{E}$.
+
+\begin{noncompile}
+Clearly, there exists \textbf{at most} one polynomial $\Omega_{\mathbf{E}%
+,G}\in\mathbb{Q}\left[  X\right]  $ such that every $q\in\mathbb{N}$ satisfies
+(\ref{eq.cor.reciprocity.GammawG.a.def}) (because a polynomial in
+$\mathbb{Q}\left[  X\right]  $ is uniquely determined by its values at all
+nonnegative integers). It remains to show that there exists \textbf{at least}
+one such polynomial.
+\end{noncompile}
+
+Now, \cite[Proposition 7.7 (i)]{Reiner} shows that, for any given
+$f\in\operatorname*{QSym}$, there exists a unique polynomial in $\mathbb{Q}%
+\left[  X\right]  $ whose value on each $q\in\mathbb{N}$ equals
+$\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)  $.
+Applying this to $f=\Gamma\left(  {\mathbf{E}},w,G\right)  $, we conclude that
+there exists a unique polynomial in $\mathbb{Q}\left[  X\right]  $ whose value
+on each $q\in\mathbb{N}$ equals $\operatorname*{ps}\nolimits^{1}\left(
+\Gamma\left(  {\mathbf{E}},w,G\right)  \right)  \left(  q\right)  $. But since
+every $q\in\mathbb{N}$ satisfies
+\begin{align}
+\operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(  {\mathbf{E}},w,G\right)
+\right)  \left(  q\right)   &  =\underbrace{\left(  \Gamma\left(  {\mathbf{E}%
+},w,G\right)  \right)  }_{=\sum_{O\text{ is a }G\text{-orbit on }%
+\operatorname{Par}{\mathbf{E}}}{\mathbf{x}}_{O,w}}\left(
+\underbrace{1,1,\ldots,1}_{q\text{ times}},0,0,0,\ldots\right) \nonumber\\
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}%
+}\underbrace{{\mathbf{x}}_{O,w}\left(  \underbrace{1,1,\ldots,1}_{q\text{
+times}},0,0,0,\ldots\right)  }_{=%
+\begin{cases}
+1, & \text{if }O\subseteq\operatorname*{Par}\nolimits_{q}\mathbf{E};\\
+0, & \text{if }O\not \subseteq \operatorname*{Par}\nolimits_{q}\mathbf{E}%
+\end{cases}
+}\nonumber\\
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}%
+\begin{cases}
+1, & \text{if }O\subseteq\operatorname*{Par}\nolimits_{q}\mathbf{E};\\
+0, & \text{if }O\not \subseteq \operatorname*{Par}\nolimits_{q}\mathbf{E}%
+\end{cases}
+\nonumber\\
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}_{q}{\mathbf{E}}%
+}1=\left(  \text{the number of all }G\text{-orbits on }\operatorname*{Par}%
+\nolimits_{q}\mathbf{E}\right)  , \label{pf.cor.reciprocity.GammawG.a.1}%
+\end{align}
+this rewrites as follows: There exists a unique polynomial in $\mathbb{Q}%
+\left[  X\right]  $ whose value on each $q\in\mathbb{N}$ equals $\left(
+\text{the number of all }G\text{-orbits on }\operatorname*{Par}\nolimits_{q}%
+\mathbf{E}\right)  $. This proves Corollary \ref{cor.reciprocity.GammawG} (a).
+
+(b) \cite[Proposition 7.7 (i)]{Reiner} shows that, for any given
+$f\in\operatorname*{QSym}$, there exists a unique polynomial in $\mathbb{Q}%
+\left[  X\right]  $ whose value on each $q\in\mathbb{N}$ equals
+$\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)  $. This
+polynomial is denoted by $\operatorname*{ps}\nolimits^{1}\left(  f\right)  $
+in \cite[Proposition 7.7]{Reiner}. From our above proof of Corollary
+\ref{cor.reciprocity.GammawG} (a), we see that
+\[
+\Omega_{\mathbf{E},G}=\operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(
+{\mathbf{E}},w,G\right)  \right)  .
+\]
+
+
+But \cite[Proposition 7.7 (iii)]{Reiner} shows that, for any $f\in
+\operatorname*{QSym}$ and $m\in\mathbb{N}$, we have $\operatorname*{ps}%
+\nolimits^{1}\left(  S\left(  f\right)  \right)  \left(  m\right)
+=\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  -m\right)  $.
+Applying this to $f=\Gamma\left(  {\mathbf{E}},w,G\right)  $, we obtain%
+\[
+\operatorname*{ps}\nolimits^{1}\left(  S\left(  \Gamma\left(  {\mathbf{E}%
+},w,G\right)  \right)  \right)  \left(  m\right)
+=\underbrace{\operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(  {\mathbf{E}%
+},w,G\right)  \right)  }_{=\Omega_{\mathbf{E},G}}\left(  -m\right)
+=\Omega_{\mathbf{E},G}\left(  -m\right)
+\]
+for any $m\in\mathbb{N}$. Thus, any $m\in\mathbb{N}$ satsfies%
+\begin{align*}
+\Omega_{\mathbf{E},G}\left(  -m\right)   &  =\operatorname*{ps}\nolimits^{1}%
+\left(  \underbrace{S\left(  \Gamma\left(  {\mathbf{E}},w,G\right)  \right)
+}_{\substack{=\left(  -1\right)  ^{\left\vert E\right\vert }\Gamma^{+}\left(
+\left(  E,>_{1},<_{2}\right)  ,w,G\right)  \\\text{(by Theorem
+\ref{thm.antipode.GammawG})}}}\right)  \left(  m\right) \\
+&  =\operatorname*{ps}\nolimits^{1}\left(  \left(  -1\right)  ^{\left\vert
+E\right\vert }\Gamma^{+}\left(  \left(  E,>_{1},<_{2}\right)  ,w,G\right)
+\right)  \left(  m\right) \\
+&  =\left(  -1\right)  ^{\left\vert E\right\vert }\operatorname*{ps}%
+\nolimits^{1}\left(  \Gamma^{+}\left(  \left(  E,>_{1},<_{2}\right)
+,w,G\right)  \right)  \left(  m\right)  .
+\end{align*}
+Renaming $m$ as $q$ in this equality, we see that every $q\in\mathbb{N}$
+satisfies%
+\begin{equation}
+\Omega_{\mathbf{E},G}\left(  -q\right)  =\left(  -1\right)  ^{\left\vert
+E\right\vert }\operatorname*{ps}\nolimits^{1}\left(  \Gamma^{+}\left(  \left(
+E,>_{1},<_{2}\right)  ,w,G\right)  \right)  \left(  q\right)  .
+\label{pf.cor.reciprocity.GammawG.b.2}%
+\end{equation}
+
+
+But just as we proved (\ref{pf.cor.reciprocity.GammawG.a.1}), we can show that
+every $q\in\mathbb{N}$ satisfies
+\[
+\operatorname*{ps}\nolimits^{1}\left(  \Gamma^{+}\left(  {\mathbf{E}%
+},w,G\right)  \right)  \left(  q\right)  =\left(  \text{the number of all even
+}G\text{-orbits on }\operatorname*{Par}\nolimits_{q}\mathbf{E}\right)  .
+\]
+Applying this to $\left(  E,>_{1},<_{2}\right)  $ instead of $\mathbf{E}$, we
+obtain%
+\begin{align*}
+&  \operatorname*{ps}\nolimits^{1}\left(  \Gamma^{+}\left(  \left(
+E,>_{1},<_{2}\right)  ,w,G\right)  \right)  \left(  q\right) \\
+&  =\left(  \text{the number of all even }G\text{-orbits on }%
+\operatorname*{Par}\nolimits_{q}\left(  E,>_{1},<_{2}\right)  \right)  .
+\end{align*}
+Now, (\ref{pf.cor.reciprocity.GammawG.b.2}) becomes%
+\begin{align*}
+\Omega_{\mathbf{E},G}\left(  -q\right)   &  =\left(  -1\right)  ^{\left\vert
+E\right\vert }\underbrace{\operatorname*{ps}\nolimits^{1}\left(  \Gamma
+^{+}\left(  \left(  E,>_{1},<_{2}\right)  ,w,G\right)  \right)  \left(
+q\right)  }_{=\left(  \text{the number of all even }G\text{-orbits on
+}\operatorname*{Par}\nolimits_{q}\left(  E,>_{1},<_{2}\right)  \right)  }\\
+&  =\left(  -1\right)  ^{\left\vert E\right\vert }\left(  \text{the number of
+all even }G\text{-orbits on }\operatorname*{Par}\nolimits_{q}\left(
+E,>_{1},<_{2}\right)  \right)  .
+\end{align*}
+
+
+In order to prove Corollary \ref{cor.reciprocity.GammawG} (b), it thus remains
+to show that%
+\begin{align}
+&  \left(  \text{the number of all even }G\text{-orbits on }%
+\operatorname*{Par}\nolimits_{q}\left(  E,>_{1},<_{2}\right)  \right)
+\nonumber\\
+&  =\left(  \text{the number of all even }G\text{-orbits on }%
+\operatorname*{Par}\nolimits_{q}\left(  E,<_{1},>_{2}\right)  \right)
+\label{pf.cor.reciprocity.GammawG.b.goal5}%
+\end{align}
+for every $q\in\mathbb{N}$.
+
+\textit{Proof of (\ref{pf.cor.reciprocity.GammawG.b.goal5}):} Let
+$q\in\mathbb{N}$. Let $w_{0}:\left\{  1,2,\ldots,q\right\}  \rightarrow
+\left\{  1,2,\ldots,q\right\}  $ be the map sending each $i\in\left\{
+1,2,\ldots,q\right\}  $ to $q+1-i$. Then, the map%
+\[
+\operatorname*{Par}\nolimits_{q}\left(  E,>_{1},<_{2}\right)  \rightarrow
+\operatorname*{Par}\nolimits_{q}\left(  E,<_{1},>_{2}\right)
+,\ \ \ \ \ \ \ \ \ \ \pi\mapsto w_{0}\circ\pi
+\]
+is an isomorphism of $G$-sets (this is easy to check). Thus,
+$\operatorname*{Par}\nolimits_{q}\left(  E,>_{1},<_{2}\right)  \cong%
+\operatorname*{Par}\nolimits_{q}\left(  E,<_{1},>_{2}\right)  $ as $G$-sets.
+From this, (\ref{pf.cor.reciprocity.GammawG.b.goal5}) follows (by
+functoriality, if one wishes).
+
+The proof of Corollary \ref{cor.reciprocity.GammawG} (b) is now complete.
+\end{proof}
+
+Now, the second formula of \cite[Theorem 2.13]{Joch} follows from our
+(\ref{eq.cor.reciprocity.GammawG.b.2}), applied to $\mathbf{E}=\left(
+P,\prec,<_{\omega}\right)  $ (where $<_{\omega}$ is the partial order on $P$
+given by $\left(  p<_{\omega}q\right)  \Longleftrightarrow\left(
+\omega\left(  p\right)  <\omega\left(  q\right)  \right)  $). The first
+formula of \cite[Theorem 2.13]{Joch} can also be derived from our above
+arguments. We leave the details to the reader.
+
 \nocite{*}
 \bibliographystyle{abbrvnat}
 % use the following instead if you encounter problems 
