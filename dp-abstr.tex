@@ -487,6 +487,13 @@ $\left(E, <_1, <_2\right)$ is said to be \textit{tertispecial} if
 it satisfies the following condition: If $a$ and $b$ are two
 elements of $E$ such that $a$ is $<_1$-covered by $b$, then $a$
 and $b$ are $<_2$-comparable.
+
+\item[(h)] If $<$ is a binary relation on a set $P$, then the
+\textit{opposite relation} of $<$ is defined to be the binary
+relation $>$ on the set $P$ which is defined as follows: For any
+$e \in P$ and $f \in P$, we have $e > f$ if and only if $f < e$.
+Notice that if $<$ is a strict partial order relation, then so
+is the opposite relation $>$ of $<$.
 \end{itemize}
 \end{definition}
 
@@ -529,8 +536,8 @@ as $<_1$ (or any extension of this order), then
 $\EE$-partitions are weakly increasing maps from the poset
 $\left(E, <_1\right)$ to the totally ordered set
 $\left\{1, 2, 3, \ldots\right\}$.
-\item If $<_2$ is the opposite order of
-$<_1$ (or any extension of this opposite order), then
+\item If $<_2$ is the opposite relation of
+$<_1$ (or any extension of this opposite relation), then
 $\EE$-partitions are strictly increasing maps from the
 poset $\left(E, <_1\right)$ to the totally ordered set
 $\left\{1, 2, 3, \ldots\right\}$.
@@ -643,7 +650,7 @@ statements.
 
 \item[(b)] If $E = \left\{1, 2, \ldots, \ell\right\}$ for some
 $\ell \in \NN$, if $<_1$ is the usual total order inherited from
-$\ZZ$, and if $<_2$ is the opposite order to $<_1$, then the
+$\ZZ$, and if $<_2$ is the opposite relation of $<_1$, then the
 special double poset $\EE = \left(E, <_1, <_2\right)$ satisfies
 $\Gamma\left(\EE, w\right) = M_\alpha$, where $\alpha$ is the
 composition $\left(w\left(1\right), w\left(2\right), \ldots,
@@ -744,8 +751,7 @@ Let $w : E \to \left\{1, 2, 3, \ldots\right\}$. Then,
 $S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right)\right)
 = \left(-1\right)^{\left|E\right|}
 \Gamma\left(\left(E, >_1, <_2\right), w\right)$,
-where $>_1$ denotes the order relation opposite to
-$<_1$.
+where $>_1$ denotes the opposite relation of $<_1$.
 \end{theorem}
 
 \begin{corollary}
@@ -754,8 +760,7 @@ Let $\left(E, <_1, <_2\right)$ be a tertispecial double poset.
 Then, $S\left(\Gamma\left(\left(E, <_1, <_2\right)\right)\right)
 = \left(-1\right)^{\left|E\right|}
 \Gamma\left(\left(E, >_1, <_2\right)\right)$,
-where $>_1$ denotes the order relation opposite to
-$<_1$.
+where $>_1$ denotes the opposite relation of $<_1$.
 \end{corollary}
 
 We shall give examples for consequences of these facts shortly
@@ -1372,7 +1377,7 @@ have no trouble finding (and proving even less); let us just
 give a brief outline of the argument\footnote{See the detailed
 version of this note for an (almost) completely written-out
 proof; I am afraid that the additional level of detail is of
-no help to the understanding.}
+no help to the understanding.}:
 
 \begin{proof}[Proof of Proposition~\ref{prop.Gammaw.coprod}.]
 Whenever
@@ -2450,7 +2455,7 @@ Proposition~\ref{prop.Gammaw.coprod}).
 \label{sect.proof}
 
 Before we come to the proof of Theorem~\ref{thm.antipode.Gammaw},
-let us state a simple lemma:
+let us state two simple lemmas:
 
 \begin{lemma}
 \label{lem.admissible.cover}
@@ -2503,6 +2508,60 @@ neither $\left(u, w\right)$ nor $\left(w, v\right)$ is a malposition.
 This contradiction shows that our assumption was wrong.
 Hence, there exists no malposition. Consequently,
 $\left(P, Q\right) \in \Adm \EE$.
+\end{proof}
+
+\begin{lemma}
+\label{lem.tertispecial.subset}
+Let $\EE = \left(E, <_1, <_2\right)$ be a tertispecial
+double poset.
+Let $\left(P,Q\right) \in \Adm \EE$. Then, $\EE\mid_P$ is
+a tertispecial double poset.
+\end{lemma}
+
+\begin{proof}[Proof of Lemma~\ref{lem.tertispecial.subset}.]
+We need to show that the double poset
+$\EE\mid_P = \left(P, <_1, <_2\right)$ is tertispecial. In other
+words, we need to show that if $a$ and $b$ are two elements
+of $P$ such that $a$ is $<_1$-covered by $b$ as element of
+the set $P$, then $a$ and $b$ are $<_2$-comparable.
+
+Let $a$ and $b$ be two elements of $P$ such that $a$ is
+$<_1$-covered by $b$ as element of the set $P$. Thus,
+$a <_1 b$, and
+\begin{equation}
+\text{there exists no } c \in P \text{ satisfying }
+a <_1 c <_1 b .
+\label{pf.lem.tertispecial.subset.1}
+\end{equation}
+Now, if $c \in E$ is such that $a <_1 c <_1 b$, then $c$ must
+belong to $P$\ \ \ \ \footnote{\textit{Proof.} Assume the
+contrary. Thus, $c \notin P$. But
+$\left(P, Q\right) \in \Adm \EE$. Thus, $P \cap Q = \varnothing$,
+$P \cup Q = E$, and
+\begin{equation}
+\text{no } p \in P \text{ and } q \in Q \text{ satisfy }
+q <_1 p .
+\label{pf.lem.tertispecial.subset.2}
+\end{equation}
+From $c \in E$ and $c \notin P$, we obtain
+$c \in E\setminus P \subseteq Q$ (since $P \cup Q = E$).
+Applying \eqref{pf.lem.tertispecial.subset.2} to $p = b$ and
+$q = c$, we thus conclude that we cannot have $c <_1 b$.
+This contradicts $c <_1 b$. This contradiction shows that our
+assumption was false, qed.}, which entails a
+contradiction to \eqref{pf.lem.tertispecial.subset.1}. Thus, there
+is no $c \in E$ satisfying $a <_1 c <_1 b$. Therefore (and
+because we have $a <_1 b$), we see that $a$ is $<_1$-covered
+by $b$ as element of the set $E$. Since $\EE$ is tertispecial,
+this yields that $a$ and $b$ are $<_2$-comparable.
+
+Thus, we have shown that if $a$ and $b$ are two elements
+of $P$ such that $a$ is $<_1$-covered by $b$ as element of
+the set $P$, then $a$ and $b$ are $<_2$-comparable. This proves
+Lemma~\ref{lem.tertispecial.subset}.
+
+(We could similarly show that $\EE\mid_Q$ is a tertispecial
+double poset; but we will not use this.)
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm.antipode.Gammaw}.]
@@ -2568,15 +2627,7 @@ satisfy $\left|P\right| < \left|E\right|$).
 But whenever $\left(P, Q\right) \in \Adm \EE$ is such that
 $\left|P\right| < \left|E\right|$, the double poset
 $\EE\mid_P = \left(P, <_1, <_2\right)$ is tertispecial
-(because if $a$ and $b$ are two
-elements of $P$ such that $a$ is $<_1$-covered by $b$ with
-respect to $P$, then $a$ is also $<_1$-covered by $b$ with
-respect to $E$\ \ \ \ \footnote{Indeed, $a <_1 b$, and there
-exists no $c \in E$ satisfying $a <_1 c <_1 b$ (because any
-such $c$ would have to lie in $P$ -- because
-$\left(P, Q\right) \in \Adm \EE$ rules out the possibility that
-$c \in Q$ -- and then $a <_1 c <_1 b$ contradicts the fact that
-$a$ is $<_1$-covered by $b$ with respect to $P$).}), and
+(by Lemma~\ref{lem.tertispecial.subset}), and
 therefore we have
 $S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
 = S\left(\Gamma\left(\left(P, <_1, <_2\right), w\mid_P\right)\right)
