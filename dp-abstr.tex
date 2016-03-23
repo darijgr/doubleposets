@@ -1020,7 +1020,7 @@ $\Gamma\left(\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)\right)
 S\left(s_{\lambda / \mu}\right)
 = \left(-1\right)^{\left|\lambda / \mu\right|}
 s_{\lambda^t / \mu^t} .
-\label{eq.exam.antipode.Gammaw.schur.1}
+\label{eq.exam.antipode.Gammaw.schur.2}
 \end{equation}
 This is a well-known formula, and is usually stated
 for $S$ being the antipode of the Hopf algebra of symmetric
@@ -1028,7 +1028,7 @@ for $S$ being the antipode of the Hopf algebra of symmetric
 is a restriction of the antipode of $\QSym$.
 
 It is also possible (but more difficult) to derive
-\eqref{eq.exam.antipode.Gammaw.schur.1} by using the double
+\eqref{eq.exam.antipode.Gammaw.schur.2} by using the double
 poset $\mathbf{Y}_h\left(\lambda / \mu\right)$ instead of
 $\mathbf{Y}\left(\lambda / \mu\right)$. (This boils down to what
 was done in \cite[proof of Corollary 5.29]{Reiner}.)
@@ -3376,7 +3376,7 @@ Statement 3 implies Statement 2. Consequently, Statements 2 and 3 are
 equivalent, and so the proof of Lemma \ref{lem.coeven.all-one} is complete.
 \end{proof}
 
-Next, we will show two simple properties of posets on which groups act.
+Next, we will show three simple properties of posets on which groups act.
 
 \begin{proposition}
 \label{prop.G-poset.quot.poset}
@@ -3498,102 +3498,80 @@ double poset $\EE^g = \left(E^g, <_1^g, <_2^g\right)$ is tertispecial. This
 proves Proposition~\ref{prop.G-poset.quot.double}.
 \end{proof}
 
-\begin{proof}
-[Proof of Theorem~\ref{thm.antipode.GammawG} (sketched).]For every $g\in G$,
-define a tertispecial double poset
-$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $ as follows:
+\begin{proposition}
+\label{prop.G-poset.quot.Phi}
+Let $\EE = \left(E, <_1, <_2\right)$ be a tertispecial double poset.
+Let $G$ be a finite group which acts on $E$. Assume that $G$ preserves
+both relations $<_1$ and $<_2$.
 
-Let $E^{g}$ be the set of all orbits under the action of $g$ on $E$. Define a
-binary relation $<_{1}^{g}$ on $E^{g}$ by
-\[
-\left(  u<_{1}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
-u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
-\]
-Similarly, define a strict partial order relation $<_{2}^{g}$ on $E^{g}$ by
-\[
-\left(  u<_{2}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
-u\text{ and }b\in v\text{ with }a<_{2}b\right)  .
-\]
-Finally, set
-$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $.
-Proposition~\ref{prop.G-poset.quot.double} shows that this $ \EE ^{g}$ is
-a tertispecial double poset.
+Let $g \in G$. Define the set $E^g$, the relations $<_1^g$ and $<_2^g$
+and the triple $\EE^g$ as in Proposition~\ref{prop.G-poset.quot.double}.
+Thus, $\EE^g$ is a tertispecial double poset (by
+Proposition~\ref{prop.G-poset.quot.double}).
 
-Furthermore, for every $g\in G$, define a map $w^{g}:E^{g}\rightarrow
-\left\{1,2,3,\ldots\right\}$
-by $w^{g}\left(  u\right)  =\sum\limits_{a\in u}w\left(
-a\right)  $. (Since $G$ preserves $w$, the numbers $w\left(  a\right)  $ for
-all $a\in u$ are equal (for given $u$), and thus $\sum\limits_{a\in u}w\left(
-a\right)  $ can be rewritten as $\left\vert u\right\vert \cdot w\left(
-b\right)  $ for any particular $b\in u$.)
-Now,
-\begin{equation}
-S\left(  \Gamma\left(  \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
-,w^{g}\right)  \right)  =\left(  -1\right)  ^{\left\vert E^{g}\right\vert
-}\Gamma\left(  \left(  E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)
-\label{pf.thm.antipode.GammawG.S1}
-\end{equation}
-(by Theorem \ref{thm.antipode.Gammaw}, applied to
-$\left(  \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  $
-instead of $\left(  \left( E,<_{1},<_{2}\right)  ,w\right)  $).
-
-For every $g\in G$, we have
-\begin{equation}
-\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
-}}\mathbf{x}_{\pi,w}=\Gamma\left(   \EE ^{g},w^{g}\right)
-\label{pf.thm.antipode.GammawG.red}
-\end{equation}
-\footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.red}:} Let $g\in G$.
 There is a bijection $\Phi$ between
-\par
+
 \begin{itemize}
 \item the maps $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying
 $g\pi=\pi$
 \end{itemize}
-\par
+
 and
-\par
+
 \begin{itemize}
 \item the maps $\overline{\pi}:E^{g}\rightarrow\left\{  1,2,3,\ldots\right\}
 $.
 \end{itemize}
-\par
-(This bijection $\Phi$ sends any map $\pi:E\rightarrow\left\{  1,2,3,\ldots
-\right\}  $ satisfying $g\pi=\pi$ to the map $\overline{\pi}:E^{g}
+
+Namely, this bijection $\Phi$ sends any map
+$\pi:E\rightarrow\left\{  1,2,3,\ldots \right\}  $ satisfying $g\pi=\pi$
+to the map $\overline{\pi}:E^{g}
 \rightarrow\left\{  1,2,3,\ldots\right\}  $ defined by
 \[
-\overline{\pi}\left(  a\right)  =\pi\left(  u\right)  \qquad\text{for every
-}a\in E^{g}\text{ and }u\in a.
+\overline{\pi}\left( u \right)
+= \pi\left( a \right)
+\qquad\text{for every } u \in E^{g} \text{ and } a \in u.
 \]
-The well-definedness of this map $\overline{\pi}$ follows from $g\pi=\pi$.)
-\par
-It is easy to see that $\Phi$ restricts to a bijection between
-\par
-\begin{itemize}
-\item the $ \EE $-partitions $\pi:E\rightarrow\left\{  1,2,3,\ldots
-\right\}  $ satisfying $g\pi=\pi$
-\end{itemize}
-\par
-and
-\par
-\begin{itemize}
-\item the $ \EE ^{g}$-partitions $\overline{\pi}:E^{g}\rightarrow\left\{
-1,2,3,\ldots\right\}  $.
-\end{itemize}
-\par
-[\textit{Proof.} Let $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ be a
-map satisfying $g\pi=\pi$. We need to prove that $\pi$ is an
-$\mathbf{E}$-partition if and only if $\Phi\left(  \pi\right)  $
-is an ${\mathbf{E}}^{g}$-partition. In other words, we need to
-prove the following two claims:
+(The well-definedness of this map $\overline{\pi}$ is easy to see:
+Indeed, from $g\pi=\pi$, we can conclude that any two elements
+$a_1$ and $a_2$ of a given $g$-orbit $u$ satisfy
+$\pi\left(a_1\right) = \pi\left(a_2\right)$.)
 
-\textit{Claim 1:} If $\pi$ is an $\EE$-partition, then $\Phi\left(
+Consider this bijection $\Phi$. Let
+$\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ be a
+map satisfying $g\pi=\pi$.
+
+\begin{enumerate}
+\item[(a)] If $\pi$ is an $\EE$-partition, then $\Phi\left(
 \pi\right)  $ is an ${\mathbf{E}}^{g}$-partition.
 
-\textit{Claim 2:} If $\Phi\left(  \pi\right)  $ is an
+\item[(b)] If $\Phi\left(  \pi\right)  $ is an
 $\mathbf{E}^{g}$-partition, then $\pi$ is an $\EE$-partition.
 
-\textit{Proof of Claim 1:} Assume that $\pi$ is an $\mathbf{E}$-partition. We
+\item[(c)] Let $w : E \to \left\{1,2,3,\ldots\right\}$ be
+map. Define a map $w^{g}:E^{g}\rightarrow
+\left\{1,2,3,\ldots\right\}$
+by
+\[
+w^{g}\left(  u\right)  =\sum\limits_{a\in u}w\left(
+a\right)  \qquad \qquad \text{ for every } u \in E^g .
+\]
+Then, $\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}
+=\mathbf{x}_{\pi,w}$.
+
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Proof of Proposition~\ref{prop.G-poset.quot.Phi} (sketched).]
+The definition of $\Phi$ shows that
+\begin{equation}
+\left(\Phi\left(\pi\right)\right) \left( u \right)
+= \pi\left( a \right)
+\qquad\text{for every } u \in E^{g} \text{ and } a \in u.
+\label{pf.prop.G-poset.quot.phi.main}
+\end{equation}
+
+(a) Assume that $\pi$ is an $\mathbf{E}$-partition. We
 want to show that $\Phi\left(  \pi\right)  $ is an
 ${\mathbf{E}}^{g}$-partition. In order to do so, we can
 use Lemma \ref{lem.Epartition.cover}
@@ -3652,9 +3630,10 @@ b\right)  $ (since $b\in f$). Thus, $\left(  \Phi\left(  \pi\right)  \right)
 \left(  e\right)  =\pi\left(  a\right)  <\pi\left(  b\right)  =\left(
 \Phi\left(  \pi\right)  \right)  \left(  f\right)  $. Hence, Condition 2 is proven.
 
-Thus, Condition 1 and Condition 2 are proven. Hence, Claim 1 is proven.
+Thus, Condition 1 and Condition 2 are proven. Hence,
+Proposition~\ref{prop.G-poset.quot.Phi} (a) is proven.
 
-\textit{Proof of Claim 2:} Assume that $\Phi\left(  \pi\right)  $ is an
+(b) Assume that $\Phi\left(  \pi\right)  $ is an
 $\mathbf{E}^{g}$-partition. We want to show that $\pi$ is an
 $\EE$-partition. In order to do so, we can use
 Lemma \ref{lem.Epartition.cover}
@@ -3701,24 +3680,105 @@ u$) and $\left(  \Phi\left(  \pi\right)  \right)  \left(  v\right)
 \pi\right)  \right)  \left(  v\right)  =\pi\left(  f\right)  $. Hence,
 Condition 2 is proven.
 
-Thus, Condition 1 and Condition 2 are proven. Hence, Claim 2 is proven.
+Thus, Condition 1 and Condition 2 are proven. Hence,
+Proposition~\ref{prop.G-poset.quot.Phi} (b) is proven.
 
-Now, both Claims 1 and 2 are proven. In other words, we have shown that $\pi$
-is an $\mathbf{E}$-partition if and only if $\Phi\left(  \pi\right)  $ is an
-${\mathbf{E}}^{g}$-partition. Qed.]
+(c) 
+The definition of $\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}$ shows that%
+\begin{align*}
+\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}  & =\prod_{e\in E^{g}}x_{\left(
+\Phi\left(  \pi\right)  \right)  \left(  e\right)  }^{w^{g}\left(  e\right)
+}=\prod_{u\in E^{g}}\underbrace{x_{\left(  \Phi\left(  \pi\right)  \right)
+\left(  u\right)  }^{w^{g}\left(  u\right)  }}_{\substack{=\prod_{a\in
+u}x_{\left(  \Phi\left(  \pi\right)  \right)  \left(  u\right)  }^{w\left(
+a\right)  }\\\text{(since }w^{g}\left(  u\right)  =\sum\limits_{a\in
+u}w\left(  a\right)  \text{)}}}=\prod_{u\in E^{g}}\prod_{a\in u}%
+\underbrace{x_{\left(  \Phi\left(  \pi\right)  \right)  \left(  u\right)
+}^{w\left(  a\right)  }}_{\substack{=x_{\pi\left(  a\right)  }^{w\left(
+a\right)  }\\\text{(by (\ref{pf.prop.G-poset.quot.phi.main}))}}}\\
+& =\underbrace{\prod_{u\in E^{g}}\prod_{a\in u}}_{=\prod_{a\in E}}%
+x_{\pi\left(  a\right)  }^{w\left(  a\right)  }=\prod_{a\in E}x_{\pi\left(
+a\right)  }^{w\left(  a\right)  }=\prod_{e\in E}x_{\pi\left(  e\right)
+}^{w\left(  e\right)  }=\mathbf{x}_{\pi,w}%
+\end{align*}
+(by the definiion of $\mathbf{x}_{\pi,w}$). This proves Proposition
+\ref{prop.G-poset.quot.Phi} (c).
+\end{proof}
 
-We thus have proven that $\Phi$ restricts to a bijection between
+\begin{proof}
+[Proof of Theorem~\ref{thm.antipode.GammawG} (sketched).]For every $g\in G$,
+define a tertispecial double poset
+$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $ as follows:
 
+Let $E^{g}$ be the set of all orbits under the action of $g$ on $E$. Define a
+binary relation $<_{1}^{g}$ on $E^{g}$ by
+\[
+\left(  u<_{1}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
+u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
+\]
+Similarly, define a strict partial order relation $<_{2}^{g}$ on $E^{g}$ by
+\[
+\left(  u<_{2}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
+u\text{ and }b\in v\text{ with }a<_{2}b\right)  .
+\]
+Finally, set
+$ \EE ^{g}=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $.
+Proposition~\ref{prop.G-poset.quot.double} shows that this $ \EE ^{g}$ is
+a tertispecial double poset.
+
+Furthermore, for every $g\in G$, define a map $w^{g}:E^{g}\rightarrow
+\left\{1,2,3,\ldots\right\}$
+by $w^{g}\left(  u\right)  =\sum\limits_{a\in u}w\left(
+a\right)  $. (Since $G$ preserves $w$, the numbers $w\left(  a\right)  $ for
+all $a\in u$ are equal (for given $u$), and thus $\sum\limits_{a\in u}w\left(
+a\right)  $ can be rewritten as $\left\vert u\right\vert \cdot w\left(
+b\right)  $ for any particular $b\in u$.)
+Now,
+\begin{equation}
+S\left(  \Gamma\left(  \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
+,w^{g}\right)  \right)  =\left(  -1\right)  ^{\left\vert E^{g}\right\vert
+}\Gamma\left(  \left(  E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)
+\label{pf.thm.antipode.GammawG.S1}
+\end{equation}
+(by Theorem \ref{thm.antipode.Gammaw}, applied to
+$\left(  \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  $
+instead of $\left(  \left( E,<_{1},<_{2}\right)  ,w\right)  $).
+
+For every $g\in G$, we have
+\begin{equation}
+\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
+}}\mathbf{x}_{\pi,w}=\Gamma\left(   \EE ^{g},w^{g}\right)
+\label{pf.thm.antipode.GammawG.red}
+\end{equation}
+\footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.red}:} Let $g\in G$.
+In Proposition~\ref{prop.G-poset.quot.Phi}, we have introduced a
+bijection $\Phi$ between
+\par
 \begin{itemize}
-\item the ${\mathbf{E}}$-partitions $\pi:E\rightarrow\left\{  1,2,3,\ldots
+\item the maps $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying
+$g\pi=\pi$
+\end{itemize}
+\par
+and
+\par
+\begin{itemize}
+\item the maps $\overline{\pi}:E^{g}\rightarrow\left\{  1,2,3,\ldots\right\}
+$.
+\end{itemize}
+\par
+Parts (a) and (b) of Proposition~\ref{prop.G-poset.quot.Phi} show that
+this bijection $\Phi$ restricts to a bijection between
+\par
+\begin{itemize}
+\item the $ \EE $-partitions $\pi:E\rightarrow\left\{  1,2,3,\ldots
 \right\}  $ satisfying $g\pi=\pi$
 \end{itemize}
-
+\par
 and
-
+\par
 \begin{itemize}
-\item the ${\mathbf{E}}^{g}$-partitions $\overline{\pi}:E^{g}\rightarrow
-\left\{  1,2,3,\ldots\right\}  $.
+\item the $ \EE ^{g}$-partitions $\overline{\pi}:E^{g}\rightarrow\left\{
+1,2,3,\ldots\right\}  $.
 \end{itemize}
 \par
 Hence,
@@ -3726,21 +3786,13 @@ Hence,
 \sum_{\pi\text{ is an } \EE ^{g}\text{-partition}}
 \mathbf{x}_{\pi,w^{g}}
 =\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
-}}\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}.
-\]
-\par
-But it is also easy to see that every $ \EE $-partition $\pi$ satisfying
-$g\pi=\pi$ satisfies $\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}
-=\mathbf{x}_{\pi,w}$. Thus,
-\[
-\sum_{\pi\text{ is an } \EE ^{g}\text{-partition}}
-\mathbf{x}_{\pi,w^{g}}
-=\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
 }}
 \underbrace{\xx_{\Phi\left(  \pi\right)  ,w^{g}}}_{
-=\mathbf{x}_{\pi,w}}=\sum_{\substack{\pi\text{ is an }
- \EE \text{-partition;}
-\\g\pi=\pi}}\mathbf{x}_{\pi,w},
+\substack{=\mathbf{x}_{\pi,w} \\
+\text{(by Proposition~\eqref{prop.G-poset.quot.Phi} (c))}
+}}
+= \sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
+\\ g\pi=\pi}}\mathbf{x}_{\pi,w},
 \]
 whence $\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
 \\g\pi=\pi}}\mathbf{x}_{\pi,w}=\sum_{\pi\text{ is an }
