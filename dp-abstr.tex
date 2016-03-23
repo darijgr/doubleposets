@@ -162,7 +162,7 @@
 
 \title{Double posets and the antipode of $\QSym$}
 
-\date{version 1.2 (\today)}
+\date{version 1.3 (\today)}
 
 \begin{comment}
 \keywords{
@@ -3705,6 +3705,148 @@ a\right)  }^{w\left(  a\right)  }=\prod_{e\in E}x_{\pi\left(  e\right)
 \ref{prop.G-poset.quot.Phi} (c).
 \end{proof}
 
+Our next lemma is a standard argument in P\'olya enumeration theory (compare
+it with the proof of Burnside's lemma):
+
+\begin{lemma}
+\label{lem.burnside.sums} Let $G$ be a finite group. Let $F$ be a finite
+$G$-set. Let $O$ be a $G$-orbit on $F$, and let $\pi\in O$.
+
+\begin{enumerate}
+\item[(a)] We have
+\begin{equation}
+\dfrac{1}{\left\vert O\right\vert }=\dfrac{1}{\left\vert G\right\vert }%
+\sum_{\substack{g\in G;\\g\pi=\pi}}1.\label{eq.lem.burnside.sums.a}%
+\end{equation}
+
+
+\item[(b)] Let $E$ be a further finite $G$-set. For every $g\in G$, let
+$\operatorname{sign}_{E}g$ denote the sign of the permutation of $E$ that
+sends every $e\in E$ to $ge$. (Thus, $g\in G$ is $E$-even if and only if
+$\operatorname*{sign}\nolimits_{E}g=1$.) Then,
+\begin{equation}%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
+}}\operatorname*{sign}\nolimits_{E}g.\label{eq.lem.burnside.sums.b}%
+\end{equation}
+
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.burnside.sums}.] Let $\operatorname{Stab}_{G}\pi$
+denote the stabilizer of $\pi$; this is the subgroup $\left\{  g\in
+G\ \mid\ g\pi=\pi\right\}  $ of $G$. The $G$-orbit of $\pi$ is $O$ (since $O$
+is a $G$-orbit on $F$, and since $\pi\in O$). Hence,
+\[
+\left\vert O\right\vert =\left\vert G\pi\right\vert =\dfrac{\left\vert
+G\right\vert }{\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert }%
+\]
+(by the orbit-stabilizer theorem) and thus
+\begin{equation}
+\dfrac{1}{\left\vert O\right\vert }=\dfrac{\left\vert \operatorname{Stab}%
+_{G}\pi\right\vert }{\left\vert G\right\vert }%
+.\label{pf.thm.antipode.GammawG.os2}%
+\end{equation}
+
+
+(a) We have%
+\[
+\sum_{\substack{g\in G;\\g\pi=\pi}}1=\left\vert \underbrace{\left\{  g\in
+G\ \mid\ g\pi=\pi\right\}  }_{=\operatorname*{Stab}\nolimits_{G}\pi
+}\right\vert =\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert .
+\]
+Hence,%
+\[
+\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{\substack{g\in
+G;\\g\pi=\pi}}1}_{=\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert
+}=\dfrac{1}{\left\vert G\right\vert }\left\vert \operatorname*{Stab}%
+\nolimits_{G}\pi\right\vert =\dfrac{\left\vert \operatorname*{Stab}%
+\nolimits_{G}\pi\right\vert }{\left\vert G\right\vert }=\dfrac{1}{\left\vert
+O\right\vert }%
+\]
+(by (\ref{pf.thm.antipode.GammawG.os2})). This proves Lemma
+\ref{lem.burnside.sums} (a).
+
+(b) We need to prove (\ref{eq.lem.burnside.sums.b}). Assume first that $O$ is
+$E$-coeven. Thus, $\pi$ is $E$-coeven (by the definition of what it means for
+$O$ to be $E$-coeven). This means that every $g\in G$ satisfying $g\pi=\pi$ is
+$E$-even. Hence, every $g\in G$ satisfying $g\pi=\pi$ satisfies
+$\operatorname*{sign}\nolimits_{E}g=1$. Thus,
+\begin{align*}
+\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
+}}\underbrace{\operatorname*{sign}\nolimits_{E}g}_{=1} &  =\dfrac
+{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}}1=\dfrac
+{1}{\left\vert O\right\vert }\ \ \ \ \ \ \ \ \ \ \left(  \text{by
+\eqref{eq.lem.burnside.sums.a}}\right)  \\
+&  =%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is }E\text{-coeven}\right)  .
+\end{align*}
+
+
+Thus, we have proven (\ref{eq.lem.burnside.sums.b}) under the assumption that
+$O$ is $E$-coeven. We can therefore WLOG assume the opposite now. Thus, assume
+that $O$ is not $E$-coeven. Hence, no element of $O$ is $E$-coeven (due to the
+contrapositive of Lemma~\ref{lem.coeven.all-one}). In particular, $\pi$ is not
+$E$-coeven. In other words, not every $g\in G$ satisfying $g\pi=\pi$ is
+$E$-even. In other words, not every $g\in\operatorname*{Stab}\nolimits_{G}\pi$
+is $E$-even (since the elements $g\in G$ satisfying $g\pi=\pi$ are exactly the
+elements $g\in\operatorname*{Stab}\nolimits_{G}\pi$). In other words, not
+every $g\in\operatorname*{Stab}\nolimits_{G}\pi$ satisfies
+$\operatorname*{sign}\nolimits_{E}g=1$.
+
+Now, the map
+\[
+\operatorname*{Stab}\nolimits_{G}\pi\rightarrow\left\{  1,-1\right\}
+,\ \ \ \ \ \ \ \ \ \ g\mapsto\operatorname*{sign}\nolimits_{E}g
+\]
+is a group homomorphism (since the sign of a permutation is multiplicative)
+and is not the trivial homomorphism (since not every $g\in\operatorname*{Stab}%
+\nolimits_{G}\pi$ satisfies $\operatorname*{sign}\nolimits_{E}g=1$). Hence, it
+must send exactly half the elements of $\operatorname*{Stab}\nolimits_{G}\pi$
+to $1$ and the other half to $-1$. Therefore, the addends in the sum
+$\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}%
+\nolimits_{E}g$ cancel each other out (one half of them are $1$, and the
+others are $-1$). Therefore, $\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi
+}\operatorname*{sign}\nolimits_{E}g=0$, so that
+\[
+\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{g\in\operatorname*{Stab}%
+\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g}_{=0}=0=%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is not }E\text{-coeven}%
+\right)  .
+\]
+Thus,%
+\[
+\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{\substack{g\in
+G;\\g\pi=\pi}}}_{=\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}%
+}\operatorname*{sign}\nolimits_{E}g=\dfrac{1}{\left\vert G\right\vert }%
+\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}%
+\nolimits_{E}g=%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+.
+\]
+This proves (\ref{eq.lem.burnside.sums.b}). Lemma \ref{lem.burnside.sums} (b)
+is thus proven.
+\end{proof}
+
 \begin{proof}
 [Proof of Theorem~\ref{thm.antipode.GammawG} (sketched).]For every $g\in G$,
 define a tertispecial double poset
@@ -3811,23 +3953,7 @@ the notation $\QSym_\kk$ for the Hopf algebra $\QSym$ defined over a
 base ring $\kk$.}). Thus, we WLOG assume that $\kk = \QQ$.
 This will allow us to divide by positive integers.
 
-What follows is a use of the standard argument that goes into the proof of
-Burnside's lemma. For every $\pi\in\Par \EE $, let
-$\operatorname{Stab}_{G}\pi$ denote the stabilizer of $\pi$; this is
-the subgroup $\left\{  g\in G\ \mid\ g\pi=\pi\right\}  $ of $G$. Every
-$G$-orbit $O$ on $\Par \EE $ and every $\pi\in O$ satisfy
-\[
-\left\vert O\right\vert =\left\vert G\pi\right\vert =\dfrac{\left\vert
-G\right\vert }{\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert }
-\]
-(by the orbit-stabilizer theorem) and thus
-\begin{equation}
-\dfrac{1}{\left\vert O\right\vert }=\dfrac{\left\vert
-\operatorname{Stab}_{G}\pi\right\vert }{
-\left\vert G\right\vert } .
-\label{pf.thm.antipode.GammawG.os2}
-\end{equation}
-Also, every $G$-orbit $O$ on $\Par \EE$ satisfies
+Every $G$-orbit $O$ on $\Par \EE$ satisfies
 \begin{equation}
 \dfrac{1}{\left|O\right|} \sum_{\pi \in O}
 \underbrace{\xx_{\pi, w}}_{\substack{= \xx_{O, w} \\
@@ -3842,53 +3968,41 @@ Also, every $G$-orbit $O$ on $\Par \EE$ satisfies
 \label{pf.thm.antipode.GammawG.averaging}
 \end{equation}
 
-Notice that the notion of stabilizers allows us to rewrite the definition
-of $E$-coeven elements of $\Par\EE$: Namely, an element $\pi \in \Par\EE$
-is $E$-coeven if and only if every $g \in \operatorname{Stab}_G \pi$
-is $E$-even. This shall be used in the following.
-
 Now,
 \begin{align}
-\Gamma\left(  { \EE },w,G\right)   &  =\sum_{O\text{ is a }G\text{-orbit
-on }\Par \EE }\underbrace{\xx_{O,w}}_{\substack{
-=\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in
-O}\mathbf{x}_{\pi,w}\\
-\text{(by \eqref{pf.thm.antipode.GammawG.averaging})}}}
-=\sum_{O\text{ is a }G\text{-orbit on
-}\operatorname{Par}{ \EE }}\dfrac{1}{\left\vert O\right\vert }
-\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\nonumber\\
-&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{ \EE }}
-\sum\limits_{\pi\in O}
-\underbrace{\dfrac{1}{\left\vert O\right\vert }}_{\substack{
-=\dfrac{\left\vert \operatorname{Stab}_{G} \pi\right\vert }{
-\left\vert G\right\vert }\\\text{(by
-\eqref{pf.thm.antipode.GammawG.os2})}}}\mathbf{x}_{\pi,w}\nonumber\\
-&  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\Par \EE }
-\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\Par \EE }
-=\sum_{\pi\text{ is an } \EE \text{-partition}}}
-\dfrac{\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert }{\left\vert
-G\right\vert }\mathbf{x}_{\pi,w}\nonumber\\
-&  =\sum_{\pi\text{ is an } \EE \text{-partition}}\dfrac{\left\vert
-\operatorname*{Stab}\nolimits_{G}\pi\right\vert }{\left\vert G\right\vert
-}\mathbf{x}_{\pi,w}=\dfrac{1}{\left\vert G\right\vert }\sum_{\pi\text{ is an
-} \EE \text{-partition}}\underbrace{\left\vert
-\operatorname{Stab}_{G}\pi\right\vert }_{
-=\sum_{g\in\operatorname*{Stab}\nolimits_{G} \pi}1}
-\mathbf{x}_{\pi,w}\nonumber\\
-&  =\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{\pi\text{ is an
-} \EE \text{-partition}}\sum_{g\in\operatorname{Stab}_{G}\pi}}_{
-=\sum_{g\in G}\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
-\\g\pi=\pi}}}\mathbf{x}_{\pi,w}=\dfrac{1}{\left\vert G\right\vert }\sum_{g\in
-G}\underbrace{\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
-\\g\pi=\pi}}\mathbf{x}_{\pi,w}}_{\substack{=\Gamma\left(   \EE ^{g}
-,w^{g}\right)  \\\text{(by \eqref{pf.thm.antipode.GammawG.red})}}}
-\nonumber\\
+\Gamma\left(  {{\mathbf{E}}},w,G\right)   &  =\sum_{O\text{ is a
+}G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}\underbrace{{\mathbf{x}%
+}_{O,w}}_{\substack{=\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in
+O}\mathbf{x}_{\pi,w}\\\text{(by \eqref{pf.thm.antipode.GammawG.averaging})}%
+}}=\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{{\mathbf{E}}}%
+}\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi
+,w}\nonumber\\
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{{\mathbf{E}}}%
+}\sum\limits_{\pi\in O}\underbrace{\dfrac{1}{\left\vert O\right\vert }%
+}_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in
+G;\\g\pi=\pi}}1\\\text{(by \eqref{eq.lem.burnside.sums.a}, applied to }
+F = \Par\EE {)}}}\mathbf{x}%
+_{\pi,w}\nonumber\\
+&  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}%
+{\mathbf{E}}}\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\operatorname{Par}%
+{\mathbf{E}}}=\sum_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}}\left(
+\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
+}}1\right)  \mathbf{x}_{\pi,w}\nonumber\\
+&  =\sum_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}\left(  \dfrac
+{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}}1\right)
+\mathbf{x}_{\pi,w}=\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum
+_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}\sum_{\substack{g\in
+G;\\g\pi=\pi}}}_{=\sum_{g\in G}\sum_{\substack{\pi\text{ is an }{\mathbf{E}%
+}\text{-partition;}\\g\pi=\pi}}}\mathbf{x}_{\pi,w}\nonumber\\
+&  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\underbrace{\sum
+_{\substack{\pi\text{ is an }{\mathbf{E}}\text{-partition;}\\g\pi=\pi
+}}\mathbf{x}_{\pi,w}}_{\substack{=\Gamma\left(  {\mathbf{E}}^{g},w^{g}\right)
+\\\text{(by \eqref{pf.thm.antipode.GammawG.red})}}}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\Gamma\left(
-\underbrace{ \EE ^{g}}_{=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
+\underbrace{{\mathbf{E}}^{g}}_{=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
 },w^{g}\right)  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\Gamma\left(
 \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)
-.
-\label{pf.thm.antipode.GammawG.1}
+.\label{pf.thm.antipode.GammawG.1}%
 \end{align}
 Hence, $\Gamma\left(  { \EE },w,G\right) \in \QSym$
 (by Proposition~\ref{prop.Gammaw.qsym}).
@@ -3919,65 +4033,11 @@ and every $\pi\in O$ satisfy%
 \dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
 0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
-=\dfrac{1}{\left\vert G\right\vert }\sum_{g\in\operatorname*{Stab}%
-\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}%
-g\label{pf.thm.antipode.GammawG.signed}%
+=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G; \\ g\pi = \pi}}
+\operatorname*{sign}\nolimits_{E} g
+\label{pf.thm.antipode.GammawG.signed}%
 \end{equation}
-\footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.signed}:} Let $O$ be
-a $G$-orbit on $\Par \EE $, and let $\pi\in O$.
-\par
-Assume first that $O$ is $E$-coeven. Thus, $\pi$ is $E$-coeven
-(by the definition of what
-it means for $O$ to be $E$-coeven); this means that every $g\in\operatorname*{Stab}%
-\nolimits_{G}\pi$ is $E$-even. Hence, every $g\in\operatorname*{Stab}%
-\nolimits_{G}\pi$ satisfies $\operatorname*{sign}\nolimits_{E}g=1$. Thus,
-\begin{align*}
-\dfrac{1}{\left\vert G\right\vert }\sum_{g\in\operatorname*{Stab}%
-\nolimits_{G}\pi}\underbrace{\operatorname*{sign}\nolimits_{E}g}_{=1}  &
-=\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{g\in\operatorname*{Stab}%
-\nolimits_{G}\pi}1}_{=\left\vert \operatorname*{Stab}\nolimits_{G}%
-\pi\right\vert }=\dfrac{\left\vert \operatorname*{Stab}\nolimits_{G}%
-\pi\right\vert }{\left\vert G\right\vert }=\dfrac{1}{\left\vert O\right\vert
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{by \eqref{pf.thm.antipode.GammawG.os2}}
-\right)  \\
-& =%
-\begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
-0, & \text{if }O\text{ is not }E\text{-coeven}%
-\end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is }E\text{-coeven}\right)  .
-\end{align*}
-\par
-Thus, we have proven \eqref{pf.thm.antipode.GammawG.signed} under the
-assumption that $O$ is $E$-coeven. We can therefore WLOG assume the opposite now.
-Thus, assume that $O$ is not $E$-coeven. Hence, no element of $O$ is $E$-coeven
-(due to the contrapositive of Lemma~\ref{lem.coeven.all-one}). In particular,
-$\pi$ is not $E$-coeven.
-In other words, not every
-$g\in\operatorname*{Stab}\nolimits_{G}\pi$ is $E$-even. Now, the map
-\[
-\operatorname*{Stab}\nolimits_{G}\pi\rightarrow\left\{  1,-1\right\}
-,\ \ \ \ \ \ \ \ \ \ g\mapsto\operatorname*{sign}\nolimits_{E}g
-\]
-is a group homomorphism (since the sign of a permutation is multiplicative)
-and is not the trivial homomorphism (since not every $g\in\operatorname*{Stab}%
-\nolimits_{G}\pi$ is $E$-even). Hence, it must send exactly half the elements of
-$\operatorname*{Stab}\nolimits_{G}\pi$ to $1$ and the other half to $-1$.
-Therefore, the addends in the sum $\sum_{g\in\operatorname*{Stab}%
-\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g$ cancel each other out
-(one half of them are $1$, and the others are $-1$). Therefore, $\sum
-_{g\in\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}%
-g=0$, so that
-\[
-\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{g\in\operatorname*{Stab}%
-\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g}_{=0}=0=%
-\begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
-0, & \text{if }O\text{ is not }E\text{-coeven}%
-\end{cases}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }O\text{ is not }E\text{-coeven}\right)  .
-\]
-This proves \eqref{pf.thm.antipode.GammawG.signed}.}. Furthermore,%
+(by \eqref{eq.lem.burnside.sums.b}, applied to $F = \Par\EE$). Furthermore,%
 \begin{equation}
 \operatorname*{sign}\nolimits_{E}g=\left(  -1\right)  ^{\left\vert
 E\right\vert -\left\vert E^{g}\right\vert }%
@@ -3999,65 +4059,64 @@ E\right\vert -\left\vert E^{g}\right\vert }$, qed.}.
 
 Now,%
 \begin{align}
-&  \Gamma^{+}\left(   \EE ,w,G\right) 
-\nonumber \\
-&  =\sum_{O\text{ is an }E\text{-coeven }
-          G\text{-orbit on }\operatorname{Par} \EE }
-\underbrace{{\mathbf{x}}_{O,w}}_{\substack{=\dfrac{1}{\left\vert O\right\vert
-}\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\
-\text{(by \eqref{pf.thm.antipode.GammawG.averaging})}}}
-=\sum_{O\text{ is an }E\text{-coeven }
-G\text{-orbit on }\operatorname{Par} \EE }\dfrac{1}{\left\vert
-O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}
-\nonumber \\
-&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
+&  \Gamma^{+}\left(  {\mathbf{E}},w,G\right)  \nonumber\\
+&  =\sum_{O\text{ is an }E\text{-coeven }G\text{-orbit on }\operatorname{Par}%
+{\mathbf{E}}}\underbrace{{\mathbf{x}}_{O,w}}_{\substack{=\dfrac{1}{\left\vert
+O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\\text{(by
+\eqref{pf.thm.antipode.GammawG.averaging})}}}=\sum_{O\text{ is an
+}E\text{-coeven }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}\dfrac
+{1}{\left\vert O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi
+,w}\nonumber\\
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}%
 \begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
 0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
-\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w} \nonumber \\
-& \qquad \left(
-\begin{array}{c}
-\text{here, we have extended the sum to all } G\text{-orbits} \\
-\text{on } \Par \EE \text{ (not just the }E\text{-coeven ones); but all new addends are } 0 \\
-\text{and therefore do not influence the value of the sum}
+\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\nonumber\\
+&  \qquad\left(
+\begin{array}
+[c]{c}%
+\text{here, we have extended the sum to all }G\text{-orbits}\\
+\text{on }\operatorname{Par}{\mathbf{E}}\text{ (not just the }E\text{-coeven
+ones); but all new addends are }0\\
+\text{and therefore do not influence the value of the sum}%
 \end{array}
-\right) \nonumber \\
-&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
+\right)  \nonumber\\
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}%
 \sum\limits_{\pi\in O}\underbrace{%
 \begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven};\\
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
 0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
-}_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{g\in
-\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}%
-g\\\text{(by \eqref{pf.thm.antipode.GammawG.signed})}}}\mathbf{x}_{\pi,w}
-\nonumber \\
+}_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in
+G;\\g\pi=\pi}}\operatorname*{sign}\nolimits_{E}g\\\text{(by
+\eqref{pf.thm.antipode.GammawG.signed})}}}\mathbf{x}_{\pi,w}\nonumber\\
 &  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}%
-{ \EE }}\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\Par %
- \EE }=\sum_{\pi\text{ is an } \EE \text{-partition}}}\left(
-\dfrac{1}{\left\vert G\right\vert }\sum_{g\in\operatorname*{Stab}%
-\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi
-,w} \nonumber \\
-&  =\sum_{\pi\text{ is an } \EE \text{-partition}}\left(  \dfrac
-{1}{\left\vert G\right\vert }\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi
+{{\mathbf{E}}}}\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\operatorname{Par}%
+{\mathbf{E}}}=\sum_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}}\left(
+\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
+}}\operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi,w}\nonumber\\
+&  =\sum_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}\left(  \dfrac
+{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}%
 }\operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi,w}=\dfrac
-{1}{\left\vert G\right\vert }\underbrace{\sum_{\pi\text{ is an }%
- \EE \text{-partition}}\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}%
-}_{=\sum_{g\in G}\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}%
-\\g\pi=\pi}}}\left(  \operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}%
-_{\pi,w} \nonumber\\
+{1}{\left\vert G\right\vert }\underbrace{\sum_{\pi\text{ is an }{\mathbf{E}%
+}\text{-partition}}\sum_{\substack{g\in G;\\g\pi=\pi}}}_{=\sum_{g\in G}%
+\sum_{\substack{\pi\text{ is an }{\mathbf{E}}\text{-partition;}\\g\pi=\pi}%
+}}\left(  \operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi
+,w}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}%
 \underbrace{\operatorname*{sign}\nolimits_{E}g}_{\substack{=\left(  -1\right)
 ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\\\text{(by
 \eqref{pf.thm.antipode.GammawG.sign})}}}\underbrace{\sum_{\substack{\pi\text{
-is an } \EE \text{-partition;}\\g\pi=\pi}}\mathbf{x}_{\pi,w}%
-}_{\substack{=\Gamma\left(   \EE ^{g},w^{g}\right)  \\\text{(by
-\eqref{pf.thm.antipode.GammawG.red})}}} \nonumber \\
+is an }{\mathbf{E}}\text{-partition;}\\g\pi=\pi}}\mathbf{x}_{\pi,w}%
+}_{\substack{=\Gamma\left(  {\mathbf{E}}^{g},w^{g}\right)  \\\text{(by
+\eqref{pf.thm.antipode.GammawG.red})}}}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
 ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\Gamma\left(
- \EE ^{g},w^{g}\right)  .
-\label{pf.thm.antipode.GammawG.Gammaplus}
+{\mathbf{E}}^{g},w^{g}\right)  .
+\label{pf.thm.antipode.GammawG.Gammaplus}%
 \end{align}
 Hence, $\Gamma^+\left(  { \EE },w,G\right) \in \QSym$
 (by Proposition~\ref{prop.Gammaw.qsym}).
