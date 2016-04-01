@@ -2457,7 +2457,7 @@ Proposition~\ref{prop.Gammaw.coprod}).
 \label{sect.proof}
 
 Before we come to the proof of Theorem~\ref{thm.antipode.Gammaw},
-let us state two simple lemmas:
+let us state three simple lemmas:
 
 \begin{lemma}
 \label{lem.admissible.cover}
@@ -2566,6 +2566,26 @@ Lemma~\ref{lem.tertispecial.subset}.
 double poset; but we will not use this.)
 \end{proof}
 
+\begin{lemma}
+\label{lem.Gammaw.empty}Let ${\mathbf{E}}=\left(  E,<_{1},<_{2}\right)  $ be a
+double poset. Let $w:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ be a map.
+
+\begin{enumerate}
+\item[(a)] If $E=\varnothing$, then $\Gamma\left(  \mathbf{E},w\right)  =1$.
+
+\item[(b)] If $E\neq\varnothing$, then $\varepsilon\left(  \Gamma\left(
+\mathbf{E},w\right)  \right)  =0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.Gammaw.empty}.] Part (a) is obvious (since there is
+only one $\mathbf{E}$-partition when $E=\varnothing$). Part (b) follows by
+observing that $\Gamma\left(  \mathbf{E},w\right)  $ is a homogeneous power
+series of degree $\sum_{e\in E}w\left(  e\right)  $ (and this degree is $>0$
+when $E\neq\varnothing$).
+\end{proof}
+
 \begin{proof}[Proof of Theorem~\ref{thm.antipode.Gammaw}.]
 We shall
 prove Theorem~\ref{thm.antipode.Gammaw} by induction over
@@ -2577,6 +2597,13 @@ a map $w : E \to \left\{1, 2, 3, \ldots\right\}$, and
 assume that Theorem~\ref{thm.antipode.Gammaw} is proven for all
 tertispecial double posets of smaller size.
 
+We have $\left| E \right| > 0$ and thus $E \neq \varnothing$. Hence,
+Lemma~\ref{lem.Gammaw.empty} (b) shows that
+$\varepsilon \left( \Gamma\left(\EE, w\right) \right) = 0$. Thus,
+$\left( u \circ \varepsilon \right) \left( \Gamma \left( \EE, w \right) \right)
+= u \left( \underbrace{\varepsilon \left( \Gamma \left( \EE, w \right) \right)}_{= 0} \right)
+= u \left( 0 \right) = 0$.
+
 The upper commutative pentagon of \eqref{eq.antipode} shows that
 $u \circ \varepsilon = m \circ \left(S \otimes \id\right) \circ
 \Delta$. Applying both sides of this equality to
@@ -2587,9 +2614,7 @@ $\left(u \circ \varepsilon\right)
 \Delta\right) \left(\Gamma\left(\EE, w\right)\right)$.
 Since
 $\left(u \circ \varepsilon\right)
-\left(\Gamma\left(\EE, w\right)\right) = 0$ (because
-$\Gamma\left(\EE, w\right)$ is a homogeneous power series of
-positive degree, and thus is annihilated by $\varepsilon$), this
+\left(\Gamma\left(\EE, w\right)\right) = 0$, this
 becomes
 \begin{align}
 0
