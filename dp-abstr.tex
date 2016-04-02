@@ -2882,6 +2882,7 @@ have
 \label{pf.thm.antipode.Gammaw.signrev}
 \end{equation}
 
+\begin{vershort}
 Hence, let us fix a map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$.
 Our goal is now to prove \eqref{pf.thm.antipode.Gammaw.signrev}.
 To do so, we denote by $Z$ the set of all
@@ -2906,6 +2907,178 @@ $T\left(\left(P, Q\right)\right)$, if the former addend was the
 addend for $\left(P, Q\right)$.}, and so
 \eqref{pf.thm.antipode.Gammaw.signrev}
 will follow and we will be done. It thus remains to find $T$.
+\end{vershort}
+
+\begin{verlong}
+Hence, let us fix a map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$.
+Our goal is now to prove \eqref{pf.thm.antipode.Gammaw.signrev}.
+To do so, we denote by $Z$ the set of all
+$\left(P, Q\right) \in \Adm \EE$ such that
+$\pi\mid_P$ is a $\left(P, >_1, <_2\right)$-partition and
+$\pi\mid_Q$ is a $\left(Q, <_1, <_2\right)$-partition. We are going
+to define an involution $T : Z \to Z$ of the set $Z$ having the
+property that, for any $\left(P, Q\right) \in Z$, if we write
+$T\left(\left(P, Q\right)\right)$ in the form
+$\left(P', Q'\right)$, then
+$\left(-1\right)^{\left|P'\right|}
+= - \left(-1\right)^{\left|P\right|}$. Once such an involution $T$
+is found, the equality \eqref{pf.thm.antipode.Gammaw.signrev} will
+follow\footnote{Here is the argument in detail:
+
+Assume that we have found an involution $T:Z\rightarrow Z$ of the set $Z$
+having the property that, for any $\left(  P,Q\right)  \in Z$, if we write
+$T\left(  \left(  P,Q\right)  \right)  $ in the form $\left(  P^{\prime
+},Q^{\prime}\right)  $, then
+\begin{equation}
+\left(  -1\right)  ^{\left\vert P^{\prime}\right\vert }=-\left(  -1\right)
+^{\left\vert P\right\vert }.\label{pf.thm.antipode.Gammaw.signrev.final.1}%
+\end{equation}
+We now need to prove the equality \eqref{pf.thm.antipode.Gammaw.signrev}.
+
+The map $Z$ is an involution, and thus a bijection.
+
+Now, let $Z_{0}$ be the subset $\left\{  \left(  P,Q\right)  \in
+Z\ \mid\ \left\vert P\right\vert \text{ is even}\right\}  $ of $Z$. Thus, for
+every $\left(  P,Q\right)  \in Z$, we have the following logical equivalence:%
+\begin{equation}
+\left(  \left(  P,Q\right)  \in Z_{0}\right)  \ \Longleftrightarrow\ \left(
+\left\vert P\right\vert \text{ is even}\right)
+.\label{pf.thm.antipode.Gammaw.signrev.final.defZ0}%
+\end{equation}
+Hence, for every $\left(  P,Q\right)  \in Z$, we have the following logical
+equivalence:%
+\begin{align}
+\left(  \left(  P,Q\right)  \notin Z_{0}\right)  \   & \Longleftrightarrow
+\ \left(  \left\vert P\right\vert \text{ is not even}\right)  \nonumber\\
+& \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{this equivalence is obtained from
+(\ref{pf.thm.antipode.Gammaw.signrev.final.defZ0})}\\
+\text{by replacing each part by its negation}%
+\end{array}
+\right)  \nonumber\\
+& \Longleftrightarrow\ \left(  \left\vert P\right\vert \text{ is odd}\right)
+.\label{pf.thm.antipode.Gammaw.signrev.final.defZ1}%
+\end{align}
+
+
+Now, for every $\left(  P,Q\right)  \in Z$, we have the following logical
+equivalence:%
+\begin{equation}
+\left(  \left(  P,Q\right)  \in Z_{0}\right)  \ \Longleftrightarrow\ \left(
+T\left(  \left(  P,Q\right)  \right)  \notin Z_{0}\right)
+.\label{pf.thm.antipode.Gammaw.signrev.final.3}%
+\end{equation}
+
+
+\textit{Proof of \ref{pf.thm.antipode.Gammaw.signrev.final.3}):} Let $\left(
+P,Q\right)  \in Z$. Write $T\left(  \left(  P,Q\right)  \right)  \in Z$ in the
+form $\left(  P^{\prime},Q^{\prime}\right)  $. Then,
+(\ref{pf.thm.antipode.Gammaw.signrev.final.defZ1}) (applied to $\left(
+P^{\prime},Q^{\prime}\right)  $ instead of $\left(  P,Q\right)  $) shows that
+we have the following logical equivalence:%
+\[
+\left(  \left(  P^{\prime},Q^{\prime}\right)  \notin Z_{0}\right)
+\ \Longleftrightarrow\ \left(  \left\vert P^{\prime}\right\vert \text{ is
+odd}\right)  .
+\]
+Thus, we have the following logical equivalence:%
+\begin{align*}
+\left(  \left(  P^{\prime},Q^{\prime}\right)  \notin Z_{0}\right)  \   &
+\Longleftrightarrow\ \left(  \left\vert P^{\prime}\right\vert \text{ is
+odd}\right)  \ \Longleftrightarrow\ \left(  \underbrace{\left(  -1\right)
+^{\left\vert P^{\prime}\right\vert }}_{\substack{=-\left(  -1\right)
+^{\left\vert P\right\vert }\\\text{(by
+(\ref{pf.thm.antipode.Gammaw.signrev.final.1}))}}}=-1\right)
+\ \Longleftrightarrow\ \left(  -\left(  -1\right)  ^{\left\vert P\right\vert
+}=-1\right)  \\
+& \Longleftrightarrow\ \left(  \left(  -1\right)  ^{\left\vert P\right\vert
+}=1\right)  \ \Longleftrightarrow\ \left(  \left\vert P\right\vert \text{ is
+even}\right)  \ \Longleftrightarrow\ \left(  \left(  P,Q\right)  \in
+Z_{0}\right)  \\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{pf.thm.antipode.Gammaw.signrev.final.defZ0})}\right)  .
+\end{align*}
+Hence, we have the following logical equivalence:%
+\[
+\left(  \left(  P,Q\right)  \in Z_{0}\right)  \ \Longleftrightarrow\ \left(
+\underbrace{\left(  P^{\prime},Q^{\prime}\right)  }_{=T\left(  \left(
+P,Q\right)  \right)  }\notin Z_{0}\right)  \ \Longleftrightarrow\ \left(
+T\left(  \left(  P,Q\right)  \right)  \notin Z_{0}\right)  .
+\]
+This proves (\ref{pf.thm.antipode.Gammaw.signrev.final.3}).
+
+Now,%
+\[
+\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left\vert P\right\vert \text{ is
+even}}}\underbrace{\left(  -1\right)  ^{\left\vert P\right\vert }%
+}_{\substack{=1\\\text{(since }\left\vert P\right\vert \text{ is even)}%
+}}=\underbrace{\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left\vert
+P\right\vert \text{ is even}}}}_{\substack{=\sum_{\substack{\left(
+P,Q\right)  \in Z;\\\left(  P,Q\right)  \in Z_{0}}}\\\text{(because for every
+}\left(  P,Q\right)  \in Z\text{, the condition}\\\left(  \left\vert
+P\right\vert \text{ is even}\right)  \text{ is equivalent to }\left(  \left(
+P,Q\right)  \in Z_{0}\right)  \\\text{(by
+(\ref{pf.thm.antipode.Gammaw.signrev.final.defZ0})))}}}1=\sum
+_{\substack{\left(  P,Q\right)  \in Z;\\\left(  P,Q\right)  \in Z_{0}}}1
+\]
+and%
+\begin{align*}
+\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left\vert P\right\vert \text{ is
+odd}}}\underbrace{\left(  -1\right)  ^{\left\vert P\right\vert }%
+}_{\substack{=-1\\\text{(since }\left\vert P\right\vert \text{ is odd)}}}  &
+=\underbrace{\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left\vert
+P\right\vert \text{ is odd}}}}_{\substack{=\sum_{\substack{\left(  P,Q\right)
+\in Z;\\\left(  P,Q\right)  \notin Z_{0}}}\\\text{(because for every }\left(
+P,Q\right)  \in Z\text{, the condition}\\\left(  \left\vert P\right\vert
+\text{ is odd}\right)  \text{ is equivalent to }\left(  \left(  P,Q\right)
+\notin Z_{0}\right)  \\\text{(by
+(\ref{pf.thm.antipode.Gammaw.signrev.final.defZ1})))}}}\left(  -1\right)
+=\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left(  P,Q\right)  \notin Z_{0}%
+}}\left(  -1\right)  \\
+& =\underbrace{\sum_{\substack{\left(  P,Q\right)  \in Z;\\T\left(  \left(
+P,Q\right)  \right)  \notin Z_{0}}}}_{\substack{=\sum_{\substack{\left(
+P,Q\right)  \in Z;\\\left(  P,Q\right)  \in Z_{0}}}\\\text{(because for every
+}\left(  P,Q\right)  \in Z\text{, the condition}\\\left(  T\left(  \left(
+P,Q\right)  \right)  \notin Z_{0}\right)  \text{ is equivalent to }\left(
+\left(  P,Q\right)  \in Z_{0}\right)  \\\text{(by
+(\ref{pf.thm.antipode.Gammaw.signrev.final.3})))}}}\left(  -1\right) \\
+&\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have substituted }T\left(  \left(  P,Q\right)  \right)  \text{
+for }\left(  P,Q\right)  \\
+\text{in the sum, since the map }T:Z\rightarrow Z\text{ is a bijection}%
+\end{array}
+\right)  \\
+& =\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left(  P,Q\right)  \in Z_{0}%
+}}\left(  -1\right)  =-\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left(
+P,Q\right)  \in Z_{0}}}1.
+\end{align*}
+Finally,
+\begin{align*}
+& \underbrace{\sum_{\substack{\left(  P,Q\right)  \in\operatorname{Adm}%
+{\mathbf{E}};\\\pi\mid_{P}\text{ is a }\left(  P,>_{1},<_{2}\right)
+\text{-partition;}\\\pi\mid_{Q}\text{ is a }\left(  Q,<_{1},<_{2}\right)
+\text{-partition}}}}_{\substack{=\sum_{\left(  P,Q\right)  \in Z}\\\text{(by
+the definition of }Z\text{)}}}\left(  -1\right)  ^{\left\vert P\right\vert
+}\\
+& =\sum_{\left(  P,Q\right)  \in Z}\left(  -1\right)  ^{\left\vert
+P\right\vert }=\underbrace{\sum_{\substack{\left(  P,Q\right)  \in
+Z;\\\left\vert P\right\vert \text{ is even}}}\left(  -1\right)  ^{\left\vert
+P\right\vert }}_{=\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left(
+P,Q\right)  \in Z_{0}}}1}+\underbrace{\sum_{\substack{\left(  P,Q\right)  \in
+Z;\\\left\vert P\right\vert \text{ is odd}}}\left(  -1\right)  ^{\left\vert
+P\right\vert }}_{=-\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left(
+P,Q\right)  \in Z_{0}}}1}\\
+& =\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left(  P,Q\right)  \in Z_{0}%
+}}1+\left(  -\sum_{\substack{\left(  P,Q\right)  \in Z;\\\left(  P,Q\right)
+\in Z_{0}}}1\right)  =0.
+\end{align*}
+Thus, \eqref{pf.thm.antipode.Gammaw.signrev} is proven.
+} and we will be done. It thus remains to find $T$.
+\end{verlong}
 
 The definition of $T$ is simple (although it will take us a while to prove
 that it is well-defined): Let $F$ be the subset of $E$ consisting of those
