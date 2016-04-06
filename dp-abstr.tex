@@ -3769,6 +3769,24 @@ relation is antisymmetric). In other words, $<_{1}^{g}$ is a strict partial
 order relation. This proves Proposition~\ref{prop.G-poset.quot.poset}.
 \end{proof}
 
+\begin{remark}
+Proposition~\ref{prop.G-poset.quot.poset} can be generalized:
+Let $E$ be a set. Let $<_1$ be a strict partial order relation on $E$.
+Let $G$ be a finite group which acts on $E$. Assume that $G$ preserves
+the relation $<_1$. Let $H$ be a subgroup of $G$.
+Let $E^H$ be the set of all orbits under the action of
+$H$ on $E$. Define a binary relation $<_{1}^H$ on $E^H$ by
+\[
+\left(  u<_{1}^H v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
+u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
+\]
+Then, $<_1^H$ is a strict partial order relation.
+
+This result (whose proof is quite similar to that of
+Proposition~\ref{prop.G-poset.quot.poset}) implicitly appears in
+\cite[p. 30]{Stanley-Peck}.
+\end{remark}
+
 \begin{proposition}
 \label{prop.G-poset.quot.double}
 Let $\EE = \left(E, <_1, <_2\right)$ be a tertispecial double poset.
@@ -4824,17 +4842,20 @@ Actions on Rings}, Regional Conference Series in Mathematics Nr. 82, AMS 1993.
 Fundamenta Mathematicae 193 (2007), 189--241. A preprint also appears
 on arXiv as \href{http://arxiv.org/abs/math/0511200v1}{arXiv:math/0511200v1}.
 
-\bibitem[Stan11]{Stanley-EC1}Richard Stanley, \textit{Enumerative
+\bibitem[Stan11]{Stanley-EC1}Richard P. Stanley, \textit{Enumerative
 Combinatorics, volume 1}, Cambridge University Press, 2011. \newline%
 \url{http://math.mit.edu/~rstan/ec/ec1/}
 
-\bibitem[Stan99]{Stanley-EC2}Richard Stanley, \textit{Enumerative
+\bibitem[Stan99]{Stanley-EC2}Richard P. Stanley, \textit{Enumerative
 Combinatorics, volume 2}, Cambridge University Press, 1999.
 
-\bibitem[Stan71]{Stanley-Thes}Richard Stanley, \textit{Ordered Structures and
+\bibitem[Stan71]{Stanley-Thes}Richard P. Stanley, \textit{Ordered Structures and
 Partitions}, Memoirs of the American Mathematical Society, No. 119, American
 Mathematical Society, Providence, R.I., 1972. \newline
 \url{http://www-math.mit.edu/~rstan/pubs/pubfiles/9.pdf}
+
+\bibitem[Stan84]{Stanley-Peck}Richard P. Stanley,
+\textit{Quotients of Peck posets}, Order, 1 (1984), pp. 29–-34.
 
 \bibitem[Sweed69]{Sweedler-HA}Moss E. Sweedler, \textit{Hopf Algebras}, W. A.
 Benjamin 1969.
