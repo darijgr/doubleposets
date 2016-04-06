@@ -270,30 +270,98 @@ I learnt a lot about $\QSym$ from Victor Reiner.
 
 Let us first briefly introduce the notations that will be used in the
 following.
+
 We set $\NN = \left\{0, 1, 2, \ldots\right\}$. A \textit{composition}
 means a finite sequence of positive integers. We let $\Comp$ be the set
 of all compositions. For $n \in \NN$, a \textit{composition of $n$}
-means a composition whose entries sum to $n$.
+means a composition whose entries sum to $n$ (that is, a composition
+$\left(\alpha_1, \alpha_2, \ldots, \alpha_k\right)$ satisfying
+$\alpha_1 + \alpha_2 + \cdots + \alpha_k = n$).
 
-Let $\kk$ be an arbitrary
-commutative ring. We consider the $\kk$-algebra $\Powser$ of formal
+Let $\kk$ be an arbitrary commutative ring. We shall keep $\kk$ fixed
+throughout this paper.
+We consider the $\kk$-algebra $\Powser$ of formal
 power series in infinitely many (commuting) indeterminates
 $x_1, x_2, x_3, \ldots$ over $\kk$. A \textit{monomial} shall always
 mean a monomial (without coefficients) in the variables
-$x_1, x_2, x_3, \ldots$. (See \cite[\S 2]{Gri-dimm} for details
-about the definition of monomials, and about some other notions that
-will be used below.)
+$x_1, x_2, x_3, \ldots$.\ \ \ \ \footnote{For the sake of completeness,
+let us give a detailed definition of monomials and of the topology
+on $\Powser$. (This definition has been copied from
+\cite[\S 2]{Gri-dimm}, essentially unchanged.)
+
+Let $x_{1},x_{2},x_{3},\ldots$ be countably many distinct symbols. We
+let $\operatorname*{Mon}$ be the free abelian monoid on the set $\left\{
+x_{1},x_{2},x_{3},\ldots\right\}  $ (written multiplicatively); it consists of
+elements of the form $x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots$ for
+finitely supported $\left(  a_{1},a_{2},a_{3},\ldots\right)  \in
+\mathbb{N}^{\infty}$ (where \textquotedblleft finitely
+supported\textquotedblright\ means that all but finitely many positive
+integers $i$ satisfy $a_{i}=0$). A \textit{monomial} will mean an element of
+$\operatorname*{Mon}$. Thus, a monomial is a combinatorial
+object, independent of $\mathbf{k}$; it does not carry a coefficient.
+
+We consider the $\mathbf{k}$-algebra $\Powser$ of (commutative) power
+series in
+countably many distinct indeterminates $x_{1},x_{2},x_{3},\ldots$ over
+$\mathbf{k}$. By abuse of notation, we shall identify every monomial
+$x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots\in\operatorname*{Mon}$ with the
+corresponding element $x_{1}^{a_{1}}\cdot x_{2}^{a_{2}}\cdot x_{3}^{a_{3}%
+}\cdot\cdots$ of $\Powser$ when necessary
+(e.g., when we speak of the sum of two monomials or
+when we multiply a monomial with an element of $\mathbf{k}$). (To be
+very pedantic, this identification is slightly dangerous, because
+it can happen that two distinct monomials in $\operatorname{Mon}$ get
+identified with two identical elements of $\Powser$. However, this
+can only happen when the ring $\kk$ is trivial, and even then it is
+not a real problem unless we infer the equality of monomials from the
+equality of their counterparts in $\Powser$, which we are not going to
+do.)
+
+We furthermore endow the ring $\Powser$ with the following topology
+(as in \cite[Section 2.6]{Reiner}):
+
+We endow the ring $\mathbf{k}$ with the discrete topology. To define a
+topology on the $\mathbf{k}$-algebra $\Powser$, we (temporarily) regard every power
+series in $\Powser$ as the family of its coefficients (indexed by the
+set $\operatorname{Mon}$). More precisely, we have a
+$\kk$-module isomorphism
+\[
+\prod_{\mathfrak{m} \in \operatorname{Mon}} \kk \to \Powser,
+\qquad \qquad \left(\lambda_{\mathfrak{m}}\right)_{\mathfrak{m} \in \operatorname{Mon}}
+\mapsto \sum_{\mathfrak{m} \in \operatorname{Mon}} \lambda_{\mathfrak{m}} \mathfrak{m} .
+\]
+We use this isomorphism to transform the product topology on
+$\prod_{\mathfrak{m} \in \operatorname{Mon}} \kk$ to $\Powser$. The
+resulting topology on $\Powser$ turns $\Powser$ into a polynomial
+$\kk$-algebra; this is the topology that we will
+be using whenever we make statements about convergence in $\Powser$
+or write down infinite sums of power series.
+A sequence $\left( a_n \right)_{n \in \NN}$ of power series converges
+to a power series $a$ with respect to this topology if
+and only if for every monomial $\mathfrak{m}$, all sufficiently high
+$n \in \NN$ satisfy
+\[
+\left(  \text{the coefficient of } \mathfrak{m}\text{ in }a_{n}\right)
+=\left(  \text{the coefficient of } \mathfrak{m}\text{ in }a\right)  .
+\]
+
+Note that this topological $\kk$-algebra $\Powser$ is \textbf{not}
+the completion of $\mathbf{k}\left[  x_{1},x_{2},x_{3},\ldots\right]$
+with respect to the standard grading (in which all $x_{i}$ have degree $1$).
+(They are distinct even as sets.)
+}
 
 Inside the $\kk$-algebra $\Powser$ is a
-subalgebra $\Powser_\bdd$ of \textit{bounded-degree} formal power
-series; these are the power series $f$ for which there exists a
-$d \in \NN$ such that no monomial of degree $> d$ appears in $f$.
-We consider $\Powser$ as a topological
-$\kk$-algebra\footnote{The topology on $\Powser$ is
-defined by regarding $\Powser$ as a Cartesian product of infinitely
-many copies of $\kk$ (one for each monomial). Once again, see
-\cite[\S 2]{Gri-dimm} for details.}; its subalgebra
-$\Powser_\bdd$ inherits the topology from it.
+subalgebra $\Powser_\bdd$ consisting of the \textit{bounded-degree}
+formal power series; these are the power series $f$ for which there
+exists a $d \in \NN$ such that no monomial of degree $> d$ appears in
+$f$\ \ \ \ \footnote{The \textit{degree} of a monomial
+$x_1^{a_1} x_2^{a_2} x_3^{a_3} \cdots$ is defined to be the nonnegative
+integer $a_1 + a_2 + a_3 + \cdots$. A monomial $\mathfrak{m}$ is said
+to \textit{appear} in a power series $f \in \Powser$ if and only if
+the coefficient of $\mathfrak{m}$ in $f$ is nonzero.}.
+This $\kk$-subalgebra $\Powser_\bdd$ becomes a topological
+$\kk$-algebra, by inheriting the topology from $\Powser$.
 
 Two monomials $\mathfrak{m}$ and $\mathfrak{n}$ are said to be
 \textit{pack-equivalent}\footnote{Pack-equivalence and the related
@@ -314,7 +382,8 @@ if every two pack-equivalent monomials have equal coefficients in
 front of them in $f$. It is easy to see that the quasisymmetric
 power series form a $\kk$-subalgebra of $\Powser$; but usually one
 is interested in the set of quasisymmetric bounded-degree power
-series. This latter set is a $\kk$-subalgebra of $\Powser_\bdd$, and
+series in $\Powser$.
+This latter set is a $\kk$-subalgebra of $\Powser_\bdd$, and
 is known as the \textit{$\kk$-algebra of quasisymmetric functions
 over $\kk$}. It is denoted by $\QSym$.
 It is clear that symmetric functions (in the
