@@ -2745,9 +2745,9 @@ induction hypothesis). Hence,
 &= S \left(\Gamma\left(\underbrace{\EE\mid_E}_{=\EE},
            \underbrace{w\mid_E}_{=w}\right)\right)
 \underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
-           }_{
+           }_{\substack{
            =\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
-           =1}
+           =1 \\ \text{ (by Lemma \ref{lem.Gammaw.empty} (a))}}}
    \nonumber \\
 & \qquad + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
                   \left|P\right| < \left|E\right|}}
@@ -2977,9 +2977,10 @@ $\left(-1\right)^{\left|P'\right|}
 = - \left(-1\right)^{\left|P\right|}$ condition makes it clear that
 $T$ has no fixed points. Therefore, to each addend on the left
 hand side of \eqref{pf.thm.antipode.Gammaw.signrev} corresponds an
-addend with opposite sign -- namely, the addend for
-$T\left(\left(P, Q\right)\right)$, if the former addend was the
-addend for $\left(P, Q\right)$.}, and so
+addend with opposite sign, which cancels it: Namely, for each
+$ \left(A, B\right) \in Z$, the addend for
+$\left(P, Q\right) = \left(A, B\right)$ is cancelled by the addend
+for $\left(P, Q\right) = T\left(\left(A, B\right)\right)$.}, and so
 \eqref{pf.thm.antipode.Gammaw.signrev}
 will follow and we will be done. It thus remains to find $T$.
 \end{vershort}
