@@ -119,8 +119,12 @@
 \fi
 \let\sumnonlimits\sum
 \let\prodnonlimits\prod
+\let\cupnonlimits\bigcup
+\let\capnonlimits\bigcap
 \renewcommand{\sum}{\sumnonlimits\limits}
 \renewcommand{\prod}{\prodnonlimits\limits}
+\renewcommand{\bigcup}{\cupnonlimits\limits}
+\renewcommand{\bigcap}{\capnonlimits\limits}
 \voffset=0cm
 \hoffset=-0.7cm
 \setlength\textheight{22.5cm}
@@ -256,9 +260,7 @@ In the present version of the paper, some (classical and/or
 straightforward) proofs are missing or sketched. A more detailed
 version exists, in which at least a few of these proofs are
 elaborated on more\footnote{It can be downloaded from
-\url{http://web.mit.edu/~darij/www/algebra/dp-abstr-long.pdf}};
-further details might be added in future versions of this
-paper or forthcoming work (the author's PhD thesis).
+\url{http://web.mit.edu/~darij/www/algebra/dp-abstr-long.pdf}}.
 
 \subsection{Acknowledgments}
 
