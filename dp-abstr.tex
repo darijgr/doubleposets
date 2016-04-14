@@ -146,8 +146,7 @@
 \newcommand{\QSYM}{{\operatorname{QSYM}}}
 \newcommand{\Powser}{\mathbf{k}\left[\left[x_1,x_2,x_3,\ldots\right]\right]}
 \newcommand{\Par}{\operatorname{Par}}
-\newcommand{\bdd}{{\operatorname{bdd}}}
-\newcommand{\Bdd}{{\Powser_{\bdd}}}
+\newcommand{\bdd}{\operatorname{bdd}}
 \newcommand{\bD}{{\mathbf{D}}}
 \newcommand{\EE}{{\mathbf{E}}}
 \newcommand{\FF}{{\mathbf{F}}}
@@ -156,8 +155,8 @@
 \newcommand{\NN}{{\mathbb{N}}}
 \newcommand{\ZZ}{{\mathbb{Z}}}
 \newcommand{\QQ}{{\mathbb{Q}}}
-\newcommand{\arr}{\ar@{=>}}
-\newcommand{\bluenum}[1]{{\color{blue} #1 }}
+%\newcommand{\arr}{\ar@{=>}}
+%\newcommand{\bluenum}[1]{{\color{blue} #1 }}
 \ihead{Double posets and the antipode of $\QSym$}
 \ohead{page \thepage}
 \cfoot{}
@@ -354,7 +353,7 @@ with respect to the standard grading (in which all $x_{i}$ have degree $1$).
 }
 
 Inside the $\kk$-algebra $\Powser$ is a
-subalgebra $\Powser_\bdd$ consisting of the \textit{bounded-degree}
+subalgebra $\Powser_{\bdd}$ consisting of the \textit{bounded-degree}
 formal power series; these are the power series $f$ for which there
 exists a $d \in \NN$ such that no monomial of degree $> d$ appears in
 $f$\ \ \ \ \footnote{The \textit{degree} of a monomial
@@ -362,7 +361,7 @@ $x_1^{a_1} x_2^{a_2} x_3^{a_3} \cdots$ is defined to be the nonnegative
 integer $a_1 + a_2 + a_3 + \cdots$. A monomial $\mathfrak{m}$ is said
 to \textit{appear} in a power series $f \in \Powser$ if and only if
 the coefficient of $\mathfrak{m}$ in $f$ is nonzero.}.
-This $\kk$-subalgebra $\Powser_\bdd$ becomes a topological
+This $\kk$-subalgebra $\Powser_{\bdd}$ becomes a topological
 $\kk$-algebra, by inheriting the topology from $\Powser$.
 
 Two monomials $\mathfrak{m}$ and $\mathfrak{n}$ are said to be
@@ -385,7 +384,7 @@ front of them in $f$. It is easy to see that the quasisymmetric
 power series form a $\kk$-subalgebra of $\Powser$; but usually one
 is interested in the set of quasisymmetric bounded-degree power
 series in $\Powser$.
-This latter set is a $\kk$-subalgebra of $\Powser_\bdd$, and
+This latter set is a $\kk$-subalgebra of $\Powser_{\bdd}$, and
 is known as the \textit{$\kk$-algebra of quasisymmetric functions
 over $\kk$}. It is denoted by $\QSym$.
 It is clear that symmetric functions (in the
@@ -785,8 +784,8 @@ helped the author to prove one of their properties \cite{Gri-dimm}.
 $\EE = \left(E, <_1, <_2\right)$ is a total order (i.e.,
 when the double poset $\EE$ is special), the
 $\EE$-partitions are precisely the
-reverse $\left(P, \omega\right)$-partitions (for $P =
-\left(E, <_1\right)$ and $\omega$ being a labelling of $P$
+reverse $\left(P, \omega\right)$-partitions (for
+$P = \left(E, <_1\right)$ and $\omega$ being a labelling of $P$
 dictated by $<_2$) in the terminology
 of \cite[\S 7.19]{Stanley-EC2}, and the power series
 $\Gamma\left(\EE\right)$ is the $K_{P, \omega}$ of
@@ -801,8 +800,10 @@ where $P$ is the labelled poset $\left(E, <_1\right)$; and furthermore,
 our $\Gamma\left(\EE\right)$ is the $F_P\left(\xx\right)$ of
 \cite[Def. 5.12]{Reiner}. Conversely, if $P$ is a labelled poset, then
 the $F_P\left(\xx\right)$ of \cite[Def. 5.12]{Reiner} is our
-$\Gamma\left(\left(P, <_P, <_\ZZ\right)\right)$.
+$\Gamma\left(\left(P, <_P, <_{\ZZ}\right)\right)$.
+
 \end{enumerate}
+
 \end{example}
 
 \section{The antipode theorem}
@@ -843,12 +844,12 @@ let us first explain where they have already appeared.
 Corollary~\ref{cor.antipode.Gamma} is equivalent to
 \cite[Corollary 5.27]{Reiner}\footnote{It is easiest to derive
 \cite[Corollary 5.27]{Reiner} from our Corollary~\ref{cor.antipode.Gamma},
-as this only requires setting $\EE = \left(P, <_P, <_\ZZ\right)$
+as this only requires setting $\EE = \left(P, <_P, <_{\ZZ}\right)$
 (this is a special double poset, thus in particular a tertispecial
 one) and noticing that
-$\Gamma\left(\left(P, <_P, <_\ZZ\right)\right)
+$\Gamma\left(\left(P, <_P, <_{\ZZ}\right)\right)
 = F_P\left(\xx\right)$ and
-$\Gamma\left(\left(P, >_P, <_\ZZ\right)\right)
+$\Gamma\left(\left(P, >_P, <_{\ZZ}\right)\right)
 = F_{P^{\operatorname{opp}}}\left(\xx\right)$, where all unexplained
 notations are defined in \cite[Chp. 5]{Reiner}. But one can also
 proceed in the opposite direction.}
@@ -4298,9 +4299,10 @@ the power series that we are discussing are defined functorially
 in $\kk$, and thus any identity between these series that holds
 over $\ZZ$ must hold over any $\kk$). Therefore, it is sufficient
 to prove Theorem~\ref{thm.antipode.GammawG} for $\kk = \QQ$ (since
-$\QSym_\ZZ$ embeds into $\QSym_\QQ$\ \ \ \ \footnote{Here, we are using
-the notation $\QSym_\kk$ for the Hopf algebra $\QSym$ defined over a
-base ring $\kk$.}). Thus, we WLOG assume that $\kk = \QQ$.
+$\QSym_{\ZZ}$ embeds into $\QSym_{\QQ}$\ \ \ \ \footnote{Here, we
+are using the notation $\QSym_{\kk}$ for the Hopf algebra $\QSym$
+defined over a base ring $\kk$.}).
+Thus, we WLOG assume that $\kk = \QQ$.
 This will allow us to divide by positive integers.
 
 Every $G$-orbit $O$ on $\Par \EE$ satisfies
