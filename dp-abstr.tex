@@ -261,7 +261,7 @@ version exists, in which at least a few of these proofs are
 elaborated on more\footnote{It can be downloaded from
 \url{http://web.mit.edu/~darij/www/algebra/dp-abstr-long.pdf}}.
 
-\subsection{Acknowledgments}
+\subsection*{Acknowledgments}
 
 Katharina Jochemko's work \cite{Joch} provoked this research.
 I learnt a lot about $\QSym$ from Victor Reiner.
@@ -2603,7 +2603,19 @@ We need to show that the double poset
 $\EE\mid_P = \left(P, <_1, <_2\right)$ is tertispecial. In other
 words, we need to show that if $a$ and $b$ are two elements
 of $P$ such that $a$ is $<_1$-covered by $b$ as element of
-the set $P$, then $a$ and $b$ are $<_2$-comparable.
+the set $P$, then $a$ and $b$ are $<_2$-comparable.\footnote{Here, we
+are using the following notation: If $T$ is a subset of $E$, and if
+$u$ and $v$ are two elements of $T$, then we say that ``$u$ is
+$<_1$-covered by $v$ as element of the set $T$'' if and only if
+$u$ is $<_{1, T}$-covered by $v$, where
+$<_{1,T}$ denotes the relation $<_1$ on the set $T$ (not the relation
+$<_1$ on the set $E$). In general, saying that $u$ is $<_1$-covered
+by $v$ as element of the set $T$ is \textbf{not} equivalent to
+saying that $u$ is $<_1$-covered by $v$ as element of
+the set $E$ (because there might be an element $w$ of $E$ satisfying
+$u <_1 w <_1 v$, but no such element that belongs to $T$). Rather,
+$u$ is $<_1$-covered by $v$ as element of the set $T$ if and only if
+$u <_1 v$ and there exists no $w \in T$ satisfying $u <_1 w <_1 v$.}
 
 Let $a$ and $b$ be two elements of $P$ such that $a$ is
 $<_1$-covered by $b$ as element of the set $P$. Thus,
@@ -2669,7 +2681,7 @@ homogeneous power series in $\QSym$ whose degree is $> 0$).
 
 \begin{proof}[Proof of Theorem~\ref{thm.antipode.Gammaw}.]
 We shall
-prove Theorem~\ref{thm.antipode.Gammaw} by induction over
+prove Theorem~\ref{thm.antipode.Gammaw} by strong induction over
 $\left|E\right|$. The induction base ($\left|E\right|=0$) is left to
 the reader; we start with the induction step. Consider a
 tertispecial double
