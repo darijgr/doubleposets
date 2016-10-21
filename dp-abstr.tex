@@ -1762,7 +1762,7 @@ assumption was false. Hence, the proof of $\left(  P,Q\right)  \in
 straightforward to see that for every subset $T$ of $E$,%
 \begin{equation}
 \text{the map }\varphi\mid_{T}\text{ is an }\mathbf{E}\mid_{T}%
-\text{-partition} \label{pf.lem.Gammaw.coprod.bij.a.1}%
+\text{-partition}. \label{pf.lem.Gammaw.coprod.bij.a.1}%
 \end{equation}
 Applying this to $T=P$, we conclude that $\varphi\mid_{P}$ is an
 $\mathbf{E}\mid_{P}$-partition.
@@ -1801,7 +1801,8 @@ Hence,%
 \right)  \left(  Q\right)   &  =\operatorname*{add}\nolimits_{-k}\left(
 \underbrace{\left(  \varphi\mid_{Q}\right)  \left(  Q\right)  }_{=\varphi
 \left(  Q\right)  =\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)
-\right\vert \right\}  }\right)  =\operatorname*{add}\nolimits_{-k}\left(
+\right\vert \right\}  }\right) \\
+&=  \operatorname*{add}\nolimits_{-k}\left(
 \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
 \right\}  \right) \\
 &  =\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
@@ -1850,13 +1851,22 @@ Q=E$ and having the property that
 \text{no }p\in P\text{ and }q\in Q\text{ satisfy }q<_{1}p.
 \label{pf.lem.Gammaw.coprod.bij.b.Adm}%
 \end{equation}
+Using $P \cap Q = \varnothing$ and $P \cup Q = E$, we see that the
+map $\varphi$ is well-defined. (Indeed, we defined it as the map
+$E \to \left\{1,2,3,\ldots\right\}$ which sends every $e\in E$ to $%
+\begin{cases}
+\sigma\left(  e\right)  , & \text{if }e\in P;\\
+\tau\left(  e\right)  +k, & \text{if }e\in Q
+\end{cases}
+$.)
+
 Since the map $\sigma$ is packed, we have $\sigma\left(  P\right)  =\left\{
 1,2,\ldots,\left\vert \sigma\left(  P\right)  \right\vert \right\}  =\left\{
 1,2,\ldots,k\right\}  $ (since $\left\vert \sigma\left(  P\right)  \right\vert
 =k$).
 
-Since the map $\tau$ is packed, we have $\tau\left(  P\right)  =\left\{
-1,2,\ldots,\left\vert \tau\left(  P\right)  \right\vert \right\}  $.
+Since the map $\tau$ is packed, we have $\tau\left(  Q\right)  =\left\{
+1,2,\ldots,\left\vert \tau\left(  Q\right)  \right\vert \right\}  $.
 
 The definition of $\varphi$ shows that%
 \begin{equation}
@@ -1864,7 +1874,7 @@ The definition of $\varphi$ shows that%
 \ \ \ \ \ \ \ \ \ \ \text{for every }e\in P.
 \label{pf.lem.Gammaw.coprod.bij.b.1o}%
 \end{equation}
-for every $e\in P$. Hence, $\varphi\left(  P\right)  =\sigma\left(  P\right)
+Hence, $\varphi\left(  P\right)  =\sigma\left(  P\right)
 =\left\{  1,2,\ldots,k\right\}  $.
 
 Also, the definition of $\varphi$ shows that%
@@ -1875,11 +1885,14 @@ Also, the definition of $\varphi$ shows that%
 \end{equation}
 Thus,
 \begin{align*}
-\varphi\left(  Q\right)   &  =\left\{  u+k\ \mid\ u\in\underbrace{\tau\left(
-Q\right)  }_{=\left\{  1,2,\ldots,\left\vert \tau\left(  P\right)  \right\vert
+\varphi\left(  Q\right)
+& = \left\{ \underbrace{\varphi\left(e\right)}_{= \tau\left(e\right) + k}
+\mid e \in Q \right\} = \left\{ \tau\left(e\right) + k \mid e \in Q \right\} \\
+&  =\left\{  u+k\ \mid\ u\in\underbrace{\tau\left(
+Q\right)  }_{=\left\{  1,2,\ldots,\left\vert \tau\left( Q \right)  \right\vert
 \right\}  }\right\}  =\left\{  u+k\ \mid\ u\in\left\{  1,2,\ldots,\left\vert
-\tau\left(  P\right)  \right\vert \right\}  \right\} \\
-&  =\left\{  k+1,k+2,\ldots,k+\left\vert \tau\left(  P\right)  \right\vert
+\tau\left(  Q\right)  \right\vert \right\}  \right\} \\
+&  =\left\{  k+1,k+2,\ldots,k+\left\vert \tau\left( Q \right)  \right\vert
 \right\}  .
 \end{align*}
 Now, $E=P\cup Q$, so that%
@@ -1887,16 +1900,17 @@ Now, $E=P\cup Q$, so that%
 \varphi\left(  E\right)   &  =\varphi\left(  P\cup Q\right)
 =\underbrace{\varphi\left(  P\right)  }_{=\left\{  1,2,\ldots,k\right\}  }%
 \cup\underbrace{\varphi\left(  Q\right)  }_{=\left\{  k+1,k+2,\ldots
-,k+\left\vert \tau\left(  P\right)  \right\vert \right\}  }\nonumber\\
+,k+\left\vert \tau\left( Q \right)  \right\vert \right\}  }\nonumber\\
 &  =\left\{  1,2,\ldots,k\right\}  \cup\left\{  k+1,k+2,\ldots,k+\left\vert
-\tau\left(  P\right)  \right\vert \right\}  =\left\{  1,2,\ldots,k+\left\vert
-\tau\left(  P\right)  \right\vert \right\}  .
+\tau\left( Q \right)  \right\vert \right\}  \nonumber \\
+&=  \left\{  1,2,\ldots,k+\left\vert
+\tau\left( Q \right)  \right\vert \right\}  .
 \label{pf.lem.Gammaw.coprod.bij.b.3o}%
 \end{align}
 Thus, $\varphi\left(  E\right)  $ is an initial interval; in other words, the
 map $\varphi$ is packed. Furthermore, (\ref{pf.lem.Gammaw.coprod.bij.b.3o})
 shows that $\left\vert \varphi\left(  E\right)  \right\vert
-=k+\underbrace{\left\vert \tau\left(  P\right)  \right\vert }_{\geq0}\geq k$,
+=k+\underbrace{\left\vert \tau\left( Q \right)  \right\vert }_{\geq0}\geq k$,
 so that $k\in\left\{  0,1,\ldots,\left\vert \varphi\left(  E\right)
 \right\vert \right\}  $.
 
@@ -1923,21 +1937,59 @@ e\right)  \leq\varphi\left(  f\right)  $. We are in one of the following four ca
 
 In Case 1, our claim $\varphi\left(  e\right)  \leq\varphi\left(  f\right)  $
 follows from the assumption that $\sigma$ is an ${\mathbf{E}}\mid_{P}%
-$-partition (because in Case 1, we have $\varphi\left(  e\right)
-=\sigma\left(  e\right)  $ and $\varphi\left(  f\right)  =\sigma\left(
-f\right)  $). In Case 4, it follows from the assumption that $\tau$ is an
-${\mathbf{E}}\mid_{Q}$-partition (since in Case 4, we have $\varphi\left(
-e\right)  =\tau\left(  e\right)  +k$ and $\varphi\left(  f\right)
-=\tau\left(  f\right)  +k$). In Case 2, it clearly holds (indeed, if $e\in P$,
-then the definition of $\varphi$ yields $\varphi\left(  e\right)
-=\sigma\left(  e\right)  \leq k$, and if $f\in Q$, then the definition of
-$\varphi$ yields $\varphi\left(  f\right)  =\tau\left(  f\right)  +k>k$;
-therefore, in Case 2, we have $\varphi\left(  e\right)  \leq k<\varphi\left(
-f\right)  $). Finally, Case 3 is impossible (because having $e\in Q$ and $f\in
-P$ and $e<_{1}f$ would contradict (\ref{pf.lem.Gammaw.coprod.bij.b.Adm})).
-Thus, we have proven the claim in each of the four cases, and consequently
-Claim 1 is proven. As we have said above, Claim 2 is proven similarly. Thus,
-we have proven that $\varphi$ is an $\mathbf{E}$-partition.
+$-partition\footnote{\textit{Proof.} Assume that we are in Case 1. Thus, we
+have $e\in P$ and $f\in P$. Thus, $e$ and $f$ are elements of $P$ satisfying
+$e<_{1}f$. Hence, $\sigma\left(  e\right)  \leq\sigma\left(  f\right)  $
+(since $\sigma$ is an ${\mathbf{E}}\mid_{P}$-partition). But the definition of
+$\varphi$ yields $\varphi\left(  e\right)  =%
+\begin{cases}
+\sigma\left(  e\right)  , & \text{if }e\in P;\\
+\tau\left(  e\right)  +k, & \text{if }e\in Q
+\end{cases}
+=\sigma\left(  e\right)  $ (since $e\in P$) and $\varphi\left(  f\right)
+=\sigma\left(  f\right)  $ (similarly). Hence, $\varphi\left(  e\right)
+=\sigma\left(  e\right)  \leq\sigma\left(  f\right)  =\varphi\left(  f\right)
+$. Qed.}. In Case 4, it follows from the assumption that $\tau$ is an
+${\mathbf{E}}\mid_{Q}$-partition\footnote{\textit{Proof.} Assume that we are
+in Case 4. Thus, we have $e\in Q$ and $f\in Q$. Thus, $e$ and $f$ are elements
+of $Q$ satisfying $e<_{1}f$. Hence, $\tau\left(  e\right)  \leq\tau\left(
+f\right)  $ (since $\tau$ is an ${\mathbf{E}}\mid_{Q}$-partition). But the
+definition of $\varphi$ yields $\varphi\left(  e\right)  =%
+\begin{cases}
+\sigma\left(  e\right)  , & \text{if }e\in P;\\
+\tau\left(  e\right)  +k, & \text{if }e\in Q
+\end{cases}
+=\tau\left(  e\right)  +k$ (since $e\in Q$) and $\varphi\left(  f\right)
+=\tau\left(  f\right)  +k$ (similarly). Hence, $\varphi\left(  e\right)
+=\underbrace{\tau\left(  e\right)  }_{\leq\tau\left(  f\right)  }+k\leq
+\tau\left(  f\right)  +k=\varphi\left(  f\right)  $. Qed.}. In Case 2, it
+clearly holds\footnote{\textit{Proof.} Assume that we are in Case 2. Thus, we
+have $e\in P$ and $f\in Q$. The definition of $\varphi$ yields $\varphi\left(
+e\right)  =%
+\begin{cases}
+\sigma\left(  e\right)  , & \text{if }e\in P;\\
+\tau\left(  e\right)  +k, & \text{if }e\in Q
+\end{cases}
+=\sigma\left(  e\right)  $ (since $e\in P$) and $\varphi\left(  f\right)  =%
+\begin{cases}
+\sigma\left(  f\right)  , & \text{if }e\in P;\\
+\tau\left(  f\right)  +k, & \text{if }e\in Q
+\end{cases}
+=\tau\left(  f\right)  +k$ (since $f\in Q$). But we have $\varphi\left(
+e\right)  =\sigma\left(  \underbrace{e}_{\in P}\right)  \in\sigma\left(
+P\right)  =\left\{  1,2,\ldots,k\right\}  $, so that $\varphi\left(  e\right)
+\leq k$. Meanwhile, $\varphi\left(  f\right)  =\underbrace{\tau\left(
+f\right)  }_{>0}+k>k$. Thus, $\varphi\left(  e\right)  \leq k<\varphi\left(
+f\right)  $, and therefore $\varphi\left(  e\right)  \leq\varphi\left(
+f\right)  $. Qed.}. Finally, Case 3 is impossible\footnote{\textit{Proof.}
+Assume that we are in Case 3. Thus, $e\in Q$ and $f\in P$. The elements $f\in
+P$ and $e\in Q$ satisfy $e<_{1}f$. This contradicts
+(\ref{pf.lem.Gammaw.coprod.bij.b.Adm}) (applied to $p=f$ and $q=e$). Thus, we
+have obtained a contradiction; hence, our assumption (that we are in Case 3)
+was wrong. Therefore, Case 3 is impossible.}. Thus, we have proven the claim
+in each of the four cases, and consequently Claim 1 is proven. As we have said
+above, Claim 2 is proven similarly. Thus, we have proven that $\varphi$ is an
+$\mathbf{E}$-partition.
 
 Altogether, we now know that $\varphi$ is a packed ${\mathbf{E}}$-partition,
 and that $k\in\left\{  0,1,\ldots,\left\vert \varphi\left(  E\right)
