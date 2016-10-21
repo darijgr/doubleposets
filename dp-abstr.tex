@@ -504,22 +504,22 @@ Malvenuto and Reutenauer \cite{Mal-Reu-DP}.
 
 \item[(a)] We shall encode posets as pairs $\left(P, <\right)$,
 where $P$ is a set and $<$ is a strict partial order
-relation (i.e., an irreflexive, transitive and antisymmetric
+(i.e., an irreflexive, transitive and antisymmetric
 binary relation) on the set $P$; this relation $<$ will be regarded
 as the smaller relation of the poset. All binary relations will be
 written in infix notation: i.e., we write ``$a < b$'' for ``$a$ is
-related to $b$ by the relation $<$''. (If you define relations as
-sets of pairs, then ``$a$ is related to $b$ by the relation $<$''
+related to $b$ by the relation $<$''. (If you define binary relations
+as sets of pairs, then ``$a$ is related to $b$ by the relation $<$''
 means that $\left(a,b\right)$ is an element of the set $<$.)
 
-\item[(b)] If $<$ is a strict partial order relation on a set $P$,
+\item[(b)] If $<$ is a strict partial order on a set $P$,
 and if $a$ and $b$ are two elements of $P$, then we say that
 $a$ and $b$ are \textit{$<$-comparable} if we have either $a < b$
-or $a = b$ or $b < a$. A strict partial order relation $<$ on a
+or $a = b$ or $b < a$. A strict partial order $<$ on a
 set $P$ is said to be a \textit{total order} if and only
 if every two elements of $P$ are $<$-comparable.
 
-\item[(c)] If $<$ is a strict partial order relation on a set $P$,
+\item[(c)] If $<$ is a strict partial order on a set $P$,
 and if $a$ and $b$ are two elements of $P$, then we say that
 $a$ is \textit{$<$-covered by $b$} if we have $a < b$ and there
 exists no $c \in P$ satisfying $a < c < b$. (For instance, if $<$
@@ -528,7 +528,7 @@ $i \in \ZZ$ is $<$-covered by $i+1$.)
 
 \item[(d)] A \textit{double poset} is defined as a triple
 $\left(E, <_1, <_2\right)$ where $E$ is a finite set and $<_1$ and
-$<_2$ are two strict partial order relations on $E$.
+$<_2$ are two strict partial orders on $E$.
 
 \item[(e)] A double poset
 $\left(E, <_1, <_2\right)$ is said to be \textit{special} if
@@ -548,7 +548,7 @@ and $b$ are $<_2$-comparable.
 \textit{opposite relation} of $<$ is defined to be the binary
 relation $>$ on the set $P$ which is defined as follows: For any
 $e \in P$ and $f \in P$, we have $e > f$ if and only if $f < e$.
-Notice that if $<$ is a strict partial order relation, then so
+Notice that if $<$ is a strict partial order, then so
 is the opposite relation $>$ of $<$.
 \end{itemize}
 \end{definition}
@@ -609,7 +609,7 @@ The skew Young
 diagram $Y\left(\lambda / \mu\right)$ is then defined as the set of all
 $\left(i, j\right) \in \left\{ 1, 2, 3, \ldots \right\}^2$ satisfying
 $\mu_i < j \leq \lambda_i$. On this set $Y\left(\lambda / \mu\right)$,
-we define two partial order relations $<_1$ and $<_2$ by
+we define two strict partial orders $<_1$ and $<_2$ by
 \[
 \left(i,j\right) <_1 \left(i',j'\right) \Longleftrightarrow
 \left( i \leq i' \text{ and } j \leq j' \text{ and }
@@ -844,8 +844,8 @@ and Reutenauer's \cite[Theorem 3.1]{Mal-Reu}\footnote{This equivalence
 requires a bit of work to set up. To derive \cite[Theorem 3.1]{Mal-Reu}
 from our Theorem~\ref{thm.antipode.Gammaw}, it is enough to contract
 all undirected edges in $G$, denoting the vertex set of the new
-graph by $E$, and then define two order relations $<_1$ and $<_2$ on
-$E$ by
+graph by $E$, and then define two strict partial orders $<_1$ and
+$<_2$ on $E$ by
 \[
 \left(a <_1 b\right) \Longleftrightarrow \left(a \neq b,
 \text{ and there exists a path from } a \text{ to } b \text{ in }
@@ -899,7 +899,7 @@ Let $G$ be a group, and let $E$ be a $G$-set.
 \begin{itemize}
 
 \item[(a)] Let $<$ be a
-strict partial order relation on $E$. We say that $G$
+strict partial order on $E$. We say that $G$
 \textit{preserves the relation $<$} if the following holds:
 For every $g \in G$, $a \in E$ and $b \in E$ satisfying $a < b$,
 we have $ga < gb$.
@@ -3710,7 +3710,7 @@ Next, we will show three simple properties of posets on which groups act.
 
 \begin{proposition}
 \label{prop.G-poset.quot.poset}
-Let $E$ be a set. Let $<_1$ be a strict partial order relation on $E$.
+Let $E$ be a set. Let $<_1$ be a strict partial order on $E$.
 Let $G$ be a finite group which acts on $E$. Assume that $G$ preserves
 the relation $<_1$.
 
@@ -3720,7 +3720,7 @@ $g$ on $E$. Define a binary relation $<_{1}^{g}$ on $E^{g}$ by
 \left(  u<_{1}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
 u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
 \]
-Then, $<_1^g$ is a strict partial order relation.
+Then, $<_1^g$ is a strict partial order.
 \end{proposition}
 
 Proposition~\ref{prop.G-poset.quot.poset} is precisely \cite[Lemma 2.4]{Joch},
@@ -3778,12 +3778,12 @@ relation $<_{1}^{g}$ is transitive.
 Now, we know that the relation $<_{1}^{g}$ is irreflexive and transitive, and
 thus also antisymmetric (since every irreflexive and transitive binary
 relation is antisymmetric). In other words, $<_{1}^{g}$ is a strict partial
-order relation. This proves Proposition~\ref{prop.G-poset.quot.poset}.
+order. This proves Proposition~\ref{prop.G-poset.quot.poset}.
 \end{proof}
 
 \begin{remark}
 Proposition~\ref{prop.G-poset.quot.poset} can be generalized:
-Let $E$ be a set. Let $<_1$ be a strict partial order relation on $E$.
+Let $E$ be a set. Let $<_1$ be a strict partial order on $E$.
 Let $G$ be a finite group which acts on $E$. Assume that $G$ preserves
 the relation $<_1$. Let $H$ be a subgroup of $G$.
 Let $E^H$ be the set of all orbits under the action of
@@ -3792,7 +3792,7 @@ $H$ on $E$. Define a binary relation $<_{1}^H$ on $E^H$ by
 \left(  u<_{1}^H v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
 u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
 \]
-Then, $<_1^H$ is a strict partial order relation.
+Then, $<_1^H$ is a strict partial order.
 
 This result (whose proof is quite similar to that of
 Proposition~\ref{prop.G-poset.quot.poset}) implicitly appears in
@@ -3821,13 +3821,13 @@ $\EE^g$ is a tertispecial double poset.
 \end{proposition}
 
 \begin{proof}[Proof of Proposition~\ref{prop.G-poset.quot.double}.]
-Both relations $<_1$ and $<_2$ are strict partial order relations
+Both relations $<_1$ and $<_2$ are strict partial orders
 (since $\EE$ is a double poset).
 Proposition~\ref{prop.G-poset.quot.poset} shows that $<_{1}^{g}$ is a
-strict partial order relation.
+strict partial order.
 Proposition~\ref{prop.G-poset.quot.poset} (applied to $<_2$ and
 $<_2^g$ instead of $<_1$ and $<_1^g$) shows that $<_{2}^{g}$ is a
-strict partial order relation. Thus, $\EE^g
+strict partial order. Thus, $\EE^g
 = \left(E^g, <_1^g, <_2^g\right)$ is a double poset. It remains
 to show that this double poset $\EE^g$ is tertispecial.
 
@@ -3974,7 +3974,7 @@ $a$ and $b$ are $<_{2}$-comparable (since $\mathbf{E}$ is tertispecial). In
 other words, we have either $a<_{2}b$ or $a=b$ or $b<_{2}a$. Since $a<_{2}b$
 is impossible (because if we had $a<_{2}b$, then we would have $e<_{2}^{g}f$
 (since $a\in e$ and $b\in f$), which would contradict $f<_{2}^{g}e$ (since
-$<_{2}^{g}$ is a strict partial order relation)), and since $a=b$ is
+$<_{2}^{g}$ is a strict partial order)), and since $a=b$ is
 impossible (because $a<_{1}b$), we therefore must have $b<_{2}a$. But since
 $\pi$ is an $\mathbf{E}$-partition, we have $\pi\left(  a\right)  <\pi\left(
 b\right)  $ (since $a<_{1}b$ and $b<_{2}a$). But the definition of
@@ -4213,7 +4213,7 @@ binary relation $<_{1}^{g}$ on $E^{g}$ by
 \left(  u<_{1}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
 u\text{ and }b\in v\text{ with }a<_{1}b\right)  .
 \]
-Similarly, define a strict partial order relation $<_{2}^{g}$ on $E^{g}$ by
+Similarly, define a strict partial order $<_{2}^{g}$ on $E^{g}$ by
 \[
 \left(  u<_{2}^{g}v\right)  \Longleftrightarrow\left(  \text{there exist }a\in
 u\text{ and }b\in v\text{ with }a<_{2}b\right)  .
