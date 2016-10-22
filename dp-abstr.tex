@@ -1131,18 +1131,87 @@ $\left\{1, 2, \ldots, \left|\pi\left(T\right)\right|\right\}$.
 \end{definition}
 
 \begin{proposition}
+\label{prop.ev.comp}
+Let $E$ be a set.
+Let $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ be a packed map.
+Let $\ell = \left|\pi\left(E\right)\right|$.
+
+\begin{itemize}
+\item[(a)] We have $\pi\left(E\right) = \left\{1, 2, \ldots, \ell\right\}$.
+
+\item[(b)] Let $w : E \to \left\{1, 2, 3, \ldots\right\}$ be a
+map. For each $i \in \left\{1, 2, \ldots, \ell\right\}$, define an
+integer $\alpha_i$ by $\alpha_i = \sum_{e \in \pi^{-1}\left(i\right)}
+w\left(e\right)$. Then,
+$\left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$ is a
+composition.
+\end{itemize}
+\end{proposition}
+
+\begin{vershort}
+\begin{proof}[Proof of Proposition \ref{prop.ev.comp}.]
+This follows from the assumption that $\pi$ be packed. (Details
+are left to the reader.)
+\end{proof}
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}
+[Proof of Proposition \ref{prop.ev.comp}.] The map $\pi$ is packed. In other
+words, $\pi\left(  E\right)  $ is an initial interval (by the definition of
+\textquotedblleft packed\textquotedblright). In other words, $\pi\left(
+E\right)  =\left\{  1,2,\ldots,k\right\}  $ for some $k\in\mathbb{N}$.
+Consider this $k$. From $\pi\left(  E\right)  =\left\{  1,2,\ldots,k\right\}
+$, we obtain $\left\vert \pi\left(  E\right)  \right\vert =\left\vert \left\{
+1,2,\ldots,k\right\}  \right\vert =k$, so that $k=\left\vert \pi\left(
+E\right)  \right\vert =\ell$. Now, $\pi\left(  E\right)  =\left\{
+1,2,\ldots,k\right\}  =\left\{  1,2,\ldots,\ell\right\}  $ (since $k=\ell$).
+This proves Proposition \ref{prop.ev.comp} (a).
+
+(b) Let $i\in\left\{  1,2,\ldots,\ell\right\}  $. Then, $i\in\left\{
+1,2,\ldots,\ell\right\}  =\pi\left(  E\right)  $. Hence, there exists some
+$f\in E$ such that $i=\pi\left(  f\right)  $. Consider this $f$. We have
+$f\in\pi^{-1}\left(  i\right)  $ (since $\pi\left(  f\right)  =i$). Also,
+$w\left(  f\right)  \in\left\{  1,2,3,\ldots\right\}  $ (since $w$ is a map
+$E\rightarrow\left\{  1,2,3,\ldots\right\}  $). Now,%
+\begin{align*}
+\alpha_{i}  & =\sum_{e\in\pi^{-1}\left(  i\right)  }w\left(  e\right)
+=\underbrace{w\left(  f\right)  }_{>0}+\sum_{\substack{e\in\pi^{-1}\left(
+i\right)  ;\\e\neq f}}\underbrace{w\left(  e\right)  }_{\substack{\geq
+0\\\text{(since }w\left(  e\right)  \in\left\{  1,2,3,\ldots\right\}
+\text{)}}}\\
+& \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have split off the addend for }e=f\text{ from the sum}\\
+\text{(since }f\in\pi^{-1}\left(  i\right)  \text{)}%
+\end{array}
+\right)  \\
+& >0+\sum_{\substack{e\in\pi^{-1}\left(  i\right)  ;\\e\neq f}}0=0.
+\end{align*}
+Thus, $\alpha_{i}$ is a positive integer.
+
+Now, forget that we have fixed $i$. We thus have shown that $\alpha_{i}$ is a
+positive integer for each $i\in\left\{  1,2,\ldots,\ell\right\}  $. In other
+words, $\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $ is a
+finite list of positive integers, i.e., a composition. This proves Proposition
+\ref{prop.ev.comp} (b).
+\end{proof}
+\end{verlong}
+
+\begin{definition}
+Let $E$ be a set.
+Let $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ be a packed map.
+Let $w : E \to \left\{1, 2, 3, \ldots\right\}$ be a map. Then, the
+composition $\left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$
+defined in Proposition \ref{prop.ev.comp} (b) will be denoted by
+$\ev_w \pi$.
+\end{definition}
+
+\begin{proposition}
 \label{prop.Gammaw.packed}
 Let $\EE = \left(E, <_1, <_2\right)$ be a double poset. Let
 $w : E \to \left\{1, 2, 3, \ldots\right\}$ be a map.
-For every packed map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$,
-we define $\ev_w \pi$ to be the composition
-$\left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$, where
-$\ell = \left|\pi\left(E\right)\right|$ (so that
-$\pi\left(E\right) = \left\{1, 2, \ldots, \ell\right\}$, since
-$\pi$ is packed),
-and where each
-$\alpha_i$ is defined as $\sum_{e \in \pi^{-1}\left(i\right)}
-w\left(e\right)$.
 Then,
 \begin{equation}
 \label{eq.prop.Gammaw.packed}
