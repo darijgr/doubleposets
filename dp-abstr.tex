@@ -929,7 +929,7 @@ to be \textit{$E$-coeven} if all elements of $O$ are $E$-coeven.
 \end{itemize}
 \end{definition}
 
-Before we come to the promised result, let us state a simple fact:
+Before we come to the promised result, let us state two simple facts:
 
 \begin{lemma}
 \label{lem.coeven.all-one}
@@ -938,6 +938,31 @@ finite. Let $O$ be a
 $G$-orbit on $F$. Then, $O$ is $E$-coeven if and only if at least
 one element of $O$ is $E$-coeven.
 \end{lemma}
+
+\begin{proposition}
+\label{prop.xxOw}
+Let $\EE = \left(E, <_1, <_2\right)$ be a double poset.
+Let $\Par \EE$ denote the set of all $\EE$-partitions.
+Let $G$ be a finite
+group which acts on $E$. Assume that $G$ preserves both
+relations $<_1$ and $<_2$.
+
+\begin{enumerate}
+
+\item[(a)]
+Then, $\Par \EE$ is a $G$-subset of the $G$-set
+$\left\{1, 2, 3, \ldots\right\}^E$ (see
+Definition~\ref{def.G-sets.terminology} (d) for the definition of
+the latter).
+
+\item[(b)] Let $w : E \to \left\{1, 2, 3, \ldots\right\}$. Assume that
+$G$ preserves $w$.
+Let $O$ be a $G$-orbit on $\Par \EE$. Then, the values of $\xx_{\pi, w}$
+for all $\pi \in O$ are equal.
+
+\end{enumerate}
+
+\end{proposition}
 
 \begin{theorem}
 \label{thm.antipode.GammawG}
@@ -948,21 +973,21 @@ group which acts on $E$. Assume that $G$ preserves both
 relations $<_1$ and $<_2$, and also preserves $w$.
 Then, $G$ acts also on the set $\Par \EE$ of all
 $\EE$-partitions; namely, $\Par \EE$ is a $G$-subset of the $G$-set
-$\left\{1, 2, 3, \ldots\right\}^E$ (see
-Definition~\ref{def.G-sets.terminology} (d) for the definition of
-the latter).
+$\left\{1, 2, 3, \ldots\right\}^E$ (according to
+Proposition~\ref{prop.xxOw} (a)).
 %We say that an $\EE$-partition $\pi$ is
 %\textit{even} if every $g \in G$ satisfying $g \pi = \pi$
 %is $E$-even. We say that a $G$-orbit $O$ on
 %$\Par \EE$ is \textit{even} if its elements are
 %even (or, equivalently, one of its elements is even).
-For any $G$-orbit $O$ on
-$\operatorname{Par}\EE$, we define a monomial $\xx_{O, w}$
+For any $G$-orbit $O$ on $\Par \EE$, we define a monomial $\xx_{O, w}$
 by
 \[ \xx_{O, w} = \xx_{\pi, w} \qquad \text{ for some element }
-\pi \text{ of } O
+\pi \text{ of } O .
 \]
-(this does not depend on the choice of $\pi$).
+(This is well-defined, since Proposition~\ref{prop.xxOw} (b) shows
+that $\xx_{\pi, w}$ does not depend on the choice of $\pi \in O$.)
+
 Let
 \[
 \Gamma\left(\EE, w, G\right) = \sum_{O\text{ is a }
@@ -3827,6 +3852,113 @@ O$ is $E$-coeven. In other words, Statement 2 holds. We have thus shown that
 Statement 3 implies Statement 2. Consequently, Statements 2 and 3 are
 equivalent, and so the proof of Lemma \ref{lem.coeven.all-one} is complete.
 \end{proof}
+
+\begin{vershort}
+We leave the fairly straightforward proof of Proposition~\ref{prop.xxOw}
+to the reader.
+\end{vershort}
+
+\begin{verlong}
+\begin{proof}[Proof of Proposition~\ref{prop.xxOw}.]
+
+(a) We need to prove that $g \pi \in \Par \EE$ for each $g \in G$ and
+each $\pi \in \Par \EE$. So let us fix $g \in G$ and $\pi \in \Par \EE$.
+We must prove that $g \pi \in \Par \EE$.
+
+We know that $\pi$ is an $\EE$-partition (since $\pi \in \Par \EE$).
+In other words, the following two claims hold:
+
+\textit{Claim 1:} Every $e \in E$ and $f \in E$ satisfying $e <_1 f$
+satisfy $\pi\left(e\right) \leq \pi\left(f\right)$.
+
+\textit{Claim 2:} Every $e \in E$ and $f \in E$ satisfying $e <_1 f$
+and $f <_2 e$ satisfy $\pi\left(e\right) < \pi\left(f\right)$.
+
+But our goal is to prove that $g \pi \in \Par \EE$. In other words,
+our goal is to prove that $g \pi$ is an $\EE$-partition. In other
+words, we must show that the following two claims hold:
+
+\textit{Claim 3:} Every $e \in E$ and $f \in E$ satisfying $e <_1 f$
+satisfy
+$\left(g \pi\right)\left(e\right) \leq \left(g \pi\right)\left(f\right)$.
+
+\textit{Claim 4:} Every $e \in E$ and $f \in E$ satisfying $e <_1 f$
+and $f <_2 e$ satisfy
+$\left(g \pi\right)\left(e\right) < \left(g \pi\right)\left(f\right)$.
+
+Let us first prove Claim 4:
+
+\textit{Proof of Claim 4:} Let $e \in E$ and $f \in E$ be such that
+$e <_1 f$ and $f <_2 e$. The definition of the $G$-action on the set
+$\left\{1, 2, 3, \ldots\right\}^E$ shows that
+$\left(g \pi\right) \left(e\right) = \pi \left(g^{-1} e\right)$ and
+$\left(g \pi\right) \left(f\right) = \pi \left(g^{-1} f\right)$.
+
+Now, from $e <_1 f$, we obtain
+$g^{-1} e <_1 g^{-1} f$ (since $G$ preserves
+the relation $<_1$). Also, from $f <_2 e$, we obtain
+$g^{-1} f <_2 g^{-1} e$ (since $G$ preserves
+the relation $<_2$). Thus, we can apply Claim 2 to
+$g^{-1} e$ and $g^{-1} f$ instead of $e$ and $f$. As a result, we
+conclude that
+$\pi \left(g^{-1} e\right) < \pi \left(g^{-1} f\right)$. In view of
+$\left(g \pi\right) \left(e\right) = \pi \left(g^{-1} e\right)$ and
+$\left(g \pi\right) \left(f\right) = \pi \left(g^{-1} f\right)$, this
+rewrites as
+$\left(g \pi\right)\left(e\right) < \left(g \pi\right)\left(f\right)$.
+Thus, Claim 4 is proven.
+
+We thus have derived Claim 4 from Claim 2. Similarly, Claim 3 can be
+derived from Claim 1. Thus, Claim 3 and Claim 4 are proven. As
+explained above, this shows that $g \pi$ is an $\EE$-partition. In
+other words, $g \pi \in \EE$. This completes our proof of
+Proposition~\ref{prop.xxOw} (a).
+
+(b) We need to show that $\xx_{\pi, w} = \xx_{\psi, w}$ for any two
+elements $\pi$ and $\psi$ of $O$. So let $\pi$ and $\psi$ be two
+elements of $O$.
+
+We know that $G$ preserves $w$. In other words, every $g \in G$ and
+$e \in E$ satisfy
+\begin{equation}
+w \left( ge \right) = w \left( e \right) .
+\label{pf.prop.xxOw.b.1}
+\end{equation}
+
+The two elements $\pi$ and $\psi$ belong to one and
+the same $G$-orbit (namely, to $O$). Thus, there exists a $g \in G$
+satisfying $g \pi = \psi$. Consider this $g$. For each $e \in E$,
+we have
+\begin{equation}
+\underbrace{\psi}_{= g \pi} \left(e\right)
+= \left(g \pi\right) \left(e\right)
+= \pi \left(g^{-1} e\right)
+\label{pf.prop.xxOw.b.3}
+\end{equation}
+(by the definition of the $G$-action on the set
+$\left\{1, 2, 3, \ldots\right\}^E$).
+
+The definition of $\xx_{\pi, w}$ yields
+$\xx_{\pi, w}
+= \prod_{e \in E} x_{\pi\left(e\right)}^{w\left(e\right)}$.
+The definition of $\xx_{\psi, w}$ yields
+\begin{align*}
+\xx_{\psi, w}
+&= \prod_{e \in E} \underbrace{x_{\psi\left(e\right)}^{w\left(e\right)}}_{\substack{= x_{\pi \left(g^{-1} e\right)}^{w\left(e\right)} \\ \text{(by (\ref{pf.prop.xxOw.b.3}))}}}
+= \prod_{e \in E} x_{\pi \left(g^{-1} e\right)}^{w\left(e\right)}
+= \prod_{e \in E} \underbrace{x_{\pi \left(g^{-1} g e\right)}^{w\left(g e\right)}}_{= x_{\pi\left(e\right)}^{w\left(g e\right)}} \\
+& \ \ \ \ \ \ \ \ \ \ \left( \begin{array}{c}
+\text{here, we have substituted } g e \text{ for } e \text{ in the product,} \\
+\text{since the map } E \to E, \ e \mapsto g e \text{ is a bijection}
+\end{array} \right) \\
+&= \prod_{e \in E} \underbrace{x_{\pi\left(e\right)}^{w\left(g e\right)}}_{\substack{= x_{\pi\left(e\right)}^{w\left(e\right)} \\ \text{(by (\ref{pf.prop.xxOw.b.1}))}}}
+= \prod_{e \in E} x_{\pi\left(e\right)}^{w\left(e\right)}
+= \xx_{\pi, w} .
+\end{align*}
+Thus, $\xx_{\pi, w} = \xx_{\psi, w}$ is proven. This completes the
+proof of Proposition~\ref{prop.xxOw} (b).
+\end{proof}
+\end{verlong}
 
 Next, we will show three simple properties of posets on which groups act.
 
