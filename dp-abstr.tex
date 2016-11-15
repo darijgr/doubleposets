@@ -1087,8 +1087,19 @@ to $\left(j, i\right)$. This bijection is an isomorphism
 of double posets from
 $\left(Y\left(\lambda / \mu\right), >_1, <_2\right)$
 to
-$\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)$.
-Thus, applying Corollary~\ref{cor.antipode.Gamma} to the
+$\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)$
+(where the notion of an ``isomorphism of double posets'' is defined
+in the natural way -- i.e., an isomorphism of double posets is a
+bijection $\phi$ between their ground sets such that each of the
+two maps $\phi$ and $\phi^{-1}$ preserves each of the two orders).
+Hence,
+\begin{align}
+\Gamma\left(\left(Y\left(\lambda / \mu\right), >_1, <_2\right)\right)
+&=
+\Gamma\left(\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)\right) .
+\label{eq.exam.antipode.Gammaw.schur.0}
+\end{align}
+But applying Corollary~\ref{cor.antipode.Gamma} to the
 tertispecial double poset $\mathbf{Y}\left(\lambda / \mu\right)$,
 we obtain
 \begin{align}
@@ -1098,22 +1109,31 @@ S\left(\Gamma\left(\mathbf{Y}\left(\lambda / \mu\right)\right)\right)
 \nonumber \\
 &= \left(-1\right)^{\left|\lambda / \mu\right|}
 \Gamma\left(\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)\right)
-.
 \label{eq.exam.antipode.Gammaw.schur.1}
 \end{align}
+(by (\ref{eq.exam.antipode.Gammaw.schur.0})).
 But from Example~\ref{exam.Gamma} (d), we know that
 $\Gamma\left(\mathbf{Y}\left(\lambda / \mu\right)\right)
 = s_{\lambda / \mu}$. Moreover, a similar argument using
 \cite[Remark 2.12]{Reiner} shows that
+$\Gamma\left(\left(Y\left(\lambda / \mu\right), >_1, >_2\right)\right)
+= s_{\lambda / \mu}$. Applying this to $\lambda^t$ and $\mu^t$
+instead of $\lambda$ and $\mu$, we obtain
 $\Gamma\left(\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)\right)
-= s_{\lambda^t / \mu^t}$. Hence,
+= s_{\lambda^t / \mu^t}$.
+Now,
 \eqref{eq.exam.antipode.Gammaw.schur.1} rewrites as
 \begin{equation}
 S\left(s_{\lambda / \mu}\right)
 = \left(-1\right)^{\left|\lambda / \mu\right|}
-s_{\lambda^t / \mu^t} .
+s_{\lambda^t / \mu^t}
 \label{eq.exam.antipode.Gammaw.schur.2}
 \end{equation}
+(since
+$\Gamma\left(\mathbf{Y}\left(\lambda / \mu\right)\right)
+= s_{\lambda / \mu}$ and
+$\Gamma\left(\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)\right)
+= s_{\lambda^t / \mu^t}$).
 This is a well-known formula, and is usually stated
 for $S$ being the antipode of the Hopf algebra of symmetric
 (rather than quasisymmetric) functions, but the latter antipode
