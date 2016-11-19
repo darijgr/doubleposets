@@ -90,7 +90,7 @@
 {\begin{conv}[#1]\begin{leftbar}}
 {\end{leftbar}\end{conv}}
 \newtheorem{quest}[theo]{Question}
-\newenvironment{algorithm}[1][]
+\newenvironment{question}[1][]
 {\begin{quest}[#1]\begin{leftbar}}
 {\end{leftbar}\end{quest}}
 \newtheorem{warn}[theo]{Warning}
@@ -166,7 +166,7 @@
 
 \title{Double posets and the antipode of $\QSym$}
 
-\date{version 2.1 (\today)}
+\date{version 2.2 (\today)}
 
 \begin{comment}
 \keywords{
@@ -5315,6 +5315,43 @@ given by $\left(  p<_{\omega}q\right)  \Longleftrightarrow\left(
 formula of \cite[Theorem 2.13]{Joch} can also be derived from our above
 arguments. We leave the details to the reader.
 
+\section{Further questions}
+
+With the results proven above (specificially, Theorems
+\ref{thm.antipode.Gammaw} and \ref{thm.antipode.Gammaw}), we have obtained
+formulas for a large class of quasisymmetric generating functions for maps
+from a double poset to $\left\{  1,2,3,\ldots\right\}  $. Several natural
+questions arise:
+
+\begin{question}
+What happens to the above results when $\mathbf{E}$ is no longer required to
+be tertispecial? We know that the tertispeciality condition on $\mathbf{E}$ is
+sufficient (say) for Corollary \ref{cor.antipode.Gamma}, but is it also
+necessary, or are there non-tertispecial double posets for which Corollary
+\ref{cor.antipode.Gamma} nevertheless holds? Computations using the SageMath
+computer algebra system \cite{SageMath} have shown that, among the double
+posets $\mathbf{E}=\left(  E,<_{1},<_{2}\right)  $ with $\left\vert
+E\right\vert \leq6$ and with $<_{1}$ being a total order, \textbf{only} the
+tertispecial ones satisfy the conclusion of Corollary \ref{cor.antipode.Gamma}%
+. However, computer experimentation stops being viable shortly after the
+$\left\vert E\right\vert =6$ threshold, and double posets for which $<_{1}$ is
+not a total order have not been tested at all. Neither a positive nor a
+negative answer would surprise me.
+\end{question}
+
+\begin{question}
+In \cite{Gri-nbc}, I have studied generalizations of Whitney's famous
+non-broken-circuit theorem for graphs and matroids. One of the cornerstones of
+that study is the bijection $\Phi$ in \cite[proofs of Lemma 2.7 and Lemma
+5.25]{Gri-nbc}, which is uncannily reminiscent the involution $T$ in the proof
+of Theorem~\ref{thm.antipode.Gammaw}. (Actually, this bijection $\Phi$ can be
+extended to an involution, thus making the analogy even more palpable.) Both
+$\Phi$ and $T$ are defined by toggling a certain element in or out of a
+subset; and this element is chosen as the argmin or argmax of a function
+defined on the ground set. Is there a connection between the two results, or
+even a common generalization?
+\end{question}
+
 \nocite{*}
 \bibliographystyle{abbrvnat}
 % use the following instead if you encounter problems 
@@ -5372,6 +5409,10 @@ arXiv:1506.03508v1.\newline
 \bibitem[Grin14]{Gri-dimm}Darij Grinberg,
 \textit{Dual immaculate creation operators and a dendriform algebra structure on the quasisymmetric functions},
 \href{http://arxiv.org/abs/1410.0079v6}{arXiv:1410.0079v6}.
+
+\bibitem[Grin16]{Gri-nbc}Darij Grinberg,
+\textit{A note on non-broken-circuit sets and the chromatic polynomial},
+\href{https://arxiv.org/abs/1604.03063v1}{arXiv:1604.03063v1}.
 
 \bibitem[GriRei14]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
 in Combinatorics}, August 22, 2016, arXiv:1409.8356v4.\newline
@@ -5432,6 +5473,10 @@ Actions on Rings}, Regional Conference Series in Mathematics Nr. 82, AMS 1993.
 \textit{Hopf algebras and dendriform structures arising from parking functions},
 Fundamenta Mathematicae 193 (2007), 189--241. A preprint also appears
 on arXiv as \href{http://arxiv.org/abs/math/0511200v1}{arXiv:math/0511200v1}.
+
+\bibitem[Sage16]{SageMath}The Sage Developers, \textit{SageMath,
+the Sage Mathematics Software System} (Version 7.4), 2016.
+\url{http://www.sagemath.org}
 
 \bibitem[Stan11]{Stanley-EC1}Richard P. Stanley, \textit{Enumerative
 Combinatorics, volume 1}, Cambridge University Press, 2011. \newline%
