@@ -4,9 +4,9 @@ This is a preprint currently undergoing revision (it is polished already, but I 
 
 Up-to-date PDF files can be downloaded from my website:
 
-- [Standard version](http://web.mit.edu/~darij/www/algebra/dp-abstr.pdf).
+- [Standard version](http://www.cip.ifi.lmu.de/~grinberg/algebra/dp-abstr.pdf).
 
-- [Detailed version](http://web.mit.edu/~darij/www/algebra/dp-abstr-long.pdf).
+- [Detailed version](http://www.cip.ifi.lmu.de/~grinberg/algebra/dp-abstr-long.pdf).
 
 The preprint also appears on the arXiv as [arXiv:1509.08355](https://arxiv.org/abs/1509.08355), but is less frequently updated there.
 
