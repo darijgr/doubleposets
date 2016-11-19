@@ -4127,6 +4127,276 @@ double poset $\EE^g = \left(E^g, <_1^g, <_2^g\right)$ is tertispecial. This
 proves Proposition~\ref{prop.G-poset.quot.double}.
 \end{proof}
 
+\begin{verlong}
+Next, let us state a basic fact about $G$-sets:
+
+\begin{proposition}
+\label{prop.G-set.quot.Phi}Let $G$ be a finite group. Let $E$ be a $G$-set.
+Let $X$ be any set. Recall that the set $X^{E}$ of all maps $E\rightarrow X$
+becomes a $G$-set (according to Definition \ref{def.G-sets.terminology} (d)).
+
+There is a bijection $\Phi$ between
+
+\begin{itemize}
+\item the maps $\pi:E\rightarrow X$ satisfying $g\pi=\pi$
+\end{itemize}
+
+and
+
+\begin{itemize}
+\item the maps $\overline{\pi}:E^{g}\rightarrow X$.
+\end{itemize}
+
+Namely, this bijection $\Phi$ sends any map $\pi:E\rightarrow X$ satisfying
+$g\pi=\pi$ to the map $\overline{\pi}:E^{g}\rightarrow X$ defined by
+\[
+\overline{\pi}\left(  u\right)  =\pi\left(  a\right)  \qquad\text{for every
+}u\in E^{g}\text{ and }a\in u.
+\]
+
+\end{proposition}
+
+\begin{proof}
+[Proof of Proposition \ref{prop.G-set.quot.Phi}.]Let $\mathfrak{A}$ be the set
+of all maps $\pi:E\rightarrow X$ satisfying $g\pi=\pi$. Thus,%
+\[
+\mathfrak{A}=\left\{  \pi:E\rightarrow X\ \mid\ g\pi=\pi\right\}  =\left\{
+\psi:E\rightarrow X\ \mid\ g\psi=\psi\right\}
+\]
+(here, we have renamed the index $\pi$ as $\psi$).
+
+Let $\mathfrak{B}$ be the set of all maps $\overline{\pi}:E^{g}\rightarrow X$.
+Thus,%
+\[
+\mathfrak{B}=\left\{  \overline{\pi}:E^{g}\rightarrow X\right\}  =X^{E^{g}}.
+\]
+
+
+Let $\pi\in\mathfrak{A}$. Thus, $\pi\in\mathfrak{A}=\left\{  \psi:E\rightarrow
+X\ \mid\ g\psi=\psi\right\}  $. In other words, $\pi$ is a map $\psi
+:E\rightarrow X$ satisfying $g\psi=\psi$. In other words, $\pi$ is a map
+$E\rightarrow X$ and satisfies $g\pi=\pi$. Now, we define a map $\pi^{\circ
+}:E^{g}\rightarrow X$ as follows: Let $u\in E^{g}$. Thus, $u$ is a $g$-orbit.
+In particular, $u$ is a nonempty set. Hence, we can pick some $a\in u$. Now,
+the element $\pi\left(  a\right)  \in X$ is independent on the choice of
+$a$\ \ \ \ \footnote{\textit{Proof.} We must show that if $a_{1}$ and $a_{2}$
+are two elements of $u$, then $\pi\left(  a_{1}\right)  =\pi\left(
+a_{2}\right)  $.
+\par
+Indeed, let $a_{1}$ and $a_{2}$ be two elements of $u$. We must show that
+$\pi\left(  a_{1}\right)  =\pi\left(  a_{2}\right)  $.
+\par
+The elements $a_{1}$ and $a_{2}$ lie in one and the same $g$-orbit (namely, in
+$u$). In other words, there exists some $k\in\mathbb{Z}$ such that
+$a_{2}=g^{k}a_{1}$. Consider this $k$.
+\par
+Recall that $g\pi=\pi$. Thus, $g$ lies in the stabilizer of $\pi$. Since the
+stabilizer of $\pi$ is a subgroup of $G$, we therefore conclude that every
+power of $g$ must also lie in the stabilizer of $\pi$. In particular, $g^{k}$
+lies in the stabilizer of $\pi$ (since $g^{k}$ is a power of $g$). In other
+words, $g^{k}\pi=\pi$. But $a_{2}=g^{k}a_{1}$, so that $a_{1}=\left(
+g^{k}\right)  ^{-1}a_{2}$. Applying the map $x$ to both sides of this
+equality, we obtain
+\[
+\pi\left(  a_{1}\right)  =\pi\left(  \left(  g^{k}\right)  ^{-1}a_{2}\right)
+.
+\]
+Comparing this with%
+\[
+\left(  g^{k}\pi\right)  \left(  a_{2}\right)  =\pi\left(  \left(
+g^{k}\right)  ^{-1}a_{2}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the
+definition of the }G\text{-action on }X^{E}\right)  ,
+\]
+we obtain $\pi\left(  a_{1}\right)  =\underbrace{\left(  g^{k}\pi\right)
+}_{=\pi}\left(  a_{2}\right)  =\pi\left(  a_{2}\right)  $. This completes our
+proof.}. Thus, we can define $\pi^{\circ}\left(  u\right)  $ as $\pi\left(
+a\right)  $.
+
+Thus, we have defined an element $\pi^{\circ}\left(  u\right)  $ for each
+$u\in E^{g}$. In other words, we have defined a map $\pi^{\circ}%
+:E^{g}\rightarrow X$. Furthermore, this map $\pi^{\circ}$ has the following
+property: If $u\in E^{g}$, then%
+\begin{equation}
+\pi^{\circ}\left(  u\right)  =\pi\left(  a\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }a\in u.\label{pf.prop.G-set.quot.Phi.1}%
+\end{equation}
+
+
+The element $\pi^{\circ}$ is a map $E^{g}\rightarrow X$, thus an element of
+$X^{E^{g}}$. In other words, $\pi^{\circ}\in X^{E^{g}}=\mathfrak{B}$.
+
+Now, forget that we fixed $\pi$. Thus, for each $\pi\in\mathfrak{A}$, we have
+defined a $\pi^{\circ}\in\mathfrak{B}$, and this $\pi^{\circ}$ satisfies
+(\ref{pf.prop.G-set.quot.Phi.1}) for each $u\in E^{g}$.
+
+Now, let $\Phi$ be the map%
+\[
+\mathfrak{A}\rightarrow\mathfrak{B},\ \ \ \ \ \ \ \ \ \ \pi\mapsto\pi^{\circ}.
+\]
+(This is well-defined, since $\pi^{\circ}\in\mathfrak{B}$ for each $\pi
+\in\mathfrak{A}$.)
+
+Next, let us introduce one more notation: If $e$ is an element of $E$, then
+$\left[  e\right]  $ shall mean the $g$-orbit of $e$. Furthermore, let
+$\mathfrak{o}$ be the map $E\rightarrow E^{g}$ that sends each element $e\in
+E$ to its orbit $\left[  e\right]  $.
+
+For every $\overline{\pi}\in\mathfrak{B}$, we have $\overline{\pi}%
+\circ\mathfrak{o}\in\mathfrak{A}$\ \ \ \ \footnote{\textit{Proof:} Let
+$\overline{\pi}\in\mathfrak{B}$. Thus, $\overline{\pi}\in\mathfrak{B}%
+=X^{E^{g}}$. In other words, $\overline{\pi}$ is a map $E^{g}\rightarrow X$.
+\par
+Let $e\in E$. Then, $\mathfrak{o}\left(  e\right)  =\left[  e\right]  $ (by
+the definition of $\mathfrak{o}$). Moreover, $\left(  g\left(  \overline{\pi
+}\circ\mathfrak{o}\right)  \right)  \left(  e\right)  =\left(  \overline{\pi
+}\circ\mathfrak{o}\right)  \left(  g^{-1}e\right)  $ (by the definition of the
+$G$-action on $X^{E}$). But the elements $e$ and $g^{-1}e$ of $E$ lie in one
+and the same $g$-orbit. In other words, $\left[  e\right]  =\left[
+g^{-1}e\right]  $. Now,%
+\begin{align*}
+\left(  g\left(  \overline{\pi}\circ\mathfrak{o}\right)  \right)  \left(
+e\right)   &  =\left(  \overline{\pi}\circ\mathfrak{o}\right)  \left(
+g^{-1}e\right)  =\overline{\pi}\left(  \underbrace{\mathfrak{o}\left(
+g^{-1}e\right)  }_{\substack{=\left[  g^{-1}e\right]  \\\text{(by the
+definition of }\mathfrak{o}\text{)}}}\right)  =\overline{\pi}\left(
+\underbrace{\left[  g^{-1}e\right]  }_{=\left[  e\right]  }\right)  \\
+&  =\overline{\pi}\left(  \underbrace{\left[  e\right]  }_{=\mathfrak{o}%
+\left(  e\right)  }\right)  =\overline{\pi}\left(  \mathfrak{o}\left(
+e\right)  \right)  =\left(  \overline{\pi}\circ\mathfrak{o}\right)  \left(
+e\right)  .
+\end{align*}
+\par
+Now, forget that we fixed $e$. We thus have proven that $\left(  g\left(
+\overline{\pi}\circ\mathfrak{o}\right)  \right)  \left(  e\right)  =\left(
+\overline{\pi}\circ\mathfrak{o}\right)  \left(  e\right)  $ for each $e\in E$.
+In other words, $g\left(  \overline{\pi}\circ\mathfrak{o}\right)
+=\overline{\pi}\circ\mathfrak{o}$.
+\par
+Now, $\overline{\pi}\circ\mathfrak{o}$ is a map $E\rightarrow X$ and satisfies
+$g\left(  \overline{\pi}\circ\mathfrak{o}\right)  =\overline{\pi}%
+\circ\mathfrak{o}$. In other words, $\overline{\pi}\circ\mathfrak{o}$ is a map
+$\psi:E\rightarrow X$ satisfying $g\psi=\psi$. In other words,%
+\[
+\overline{\pi}\circ\mathfrak{o}\in\left\{  \psi:E\rightarrow X\ \mid
+\ g\psi=\psi\right\}  =\mathfrak{A}.
+\]
+Qed.}.
+
+Now, let $\Psi$ be the map%
+\[
+\mathfrak{B}\rightarrow\mathfrak{A},\ \ \ \ \ \ \ \ \ \ \overline{\pi}%
+\mapsto\overline{\pi}\circ\mathfrak{o}.
+\]
+(This is well-defined, since $\overline{\pi}\circ\mathfrak{o}\in\mathfrak{A}$
+for every $\overline{\pi}\in\mathfrak{B}$.)
+
+Now, we have the equalities $\Phi\circ\Psi=\operatorname*{id}$%
+\ \ \ \ \footnote{\textit{Proof.} Let $\beta\in\mathfrak{B}$. Then,
+$\Psi\left(  \beta\right)  =\beta\circ\mathfrak{o}$ (by the definition of
+$\Psi$). Let $\pi=\Psi\left(  \beta\right)  $. Thus, $\pi=\Psi\left(
+\beta\right)  \in\mathfrak{A}$.
+\par
+Now, let $u\in E^{g}$. Thus, $u$ is a $g$-orbit; hence, $u$ is nonempty. Thus,
+there exists some $a\in u$. Consider such an $a$. Now,
+(\ref{pf.prop.G-set.quot.Phi.1}) yields $\pi^{\circ}\left(  u\right)
+=\pi\left(  a\right)  $. But $a$ is an element of the $g$-orbit $u$; thus, the
+$g$-orbit of $a$ is $u$. In other words, $\left[  a\right]  =u$. The
+definition of $\mathfrak{o}$ yields $\mathfrak{o}\left(  a\right)  =\left[
+a\right]  =u$. Now, $\pi=\Psi\left(  \beta\right)  =\beta\circ\mathfrak{o}$,
+so that $\pi\left(  a\right)  =\left(  \beta\circ\mathfrak{o}\right)  \left(
+a\right)  =\beta\left(  \underbrace{\mathfrak{o}\left(  a\right)  }%
+_{=u}\right)  =\beta\left(  u\right)  $. Now, $\pi^{\circ}\left(  u\right)
+=\pi\left(  a\right)  =\beta\left(  u\right)  $.
+\par
+Now, forget that we fixed $u$. We thus have proven that $\pi^{\circ}\left(
+u\right)  =\beta\left(  u\right)  $ for each $u\in E^{g}$. In other words,
+$\pi^{\circ}=\beta$. But the definition of $\Phi$ yields $\Phi\left(
+\pi\right)  =\pi^{\circ}=\beta$. Now, $\left(  \Phi\circ\Psi\right)  \left(
+\beta\right)  =\Phi\left(  \underbrace{\Psi\left(  \beta\right)  }_{=\pi
+}\right)  =\Phi\left(  \pi\right)  =\beta=\operatorname*{id}\left(
+\beta\right)  $.
+\par
+Now, forget that we fixed $\beta$. We thus have proven that $\left(  \Phi
+\circ\Psi\right)  \left(  \beta\right)  =\operatorname*{id}\left(
+\beta\right)  $ for each $\beta\in\mathfrak{B}$. In other words, $\Phi
+\circ\Psi=\operatorname*{id}$, qed.} and $\Psi\circ\Phi=\operatorname*{id}%
+$\ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in\mathfrak{A}$. Then, the
+definition of $\Phi$ yields $\Phi\left(  \alpha\right)  =\alpha^{\circ}$.
+\par
+Now, let $a\in E$. Let $u=\mathfrak{o}\left(  a\right)  $. Thus,
+$u=\mathfrak{o}\left(  a\right)  =\left[  a\right]  $ (by the definition of
+$\mathfrak{o}$). In other words, $u$ is the $g$-orbit of $a$. Thus, $u$ is a
+$g$-orbit and contains $a$. So we know that $u\in E^{g}$ (since $u$ is a
+$g$-orbit) and that $a\in u$ (since $u$ contains $a$).
+\par
+The equality (\ref{pf.prop.G-set.quot.Phi.1}) (applied to $\pi=\alpha$) yields
+$\alpha^{\circ}\left(  u\right)  =\alpha\left(  a\right)  $. We have $\left(
+\alpha^{\circ}\circ\mathfrak{o}\right)  \left(  a\right)  =\alpha^{\circ
+}\left(  \underbrace{\mathfrak{o}\left(  a\right)  }_{=u}\right)
+=\alpha^{\circ}\left(  u\right)  =\alpha\left(  a\right)  $.
+\par
+Now, forget that we fixed $a$. We thus have shown that $\left(  \alpha^{\circ
+}\circ\mathfrak{o}\right)  \left(  a\right)  =\alpha\left(  a\right)  $ for
+each $a\in E$. In other words, $\alpha^{\circ}\circ\mathfrak{o}=\alpha$.
+\par
+But $\left(  \Psi\circ\Phi\right)  \left(  \alpha\right)  =\Psi\left(
+\underbrace{\Phi\left(  \alpha\right)  }_{=\alpha^{\circ}}\right)
+=\Psi\left(  \alpha^{\circ}\right)  =\alpha^{\circ}\circ\mathfrak{o}$ (by the
+definition of $\Psi$). Hence, $\left(  \Psi\circ\Phi\right)  \left(
+\alpha\right)  =\alpha^{\circ}\circ\mathfrak{o}=\alpha=\operatorname*{id}%
+\left(  \alpha\right)  $.
+\par
+Now, forget that we fixed $\alpha$. We thus have proven that $\left(
+\Psi\circ\Phi\right)  \left(  \alpha\right)  =\operatorname*{id}\left(
+\alpha\right)  $ for each $\alpha\in\mathfrak{A}$. In other words, $\Psi
+\circ\Phi=\operatorname*{id}$. Qed.}. These two equalities show that the maps
+$\Phi$ and $\Psi$ are mutually inverse. Hence, the map $\Phi$ is invertible.
+In other words, $\Phi$ is a bijection.
+
+The map $\Phi$ is a bijection from $\mathfrak{A}$ to $\mathfrak{B}$. In other
+words, the map $\Phi$ is a bijection between
+
+\begin{itemize}
+\item the maps $\pi:E\rightarrow X$ satisfying $g\pi=\pi$
+\end{itemize}
+
+and
+
+\begin{itemize}
+\item the maps $\overline{\pi}:E^{g}\rightarrow X$
+\end{itemize}
+
+(because $\mathfrak{A}$ is the set of all maps $\pi:E\rightarrow X$ satisfying
+$g\pi=\pi$, whereas $\mathfrak{B}$ is the set of all maps $\overline{\pi
+}:E^{g}\rightarrow X$). Furthermore, this bijection $\Phi$ sends any map
+$\pi:E\rightarrow X$ satisfying $g\pi=\pi$ to the map $\overline{\pi}%
+:E^{g}\rightarrow X$ defined by
+\[
+\overline{\pi}\left(  u\right)  =\pi\left(  a\right)  \qquad\text{for every
+}u\in E^{g}\text{ and }a\in u
+\]
+\footnote{\textit{Proof.} Let $\pi:E\rightarrow X$ is a map satisfying
+$g\pi=\pi$. We must prove that the bijection $\Phi$ sends $\pi$ to the map
+$\overline{\pi}:E^{g}\rightarrow X$ defined by
+\begin{equation}
+\overline{\pi}\left(  u\right)  =\pi\left(  a\right)  \qquad\text{for every
+}u\in E^{g}\text{ and }a\in u.\label{pf.prop.G-set.quot.Phi.fn6.1}%
+\end{equation}
+\par
+In fact, (\ref{pf.prop.G-set.quot.Phi.1}) shows that $\pi^{\circ}\left(
+u\right)  =\pi\left(  a\right)  $ for every $u\in E^{g}$ and $a\in u$. Thus,
+the map $\pi^{\circ}$ is the map $\overline{\pi}:E^{g}\rightarrow X$ defined
+by (\ref{pf.prop.G-set.quot.Phi.fn6.1}). Now, the bijection $\Phi$ sends $\pi$
+to $\pi^{\circ}$ (by the definition of $\Phi$). In other words, the bijection
+$\Phi$ sends $\pi$ to the map $\overline{\pi}:E^{g}\rightarrow X$ defined by
+(\ref{pf.prop.G-set.quot.Phi.fn6.1}) (since $\pi^{\circ}$ is the map
+$\overline{\pi}:E^{g}\rightarrow X$ defined by
+(\ref{pf.prop.G-set.quot.Phi.fn6.1})). Qed.}. Hence, we have constructed the
+bijection $\Phi$ whose existence was claimed in Proposition
+\ref{prop.G-set.quot.Phi}. Thus, Proposition \ref{prop.G-set.quot.Phi} is proven.
+\end{proof}
+\end{verlong}
+
 \begin{proposition}
 \label{prop.G-poset.quot.Phi}
 Let $\EE = \left(E, <_1, <_2\right)$ be a tertispecial double poset.
@@ -4138,6 +4408,7 @@ and the triple $\EE^g$ as in Proposition~\ref{prop.G-poset.quot.double}.
 Thus, $\EE^g$ is a tertispecial double poset (by
 Proposition~\ref{prop.G-poset.quot.double}).
 
+\begin{vershort}
 There is a bijection $\Phi$ between
 
 \begin{itemize}
@@ -4165,6 +4436,36 @@ to the map $\overline{\pi}:E^{g}
 Indeed, from $g\pi=\pi$, we can conclude that any two elements
 $a_1$ and $a_2$ of a given $g$-orbit $u$ satisfy
 $\pi\left(a_1\right) = \pi\left(a_2\right)$.)
+\end{vershort}
+
+\begin{verlong}
+Proposition~\ref{prop.G-poset.quot.Phi} (applied to
+$X = \left\{1,2,3,\ldots\right\}$) shows the following:
+
+There is a bijection $\Phi$ between
+
+\begin{itemize}
+\item the maps $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying
+$g\pi=\pi$
+\end{itemize}
+
+and
+
+\begin{itemize}
+\item the maps $\overline{\pi}:E^{g}\rightarrow\left\{  1,2,3,\ldots\right\}
+$.
+\end{itemize}
+
+Namely, this bijection $\Phi$ sends any map
+$\pi:E\rightarrow\left\{  1,2,3,\ldots \right\}  $ satisfying $g\pi=\pi$
+to the map $\overline{\pi}:E^{g}
+\rightarrow\left\{  1,2,3,\ldots\right\}  $ defined by
+\[
+\overline{\pi}\left( u \right)
+= \pi\left( a \right)
+\qquad\text{for every } u \in E^{g} \text{ and } a \in u.
+\]
+\end{verlong}
 
 Consider this bijection $\Phi$. Let
 $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ be a
