@@ -5388,14 +5388,24 @@ What happens to the above results when $\mathbf{E}$ is no longer required to
 be tertispecial? We know that the tertispeciality condition on $\mathbf{E}$ is
 sufficient (say) for Corollary \ref{cor.antipode.Gamma}, but is it also
 necessary, or are there non-tertispecial double posets for which Corollary
-\ref{cor.antipode.Gamma} nevertheless holds? Computations using the SageMath
-computer algebra system \cite{SageMath} have shown that, among the double
-posets $\mathbf{E}=\left(  E,<_{1},<_{2}\right)  $ with $\left\vert
-E\right\vert \leq6$ and with $<_{1}$ being a total order, \textbf{only} the
-tertispecial ones satisfy the conclusion of Corollary \ref{cor.antipode.Gamma}%
-. However, computer experimentation stops being viable shortly after the
-$\left\vert E\right\vert =6$ threshold, and double posets for which $<_{1}$ is
-not a total order have not been tested at all. Neither a positive nor a
+\ref{cor.antipode.Gamma} nevertheless holds? It is not hard to see
+that, among the double
+posets $\mathbf{E}=\left(  E,<_{1},<_{2}\right)  $ with $<_{1}$ being a
+total order, \textbf{only} the tertispecial ones satisfy the conclusion of
+Corollary \ref{cor.antipode.Gamma}.
+% Why? It is clearly enough to consider the case when
+% $E = \left\{1,2,\ldots,n\right\}$ and $<_1 = <_{\ZZ}$. In this case,
+% $\Gamma\left(\EE\right) = M_{\left(1^n\right)}
+% + \sum_k M_{\left(1^{k-1},2,1^{n-k}\right)}
+% + \text{(a sum of } M_\alpha \text{ with } \ell(\alpha) < n-1
+%    \text{)}$, where the first sum
+% ranges over all $k$ that do not satisfy $k+1 <_2 k$. Apply the
+% antipode $S$ using the formula in Example~\ref{exam.antipode.Gammaw}
+% (b). Again, throw away all $M_\alpha$ with $\ell(\alpha) < n-1$.
+% Compare with $\Gamma\left(\left(E, >_1, <_2\right)\right)$.
+However, the question remains unanswered for the many
+double posets for which $<_{1}$ is
+not a total order. Neither a positive nor a
 negative answer would surprise me.
 \end{question}
 
