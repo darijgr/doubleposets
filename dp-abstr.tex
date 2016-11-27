@@ -245,10 +245,15 @@ version exists, in which at least a few of these proofs are
 elaborated on more\footnote{It can be downloaded from \newline
 \url{http://www.cip.ifi.lmu.de/~grinberg/algebra/dp-abstr-long.pdf}}.
 
+A short summary of this paper has been submitted to the FPSAC
+conference \cite{Gri-extabs}.
+
 \subsection*{Acknowledgments}
 
 Katharina Jochemko's work \cite{Joch} provoked this research.
-I learnt a lot about $\QSym$ from Victor Reiner.
+I learnt a lot about $\QSym$ from Victor Reiner. The SageMath
+computer algebra system \cite{SageMath} was used for some
+computations that suggested one of the proofs.
 
 \section{Quasisymmetric functions}
 \label{sect.qsym-intro}
@@ -363,15 +368,21 @@ one (common) sequence $\left(a_1, a_2, \ldots, a_\ell\right)$ of
 positive integers.\footnote{For instance, $x_2^2 x_3 x_4^2$ is
 pack-equivalent to $x_1^2 x_4 x_8^2$ but not to $x_2 x_3^2 x_4^2$.}
 A power series $f \in \Powser$ is said to be \textit{quasisymmetric}
-if every two pack-equivalent monomials have equal coefficients in
-front of them in $f$. It is easy to see that the quasisymmetric
-power series form a $\kk$-subalgebra of $\Powser$; but usually one
-is interested in the set of quasisymmetric bounded-degree power
+if it satisfies the following condition:
+If $\mathfrak{m}$ and $\mathfrak{n}$ are two pack-equivalent
+monomials, then the coefficient of $\mathfrak{m}$ in $f$ equals
+the coefficient of $\mathfrak{n}$ in $f$.
+
+It is easy to see that the quasisymmetric
+power series form a $\kk$-subalgebra of $\Powser$. But usually one
+is interested in a subset of this $\kk$-subalgebra: namely,
+the set of quasisymmetric bounded-degree power
 series in $\Powser$.
 This latter set is a $\kk$-subalgebra of $\Powser_{\bdd}$, and
 is known as the \textit{$\kk$-algebra of quasisymmetric functions
 over $\kk$}. It is denoted by $\QSym$.
-It is clear that symmetric functions (in the
+
+The symmetric functions (in the
 usual sense of this word in combinatorics -- so, really, symmetric
 bounded-degree power series in $\Powser$) form a $\kk$-subalgebra
 of $\QSym$. The quasisymmetric functions have a rich theory which
@@ -409,13 +420,24 @@ the theory of coalgebras and Hopf algebras
 \cite{Abe-HA}, \cite{Sweedler-HA}, \cite{Dasca-HA} or
 \cite[Chapter 7]{Fresse-Op})
 and for a deeper study of the Hopf algebra $\QSym$ (see
-\cite{Malve-Thesis}, \cite[Chp. 6]{HGK} or
+\cite{Malve-Thesis}, \cite[Chapter 6]{HGK} or
 \cite[\S 5]{Reiner}); in this note we shall need but the very
 basics of this structure, and so it is only them that we introduce.
 
+In the following, all tensor products are over $\kk$ by
+default (i.e., the sign $\otimes$ stands for $\otimes_{\kk}$ unless
+it comes with a subscript).
+
+Now, we define two $\kk$-linear maps $\Delta$ and $\varepsilon$
+as follows\footnote{Both of their definitions rely on the fact
+that
+$\left( M_{\left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)} \right)_{
+   \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right) \in \Comp}
+= \left( M_\alpha \right)_{\alpha \in \Comp}$
+is a basis of the $\kk$-module $\QSym$.}:
+\begin{itemize}
+\item
 We define a $\kk$-linear map $\Delta : \QSym \to \QSym \otimes \QSym$
-(here and in the following, all tensor products are over $\kk$ by
-default)
 by requiring that
 \begin{align}
 \label{eq.coproduct.M}
@@ -425,30 +447,33 @@ by requiring that
 \alpha_k \right) } \otimes M_{\left( \alpha_{k+1}, \alpha_{k+2},
 \ldots, \alpha_\ell \right) } \\
 & \qquad \text{ for every } \left(\alpha_1, \alpha_2,
-\ldots, \alpha_\ell\right) \in \Comp \nonumber
+\ldots, \alpha_\ell\right) \in \Comp . \nonumber
 \end{align}
-\footnote{This definition relies on the fact that
-$\left(M_\alpha\right)_{\alpha \in \Comp}$ is a basis of the
-$\kk$-module $\QSym$.}. We further define a $\kk$-linear map
+\item We define a $\kk$-linear map
 $\varepsilon : \QSym \to \kk$ by requiring that
 \[
 \varepsilon\left(  M_{\left(
 \alpha_1, \alpha_2, \ldots, \alpha_\ell \right) }\right)
 = \delta_{\ell, 0}
 \qquad \text{ for every } \left(\alpha_1, \alpha_2,
-\ldots, \alpha_\ell\right) \in \Comp
+\ldots, \alpha_\ell\right) \in \Comp .
 \]
-\footnote{Here, $\delta_{u,v}$ is defined to be
+(Here, $\delta_{u,v}$ is defined to be
 $\begin{cases}
 1, & \text{if }u = v \text{;}\\
 0, & \text{if }u \neq v
 \end{cases}$
-whenever $u$ and $v$ are two objects.}.
-(Equivalently, $\varepsilon$ sends every power series $f \in \QSym$
+whenever $u$ and $v$ are two objects.)
+\end{itemize}
+
+The map $\varepsilon$ can also be defined in a simpler
+(equivalent) way: Namely, $\varepsilon$ sends every power series
+$f \in \QSym$
 to the result $f\left(0,0,0,\ldots\right)$ of substituting zeroes
 for the variables $x_1, x_2, x_3, \ldots$ in $f$. The map $\Delta$
 can also be described in such terms, but with greater
-difficulty\footnote{See \cite[(5.3)]{Reiner} for the details.}.)
+difficulty\footnote{See \cite[(5.3)]{Reiner} for the details.}.
+
 It is well-known that these maps $\Delta$ and
 $\varepsilon$ make the three diagrams
 \begin{align*}
@@ -505,27 +530,27 @@ Malvenuto and Reutenauer \cite{Mal-Reu-DP}.
 \label{def.double-poset}
 \begin{itemize}
 
-\item[(a)] We shall encode posets as pairs $\left(P, <\right)$,
-where $P$ is a set and $<$ is a strict partial order
+\item[(a)] We shall encode posets as pairs $\left(E, <\right)$,
+where $E$ is a set and $<$ is a strict partial order
 (i.e., an irreflexive, transitive and antisymmetric
-binary relation) on the set $P$; this relation $<$ will be regarded
+binary relation) on the set $E$; this relation $<$ will be regarded
 as the smaller relation of the poset. All binary relations will be
 written in infix notation: i.e., we write ``$a < b$'' for ``$a$ is
 related to $b$ by the relation $<$''. (If you define binary relations
 as sets of pairs, then ``$a$ is related to $b$ by the relation $<$''
 means that $\left(a,b\right)$ is an element of the set $<$.)
 
-\item[(b)] If $<$ is a strict partial order on a set $P$,
-and if $a$ and $b$ are two elements of $P$, then we say that
+\item[(b)] If $<$ is a strict partial order on a set $E$,
+and if $a$ and $b$ are two elements of $E$, then we say that
 $a$ and $b$ are \textit{$<$-comparable} if we have either $a < b$
 or $a = b$ or $b < a$. A strict partial order $<$ on a
-set $P$ is said to be a \textit{total order} if and only
-if every two elements of $P$ are $<$-comparable.
+set $E$ is said to be a \textit{total order} if and only
+if every two elements of $E$ are $<$-comparable.
 
-\item[(c)] If $<$ is a strict partial order on a set $P$,
-and if $a$ and $b$ are two elements of $P$, then we say that
+\item[(c)] If $<$ is a strict partial order on a set $E$,
+and if $a$ and $b$ are two elements of $E$, then we say that
 $a$ is \textit{$<$-covered by $b$} if we have $a < b$ and there
-exists no $c \in P$ satisfying $a < c < b$. (For instance, if $<$
+exists no $c \in E$ satisfying $a < c < b$. (For instance, if $<$
 is the standard smaller relation on $\ZZ$, then each
 $i \in \ZZ$ is $<$-covered by $i+1$.)
 
@@ -547,10 +572,10 @@ it satisfies the following condition: If $a$ and $b$ are two
 elements of $E$ such that $a$ is $<_1$-covered by $b$, then $a$
 and $b$ are $<_2$-comparable.
 
-\item[(h)] If $<$ is a binary relation on a set $P$, then the
+\item[(h)] If $<$ is a binary relation on a set $E$, then the
 \textit{opposite relation} of $<$ is defined to be the binary
-relation $>$ on the set $P$ which is defined as follows: For any
-$e \in P$ and $f \in P$, we have $e > f$ if and only if $f < e$.
+relation $>$ on the set $E$ that is defined as follows: For any
+$e \in E$ and $f \in E$, we have $e > f$ if and only if $f < e$.
 Notice that if $<$ is a strict partial order, then so
 is the opposite relation $>$ of $<$.
 \end{itemize}
@@ -560,14 +585,17 @@ Clearly, every special double poset is semispecial, and every
 semispecial double poset is tertispecial.\footnote{The notions of a
 double poset and of a special double poset come from
 \cite{Mal-Reu-DP}. The notion of a ``tertispecial double poset''
-(Dog Latin for ``slightly less special than semispecial'')
+(Dog Latin for ``slightly less special than semispecial''; in
+hindsight, ``locally special'' would have been better terminology)
 appears to be new and arguably sounds artificial, but is the
-most suitable setting for some of the results below (and appears
-in nature, beyond the particular case of special double posets
--- see Example~\ref{exam.dp}). We shall not use semispecial
+most suitable setting for some of the results below (see, e.g.,
+Remark~\ref{rmk.antipode.Gamma.converse} below); moreover,
+it appears in nature, beyond the particular case of special
+double posets (see Example~\ref{exam.dp}).
+We shall not use semispecial
 double posets in the following; they were only introduced as a
-middle ground between special and tertispecial double posets
-with a less daunting definition.}
+middle-ground notion between special and tertispecial double posets
+having a less daunting definition.}
 
 \begin{definition}
 \label{def.E-partition}
@@ -591,13 +619,13 @@ generalizes various well-known
 combinatorial concepts. For example:
 \begin{itemize}
 \item If $<_2$ is the same order
-as $<_1$ (or any extension of this order), then
-$\EE$-partitions are weakly increasing maps from the poset
+as $<_1$ (or any extension of this order), then the
+$\EE$-partitions are the weakly increasing maps from the poset
 $\left(E, <_1\right)$ to the totally ordered set
 $\left\{1, 2, 3, \ldots\right\}$.
 \item If $<_2$ is the opposite relation of
-$<_1$ (or any extension of this opposite relation), then
-$\EE$-partitions are strictly increasing maps from the
+$<_1$ (or any extension of this opposite relation), then the
+$\EE$-partitions are the strictly increasing maps from the
 poset $\left(E, <_1\right)$ to the totally ordered set
 $\left\{1, 2, 3, \ldots\right\}$.
 \end{itemize}
@@ -713,9 +741,16 @@ $\ZZ$, and if $<_2$ is the opposite relation of $<_1$, then the
 special double poset $\EE = \left(E, <_1, <_2\right)$ satisfies
 $\Gamma\left(\EE, w\right) = M_\alpha$, where $\alpha$ is the
 composition $\left(w\left(1\right), w\left(2\right), \ldots,
-w\left(\ell\right)\right)$. Thus, the elements of the monomial
+w\left(\ell\right)\right)$.
+
+Note that every $M_\alpha$ can be obtained
+this way (by choosing $\ell$ and $w$ appropriately).
+Thus, the elements of the monomial
 basis $\left(M_\alpha\right)_{\alpha \in \Comp}$ are special
 cases of the functions $\Gamma\left(\EE, w\right)$.
+This shows that
+the $\Gamma\left(\EE, w\right)$ for varying $\EE$ and $w$
+span the $\kk$-module $\QSym$.
 
 \item[(c)] Let
 $\alpha = \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$
@@ -751,7 +786,7 @@ This power series is known as the $\alpha$-th
 \textit{fundamental quasisymmetric function}, usually called
 $F_\alpha$ (in \cite[\S 2.4]{BBSSZ} and \cite[\S 2]{Gri-dimm})
 or $L_\alpha$ (in \cite[\S 7.19]{Stanley-EC2} or
-\cite[Def. 5.15]{Reiner}).
+\cite[Definition 5.15]{Reiner}).
 
 \item[(d)] Let $\EE$ be one of the two double posets
 $\mathbf{Y}\left(\lambda / \mu\right)$ and
@@ -772,21 +807,26 @@ $\EE = \left(E, <_1, <_2\right)$ is a total order (i.e.,
 when the double poset $\EE$ is special), the
 $\EE$-partitions are precisely the
 reverse $\left(P, \omega\right)$-partitions (for
-$P = \left(E, <_1\right)$ and $\omega$ being a labelling of $P$
-dictated by $<_2$) in the terminology
+$P = \left(E, <_1\right)$ and $\omega$ being the unique
+bijection $E \to \left\{1,2,\ldots,\left|E\right|\right\}$
+satisfying
+$\omega^{-1}\left(1\right) <_2 \omega^{-1}\left(2\right) <_2 \cdots
+<_2 \omega^{-1}\left(\left|E\right|\right)$)
+in the terminology
 of \cite[\S 7.19]{Stanley-EC2}, and the power series
 $\Gamma\left(\EE\right)$ is the $K_{P, \omega}$ of
 \cite[\S 7.19]{Stanley-EC2}.
 This can also be rephrased using
 the notations of \cite[\S 5.2]{Reiner}: When the relation $<_2$ of a
 double poset $\EE = \left(E, <_1, <_2\right)$ is a total order, we can
-relabel the elements of $E$ by the integers $1, 2, \ldots, n$ in such
+relabel the elements of $E$ by the integers $1, 2, \ldots, n$
+(where $n = \left|E\right|$) in such
 a way that $1 <_2 2 <_2 \cdots <_2 n$; then, the $\EE$-partitions are
-the $P$-partitions in the terminology of \cite[Def. 5.12]{Reiner},
+the $P$-partitions in the terminology of \cite[Definition 5.12]{Reiner},
 where $P$ is the labelled poset $\left(E, <_1\right)$; and furthermore,
 our $\Gamma\left(\EE\right)$ is the $F_P\left(\xx\right)$ of
-\cite[Def. 5.12]{Reiner}. Conversely, if $P$ is a labelled poset, then
-the $F_P\left(\xx\right)$ of \cite[Def. 5.12]{Reiner} is our
+\cite[Definition 5.12]{Reiner}. Conversely, if $P$ is a labelled poset, then
+the $F_P\left(\xx\right)$ of \cite[Definition 5.12]{Reiner} is our
 $\Gamma\left(\left(P, <_P, <_{\ZZ}\right)\right)$.
 
 \end{enumerate}
@@ -838,16 +878,31 @@ $\Gamma\left(\left(P, <_P, <_{\ZZ}\right)\right)
 = F_P\left(\xx\right)$ and
 $\Gamma\left(\left(P, >_P, <_{\ZZ}\right)\right)
 = F_{P^{\operatorname{opp}}}\left(\xx\right)$, where all unexplained
-notations are defined in \cite[Chp. 5]{Reiner}. But one can also
-proceed in the opposite direction.}
+notations are defined in \cite[Chapter 5]{Reiner}. But one can also
+proceed in the opposite direction (hint: replace the partial order
+$<_2$ by a linear extension, thus turning the tertispecial double
+poset $\left(E, <_1, <_2\right)$ into a special one; argue that
+this does not change $\Gamma\left(\left(E, <_1, <_2\right)\right)$
+and $\Gamma\left(\left(E, >_1, <_2\right)\right)$).}
 (a result found by Malvenuto and Reutenauer, as well as by Ehrenborg
 in an equivalent form).
 Theorem~\ref{thm.antipode.Gammaw} is equivalent to Malvenuto's
 and Reutenauer's \cite[Theorem 3.1]{Mal-Reu}\footnote{This equivalence
-requires a bit of work to set up. To derive \cite[Theorem 3.1]{Mal-Reu}
-from our Theorem~\ref{thm.antipode.Gammaw}, it is enough to contract
-all undirected edges in $G$, denoting the vertex set of the new
-graph by $E$, and then define two strict partial orders $<_1$ and
+requires some work to set up. First of all, Malvenuto and
+Reutenauer, in \cite{Mal-Reu}, do not work with the antipode $S$
+of $\QSym$, but instead study a certain automorphism of
+$\QSym$ called $\omega$. However, this automorphism is closely
+related to $S$ (namely, for each $n \in \NN$ and each homogeneous
+element $f \in \QSym$ of degree $n$, we have
+$\omega\left(f\right) = \left(-1\right)^n S\left(f\right)$);
+therefore, any statements about $\omega$ can be translated into
+statements about $S$ and vice versa.
+\par
+Let me sketch how to derive \cite[Theorem 3.1]{Mal-Reu}
+from our Theorem~\ref{thm.antipode.Gammaw}. Indeed, contract
+all undirected edges in $G$ and $G'$,
+denoting the (common) vertex set of the new graphs by $E$.
+Then, define two strict partial orders $<_1$ and
 $<_2$ on $E$ by
 \[
 \left(a <_1 b\right) \Longleftrightarrow \left(a \neq b,
@@ -867,7 +922,7 @@ tertispecial, we must notice that if $a$ is $<_1$-covered by $b$,
 then $G$ had an edge from one of the vertices that became $a$ to
 one of the vertices that became $b$. The ``$x_i$'s in $X$
 satisfying a set of conditions'' (in the language of
-\cite[Section 3]{Mal-Reu}) are then in 1-to-1 correspondence with
+\cite[Section 3]{Mal-Reu}) are in 1-to-1 correspondence with
 $\left(E, <_1, <_2\right)$-partitions (at least when
 $X = \left\{1, 2, 3, \ldots\right\}$); this is not immediately
 obvious but not hard to check either (the acyclicity of $G$ and
@@ -877,17 +932,15 @@ Theorem~\ref{thm.antipode.Gammaw} above.
 With some harder work, one can conversely derive
 our Theorem~\ref{thm.antipode.Gammaw} from
 \cite[Theorem 3.1]{Mal-Reu}.}. We
-nevertheless believe that our versions of these facts are more
-natural and simpler than the ones appearing in existing
+nevertheless believe that our versions of these facts are
+slicker and simpler than the ones appearing in existing
 literature\footnote{That said, we would not be surprised if
 Malvenuto and Reutenauer are aware of them; after all, they have
 discovered both the original
 version of Theorem~\ref{thm.antipode.Gammaw} in
 \cite{Mal-Reu} and the notion of double posets in \cite{Mal-Reu-DP}.},
 and if not,
-then at least our proofs below are more in the nature of things.
-% [todo: check that the equivalence to Malvenuto-Reutenauer is
-% correct!]
+then at least our proofs below are more natural.
 
 To these known results, we add another, which seems to be unknown so
 far (probably because it is far harder to state in the terminologies
@@ -1066,9 +1119,7 @@ This is the formula for $S\left(M_\alpha\right)$
 given in \cite[(4.26)]{Malve-Thesis}, in
 \cite[Theorem 5.11]{Reiner}, and in
 \cite[Theorem 4.1]{BenSag} (originally due to Ehrenborg
-and to Malvenuto and Reutenauer). It also shows that the
-$\Gamma\left(\EE, w\right)$ for varying $\EE$ and $w$ span
-the $\kk$-module $\QSym$.
+and to Malvenuto and Reutenauer).
 
 \item[(c)] Applying Corollary~\ref{cor.antipode.Gamma} to the
 double poset of Example~\ref{exam.Gamma} (c) (where the relation
@@ -1080,7 +1131,9 @@ antipode of a fundamental quasisymmetric function
 For any partition $\lambda$, let $\lambda^t$ denote the
 conjugate partition of $\lambda$.
 Let $\mu$ and $\lambda$ be two partitions satisfying
-$\mu \subseteq \lambda$. Then, there is a bijection
+$\mu \subseteq \lambda$. Let $>_1$ and $>_2$ be the opposite
+relations of $<_1$ and $<_2$.
+Then, there is a bijection
 $\tau : Y\left(\lambda / \mu\right) \to
 Y\left(\lambda^t / \mu^t\right)$ sending each
 $\left(i, j\right) \in Y\left(\lambda / \mu\right)$
@@ -1137,7 +1190,8 @@ $\Gamma\left(\left(Y\left(\lambda^t / \mu^t\right), >_1, >_2\right)\right)
 = s_{\lambda^t / \mu^t}$).
 This is a well-known formula, and is usually stated
 for $S$ being the antipode of the Hopf algebra of symmetric
-(rather than quasisymmetric) functions, but the latter antipode
+(rather than quasisymmetric) functions; but this is an
+equivalent statement, since the latter antipode
 is a restriction of the antipode of $\QSym$.
 
 It is also possible (but more difficult) to derive
@@ -1424,10 +1478,15 @@ An \textit{initial interval} will mean a set of the form
 $\left\{1, 2, \ldots, \ell\right\}$ for some $\ell \in \NN$.
 
 \item[(b)]
-If $T$ is a set and $\pi : T \to \left\{1, 2, 3, \ldots\right\}$ is
-a map, then $\pi$ is said to be \textit{packed} if $\pi\left(T\right)$
+If $E$ is a set and $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ is
+a map, then $\pi$ is said to be \textit{packed} if $\pi\left(E\right)$
 is an initial interval. Clearly, this initial interval must be
-$\left\{1, 2, \ldots, \left|\pi\left(T\right)\right|\right\}$.
+$\left\{1, 2, \ldots, \left|\pi\left(E\right)\right|\right\}$.
+\begin{verlong}
+(Indeed, this follows from
+Proposition~\ref{prop.ev.comp} (a), applied to
+$\ell = \left|\pi\left(E\right)\right|$.)
+\end{verlong}
 
 \end{itemize}
 \end{definition}
@@ -2943,7 +3002,7 @@ Proposition~\ref{prop.Gammaw.coprod}).
 \label{sect.proof}
 
 Before we come to the proof of Theorem~\ref{thm.antipode.Gammaw},
-let us state four lemmas:
+let us state five lemmas:
 
 \begin{lemma}
 \label{lem.admissible.cover}
@@ -3214,290 +3273,12 @@ Now, both Claim 1 and Claim 2 are proven. As already said, this
 completes the proof of Lemma~\ref{lem.Gammaw.toggle} (b).
 \end{proof}
 
-\begin{proof}[Proof of Theorem~\ref{thm.antipode.Gammaw}.]
-We shall
-prove Theorem~\ref{thm.antipode.Gammaw} by strong induction over
-$\left|E\right|$. The induction base ($\left|E\right|=0$) is left to
-the reader; we start with the induction step. Consider a
-tertispecial double
-poset $\EE = \left(E, <_1, <_2\right)$ with $\left|E\right| > 0$ and
-a map $w : E \to \left\{1, 2, 3, \ldots\right\}$, and
-assume that Theorem~\ref{thm.antipode.Gammaw} is proven for all
-tertispecial double posets of smaller size.
-
-We have $\left| E \right| > 0$ and thus $E \neq \varnothing$. Hence,
-Lemma~\ref{lem.Gammaw.empty} (b) shows that
-$\varepsilon \left( \Gamma\left(\EE, w\right) \right) = 0$. Thus,
-$\left( u \circ \varepsilon \right) \left( \Gamma \left( \EE, w \right) \right)
-= u \left( \underbrace{\varepsilon \left( \Gamma \left( \EE, w \right) \right)}_{= 0} \right)
-= u \left( 0 \right) = 0$.
-
-The upper commutative pentagon of \eqref{eq.antipode} shows that
-$u \circ \varepsilon = m \circ \left(S \otimes \id\right) \circ
-\Delta$. Applying both sides of this equality to
-$\Gamma\left(\EE, w\right)$, we obtain
-$\left(u \circ \varepsilon\right)
-\left(\Gamma\left(\EE, w\right)\right)
-= \left(m \circ \left(S \otimes \id\right) \circ
-\Delta\right) \left(\Gamma\left(\EE, w\right)\right)$.
-Since
-$\left(u \circ \varepsilon\right)
-\left(\Gamma\left(\EE, w\right)\right) = 0$, this
-becomes
-\begin{align}
-0
-&= \left(m \circ \left(S \otimes \id\right) \circ
-\Delta\right) \left(\Gamma\left(\EE, w\right)\right)
-= m \left(\left(S \otimes \id\right) \left(
-\Delta \left(\Gamma\left(\EE, w\right)\right)\right)\right)
-\nonumber\\
-&= m \left(\left(S \otimes \id\right) \left(
-\sum_{\left(P, Q\right) \in \Adm \EE}
-\Gamma\left(\EE\mid_P, w\mid_P\right)
-\otimes \Gamma\left(\EE\mid_Q, w\mid_Q\right) \right) \right)
-\qquad \left(\text{by \eqref{eq.prop.Gammaw.coprod}}\right)
-\nonumber\\
-&= m \left(\sum_{\left(P, Q\right) \in \Adm \EE}
-S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
-\otimes
-\Gamma\left(\EE\mid_Q, w\mid_Q\right)\right)
-\nonumber\\
-&= \sum_{\left(P, Q\right) \in \Adm \EE}
-S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right)
-\nonumber \\
-&= S \left(\Gamma\left(\EE\mid_E, w\mid_E\right)\right)
-\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
-+ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
-                  \left|P\right| < \left|E\right|}}
-S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right)
-\label{pf.thm.antipode.Gammaw.Req.1}
-\end{align}
-(since the only pair $\left(P, Q\right) \in \Adm \EE$ satisfying
-$\left|P\right| = \left|E\right|$ is $\left(E, \varnothing\right)$,
-whereas all other pairs $\left(P, Q\right) \in \Adm \EE$
-satisfy $\left|P\right| < \left|E\right|$).
-
-But whenever $\left(P, Q\right) \in \Adm \EE$ is such that
-$\left|P\right| < \left|E\right|$, the double poset
-$\EE\mid_P = \left(P, <_1, <_2\right)$ is tertispecial
-(by Lemma~\ref{lem.tertispecial.subset}), and
-therefore we have
-$S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
-= S\left(\Gamma\left(\left(P, <_1, <_2\right), w\mid_P\right)\right)
-= \left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)$ (by the
-induction hypothesis). Hence,
-\eqref{pf.thm.antipode.Gammaw.Req.1} rewrites as
-\begin{align}
-0
-&= S \left(\Gamma\left(\underbrace{\EE\mid_E}_{=\EE},
-           \underbrace{w\mid_E}_{=w}\right)\right)
-\underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
-           }_{\substack{
-           =\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
-           =1 \\ \text{ (by Lemma \ref{lem.Gammaw.empty} (a))}}}
-   \nonumber \\
-& \qquad + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
-                  \left|P\right| < \left|E\right|}}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right)
-\nonumber \\
-& = S\left(\Gamma\left(\EE, w\right)\right)
-+ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
-                  \left|P\right| < \left|E\right|}}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
-\nonumber
-\end{align}
-Thus,
-\begin{equation}
-S\left(\Gamma\left(\EE, w\right)\right)
-= - \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
-                  \left|P\right| < \left|E\right|}}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
-\label{pf.thm.antipode.Gammaw.Seq}
-\end{equation}
-We shall now prove that
-\begin{equation}
-0 = \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
-\label{pf.thm.antipode.Gammaw.Req}
-\end{equation}
-But first, let us explain how this will complete our proof. In fact,
-the only pair $\left(P, Q\right) \in \Adm \EE$ satisfying
-$\left|P\right| = \left|E\right|$ is $\left(E, \varnothing\right)$,
-whereas all other pairs $\left(P, Q\right) \in \Adm \EE$
-satisfy $\left|P\right| < \left|E\right|$. Hence,
-if \eqref{pf.thm.antipode.Gammaw.Req} is proven, then we can
-conclude that
-\begin{align*}
-0 &= \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right) \\
-&= \left(-1\right)^{\left|E\right|}
-\Gamma\left(\left(E, >_1, <_2\right), \underbrace{w\mid_E}_{=w}\right)
-\underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
-           }_{
-           =\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
-           =1}
-\\
-&\qquad + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
-                  \left|P\right| < \left|E\right|}}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right)
-\\
-&= \left(-1\right)^{\left|E\right|} \Gamma\left(\left(E, >_1, <_2\right), w\right) \\
-& \qquad
-+ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
-                  \left|P\right| < \left|E\right|}}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right) ,
-\end{align*}
-so that
-\begin{align*}
-\left(-1\right)^{\left|E\right|} \Gamma\left(\left(E, >_1, <_2\right), w\right)
-&= - \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
-                  \left|P\right| < \left|E\right|}}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right) \\
-&= S\left(\Gamma\left(\underbrace{\EE}_{=\left(E, <_1, <_2\right)}, w\right)\right)
-\qquad \left(\text{by \eqref{pf.thm.antipode.Gammaw.Seq}}\right) \\
-&= S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right)\right) ,
-\end{align*}
-and thus
-$S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
-= \left(-1\right)^{\left|E\right|}
-\Gamma\left(\left(E, >_1, <_2\right), w\right)$, which completes the
-induction step and thus the proof of Theorem~\ref{thm.antipode.Gammaw}.
-It thus remains to prove \eqref{pf.thm.antipode.Gammaw.Req}.
-
-For every subset $P$ of $E$, we have
-
-\begin{align}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-&= \sum_{\pi \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
-\xx_{\pi, w\mid_P}
-\nonumber \\
-& \qquad \left(\text{by the definition of }
- \Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right) \right)
-\nonumber \\
-& = \sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
-\xx_{\sigma, w\mid_P} .
-\label{pf.thm.antipode.Gammaw.Req.pf.Gamma1}
-\end{align}
-
-For every subset $Q$ of $E$, we have
-
-\begin{align}
-\Gamma\left(\underbrace{\EE\mid_Q}_{=\left(Q, <_1, <_2\right)}, w\mid_Q\right)
-&= \Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right)
-\nonumber 
-= \sum_{\pi \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
-\xx_{\pi, w\mid_Q}
-\nonumber \\
-& \qquad \left(\text{by the definition of }
- \Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right) \right)
-\nonumber \\
-& = \sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
-\xx_{\tau, w\mid_Q} .
-\label{pf.thm.antipode.Gammaw.Req.pf.Gamma2}
-\end{align}
-
-Now,
-\begin{align*}
-& \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\underbrace{\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)}_{
- \substack{ = \sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
-            \xx_{\sigma, w\mid_P} \\
-            \text{(by \eqref{pf.thm.antipode.Gammaw.Req.pf.Gamma1})}}}
-\underbrace{\Gamma\left(\EE\mid_Q, w\mid_Q\right)}_{
- \substack{ = \sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
-            \xx_{\tau, w\mid_Q} \\
-            \text{(by \eqref{pf.thm.antipode.Gammaw.Req.pf.Gamma2})}}}
-\\
-&= \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\left(\sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
-\xx_{\sigma, w\mid_P}\right)
-\left(\sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
-\xx_{\tau, w\mid_Q}\right) \\
-&= \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
-\sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
-\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q} \\
-&= \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\sum_{\substack{\left(\sigma, \tau\right); \\
-                \sigma : P \to \left\{1, 2, 3, \ldots\right\}; \\
-                \tau : Q \to \left\{1, 2, 3, \ldots\right\}; \\
-                \sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
-                \tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
-\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q} \\
-&= \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
-                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
-                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
-\underbrace{\xx_{\pi\mid_P, w\mid_P} \xx_{\pi\mid_Q, w\mid_Q}}_{=\xx_{\pi, w}} \\
-& \qquad \left(
- \begin{array}{c}
- \text{here, we have substituted } \left(\pi\mid_P, \pi\mid_Q\right)
- \text{ for } \left(\sigma, \tau\right) \text{ in the inner sum,} \\
- \text{ since every pair } \left(\sigma, \tau\right)
- \text{ consisting of a map }
- \sigma : P \to \left\{1, 2, 3, \ldots\right\} \\
- \text{ and a map } \tau : Q \to \left\{1, 2, 3, \ldots\right\} \\
- \text{ can be written as } \left(\pi\mid_P, \pi\mid_Q\right)
- \text{ for a unique }
- \pi : E \to \left\{1, 2, 3, \ldots\right\} \\
- \text{(namely, for the }
- \pi : E \to \left\{1, 2, 3, \ldots\right\}
- \text{ that is defined to send every } \\
- e \in P \text{ to }
- \sigma\left(e\right) \text{ and to send every } e \in Q
- \text{ to } \tau\left(e\right) \text{)}
- \end{array}
- \right) \\
-& = \sum_{\left(P, Q\right) \in \Adm \EE}
-\left(-1\right)^{\left|P\right|}
-\sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
-                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
-                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
-\xx_{\pi, w} \\
-& = \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}}
-\left(
-\sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
-                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
-                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
-\left(-1\right)^{\left|P\right|}
-\right)
-\xx_{\pi, w} .
-\end{align*}
-%\footnote{Here, for the third-to-last equality sign, we have
-%replaced the indices $\sigma$ and $\tau$ by a single index
-%$\pi$, which is the map $E \to \left\{1, 2, 3, \ldots\right\}$ which
-%is defined to send every $e \in P$ to $\sigma\left(e\right)$ and to
-%send every $e \in Q$ to $\tau\left(e\right)$.}.
-In order to prove
-that this sum is $0$ (and thus to prove
-\eqref{pf.thm.antipode.Gammaw.Req} and finish our proof of
-Theorem~\ref{thm.antipode.Gammaw}), it therefore is enough to show
-that for every map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$, we
-have
+\begin{lemma}
+\label{lem.Gammaw.altsum}
+Let $\EE = \left(E, <_1, <_2\right)$ be a tertispecial double
+poset satisfying $\left|E\right| > 0$.
+Let $\pi : E \to \left\{ 1, 2, 3, \ldots \right\}$ be a map.
+Let $>_1$ denote the opposite relation of $<_1$. Then,
 \begin{equation}
 \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
                 \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
@@ -3506,10 +3287,11 @@ have
 = 0 .
 \label{pf.thm.antipode.Gammaw.signrev}
 \end{equation}
+\end{lemma}
 
+\begin{proof}[Proof of Lemma~\ref{lem.Gammaw.altsum}.]
 \begin{vershort}
-Hence, let us fix a map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$.
-Our goal is now to prove \eqref{pf.thm.antipode.Gammaw.signrev}.
+Our goal is to prove \eqref{pf.thm.antipode.Gammaw.signrev}.
 To do so, we denote by $Z$ the set of all
 $\left(P, Q\right) \in \Adm \EE$ such that
 $\pi\mid_P$ is a $\left(P, >_1, <_2\right)$-partition and
@@ -3528,7 +3310,7 @@ $\left(-1\right)^{\left|P'\right|}
 $T$ has no fixed points. Therefore, to each addend on the left
 hand side of \eqref{pf.thm.antipode.Gammaw.signrev} corresponds an
 addend with opposite sign, which cancels it: Namely, for each
-$ \left(A, B\right) \in Z$, the addend for
+$\left(A, B\right) \in Z$, the addend for
 $\left(P, Q\right) = \left(A, B\right)$ is cancelled by the addend
 for $\left(P, Q\right) = T\left(\left(A, B\right)\right)$.}, and so
 \eqref{pf.thm.antipode.Gammaw.signrev}
@@ -3536,8 +3318,7 @@ will follow and we will be done. It thus remains to find $T$.
 \end{vershort}
 
 \begin{verlong}
-Hence, let us fix a map $\pi : E \to \left\{1, 2, 3, \ldots\right\}$.
-Our goal is now to prove \eqref{pf.thm.antipode.Gammaw.signrev}.
+Our goal is to prove \eqref{pf.thm.antipode.Gammaw.signrev}.
 To do so, we denote by $Z$ the set of all
 $\left(P, Q\right) \in \Adm \EE$ such that
 $\pi\mid_P$ is a $\left(P, >_1, <_2\right)$-partition and
@@ -3635,7 +3416,7 @@ T\left(  \left(  P,Q\right)  \right)  \notin Z_{0}\right)  .
 \]
 This proves (\ref{pf.thm.antipode.Gammaw.signrev.final.3}).
 
-Now,%
+Now,
 \[
 \sum_{\substack{\left(  P,Q\right)  \in Z;\\\left\vert P\right\vert \text{ is
 even}}}\underbrace{\left(  -1\right)  ^{\left\vert P\right\vert }%
@@ -3709,7 +3490,9 @@ Thus, \eqref{pf.thm.antipode.Gammaw.signrev} is proven.
 The definition of $T$ is simple (although it will take us a while to prove
 that it is well-defined): Let $F$ be the subset of $E$ consisting of those
 $e\in E$ which have minimum $\pi\left(  e\right)  $. Then, $F$ is a nonempty
-subposet of the poset $\left(  E,<_{2}\right)  $, and hence has a minimal
+subposet\footnote{The nonemptiness of $F$ follows from the nonemptiness
+of $E$ (which, in turn, follows from $\left|E\right| > 0$).}
+of the poset $\left(  E,<_{2}\right)  $, and hence has a minimal
 element $f$ (that is, an element $f$ such that no $g\in F$ satisfies $g<_{2}
 f$). Fix such an $f$. Now, the map $T$ sends a $\left(  P,Q\right)  \in Z$ to
 $
@@ -3741,7 +3524,7 @@ $\operatorname{Adm} \EE$ with the property that
 $\pi\mid_{P}$ is a $\left(  P,>_{1},<_{2}\right)  $-partition
 and $\pi\mid_{Q}$ is a $\left(  Q,<_{1},<_{2}\right)  $-partition.
 
-From $\left(  P,Q\right)  \in\operatorname{Adm}{ \EE }$, we see that
+From $\left(  P,Q\right)  \in\operatorname{Adm} \EE$, we see that
 $P\cap Q=\varnothing$ and $P\cup Q=E$, and furthermore that
 \begin{equation}
 \text{no }p\in P\text{ and }q\in Q\text{ satisfy }q<_{1}
@@ -3956,8 +3739,286 @@ P\cup\left\{  f\right\}  , & \text{if }f\notin P;\\
 P\setminus\left\{  f\right\}  , & \text{if }f\in P
 \end{cases}
 $). As we have already explained, this proves
-\eqref{pf.thm.antipode.Gammaw.signrev}. And this, in turn, completes the
-induction step of the proof of Theorem~\ref{thm.antipode.Gammaw}.
+\eqref{pf.thm.antipode.Gammaw.signrev}. Hence,
+Lemma~\ref{lem.Gammaw.altsum} is proven.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm.antipode.Gammaw}.]
+We shall
+prove Theorem~\ref{thm.antipode.Gammaw} by strong induction over
+$\left|E\right|$. The induction base ($\left|E\right|=0$) is left to
+the reader; we start with the induction step. Consider a
+tertispecial double
+poset $\EE = \left(E, <_1, <_2\right)$ with $\left|E\right| > 0$ and
+a map $w : E \to \left\{1, 2, 3, \ldots\right\}$, and
+assume that Theorem~\ref{thm.antipode.Gammaw} is proven for all
+tertispecial double posets of smaller size.
+
+We have $\left| E \right| > 0$ and thus $E \neq \varnothing$. Hence,
+Lemma~\ref{lem.Gammaw.empty} (b) shows that
+$\varepsilon \left( \Gamma\left(\EE, w\right) \right) = 0$. Thus,
+$\left( u \circ \varepsilon \right) \left( \Gamma \left( \EE, w \right) \right)
+= u \left( \underbrace{\varepsilon \left( \Gamma \left( \EE, w \right) \right)}_{= 0} \right)
+= u \left( 0 \right) = 0$.
+
+The upper commutative pentagon of \eqref{eq.antipode} shows that
+$u \circ \varepsilon = m \circ \left(S \otimes \id\right) \circ
+\Delta$. Applying both sides of this equality to
+$\Gamma\left(\EE, w\right)$, we obtain
+$\left(u \circ \varepsilon\right)
+\left(\Gamma\left(\EE, w\right)\right)
+= \left(m \circ \left(S \otimes \id\right) \circ
+\Delta\right) \left(\Gamma\left(\EE, w\right)\right)$.
+Since
+$\left(u \circ \varepsilon\right)
+\left(\Gamma\left(\EE, w\right)\right) = 0$, this
+becomes
+\begin{align}
+0
+&= \left(m \circ \left(S \otimes \id\right) \circ
+\Delta\right) \left(\Gamma\left(\EE, w\right)\right)
+= m \left(\left(S \otimes \id\right) \left(
+\Delta \left(\Gamma\left(\EE, w\right)\right)\right)\right)
+\nonumber\\
+&= m \left(\left(S \otimes \id\right) \left(
+\sum_{\left(P, Q\right) \in \Adm \EE}
+\Gamma\left(\EE\mid_P, w\mid_P\right)
+\otimes \Gamma\left(\EE\mid_Q, w\mid_Q\right) \right) \right)
+\qquad \left(\text{by \eqref{eq.prop.Gammaw.coprod}}\right)
+\nonumber\\
+&= m \left(\sum_{\left(P, Q\right) \in \Adm \EE}
+S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+\otimes
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)\right)
+\nonumber\\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\nonumber \\
+&= S \left(\Gamma\left(\EE\mid_E, w\mid_E\right)\right)
+\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
++ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\label{pf.thm.antipode.Gammaw.Req.1}
+\end{align}
+(since the only pair $\left(P, Q\right) \in \Adm \EE$ satisfying
+$\left|P\right| \geq \left|E\right|$ is $\left(E, \varnothing\right)$,
+whereas all other pairs $\left(P, Q\right) \in \Adm \EE$
+satisfy $\left|P\right| < \left|E\right|$).
+
+But whenever $\left(P, Q\right) \in \Adm \EE$ is such that
+$\left|P\right| < \left|E\right|$, the double poset
+$\EE\mid_P = \left(P, <_1, <_2\right)$ is tertispecial
+(by Lemma~\ref{lem.tertispecial.subset}), and
+therefore we have
+$S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+= S\left(\Gamma\left(\left(P, <_1, <_2\right), w\mid_P\right)\right)
+= \left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)$ (by the
+induction hypothesis). Hence,
+\eqref{pf.thm.antipode.Gammaw.Req.1} rewrites as
+\begin{align}
+0
+&= S \left(\Gamma\left(\underbrace{\EE\mid_E}_{=\EE},
+           \underbrace{w\mid_E}_{=w}\right)\right)
+\underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
+           }_{\substack{
+           =\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
+           =1 \\ \text{ (by Lemma \ref{lem.Gammaw.empty} (a))}}}
+   \nonumber \\
+& \qquad + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\nonumber \\
+& = S\left(\Gamma\left(\EE, w\right)\right)
++ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
+\nonumber
+\end{align}
+Thus,
+\begin{equation}
+S\left(\Gamma\left(\EE, w\right)\right)
+= - \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
+\label{pf.thm.antipode.Gammaw.Seq}
+\end{equation}
+
+For every subset $P$ of $E$, we have
+
+\begin{align}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+&= \sum_{\pi \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\xx_{\pi, w\mid_P}
+\nonumber \\
+& \qquad \left(\text{by the definition of }
+ \Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right) \right)
+\nonumber \\
+& = \sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\xx_{\sigma, w\mid_P} .
+\label{pf.thm.antipode.Gammaw.Req.pf.Gamma1}
+\end{align}
+
+For every subset $Q$ of $E$, we have
+
+\begin{align}
+\Gamma\left(\underbrace{\EE\mid_Q}_{=\left(Q, <_1, <_2\right)}, w\mid_Q\right)
+&= \Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right)
+\nonumber 
+= \sum_{\pi \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\pi, w\mid_Q}
+\nonumber \\
+& \qquad \left(\text{by the definition of }
+ \Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right) \right)
+\nonumber \\
+& = \sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\tau, w\mid_Q} .
+\label{pf.thm.antipode.Gammaw.Req.pf.Gamma2}
+\end{align}
+
+Now,
+\begin{align*}
+& \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\underbrace{\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)}_{
+ \substack{ = \sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+            \xx_{\sigma, w\mid_P} \\
+            \text{(by \eqref{pf.thm.antipode.Gammaw.Req.pf.Gamma1})}}}
+\underbrace{\Gamma\left(\EE\mid_Q, w\mid_Q\right)}_{
+ \substack{ = \sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+            \xx_{\tau, w\mid_Q} \\
+            \text{(by \eqref{pf.thm.antipode.Gammaw.Req.pf.Gamma2})}}}
+\\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\left(\sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\xx_{\sigma, w\mid_P}\right)
+\left(\sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\tau, w\mid_Q}\right) \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q} \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\sum_{\substack{\left(\sigma, \tau\right); \\
+                \sigma : P \to \left\{1, 2, 3, \ldots\right\}; \\
+                \tau : Q \to \left\{1, 2, 3, \ldots\right\}; \\
+                \sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q} \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\underbrace{\xx_{\pi\mid_P, w\mid_P} \xx_{\pi\mid_Q, w\mid_Q}}_{=\xx_{\pi, w}} \\
+& \qquad \left(
+ \begin{array}{c}
+ \text{here, we have substituted } \left(\pi\mid_P, \pi\mid_Q\right)
+ \text{ for } \left(\sigma, \tau\right) \text{ in the inner sum,} \\
+ \text{ since every pair } \left(\sigma, \tau\right)
+ \text{ consisting of a map }
+ \sigma : P \to \left\{1, 2, 3, \ldots\right\} \\
+ \text{ and a map } \tau : Q \to \left\{1, 2, 3, \ldots\right\} \\
+ \text{ can be written as } \left(\pi\mid_P, \pi\mid_Q\right)
+ \text{ for a unique }
+ \pi : E \to \left\{1, 2, 3, \ldots\right\} \\
+ \text{(namely, for the }
+ \pi : E \to \left\{1, 2, 3, \ldots\right\}
+ \text{ that is defined to send every } \\
+ e \in P \text{ to }
+ \sigma\left(e\right) \text{ and to send every } e \in Q
+ \text{ to } \tau\left(e\right) \text{)}
+ \end{array}
+ \right) \\
+& = \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\pi, w} \\
+& = \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}}
+\underbrace{\left(
+\sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\left(-1\right)^{\left|P\right|}
+\right)}
+_{\substack{=0 \\
+            \text{(by \eqref{pf.thm.antipode.Gammaw.signrev})}}}
+\xx_{\pi, w}
+= \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}} 0 = 0.
+\end{align*}
+%\footnote{Here, for the fifth-to-last equality sign, we have
+%replaced the indices $\sigma$ and $\tau$ by a single index
+%$\pi$, which is the map $E \to \left\{1, 2, 3, \ldots\right\}$ which
+%is defined to send every $e \in P$ to $\sigma\left(e\right)$ and to
+%send every $e \in Q$ to $\tau\left(e\right)$.}.
+Thus,
+\begin{align*}
+0 &= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) \\
+&= \left(-1\right)^{\left|E\right|}
+\Gamma\left(\left(E, >_1, <_2\right), \underbrace{w\mid_E}_{=w}\right)
+\underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
+           }_{
+           =\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
+           =1}
+\\
+&\qquad + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\\
+& \ \ \ \ \ \ \ \ \ \ \left(
+ \begin{array}{c}
+  \text{because the only pair } \left(P, Q\right) \in \Adm \EE
+  \text{ satisfying } \left|P\right| \geq \left|E\right| \\
+  \text{ is } \left(P, Q\right) = \left(E, \varnothing\right)
+  \text{,} \\
+  \text{whereas all other pairs } \left(P, Q\right) \in \Adm \EE
+  \text{ satisfy } \left|P\right| < \left|E\right|
+ \end{array}
+\right) \\
+&= \left(-1\right)^{\left|E\right|} \Gamma\left(\left(E, >_1, <_2\right), w\right) \\
+& \qquad
++ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) ,
+\end{align*}
+so that
+\begin{align*}
+\left(-1\right)^{\left|E\right|} \Gamma\left(\left(E, >_1, <_2\right), w\right)
+&= - \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left|P\right| < \left|E\right|}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) \\
+&= S\left(\Gamma\left(\underbrace{\EE}_{=\left(E, <_1, <_2\right)}, w\right)\right)
+\qquad \left(\text{by \eqref{pf.thm.antipode.Gammaw.Seq}}\right) \\
+&= S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right)\right) ,
+\end{align*}
+and thus
+$S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
+= \left(-1\right)^{\left|E\right|}
+\Gamma\left(\left(E, >_1, <_2\right), w\right)$. This completes the
+induction step and thus the proof of Theorem~\ref{thm.antipode.Gammaw}.
 \end{proof}
 
 \section{Proof of Theorem~\ref{thm.antipode.GammawG}}
@@ -5709,9 +5770,13 @@ arXiv:1506.03508v1.\newline
 \textit{Dual immaculate creation operators and a dendriform algebra structure on the quasisymmetric functions},
 \href{http://arxiv.org/abs/1410.0079v6}{arXiv:1410.0079v6}.
 
-\bibitem[Grin16]{Gri-nbc}Darij Grinberg,
+\bibitem[Grin16a]{Gri-nbc}Darij Grinberg,
 \textit{A note on non-broken-circuit sets and the chromatic polynomial},
 \href{https://arxiv.org/abs/1604.03063v1}{arXiv:1604.03063v1}.
+
+\bibitem[Grin16b]{Gri-extabs}
+Drij Grinbrg, \textit{Double posets and the antipode of $\QSym$},
+extended abstract submitted to \href{https://sites.google.com/site/fpsac2017/}{FPSAC 2017}.
 
 \bibitem[GriRei14]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
 in Combinatorics}, August 22, 2016, arXiv:1409.8356v4.\newline
