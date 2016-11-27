@@ -2686,7 +2686,7 @@ Proposition~\ref{prop.Gammaw.coprod}).
 \label{sect.proof}
 
 Before we come to the proof of Theorem~\ref{thm.antipode.Gammaw},
-let us state three simple lemmas:
+let us state four lemmas:
 
 \begin{lemma}
 \label{lem.admissible.cover}
@@ -2828,6 +2828,133 @@ series of degree $\sum_{e\in E}w\left(  e\right)  $. When $E \neq \varnothing$,
 this degree is $>0$, and thus the power series $\Gamma\left(  \mathbf{E},w\right)$
 is annihilated by $\varepsilon$ (since $\varepsilon$ annihilates any
 homogeneous power series in $\QSym$ whose degree is $> 0$).
+\end{proof}
+
+\begin{lemma}
+\label{lem.Gammaw.toggle}
+Let $\left(E, <_1, <_2\right)$ be a double poset. Let $>_1$ be the opposite
+relation of $<_1$. Let $P$ and $Q$ be two
+subsets of $E$ satisfying $P \cup Q = E$.
+Let $\pi : E \to \left\{1, 2, 3, \ldots\right\}$ be a map such
+that $\pi \mid_P$ is a $\left(P, >_1, <_2\right)$-partition.
+Let $f \in P$. Assume that
+\begin{equation}
+\text{no } p \in P \text{ and } q \in Q \text{ satisfy }
+q <_1 p.
+\label{eq.lem.Gammaw.toggle.eq0}
+\end{equation}
+Also, assume that
+\begin{equation}
+\pi\left( f \right) \leq \pi\left( h \right)
+\qquad \text{for every } h \in E .
+\label{eq.lem.Gammaw.toggle.eq1}
+\end{equation}
+Furthermore, assume that
+\begin{equation}
+\pi \left( f \right) < \pi \left( h \right)
+\qquad \text{for every } h \in E \text{ satisfying } h <_2 f .
+\label{eq.lem.Gammaw.toggle.eq2}
+\end{equation}
+
+\begin{enumerate}
+\item[(a)] If $p \in P \setminus \left\{f\right\}$
+and $q \in Q \cup \left\{f\right\}$ are such that
+$q <_1 p$, then we have neither $q <_2 p$ nor
+$p <_2 q$.
+
+\item[(b)] If $\pi \mid_Q$ is a $\left(Q, <_1, <_2\right)$-partition,
+then
+$\pi \mid_{Q \cup \left\{f\right\}}$ is a
+$\left(Q \cup \left\{f\right\}, <_1, <_2\right)$-partition.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}[Proof of Lemma~\ref{lem.Gammaw.toggle}.]From
+$P \cup Q = E$, we obtain $\underbrace{E}_{= P \cup Q}
+\setminus P = \left(P \cup Q\right) \setminus P \subseteq Q$.
+% and $\underbrace{E}_{= P \cup Q}
+% \setminus Q = \left(P \cup Q\right) \setminus Q \subseteq P$.
+
+(a) Let $p \in P \setminus \left\{f\right\}$
+and $q \in Q \cup \left\{f\right\}$ be such that
+$q <_1 p$. We must show that we have neither $q <_2 p$ nor $p <_2 q$.
+
+Indeed, assume the contrary. Thus, we have
+either $q <_2 p$ or $p <_2 q$.
+
+We know that $q$ is $<_{1}$-covered by $p$, and thus we have $q<_{1}p$. Also,
+$p\in P\setminus\left\{  f\right\}  \subseteq P$. Hence, if we had $q\in Q$,
+then we would obtain a contradiction to
+\eqref{eq.lem.Gammaw.toggle.eq0}. Hence, we cannot have $q\in Q$.
+Therefore, $q=f$ (since $q\in Q\cup\left\{  f\right\}  $ but not $q\in Q$).
+Hence, $f=q<_{1}p$, so that $p>_{1}f$. Therefore, $\pi\left(  p\right)
+\leq\pi\left(  f\right)  $ (since $\pi\mid_{P}$ is a
+$\left(  P,>_{1},<_{2}\right)  $-partition, and since both $f$
+and $p$ belong to $P$).
+
+Now, recall that we have either $q <_2 p$ or $p <_2 q$.
+Since $q = f$, we can rewrite this as follows:
+We have either $f <_2 p$ or $p <_2 f$.
+But $p<_{2}f$ cannot hold (because if we had $p<_{2}f$, then
+\eqref{eq.lem.Gammaw.toggle.eq2} (applied to $h=p$) would lead to
+$\pi\left(  f\right)  <\pi\left(  p\right)  $, which would contradict
+$\pi\left(  p\right)  \leq\pi\left(  f\right)  $).
+Thus, we must have $f<_{2}p$.
+
+But $\pi\mid_{P}$ is a $\left(  P,>_{1},<_{2}\right)  $-partition. Hence,
+$\pi\left(  p\right)  <\pi\left(  f\right)  $ (since $p>_{1}f$ and $f<_{2}p$,
+and since $p$ and $f$ both lie in $P$).
+But \eqref{eq.lem.Gammaw.toggle.eq1} (applied to $h=p$) shows that
+$\pi\left(  f\right)  \leq\pi\left(  p\right)  $. Hence, $\pi\left(  p\right)
+<\pi\left(  f\right)  \leq\pi\left(  p\right)  $, a contradiction. Thus, our
+assumption was wrong. This completes the proof of
+Lemma~\ref{lem.Gammaw.toggle} (a).
+
+(b) Assume that $\pi \mid_Q$ is a $\left(Q, <_1, <_2\right)$-partition. We need
+to show that
+$\pi \mid_{Q \cup \left\{f\right\}}$ is a
+$\left(Q \cup \left\{f\right\}, <_1, <_2\right)$-partition.
+In order
+to prove this, we need to verify the following two claims:
+
+\textit{Claim 1:} Every $a\in Q\cup\left\{  f\right\}  $ and $b\in
+Q\cup\left\{  f\right\}  $ satisfying $a<_{1}b$ satisfy $\pi\left(  a\right)
+\leq\pi\left(  b\right)  $.
+
+\textit{Claim 2:} Every $a\in Q\cup\left\{  f\right\}  $ and $b\in
+Q\cup\left\{  f\right\}  $ satisfying $a<_{1}b$ and $b<_{2}a$ satisfy
+$\pi\left(  a\right)  <\pi\left(  b\right)  $.
+
+\textit{Proof of Claim 1:} Let $a\in Q\cup\left\{  f\right\}  $ and $b\in
+Q\cup\left\{  f\right\}  $ be such that $a<_{1}b$. We need to prove that
+$\pi\left(  a\right)  \leq\pi\left(  b\right)  $. If $a=f$, then this follows
+immediately from \eqref{eq.lem.Gammaw.toggle.eq1} (applied to $h=b$).
+Hence, we WLOG assume that $a\neq f$. Thus, $a\in Q$ (since $a\in
+Q\cup\left\{  f\right\}  $). Now, if $b\in P$, then $a<_{1}b$ contradicts
+\eqref{eq.lem.Gammaw.toggle.eq0} (applied to $p=b$ and $q=a$). Hence,
+we cannot have $b\in P$. Therefore, $b\in E\setminus P
+\subseteq Q$. Thus, $\pi\left(  a\right)  \leq\pi\left(
+b\right)  $ follows immediately from the fact that $\pi\mid_{Q}$ is a $\left(
+Q,<_{1},<_{2}\right)  $-partition (since $a \in Q$ and $b \in Q$ and
+$a <_1 b$).
+This proves Claim 1.
+
+\textit{Proof of Claim 2:} Let $a\in Q\cup\left\{  f\right\}  $ and $b\in
+Q\cup\left\{  f\right\}  $ be such that $a<_{1}b$ and $b<_{2}a$. We need to
+prove that $\pi\left(  a\right)  <\pi\left(  b\right)  $. If $a=f$, then this
+follows immediately from \eqref{eq.lem.Gammaw.toggle.eq2} (applied
+to $h=b$). Hence, we WLOG assume that $a\neq f$. Thus, $a\in Q$ (since $a\in
+Q\cup\left\{  f\right\}  $). Now, if $b\in P$, then $a<_{1}b$ contradicts
+\eqref{eq.lem.Gammaw.toggle.eq0} (applied to $p=b$ and $q=a$). Hence,
+we cannot have $b\in P$. Therefore, $b\in E\setminus P \subseteq Q$).
+Thus, $\pi\left(  a\right)  <\pi\left(
+b\right)  $ follows immediately from the fact that $\pi\mid_{Q}$ is a $\left(
+Q,<_{1},<_{2}\right)  $-partition (since $a \in Q$ and $b \in Q$ and
+$a <_1 b$ and $b <_2 a$).
+This proves Claim 2.
+
+Now, both Claim 1 and Claim 2 are proven. As already said, this
+completes the proof of Lemma~\ref{lem.Gammaw.toggle} (b).
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm.antipode.Gammaw}.]
@@ -3365,7 +3492,6 @@ p.
 \label{pf.thm.antipode.Gammaw.Zwd.pf.Adm}
 \end{equation}
 
-
 We know that $f$ belongs to the set $F$, which is the subset of $E$ consisting
 of those $e\in E$ which have minimum $\pi\left(  e\right)  $. Thus,
 \begin{equation}
@@ -3415,33 +3541,17 @@ Assume the contrary. Thus, there exist $p\in
 P\setminus\left\{  f\right\}  $ and $q\in Q\cup\left\{  f\right\}  $ such that
 $q$ is $<_{1}$-covered by $p$. Consider such $p$ and $q$.
 \par
-We know that $q$ is $<_{1}$-covered by $p$, and thus we have $q<_{1}p$. Also,
-$p\in P\setminus\left\{  f\right\}  \subseteq P$. Hence, if we had $q\in Q$,
-then we would obtain a contradiction to
-\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm}. Hence, we cannot have $q\in Q$.
-Therefore, $q=f$ (since $q\in Q\cup\left\{  f\right\}  $ but not $q\in Q$).
-Hence, $f=q<_{1}p$, so that $p>_{1}f$. Therefore, $\pi\left(  p\right)
-\leq\pi\left(  f\right)  $ (since $\pi\mid_{P}$ is a
-$\left(  P,>_{1},<_{2}\right)  $-partition, and since both $f$
-and $p$ belong to $P$).
-\par
-Now, recall that $q$ is $<_{1}$-covered by $p$. Hence, $q$ and $p$ are
-$<_{2}$-comparable (since $E$ is tertispecial).
-In other words, $f$ and $p$ are
-$<_{2}$-comparable (since $q=f$). In other words, either $f<_{2}p$ or $f=p$ or
-$p<_{2}f$. But $p<_{2}f$ cannot hold (because if we had $p<_{2}f$, then
-\eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2} (applied to $h=p$) would lead to
-$\pi\left(  f\right)  <\pi\left(  p\right)  $, which would contradict
-$\pi\left(  p\right)  \leq\pi\left(  f\right)  $), and $f=p$ cannot hold
-either (since $f<_{1}p$). Thus, we must have $f<_{2}p$.
-\par
-Now, $\pi\mid_{P}$ is a $\left(  P,>_{1},<_{2}\right)  $-partition. Hence,
-$\pi\left(  p\right)  <\pi\left(  f\right)  $ (since $p>_{1}f$ and $f<_{2}p$,
-and since $p$ and $f$ both lie in $P$).
-But \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min} (applied to $h=p$) shows that
-$\pi\left(  f\right)  \leq\pi\left(  p\right)  $. Hence, $\pi\left(  p\right)
-<\pi\left(  f\right)  \leq\pi\left(  p\right)  $, a contradiction. Thus, our
-assumption was wrong, qed.}. Hence, Lemma \ref{lem.admissible.cover} (applied
+We know that $q$ is $<_{1}$-covered by $p$, and thus we have $q<_{1}p$.
+Hence, Lemma~\ref{lem.Gammaw.toggle} (a) shows that
+we have neither $q <_2 p$ nor $p <_2 q$.
+On the other hand,
+$q$ is $<_{1}$-covered by $p$. Hence, $q$ and $p$ are
+$<_{2}$-comparable (since $\EE$ is tertispecial).
+In other words, we have either $q <_2 p$ or $q = p$ or $p <_2 q$.
+Hence, we must have $q = p$ (since we have neither $q <_2 p$
+nor $p <_2 q$). But this contradicts $q <_1 p$.
+This contradiction shows that our
+assumption was wrong, qed.}. Hence, Lemma~\ref{lem.admissible.cover} (applied
 to $P\setminus\left\{  f\right\}  $ and $Q\cup\left\{  f\right\}  $ instead of
 $P$ and $Q$) shows that $\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{
 f\right\}  \right)  \in\operatorname{Adm}{ \EE }$.
@@ -3452,44 +3562,9 @@ P\setminus\left\{  f\right\}  ,>_{1},<_{2}\right)  $-partition (since
 $P\setminus\left\{  f\right\}  \subseteq P$).
 
 Furthermore, $\pi\mid_{Q\cup\left\{  f\right\}  }$ is a $\left(  Q\cup\left\{
-f\right\}  ,<_{1},<_{2}\right)  $-partition\footnote{\textit{Proof.} In order
-to prove this, we need to verify the following two claims:
-\par
-\textit{Claim 1:} Every $a\in Q\cup\left\{  f\right\}  $ and $b\in
-Q\cup\left\{  f\right\}  $ satisfying $a<_{1}b$ satisfy $\pi\left(  a\right)
-\leq\pi\left(  b\right)  $;
-\par
-\textit{Claim 2:} Every $a\in Q\cup\left\{  f\right\}  $ and $b\in
-Q\cup\left\{  f\right\}  $ satisfying $a<_{1}b$ and $b<_{2}a$ satisfy
-$\pi\left(  a\right)  <\pi\left(  b\right)  $.
-\par
-\textit{Proof of Claim 1:} Let $a\in Q\cup\left\{  f\right\}  $ and $b\in
-Q\cup\left\{  f\right\}  $ be such that $a<_{1}b$. We need to prove that
-$\pi\left(  a\right)  \leq\pi\left(  b\right)  $. If $a=f$, then this follows
-immediately from \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min} (applied to $h=b$).
-Hence, we WLOG assume that $a\neq f$. Thus, $a\in Q$ (since $a\in
-Q\cup\left\{  f\right\}  $). Now, if $b\in P$, then $a<_{1}b$ contradicts
-\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm} (applied to $p=b$ and $q=a$). Hence,
-we cannot have $b\in P$. Therefore, $b\in E\setminus P=Q$ (since $P\cap
-Q=\varnothing$ and $P\cup Q=E$). Thus, $\pi\left(  a\right)  \leq\pi\left(
-b\right)  $ follows immediately from the fact that $\pi\mid_{Q}$ is a $\left(
-Q,<_{1},<_{2}\right)  $-partition (since $a \in Q$ and $b \in Q$).
-This proves Claim 1.
-\par
-\textit{Proof of Claim 2:} Let $a\in Q\cup\left\{  f\right\}  $ and $b\in
-Q\cup\left\{  f\right\}  $ be such that $a<_{1}b$ and $b<_{2}a$. We need to
-prove that $\pi\left(  a\right)  <\pi\left(  b\right)  $. If $a=f$, then this
-follows immediately from \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2} (applied
-to $h=b$). Hence, we WLOG assume that $a\neq f$. Thus, $a\in Q$ (since $a\in
-Q\cup\left\{  f\right\}  $). Now, if $b\in P$, then $a<_{1}b$ contradicts
-\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm} (applied to $p=b$ and $q=a$). Hence,
-we cannot have $b\in P$. Therefore, $b\in E\setminus P=Q$ (since $P\cap
-Q=\varnothing$ and $P\cup Q=E$). Thus, $\pi\left(  a\right)  <\pi\left(
-b\right)  $ follows immediately from the fact that $\pi\mid_{Q}$ is a $\left(
-Q,<_{1},<_{2}\right)  $-partition (since $a \in Q$ and $b \in Q$).
-This proves Claim 2.
-\par
-Now, both Claim 1 and Claim 2 are proven, and we are done.}.
+f\right\}  ,<_{1},<_{2}\right)  $-partition\footnote{This follows from
+Lemma~\ref{lem.Gammaw.toggle} (b) (since $\pi\mid_Q$ is a
+$\left(Q, <_1, <_2\right)$-partition).}.
 
 Altogether, we now know that $\left(  P\setminus\left\{  f\right\}
 ,Q\cup\left\{  f\right\}  \right)  \in\operatorname{Adm}{ \EE }$, that
@@ -3518,41 +3593,55 @@ $\left(  P\cup\left\{  f\right\}  \right)  \cap\left(  Q\setminus\left\{
 f\right\}  \right)  =\varnothing$ and $\left(  P\cup\left\{  f\right\}
 \right)  \cup\left(  Q\setminus\left\{  f\right\}  \right)  =E$.
 
-Furthermore, there exist no $p\in P\cup\left\{  f\right\}  $ and $q\in
+We have $f \notin P$ and thus $f \in E \setminus P = Q$ (since
+$P \cap Q = \varnothing$ and $P \cup Q = E$).
+Also, $Q \cup P = P \cup Q = E$. Furthermore,
+the relation $<_1$ is the opposite relation of $>_1$ (since $>_1$
+is the opposite relation of $<_1$). Also,
+$\left(E, >_1, <_2\right)$ is a double poset, and the map
+$\pi\mid_Q$ is a $\left(Q, <_1, <_2\right)$-partition. Moreover,
+\begin{equation}
+\text{no } p \in Q \text{ and } q \in P \text{ satisfy }
+q >_1 p
+\label{pf.thm.antipode.Gammaw.Zwd.pf.AdmQP}
+\end{equation}
+\footnote{\textit{Proof.} Let $a \in Q$ and $b \in P$ be such that
+$b >_1 a$. We shall derive a contradiction.
+
+We have $b >_1 a$. In other words, $a <_1 b$. Thus, $b \in P$ and
+$a \in Q$ satisfy $a <_1 b$. This contradicts
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm} (applied to $p = b$ and
+$q = a$).
+
+Now, forget that we fixed $a$ and $b$. We thus have found a
+contradiction for every $a \in Q$ and $b \in P$ satisfying
+$b >_1 a$. Hence, no $a \in Q$ and $b \in P$ satisfy $b >_1 a$.
+Renaming $a$ and $b$ as $p$ and $q$ in this statement, we obtain
+the following: No $p \in Q$ and $q \in P$ satisfy $q >_1 p$.
+This proves \eqref{pf.thm.antipode.Gammaw.Zwd.pf.AdmQP}.}.
+Hence, we can apply Lemma~\ref{lem.Gammaw.toggle} to
+$\left(E, >_1, <_2\right)$, $<_1$, $Q$ and $P$ instead of
+$\left(E, <_1, <_2\right)$, $>_1$, $P$ and $Q$.
+
+There exist no $p\in P\cup\left\{  f\right\}  $ and $q\in
 Q\setminus\left\{  f\right\}  $ such that $q$ is $<_{1}$-covered by
 $p$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus, there exist
 $p\in P\cup\left\{  f\right\}  $ and $q\in Q\setminus\left\{  f\right\}  $
 such that $q$ is $<_{1}$-covered by $p$. Consider such $p$ and $q$.
 \par
-We have $f\notin P$ and thus $f\in E\setminus P=Q$ (since $P\cap
-Q=\varnothing$ and $P\cup Q=E$).
-\par
-We know that $q$ is $<_{1}$-covered by $p$, and thus we have $q<_{1}p$. Also,
-$q\in Q\setminus\left\{  f\right\}  \subseteq Q$. Hence, if we had $p\in P$,
-then we would obtain a contradiction to
-\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm}. Hence, we cannot have $p\in P$.
-Therefore, $p=f$ (since $p\in P\cup\left\{  f\right\}  $ but not $p\in P$).
-Hence, $q<_{1}p=f$. Therefore, $\pi\left(  q\right)  \leq\pi\left(  f\right)
-$ (since $q\in Q$ and $f\in Q$, and since $\pi\mid_{Q}$ is a $\left(
-Q,<_{1},<_{2}\right)  $-partition). Thus, we cannot have $q<_{2}f$ (because if
-we had $q<_{2}f$, then \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2} (applied to
-$h=q$) would show that $\pi\left(  f\right)  <\pi\left(  q\right)  $, which
-would contradict $\pi\left(  q\right)  \leq\pi\left(  f\right)  $).
-\par
-Now, recall that $q$ is $<_{1}$-covered by $p$. Hence, $q$ and $p$ are
-$<_{2}$-comparable (since $E$ is tertispecial).
-In other words, $q$ and $f$ are
-$<_{2}$-comparable (since $p=f$). In other words, either $q<_{2}f$ or $q=f$ or
-$f<_{2}q$. But we cannot have $q<_{2}f$ (as we have just shown), and we cannot
-have $q=f$ either (since $q<_{1}f$). Thus, we must have $f<_{2}q$.
-\par
-From $q<_{1}f$ and $f<_{2}q$, we conclude that $\pi\left(  q\right)
-<\pi\left(  f\right)  $ (since $\pi\mid_{Q}$ is a
-$\left(  Q,<_{1},<_{2}\right)  $-partition, and since
-$q\in Q$ and $f\in Q$). But
-\eqref{pf.thm.antipode.Gammaw.Zwd.pf.min} (applied to $h=q$) shows that
-$\pi\left(  f\right)  \leq\pi\left(  q\right)  $. Hence, $\pi\left(  q\right)
-<\pi\left(  f\right)  \leq\pi\left(  q\right)  $, a contradiction. Thus, our
+We know that $q$ is $<_1$-covered by $p$, and thus we have
+$q <_1 p$. In other words, $p >_1 q$. Thus,
+Lemma~\ref{lem.Gammaw.toggle} (a) (applied to
+$\left(E, >_1, <_2\right)$, $<_1$, $Q$, $P$, $q$ and $p$ instead of
+$\left(E, <_1, <_2\right)$, $>_1$, $P$, $Q$, $p$ and $q$) yields
+that we have neither $p <_2 q$ nor $q <_2 p$.
+On the other hand,
+$q$ is $<_{1}$-covered by $p$. Hence, $q$ and $p$ are
+$<_{2}$-comparable (since $\EE$ is tertispecial).
+In other words, we have either $q <_2 p$ or $q = p$ or $p <_2 q$.
+Hence, we must have $q = p$ (since we have neither $p <_2 q$
+nor $q <_2 p$). But this contradicts $q <_1 p$.
+This contradiction shows that our
 assumption was wrong, qed.}. Hence, Lemma \ref{lem.admissible.cover} (applied
 to $P\cup\left\{  f\right\}  $ and $Q\setminus\left\{  f\right\}  $ instead of
 $P$ and $Q$) shows that $\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{
@@ -3564,44 +3653,11 @@ Q\setminus\left\{  f\right\}  ,<_{1},<_{2}\right)  $-partition (since
 $Q\setminus\left\{  f\right\}  \subseteq Q$).
 
 Furthermore, $\pi\mid_{P\cup\left\{  f\right\}  }$ is a $\left(  P\cup\left\{
-f\right\}  ,>_{1},<_{2}\right)  $-partition\footnote{\textit{Proof.} In order
-to prove this, we need to verify the following two claims:
-\par
-\textit{Claim 1:} Every $a\in P\cup\left\{  f\right\}  $ and $b\in
-P\cup\left\{  f\right\}  $ satisfying $a>_{1}b$ satisfy $\pi\left(  a\right)
-\leq\pi\left(  b\right)  $;
-\par
-\textit{Claim 2:} Every $a\in P\cup\left\{  f\right\}  $ and $b\in
-P\cup\left\{  f\right\}  $ satisfying $a>_{1}b$ and $b<_{2}a$ satisfy
-$\pi\left(  a\right)  <\pi\left(  b\right)  $.
-\par
-\textit{Proof of Claim 1:} Let $a\in P\cup\left\{  f\right\}  $ and $b\in
-P\cup\left\{  f\right\}  $ be such that $a>_{1}b$. We need to prove that
-$\pi\left(  a\right)  \leq\pi\left(  b\right)  $. If $a=f$, then this follows
-immediately from \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min} (applied to $h=b$).
-Hence, we WLOG assume that $a\neq f$. Thus, $a\in P$ (since $a\in
-P\cup\left\{  f\right\}  $). Now, if $b\in Q$, then $b<_{1}a$ contradicts
-\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm} (applied to $p=a$ and $q=b$). Hence,
-we cannot have $b\in Q$. Therefore, $b\in E\setminus Q=P$ (since $P\cap
-Q=\varnothing$ and $P\cup Q=E$). Thus, $\pi\left(  a\right)  \leq\pi\left(
-b\right)  $ follows immediately from the fact that $\pi\mid_{P}$ is a $\left(
-P,>_{1},<_{2}\right)  $-partition (since $a \in P$ and $b \in P$).
-This proves Claim 1.
-\par
-\textit{Proof of Claim 2:} Let $a\in P\cup\left\{  f\right\}  $ and $b\in
-P\cup\left\{  f\right\}  $ be such that $a>_{1}b$ and $b<_{2}a$. We need to
-prove that $\pi\left(  a\right)  <\pi\left(  b\right)  $. If $a=f$, then this
-follows immediately from \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2} (applied
-to $h=b$). Hence, we WLOG assume that $a\neq f$. Thus, $a\in P$ (since $a\in
-P\cup\left\{  f\right\}  $). Now, if $b\in Q$, then $b<_{1}a$ contradicts
-\eqref{pf.thm.antipode.Gammaw.Zwd.pf.Adm} (applied to $p=a$ and $q=b$). Hence,
-we cannot have $b\in Q$. Therefore, $b\in E\setminus Q=P$ (since $P\cap
-Q=\varnothing$ and $P\cup Q=E$). Thus, $\pi\left(  a\right)  <\pi\left(
-b\right)  $ follows immediately from the fact that $\pi\mid_{P}$ is a $\left(
-P,>_{1},<_{2}\right)  $-partition (since $a \in P$ and $b \in P$).
-This proves Claim 2.
-\par
-Now, both Claim 1 and Claim 2 are proven, and we are done.}.
+f\right\}  ,>_{1},<_{2}\right)  $-partition\footnote{This follows from
+Lemma~\ref{lem.Gammaw.toggle} (b) (applied to
+$\left(E, >_1, <_2\right)$, $<_1$, $Q$ and $P$ instead of
+$\left(E, <_1, <_2\right)$, $>_1$, $P$ and $Q$), since $\pi\mid_P$ is a
+$\left(P, >_1, <_2\right)$-partition.}.
 
 Altogether, we now know that $\left(  P\cup\left\{  f\right\}  ,Q\setminus
 \left\{  f\right\}  \right)  \in\operatorname{Adm}{ \EE }$, that $\pi
