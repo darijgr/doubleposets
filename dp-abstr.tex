@@ -166,7 +166,7 @@
 
 \title{Double posets and the antipode of $\QSym$}
 
-\date{version 2.3 (\today)}
+\date{version 2.4 (\today)}
 
 \begin{comment}
 \keywords{
@@ -1154,6 +1154,261 @@ using dualization.
 \end{enumerate}
 
 \end{example}
+
+\begin{remark}
+\label{rmk.antipode.Gamma.converse}
+Corollary \ref{cor.antipode.Gamma} has a
+sort of converse. Namely, let us assume that $\mathbf{k}=\mathbb{Z}$. If
+$\left(  E,<_{1},<_{2}\right)  $ is a double poset satisfying $S\left(
+\Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \right)  =\left(
+-1\right)  ^{\left\vert E\right\vert }\Gamma\left(  \left(  E,>_{1}%
+,<_{2}\right)  \right)  $, then $\left(  E,<_{1},<_{2}\right)  $ is tertispecial.
+
+More precisely, the following holds: Define the \textit{length} $\ell\left(
+\alpha\right)  $ of a composition $\alpha$ to be the number of entries of
+$\alpha$. Define the \textit{size} $\left\vert \alpha\right\vert $ of a
+composition $\alpha$ to be the sum of the entries of $\alpha$. Let
+$\eta:\operatorname*{QSym}\rightarrow\operatorname*{QSym}$ be the $\mathbf{k}%
+$-linear map defined by%
+\[
+\eta\left(  M_{\alpha}\right)  =%
+\begin{cases}
+M_{\alpha}, & \text{if }\ell\left(  \alpha\right)  \geq\left\vert
+\alpha\right\vert -1;\\
+0, & \text{if }\ell\left(  \alpha\right)  <\left\vert \alpha\right\vert -1
+\end{cases}
+\qquad \text{for every } \alpha \in \Comp .
+\]
+Thus, $\eta$ transforms a quasisymmetric function by removing all monomials
+$\mathfrak{m}$ for which the number of indeterminates appearing in
+$\mathfrak{m}$ is $<\deg\mathfrak{m}-1$. We partially order the ring
+$\mathbf{k}\left[  \left[  \mathbf{x}\right]  \right]  $ by a coefficientwise
+order (i.e., two power series $a$ and $b$ satisfy $a\leq b$ if and only if
+each coefficient of $a$ is $\leq$ to the corresponding coefficient of $b$).
+Now, every double poset $\left(  E,<_{1},<_{2}\right)  $ satisfies%
+\begin{equation}
+\eta\left(  \left(  -1\right)  ^{\left\vert E\right\vert }S\left(
+\Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \right)  \right)
+\leq\eta\left(  \Gamma\left(  \left(  E,>_{1},<_{2}\right)  \right)  \right)
+,\label{eq.rmk.antipode.Gamma.converse.ineq}%
+\end{equation}
+and equality holds if and only if the double poset $\left(  E,<_{1}%
+,<_{2}\right)  $ is tertispecial. (If we omit $\eta$, then the inequality
+fails in general.)
+
+\begin{vershort}
+The proof of (\ref{eq.rmk.antipode.Gamma.converse.ineq}) is somewhat
+technical, but not too hard. A rough outline is given in the detailed
+version of this paper.
+\end{vershort}
+
+\begin{verlong}
+The proof of (\ref{eq.rmk.antipode.Gamma.converse.ineq}) is somewhat
+technical, but not too difficult. I shall only give a rough outline, as the
+result is tangential to this paper. Fix a double poset $\left(  E,<_{1}%
+,<_{2}\right)  $, and set $n=\left\vert E\right\vert $ and $\left[  n\right]
+=\left\{  1,2,\ldots,n\right\}  $. A \textit{costrictor} will mean a bijection
+$\phi:\left[  n\right]  \rightarrow E$ whose inverse $\phi^{-1}:E\rightarrow
+\left[  n\right]  $ is a strictly increasing map from the poset $\left(
+E,<_{1}\right)  $ to $\left(  \left[  n\right]  ,<_{\mathbb{Z}}\right)  $.
+(The costrictors are in 1-to-1 correspondence with the linear extensions of
+$\left(  E,<_{1}\right)  $.) For two elements $e$ and $f$ of $E$, we write
+$e\parallel_{1}f$ if and only if $e$ and $f$ are not $<_{1}$-comparable. We
+shall abbreviate the $k$-tuple $\left(  1,1,\ldots,1\right)  $ as $\left(
+1^{k}\right)  $ for each $k\in\mathbb{N}$. Then, it is not hard to see that%
+\begin{align*}
+& \Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \\
+& =\left(  \text{the number of all costrictors}\right)  M_{\left(
+1^{n}\right)  }+\sum_{k=1}^{n-1}\gamma_{\left(  E,<_{1},<_{2}\right)
+,k}M_{\left(  1^{k-1},2,1^{n-k-1}\right)  }\\
+& \ \ \ \ \ \ \ \ \ \ +\left(  \text{a linear combination of }M_{\alpha}\text{
+with }\left|\alpha\right| = n \text{ and } \ell\left(  \alpha\right)  <n-1\right)  ,
+\end{align*}
+where
+\begin{align*}
+& \gamma_{\left(  E,<_{1},<_{2}\right)  ,k}\\
+& =\left(  \text{the number of all costrictors}\right)  \\
+& \ \ \ \ \ \ \ \ \ \ -\dfrac{1}{2}\left(  \text{the number of all costrictors
+}\phi\text{ satisfying }\phi\left(  k\right)  \parallel_{1}\phi\left(
+k+1\right)  \right)  \\
+& \ \ \ \ \ \ \ \ \ \ -\left(  \text{the number of all costrictors }\phi\text{
+satisfying }\phi\left(  k\right)  <_{1}\phi\left(  k+1\right) \right. \\
+& \ \ \ \ \ \ \ \ \ \ \qquad \left. \text{ and
+}\phi\left(  k\right)  >_{2}\phi\left(  k+1\right)  \right)  .
+\end{align*}
+Hence,%
+\begin{align*}
+& \eta\left(  \Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \right)
+\\
+& =\left(  \text{the number of all costrictors}\right)  M_{\left(
+1^{n}\right)  }+\sum_{k=1}^{n-1}\gamma_{\left(  E,<_{1},<_{2}\right)
+,k}M_{\left(  1^{k-1},2,1^{n-k-1}\right)  }.
+\end{align*}
+Using this (and the formula for $S\left(  M_{\alpha}\right)  $ in Example
+\ref{exam.antipode.Gammaw} (b)), it is easy to show that%
+\begin{align*}
+& \eta\left(  \left(  -1\right)  ^{\left\vert E\right\vert }S\left(
+\Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \right)  \right)  \\
+& =\left(  \text{the number of all costrictors}\right)  M_{\left(
+1^{n}\right)  }\\
+& \ \ \ \ \ \ \ \ \ \ +\sum_{k=1}^{n-1}\left(  \left(  \text{the number of all
+costrictors}\right)  -\gamma_{\left(  E,<_{1},<_{2}\right)  ,k}\right)
+M_{\left(  1^{n-k-1},2,1^{k-1}\right)  }.
+\end{align*}
+
+
+But we can also define an \textit{anticostrictor} as a bijection $\phi:\left[
+n\right]  \rightarrow E$ whose inverse $\phi^{-1}:E\rightarrow\left[
+n\right]  $ is a strictly decreasing map from the poset $\left(
+E,<_{1}\right)  $ to $\left(  \left[  n\right]  ,<_{\mathbb{Z}}\right)  $.
+Then, similarly to our formula for $\eta\left(  \Gamma\left(  \left(
+E,<_{1},<_{2}\right)  \right)  \right)  $, we can derive the formula
+\begin{align*}
+& \eta\left(  \Gamma\left(  \left(  E,>_{1},<_{2}\right)  \right)  \right)
+\\
+& =\left(  \text{the number of all anticostrictors}\right)  M_{\left(
+1^{n}\right)  }+\sum_{k=1}^{n-1}\widetilde{\gamma}_{\left(  E,<_{1}%
+,<_{2}\right)  ,k}M_{\left(  1^{k-1},2,1^{n-k-1}\right)  },
+\end{align*}
+where%
+\begin{align*}
+& \widetilde{\gamma}_{\left(  E,<_{1},<_{2}\right)  ,k}\\
+& =\left(  \text{the number of all anticostrictors}\right)  \\
+& \ \ \ \ \ \ \ \ \ \ -\dfrac{1}{2}\left(  \text{the number of all
+anticostrictors }\phi\text{ satisfying }\phi\left(  k\right)  \parallel
+_{1}\phi\left(  k+1\right)  \right)  \\
+& \ \ \ \ \ \ \ \ \ \ -\left(  \text{the number of all anticostrictors }%
+\phi\text{ satisfying }\phi\left(  k\right)  >_{1}\phi\left(  k+1\right)
+\right. \\
+& \ \ \ \ \ \ \ \ \ \ \qquad \left.
+\text{ and }\phi\left(  k\right)  >_{2}\phi\left(  k+1\right)  \right)  .
+\end{align*}
+
+
+Recall that we want to prove (\ref{eq.rmk.antipode.Gamma.converse.ineq}). In
+light of our formulas for $\eta\left(  \left(  -1\right)  ^{\left\vert
+E\right\vert }S\left(  \Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)
+\right)  \right)  $ and $\eta\left(  \Gamma\left(  \left(  E,>_{1}%
+,<_{2}\right)  \right)  \right)  $, this boils down to proving the following
+two facts:
+
+\begin{enumerate}
+\item The number of all costrictors is $\leq$ to the number of all anticostrictors.
+
+\item For each $k\in\left\{  1,2,\ldots,n-1\right\}  $, we have
+\[
+\left(  \text{the number of all costrictors}\right)  -\gamma_{\left(
+E,<_{1},<_{2}\right)  ,k}\leq\widetilde{\gamma}_{\left(  E,<_{1},>_{2}\right)
+,n-k}.
+\]
+
+\end{enumerate}
+
+But the first of these two facts is easy to see: Let $w_{0}$ be the involution
+$\left[  n\right]  \rightarrow\left[  n\right]  ,\ i\mapsto n+1-i$. Then,
+$w_{0}$ is a poset isomorphism $\left(  \left[  n\right]  ,<_{\mathbb{Z}%
+}\right)  \rightarrow\left(  \left[  n\right]  ,>_{\mathbb{Z}}\right)  $.
+Hence, there is a 1-to-1 correspondence between the costrictors and the
+anticostrictors, given by $\phi\mapsto\phi\circ w_{0}$. Thus, the number of
+all costrictors equals the number of all anticostrictors. This proves Fact 1.
+
+Proving Fact 2 is harder. Fix $k\in\left\{  1,2,\ldots,n-1\right\}  $.
+Recalling our definition of $\gamma_{\left(  E,<_{1},<_{2}\right)  ,k}$ and
+$\widetilde{\gamma}_{\left(  E,<_{1},>_{2}\right)  ,n-k}$, we notice that we
+must show%
+\begin{align*}
+& \dfrac{1}{2}\left(  \text{the number of all costrictors }\phi\text{
+satisfying }\phi\left(  k\right)  \parallel_{1}\phi\left(  k+1\right)
+\right)  \\
+& \ \ \ \ \ \ \ \ \ \ +\left(  \text{the number of all costrictors }\phi\text{
+satisfying }\phi\left(  k\right)  <_{1}\phi\left(  k+1\right)  \right. \\
+& \ \ \ \ \ \ \ \ \ \ \qquad \left. \text{ and
+}\phi\left(  k\right)  >_{2}\phi\left(  k+1\right)  \right)  \\
+& \leq\left(  \text{the number of all anticostrictors}\right)  \\
+& \ \ \ \ \ \ \ \ \ \ -\dfrac{1}{2}\left(  \text{the number of all
+anticostrictors }\phi\text{ satisfying }\phi\left(  n-k\right)  \parallel
+_{1}\phi\left(  n-k+1\right)  \right)  \\
+& \ \ \ \ \ \ \ \ \ \ -\left(  \text{the number of all anticostrictors }%
+\phi\text{ satisfying }\phi\left(  k\right)  >_{1}\phi\left(  n-k+1\right)
+\right. \\
+& \ \ \ \ \ \ \ \ \ \ \qquad \left.
+\text{ and }\phi\left(  k\right)  >_{2}\phi\left(  n-k+1\right)  \right)  .
+\end{align*}
+Using the 1-to-1 correspondence between the costrictors and the
+anticostrictors (which we already used in the proof of Fact 1), we can rewrite
+this as%
+\begin{align*}
+& \dfrac{1}{2}\left(  \text{the number of all costrictors }\phi\text{
+satisfying }\phi\left(  k\right)  \parallel_{1}\phi\left(  k+1\right)
+\right)  \\
+& \ \ \ \ \ \ \ \ \ \ +\left(  \text{the number of all costrictors }\phi\text{
+satisfying }\phi\left(  k\right)  <_{1}\phi\left(  k+1\right) \right. \\
+& \ \ \ \ \ \ \ \ \ \ \qquad \left. \text{ and
+}\phi\left(  k\right)  >_{2}\phi\left(  k+1\right)  \right)  \\
+& \leq\left(  \text{the number of all costrictors}\right)  \\
+& \ \ \ \ \ \ \ \ \ \ -\dfrac{1}{2}\left(  \text{the number of all costrictors
+}\phi\text{ satisfying }\phi\left(  k\right)  \parallel_{1}\phi\left(
+k+1\right)  \right)  \\
+& \ \ \ \ \ \ \ \ \ \ -\left(  \text{the number of all costrictors }\phi\text{
+satisfying }\phi\left(  k\right)  <_{1}\phi\left(  k+1\right) \right. \\
+& \ \ \ \ \ \ \ \ \ \ \qquad \left. \text{ and
+}\phi\left(  k\right)  <_{2}\phi\left(  k+1\right)  \right)
+\end{align*}
+(here, we have used the fact that $\left(  \phi\circ w_{0}\right)  \left(
+n-k\right)  =\phi\left(  \underbrace{w_{0}\left(  n-k\right)  }_{=k+1}\right)
+=\phi\left(  k+1\right)  $ and $\left(  \phi\circ w_{0}\right)  \left(
+n-k+1\right)  =\phi\left(  \underbrace{w_{0}\left(  n-k+1\right)  }%
+_{=k}\right)  =\phi\left(  k\right)  $). This simplifies to%
+\begin{align*}
+& \left(  \text{the number of all costrictors }\phi\text{ satisfying }%
+\phi\left(  k\right)  \parallel_{1}\phi\left(  k+1\right)  \right)  \\
+& \ \ \ \ \ \ \ \ \ \ +\left(  \text{the number of all costrictors }\phi\text{
+satisfying }\phi\left(  k\right)  <_{1}\phi\left(  k+1\right)  \right. \\
+& \ \ \ \ \ \ \ \ \ \ \qquad \left.\text{ and
+}\phi\left(  k\right)  >_{2}\phi\left(  k+1\right)  \right)  \\
+& \ \ \ \ \ \ \ \ \ \ +\left(  \text{the number of all costrictors }\phi\text{
+satisfying }\phi\left(  k\right)  <_{1}\phi\left(  k+1\right)  \right. \\
+& \ \ \ \ \ \ \ \ \ \ \qquad \left.\text{ and
+}\phi\left(  k\right)  <_{2}\phi\left(  k+1\right)  \right)  \\
+& \leq\left(  \text{the number of all costrictors}\right)  .
+\end{align*}
+This inequality is clearly satisfied (since each costrictor $\phi$ satisfies
+at most one of the relations $\phi\left(  k\right)  \parallel_{1}\phi\left(
+k+1\right)  $, $\left(  \phi\left(  k\right)  <_{1}\phi\left(  k+1\right)
+\text{ and }\phi\left(  k\right)  >_{2}\phi\left(  k+1\right)  \right)  $ and
+$\left(  \phi\left(  k\right)  <_{1}\phi\left(  k+1\right)  \text{ and }%
+\phi\left(  k\right)  <_{2}\phi\left(  k+1\right)  \right)  $). Thus, the
+inequality (\ref{eq.rmk.antipode.Gamma.converse.ineq}) is proven. It now
+remains to show that equality holds only when the double poset $\left(
+E,<_{1},<_{2}\right)  $ is tertispecial.
+
+Indeed, assume that $\left(  E,<_{1},<_{2}\right)  $ is not tertispecial.
+Then, there exist two elements $a$ and $b$ of $E$ such that $a$ is $<_{1}%
+$-covered by $b$ but $a$ and $b$ are not $<_{2}$-comparable. Consider such $a$
+and $b$. There exists at least one pair $\left(  \phi,k\right)  $ of a
+costrictor $\phi$ and an element $k\in\left\{  1,2,\ldots,n-1\right\}  $
+satisfying $\phi\left(  k\right)  =a$ and $\phi\left(  k+1\right)  =b$. (In
+fact, in order to construct such a constrictor, we write our set $E$ as the
+disjoint union $E=E_{1}\cup\left\{  a\right\}  \cup\left\{  b\right\}  \cup
+E_{2}$, where $E_{1}=\left\{  e\in E\ \mid\ e<_{1}b\text{ and }e\neq
+a\right\}  $ and $E_{2}=\left\{  e\in E\ \mid\ \text{neither }e<_{1}b\text{
+nor }e=b\right\}  $. Then, we set $k=\left\vert E_{1}\right\vert +1$, and
+choose strictly increasing bijections $\alpha:E_{1}\rightarrow\left[
+k-1\right]  $ and $\beta:E_{2}\rightarrow\left[  n-k-1\right]  $. Finally, we
+define a map $\gamma:E\rightarrow\left[  n\right]  $ by $\gamma\left(
+e\right)  =%
+\begin{cases}
+\alpha\left(  e\right)  , & \text{if }e\in E_{1};\\
+k, & \text{if }e=a;\\
+k+1, & \text{if }e=b;\\
+\beta\left(  e\right)  , & \text{if }e\in E_{2}%
+\end{cases}
+$, and define $\phi$ to be $\gamma^{-1}$. It is not hard to check that $\phi$
+is a costrictor.) This causes one of the inequalities from which we obtained
+(\ref{eq.rmk.antipode.Gamma.converse.ineq}) to be strict. This completes the
+(outline of the) proof.
+\end{verlong}
+\end{remark}
 
 \section{Lemmas: packed $\EE$-partitions and comultiplications}
 \label{sect.lemmas}
@@ -5375,39 +5630,13 @@ given by $\left(  p<_{\omega}q\right)  \Longleftrightarrow\left(
 formula of \cite[Theorem 2.13]{Joch} can also be derived from our above
 arguments. We leave the details to the reader.
 
-\section{Further questions}
+\section{A final question}
 
 With the results proven above (specificially, Theorems
-\ref{thm.antipode.Gammaw} and \ref{thm.antipode.Gammaw}), we have obtained
+\ref{thm.antipode.Gammaw} and \ref{thm.antipode.GammawG}), we have obtained
 formulas for a large class of quasisymmetric generating functions for maps
-from a double poset to $\left\{  1,2,3,\ldots\right\}  $. Several natural
-questions arise:
-
-\begin{question}
-What happens to the above results when $\mathbf{E}$ is no longer required to
-be tertispecial? We know that the tertispeciality condition on $\mathbf{E}$ is
-sufficient (say) for Corollary \ref{cor.antipode.Gamma}, but is it also
-necessary, or are there non-tertispecial double posets for which Corollary
-\ref{cor.antipode.Gamma} nevertheless holds? It is not hard to see
-that, among the double
-posets $\mathbf{E}=\left(  E,<_{1},<_{2}\right)  $ with $<_{1}$ being a
-total order, \textbf{only} the tertispecial ones satisfy the conclusion of
-Corollary \ref{cor.antipode.Gamma}.
-% Why? It is clearly enough to consider the case when
-% $E = \left\{1,2,\ldots,n\right\}$ and $<_1 = <_{\ZZ}$. In this case,
-% $\Gamma\left(\EE\right) = M_{\left(1^n\right)}
-% + \sum_k M_{\left(1^{k-1},2,1^{n-k}\right)}
-% + \text{(a sum of } M_\alpha \text{ with } \ell(\alpha) < n-1
-%    \text{)}$, where the first sum
-% ranges over all $k$ that do not satisfy $k+1 <_2 k$. Apply the
-% antipode $S$ using the formula in Example~\ref{exam.antipode.Gammaw}
-% (b). Again, throw away all $M_\alpha$ with $\ell(\alpha) < n-1$.
-% Compare with $\Gamma\left(\left(E, >_1, <_2\right)\right)$.
-However, the question remains unanswered for the many
-double posets for which $<_{1}$ is
-not a total order. Neither a positive nor a
-negative answer would surprise me.
-\end{question}
+from a double poset to $\left\{  1,2,3,\ldots\right\}  $. At least one
+question arises:
 
 \begin{question}
 In \cite{Gri-nbc}, I have studied generalizations of Whitney's famous
