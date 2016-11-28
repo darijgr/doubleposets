@@ -1615,6 +1615,8 @@ and
 \]
 hold. Hence, $\pack \pi$ is an $\EE$-partition
 if and only if $\pi$ is an $\EE$-partition.}.
+Hence, $\pack \pi$ is a packed $\EE$-partition for every
+$\EE$-partition $\pi$.
 
 We shall show that for every packed $\EE$-partition $\varphi$, we
 have
@@ -1651,8 +1653,7 @@ w\left(e\right)$ for every $i \in \left\{ 1, 2, \ldots, \ell \right\}$;
 thus,
 $\ev_w \varphi = \left(\alpha_1, \alpha_2, \ldots, \alpha_\ell\right)$
 (by the definition of $\ev_w \varphi$).
-Then, the right hand side of
-\eqref{pf.prop.Gammaw.packed.1} rewrites as follows:
+Hence, the definition of $M_{\ev_w \varphi}$ yields
 \begin{align}
 M_{\ev_w \varphi}
 &= \sum_{i_1 < i_2 < \cdots < i_\ell}
@@ -1687,14 +1688,10 @@ _{ = \prod_{e \in E} x_{i_{\varphi\left(e\right)}}^{w\left(e\right)}}
 \prod_{e \in E} x_{i_{\varphi\left(e\right)}}^{w\left(e\right)}
 \nonumber \\
 &= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
-\underbrace{\prod_{e \in E} x_{r_T\left(\varphi\left(e\right)\right)}^{w\left(e\right)}}
-           _{= \prod_{e \in E} x_{\left(r_T\circ \varphi\right)\left(e\right)}^{w\left(e\right)}
-             = \xx_{r_T\circ\varphi,w}}
-= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
-\xx_{r_T\circ\varphi,w}
-\label{pf.prop.Gammaw.packed.1.pf.1}
+\prod_{e \in E} x_{r_T\left(\varphi\left(e\right)\right)}^{w\left(e\right)}
+\nonumber
 \end{align}
-\footnote{In the second-to-last equality, we have used the fact that
+\footnote{In the last equality, we have used the fact that
 the strictly increasing sequences
 $\left(i_1 < i_2 < \cdots < i_\ell\right)$ of positive integers are
 in bijection with the subsets
@@ -1703,7 +1700,20 @@ such that $\left|T\right| = \ell$. The bijection sends a sequence
 $\left(i_1 < i_2 < \cdots < i_\ell\right)$ to the set of its entries;
 its inverse map sends every $T$ to the sequence
 $\left(r_T\left(1\right), r_T\left(2\right), \ldots,
-r_T\left(\left|T\right|\right)\right)$.}.
+r_T\left(\left|T\right|\right)\right)$.}. Hence,
+\begin{align}
+M_{\ev_w \varphi}
+&= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
+\underbrace{\prod_{e \in E} x_{r_T\left(\varphi\left(e\right)\right)}^{w\left(e\right)}}
+           _{\substack{
+              = \prod_{e \in E} x_{\left(r_T\circ \varphi\right)\left(e\right)}^{w\left(e\right)}
+              = \xx_{r_T\circ\varphi,w} \\
+              \text{(by the definition of } \xx_{r_T\circ\varphi,w} \text{)}
+             }}
+= \sum_{T \subseteq \left\{1, 2, 3, \ldots\right\} ; \ \left|T\right| = \ell}
+\xx_{r_T\circ\varphi,w} .
+\label{pf.prop.Gammaw.packed.1.pf.1}
+\end{align}
 
 On the other hand, recall that $\varphi$ is an $\EE$-partition.
 Hence, every map $\pi$ satisfying $\pack \pi = \varphi$
@@ -1757,11 +1767,13 @@ and $\pi\left(  E\right)  =T$.
 map satisfying $\operatorname{pack}\pi=\varphi$ and $\pi\left(  E\right)  =T$,
 then $\pi=r_{T}\circ\varphi$.
 
-\textit{Proof of Claim 1.} We have $\left(  r_{T}\circ\varphi\right)  \left(
+\textit{Proof of Claim 1.} We have $\left|T\right| = \ell$ (since the set
+$T$ is $\ell$-element), thus $\ell = \left|T\right|$.
+We have $\left(  r_{T}\circ\varphi\right)  \left(
 E\right)  =r_{T}\left(  \underbrace{\varphi\left(  E\right)  }_{=\left\{
 1,2,\ldots,\ell\right\}  }\right)  =r_{T}\left(  \left\{  1,2,\ldots
-,\underbrace{\ell}_{\substack{=\left\vert T\right\vert \\\text{(since }T\text{
-is }\ell\text{-element)}}}\right\}  \right)  =r_{T}\left(  \left\{
+,\underbrace{\ell}_{=\left\vert T\right\vert }\right\}  \right)
+=r_{T}\left(  \left\{
 1,2,\ldots,\left\vert T\right\vert \right\}  \right)  =T$ (by the definition
 of $r_{T}$). Now, the definition of $\operatorname{pack}\left(  r_{T}%
 \circ\varphi\right)  $ shows that
@@ -1816,7 +1828,8 @@ is proven, and with it Proposition~\ref{prop.Gammaw.packed}.
 
 \begin{proof}[Proof of Proposition~\ref{prop.Gammaw.qsym}.]
 Proposition~\ref{prop.Gammaw.qsym} follows immediately from
-Proposition~\ref{prop.Gammaw.packed}.
+Proposition~\ref{prop.Gammaw.packed}
+(since $M_\alpha \in QSym$ for every composition $\alpha$).
 \end{proof}
 
 We shall now describe the coproduct of $\Gamma\left(\EE, w\right)$,
@@ -1866,7 +1879,7 @@ the case when $w\left(e\right) = 1$ for each $e \in E$) appears in
 \cite[Th\'eor\`eme 4.16]{Malve-Thesis}.
 
 \begin{vershort}
-We shall now outline a proof of this fact. The proof relies on
+The proof of Proposition~\ref{prop.Gammaw.coprod} relies on
 a simple bijection that an experienced combinatorialist will
 have no trouble finding (and proving even less); let us just
 give a brief outline of the argument\footnote{See the detailed
@@ -2902,17 +2915,31 @@ _{1},\gamma_{2},\ldots,\gamma_{\ell-k}\right)  =\operatorname{ev}_{w\mid_{Q}%
 \par
 Thus, both parts of (\ref{pf.prop.Gammaw.coprod.evs}) are proven.}.
 
+If $\varphi : E \to \left\{1,2,3,\ldots\right\}$ is any packed map, then
+$\ev_w \varphi$ is a composition with $\left| \varphi\left(E\right) \right|$
+entries (by the definition of $\ev_w \varphi$), and thus it satisfies
+\begin{equation}
+\Delta \left( M_{\ev_w \varphi} \right)
+= \sum_{k=0}^{\left\vert \varphi\left(  E\right)  \right\vert }
+  M_{\left(  \operatorname{ev}_{w}\varphi\right)  \left[  :k\right] }
+  \otimes
+  M_{\left(  \operatorname{ev}_{w}\varphi\right)  \left[  k:\right] }
+\label{pf.prop.Gammaw.coprod.long.lhs-addend}
+\end{equation}
+(by \eqref{pf.prop.Gammaw.coprod.long.DeltaM}, applied to
+$\alpha = \ev_w \varphi$ and $\ell = \left| \varphi\left(E\right) \right|$).
+
 Now, applying $\Delta$ to the equality \eqref{eq.prop.Gammaw.packed} yields
 \begin{align}
-\Delta\left(  \Gamma\left(  {\mathbf{E}},w\right)  \right)   &  =\sum
-_{\varphi\text{ is a packed }{\mathbf{E}}\text{-partition}}\underbrace{\Delta
-\left(  M_{\operatorname{ev}_{w}\varphi}\right)  }_{\substack{=\sum
-_{k=0}^{\left\vert \varphi\left(  E\right)  \right\vert }M_{\left(
-\operatorname{ev}_{w}\varphi\right)  \left[  :k\right]  }\otimes M_{\left(
-\operatorname{ev}_{w}\varphi\right)  \left[  k:\right]  }\\\text{(by
-\eqref{pf.prop.Gammaw.coprod.long.DeltaM}, applied to }\alpha
-=\operatorname*{ev}\nolimits_{w}\varphi\text{ and }\ell=\left\vert
-\varphi\left(  E\right)  \right\vert \text{)}}}\nonumber\\
+\Delta \left( \Gamma \left( \EE, w \right) \right)
+&= \Delta \left( \sum_{\varphi \text{ is a packed } \EE\text{-partition}}
+  M_{\ev_w \varphi} \right) \nonumber \\
+&= \sum_{\varphi \text{ is a packed } \EE\text{-partition}}
+  \underbrace{\Delta \left( M_{\ev_w \varphi} \right)}_{\substack{
+    =\sum_{k=0}^{\left\vert \varphi\left(  E\right)  \right\vert }M_{\left(
+    \operatorname{ev}_{w}\varphi\right)  \left[  :k\right]  }\otimes M_{\left(
+    \operatorname{ev}_{w}\varphi\right)  \left[  k:\right]  }\\
+    \text{(by \eqref{pf.prop.Gammaw.coprod.long.lhs-addend})}}}\nonumber\\
 &  =\underbrace{\sum_{\varphi\text{ is a packed }{\mathbf{E}}\text{-partition}%
 }\sum_{k=0}^{\left\vert \varphi\left(  E\right)  \right\vert }}%
 _{\substack{=\sum_{\left(  \varphi,k\right)  \in\mathcal{S}}\\\text{(by the
@@ -2937,11 +2964,27 @@ On the other hand, rewriting each of the tensorands on the right hand side of
 }\mid_{Q},w\mid_{Q}\right)  }_{\substack{=\sum_{\varphi\text{ is a packed
 }{\mathbf{E}}\mid_{Q}\text{-partition}}M_{\operatorname{ev}_{w\mid_{Q}}%
 \varphi}\\\text{(by \eqref{eq.prop.Gammaw.packed})}}}\\
-&  =\sum_{\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}}\left(
-\sum_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}%
-}M_{\operatorname{ev}_{w\mid_{P}}\varphi}\right)  \otimes\left(  \sum
-_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}%
-}M_{\operatorname{ev}_{w\mid_{Q}}\varphi}\right)  \\
+&  =\sum_{\left(  P,Q\right)  \in \Adm \EE}
+\underbrace{ \left(
+ \sum_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}%
+  }M_{\operatorname{ev}_{w\mid_{P}}\varphi}\right)}
+  _{\substack{
+    = \sum_{\sigma\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}%
+    }M_{\operatorname{ev}_{w\mid_{P}}\sigma} \\
+    \text{(here, we have renamed the } \\
+    \text{summation index } \varphi \text{ as } \sigma \text{)}
+    }}
+\otimes
+\underbrace{ \left(
+ \sum_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}%
+  }M_{\operatorname{ev}_{w\mid_{Q}}\varphi}\right)}
+   _{\substack{
+     = \sum_{\tau\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}}%
+     M_{\operatorname{ev}_{w\mid_{Q}}\tau} \\
+    \text{(here, we have renamed the } \\
+    \text{summation index } \varphi \text{ as } \tau \text{)}
+    }}
+\\
 &  =\sum_{\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}}\left(
 \sum_{\sigma\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}%
 }M_{\operatorname{ev}_{w\mid_{P}}\sigma}\right)  \otimes\left(  \sum
@@ -3018,8 +3061,8 @@ $q$ is $<_1$-covered by $p$. Then, $\left(P, Q\right) \in
 For any $a \in E$ and $b \in E$, we let $\left[a, b\right]$
 denote the subset \newline
 $\left\{e \in E \mid a <_1 e <_1 b\right\}$ of $E$. It is
-clear that if $a$, $b$ and $c$ are three elements of $E$
-satisfying $a <_1 c <_1 b$, then
+easy to see that if $a$, $b$ and $c$ are three elements of
+$E$ satisfying $a <_1 c <_1 b$, then
 both $\left[a, c\right]$ and $\left[c, b\right]$ are proper
 subsets of $\left[a, b\right]$, and therefore
 \begin{equation}
@@ -3030,31 +3073,108 @@ subsets of $\left[a, b\right]$, and therefore
 \label{pf.lem.admissible.cover.1}
 \end{equation}
 
+\begin{verlong}%
+[\textit{Proof of \eqref{pf.lem.admissible.cover.1}:}
+Let $a$, $b$ and $c$ be three elements of $E$
+satisfying $a <_1 c <_1 b$.
+
+The definition of $\left[a, b\right]$ yields
+$\left[a, b\right]
+= \left\{e \in E \mid a <_1 e <_1 b\right\}$.
+Hence, $c \in \left[a, b\right]$ (since $a <_1 c <_1 b$).
+
+The definition of $\left[a, c\right]$ yields
+\[
+\left[a, c\right]
+= \left\{ e \in E \mid a <_1 e <_1 c \right\}
+\subseteq \left\{ e \in E \mid a <_1 e <_1 b \right\}
+\]
+(because every $e \in E$ satisfying $a <_1 e <_1 c$
+must also satisfy $e <_1 c <_1 b$ and therefore
+$a <_1 e <_1 b$). Thus,
+\[
+\left[a, c\right]
+\subseteq \left\{ e \in E \mid a <_1 e <_1 b \right\}
+= \left[a, b\right] .
+\]
+
+If we had $\left[a, c\right] = \left[a, b\right]$,
+then we would have $c \in \left[a, b\right]
+= \left[a, c\right]
+= \left\{ e \in E \mid a <_1 e <_1 c \right\}$
+and therefore $a <_1 c <_1 c$; but this would contradict the
+fact that we don't have $c <_1 c$. Thus, we cannot have
+$\left[a, c\right] = \left[a, b\right]$. Thus, we have
+$\left[a, c\right] \neq \left[a, b\right]$. Combining
+this with $\left[a, c\right] \subseteq \left[a, b\right]$,
+we conclude that $\left[a, c\right]$ is a proper
+subset of $\left[a, b\right]$.
+
+The definition of $\left[c, b\right]$ yields
+\[
+\left[c, b\right]
+= \left\{ e \in E \mid c <_1 e <_1 b \right\}
+\subseteq \left\{ e \in E \mid a <_1 e <_1 b \right\}
+\]
+(because every $e \in E$ satisfying $c <_1 e <_1 b$
+must also satisfy $a <_1 c <_1 e$ and therefore
+$a <_1 e <_1 b$). Thus,
+\[
+\left[c, b\right]
+\subseteq \left\{ e \in E \mid a <_1 e <_1 b \right\}
+= \left[a, b\right] .
+\]
+
+If we had $\left[c, b\right] = \left[a, b\right]$,
+then we would have $c \in \left[a, b\right]
+= \left[c, b\right]
+= \left\{ e \in E \mid c <_1 e <_1 b \right\}$
+and therefore $c <_1 c <_1 b$; but this would contradict the
+fact that we don't have $c <_1 c$. Thus, we cannot have
+$\left[c, b\right] = \left[a, b\right]$. Thus, we have
+$\left[c, b\right] \neq \left[a, b\right]$. Combining
+this with $\left[c, b\right] \subseteq \left[a, b\right]$,
+we conclude that $\left[c, b\right]$ is a proper
+subset of $\left[a, b\right]$.
+
+Thus, we have shown that both $\left[a, c\right]$ and
+$\left[c, b\right]$ are proper subsets of $\left[a, b\right]$.
+Hence, \eqref{pf.lem.admissible.cover.1} follows
+(since $\left[a, b\right]$ is a finite set). This completes
+the proof of \eqref{pf.lem.admissible.cover.1}.]
+\end{verlong}
+
 A pair $\left(p, q\right) \in P \times Q$ is said to be a
 \textit{malposition} if it satisfies $q <_1 p$. Now, let us
 assume (for the sake of contradiction) that there exists a
 malposition. Fix a malposition $\left(u, v\right)$ for which the
-value $\left|\left[u, v\right]\right|$ is minimum. Thus,
-$u \in P$, $v \in Q$ and $v <_1 u$, but $v$ is not
+value $\left|\left[v, u\right]\right|$ is minimum. Thus,
+$\left(u, v\right) \in P \times Q$ and $v <_1 u$.
+From $\left(u, v\right) \in P \times Q$, we obtain
+$u \in P$ and $v \in Q$. Hence, $v$ is not
 $<_1$-covered by $u$ (since there exist no $p \in P$ and $q \in Q$
 such that $q$ is $<_1$-covered by $p$). Hence, there exists a
 $w \in E$ such that $v <_1 w <_1 u$ (since $v <_1 u$). Consider
 this $w$. Applying \eqref{pf.lem.admissible.cover.1} to $a = v$,
 $c = w$ and $b = u$, we see that both numbers
-$\left|\left[u, w\right]\right|$ and
-$\left|\left[w, v\right]\right|$ are smaller than
-$\left|\left[u, v\right]\right|$, and therefore neither
-$\left(u, w\right)$ nor $\left(w, v\right)$ is a malposition
+$\left|\left[v, w\right]\right|$ and
+$\left|\left[w, u\right]\right|$ are smaller than
+$\left|\left[v, u\right]\right|$, and therefore neither
+$\left(w, v\right)$ nor $\left(u, w\right)$ is a malposition
 (since we picked $\left(u, v\right)$ to be a malposition with
-minimum $\left|\left[u, v\right]\right|$). But
+minimum $\left|\left[v, u\right]\right|$). But
 $w \in E = P \cup Q$, so that either $w \in P$ or $w \in Q$.
 If $w \in P$, then $\left(w, v\right)$ is a malposition;
 if $w \in Q$, then $\left(u, w\right)$ is a malposition. In
 either case, we obtain a contradiction to the fact that
-neither $\left(u, w\right)$ nor $\left(w, v\right)$ is a malposition.
+neither $\left(w, v\right)$ nor $\left(u, w\right)$ is a malposition.
 This contradiction shows that our assumption was wrong.
-Hence, there exists no malposition. Consequently,
-$\left(P, Q\right) \in \Adm \EE$.
+Hence, there exists no malposition. In other words, there
+exists no $\left(p, q\right) \in P \times Q$ satisfying
+$q <_1 p$ (since this is what ``malposition'' means). In
+other words, no $p \in P$ and $q \in Q$ satisfy $q <_1 p$.
+Consequently, $\left(P, Q\right) \in \Adm \EE$.
+This proves Lemma~\ref{lem.admissible.cover}.
 \end{proof}
 
 \begin{lemma}
