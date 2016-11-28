@@ -1267,9 +1267,11 @@ $\phi:\left[  n\right]  \rightarrow E$ whose inverse $\phi^{-1}:E\rightarrow
 E,<_{1}\right)  $ to $\left(  \left[  n\right]  ,<_{\mathbb{Z}}\right)  $.
 (The costrictors are in 1-to-1 correspondence with the linear extensions of
 $\left(  E,<_{1}\right)  $.) For two elements $e$ and $f$ of $E$, we write
-$e\parallel_{1}f$ if and only if $e$ and $f$ are not $<_{1}$-comparable. We
-shall abbreviate the $k$-tuple $\left(  1,1,\ldots,1\right)  $ as $\left(
-1^{k}\right)  $ for each $k\in\mathbb{N}$. Then, it is not hard to see that%
+$e\parallel_{1}f$ if and only if $e$ and $f$ are not $<_{1}$-comparable.
+Whenever $k \in \NN$, we shall use the notation $1^k$ for ``$k$ ones,
+written in a row''; thus, for example, $\left(3,1^5,4\right)$ is the
+composition $\left(3,1,1,1,1,1,5\right)$.
+Then, it is not hard to see that
 \begin{align*}
 & \Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \\
 & =\left(  \text{the number of all costrictors}\right)  M_{\left(
@@ -1352,7 +1354,7 @@ two facts:
 \item For each $k\in\left\{  1,2,\ldots,n-1\right\}  $, we have
 \[
 \left(  \text{the number of all costrictors}\right)  -\gamma_{\left(
-E,<_{1},<_{2}\right)  ,k}\leq\widetilde{\gamma}_{\left(  E,<_{1},>_{2}\right)
+E,<_{1},<_{2}\right)  ,k}\leq\widetilde{\gamma}_{\left(  E,<_{1},<_{2}\right)
 ,n-k}.
 \]
 
@@ -1368,7 +1370,7 @@ all costrictors equals the number of all anticostrictors. This proves Fact 1.
 
 Proving Fact 2 is harder. Fix $k\in\left\{  1,2,\ldots,n-1\right\}  $.
 Recalling our definition of $\gamma_{\left(  E,<_{1},<_{2}\right)  ,k}$ and
-$\widetilde{\gamma}_{\left(  E,<_{1},>_{2}\right)  ,n-k}$, we notice that we
+$\widetilde{\gamma}_{\left(  E,<_{1},<_{2}\right)  ,n-k}$, we notice that we
 must show%
 \begin{align*}
 & \dfrac{1}{2}\left(  \text{the number of all costrictors }\phi\text{
@@ -3411,10 +3413,11 @@ This proves Claim 1.
 Q\cup\left\{  f\right\}  $ be such that $a<_{1}b$ and $b<_{2}a$. We need to
 prove that $\pi\left(  a\right)  <\pi\left(  b\right)  $. If $a=f$, then this
 follows immediately from \eqref{eq.lem.Gammaw.toggle.eq2} (applied
-to $h=b$). Hence, we WLOG assume that $a\neq f$. Thus, $a\in Q$ (since $a\in
+to $h=b$) (because if $a = f$, then $b <_2 a = f$).
+Hence, we WLOG assume that $a\neq f$. Thus, $a\in Q$ (since $a\in
 Q\cup\left\{  f\right\}  $). Now, if $b\in P$, then $a<_{1}b$ contradicts
 \eqref{eq.lem.Gammaw.toggle.eq0} (applied to $p=b$ and $q=a$). Hence,
-we cannot have $b\in P$. Therefore, $b\in E\setminus P \subseteq Q$).
+we cannot have $b\in P$. Therefore, $b\in E\setminus P \subseteq Q$.
 Thus, $\pi\left(  a\right)  <\pi\left(
 b\right)  $ follows immediately from the fact that $\pi\mid_{Q}$ is a $\left(
 Q,<_{1},<_{2}\right)  $-partition (since $a \in Q$ and $b \in Q$ and
@@ -3449,17 +3452,20 @@ $\left(P, Q\right) \in \Adm \EE$ such that
 $\pi\mid_P$ is a $\left(P, >_1, <_2\right)$-partition and
 $\pi\mid_Q$ is a $\left(Q, <_1, <_2\right)$-partition. We are going
 to define an involution $T : Z \to Z$ of the set $Z$ having the
-property that, for any $\left(P, Q\right) \in Z$, if we write
+following property:
+\begin{statement}
+\textit{Property P:} Let $\left(P, Q\right) \in Z$. If we write
 $T\left(\left(P, Q\right)\right)$ in the form
 $\left(P', Q'\right)$, then
 $\left(-1\right)^{\left|P'\right|}
-= - \left(-1\right)^{\left|P\right|}$. Once such an involution $T$
+= - \left(-1\right)^{\left|P\right|}$.
+\end{statement}
+Once such an involution $T$
 is found, it will be clear that it matches the addends on the left
 hand side of \eqref{pf.thm.antipode.Gammaw.signrev} into pairs of
-mutually cancelling addends\footnote{In fact, the
-$\left(-1\right)^{\left|P'\right|}
-= - \left(-1\right)^{\left|P\right|}$ condition makes it clear that
-$T$ has no fixed points. Therefore, to each addend on the left
+mutually cancelling addends\footnote{In fact, Property P
+entails that $T$ has no fixed points. Therefore, to each addend
+on the left
 hand side of \eqref{pf.thm.antipode.Gammaw.signrev} corresponds an
 addend with opposite sign, which cancels it: Namely, for each
 $\left(A, B\right) \in Z$, the addend for
@@ -3476,22 +3482,29 @@ $\left(P, Q\right) \in \Adm \EE$ such that
 $\pi\mid_P$ is a $\left(P, >_1, <_2\right)$-partition and
 $\pi\mid_Q$ is a $\left(Q, <_1, <_2\right)$-partition. We are going
 to define an involution $T : Z \to Z$ of the set $Z$ having the
-property that, for any $\left(P, Q\right) \in Z$, if we write
+following property:
+\begin{statement}
+\textit{Property P:} Let $\left(P, Q\right) \in Z$. If we write
 $T\left(\left(P, Q\right)\right)$ in the form
 $\left(P', Q'\right)$, then
 $\left(-1\right)^{\left|P'\right|}
-= - \left(-1\right)^{\left|P\right|}$. Once such an involution $T$
+= - \left(-1\right)^{\left|P\right|}$.
+\end{statement}
+Once such an involution $T$
 is found, the equality \eqref{pf.thm.antipode.Gammaw.signrev} will
 follow\footnote{Here is the argument in detail:
 
 Assume that we have found an involution $T:Z\rightarrow Z$ of the set $Z$
-having the property that, for any $\left(  P,Q\right)  \in Z$, if we write
+satisfying Property P. Consider this $T$. Then,
+for any $\left(  P,Q\right)  \in Z$, if we write
 $T\left(  \left(  P,Q\right)  \right)  $ in the form $\left(  P^{\prime
 },Q^{\prime}\right)  $, then
 \begin{equation}
 \left(  -1\right)  ^{\left\vert P^{\prime}\right\vert }=-\left(  -1\right)
-^{\left\vert P\right\vert }.\label{pf.thm.antipode.Gammaw.signrev.final.1}%
+^{\left\vert P\right\vert }
+\label{pf.thm.antipode.Gammaw.signrev.final.1}
 \end{equation}
+(because Property P is satisfied).
 We now need to prove the equality \eqref{pf.thm.antipode.Gammaw.signrev}.
 
 The map $Z$ is an involution, and thus a bijection.
@@ -3890,7 +3903,8 @@ P\right\vert }$ (because $P^{\prime}=
 P\cup\left\{  f\right\}  , & \text{if }f\notin P;\\
 P\setminus\left\{  f\right\}  , & \text{if }f\in P
 \end{cases}
-$). As we have already explained, this proves
+$). In other words, the involution $T$ satisfies Property P.
+As we have already explained, this proves
 \eqref{pf.thm.antipode.Gammaw.signrev}. Hence,
 Lemma~\ref{lem.Gammaw.altsum} is proven.
 \end{proof}
