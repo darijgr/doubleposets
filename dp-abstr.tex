@@ -3652,7 +3652,8 @@ Thus, \eqref{pf.thm.antipode.Gammaw.signrev} is proven.
 } and we will be done. It thus remains to find $T$.
 \end{verlong}
 
-The definition of $T$ is simple (although it will take us a while to prove
+The definition of the map $T : Z \to Z$
+is simple (although it will take us a while to prove
 that it is well-defined): Let $F$ be the subset of $E$ consisting of those
 $e\in E$ for which the value $\pi \left( e \right)$ is minimum.
 Then, $F$ is a nonempty
@@ -3910,6 +3911,7 @@ We have now proven \eqref{pf.thm.antipode.Gammaw.Zwd} in both Cases 1 and 2.
 Thus, \eqref{pf.thm.antipode.Gammaw.Zwd} always holds. In other words, the map
 $T$ is well-defined.
 
+\begin{vershort}
 What the map $T$ does to a pair $\left(  P,Q\right)  \in Z$ can be described
 as moving the element $f$ from the set where it resides (either $P$ or $Q$) to
 the other set. Clearly, doing this twice gives us the original pair back.
@@ -3922,9 +3924,199 @@ P\right\vert }$ (because $P^{\prime}=
 P\cup\left\{  f\right\}  , & \text{if }f\notin P;\\
 P\setminus\left\{  f\right\}  , & \text{if }f\in P
 \end{cases}
-$). In other words, the involution $T$ satisfies Property P.
-As we have already explained, this proves
-\eqref{pf.thm.antipode.Gammaw.signrev}. Hence,
+$ and thus
+$\left|P^\prime\right| = \left|P\right| \pm 1$).
+In other words, the involution $T$ satisfies Property P.
+\end{vershort}
+\begin{verlong}
+Every $\alpha\in Z$ satisfies $\left(  T\circ T\right)  \left(  \alpha\right)
+=\operatorname*{id}\left(  \alpha\right)  $\ \ \ \ \footnote{\textit{Proof.}
+Let $\alpha\in Z$. We want to show that $\left(  T\circ T\right)  \left(
+\alpha\right)  =\operatorname*{id}\left(  \alpha\right)  $.
+\par
+We have $\alpha\in Z$. In other words, $\alpha$ can be written in the form
+$\alpha=\left(  P,Q\right)  $ for some $\left(  P,Q\right)  \in
+\operatorname{Adm}{\mathbf{E}}$ having the property that $\pi\mid_{P}$ is a
+$\left(  P,>_{1},<_{2}\right)  $-partition and $\pi\mid_{Q}$ is a $\left(
+Q,<_{1},<_{2}\right)  $-partition (by the definition of $Z$). Write $\alpha$
+in this form.
+\par
+From $\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}$, we see that
+$P\cap Q=\varnothing$ and $P\cup Q=E$, and furthermore that no $p\in P$ and
+$q\in Q$ satisfy $q<_{1}p$. From $P\cap Q=\varnothing$ and $P\cup Q=E$, we
+conclude that $P=E\setminus Q$ and $Q=E\setminus P$.
+\par
+We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $f\in P$.
+\par
+\textit{Case 2:} We have $f\notin P$.
+\par
+Let us first consider Case 1. In this case, we have $f\in P$. Hence, $f\notin
+E\setminus P=Q$. Clearly, $f\notin P\setminus\left\{  f\right\}  $ (since
+$f\in\left\{  f\right\}  $) and $\left\{  f\right\}  \subseteq P$ (since $f\in
+P$). Furthermore, the sets $Q$ and $\left\{  f\right\}  $ are disjoint (since
+$f\notin Q$). Now,%
+\begin{align*}
+T\left(  \underbrace{\alpha}_{=\left(  P,Q\right)  }\right)    & =T\left(
+\left(  P,Q\right)  \right)  =%
+\begin{cases}
+\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)  , &
+\text{if }f\notin P;\\
+\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)  , &
+\text{if }f\in P
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }T\right)  \\
+& =\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\in P\right)  .
+\end{align*}
+Now,%
+\begin{align*}
+\left(  T\circ T\right)  \left(  \alpha\right)    & =T\left(
+\underbrace{T\left(  \alpha\right)  }_{=\left(  P\setminus\left\{  f\right\}
+,Q\cup\left\{  f\right\}  \right)  }\right)  =T\left(  \left(  P\setminus
+\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)  \right)  \\
+& =%
+\begin{cases}
+\left(  \left(  P\setminus\left\{  f\right\}  \right)  \cup\left\{  f\right\}
+,\left(  Q\cup\left\{  f\right\}  \right)  \setminus\left\{  f\right\}
+\right)  , & \text{if }f\notin P\setminus\left\{  f\right\}  ;\\
+\left(  \left(  P\setminus\left\{  f\right\}  \right)  \setminus\left\{
+f\right\}  ,\left(  Q\cup\left\{  f\right\}  \right)  \cup\left\{  f\right\}
+\right)  , & \text{if }f\in P\setminus\left\{  f\right\}
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }T\right)  \\
+& =\left(  \underbrace{\left(  P\setminus\left\{  f\right\}  \right)
+\cup\left\{  f\right\}  }_{\substack{=P\\\text{(since }\left\{  f\right\}
+\subseteq P\text{)}}},\underbrace{\left(  Q\cup\left\{  f\right\}  \right)
+\setminus\left\{  f\right\}  }_{\substack{=Q\\\text{(since the sets }Q\text{
+and }\left\{  f\right\}  \text{ are disjoint)}}}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\notin P\setminus\left\{  f\right\}
+\right)  \\
+& =\left(  P,Q\right)  =\alpha=\operatorname*{id}\left(  \alpha\right)  .
+\end{align*}
+Hence, $\left(  T\circ T\right)  \left(  \alpha\right)  =\operatorname*{id}%
+\left(  \alpha\right)  $ is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $f\notin P$. Hence, $f\in
+E\setminus P=Q$. Clearly, $f\in\left\{  f\right\}  \subseteq P\cup\left\{
+f\right\}  $. Also, $\left\{  f\right\}  \subseteq Q$ (since $f\in Q$).
+Furthermore, the sets $P$ and $\left\{  f\right\}  $ are disjoint (since
+$f\notin P$). Now,%
+\begin{align*}
+T\left(  \underbrace{\alpha}_{=\left(  P,Q\right)  }\right)    & =T\left(
+\left(  P,Q\right)  \right)  =%
+\begin{cases}
+\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)  , &
+\text{if }f\notin P;\\
+\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)  , &
+\text{if }f\in P
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }T\right)  \\
+& =\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\notin P\right)  .
+\end{align*}
+Now,%
+\begin{align*}
+\left(  T\circ T\right)  \left(  \alpha\right)    & =T\left(
+\underbrace{T\left(  \alpha\right)  }_{=\left(  P\cup\left\{  f\right\}
+,Q\setminus\left\{  f\right\}  \right)  }\right)  =T\left(  \left(
+P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)  \right)  \\
+& =%
+\begin{cases}
+\left(  \left(  P\cup\left\{  f\right\}  \right)  \cup\left\{  f\right\}
+,\left(  Q\setminus\left\{  f\right\}  \right)  \setminus\left\{  f\right\}
+\right)  , & \text{if }f\notin P\cup\left\{  f\right\}  ;\\
+\left(  \left(  P\cup\left\{  f\right\}  \right)  \setminus\left\{  f\right\}
+,\left(  Q\setminus\left\{  f\right\}  \right)  \cup\left\{  f\right\}
+\right)  , & \text{if }f\in P\cup\left\{  f\right\}
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }T\right)  \\
+& =\left(  \underbrace{\left(  P\cup\left\{  f\right\}  \right)
+\setminus\left\{  f\right\}  }_{\substack{=P\\\text{(since the sets }P\text{
+and }\left\{  f\right\}  \text{ are disjoint)}}},\underbrace{\left(
+Q\setminus\left\{  f\right\}  \right)  \cup\left\{  f\right\}  }%
+_{\substack{=Q\\\text{(since }\left\{  f\right\}  \subseteq Q\text{)}%
+}}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\in P\cup\left\{
+f\right\}  \right)  \\
+& =\left(  P,Q\right)  =\alpha=\operatorname*{id}\left(  \alpha\right)  .
+\end{align*}
+Hence, $\left(  T\circ T\right)  \left(  \alpha\right)  =\operatorname*{id}%
+\left(  \alpha\right)  $ is proven in Case 2.
+\par
+We have now proven $\left(  T\circ T\right)  \left(  \alpha\right)
+=\operatorname*{id}\left(  \alpha\right)  $ in both Cases 1 and 2. Thus,
+$\left(  T\circ T\right)  \left(  \alpha\right)  =\operatorname*{id}\left(
+\alpha\right)  $ always holds. Qed.}. In other words, $T\circ
+T=\operatorname*{id}$. In other words, the map $T$ is an involution.
+Furthermore, this involution $T$ satisfies Property
+P\ \ \ \ \footnote{\textit{Proof.} Let $\left(  P,Q\right)  \in Z$. Write
+$T\left(  \left(  P,Q\right)  \right)  $ in the form $\left(  P^{\prime
+},Q^{\prime}\right)  $. Then, we must prove that $\left(  -1\right)
+^{\left\vert P^{\prime}\right\vert }=-\left(  -1\right)  ^{\left\vert
+P\right\vert }$.
+\par
+We are in one of the following two cases:
+\par
+\textit{Case 1:} We have $f\in P$.
+\par
+\textit{Case 2:} We have $f\notin P$.
+\par
+Let us first consider Case 1. In this case, we have $f\in P$. Now,%
+\begin{align*}
+\left(  P^{\prime},Q^{\prime}\right)    & =T\left(  \left(  P,Q\right)
+\right)  =%
+\begin{cases}
+\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)  , &
+\text{if }f\notin P;\\
+\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)  , &
+\text{if }f\in P
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }T\right)  \\
+& =\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\in P\right)  .
+\end{align*}
+In other words, $P^{\prime}=P\setminus\left\{  f\right\}  $ and $Q^{\prime
+}=Q\cup\left\{  f\right\}  $. Now, $\left\vert \underbrace{P^{\prime}%
+}_{=P\setminus\left\{  f\right\}  }\right\vert =\left\vert P\setminus\left\{
+f\right\}  \right\vert =\left\vert P\right\vert -1$ (since $f\in P$), and thus
+$\left(  -1\right)  ^{\left\vert P^{\prime}\right\vert }=\left(  -1\right)
+^{\left\vert P\right\vert -1}=-\left(  -1\right)  ^{\left\vert P\right\vert }%
+$. Hence, $\left(  -1\right)  ^{\left\vert P^{\prime}\right\vert }=-\left(
+-1\right)  ^{\left\vert P\right\vert }$ is proven in Case 1.
+\par
+Let us now consider Case 2. In this case, we have $f\notin P$. Now,%
+\begin{align*}
+\left(  P^{\prime},Q^{\prime}\right)    & =T\left(  \left(  P,Q\right)
+\right)  =%
+\begin{cases}
+\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)  , &
+\text{if }f\notin P;\\
+\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{  f\right\}  \right)  , &
+\text{if }f\in P
+\end{cases}
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }T\right)  \\
+& =\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{  f\right\}  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\notin P\right)  .
+\end{align*}
+In other words, $P^{\prime}=P\cup\left\{  f\right\}  $ and $Q^{\prime
+}=Q\setminus\left\{  f\right\}  $. Now, $\left\vert \underbrace{P^{\prime}%
+}_{=P\cup\left\{  f\right\}  }\right\vert =\left\vert P\cup\left\{  f\right\}
+\right\vert =\left\vert P\right\vert +1$ (since $f\notin P$), and thus
+$\left(  -1\right)  ^{\left\vert P^{\prime}\right\vert }=\left(  -1\right)
+^{\left\vert P\right\vert +1}=-\left(  -1\right)  ^{\left\vert P\right\vert }%
+$. Hence, $\left(  -1\right)  ^{\left\vert P^{\prime}\right\vert }=-\left(
+-1\right)  ^{\left\vert P\right\vert }$ is proven in Case 2.
+\par
+We have now proven $\left(  -1\right)  ^{\left\vert P^{\prime}\right\vert
+}=-\left(  -1\right)  ^{\left\vert P\right\vert }$ in both Cases 1 and 2.
+Thus, $\left(  -1\right)  ^{\left\vert P^{\prime}\right\vert }=-\left(
+-1\right)  ^{\left\vert P\right\vert }$ always holds. This completes the proof
+of Property P.}. We thus have defined an involution $T:Z\rightarrow Z$ of the
+set $Z$ satisfying Property P. This was precisely our goal.
+\end{verlong}
+As we have already
+explained, this proves \eqref{pf.thm.antipode.Gammaw.signrev}. Hence,
 Lemma~\ref{lem.Gammaw.altsum} is proven.
 \end{proof}
 
