@@ -3186,32 +3186,48 @@ a tertispecial double poset.
 \end{lemma}
 
 \begin{proof}[Proof of Lemma~\ref{lem.tertispecial.subset}.]
+Recall that we are using the symbol $<_1$ to denote two
+different relations:
+a strict partial order on $E$, and its restriction to $P$.
+This abuse of notation is usually harmless, but in the
+current proof it is dangerous, because it causes the statement
+``$a$ is $<_1$-covered by $b$'' (for two elements $a$ and
+$b$ of $P$) to carry two meanings (depending on whether the
+symbol $<_1$ is interpreted as the strict partial order on
+$E$, or as its restriction to $P$). (These two meanings are
+actually equivalent, but their equivalence is not immediately
+obvious.)
+
+Thus, for the duration of this proof, we shall revert to a
+less ambiguous notation. Namely, the notation $<_1$ shall
+only be used for the strict partial order on $E$ which
+constitutes part of the double poset $\EE$. The restriction
+of this partial order $<_1$ to the subset $P$ will be denoted
+by $<_{1,P}$ (not by $<_1$). Similarly, the restriction of
+the partial order $<_2$ to the subset $P$ will be denoted by
+$<_{2,P}$ (not by $<_2$). Thus, the double poset
+$\EE\mid_P$ is defined as
+$\EE\mid_P = \left(P, <_{1,P}, <_{2,P}\right)$.
+
 We need to show that the double poset
-$\EE\mid_P = \left(P, <_1, <_2\right)$ is tertispecial. In other
-words, we need to show that if $a$ and $b$ are two elements
-of $P$ such that $a$ is $<_1$-covered by $b$ as element of
-the set $P$, then $a$ and $b$ are $<_2$-comparable.\footnote{Here, we
-are using the following notation: If $T$ is a subset of $E$, and if
-$u$ and $v$ are two elements of $T$, then we say that ``$u$ is
-$<_1$-covered by $v$ as element of the set $T$'' if and only if
-$u$ is $<_{1, T}$-covered by $v$, where
-$<_{1,T}$ denotes the relation $<_1$ on the set $T$ (not the relation
-$<_1$ on the set $E$). In general, saying that $u$ is $<_1$-covered
-by $v$ as element of the set $T$ is \textbf{not} equivalent to
-saying that $u$ is $<_1$-covered by $v$ as element of
-the set $E$ (because there might be an element $w$ of $E$ satisfying
-$u <_1 w <_1 v$, but no such element that belongs to $T$). Rather,
-$u$ is $<_1$-covered by $v$ as element of the set $T$ if and only if
-$u <_1 v$ and there exists no $w \in T$ satisfying $u <_1 w <_1 v$.}
+$\EE\mid_P = \left(P, <_{1,P}, <_{2,P}\right)$ is
+tertispecial. In other words, we need to show that if $a$
+and $b$ are two elements of $P$ such that $a$ is
+$<_{1,P}$-covered by $b$, then $a$ and $b$
+are $<_{2,P}$-comparable.
 
 Let $a$ and $b$ be two elements of $P$ such that $a$ is
-$<_1$-covered by $b$ as element of the set $P$. Thus,
-$a <_1 b$, and
+$<_{1,P}$-covered by $b$. Thus,
+$a <_{1,P} b$, and
 \begin{equation}
 \text{there exists no } c \in P \text{ satisfying }
-a <_1 c <_1 b .
+a <_{1,P} c <_{1,P} b .
 \label{pf.lem.tertispecial.subset.1}
 \end{equation}
+
+We have $a <_{1,P} b$. In other words, $a <_1 b$ (since
+$<_{1,P}$ is the restriction of the relation $<_1$ to $P$).
+
 Now, if $c \in E$ is such that $a <_1 c <_1 b$, then $c$ must
 belong to $P$\ \ \ \ \footnote{\textit{Proof.} Assume the
 contrary. Thus, $c \notin P$. But
@@ -3227,16 +3243,30 @@ $c \in E\setminus P \subseteq Q$ (since $P \cup Q = E$).
 Applying \eqref{pf.lem.tertispecial.subset.2} to $p = b$ and
 $q = c$, we thus conclude that we cannot have $c <_1 b$.
 This contradicts $c <_1 b$. This contradiction shows that our
-assumption was false, qed.}, which entails a
+assumption was false, qed.}, and therefore satisfy
+$a <_{1,P} c <_{1,P} b$\ \ \ \ \footnote{\textit{Proof.}
+Let $c \in E$ be such that $a <_1 c <_1 b$. Then, $c$ must
+belong to $P$ (as we have just proven). Now, $a <_1 c$. In
+light of $a \in P$ and $c \in P$, this rewrites as
+$a <_{1,P} c$ (since $<_{1,P}$ is the restriction of the
+relation $<_1$ to $P$). Similarly, $c <_1 b$ rewrites as
+$c <_{1,P} b$. Thus, $a <_{1,P} c <_{1,P} b$, qed.},
+which entails a
 contradiction to \eqref{pf.lem.tertispecial.subset.1}. Thus, there
 is no $c \in E$ satisfying $a <_1 c <_1 b$. Therefore (and
 because we have $a <_1 b$), we see that $a$ is $<_1$-covered
-by $b$ as element of the set $E$. Since $\EE$ is tertispecial,
-this yields that $a$ and $b$ are $<_2$-comparable.
+by $b$. Since $\EE$ is tertispecial,
+this yields that $a$ and $b$ are $<_2$-comparable. In other
+words, either $a <_2 b$ or $a = b$ or $b <_2 a$. Since $a$ and
+$b$ both belong to $P$, we can rewrite this by replacing the
+relation $<_2$ by its restriction $<_{2,P}$. We thus conclude
+that either $a <_{2,P} b$ or $a = b$ or $b <_{2,P} a$. In other
+words, $a$ and $b$ are $<_{2,P}$-comparable.
 
+Now, forget that we fixed $a$ and $b$.
 Thus, we have shown that if $a$ and $b$ are two elements
-of $P$ such that $a$ is $<_1$-covered by $b$ as element of
-the set $P$, then $a$ and $b$ are $<_2$-comparable. This proves
+of $P$ such that $a$ is $<_{1,P}$-covered by $b$, then $a$ and
+$b$ are $<_{2,P}$-comparable. This completes the proof of
 Lemma~\ref{lem.tertispecial.subset}.
 
 (We could similarly show that $\EE\mid_Q$ is a tertispecial
@@ -3257,11 +3287,13 @@ double poset. Let $w:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ be a map.
 
 \begin{proof}
 [Proof of Lemma \ref{lem.Gammaw.empty}.] (a) Part (a) is obvious (since there is
-only one $\mathbf{E}$-partition when $E=\varnothing$).
+only one $\EE$-partition $\pi$ when $E=\varnothing$, and since
+this $\EE$-partition $\pi$ satisfies $\xx_{\pi, w} = 1$).
 
-(b) Observe that $\Gamma\left(  \mathbf{E},w\right)  $ is a homogeneous power
-series of degree $\sum_{e\in E}w\left(  e\right)  $. When $E \neq \varnothing$,
-this degree is $>0$, and thus the power series $\Gamma\left(  \mathbf{E},w\right)$
+(b) Observe that $\Gamma \left( \EE, w \right)$ is a homogeneous power
+series of degree $\sum_{e\in E} w\left( e \right)$. When $E \neq \varnothing$,
+this degree is $>0$ (since it is then a nonempty sum of positive integers),
+and thus the power series $\Gamma \left( \EE, w \right)$
 is annihilated by $\varepsilon$ (since $\varepsilon$ annihilates any
 homogeneous power series in $\QSym$ whose degree is $> 0$).
 \end{proof}
