@@ -4148,7 +4148,7 @@ where $\succ_1$ denotes the opposite relation of $\prec_1$.
 \end{verlong}
 Our goal
 is to show that
-$S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
+$S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right) \right)
 = \left(-1\right)^{\left|E\right|}
 \Gamma\left(\left(E, >_1, <_2\right), w\right)$.
 Here, as usual, $>_1$ denotes the opposite relation of $<_1$.
@@ -4753,7 +4753,7 @@ so that
 &= S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right)\right) ,
 \end{align*}
 and thus
-$S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
+$S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right) \right)
 = \left(-1\right)^{\left|E\right|}
 \Gamma\left(\left(E, >_1, <_2\right), w\right)$.
 \end{vershort}
@@ -4802,7 +4802,7 @@ so that
 &= S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right)\right) ,
 \end{align*}
 and thus
-$S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
+$S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right)\right)
 = \left(-1\right)^{\left|E\right|}
 \Gamma\left(\left(E, >_1, <_2\right), w\right)$.
 \end{verlong}
@@ -4867,7 +4867,7 @@ If $u$ was $<_1$-covered by $v$, then we would obtain
 $\phi\left(u\right) \leq \phi\left(v\right)$
 \ \ \ \ \footnote{\textit{Proof.} Assume that $u$ is
 $<_1$-covered by $v$. Thus, $u$ and $v$ are $<_2$-comparable
-(since the poset $\EE$ is tertispecial). In other words,
+(since the double poset $\EE$ is tertispecial). In other words,
 we have either $u <_2 v$ or $u = v$ or $v <_2 u$. In the
 first of these three cases, we obtain
 $\phi\left(u\right) \leq \phi\left(v\right)$ by applying
@@ -4879,7 +4879,7 @@ by applying Condition 2 to $e = u$ and $f = v$. The second
 of these cases cannot happen because $u <_1 v$. Thus, we
 always have $\phi\left(u\right) \leq \phi\left(v\right)$,
 qed.}, which would
-contradict the assumption that we do not have
+contradict the fact that we do not have
 $\phi\left(u\right) \leq \phi\left(v\right)$. Hence, $u$ is not
 $<_1$-covered by $v$. Consequently, there exists a $w \in E$
 such that $u <_1 w <_1 v$ (since $u <_1 v$). Consider this
@@ -4887,15 +4887,18 @@ $w$. Applying \eqref{pf.lem.admissible.cover.1} to $a = u$,
 $c = w$ and $b = v$, we see that both numbers
 $\left|\left[u, w\right]\right|$ and
 $\left|\left[w, v\right]\right|$ are smaller than
-$\left|\left[u, v\right]\right|$, and therefore neither
+$\left|\left[u, v\right]\right|$. Hence, neither
 $\left(u, w\right)$ nor $\left(w, v\right)$ is a malrelation
 (since we picked $\left(u, v\right)$ to be a malrelation with
 minimum $\left|\left[u, v\right]\right|$). Therefore, we have
-$\phi\left(u\right) \leq \phi\left(w\right)$ and
-$\phi\left(w\right) \leq \phi\left(v\right)$ (since $u <_1 w$
-and $w <_1 v$). Combining these two inequalities, we obtain
-$\phi\left(u\right) \leq \phi\left(v\right)$. This contradicts
-the assumption that we do not have
+$\phi\left(u\right) \leq \phi\left(w\right)$ (since $u <_1 w$,
+but $\left(u, w\right)$ is not a malrelation) and
+$\phi\left(w\right) \leq \phi\left(v\right)$ (since $w <_1 v$,
+but $\left(w, v\right)$ is not a malrelation).
+Combining these two inequalities, we obtain
+$\phi\left(u\right) \leq \phi\left(w\right)
+\leq \phi\left(v\right)$. This contradicts
+the fact that we do not have
 $\phi\left(u\right) \leq \phi\left(v\right)$. This contradiction
 concludes the proof of Claim 1.
 
@@ -4920,14 +4923,14 @@ If $u$ was $<_1$-covered by $v$, then we would obtain
 $\phi\left(u\right) < \phi\left(v\right)$
 easily\footnote{\textit{Proof.} Assume that $u$ is
 $<_1$-covered by $v$. Thus, $u$ and $v$ are $<_2$-comparable
-(since the poset $\EE$ is tertispecial). In other words,
+(since the double poset $\EE$ is tertispecial). In other words,
 we have either $u <_2 v$ or $u = v$ or $v <_2 u$. Since
 neither $u <_2 v$ nor $u = v$ can hold (indeed, $u <_2 v$
 is ruled out by assumption, whereas $u = v$ is ruled out by
 $u <_1 v$), we thus have $v <_2 u$. Therefore,
 $\phi\left(u\right) < \phi\left(v\right)$
 by Condition 2 (applied to $e = u$ and $f = v$), qed.}, which
-would contradict the assumption that we do not have
+would contradict the fact that we do not have
 $\phi\left(u\right) < \phi\left(v\right)$. Hence, $u$ is not
 $<_1$-covered by $v$. Consequently, there exists a $w \in E$
 such that $u <_1 w <_1 v$ (since $u <_1 v$). Consider this
@@ -4935,7 +4938,7 @@ $w$. Applying \eqref{pf.lem.admissible.cover.1} to $a = u$,
 $c = w$ and $b = v$, we see that both numbers
 $\left|\left[u, w\right]\right|$ and
 $\left|\left[w, v\right]\right|$ are smaller than
-$\left|\left[u, v\right]\right|$, and therefore neither
+$\left|\left[u, v\right]\right|$. Hence, neither
 $\left(u, w\right)$ nor $\left(w, v\right)$ is a malrelation
 (since we picked $\left(u, v\right)$ to be a malrelation with
 minimum $\left|\left[u, v\right]\right|$).
@@ -4943,8 +4946,10 @@ minimum $\left|\left[u, v\right]\right|$).
 But $\phi\left(v\right) \leq \phi\left(u\right)$ (since we do
 not have $\phi\left(u\right) < \phi\left(v\right)$). On the
 other hand, $u <_1 w$ and therefore $\phi\left(u\right) \leq
-\phi\left(w\right)$ (by Claim 1). Furthermore, $w <_1 v$ and
-thus $\phi\left(w\right) \leq \phi\left(v\right)$ (by Claim 1).
+\phi\left(w\right)$ (by Claim 1, applied to $e = u$ and
+$f = w$). Furthermore, $w <_1 v$ and
+thus $\phi\left(w\right) \leq \phi\left(v\right)$ (by Claim 1,
+applied to $e = w$ and $f = v$).
 The chain of inequalities
 $\phi\left(v\right) \leq \phi\left(u\right)
 \leq \phi\left(w\right) \leq \phi\left(v\right)$ ends with
@@ -4987,8 +4992,10 @@ logical statements:
 Statements 1 and 2 are equivalent (according to the definition of when an
 orbit is $E$-coeven). Our goal is to prove that Statements 1 and 3 are
 equivalent (because this is precisely what Lemma \ref{lem.coeven.all-one}
-says). Thus, it clearly suffices to show that Statements 2 and 3 are
-equivalent. Since Statement 2 obviously implies Statement 3, we therefore only
+says). Thus, it suffices to show that Statements 2 and 3 are
+equivalent (because we already know that Statements 1 and 2 are
+equivalent). Since Statement 2 obviously implies Statement 3 (in fact,
+the orbit $O$ contains at least one element), we therefore only
 need to show that Statement 3 implies Statement 2. Thus, assume that Statement
 3 holds. We need to prove that Statement 2 holds.
 
