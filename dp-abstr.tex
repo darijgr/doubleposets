@@ -5178,49 +5178,64 @@ the contrary. Thus, there exists a $u\in E^{g}$ such that $u<_{1}^{g}u$.
 Consider this $u$.
 
 We shall use the shorthand word ``$g$-orbit'' for an orbit under the
-action of $g$ on $E$. Thus, $u$ is a $g$-orbit. All $g$-orbits are
-finite (since $E$ is a finite set). In particular, the $g$-orbit $u$ is
-finite.
+action of $g$ on $E$. Thus, $u$ is a $g$-orbit.
 
 Since $u<_{1}^{g}u$, there exist $a\in u$ and $b\in u$ with
-$a<_{1}b$. Consider these $a$ and $b$. There exists a $k\in\mathbb{Z}$ such
+$a<_{1}b$ (by the definition of the relation $<_{1}^{g}$).
+Consider these $a$ and $b$. There exists a $k\in\mathbb{Z}$ such
 that $b=g^{k}a$ (since $a$ and $b$ both lie in one and the same $g$-orbit
 $u$). Consider this $k$.
-\par
-The $g$-orbit $u$ of $a$ is finite.
-Thus, there exists a positive integer $n$
-such that $g^{n}a=a$. Consider this $n$. Notice that $g^{np}a=\left(
-g^{n}\right)  ^{p}a=a$ for every $p\in\mathbb{Z}$ (since $g^{n}a=a$).
-\par
+
+Each element of $G$ has finite order (since $G$ is a finite group).
+In particular, the element $g$ of $G$ has finite order. In other words,
+there exists a positive integer $n$ such that $g^{n}=1_G$.
+Consider this $n$. Every $p \in \ZZ$ satisfies $g^{np}=\left(
+g^{n}\right)  ^{p}=1_G$ (since $g^{n}=1_G$).
+Applying this to $p=k$, we obtain $g^{nk}=1_G$.
+
 Now, $a<_{1}b=g^{k}a$. Since $G$ preserves the relation $<_{1}$, this shows
-that $ha<_{1}hg^{k}a$ for every $h\in G$. Thus, $g^{\ell k}a<_{1}g^{\ell
-k}g^{k}a$ for every $\ell\in\mathbb{N}$. Hence, $g^{\ell k}a<_{1}g^{\ell
-k}g^{k}a=g^{\left(  \ell+1\right)  k}a$ for every $\ell\in\mathbb{N}$.
+that $ha<_{1}hg^{k}a$ for every $h\in G$.
+\begin{vershort}
+Thus, $g^{\ell k}a<_{1}g^{\ell k}g^{k}a$ for every $\ell\in\mathbb{N}$.
+\end{vershort}
+\begin{verlong}
+Thus, for every $\ell \in \NN$, we have
+$g^{\ell k}a<_{1}g^{\ell k}g^{k}a$ (by the inequality $ha <_1 h g^k a$,
+applied to $h = g^{\ell k}$).
+\end{verlong}
+Hence,
+$g^{\ell k} a <_{1} g^{\ell k} g^{k} a
+= g^{\ell k + k} a = g^{\left(  \ell+1\right)  k} a$
+for every $\ell\in\mathbb{N}$.
 Consequently, $g^{0k}a<_{1}g^{1k}a<_{1}g^{2k}a<_{1}\cdots<_{1}g^{nk}a$. Thus,
-$g^{0k}a<_{1}g^{nk}a=a$ (since $g^{np}a=a$ for every $p\in\mathbb{N}$), which
-contradicts $g^{0k}a=1_Ga=a$. This contradiction proves that our assumption was
+$g^{0k}a<_{1}\underbrace{g^{nk}}_{=1_G}a=a$, which
+contradicts $\underbrace{g^{0k}}_{=g^0=1_G}a=1_Ga=a$.
+This contradiction proves that our assumption was
 wrong. Hence, the relation $<_{1}^{g}$ is irreflexive.
-\par
+
 Let us next show that the relation $<_{1}^{g}$ is transitive. Indeed, let $u$,
 $v$ and $w$ be three elements of $E^{g}$ such that $u<_{1}^{g}v$ and
 $v<_{1}^{g}w$. We must prove that $u<_{1}^{g}w$.
-\par
+
 There exist $a\in u$ and $b\in v$ with $a<_{1}b$ (since $u<_{1}^{g}v$).
 Consider these $a$ and $b$.
-\par
+
 There exist $a^{\prime}\in v$ and $b^{\prime}\in w$ with $a^{\prime}
 <_{1}b^{\prime}$ (since $v<_{1}^{g}w$). Consider these $a^{\prime}$ and
 $b^{\prime}$.
-\par
+
+The set $v$ is a $g$-orbit (since $v \in E^g$).
 The elements $b$ and $a^{\prime}$ lie in one and the same $g$-orbit (namely,
 in $v$). Hence, there exists some $k\in\mathbb{Z}$ such that $a^{\prime}
 =g^{k}b$. Consider this $k$. We have $a<_{1}b$ and thus $g^{k}a<_{1}g^{k}b$
 (since $G$ preserves the relation $<_{1}$). Hence,
 $g^{k}a<_{1}g^{k}b=a^{\prime}<_{1}b^{\prime}$.
-Since $g^{k}a\in u$ (because $a\in u$) and
-$b^{\prime}\in w$, this shows that $u<_{1}^{g}w$. We thus have proven that the
+Since $g^{k}a\in u$ (because $a\in u$, and because $u$ is a
+$g$-orbit) and $b^{\prime}\in w$, this shows that $u<_{1}^{g}w$
+(by the definition of the relation $<_{1}^{g}$).
+We thus have proven that the
 relation $<_{1}^{g}$ is transitive.
-\par
+
 Now, we know that the relation $<_{1}^{g}$ is irreflexive and transitive, and
 thus also antisymmetric (since every irreflexive and transitive binary
 relation is antisymmetric). In other words, $<_{1}^{g}$ is a strict partial
