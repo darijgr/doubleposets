@@ -3276,14 +3276,15 @@ double poset; but we will not use this.)
 \end{proof}
 
 \begin{lemma}
-\label{lem.Gammaw.empty}Let ${\mathbf{E}}=\left(  E,<_{1},<_{2}\right)  $ be a
-double poset. Let $w:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ be a map.
+\label{lem.Gammaw.empty}Let $\EE = \left( E, <_1, <_2 \right)$ be a
+double poset.
+Let $w : E \rightarrow \left\{ 1, 2, 3, \ldots \right\}$ be a map.
 
 \begin{enumerate}
-\item[(a)] If $E=\varnothing$, then $\Gamma\left(  \mathbf{E},w\right)  =1$.
+\item[(a)] If $E = \varnothing$, then $\Gamma \left( \EE , w \right) = 1$.
 
-\item[(b)] If $E\neq\varnothing$, then $\varepsilon\left(  \Gamma\left(
-\mathbf{E},w\right)  \right)  =0$.
+\item[(b)] If $E \neq \varnothing$, then
+$\varepsilon \left( \Gamma \left( \EE, w \right) \right) = 0$.
 \end{enumerate}
 \end{lemma}
 
@@ -4123,21 +4124,112 @@ Lemma~\ref{lem.Gammaw.altsum} is proven.
 \begin{proof}[Proof of Theorem~\ref{thm.antipode.Gammaw}.]
 We shall
 prove Theorem~\ref{thm.antipode.Gammaw} by strong induction over
-$\left|E\right|$. The induction base ($\left|E\right|=0$) is left to
-the reader; we start with the induction step. Consider a
-tertispecial double
-poset $\EE = \left(E, <_1, <_2\right)$ with $\left|E\right| > 0$ and
+$\left|E\right|$. The induction step proceeds as follows: Consider a
+tertispecial double poset $\EE = \left(E, <_1, <_2\right)$ and
 a map $w : E \to \left\{1, 2, 3, \ldots\right\}$, and
-assume that Theorem~\ref{thm.antipode.Gammaw} is proven for all
-tertispecial double posets of smaller size.
+assume (as the induction hypothesis)
+that Theorem~\ref{thm.antipode.Gammaw} is proven for all
+tertispecial double posets of smaller size\footnote{The
+\textit{size} of a double poset $\left(P, <_1, <_2\right)$
+means the nonnegative integer $\left|P\right|$.}.
+\begin{verlong}
+More precisely:
+Assume (as the induction hypothesis) that every tertispecial
+double poset $\left(P, \prec_1, \prec_2\right)$ satisfying
+$\left|P\right| < \left|E\right|$ and every map
+$x : P \to \left\{1, 2, 3, \ldots\right\}$ satisfy
+\begin{equation}
+S\left(\Gamma\left(\left(P, \prec_1, \prec_2\right), x\right)\right)
+= \left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, \succ_1, \prec_2\right), x\right) ,
+\label{pf.thm.antipode.Gammaw.indhyp}
+\end{equation}
+where $\succ_1$ denotes the opposite relation of $\prec_1$.
+\end{verlong}
+Our goal
+is to show that
+$S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
+= \left(-1\right)^{\left|E\right|}
+\Gamma\left(\left(E, >_1, <_2\right), w\right)$.
+Here, as usual, $>_1$ denotes the opposite relation of $<_1$.
 
-We have $\left| E \right| > 0$ and thus $E \neq \varnothing$. Hence,
+If $E = \varnothing$, then this is easy\footnote{Hint:
+If $E = \varnothing$, then both
+$\Gamma\left(\left(E, <_1, <_2\right), w\right)$ and
+$\Gamma\left(\left(E, >_1, <_2\right), w\right)$ are equal
+to $1$ (by Lemma~\ref{lem.Gammaw.empty} (a)),
+but the antipode $S$ satisfies $S\left(1\right) = 1$
+and $\left(-1\right)^{\left|\varnothing\right|} = 1$.}.
+Thus, we WLOG assume that $E \neq \varnothing$. Hence,
+$\left| E \right| > 0$. Moreover,
 Lemma~\ref{lem.Gammaw.empty} (b) shows that
 $\varepsilon \left( \Gamma\left(\EE, w\right) \right) = 0$. Thus,
 $\left( u \circ \varepsilon \right) \left( \Gamma \left( \EE, w \right) \right)
 = u \left( \underbrace{\varepsilon \left( \Gamma \left( \EE, w \right) \right)}_{= 0} \right)
 = u \left( 0 \right) = 0$.
 
+\begin{verlong}
+Using the induction hypothesis, we can see the following:
+If $\left(P, Q\right) \in \Adm \EE$ is such that
+$\left(P, Q\right) \neq \left(E, \varnothing\right)$,
+then
+\begin{equation}
+S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+= \left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\label{pf.thm.antipode.Gammaw.indhyp-used}
+\end{equation}
+\footnote{\textit{Proof of
+\eqref{pf.thm.antipode.Gammaw.indhyp-used}:}
+Let $\left(P, Q\right) \in \Adm \EE$ be such that
+$\left(P, Q\right) \neq \left(E, \varnothing\right)$.
+From $\left(P, Q\right) \in \Adm \EE$, we conclude
+that $P$ and $Q$ are subsets of $E$ satisfying
+$P \cap Q = \varnothing$ and $P \cup Q = E$.
+Hence, $Q = E \setminus P$.
+
+The double poset $\EE\mid_P = \left(P, <_1, <_2\right)$
+is tertispecial (by Lemma~\ref{lem.tertispecial.subset}).
+
+If we had $P = E$, then we would have
+$\left(\underbrace{P}_{= E}, \underbrace{Q}_{= E \setminus P}\right)
+= \left(E, E \setminus \underbrace{P}_{= E}\right)
+= \left(E, \underbrace{E \setminus E}_{= \varnothing}\right)
+= \left(E, \varnothing\right)$, which would contradict
+$\left(P, Q\right) \neq \left(E, \varnothing\right)$.
+Hence, we cannot have $P = E$. Thus, $P$ is a proper
+subset of $E$ (since $P$ is a subset of $E$). Hence,
+$\left|P\right| < \left|E\right|$. Therefore,
+\eqref{pf.thm.antipode.Gammaw.indhyp} (applied to
+$\left(\prec_1\right) = \left(<_1\right)$,
+$\left(\prec_2\right) = \left(<_2\right)$,
+$\left(\succ_1\right) = \left(>_1\right)$,
+and $x = w\mid_P$) yields
+$S\left(\Gamma\left(\left(P, <_1, <_2\right), w\mid_P\right)\right)
+= \left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)$.
+
+Now,
+\[
+S\left(\Gamma\left(\underbrace{\EE\mid_P}_{= \left(P, <_1, <_2\right)}, w\mid_P\right)\right)
+= S\left(\Gamma\left(\left(P, <_1, <_2\right), w\mid_P\right)\right)
+= \left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right) .
+\]
+This proves \eqref{pf.thm.antipode.Gammaw.indhyp-used}.}.
+Furthermore, it is straightforward to see that
+$\left(E, \varnothing\right) \in \Adm \EE$.
+Notice that
+\[
+\Gamma\left(\underbrace{\EE\mid_\varnothing}_{= \left(\varnothing, <_1, <_2\right)},
+            w\mid_\varnothing\right)
+=\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
+=1
+\]
+(by Lemma~\ref{lem.Gammaw.empty} (a)).
+\end{verlong}
+
+\begin{vershort}
 The upper commutative pentagon of \eqref{eq.antipode} shows that
 $u \circ \varepsilon = m \circ \left(S \otimes \id\right) \circ
 \Delta$. Applying both sides of this equality to
@@ -4168,10 +4260,16 @@ S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
 \otimes
 \Gamma\left(\EE\mid_Q, w\mid_Q\right)\right)
 \nonumber\\
+% & \ \ \ \ \ \ \ \ \ \ \left(
+%   \text{by the definition of the map } S \otimes \id \right)
+% \nonumber \\
 &= \sum_{\left(P, Q\right) \in \Adm \EE}
 S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
 \Gamma\left(\EE\mid_Q, w\mid_Q\right)
 \nonumber \\
+% & \ \ \ \ \ \ \ \ \ \ \left(
+%   \text{by the definition of the map } m \right)
+% \nonumber \\
 &= S \left(\Gamma\left(\EE\mid_E, w\mid_E\right)\right)
 \Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
 + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
@@ -4193,30 +4291,32 @@ therefore we have
 $S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
 = S\left(\Gamma\left(\left(P, <_1, <_2\right), w\mid_P\right)\right)
 = \left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)$ (by the
-induction hypothesis). Hence,
-\eqref{pf.thm.antipode.Gammaw.Req.1} rewrites as
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)$
+(by the induction hypothesis).
+Hence,
+\eqref{pf.thm.antipode.Gammaw.Req.1} becomes
 \begin{align}
 0
 &= S \left(\Gamma\left(\underbrace{\EE\mid_E}_{=\EE},
            \underbrace{w\mid_E}_{=w}\right)\right)
-\underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
-           }_{\substack{
-           =\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
-           =1 \\ \text{ (by Lemma \ref{lem.Gammaw.empty} (a))}}}
-   \nonumber \\
+  \underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
+             }_{\substack{
+             =\Gamma\left(\left(\varnothing, <_1, <_2\right), w\mid_\varnothing\right)
+             =1 \\ \text{ (by Lemma \ref{lem.Gammaw.empty} (a))}}}
+     \nonumber \\
 & \qquad + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
                   \left|P\right| < \left|E\right|}}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right)
-\nonumber \\
+  \underbrace{S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+             }_{= \left(-1\right)^{\left|P\right|}
+                  \Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)}
+  \Gamma\left(\EE\mid_Q, w\mid_Q\right)
+     \nonumber \\
 & = S\left(\Gamma\left(\EE, w\right)\right)
-+ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+  + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
                   \left|P\right| < \left|E\right|}}
-\left(-1\right)^{\left|P\right|}
-\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
-\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
+  \left(-1\right)^{\left|P\right|}
+  \Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+  \Gamma\left(\EE\mid_Q, w\mid_Q\right) .
 \nonumber
 \end{align}
 Thus,
@@ -4229,6 +4329,88 @@ S\left(\Gamma\left(\EE, w\right)\right)
 \Gamma\left(\EE\mid_Q, w\mid_Q\right) .
 \label{pf.thm.antipode.Gammaw.Seq}
 \end{equation}
+\end{vershort}
+
+\begin{verlong}
+The upper commutative pentagon of \eqref{eq.antipode} shows that
+$u \circ \varepsilon = m \circ \left(S \otimes \id\right) \circ
+\Delta$. Applying both sides of this equality to
+$\Gamma\left(\EE, w\right)$, we obtain
+$\left(u \circ \varepsilon\right)
+\left(\Gamma\left(\EE, w\right)\right)
+= \left(m \circ \left(S \otimes \id\right) \circ
+\Delta\right) \left(\Gamma\left(\EE, w\right)\right)$.
+Since
+$\left(u \circ \varepsilon\right)
+\left(\Gamma\left(\EE, w\right)\right) = 0$, this
+becomes
+\begin{align}
+0
+&= \left(m \circ \left(S \otimes \id\right) \circ
+\Delta\right) \left(\Gamma\left(\EE, w\right)\right)
+= m \left(\left(S \otimes \id\right) \left(
+\Delta \left(\Gamma\left(\EE, w\right)\right)\right)\right)
+\nonumber\\
+&= m \left(\left(S \otimes \id\right) \left(
+\sum_{\left(P, Q\right) \in \Adm \EE}
+\Gamma\left(\EE\mid_P, w\mid_P\right)
+\otimes \Gamma\left(\EE\mid_Q, w\mid_Q\right) \right) \right)
+\qquad \left(\text{by \eqref{eq.prop.Gammaw.coprod}}\right)
+\nonumber\\
+&= m \left(\sum_{\left(P, Q\right) \in \Adm \EE}
+S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+\otimes
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)\right)
+\nonumber\\
+& \ \ \ \ \ \ \ \ \ \ \left(
+  \text{by the definition of the map } S \otimes \id \right)
+\nonumber \\
+&= \sum_{\left(P, Q\right) \in \Adm \EE}
+S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\nonumber \\
+& \ \ \ \ \ \ \ \ \ \ \left(
+  \text{by the definition of the map } m \right)
+\nonumber \\
+&= S \left(\Gamma\left(\underbrace{\EE\mid_E}_{=\EE},
+           \underbrace{w\mid_E}_{=w}\right)\right)
+  \underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
+             }_{= 1}
+     \nonumber \\
+& \qquad
+  + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                    \left(P, Q\right) \neq \left(E, \varnothing\right)}}
+  \underbrace{S\left(\Gamma\left(\EE\mid_P, w\mid_P\right)\right)
+             }_{\substack{
+                = \left(-1\right)^{\left|P\right|}
+                  \Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right) \\
+                \text{(by \eqref{pf.thm.antipode.Gammaw.indhyp-used})}}}
+  \Gamma\left(\EE\mid_Q, w\mid_Q\right)
+     \nonumber \\
+& \ \ \ \ \ \ \ \ \ \ \left( \begin{array}{c}
+  \text{here, we have split off the addend } \\
+  \text{for } \left(P, Q\right) = \left(E, \varnothing\right)
+  \text{ from the sum}
+  \end{array} \right) \nonumber \\
+& = S\left(\Gamma\left(\EE, w\right)\right)
+  + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                    \left(P, Q\right) \neq \left(E, \varnothing\right)}}
+  \left(-1\right)^{\left|P\right|}
+  \Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+  \Gamma\left(\EE\mid_Q, w\mid_Q\right) .
+\nonumber
+\end{align}
+Thus,
+\begin{equation}
+S\left(\Gamma\left(\EE, w\right)\right)
+= - \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                    \left(P, Q\right) \neq \left(E, \varnothing\right)}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) .
+\label{pf.thm.antipode.Gammaw.Seq}
+\end{equation}
+\end{verlong}
 
 For every subset $P$ of $E$, we have
 
@@ -4241,9 +4423,11 @@ For every subset $P$ of $E$, we have
  \Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right) \right)
 \nonumber \\
 & = \sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
-\xx_{\sigma, w\mid_P} .
+\xx_{\sigma, w\mid_P}
 \label{pf.thm.antipode.Gammaw.Req.pf.Gamma1}
 \end{align}
+(here, we have renamed the summation index $\pi$ as
+$\sigma$).
 
 For every subset $Q$ of $E$, we have
 
@@ -4258,10 +4442,13 @@ For every subset $Q$ of $E$, we have
  \Gamma\left(\left(Q, <_1, <_2\right), w\mid_Q\right) \right)
 \nonumber \\
 & = \sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
-\xx_{\tau, w\mid_Q} .
+\xx_{\tau, w\mid_Q}
 \label{pf.thm.antipode.Gammaw.Req.pf.Gamma2}
 \end{align}
+(here, we have renamed the summation index $\pi$ as
+$\tau$).
 
+\begin{vershort}
 Now,
 \begin{align*}
 & \sum_{\left(P, Q\right) \in \Adm \EE}
@@ -4326,22 +4513,196 @@ Now,
                 \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
 \xx_{\pi, w} \\
 & = \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}}
-\underbrace{\left(
+\underbrace{
 \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
                 \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
                 \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
 \left(-1\right)^{\left|P\right|}
-\right)}
+}
 _{\substack{=0 \\
             \text{(by \eqref{pf.thm.antipode.Gammaw.signrev})}}}
 \xx_{\pi, w}
-= \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}} 0 = 0.
+= \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}} 0 \xx_{\pi, w}
+= 0.
 \end{align*}
-%\footnote{Here, for the fifth-to-last equality sign, we have
-%replaced the indices $\sigma$ and $\tau$ by a single index
-%$\pi$, which is the map $E \to \left\{1, 2, 3, \ldots\right\}$ which
-%is defined to send every $e \in P$ to $\sigma\left(e\right)$ and to
-%send every $e \in Q$ to $\tau\left(e\right)$.}.
+\end{vershort}
+\begin{verlong}
+Now, for each $\left(P, Q\right) \in \Adm \EE$, we have
+\begin{equation}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+= \sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\pi, w}
+\label{pf.thm.antipode.Gammaw.long.GG=sum}
+\end{equation}
+\footnote{
+\textit{Proof of \eqref{pf.thm.antipode.Gammaw.long.GG=sum}.}
+Let $\left(P, Q\right) \in \Adm \EE$. Thus, $P$ and $Q$ are
+two subsets of $E$ satisfying $P \cap Q = \varnothing$ and
+$P \cup Q = E$. Thus, the set $E$ is the union of its two
+disjoint subsets $P$ and $Q$.
+
+If $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ is a map, then
+\begin{align*}
+\underbrace{\mathbf{x}_{\pi\mid_{P},w\mid_{P}}}_{\substack{
+=\prod_{e\in P}x_{\left(
+\pi\mid_{P}\right)  \left(  e\right)  }^{\left(  w\mid_{P} \right)
+\left(  e\right) }  \\
+\text{(by the definition of } \xx_{\pi\mid_P, w\mid_P} \text{)}
+}}
+\underbrace{\mathbf{x}_{\pi\mid_{Q},w\mid_{Q}}}_{\substack{
+=\prod_{e\in Q}x_{\left(  \pi\mid_{Q}\right)  \left(  e\right)  }^{
+\left(  w\mid_{Q} \right) \left(e\right) } \\
+\text{(by the definition of } \xx_{\pi\mid_Q, w\mid_Q} \text{)}
+}}
+& =\left(  \prod_{e\in P}\underbrace{x_{\left(  \pi\mid_{P}\right)  \left(
+e\right)  }^{\left(  w\mid_{P}  \right) \left(  e\right) }}_{\substack{=x_{\pi
+\left(  e\right)  }^{w\left(  e\right)  }\\\text{(since }\left(  \pi\mid
+_{P}\right)  \left(  e\right)  =\pi\left(  e\right)  \\\text{and }\left(
+w\mid_{P} \right) \left(  e\right) =w\left(  e\right)  \text{)}}}\right)
+\left(  \prod_{e\in Q}\underbrace{x_{\left(  \pi\mid_{Q}\right)  \left(
+e\right)  }^{\left(  w\mid_{Q} \right) \left(  e\right) }}_{\substack{=x_{\pi
+\left(  e\right)  }^{w\left(  e\right)  }\\\text{(since }\left(  \pi\mid
+_{Q}\right)  \left(  e\right)  =\pi\left(  e\right)  \\\text{and }\left(
+w\mid_{Q} \right) \left(  e\right)  =w\left(  e\right)  \text{)}}}\right)  \\
+& =\left(  \prod_{e\in P}x_{\pi\left(  e\right)  }^{w\left(  e\right)
+}\right)  \left(  \prod_{e\in Q}x_{\pi\left(  e\right)  }^{w\left(  e\right)
+}\right)  =\prod_{e\in E}x_{\pi\left(  e\right)  }^{w\left(  e\right)  }%
+\end{align*}
+(here, we have merged the two products, since the set $E$ is the union of its
+two disjoint subsets $P$ and $Q$).
+
+But the set $E$ is the union of its two disjoint subsets $P$ and $Q$. Hence,
+every pair $\left(  \sigma,\tau\right)  $ consisting of a map $\sigma
+:P\rightarrow\left\{  1,2,3,\ldots\right\}  $ and a map $\tau:Q\rightarrow
+\left\{  1,2,3,\ldots\right\}  $ can be written as $\left(  \pi\mid_{P}%
+,\pi\mid_{Q}\right)  $ for a unique $\pi:E\rightarrow\left\{  1,2,3,\ldots
+\right\}  $ (namely, for the $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $
+that sends every $e \in E$ to
+$\begin{cases}
+\sigma\left(e\right), & \text{if } e \in P \text{;}\\
+\tau\left(e\right), & \text{if } e \in Q
+\end{cases}$). Hence, we can substitute
+$\left(  \pi\mid_{P},\pi\mid_{Q}\right)  $ for $\left(  \sigma,\tau\right)  $
+in the sum $\sum_{\substack{\left(\sigma, \tau\right); \\
+                \sigma : P \to \left\{1, 2, 3, \ldots\right\}; \\
+                \tau : Q \to \left\{1, 2, 3, \ldots\right\}; \\
+                \sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q}
+$. We thus obtain
+\begin{align*}
+\sum_{\substack{\left(\sigma, \tau\right); \\
+                \sigma : P \to \left\{1, 2, 3, \ldots\right\}; \\
+                \tau : Q \to \left\{1, 2, 3, \ldots\right\}; \\
+                \sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q}
+& =\sum_{\substack{\pi:E\rightarrow\left\{  1,2,3,\ldots\right\} ; \\\pi
+\mid_{P}\text{ is a }\left(  P,>_{1},<_{2}\right)  \text{-partition;}\\\pi
+\mid_{Q}\text{ is a }\left(  Q,<_{1},<_{2}\right)  \text{-partition}%
+}}\underbrace{{\mathbf{x}}_{\pi\mid_{P},w\mid_{P}}{\mathbf{x}}_{\pi\mid
+_{Q},w\mid_{Q}}}_{\substack{=\prod_{e\in E}x_{\pi\left(  e\right)  }^{w\left(
+e\right)  }=\mathbf{x}_{\pi,w}\\\text{(since }\mathbf{x}_{\pi,w}=\prod_{e\in
+E}x_{\pi\left(  e\right)  }^{w\left(  e\right)  }\\\text{(by the definition of
+}\mathbf{x}_{\pi,w}\text{))}}}\\
+& =\sum_{\substack{\pi:E\rightarrow\left\{  1,2,3,\ldots\right\} ; \\\pi
+\mid_{P}\text{ is a }\left(  P,>_{1},<_{2}\right)  \text{-partition;}\\\pi
+\mid_{Q}\text{ is a }\left(  Q,<_{1},<_{2}\right)  \text{-partition}%
+}}\mathbf{x}_{\pi,w}.
+\end{align*}
+
+Now,
+\begin{align*}
+&
+\underbrace{\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)}_{
+ \substack{ = \sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+            \xx_{\sigma, w\mid_P} \\
+            \text{(by \eqref{pf.thm.antipode.Gammaw.Req.pf.Gamma1})}}}
+\underbrace{\Gamma\left(\EE\mid_Q, w\mid_Q\right)}_{
+ \substack{ = \sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+            \xx_{\tau, w\mid_Q} \\
+            \text{(by \eqref{pf.thm.antipode.Gammaw.Req.pf.Gamma2})}}}
+\\
+&=
+\left(\sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+\xx_{\sigma, w\mid_P}\right)
+\left(\sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+\xx_{\tau, w\mid_Q}\right) \\
+&=
+\underbrace{
+ \sum_{\sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition}}
+ \sum_{\tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}
+}_{=
+   \sum_{\substack{\left(\sigma, \tau\right); \\
+                   \sigma : P \to \left\{1, 2, 3, \ldots\right\}; \\
+                   \tau : Q \to \left\{1, 2, 3, \ldots\right\}; \\
+                   \sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                   \tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+   }
+\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q}
+&=
+\sum_{\substack{\left(\sigma, \tau\right); \\
+                \sigma : P \to \left\{1, 2, 3, \ldots\right\}; \\
+                \tau : Q \to \left\{1, 2, 3, \ldots\right\}; \\
+                \sigma \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \tau \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\sigma, w\mid_P} \xx_{\tau, w\mid_Q} \\
+&= \sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\pi, w}.
+\end{align*}
+This proves \eqref{pf.thm.antipode.Gammaw.long.GG=sum}.}.
+
+Now,
+\begin{align*}
+& \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\underbrace{\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+            \Gamma\left(\EE\mid_Q, w\mid_Q\right)}_{
+ \substack{ = \sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+              \xx_{\pi, w} \\
+            \text{(by \eqref{pf.thm.antipode.Gammaw.long.GG=sum})}}}
+\\
+& = \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\xx_{\pi, w} \\
+& =
+\underbrace{\sum_{\left(P, Q\right) \in \Adm \EE}
+\sum_{\substack{\pi : E \to \left\{1, 2, 3, \ldots\right\}; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+}_{ =
+\sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}}
+\sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+}
+\left(-1\right)^{\left|P\right|}
+\xx_{\pi, w} \\
+& = \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}}
+\underbrace{
+\sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                \pi\mid_P \text{ is a }\left(P, >_1, <_2\right)\text{-partition;} \\
+                \pi\mid_Q \text{ is a }\left(Q, <_1, <_2\right)\text{-partition}}}
+\left(-1\right)^{\left|P\right|}
+}
+_{\substack{=0 \\
+            \text{(by \eqref{pf.thm.antipode.Gammaw.signrev})}}}
+\xx_{\pi, w}
+= \sum_{\pi : E \to \left\{1, 2, 3, \ldots\right\}} 0 \xx_{\pi, w}
+= 0.
+\end{align*}
+\end{verlong}
+\begin{vershort}
 Thus,
 \begin{align*}
 0 &= \sum_{\left(P, Q\right) \in \Adm \EE}
@@ -4394,7 +4755,58 @@ so that
 and thus
 $S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
 = \left(-1\right)^{\left|E\right|}
-\Gamma\left(\left(E, >_1, <_2\right), w\right)$. This completes the
+\Gamma\left(\left(E, >_1, <_2\right), w\right)$.
+\end{vershort}
+\begin{verlong}
+Thus,
+\begin{align*}
+0 &= \sum_{\left(P, Q\right) \in \Adm \EE}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) \\
+&= \left(-1\right)^{\left|E\right|}
+\Gamma\left(\left(E, >_1, <_2\right), \underbrace{w\mid_E}_{=w}\right)
+\underbrace{\Gamma\left(\EE\mid_\varnothing, w\mid_\varnothing\right)
+           }_{=1}
+\\
+& \qquad
+ + \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                   \left(P, Q\right) \neq \left(E, \varnothing\right)}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right)
+\\
+& \ \ \ \ \ \ \ \ \ \ \left( \begin{array}{c}
+  \text{here, we have split off the addend } \\
+  \text{for } \left(P, Q\right) = \left(E, \varnothing\right)
+  \text{ from the sum}
+  \end{array} \right) \\
+&= \left(-1\right)^{\left|E\right|} \Gamma\left(\left(E, >_1, <_2\right), w\right) \\
+& \qquad
++ \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                  \left(P, Q\right) \neq \left(E, \varnothing\right)}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) ,
+\end{align*}
+so that
+\begin{align*}
+\left(-1\right)^{\left|E\right|} \Gamma\left(\left(E, >_1, <_2\right), w\right)
+&= - \sum_{\substack{\left(P, Q\right) \in \Adm \EE ; \\
+                     \left(P, Q\right) \neq \left(E, \varnothing\right)}}
+\left(-1\right)^{\left|P\right|}
+\Gamma\left(\left(P, >_1, <_2\right), w\mid_P\right)
+\Gamma\left(\EE\mid_Q, w\mid_Q\right) \\
+&= S\left(\Gamma\left(\underbrace{\EE}_{=\left(E, <_1, <_2\right)}, w\right)\right)
+\qquad \left(\text{by \eqref{pf.thm.antipode.Gammaw.Seq}}\right) \\
+&= S\left(\Gamma\left(\left(E, <_1, <_2\right), w\right)\right) ,
+\end{align*}
+and thus
+$S\left(\Gamma\left(\left(E, <_1, <_2\right)\right), w\right)
+= \left(-1\right)^{\left|E\right|}
+\Gamma\left(\left(E, >_1, <_2\right), w\right)$.
+\end{verlong}
+This completes the
 induction step and thus the proof of Theorem~\ref{thm.antipode.Gammaw}.
 \end{proof}
 
