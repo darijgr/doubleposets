@@ -6011,10 +6011,14 @@ to $1$ and the other half to $-1$. Therefore, the addends in the sum
 $\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}%
 \nolimits_{E}g$ cancel each other out (one half of them are $1$, and the
 others are $-1$). Therefore, $\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi
-}\operatorname*{sign}\nolimits_{E}g=0$, so that
+}\operatorname*{sign}\nolimits_{E}g=0$. Now,
 \[
-\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{g\in\operatorname*{Stab}%
-\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g}_{=0}=0=%
+\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{\substack{g\in
+G;\\g\pi=\pi}}}_{=\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}%
+}\operatorname*{sign}\nolimits_{E}g=\dfrac{1}{\left\vert G\right\vert }%
+\underbrace{\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g}_{=0}
+= 0
+=%
 \begin{cases}
 \dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
 ;\\
@@ -6022,20 +6026,6 @@ others are $-1$). Therefore, $\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi
 \end{cases}
 \]
 (since $O$ is not $E$-coeven).
-Thus,%
-\[
-\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{\substack{g\in
-G;\\g\pi=\pi}}}_{=\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}%
-}\operatorname*{sign}\nolimits_{E}g=\dfrac{1}{\left\vert G\right\vert }%
-\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}%
-\nolimits_{E}g=%
-\begin{cases}
-\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
-;\\
-0, & \text{if }O\text{ is not }E\text{-coeven}%
-\end{cases}
-.
-\]
 This proves (\ref{eq.lem.burnside.sums.b}). Lemma \ref{lem.burnside.sums} (b)
 is thus proven.
 \end{proof}
@@ -6083,6 +6073,18 @@ For every $g\in G$, we have
 \label{pf.thm.antipode.GammawG.red}
 \end{equation}
 \footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.red}:} Let $g\in G$.
+The definition of $\Gamma \left( \EE^g , w^g \right)$ yields
+\begin{equation}
+\Gamma\left(  \EE^{g},w^{g}\right)
+= \sum_{\pi\text{ is an }
+\EE ^{g}\text{-partition}}\mathbf{x}_{\pi,w^{g}}
+= \sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
+\mathbf{x}_{\pi,w^{g}}
+\label{pf.thm.antipode.GammawG.red.pf.1}
+\end{equation}
+(here, we have renamed the summation index $\pi$ as
+$\overline{\pi}$).
+\par
 In Proposition~\ref{prop.G-poset.quot.Phi}, we have introduced a
 bijection $\Phi$ between
 \par
@@ -6113,9 +6115,11 @@ and
 1,2,3,\ldots\right\}  $.
 \end{itemize}
 \par
-Hence,
+Hence, we can substitute $\Phi\left(\pi\right)$ for $\pi$ in the
+sum $\sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
+\mathbf{x}_{\pi,w^{g}}$. We thus obtain
 \[
-\sum_{\pi\text{ is an } \EE ^{g}\text{-partition}}
+\sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
 \mathbf{x}_{\pi,w^{g}}
 =\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
 }}
@@ -6129,7 +6133,8 @@ Hence,
 whence $\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
 \\g\pi=\pi}}\mathbf{x}_{\pi,w}=\sum_{\pi\text{ is an }
 \EE ^{g}\text{-partition}}\mathbf{x}_{\pi,w^{g}}
-=\Gamma\left(  \EE^{g},w^{g}\right)  $.
+=\Gamma\left(  \EE^{g},w^{g}\right)  $
+(by \eqref{pf.thm.antipode.GammawG.red.pf.1}).
 This proves \eqref{pf.thm.antipode.GammawG.red}.}.
 
 It is clearly sufficient to prove
@@ -6244,7 +6249,9 @@ set of all cycles of $\sigma$. Applying this to $X=E$, $\sigma=\left(
 \text{the permutation of }E\text{ that sends every }e\in E\text{ to
 }ge\right)  $ and $X^{\sigma}=E^{g}$, we see that the sign of the permutation
 of $E$ that sends every $e\in E$ to $ge$ is $\left(  -1\right)  ^{\left\vert
-E\right\vert -\left\vert E^{g}\right\vert }$. In other words,
+E\right\vert -\left\vert E^{g}\right\vert }$
+(because $E^g$ is the set of all cycles of the permutation of
+$E$ that sends every $e\in E$ to $ge$). In other words,
 $\operatorname*{sign}\nolimits_{E}g=\left(  -1\right)  ^{\left\vert
 E\right\vert -\left\vert E^{g}\right\vert }$, qed.}.
 
