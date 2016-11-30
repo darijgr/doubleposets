@@ -284,7 +284,7 @@ let $\operatorname*{Mon}$ be the free abelian monoid on the set $\left\{
 x_{1},x_{2},x_{3},\ldots\right\}  $ (written multiplicatively); it consists of
 elements of the form $x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots$ for
 finitely supported $\left(  a_{1},a_{2},a_{3},\ldots\right)  \in
-\mathbb{N}^{\infty}$ (where \textquotedblleft finitely
+ \NN ^{\infty}$ (where \textquotedblleft finitely
 supported\textquotedblright\ means that all but finitely many positive
 integers $i$ satisfy $a_{i}=0$). A \textit{monomial} will mean an element of
 $\operatorname*{Mon}$. Thus, a monomial is a combinatorial
@@ -1222,7 +1222,7 @@ More precisely, the following holds: Define the \textit{length} $\ell\left(
 \alpha\right)  $ of a composition $\alpha$ to be the number of entries of
 $\alpha$. Define the \textit{size} $\left\vert \alpha\right\vert $ of a
 composition $\alpha$ to be the sum of the entries of $\alpha$. Let
-$\eta:\operatorname*{QSym}\rightarrow\operatorname*{QSym}$ be the $\mathbf{k}%
+$\eta: \QSym \rightarrow \QSym $ be the $\mathbf{k}%
 $-linear map defined by%
 \[
 \eta\left(  M_{\alpha}\right)  =%
@@ -1523,7 +1523,7 @@ are left to the reader.)
 [Proof of Proposition \ref{prop.ev.comp}.] The map $\pi$ is packed. In other
 words, $\pi\left(  E\right)  $ is an initial interval (by the definition of
 \textquotedblleft packed\textquotedblright). In other words, $\pi\left(
-E\right)  =\left\{  1,2,\ldots,k\right\}  $ for some $k\in\mathbb{N}$.
+E\right)  =\left\{  1,2,\ldots,k\right\}  $ for some $k\in \NN $.
 Consider this $k$. From $\pi\left(  E\right)  =\left\{  1,2,\ldots,k\right\}
 $, we obtain $\left\vert \pi\left(  E\right)  \right\vert =\left\vert \left\{
 1,2,\ldots,k\right\}  \right\vert =k$, so that $k=\left\vert \pi\left(
@@ -2073,17 +2073,17 @@ The proof of Proposition \ref{prop.Gammaw.coprod} is based upon a simple
 bijection. We shall introduce it after some preparations.
 
 \begin{lemma}
-\label{lem.Gammaw.coprod.bij.a}Let ${\mathbf{E}}=\left(  E,<_{1},<_{2}\right)
+\label{lem.Gammaw.coprod.bij.a}Let $ \EE =\left(  E,<_{1},<_{2}\right)
 $ be a double poset.
 
 Let $\mathcal{S}$ be the set of all pairs $\left(  \varphi,k\right)  $
-consisting of a packed ${\mathbf{E}}$-partition $\varphi$ and a $k\in\left\{
+consisting of a packed $\EE$-partition $\varphi$ and a $k\in\left\{
 0,1,\ldots,\left\vert \varphi\left(  E\right)  \right\vert \right\}  $.
 
 Let $\mathcal{T}$ be the set of all triples $\left(  \left(  P,Q\right)
 ,\sigma,\tau\right)  $ consisting of a $\left(  P,Q\right)  \in
-\operatorname{Adm}{\mathbf{E}}$, a packed ${\mathbf{E}}\mid_{P}$-partition
-$\sigma$ and a packed ${\mathbf{E}}\mid_{Q}$-partition $\tau$.
+\operatorname{Adm} \EE $, a packed $ \EE \mid_{P}$-partition
+$\sigma$ and a packed $ \EE \mid_{Q}$-partition $\tau$.
 
 For every $\ell\in\mathbb{Z}$, we let $\operatorname*{add}\nolimits_{\ell}$
 denote the bijective map $\mathbb{Z}\rightarrow\mathbb{Z},\ z\mapsto z+\ell$.
@@ -2286,8 +2286,8 @@ packed $\mathbf{E}\mid_{Q}$-partition. In other words, we know that $\left(
 [Proof of Lemma \ref{lem.Gammaw.coprod.bij.b}.]We have $\left(  \left(
 P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$. According to the definition
 of $\mathcal{T}$, this means that $\left(  P,Q\right)  \in\operatorname{Adm}%
-{\mathbf{E}}$, that $\sigma$ is a packed ${\mathbf{E}}\mid_{P}$-partition,
-and that $\tau$ is a packed ${\mathbf{E}}\mid_{Q}$-partition.
+ \EE $, that $\sigma$ is a packed $ \EE \mid_{P}$-partition,
+and that $\tau$ is a packed $ \EE \mid_{Q}$-partition.
 
 From $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, we conclude that
 $P$ and $Q$ are subsets of $E$ satisfying $P\cap Q=\varnothing$ and $P\cup
@@ -2381,11 +2381,11 @@ e\right)  \leq\varphi\left(  f\right)  $. We are in one of the following four ca
 \textit{Case 4:} We have $e\in Q$ and $f\in Q$.
 
 In Case 1, our claim $\varphi\left(  e\right)  \leq\varphi\left(  f\right)  $
-follows from the assumption that $\sigma$ is an ${\mathbf{E}}\mid_{P}%
+follows from the assumption that $\sigma$ is an $ \EE \mid_{P}%
 $-partition\footnote{\textit{Proof.} Assume that we are in Case 1. Thus, we
 have $e\in P$ and $f\in P$. Thus, $e$ and $f$ are elements of $P$ satisfying
 $e<_{1}f$. Hence, $\sigma\left(  e\right)  \leq\sigma\left(  f\right)  $
-(since $\sigma$ is an ${\mathbf{E}}\mid_{P}$-partition). But the definition of
+(since $\sigma$ is an $ \EE \mid_{P}$-partition). But the definition of
 $\varphi$ yields $\varphi\left(  e\right)  =%
 \begin{cases}
 \sigma\left(  e\right)  , & \text{if }e\in P;\\
@@ -2395,10 +2395,10 @@ $\varphi$ yields $\varphi\left(  e\right)  =%
 =\sigma\left(  f\right)  $ (similarly). Hence, $\varphi\left(  e\right)
 =\sigma\left(  e\right)  \leq\sigma\left(  f\right)  =\varphi\left(  f\right)
 $. Qed.}. In Case 4, it follows from the assumption that $\tau$ is an
-${\mathbf{E}}\mid_{Q}$-partition\footnote{\textit{Proof.} Assume that we are
+$ \EE \mid_{Q}$-partition\footnote{\textit{Proof.} Assume that we are
 in Case 4. Thus, we have $e\in Q$ and $f\in Q$. Thus, $e$ and $f$ are elements
 of $Q$ satisfying $e<_{1}f$. Hence, $\tau\left(  e\right)  \leq\tau\left(
-f\right)  $ (since $\tau$ is an ${\mathbf{E}}\mid_{Q}$-partition). But the
+f\right)  $ (since $\tau$ is an $ \EE \mid_{Q}$-partition). But the
 definition of $\varphi$ yields $\varphi\left(  e\right)  =%
 \begin{cases}
 \sigma\left(  e\right)  , & \text{if }e\in P;\\
@@ -2436,7 +2436,7 @@ in each of the four cases, and consequently Claim 1 is proven. As we have said
 above, Claim 2 is proven similarly. Thus, we have proven that $\varphi$ is an
 $\mathbf{E}$-partition.
 
-Altogether, we now know that $\varphi$ is a packed ${\mathbf{E}}$-partition,
+Altogether, we now know that $\varphi$ is a packed $\EE$-partition,
 and that $k\in\left\{  0,1,\ldots,\left\vert \varphi\left(  E\right)
 \right\vert \right\}  $. In other words, $\left(  \varphi,k\right)
 \in\mathcal{S}$. This proves Lemma \ref{lem.Gammaw.coprod.bij.b}.
@@ -2464,7 +2464,7 @@ $\Phi\left(  \varphi,k\right)  =\left(  \left(  P,Q\right)  ,\sigma
 ,\tau\right)  $.
 
 Lemma \ref{lem.Gammaw.coprod.bij.b} shows that $\left(  \varphi,k\right)
-\in\mathcal{S}$. In other words, $\varphi$ is a packed ${\mathbf{E}}%
+\in\mathcal{S}$. In other words, $\varphi$ is a packed $ \EE %
 $-partition, and we have $k\in\left\{  0,1,\ldots,\left\vert \varphi\left(
 E\right)  \right\vert \right\}  $. Since $\varphi$ is packed, we have
 $\varphi\left(  E\right)  =\left\{  1,2,\ldots,\left\vert \varphi\left(
@@ -2613,8 +2613,8 @@ and (\ref{eq.lem.Gammaw.coprod.bij.def2}). The definition of $\Phi$ shows that
 $\Phi\left(  \varphi,k\right)  =\left( \left(P,Q\right),\sigma,\tau\right)  $. From Lemma
 \ref{lem.Gammaw.coprod.bij.a}, we know that $\left(  \left(  P,Q\right)
 ,\sigma,\tau\right)  \in\mathcal{T}$. In other words, we know that $\left(
-P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}$, that $\sigma$ is a packed
-${\mathbf{E}}\mid_{P}$-partition, and that $\tau$ is a packed ${\mathbf{E}%
+P,Q\right)  \in\operatorname{Adm} \EE $, that $\sigma$ is a packed
+$ \EE \mid_{P}$-partition, and that $\tau$ is a packed ${\mathbf{E}%
 }\mid_{Q}$-partition.
 
 From $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, we conclude that
@@ -2712,7 +2712,7 @@ $\alpha\left[  k:\right]  $ for the composition $\left(  \alpha_{k+1}%
 \Delta\left(  M_{\alpha}\right)   &  =\sum_{k=0}^{\ell}M_{\alpha\left[
 :k\right]  }\otimes M_{\alpha\left[  k:\right]  }%
 \label{pf.prop.Gammaw.coprod.long.DeltaM}\\
-&  \qquad\text{ for every }\ell\in{\mathbb{N}}\text{ and every composition
+&  \qquad\text{ for every }\ell\in \NN \text{ and every composition
 }\alpha\text{ with }\ell\text{ entries.}\nonumber
 \end{align}
 
@@ -2740,7 +2740,7 @@ For every $\ell\in\mathbb{Z}$, define the map $\operatorname*{add}%
 Let $\ell=\left\vert \varphi\left(  E\right)  \right\vert $; thus,
 $\varphi\left(  E\right)  =\left\{  1,2,\ldots,\ell\right\}  $ (since
 $\varphi$ is packed). For each $i\in\left\{  1,2,\ldots,\ell\right\}  $,
-define $\alpha_{i}\in\mathbb{N}$ by
+define $\alpha_{i}\in \NN $ by
 \begin{equation}
 \alpha_{i}=\sum_{e\in\varphi^{-1}\left(  i\right)  }w\left(  e\right)  .
 \label{pf.prop.Gammaw.coprod.evs.pf.alphai}%
@@ -2772,8 +2772,8 @@ Recall that $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  =\Phi\left(
 ) (according to the definition of $\Phi$). We know (from Lemma
 \ref{lem.Gammaw.coprod.bij.a}) that $\left(  \left(  P,Q\right)  ,\sigma
 ,\tau\right)  \in\mathcal{T}$. In other words, we know that $\left(
-P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}$, that $\sigma$ is a packed
-${\mathbf{E}}\mid_{P}$-partition, and that $\tau$ is a packed ${\mathbf{E}%
+P,Q\right)  \in\operatorname{Adm} \EE $, that $\sigma$ is a packed
+$ \EE \mid_{P}$-partition, and that $\tau$ is a packed ${\mathbf{E}%
 }\mid_{Q}$-partition.
 \par
 For every $e\in P$, we have%
@@ -2942,7 +2942,7 @@ Now, applying $\Delta$ to the equality \eqref{eq.prop.Gammaw.packed} yields
     \operatorname{ev}_{w}\varphi\right)  \left[  :k\right]  }\otimes M_{\left(
     \operatorname{ev}_{w}\varphi\right)  \left[  k:\right]  }\\
     \text{(by \eqref{pf.prop.Gammaw.coprod.long.lhs-addend})}}}\nonumber\\
-&  =\underbrace{\sum_{\varphi\text{ is a packed }{\mathbf{E}}\text{-partition}%
+&  =\underbrace{\sum_{\varphi\text{ is a packed } \EE \text{-partition}%
 }\sum_{k=0}^{\left\vert \varphi\left(  E\right)  \right\vert }}%
 _{\substack{=\sum_{\left(  \varphi,k\right)  \in\mathcal{S}}\\\text{(by the
 definition of }\mathcal{S}\text{)}}}M_{\left(  \operatorname{ev}_{w}%
@@ -2958,43 +2958,43 @@ _{w}\varphi\right)  \left[  k:\right]  }\nonumber\\
 On the other hand, rewriting each of the tensorands on the right hand side of
 \eqref{eq.prop.Gammaw.coprod} using \eqref{eq.prop.Gammaw.packed}, we obtain
 \begin{align*}
-&  \sum_{\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}}%
-\underbrace{\Gamma\left(  {\mathbf{E}}\mid_{P},w\mid_{P}\right)
-}_{\substack{=\sum_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{P}%
+&  \sum_{\left(  P,Q\right)  \in\operatorname{Adm} \EE }%
+\underbrace{\Gamma\left(   \EE \mid_{P},w\mid_{P}\right)
+}_{\substack{=\sum_{\varphi\text{ is a packed } \EE \mid_{P}%
 \text{-partition}}M_{\operatorname{ev}_{w\mid_{P}}\varphi}\\\text{(by
 \eqref{eq.prop.Gammaw.packed})}}}\otimes\underbrace{\Gamma\left(  {\mathbf{E}%
 }\mid_{Q},w\mid_{Q}\right)  }_{\substack{=\sum_{\varphi\text{ is a packed
-}{\mathbf{E}}\mid_{Q}\text{-partition}}M_{\operatorname{ev}_{w\mid_{Q}}%
+} \EE \mid_{Q}\text{-partition}}M_{\operatorname{ev}_{w\mid_{Q}}%
 \varphi}\\\text{(by \eqref{eq.prop.Gammaw.packed})}}}\\
 &  =\sum_{\left(  P,Q\right)  \in \Adm \EE}
 \underbrace{ \left(
- \sum_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}%
+ \sum_{\varphi\text{ is a packed } \EE \mid_{P}\text{-partition}%
   }M_{\operatorname{ev}_{w\mid_{P}}\varphi}\right)}
   _{\substack{
-    = \sum_{\sigma\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}%
+    = \sum_{\sigma\text{ is a packed } \EE \mid_{P}\text{-partition}%
     }M_{\operatorname{ev}_{w\mid_{P}}\sigma} \\
     \text{(here, we have renamed the } \\
     \text{summation index } \varphi \text{ as } \sigma \text{)}
     }}
 \otimes
 \underbrace{ \left(
- \sum_{\varphi\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}%
+ \sum_{\varphi\text{ is a packed } \EE \mid_{Q}\text{-partition}%
   }M_{\operatorname{ev}_{w\mid_{Q}}\varphi}\right)}
    _{\substack{
-     = \sum_{\tau\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}}%
+     = \sum_{\tau\text{ is a packed } \EE \mid_{Q}\text{-partition}}%
      M_{\operatorname{ev}_{w\mid_{Q}}\tau} \\
     \text{(here, we have renamed the } \\
     \text{summation index } \varphi \text{ as } \tau \text{)}
     }}
 \\
-&  =\sum_{\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}}\left(
-\sum_{\sigma\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}%
+&  =\sum_{\left(  P,Q\right)  \in\operatorname{Adm} \EE }\left(
+\sum_{\sigma\text{ is a packed } \EE \mid_{P}\text{-partition}%
 }M_{\operatorname{ev}_{w\mid_{P}}\sigma}\right)  \otimes\left(  \sum
-_{\tau\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}}%
+_{\tau\text{ is a packed } \EE \mid_{Q}\text{-partition}}%
 M_{\operatorname{ev}_{w\mid_{Q}}\tau}\right)  \\
-&  =\underbrace{\sum_{\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}%
-}\sum_{\sigma\text{ is a packed }{\mathbf{E}}\mid_{P}\text{-partition}}%
-\sum_{\tau\text{ is a packed }{\mathbf{E}}\mid_{Q}\text{-partition}}%
+&  =\underbrace{\sum_{\left(  P,Q\right)  \in\operatorname{Adm} \EE %
+}\sum_{\sigma\text{ is a packed } \EE \mid_{P}\text{-partition}}%
+\sum_{\tau\text{ is a packed } \EE \mid_{Q}\text{-partition}}%
 }_{\substack{=\sum_{\left(  \left(  P,Q\right)  ,\sigma,\tau\right)
 \in\mathcal{T}}\\\text{(by the definition of }\mathcal{T}\text{)}%
 }}M_{\operatorname{ev}_{w\mid_{P}}\sigma}\otimes M_{\operatorname{ev}%
@@ -3016,9 +3016,9 @@ _{w\mid_{Q}}\tau}$ as $M_{\left(  \operatorname{ev}_{w}\varphi\right)  \left[
 k:\right]  }$). Comparing this with (\ref{pf.Gammaw.coprod.long.lhs}), we
 obtain%
 \[
-\Delta\left(  \Gamma\left(  {\mathbf{E}},w\right)  \right)  =\sum_{\left(
-P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}}\Gamma\left(  {\mathbf{E}}%
-\mid_{P},w\mid_{P}\right)  \otimes\Gamma\left(  {\mathbf{E}}\mid_{Q},w\mid
+\Delta\left(  \Gamma\left(   \EE ,w\right)  \right)  =\sum_{\left(
+P,Q\right)  \in\operatorname{Adm} \EE }\Gamma\left(   \EE %
+\mid_{P},w\mid_{P}\right)  \otimes\Gamma\left(   \EE \mid_{Q},w\mid
 _{Q}\right)  .
 \]
 This proves Proposition \ref{prop.Gammaw.coprod}.
@@ -3632,7 +3632,7 @@ P,Q\right)  \in Z_{0}}}1.
 Finally,
 \begin{align*}
 & \underbrace{\sum_{\substack{\left(  P,Q\right)  \in\operatorname{Adm}%
-{\mathbf{E}};\\\pi\mid_{P}\text{ is a }\left(  P,>_{1},<_{2}\right)
+ \EE ;\\\pi\mid_{P}\text{ is a }\left(  P,>_{1},<_{2}\right)
 \text{-partition;}\\\pi\mid_{Q}\text{ is a }\left(  Q,<_{1},<_{2}\right)
 \text{-partition}}}}_{\substack{=\sum_{\left(  P,Q\right)  \in Z}\\\text{(by
 the definition of }Z\text{)}}}\left(  -1\right)  ^{\left\vert P\right\vert
@@ -3937,12 +3937,12 @@ Let $\alpha\in Z$. We want to show that $\left(  T\circ T\right)  \left(
 \par
 We have $\alpha\in Z$. In other words, $\alpha$ can be written in the form
 $\alpha=\left(  P,Q\right)  $ for some $\left(  P,Q\right)  \in
-\operatorname{Adm}{\mathbf{E}}$ having the property that $\pi\mid_{P}$ is a
+\operatorname{Adm} \EE $ having the property that $\pi\mid_{P}$ is a
 $\left(  P,>_{1},<_{2}\right)  $-partition and $\pi\mid_{Q}$ is a $\left(
 Q,<_{1},<_{2}\right)  $-partition (by the definition of $Z$). Write $\alpha$
 in this form.
 \par
-From $\left(  P,Q\right)  \in\operatorname{Adm}{\mathbf{E}}$, we see that
+From $\left(  P,Q\right)  \in\operatorname{Adm} \EE $, we see that
 $P\cap Q=\varnothing$ and $P\cup Q=E$, and furthermore that no $p\in P$ and
 $q\in Q$ satisfy $q<_{1}p$. From $P\cap Q=\varnothing$ and $P\cup Q=E$, we
 conclude that $P=E\setminus Q$ and $Q=E\setminus P$.
@@ -5220,7 +5220,7 @@ Applying this to $p=k$, we obtain $g^{nk}=1_G$.
 Now, $a<_{1}b=g^{k}a$. Since $G$ preserves the relation $<_{1}$, this shows
 that $ha<_{1}hg^{k}a$ for every $h\in G$.
 \begin{vershort}
-Thus, $g^{\ell k}a<_{1}g^{\ell k}g^{k}a$ for every $\ell\in\mathbb{N}$.
+Thus, $g^{\ell k}a<_{1}g^{\ell k}g^{k}a$ for every $\ell\in \NN $.
 \end{vershort}
 \begin{verlong}
 Thus, for every $\ell \in \NN$, we have
@@ -5230,7 +5230,7 @@ applied to $h = g^{\ell k}$).
 Hence,
 $g^{\ell k} a <_{1} g^{\ell k} g^{k} a
 = g^{\ell k + k} a = g^{\left(  \ell+1\right)  k} a$
-for every $\ell\in\mathbb{N}$.
+for every $\ell\in \NN $.
 Consequently, $g^{0k}a<_{1}g^{1k}a<_{1}g^{2k}a<_{1}\cdots<_{1}g^{nk}a$. Thus,
 $g^{0k}a<_{1}\underbrace{g^{nk}}_{=1_G}a=a$, which
 contradicts $\underbrace{g^{0k}}_{=g^0=1_G}a=1_Ga=a$.
@@ -5736,7 +5736,7 @@ map satisfying $g\pi=\pi$.
 
 \begin{enumerate}
 \item[(a)] If $\pi$ is an $\EE$-partition, then $\Phi\left(
-\pi\right)  $ is an ${\mathbf{E}}^{g}$-partition.
+\pi\right)  $ is an $ \EE ^{g}$-partition.
 
 \item[(b)] If $\Phi\left(  \pi\right)  $ is an
 $\mathbf{E}^{g}$-partition, then $\pi$ is an $\EE$-partition.
@@ -5766,7 +5766,7 @@ The definition of $\Phi$ shows that
 
 (a) Assume that $\pi$ is an $\mathbf{E}$-partition. We
 want to show that $\Phi\left(  \pi\right)  $ is an
-${\mathbf{E}}^{g}$-partition. In order to do so, we can
+$ \EE ^{g}$-partition. In order to do so, we can
 use Lemma \ref{lem.Epartition.cover}
 (applied to $\mathbf{E}^{g}$, $\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  $ and
 $\Phi\left(  \pi\right)  $ instead of $\mathbf{E}$,
@@ -6167,36 +6167,36 @@ Every $G$-orbit $O$ on $\Par \EE$ satisfies
 
 Now,
 \begin{align}
-\Gamma\left(  {{\mathbf{E}}},w,G\right)   &  =\sum_{O\text{ is a
-}G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}\underbrace{{\mathbf{x}%
+\Gamma\left( \EE , w, G\right)   &  =\sum_{O\text{ is a
+}G\text{-orbit on }\operatorname{Par} \EE }\underbrace{{\mathbf{x}%
 }_{O,w}}_{\substack{=\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in
 O}\mathbf{x}_{\pi,w}\\\text{(by \eqref{pf.thm.antipode.GammawG.averaging})}%
-}}=\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{{\mathbf{E}}}%
-}\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi
+}}=\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }
+\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi
 ,w}\nonumber\\
-&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{{\mathbf{E}}}%
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE
 }\sum\limits_{\pi\in O}\underbrace{\dfrac{1}{\left\vert O\right\vert }%
 }_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in
 G;\\g\pi=\pi}}1\\\text{(by \eqref{eq.lem.burnside.sums.a}, applied to }
 F = \Par\EE {)}}}\mathbf{x}%
 _{\pi,w}\nonumber\\
 &  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}%
-{\mathbf{E}}}\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\operatorname{Par}%
-{\mathbf{E}}}=\sum_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}}\left(
+\EE }\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\operatorname{Par}%
+\EE }=\sum_{\pi\text{ is an } \EE \text{-partition}}}\left(
 \dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
 }}1\right)  \mathbf{x}_{\pi,w}\nonumber\\
-&  =\sum_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}\left(  \dfrac
+&  =\sum_{\pi\text{ is an } \EE \text{-partition}}\left(  \dfrac
 {1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}}1\right)
 \mathbf{x}_{\pi,w}=\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum
-_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}\sum_{\substack{g\in
+_{\pi\text{ is an } \EE \text{-partition}}\sum_{\substack{g\in
 G;\\g\pi=\pi}}}_{=\sum_{g\in G}\sum_{\substack{\pi\text{ is an }{\mathbf{E}%
 }\text{-partition;}\\g\pi=\pi}}}\mathbf{x}_{\pi,w}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\underbrace{\sum
-_{\substack{\pi\text{ is an }{\mathbf{E}}\text{-partition;}\\g\pi=\pi
-}}\mathbf{x}_{\pi,w}}_{\substack{=\Gamma\left(  {\mathbf{E}}^{g},w^{g}\right)
+_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
+}}\mathbf{x}_{\pi,w}}_{\substack{=\Gamma\left(   \EE ^{g},w^{g}\right)
 \\\text{(by \eqref{pf.thm.antipode.GammawG.red})}}}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\Gamma\left(
-\underbrace{{\mathbf{E}}^{g}}_{=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
+\underbrace{ \EE ^{g}}_{=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
 },w^{g}\right)  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\Gamma\left(
 \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)
 .\label{pf.thm.antipode.GammawG.1}%
@@ -6256,15 +6256,15 @@ E\right\vert -\left\vert E^{g}\right\vert }$, qed.}.
 
 Now,%
 \begin{align}
-&  \Gamma^{+}\left(  {\mathbf{E}},w,G\right)  \nonumber\\
+&  \Gamma^{+}\left(   \EE ,w,G\right)  \nonumber\\
 &  =\sum_{O\text{ is an }E\text{-coeven }G\text{-orbit on }\operatorname{Par}%
-{\mathbf{E}}}\underbrace{{\mathbf{x}}_{O,w}}_{\substack{=\dfrac{1}{\left\vert
+ \EE }\underbrace{{\mathbf{x}}_{O,w}}_{\substack{=\dfrac{1}{\left\vert
 O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\\text{(by
 \eqref{pf.thm.antipode.GammawG.averaging})}}}=\sum_{O\text{ is an
-}E\text{-coeven }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}\dfrac
+}E\text{-coeven }G\text{-orbit on }\operatorname{Par} \EE }\dfrac
 {1}{\left\vert O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi
 ,w}\nonumber\\
-&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}%
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
 \begin{cases}
 \dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
 ;\\
@@ -6274,13 +6274,13 @@ O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\\text{(by
 &  \qquad\left(
 \begin{array}
 [c]{c}%
-\text{here, we have extended the sum to all }G\text{-orbits on }\operatorname{Par}{\mathbf{E}}
+\text{here, we have extended the sum to all }G\text{-orbits on }\operatorname{Par} \EE 
 \\
 \text{ (not just the }E\text{-coeven ones); but all new addends are }0\\
 \text{and therefore do not influence the value of the sum}%
 \end{array}
 \right)  \nonumber\\
-&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}%
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
 \sum\limits_{\pi\in O}\underbrace{%
 \begin{cases}
 \dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
@@ -6291,28 +6291,28 @@ O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\\text{(by
 G;\\g\pi=\pi}}\operatorname*{sign}\nolimits_{E}g\\\text{(by
 \eqref{pf.thm.antipode.GammawG.signed})}}}\mathbf{x}_{\pi,w}\nonumber\\
 &  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}%
-{{\mathbf{E}}}}\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\operatorname{Par}%
-{\mathbf{E}}}=\sum_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}}\left(
+\EE }\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\operatorname{Par}%
+\EE }=\sum_{\pi\text{ is an } \EE \text{-partition}}}\left(
 \dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
 }}\operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi,w}\nonumber\\
-&  =\sum_{\pi\text{ is an }{\mathbf{E}}\text{-partition}}\left(  \dfrac
+&  =\sum_{\pi\text{ is an } \EE \text{-partition}}\left(  \dfrac
 {1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}%
 }\operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi,w}=\dfrac
 {1}{\left\vert G\right\vert }\underbrace{\sum_{\pi\text{ is an }{\mathbf{E}%
 }\text{-partition}}\sum_{\substack{g\in G;\\g\pi=\pi}}}_{=\sum_{g\in G}%
-\sum_{\substack{\pi\text{ is an }{\mathbf{E}}\text{-partition;}\\g\pi=\pi}%
+\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi}%
 }}\left(  \operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi
 ,w}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}%
 \underbrace{\operatorname*{sign}\nolimits_{E}g}_{\substack{=\left(  -1\right)
 ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\\\text{(by
 \eqref{pf.thm.antipode.GammawG.sign})}}}\underbrace{\sum_{\substack{\pi\text{
-is an }{\mathbf{E}}\text{-partition;}\\g\pi=\pi}}\mathbf{x}_{\pi,w}%
-}_{\substack{=\Gamma\left(  {\mathbf{E}}^{g},w^{g}\right)  \\\text{(by
+is an } \EE \text{-partition;}\\g\pi=\pi}}\mathbf{x}_{\pi,w}%
+}_{\substack{=\Gamma\left(   \EE ^{g},w^{g}\right)  \\\text{(by
 \eqref{pf.thm.antipode.GammawG.red})}}}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
 ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\Gamma\left(
-{\mathbf{E}}^{g},w^{g}\right)  .
+ \EE ^{g},w^{g}\right)  .
 \label{pf.thm.antipode.GammawG.Gammaplus}%
 \end{align}
 Hence, $\Gamma^+\left(  { \EE },w,G\right) \in \QSym$
@@ -6364,21 +6364,21 @@ An intermediate step between \cite[Theorem 2.13]{Joch} and Theorem
 \ref{thm.antipode.GammawG} will be the following fact:
 
 \begin{corollary}
-\label{cor.reciprocity.GammawG}Let ${\mathbf{E}}=\left(  E,<_{1},<_{2}\right)
+\label{cor.reciprocity.GammawG}Let $ \EE =\left(  E,<_{1},<_{2}\right)
 $ be a tertispecial double poset. Let $w:E\rightarrow\left\{  1,2,3,\ldots
 \right\}  $. Let $G$ be a finite group which acts on $E$. Assume that $G$
 preserves both relations $<_{1}$ and $<_{2}$, and also preserves $w$. For
-every $q\in\mathbb{N}$, let $\operatorname*{Par}\nolimits_{q}\mathbf{E}$
+every $q\in \NN $, let $\operatorname*{Par}\nolimits_{q}\mathbf{E}$
 denote the set of all $\mathbf{E}$-partitions whose image is contained in
 $\left\{  1,2,\ldots,q\right\}  $. Then, the group $G$ also acts on
 $\operatorname*{Par}\nolimits_{q}\mathbf{E}$; namely, $\operatorname{Par}%
-_{q}{\mathbf{E}}$ is a $G$-subset of the $G$-set $\left\{  1,2,\ldots
+_{q} \EE $ is a $G$-subset of the $G$-set $\left\{  1,2,\ldots
 ,q\right\}  ^{E}$ (see Definition~\ref{def.G-sets.terminology} (d) for the
 definition of the latter).
 
 \begin{enumerate}
 \item[(a)] There exists a unique polynomial $\Omega_{\mathbf{E},G}%
-\in\mathbb{Q}\left[  X\right]  $ such that every $q\in\mathbb{N}$ satisfies%
+\in\mathbb{Q}\left[  X\right]  $ such that every $q\in \NN $ satisfies%
 \begin{equation}
 \Omega_{\mathbf{E},G}\left(  q\right)  =\left(  \text{the number of all
 }G\text{-orbits on }\operatorname*{Par}\nolimits_{q}\mathbf{E}\right)  .
@@ -6396,14 +6396,14 @@ E,>_{1},<_{2}\right)  \right) \nonumber\\
 all even }G\text{-orbits on }\operatorname*{Par}\nolimits_{q}\left(
 E,<_{1},>_{2}\right)  \right)  \label{eq.cor.reciprocity.GammawG.b.2}%
 \end{align}
-for all $q\in\mathbb{N}$.
+for all $q\in \NN $.
 \end{enumerate}
 \end{corollary}
 
 \begin{proof}
 [Proof of Corollary \ref{cor.reciprocity.GammawG} (sketched).]Set
-$\mathbf{k}=\mathbb{Q}$. For any $f\in\operatorname*{QSym}$ and any
-$q\in\mathbb{N}$, we define an element $\operatorname*{ps}\nolimits^{1}\left(
+$\mathbf{k}=\mathbb{Q}$. For any $f\in \QSym $ and any
+$q\in \NN $, we define an element $\operatorname*{ps}\nolimits^{1}\left(
 f\right)  \left(  q\right)  \in\mathbb{Q}$ by%
 \[
 \operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)  =f\left(
@@ -6413,15 +6413,15 @@ f\right)  \left(  q\right)  \in\mathbb{Q}$ by%
 $ is the result of substituting $1$ for $x_{1},x_{2},\ldots,x_{q}$ and $0$ for
 $x_{q+1},x_{q+2},x_{q+3},\ldots$ in the power series $f$).
 
-(a) Consider the elements $\Gamma\left(  {\mathbf{E}},w,G\right)  $ and
-$\Gamma^{+}\left(  {\mathbf{E}},w,G\right)  $ of ${\operatorname{QSym}}$
+(a) Consider the elements $\Gamma\left(   \EE ,w,G\right)  $ and
+$\Gamma^{+}\left(   \EE ,w,G\right)  $ of ${\operatorname{QSym}}$
 defined in Theorem \ref{thm.antipode.GammawG}. Observe that
 $\operatorname*{Par}\nolimits_{q}\mathbf{E}$ is a $G$-subset of
 $\operatorname*{Par}\mathbf{E}$.
 
 \begin{noncompile}
 Clearly, there exists \textbf{at most} one polynomial $\Omega_{\mathbf{E}%
-,G}\in\mathbb{Q}\left[  X\right]  $ such that every $q\in\mathbb{N}$ satisfies
+,G}\in\mathbb{Q}\left[  X\right]  $ such that every $q\in \NN $ satisfies
 (\ref{eq.cor.reciprocity.GammawG.a.def}) (because a polynomial in
 $\mathbb{Q}\left[  X\right]  $ is uniquely determined by its values at all
 nonnegative integers). It remains to show that there exists \textbf{at least}
@@ -6429,21 +6429,21 @@ one such polynomial.
 \end{noncompile}
 
 Now, \cite[Proposition 7.7 (i)]{Reiner} shows that, for any given
-$f\in\operatorname*{QSym}$, there exists a unique polynomial in $\mathbb{Q}%
-\left[  X\right]  $ whose value on each $q\in\mathbb{N}$ equals
+$f\in \QSym $, there exists a unique polynomial in $\mathbb{Q}%
+\left[  X\right]  $ whose value on each $q\in \NN $ equals
 $\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)  $.
-Applying this to $f=\Gamma\left(  {\mathbf{E}},w,G\right)  $, we conclude that
+Applying this to $f=\Gamma\left(   \EE ,w,G\right)  $, we conclude that
 there exists a unique polynomial in $\mathbb{Q}\left[  X\right]  $ whose value
-on each $q\in\mathbb{N}$ equals $\operatorname*{ps}\nolimits^{1}\left(
-\Gamma\left(  {\mathbf{E}},w,G\right)  \right)  \left(  q\right)  $. But since
-every $q\in\mathbb{N}$ satisfies
+on each $q\in \NN $ equals $\operatorname*{ps}\nolimits^{1}\left(
+\Gamma\left(   \EE ,w,G\right)  \right)  \left(  q\right)  $. But since
+every $q\in \NN $ satisfies
 \begin{align}
-\operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(  {\mathbf{E}},w,G\right)
+\operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(   \EE ,w,G\right)
 \right)  \left(  q\right)   &  =\underbrace{\left(  \Gamma\left(  {\mathbf{E}%
 },w,G\right)  \right)  }_{=\sum_{O\text{ is a }G\text{-orbit on }%
-\operatorname{Par}{\mathbf{E}}}{\mathbf{x}}_{O,w}}\left(
+\operatorname{Par} \EE }{\mathbf{x}}_{O,w}}\left(
 \underbrace{1,1,\ldots,1}_{q\text{ times}},0,0,0,\ldots\right) \nonumber\\
-&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}%
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE %
 }\underbrace{{\mathbf{x}}_{O,w}\left(  \underbrace{1,1,\ldots,1}_{q\text{
 times}},0,0,0,\ldots\right)  }_{=%
 \begin{cases}
@@ -6451,39 +6451,39 @@ times}},0,0,0,\ldots\right)  }_{=%
 0, & \text{if }O\not \subseteq \operatorname*{Par}\nolimits_{q}\mathbf{E}%
 \end{cases}
 }\nonumber\\
-&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}{\mathbf{E}}}%
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
 \begin{cases}
 1, & \text{if }O\subseteq\operatorname*{Par}\nolimits_{q}\mathbf{E};\\
 0, & \text{if }O\not \subseteq \operatorname*{Par}\nolimits_{q}\mathbf{E}%
 \end{cases}
 \nonumber\\
-&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}_{q}{\mathbf{E}}%
+&  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}_{q} \EE %
 }1=\left(  \text{the number of all }G\text{-orbits on }\operatorname*{Par}%
 \nolimits_{q}\mathbf{E}\right)  , \label{pf.cor.reciprocity.GammawG.a.1}%
 \end{align}
 this rewrites as follows: There exists a unique polynomial in $\mathbb{Q}%
-\left[  X\right]  $ whose value on each $q\in\mathbb{N}$ equals $\left(
+\left[  X\right]  $ whose value on each $q\in \NN $ equals $\left(
 \text{the number of all }G\text{-orbits on }\operatorname*{Par}\nolimits_{q}%
 \mathbf{E}\right)  $. This proves Corollary \ref{cor.reciprocity.GammawG} (a).
 
 (b) \cite[Proposition 7.7 (i)]{Reiner} shows that, for any given
-$f\in\operatorname*{QSym}$, there exists a unique polynomial in $\mathbb{Q}%
-\left[  X\right]  $ whose value on each $q\in\mathbb{N}$ equals
+$f\in \QSym $, there exists a unique polynomial in $\mathbb{Q}%
+\left[  X\right]  $ whose value on each $q\in \NN $ equals
 $\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)  $. This
 polynomial is denoted by $\operatorname*{ps}\nolimits^{1}\left(  f\right)  $
 in \cite[Proposition 7.7]{Reiner}. From our above proof of Corollary
 \ref{cor.reciprocity.GammawG} (a), we see that
 \[
 \Omega_{\mathbf{E},G}=\operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(
-{\mathbf{E}},w,G\right)  \right)  .
+ \EE ,w,G\right)  \right)  .
 \]
 
 
 But \cite[Proposition 7.7 (iii)]{Reiner} shows that, for any $f\in
-\operatorname*{QSym}$ and $m\in\mathbb{N}$, we have $\operatorname*{ps}%
+ \QSym $ and $m\in \NN $, we have $\operatorname*{ps}%
 \nolimits^{1}\left(  S\left(  f\right)  \right)  \left(  m\right)
 =\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  -m\right)  $.
-Applying this to $f=\Gamma\left(  {\mathbf{E}},w,G\right)  $, we obtain%
+Applying this to $f=\Gamma\left(   \EE ,w,G\right)  $, we obtain%
 \[
 \operatorname*{ps}\nolimits^{1}\left(  S\left(  \Gamma\left(  {\mathbf{E}%
 },w,G\right)  \right)  \right)  \left(  m\right)
@@ -6491,10 +6491,10 @@ Applying this to $f=\Gamma\left(  {\mathbf{E}},w,G\right)  $, we obtain%
 },w,G\right)  \right)  }_{=\Omega_{\mathbf{E},G}}\left(  -m\right)
 =\Omega_{\mathbf{E},G}\left(  -m\right)
 \]
-for any $m\in\mathbb{N}$. Thus, any $m\in\mathbb{N}$ satsfies%
+for any $m\in \NN $. Thus, any $m\in \NN $ satsfies%
 \begin{align*}
 \Omega_{\mathbf{E},G}\left(  -m\right)   &  =\operatorname*{ps}\nolimits^{1}%
-\left(  \underbrace{S\left(  \Gamma\left(  {\mathbf{E}},w,G\right)  \right)
+\left(  \underbrace{S\left(  \Gamma\left(  \EE ,w,G\right)  \right)
 }_{\substack{=\left(  -1\right)  ^{\left\vert E\right\vert }\Gamma^{+}\left(
 \left(  E,>_{1},<_{2}\right)  ,w,G\right)  \\\text{(by Theorem
 \ref{thm.antipode.GammawG})}}}\right)  \left(  m\right) \\
@@ -6505,7 +6505,7 @@ E\right\vert }\Gamma^{+}\left(  \left(  E,>_{1},<_{2}\right)  ,w,G\right)
 \nolimits^{1}\left(  \Gamma^{+}\left(  \left(  E,>_{1},<_{2}\right)
 ,w,G\right)  \right)  \left(  m\right)  .
 \end{align*}
-Renaming $m$ as $q$ in this equality, we see that every $q\in\mathbb{N}$
+Renaming $m$ as $q$ in this equality, we see that every $q\in \NN $
 satisfies%
 \begin{equation}
 \Omega_{\mathbf{E},G}\left(  -q\right)  =\left(  -1\right)  ^{\left\vert
@@ -6516,7 +6516,7 @@ E,>_{1},<_{2}\right)  ,w,G\right)  \right)  \left(  q\right)  .
 
 
 But just as we proved (\ref{pf.cor.reciprocity.GammawG.a.1}), we can show that
-every $q\in\mathbb{N}$ satisfies
+every $q\in \NN $ satisfies
 \[
 \operatorname*{ps}\nolimits^{1}\left(  \Gamma^{+}\left(  {\mathbf{E}%
 },w,G\right)  \right)  \left(  q\right)  =\left(  \text{the number of all even
@@ -6553,10 +6553,10 @@ to show that%
 \operatorname*{Par}\nolimits_{q}\left(  E,<_{1},>_{2}\right)  \right)
 \label{pf.cor.reciprocity.GammawG.b.goal5}%
 \end{align}
-for every $q\in\mathbb{N}$.
+for every $q\in \NN $.
 
 \textit{Proof of (\ref{pf.cor.reciprocity.GammawG.b.goal5}):} Let
-$q\in\mathbb{N}$. Let $w_{0}:\left\{  1,2,\ldots,q\right\}  \rightarrow
+$q\in \NN $. Let $w_{0}:\left\{  1,2,\ldots,q\right\}  \rightarrow
 \left\{  1,2,\ldots,q\right\}  $ be the map sending each $i\in\left\{
 1,2,\ldots,q\right\}  $ to $q+1-i$. Then, the map%
 \[
