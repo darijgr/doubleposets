@@ -147,6 +147,7 @@
 \newcommand{\Powser}{\mathbf{k}\left[\left[x_1,x_2,x_3,\ldots\right]\right]}
 \newcommand{\Par}{\operatorname{Par}}
 \newcommand{\bdd}{\operatorname{bdd}}
+\newcommand{\sign}{\operatorname{sign}}
 \newcommand{\bD}{{\mathbf{D}}}
 \newcommand{\EE}{{\mathbf{E}}}
 \newcommand{\FF}{{\mathbf{F}}}
@@ -5914,17 +5915,19 @@ $G$-set. Let $O$ be a $G$-orbit on $F$, and let $\pi\in O$.
 
 
 \item[(b)] Let $E$ be a further finite $G$-set. For every $g\in G$, let
-$\operatorname{sign}_{E}g$ denote the sign of the permutation of $E$ that
+$\sign_E g$ denote the sign of the permutation of $E$ that
 sends every $e\in E$ to $ge$. (Thus, $g\in G$ is $E$-even if and only if
-$\operatorname*{sign}\nolimits_{E}g=1$.) Then,
-\begin{equation}%
+$\sign_E g = 1$.) Then,
+\begin{equation}
 \begin{cases}
 \dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
 ;\\
 0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
-=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
-}}\operatorname*{sign}\nolimits_{E}g.\label{eq.lem.burnside.sums.b}%
+=
+\dfrac{1}{\left\vert G\right\vert }
+\sum_{\substack{g\in G;\\ g\pi=\pi}} \sign_E g .
+\label{eq.lem.burnside.sums.b}
 \end{equation}
 
 \end{enumerate}
@@ -5970,10 +5973,10 @@ O\right\vert }%
 $E$-coeven. Thus, $\pi$ is $E$-coeven (by the definition of what it means for
 $O$ to be $E$-coeven). This means that every $g\in G$ satisfying $g\pi=\pi$ is
 $E$-even. Hence, every $g\in G$ satisfying $g\pi=\pi$ satisfies
-$\operatorname*{sign}\nolimits_{E}g=1$. Thus,
+$\sign_E g=1$. Thus,
 \begin{align*}
 \dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
-}}\underbrace{\operatorname*{sign}\nolimits_{E}g}_{=1} &  =\dfrac
+}}\underbrace{\sign_E g}_{=1} &  =\dfrac
 {1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}}1=\dfrac
 {1}{\left\vert O\right\vert }\ \ \ \ \ \ \ \ \ \ \left(  \text{by
 \eqref{eq.lem.burnside.sums.a}}\right)  \\
@@ -5996,27 +5999,27 @@ $E$-even. In other words, not every $g\in\operatorname*{Stab}\nolimits_{G}\pi$
 is $E$-even (since the elements $g\in G$ satisfying $g\pi=\pi$ are exactly the
 elements $g\in\operatorname*{Stab}\nolimits_{G}\pi$). In other words, not
 every $g\in\operatorname*{Stab}\nolimits_{G}\pi$ satisfies
-$\operatorname*{sign}\nolimits_{E}g=1$.
+$\sign_E g = 1$.
 
 Now, the map
 \[
 \operatorname*{Stab}\nolimits_{G}\pi\rightarrow\left\{  1,-1\right\}
-,\ \ \ \ \ \ \ \ \ \ g\mapsto\operatorname*{sign}\nolimits_{E}g
+,\ \ \ \ \ \ \ \ \ \ g \mapsto \sign_E g
 \]
 is a group homomorphism (since the sign of a permutation is multiplicative)
 and is not the trivial homomorphism (since not every $g\in\operatorname*{Stab}%
-\nolimits_{G}\pi$ satisfies $\operatorname*{sign}\nolimits_{E}g=1$). Hence, it
+\nolimits_{G}\pi$ satisfies $\sign_E g = 1$). Hence, it
 must send exactly half the elements of $\operatorname*{Stab}\nolimits_{G}\pi$
 to $1$ and the other half to $-1$. Therefore, the addends in the sum
-$\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}%
-\nolimits_{E}g$ cancel each other out (one half of them are $1$, and the
-others are $-1$). Therefore, $\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi
-}\operatorname*{sign}\nolimits_{E}g=0$. Now,
+$\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}
+\sign_E g$ cancel each other out (one half of them are $1$, and the
+others are $-1$). Therefore,
+$\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi} \sign_E g = 0$. Now,
 \[
 \dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{\substack{g\in
 G;\\g\pi=\pi}}}_{=\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}%
-}\operatorname*{sign}\nolimits_{E}g=\dfrac{1}{\left\vert G\right\vert }%
-\underbrace{\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}\operatorname*{sign}\nolimits_{E}g}_{=0}
+} \sign_E g = \dfrac{1}{\left\vert G\right\vert }%
+\underbrace{\sum_{g\in\operatorname{Stab}_{G}\pi} \sign_E g}_{=0}
 = 0
 =%
 \begin{cases}
@@ -6219,10 +6222,10 @@ S\left(  \Gamma\left(  { \EE },w,G\right)  \right)    & =\dfrac
 \label{pf.thm.antipode.GammawG.1S}
 \end{align}
 
-On the other hand, for every $g\in G$, let $\operatorname{sign}_{E}g$
+On the other hand, for every $g\in G$, let $\sign_E g$
 denote the sign of the permutation of $E$ that sends every
-$e\in E$ to $ge$. Thus, $g\in G$ is $E$-even if and only if $\operatorname*{sign}%
-\nolimits_{E}g=1$. Now, every $G$-orbit $O$ on $\Par \EE $
+$e\in E$ to $ge$. Thus, $g\in G$ is $E$-even if and only if
+$\sign_E g = 1$. Now, every $G$-orbit $O$ on $\Par \EE $
 and every $\pi\in O$ satisfy%
 \begin{equation}%
 \begin{cases}
@@ -6230,14 +6233,14 @@ and every $\pi\in O$ satisfy%
 0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
 =\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G; \\ g\pi = \pi}}
-\operatorname*{sign}\nolimits_{E} g
-\label{pf.thm.antipode.GammawG.signed}%
+\sign_E g
+\label{pf.thm.antipode.GammawG.signed}
 \end{equation}
-(by \eqref{eq.lem.burnside.sums.b}, applied to $F = \Par\EE$). Furthermore,%
+(by \eqref{eq.lem.burnside.sums.b}, applied to $F = \Par\EE$). Furthermore,
 \begin{equation}
-\operatorname*{sign}\nolimits_{E}g=\left(  -1\right)  ^{\left\vert
-E\right\vert -\left\vert E^{g}\right\vert }%
-\label{pf.thm.antipode.GammawG.sign}%
+\sign_E g = \left(  -1\right)  ^{\left\vert
+E\right\vert -\left\vert E^{g}\right\vert }
+\label{pf.thm.antipode.GammawG.sign}
 \end{equation}
 for every $g\in G$\ \ \ \ \footnote{\textit{Proof of
 \eqref{pf.thm.antipode.GammawG.sign}:} Let $g\in G$. Recall that
@@ -6289,23 +6292,23 @@ O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\\text{(by
 0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
 }_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in
-G;\\g\pi=\pi}}\operatorname*{sign}\nolimits_{E}g\\\text{(by
+G;\\g\pi=\pi}} \sign_E g \\\text{(by
 \eqref{pf.thm.antipode.GammawG.signed})}}}\mathbf{x}_{\pi,w}\nonumber\\
 &  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}%
 \EE }\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\operatorname{Par}%
 \EE }=\sum_{\pi\text{ is an } \EE \text{-partition}}}\left(
 \dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
-}}\operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi,w}\nonumber\\
+}} \sign_E g \right)  \mathbf{x}_{\pi,w}\nonumber\\
 &  =\sum_{\pi\text{ is an } \EE \text{-partition}}\left(  \dfrac
 {1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}%
-}\operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi,w}=\dfrac
+} \sign_E g \right)  \mathbf{x}_{\pi,w}=\dfrac
 {1}{\left\vert G\right\vert }\underbrace{\sum_{\pi\text{ is an }{\mathbf{E}%
 }\text{-partition}}\sum_{\substack{g\in G;\\g\pi=\pi}}}_{=\sum_{g\in G}%
 \sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi}%
-}}\left(  \operatorname*{sign}\nolimits_{E}g\right)  \mathbf{x}_{\pi
+}}\left(   \sign_E g \right)  \mathbf{x}_{\pi
 ,w}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}%
-\underbrace{\operatorname*{sign}\nolimits_{E}g}_{\substack{=\left(  -1\right)
+\underbrace{ \sign_E g }_{\substack{=\left(  -1\right)
 ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\\\text{(by
 \eqref{pf.thm.antipode.GammawG.sign})}}}\underbrace{\sum_{\substack{\pi\text{
 is an } \EE \text{-partition;}\\g\pi=\pi}}\mathbf{x}_{\pi,w}%
