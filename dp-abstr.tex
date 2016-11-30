@@ -6244,19 +6244,30 @@ E\right\vert -\left\vert E^{g}\right\vert }
 \end{equation}
 for every $g\in G$\ \ \ \ \footnote{\textit{Proof of
 \eqref{pf.thm.antipode.GammawG.sign}:} Let $g\in G$. Recall that
-$\operatorname*{sign}\nolimits_{E}g$ is the sign of the permutation of $E$
-that sends every $e\in E$ to $ge$. But if $\sigma$ is a permutation of a
+$\sign_E g$ is the sign of the permutation of $E$
+that sends every $e\in E$ to $ge$. Denote this permutation by $\zeta$.
+Thus, $\sign_E g$ is the sign of $\zeta$.
+\par
+The permutation $\zeta$ is the permutation of $E$
+that sends every $e \in E$ to $ge$. In other words,
+$\zeta$ is the action of $g$ on $E$.
+Hence, the cycles of $\zeta$ are the $g$-orbits on $E$.
+Thus, the set of all cycles of $\zeta$ is the set
+of all $g$-orbits on $E$; this latter set is $E^g$.
+Hence, $E^g$ is the set of all cycles of $\zeta$.
+\par
+But if $\sigma$ is a permutation of a
 finite set $X$, then the sign of $\sigma$ is $\left(  -1\right)  ^{\left\vert
 X\right\vert -\left\vert X^{\sigma}\right\vert }$, where $X^{\sigma}$ is the
-set of all cycles of $\sigma$. Applying this to $X=E$, $\sigma=\left(
-\text{the permutation of }E\text{ that sends every }e\in E\text{ to
-}ge\right)  $ and $X^{\sigma}=E^{g}$, we see that the sign of the permutation
-of $E$ that sends every $e\in E$ to $ge$ is $\left(  -1\right)  ^{\left\vert
+set of all cycles of $\sigma$. Applying this to $X=E$,
+$\sigma=\zeta$ and $X^{\sigma}=E^{g}$, we see that the sign of $\zeta$
+is $\left(  -1\right)  ^{\left\vert
 E\right\vert -\left\vert E^{g}\right\vert }$
-(because $E^g$ is the set of all cycles of the permutation of
-$E$ that sends every $e\in E$ to $ge$). In other words,
-$\operatorname*{sign}\nolimits_{E}g=\left(  -1\right)  ^{\left\vert
-E\right\vert -\left\vert E^{g}\right\vert }$, qed.}.
+(because $E^g$ is the set of all cycles of $\zeta$).
+In other words,
+$\sign_E g = \left(  -1\right)  ^{\left\vert
+E\right\vert -\left\vert E^{g}\right\vert }$ (since
+$\sign_E g$ is the sign of $\zeta$), qed.}.
 
 Now,%
 \begin{align}
