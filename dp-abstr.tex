@@ -1238,7 +1238,7 @@ M_{\alpha}, & \text{if }\ell\left(  \alpha\right)  \geq\left\vert
 Thus, $\eta$ transforms a quasisymmetric function by removing all monomials
 $\mathfrak{m}$ for which the number of indeterminates appearing in
 $\mathfrak{m}$ is $<\deg\mathfrak{m}-1$. We partially order the ring
-$\mathbf{k}\left[  \left[  \mathbf{x}\right]  \right]  $ by a coefficientwise
+$\mathbf{k}\left[  \left[ \xx \right]  \right]  $ by a coefficientwise
 order (i.e., two power series $a$ and $b$ satisfy $a\leq b$ if and only if
 each coefficient of $a$ is $\leq$ to the corresponding coefficient of $b$).
 Now, every double poset $\left(  E,<_{1},<_{2}\right)  $ satisfies%
@@ -4553,13 +4553,13 @@ disjoint subsets $P$ and $Q$.
 
 If $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ is a map, then
 \begin{align*}
-\underbrace{\mathbf{x}_{\pi\mid_{P},w\mid_{P}}}_{\substack{
+\underbrace{\xx_{\pi\mid_{P},w\mid_{P}}}_{\substack{
 =\prod_{e\in P}x_{\left(
 \pi\mid_{P}\right)  \left(  e\right)  }^{\left(  w\mid_{P} \right)
 \left(  e\right) }  \\
 \text{(by the definition of } \xx_{\pi\mid_P, w\mid_P} \text{)}
 }}
-\underbrace{\mathbf{x}_{\pi\mid_{Q},w\mid_{Q}}}_{\substack{
+\underbrace{\xx_{\pi\mid_{Q},w\mid_{Q}}}_{\substack{
 =\prod_{e\in Q}x_{\left(  \pi\mid_{Q}\right)  \left(  e\right)  }^{
 \left(  w\mid_{Q} \right) \left(e\right) } \\
 \text{(by the definition of } \xx_{\pi\mid_Q, w\mid_Q} \text{)}
@@ -4610,15 +4610,15 @@ $. We thus obtain
 & =\sum_{\substack{\pi:E\rightarrow\left\{  1,2,3,\ldots\right\} ; \\\pi
 \mid_{P}\text{ is a }\left(  P,>_{1},<_{2}\right)  \text{-partition;}\\\pi
 \mid_{Q}\text{ is a }\left(  Q,<_{1},<_{2}\right)  \text{-partition}%
-}}\underbrace{{\mathbf{x}}_{\pi\mid_{P},w\mid_{P}}{\mathbf{x}}_{\pi\mid
+}}\underbrace{\xx_{\pi\mid_{P},w\mid_{P}}{\xx}_{\pi\mid
 _{Q},w\mid_{Q}}}_{\substack{=\prod_{e\in E}x_{\pi\left(  e\right)  }^{w\left(
-e\right)  }=\mathbf{x}_{\pi,w}\\\text{(since }\mathbf{x}_{\pi,w}=\prod_{e\in
+e\right)  } = \xx_{\pi,w}\\\text{(since }\xx_{\pi,w}=\prod_{e\in
 E}x_{\pi\left(  e\right)  }^{w\left(  e\right)  }\\\text{(by the definition of
-}\mathbf{x}_{\pi,w}\text{))}}}\\
+}\xx_{\pi,w}\text{))}}}\\
 & =\sum_{\substack{\pi:E\rightarrow\left\{  1,2,3,\ldots\right\} ; \\\pi
 \mid_{P}\text{ is a }\left(  P,>_{1},<_{2}\right)  \text{-partition;}\\\pi
 \mid_{Q}\text{ is a }\left(  Q,<_{1},<_{2}\right)  \text{-partition}%
-}}\mathbf{x}_{\pi,w}.
+}}\xx_{\pi,w}.
 \end{align*}
 
 Now,
@@ -5756,8 +5756,8 @@ by
 w^{g}\left(  u\right)  =\sum\limits_{a\in u}w\left(
 a\right)  \qquad \qquad \text{ for every } u \in E^g .
 \]
-Then, $\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}
-=\mathbf{x}_{\pi,w}$.
+Then, $\xx_{\Phi\left(  \pi\right)  ,w^{g}}
+=\xx_{\pi,w}$.
 
 \end{enumerate}
 \end{proposition}
@@ -5909,24 +5909,31 @@ Thus, Condition 1 and Condition 2 are proven. Hence,
 Proposition~\ref{prop.G-poset.quot.Phi} (b) is proven.
 
 (c) 
-The definition of $\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}$ shows that%
+The definition of $\xx_{\Phi\left(  \pi\right)  ,w^{g}}$ shows that%
 \begin{align*}
-\mathbf{x}_{\Phi\left(  \pi\right)  ,w^{g}}  & =\prod_{e\in E^{g}}x_{\left(
-\Phi\left(  \pi\right)  \right)  \left(  e\right)  }^{w^{g}\left(  e\right)
-}=\prod_{u\in E^{g}}\underbrace{x_{\left(  \Phi\left(  \pi\right)  \right)
-\left(  u\right)  }^{w^{g}\left(  u\right)  }}_{\substack{=\prod_{a\in
-u}x_{\left(  \Phi\left(  \pi\right)  \right)  \left(  u\right)  }^{w\left(
-a\right)  }\\\text{(since }w^{g}\left(  u\right)  =\sum\limits_{a\in
-u}w\left(  a\right)  \text{)}}}=\prod_{u\in E^{g}}\prod_{a\in u}%
-\underbrace{x_{\left(  \Phi\left(  \pi\right)  \right)  \left(  u\right)
-}^{w\left(  a\right)  }}_{\substack{=x_{\pi\left(  a\right)  }^{w\left(
-a\right)  }\\\text{(by (\ref{pf.prop.G-poset.quot.phi.main}))}}}\\
-& =\underbrace{\prod_{u\in E^{g}}\prod_{a\in u}}_{=\prod_{a\in E}}%
-x_{\pi\left(  a\right)  }^{w\left(  a\right)  }=\prod_{a\in E}x_{\pi\left(
-a\right)  }^{w\left(  a\right)  }=\prod_{e\in E}x_{\pi\left(  e\right)
-}^{w\left(  e\right)  }=\mathbf{x}_{\pi,w}%
+\xx_{\Phi\left(  \pi\right)  ,w^{g}}
+&= \prod_{e\in E^{g}}
+ x_{\left( \Phi\left(  \pi\right)  \right)  \left(  e\right)  }^{
+    w^{g}\left(  e\right) }
+= \prod_{u\in E^{g}}
+ \underbrace{x_{\left(  \Phi\left(  \pi\right)  \right)
+    \left(  u\right)  }^{w^{g}\left(  u\right)  }}_{
+    \substack{=\prod_{a\in u}x_{\left(  \Phi\left(  \pi\right) 
+    \right)  \left(  u\right)  }^{w\left( a\right)  }\\\text{(since }
+    w^{g}\left(  u\right)  =\sum\limits_{a\in u}w\left(  a\right)
+    \text{)}}}
+= \prod_{u\in E^{g}} \prod_{a\in u}
+  \underbrace{x_{\left(  \Phi\left(  \pi\right)  \right) 
+    \left(  u\right) }^{w\left(  a\right)  }}_{
+    \substack{=x_{\pi\left(  a\right)  }^{w\left( a\right)  }\\
+    \text{(by (\ref{pf.prop.G-poset.quot.phi.main}))}}}\\
+&= \underbrace{\prod_{u\in E^{g}}\prod_{a\in u}}_{=\prod_{a\in E}}%
+  x_{\pi\left(  a\right)  }^{w\left(  a\right)  }
+=\prod_{a\in E}x_{\pi\left( a\right)  }^{w\left(  a\right)  }
+=\prod_{e\in E}x_{\pi\left(  e\right) }^{w\left(  e\right)  }
+=\xx_{\pi,w}%
 \end{align*}
-(by the definition of $\mathbf{x}_{\pi,w}$). This proves Proposition
+(by the definition of $\xx_{\pi,w}$). This proves Proposition
 \ref{prop.G-poset.quot.Phi} (c).
 \end{proof}
 
@@ -6107,7 +6114,7 @@ $\left( E^g, <_1^g, <_2^g \right)$ is tertispecial.)
 For every $g\in G$, we have
 \begin{equation}
 \sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
-}}\mathbf{x}_{\pi,w}=\Gamma\left(   \EE ^{g},w^{g}\right)
+}}\xx_{\pi,w}=\Gamma\left(   \EE ^{g},w^{g}\right)
 \label{pf.thm.antipode.GammawG.red}
 \end{equation}
 \footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.red}:} Let $g\in G$.
@@ -6115,9 +6122,9 @@ The definition of $\Gamma \left( \EE^g , w^g \right)$ yields
 \begin{equation}
 \Gamma\left(  \EE^{g},w^{g}\right)
 = \sum_{\pi\text{ is an }
-\EE ^{g}\text{-partition}}\mathbf{x}_{\pi,w^{g}}
+\EE ^{g}\text{-partition}}\xx_{\pi,w^{g}}
 = \sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
-\mathbf{x}_{\pi,w^{g}}
+\xx_{\pi,w^{g}}
 \label{pf.thm.antipode.GammawG.red.pf.1}
 \end{equation}
 (here, we have renamed the summation index $\pi$ as
@@ -6155,22 +6162,22 @@ and
 \par
 Hence, we can substitute $\Phi\left(\pi\right)$ for $\pi$ in the
 sum $\sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
-\mathbf{x}_{\pi,w^{g}}$. We thus obtain
+\xx_{\pi,w^{g}}$. We thus obtain
 \[
 \sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
-\mathbf{x}_{\pi,w^{g}}
+\xx_{\pi,w^{g}}
 =\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
 }}
 \underbrace{\xx_{\Phi\left(  \pi\right)  ,w^{g}}}_{
-\substack{=\mathbf{x}_{\pi,w} \\
+\substack{=\xx_{\pi,w} \\
 \text{(by Proposition~\ref{prop.G-poset.quot.Phi} (c))}
 }}
 = \sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
-\\ g\pi=\pi}}\mathbf{x}_{\pi,w},
+\\ g\pi=\pi}}\xx_{\pi,w},
 \]
 whence $\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
-\\g\pi=\pi}}\mathbf{x}_{\pi,w}=\sum_{\pi\text{ is an }
-\EE ^{g}\text{-partition}}\mathbf{x}_{\pi,w^{g}}
+\\g\pi=\pi}}\xx_{\pi,w}=\sum_{\pi\text{ is an }
+\EE ^{g}\text{-partition}}\xx_{\pi,w^{g}}
 =\Gamma\left(  \EE^{g},w^{g}\right)  $
 (by \eqref{pf.thm.antipode.GammawG.red.pf.1}).
 This proves \eqref{pf.thm.antipode.GammawG.red}.}.
@@ -6205,32 +6212,32 @@ Every $G$-orbit $O$ on $\Par \EE$ satisfies
 Now,
 \begin{align}
 \Gamma\left( \EE , w, G\right)   &  =\sum_{O\text{ is a
-}G\text{-orbit on }\operatorname{Par} \EE }\underbrace{{\mathbf{x}%
-}_{O,w}}_{\substack{=\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in
-O}\mathbf{x}_{\pi,w}\\\text{(by \eqref{pf.thm.antipode.GammawG.averaging})}%
+}G\text{-orbit on }\operatorname{Par} \EE }\underbrace{\xx_{O,w}}_{
+\substack{=\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in
+O}\xx_{\pi,w}\\\text{(by \eqref{pf.thm.antipode.GammawG.averaging})}%
 }}=\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }
-\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi
+\dfrac{1}{\left\vert O\right\vert }\sum\limits_{\pi\in O}\xx_{\pi
 ,w}\nonumber\\
 &  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE
 }\sum\limits_{\pi\in O}\underbrace{\dfrac{1}{\left\vert O\right\vert }%
 }_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in
 G;\\g\pi=\pi}}1\\\text{(by \eqref{eq.lem.burnside.sums.a}, applied to }
-F = \Par\EE {)}}}\mathbf{x}%
-_{\pi,w}\nonumber\\
+F = \Par\EE {)}}}\xx_{\pi,w}
+\nonumber\\
 &  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}%
 \EE }\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\operatorname{Par}%
 \EE }=\sum_{\pi\text{ is an } \EE \text{-partition}}}\left(
 \dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
-}}1\right)  \mathbf{x}_{\pi,w}\nonumber\\
+}}1\right)  \xx_{\pi,w}\nonumber\\
 &  =\sum_{\pi\text{ is an } \EE \text{-partition}}\left(  \dfrac
 {1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}}1\right)
-\mathbf{x}_{\pi,w}=\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum
+\xx_{\pi,w}=\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum
 _{\pi\text{ is an } \EE \text{-partition}}\sum_{\substack{g\in
 G;\\g\pi=\pi}}}_{=\sum_{g\in G}\sum_{\substack{\pi\text{ is an }{\mathbf{E}%
-}\text{-partition;}\\g\pi=\pi}}}\mathbf{x}_{\pi,w}\nonumber\\
+}\text{-partition;}\\g\pi=\pi}}}\xx_{\pi,w}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\underbrace{\sum
 _{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
-}}\mathbf{x}_{\pi,w}}_{\substack{=\Gamma\left(   \EE ^{g},w^{g}\right)
+}}\xx_{\pi,w}}_{\substack{=\Gamma\left(   \EE ^{g},w^{g}\right)
 \\\text{(by \eqref{pf.thm.antipode.GammawG.red})}}}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\Gamma\left(
 \underbrace{ \EE ^{g}}_{=\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
@@ -6308,11 +6315,11 @@ Now,%
 \begin{align}
 &  \Gamma^{+}\left(   \EE ,w,G\right)  \nonumber\\
 &  =\sum_{O\text{ is an }E\text{-coeven }G\text{-orbit on }\operatorname{Par}%
- \EE }\underbrace{{\mathbf{x}}_{O,w}}_{\substack{=\dfrac{1}{\left\vert
-O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\\text{(by
+ \EE }\underbrace{\xx_{O,w}}_{\substack{=\dfrac{1}{\left\vert
+O\right\vert }\sum\limits_{\pi\in O}\xx_{\pi,w}\\\text{(by
 \eqref{pf.thm.antipode.GammawG.averaging})}}}=\sum_{O\text{ is an
 }E\text{-coeven }G\text{-orbit on }\operatorname{Par} \EE }\dfrac
-{1}{\left\vert O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi
+{1}{\left\vert O\right\vert }\sum\limits_{\pi\in O}\xx_{\pi
 ,w}\nonumber\\
 &  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE }%
 \begin{cases}
@@ -6320,7 +6327,7 @@ O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\\text{(by
 ;\\
 0, & \text{if }O\text{ is not }E\text{-coeven}%
 \end{cases}
-\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\nonumber\\
+\sum\limits_{\pi\in O}\xx_{\pi,w}\nonumber\\
 &  \qquad\left(
 \begin{array}
 [c]{c}%
@@ -6339,25 +6346,25 @@ O\right\vert }\sum\limits_{\pi\in O}\mathbf{x}_{\pi,w}\\\text{(by
 \end{cases}
 }_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in
 G;\\g\pi=\pi}} \sign_E g \\\text{(by
-\eqref{pf.thm.antipode.GammawG.signed})}}}\mathbf{x}_{\pi,w}\nonumber\\
+\eqref{pf.thm.antipode.GammawG.signed})}}}\xx_{\pi,w}\nonumber\\
 &  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par}%
 \EE }\sum\limits_{\pi\in O}}_{=\sum_{\pi\in\operatorname{Par}%
 \EE }=\sum_{\pi\text{ is an } \EE \text{-partition}}}\left(
 \dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
-}} \sign_E g \right)  \mathbf{x}_{\pi,w}\nonumber\\
+}} \sign_E g \right)  \xx_{\pi,w}\nonumber\\
 &  =\sum_{\pi\text{ is an } \EE \text{-partition}}\left(  \dfrac
 {1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}%
-} \sign_E g \right)  \mathbf{x}_{\pi,w}=\dfrac
+} \sign_E g \right)  \xx_{\pi,w}=\dfrac
 {1}{\left\vert G\right\vert }\underbrace{\sum_{\pi\text{ is an }{\mathbf{E}%
 }\text{-partition}}\sum_{\substack{g\in G;\\g\pi=\pi}}}_{=\sum_{g\in G}%
 \sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi}%
-}}\left(   \sign_E g \right)  \mathbf{x}_{\pi
-,w}\nonumber\\
+}}\left(   \sign_E g \right)  \xx_{\pi,w}
+\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}%
 \underbrace{ \sign_E g }_{\substack{=\left(  -1\right)
 ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\\\text{(by
 \eqref{pf.thm.antipode.GammawG.sign})}}}\underbrace{\sum_{\substack{\pi\text{
-is an } \EE \text{-partition;}\\g\pi=\pi}}\mathbf{x}_{\pi,w}%
+is an } \EE \text{-partition;}\\g\pi=\pi}}\xx_{\pi,w}%
 }_{\substack{=\Gamma\left(   \EE ^{g},w^{g}\right)  \\\text{(by
 \eqref{pf.thm.antipode.GammawG.red})}}}\nonumber\\
 &  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
@@ -6491,10 +6498,10 @@ every $q\in \NN $ satisfies
 \operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(   \EE ,w,G\right)
 \right)  \left(  q\right)   &  =\underbrace{\left(  \Gamma\left(  {\mathbf{E}%
 },w,G\right)  \right)  }_{=\sum_{O\text{ is a }G\text{-orbit on }%
-\operatorname{Par} \EE }{\mathbf{x}}_{O,w}}\left(
+\operatorname{Par} \EE } \xx_{O,w}}\left(
 \underbrace{1,1,\ldots,1}_{q\text{ times}},0,0,0,\ldots\right) \nonumber\\
 &  =\sum_{O\text{ is a }G\text{-orbit on }\operatorname{Par} \EE %
-}\underbrace{{\mathbf{x}}_{O,w}\left(  \underbrace{1,1,\ldots,1}_{q\text{
+}\underbrace{\xx_{O,w}\left(  \underbrace{1,1,\ldots,1}_{q\text{
 times}},0,0,0,\ldots\right)  }_{=%
 \begin{cases}
 1, & \text{if }O\subseteq\operatorname*{Par}\nolimits_{q}\mathbf{E};\\
