@@ -5908,8 +5908,9 @@ Condition 2 is proven.
 Thus, Condition 1 and Condition 2 are proven. Hence,
 Proposition~\ref{prop.G-poset.quot.Phi} (b) is proven.
 
+\begin{vershort}
 (c) 
-The definition of $\xx_{\Phi\left(  \pi\right)  ,w^{g}}$ shows that%
+The definition of $\xx_{\Phi\left(  \pi\right)  ,w^{g}}$ shows that
 \begin{align*}
 \xx_{\Phi\left(  \pi\right)  ,w^{g}}
 &= \prod_{e\in E^{g}}
@@ -5927,14 +5928,67 @@ The definition of $\xx_{\Phi\left(  \pi\right)  ,w^{g}}$ shows that%
     \left(  u\right) }^{w\left(  a\right)  }}_{
     \substack{=x_{\pi\left(  a\right)  }^{w\left( a\right)  }\\
     \text{(by (\ref{pf.prop.G-poset.quot.phi.main}))}}}\\
-&= \underbrace{\prod_{u\in E^{g}}\prod_{a\in u}}_{=\prod_{a\in E}}%
+&= \underbrace{\prod_{u\in E^{g}}\prod_{a\in u}}_{=\prod_{a\in E}}
   x_{\pi\left(  a\right)  }^{w\left(  a\right)  }
 =\prod_{a\in E}x_{\pi\left( a\right)  }^{w\left(  a\right)  }
 =\prod_{e\in E}x_{\pi\left(  e\right) }^{w\left(  e\right)  }
 =\xx_{\pi,w}%
 \end{align*}
-(by the definition of $\xx_{\pi,w}$). This proves Proposition
-\ref{prop.G-poset.quot.Phi} (c).
+(by the definition of $\xx_{\pi,w}$). This proves
+Proposition~\ref{prop.G-poset.quot.Phi} (c).
+\end{vershort}
+\begin{verlong}
+(c) The elements of $E^g$ are the $g$-orbits on $E$. Hence, the
+elements of $E^g$ are pairwise disjoint subsets of $E$, and their
+union is $E$. In other words, the set $E$ is the union of its
+disjoint subsets $u \in E^g$. Therefore,
+$\prod_{a\in E} = \prod_{u\in E^{g}} \prod_{a\in u}$ (an equality
+between product signs).
+
+The definition of $\xx_{\Phi\left(  \pi\right)  ,w^{g}}$ shows that
+\begin{align*}
+\xx_{\Phi\left(  \pi\right)  ,w^{g}}
+&= \prod_{e\in E^{g}}
+ x_{\left( \Phi\left(  \pi\right)  \right)  \left(  e\right)  }^{
+    w^{g}\left(  e\right) }
+= \prod_{u\in E^{g}}
+ \underbrace{x_{\left(  \Phi\left(  \pi\right)  \right)
+    \left(  u\right)  }^{w^{g}\left(  u\right)  }}_{
+    \substack{= x_{\left(  \Phi\left(  \pi\right) \right) \left( u
+    \right) }^{\sum_{a \in u} w \left( a \right) } \\
+    \text{(since }
+    w^{g}\left(  u\right) = \sum\limits_{a\in u}w\left(  a\right)
+    \text{)}}}
+\\
+&\ \ \ \ \ \ \ \ \ 
+\left(\text{here, we have renamed the index } e \text{ as } u
+\text{ in the product}\right) \\
+&= \prod_{u\in E^{g}}
+ \underbrace{x_{\left(  \Phi\left(  \pi\right)  \right)
+    \left(  u\right)  }^{ \sum_{a \in u} w \left( a \right) }}_{
+    \substack{=\prod_{a\in u}x_{\left(  \Phi\left(  \pi\right) 
+    \right)  \left(  u\right)  }^{w\left( a\right)  }}}
+= \prod_{u\in E^{g}} \prod_{a\in u}
+  \underbrace{x_{\left(  \Phi\left(  \pi\right)  \right) 
+    \left(  u\right) }^{w\left(  a\right)  }}_{
+    \substack{=x_{\pi\left(  a\right)  }^{w\left( a\right)  }\\
+    \text{(since } \left( \Phi \left( \pi \right) \right) \left(
+    u \right) = \pi \left( a \right) \\
+    \text{(by (\ref{pf.prop.G-poset.quot.phi.main})))}}}\\
+&= \underbrace{\prod_{u\in E^{g}}\prod_{a\in u}}_{=\prod_{a\in E}}
+  x_{\pi\left(  a\right)  }^{w\left(  a\right)  }
+= \prod_{a\in E}x_{\pi\left( a\right)  }^{w\left(  a\right)  }
+= \prod_{e\in E}x_{\pi\left(  e\right) }^{w\left(  e\right)  } \\
+&\ \ \ \ \ \ \ \ \ 
+\left(\text{here, we have renamed the index } a \text{ as } e
+\text{ in the product}\right) \\
+&= \xx_{\pi,w}%
+\end{align*}
+(since the definition of $\xx_{\pi,w}$ yields
+$\xx_{\pi, w}
+= \prod_{e\in E}x_{\pi\left(  e\right) }^{w\left(  e\right)  }$).
+This proves Proposition~\ref{prop.G-poset.quot.Phi} (c).
+\end{verlong}
 \end{proof}
 
 Our next lemma is a standard argument in P\'olya enumeration theory (compare
