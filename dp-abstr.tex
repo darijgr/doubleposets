@@ -148,6 +148,7 @@
 \newcommand{\Par}{\operatorname{Par}}
 \newcommand{\bdd}{\operatorname{bdd}}
 \newcommand{\sign}{\operatorname{sign}}
+\newcommand{\Stab}{\operatorname{Stab}}
 \newcommand{\bD}{{\mathbf{D}}}
 \newcommand{\EE}{{\mathbf{E}}}
 \newcommand{\FF}{{\mathbf{F}}}
@@ -5934,40 +5935,43 @@ $\sign_E g = 1$.) Then,
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma \ref{lem.burnside.sums}.] Let $\operatorname{Stab}_{G}\pi$
+[Proof of Lemma \ref{lem.burnside.sums}.] Let $\Stab_{G}\pi$
 denote the stabilizer of $\pi$; this is the subgroup $\left\{  g\in
 G\ \mid\ g\pi=\pi\right\}  $ of $G$. The $G$-orbit of $\pi$ is $O$ (since $O$
 is a $G$-orbit on $F$, and since $\pi\in O$). In other words, $O = G\pi$.
 Therefore,
 \[
 \left\vert O\right\vert =\left\vert G\pi\right\vert =\dfrac{\left\vert
-G\right\vert }{\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert }%
+G\right\vert }{\left\vert \Stab_G \pi \right\vert }%
 \]
 (by the orbit-stabilizer theorem) and thus
 \begin{equation}
-\dfrac{1}{\left\vert O\right\vert }=\dfrac{\left\vert \operatorname{Stab}%
-_{G}\pi\right\vert }{\left\vert G\right\vert }%
-.\label{pf.thm.antipode.GammawG.os2}%
+\dfrac{1}{\left\vert O\right\vert }
+= \dfrac{\left\vert \Stab_G \pi \right\vert}{\left\vert G\right\vert}
+.
+\label{pf.thm.antipode.GammawG.os2}
 \end{equation}
 
 
 (a) We have%
 \[
 \sum_{\substack{g\in G;\\g\pi=\pi}}1=\left\vert \underbrace{\left\{  g\in
-G\ \mid\ g\pi=\pi\right\}  }_{=\operatorname*{Stab}\nolimits_{G}\pi
-}\right\vert =\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert .
+G\ \mid\ g\pi=\pi\right\}  }_{= \Stab_G \pi
+}\right\vert =\left\vert  \Stab_G \pi\right\vert .
 \]
-Hence,%
+Hence,
 \[
-\dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{\substack{g\in
-G;\\g\pi=\pi}}1}_{=\left\vert \operatorname*{Stab}\nolimits_{G}\pi\right\vert
-}=\dfrac{1}{\left\vert G\right\vert }\left\vert \operatorname*{Stab}%
-\nolimits_{G}\pi\right\vert =\dfrac{\left\vert \operatorname*{Stab}%
-\nolimits_{G}\pi\right\vert }{\left\vert G\right\vert }=\dfrac{1}{\left\vert
-O\right\vert }%
+\dfrac{1}{\left\vert G\right\vert }
+\underbrace{\sum_{\substack{g \in G;\\ g \pi = \pi}} 1}_{
+ = \left\vert \Stab_G \pi \right\vert}
+= \dfrac{1}{\left\vert G\right\vert }
+\left\vert \Stab_G \pi \right\vert
+= \dfrac{\left\vert \Stab_G \pi \right\vert }{
+\left\vert G\right\vert }
+= \dfrac{1}{\left\vert O\right\vert }
 \]
-(by (\ref{pf.thm.antipode.GammawG.os2})). This proves Lemma
-\ref{lem.burnside.sums} (a).
+(by (\ref{pf.thm.antipode.GammawG.os2})). This proves
+Lemma~\ref{lem.burnside.sums} (a).
 
 (b) We need to prove (\ref{eq.lem.burnside.sums.b}). Assume first that $O$ is
 $E$-coeven. Thus, $\pi$ is $E$-coeven (by the definition of what it means for
@@ -5995,33 +5999,34 @@ $O$ is $E$-coeven. We can therefore WLOG assume the opposite now. Thus, assume
 that $O$ is not $E$-coeven. Hence, no element of $O$ is $E$-coeven (due to the
 contrapositive of Lemma~\ref{lem.coeven.all-one}). In particular, $\pi$ is not
 $E$-coeven. In other words, not every $g\in G$ satisfying $g\pi=\pi$ is
-$E$-even. In other words, not every $g\in\operatorname*{Stab}\nolimits_{G}\pi$
+$E$-even. In other words, not every $g\in \Stab_G \pi$
 is $E$-even (since the elements $g\in G$ satisfying $g\pi=\pi$ are exactly the
-elements $g\in\operatorname*{Stab}\nolimits_{G}\pi$). In other words, not
-every $g\in\operatorname*{Stab}\nolimits_{G}\pi$ satisfies
+elements $g\in \Stab_G \pi$). In other words, not
+every $g\in \Stab_G \pi$ satisfies
 $\sign_E g = 1$.
 
 Now, the map
 \[
-\operatorname*{Stab}\nolimits_{G}\pi\rightarrow\left\{  1,-1\right\}
+ \Stab_G \pi\rightarrow\left\{  1,-1\right\}
 ,\ \ \ \ \ \ \ \ \ \ g \mapsto \sign_E g
 \]
 is a group homomorphism (since the sign of a permutation is multiplicative)
-and is not the trivial homomorphism (since not every $g\in\operatorname*{Stab}%
-\nolimits_{G}\pi$ satisfies $\sign_E g = 1$). Hence, it
-must send exactly half the elements of $\operatorname*{Stab}\nolimits_{G}\pi$
+and is not the trivial homomorphism (since not every
+$g \in \Stab_G \pi$ satisfies $\sign_E g = 1$). Hence, it
+must send exactly half the elements of $ \Stab_G \pi$
 to $1$ and the other half to $-1$. Therefore, the addends in the sum
-$\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}
+$\sum_{g\in \Stab_G \pi}
 \sign_E g$ cancel each other out (one half of them are $1$, and the
 others are $-1$). Therefore,
-$\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi} \sign_E g = 0$. Now,
+$\sum_{g\in \Stab_G \pi} \sign_E g = 0$. Now,
 \[
 \dfrac{1}{\left\vert G\right\vert }\underbrace{\sum_{\substack{g\in
-G;\\g\pi=\pi}}}_{=\sum_{g\in\operatorname*{Stab}\nolimits_{G}\pi}%
-} \sign_E g = \dfrac{1}{\left\vert G\right\vert }%
-\underbrace{\sum_{g\in\operatorname{Stab}_{G}\pi} \sign_E g}_{=0}
+G;\\g\pi=\pi}}}_{=\sum_{g\in \Stab_G \pi}}
+\sign_E g
+= \dfrac{1}{\left\vert G\right\vert }
+\underbrace{\sum_{g\in \Stab_G \pi} \sign_E g}_{=0}
 = 0
-=%
+=
 \begin{cases}
 \dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
 ;\\
@@ -6617,13 +6622,6 @@ defined on the ground set. Is there a connection between the two results, or
 even a common generalization?
 \end{question}
 
-\nocite{*}
-\bibliographystyle{abbrvnat}
-% use the following instead if you encounter problems 
-%\bibliographystyle{alpha}
-\bibliography{sample}
-\label{sec:biblio}
-
 \begin{thebibliography}{99999999}                                                                                         %
 
 \bibitem[Abe77]{Abe-HA}Eiichi Abe, \textit{Hopf Algebras}, CUP 1977.
@@ -6708,7 +6706,6 @@ for a preprint.
 %Hopf algebras, quasisymmetric functions, and Young composition tableaux}, May
 %23, 2013.\newline
 %\url{http://www.math.ubc.ca/~steph/papers/QuasiSchurBook.pdf}
-%% [todo: get rid of this if not enough space, else expand it]
 
 \bibitem[Malve93]{Malve-Thesis}Claudia Malvenuto, \textit{Produits et
 coproduits des fonctions quasi-sym\'{e}triques et de l'alg\`{e}bre des
