@@ -5806,9 +5806,32 @@ We have $e<_{1}^{g}f$ (because $e$ is $<_{1}^{g}$-covered by $f$). In other
 words, there exist $a\in e$ and $b\in f$ satisfying $a<_{1}b$. Consider these
 $a$ and $b$.
 
-If there was a $c\in E$ satisfying $a<_{1}c<_{1}b$, then the $g$-orbit $w$ of
-this $c$ would satisfy $e<_{1}^{g}w<_{1}^{g}f$, which would contradict the
-fact that $e$ is $<_{1}^{g}$-covered by $f$. Hence, there exists no such $c$.
+\begin{vershort}
+If there was a $c \in E$ satisfying $a <_1 c <_1 b$, then
+the $g$-orbit $w$ of this $c$ would satisfy
+$e <_1^g w <_1^g f$, which would contradict the fact that $e$ is
+$<_1^g$-covered by $f$. Hence, there exists no such $c$.
+\end{vershort}
+\begin{verlong}
+There exists no $c \in E$ satisfying $a <_1 c <_1 b$
+\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus,
+there exists some $c \in E$ satisfying $a <_1 c <_1 b$. Consider
+this $c$. Let $w$ be the $g$-orbit of $c$. Thus, $w \in E^g$
+and $c \in w$.
+\par
+Now, the elements $a \in e$ and $c \in w$ satisfy
+$a <_1 c$. Hence, $e <_1^g w$ (by the definition of the
+relation $<_1^g$).
+\par
+Also, the elements $c \in w$ and $b \in f$ satisfy
+$c <_1 b$. Hence, $w <_1^g f$ (by the definition of the
+relation $<_1^g$).
+\par
+Now, we have $e <_1^g w <_1^g f$. This contradicts the
+fact that $e$ is $<_1^g$-covered by $f$. Thus, we have
+obtained a contradiction; hence, our assumption was wrong.
+Qed.}.
+\end{verlong}
 In other words, $a$ is $<_{1}$-covered by $b$ (since $a<_{1}b$). Therefore,
 $a$ and $b$ are $<_{2}$-comparable (since $\mathbf{E}$ is tertispecial). In
 other words, we have either $a<_{2}b$ or $a=b$ or $b<_{2}a$. Since $a<_{2}b$
