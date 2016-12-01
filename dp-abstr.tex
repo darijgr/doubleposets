@@ -2084,7 +2084,7 @@ consisting of a packed $\EE$-partition $\varphi$ and a $k\in\left\{
 
 Let $\mathcal{T}$ be the set of all triples $\left(  \left(  P,Q\right)
 ,\sigma,\tau\right)  $ consisting of a $\left(  P,Q\right)  \in
-\operatorname{Adm} \EE $, a packed $ \EE \mid_{P}$-partition
+\Adm \EE $, a packed $ \EE \mid_{P}$-partition
 $\sigma$ and a packed $ \EE \mid_{Q}$-partition $\tau$.
 
 For every $\ell\in\mathbb{Z}$, we let $\operatorname*{add}\nolimits_{\ell}$
@@ -2104,7 +2104,8 @@ Then, $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$.
 \end{lemma}
 
 \begin{lemma}
-\label{lem.Gammaw.coprod.bij.b}Let $\mathbf{E}=\left(  E,<_{1},<_{2}\right)  $
+\label{lem.Gammaw.coprod.bij.b}
+Let $\EE = \left(  E,<_{1},<_{2}\right)  $
 be a double poset. Let $\mathcal{S}$ and $\mathcal{T}$ be defined as in Lemma
 \ref{lem.Gammaw.coprod.bij.a}.
 
@@ -2120,7 +2121,8 @@ $. Then, $\left(  \varphi,k\right)  \in\mathcal{S}$.
 \end{lemma}
 
 \begin{lemma}
-\label{lem.Gammaw.coprod.bij}Let $\mathbf{E}=\left(  E,<_{1},<_{2}\right)  $
+\label{lem.Gammaw.coprod.bij}
+Let $\EE = \left(  E,<_{1},<_{2}\right)  $
 be a double poset. Let $\mathcal{S}$, $\mathcal{T}$ and $\operatorname*{add}%
 \nolimits_{\ell}$ be defined as in Lemma \ref{lem.Gammaw.coprod.bij.a}.
 
@@ -2158,16 +2160,17 @@ reading (as opposed to trying to conjure \textquotedblleft the right
 picture\textquotedblright).
 
 \begin{proof}
-[Proof of Lemma \ref{lem.Gammaw.coprod.bij.a}.]We have $\left(  \varphi
-,k\right)  \in\mathcal{S}$. Thus, $\varphi$ is a packed $\mathbf{E}%
-$-partition, and $k$ is an element of $\left\{  0,1,\ldots,\left\vert
+[Proof of Lemma \ref{lem.Gammaw.coprod.bij.a}.]
+We have $\left(  \varphi ,k\right)  \in\mathcal{S}$. Thus,
+$\varphi$ is a packed $\EE$-partition, and $k$ is an element
+of $\left\{  0,1,\ldots,\left\vert
 \varphi\left(  E\right)  \right\vert \right\}  $ (by the definition of
 $\mathcal{S}$).
 
 We have $\varphi\left(  E\right)  =\left\{  1,2,\ldots,\left\vert
 \varphi\left(  E\right)  \right\vert \right\}  $ (since $\varphi$ is packed).
 
-Now, $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$%
+Now, $\left(  P,Q\right)  \in \Adm \EE$%
 \ \ \ \ \footnote{\textit{Proof.} It is clear that $P$ and $Q$ are subsets of
 $E$. Also, from (\ref{eq.lem.Gammaw.coprod.bij.def1}), we obtain%
 \begin{align*}
@@ -2191,12 +2194,12 @@ E\right)  \right\vert \right\}  =\varphi\left(  E\right)  \\\text{(since
 }\varphi\text{ is packed)}}}\right)  =\varphi^{-1}\left(  \varphi\left(
 E\right)  \right)  =E.
 \end{align*}
-Hence, in order to prove that $\left(  P,Q\right)  \in\operatorname*{Adm}%
-\mathbf{E}$, it remains to show that no $p\in P$ and $q\in Q$ satisfy
+Hence, in order to prove that $\left( P, Q \right) \in \Adm
+\EE$, it remains to show that no $p\in P$ and $q\in Q$ satisfy
 $q<_{1}p$.
 \par
 Let us assume the contrary (for the sake of contradiction). Thus, let $p\in P$
-and $q\in Q$ be such that $q<_{1}p$. Since $\varphi$ is an $\mathbf{E}%
+and $q\in Q$ be such that $q<_{1}p$. Since $\varphi$ is an $\EE%
 $-partition, we have $\varphi\left(  q\right)  \leq\varphi\left(  p\right)  $
 (because $q<_{1}p$). But $p\in P=\varphi^{-1}\left(  \left\{  1,2,\ldots
 ,k\right\}  \right)  $, so that $\varphi\left(  p\right)  \leq k$. On the
@@ -2205,14 +2208,15 @@ other hand, $q\in Q=\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert
 $\varphi\left(  q\right)  >k$. This contradicts $\varphi\left(  q\right)
 \leq\varphi\left(  p\right)  \leq k$. This contradiction shows that our
 assumption was false. Hence, the proof of $\left(  P,Q\right)  \in
-\operatorname*{Adm}\mathbf{E}$ is complete.}. Furthermore, it is
+\Adm \EE$ is complete.}. Furthermore, it is
 straightforward to see that for every subset $T$ of $E$,%
 \begin{equation}
-\text{the map }\varphi\mid_{T}\text{ is an }\mathbf{E}\mid_{T}%
-\text{-partition}. \label{pf.lem.Gammaw.coprod.bij.a.1}%
+\text{the map }\varphi\mid_{T}\text{ is an } \EE\mid_{T}%
+\text{-partition}.
+\label{pf.lem.Gammaw.coprod.bij.a.1}%
 \end{equation}
 Applying this to $T=P$, we conclude that $\varphi\mid_{P}$ is an
-$\mathbf{E}\mid_{P}$-partition.
+$\EE\mid_{P}$-partition.
 
 Since $P=\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)  $, we
 have $\varphi\left(  P\right)  \subseteq\left\{  1,2,\ldots,k\right\}  $.
@@ -2258,26 +2262,26 @@ Hence,%
 (by the definition of $\operatorname*{add}\nolimits_{-k}$). Since $\left(
 \varphi\mid_{P}\right)  \left(  P\right)  =\varphi\left(  P\right)  =\left\{
 1,2,\ldots,k\right\}  $ is an initial interval, we deduce that the
-$\mathbf{E}\mid_{P}$-partition $\varphi\mid_{P}$ is packed. Thus,
-$\sigma=\varphi\mid_{P}$ is a packed $\mathbf{E}\mid_{P}$-partition.
+$\EE\mid_{P}$-partition $\varphi\mid_{P}$ is packed. Thus,
+$\sigma=\varphi\mid_{P}$ is a packed $\EE\mid_{P}$-partition.
 
 On the other hand, (\ref{pf.lem.Gammaw.coprod.bij.a.1}) (applied to $T=Q$)
-shows that $\varphi\mid_{Q}$ is an $\mathbf{E}\mid_{Q}$-partition. Hence, the
+shows that $\varphi\mid_{Q}$ is an $\EE\mid_{Q}$-partition. Hence, the
 map $\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  $
-is an $\mathbf{E}\mid_{Q}$-partition (since the map $\operatorname*{add}%
+is an $\EE\mid_{Q}$-partition (since the map $\operatorname*{add}%
 \nolimits_{-k}$ is strictly increasing, and since $\left(  \operatorname*{add}%
 \nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  \right)  \left(  Q\right)
 =\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
--k\right\}  \subseteq\left\{  1,2,3,\ldots\right\}  $). This $\mathbf{E}%
+-k\right\}  \subseteq\left\{  1,2,3,\ldots\right\}  $). This $\EE%
 \mid_{Q}$-partition $\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi
 \mid_{Q}\right)  $ is packed (since $\left(  \operatorname*{add}%
 \nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  \right)  \left(  Q\right)
 =\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
 -k\right\}  $ is an initial interval). Thus, $\tau=\operatorname*{add}%
 \nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  $ is a packed
-$\mathbf{E}\mid_{Q}$-partition.
+$\EE\mid_{Q}$-partition.
 
-We now know that $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, that
+We now know that $\left(  P,Q\right)  \in \Adm \EE$, that
 $\sigma$ is a packed $\mathbf{E}\mid_{P}$-partition, and that $\tau$ is a
 packed $\mathbf{E}\mid_{Q}$-partition. In other words, we know that $\left(
 \left(  P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$. This proves Lemma
@@ -2285,13 +2289,14 @@ packed $\mathbf{E}\mid_{Q}$-partition. In other words, we know that $\left(
 \end{proof}
 
 \begin{proof}
-[Proof of Lemma \ref{lem.Gammaw.coprod.bij.b}.]We have $\left(  \left(
-P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$. According to the definition
-of $\mathcal{T}$, this means that $\left(  P,Q\right)  \in\operatorname{Adm}%
- \EE $, that $\sigma$ is a packed $ \EE \mid_{P}$-partition,
-and that $\tau$ is a packed $ \EE \mid_{Q}$-partition.
+[Proof of Lemma \ref{lem.Gammaw.coprod.bij.b}.]
+We have $\left( \left( P, Q \right) , \sigma, \tau \right)
+\in \mathcal{T}$. According to the definition of $\mathcal{T}$, this
+means that $\left( P, Q \right) \in \Adm \EE $, that $\sigma$ is a
+packed $\EE \mid_{P}$-partition, and that $\tau$ is a packed
+$\EE \mid_{Q}$-partition.
 
-From $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, we conclude that
+From $\left(  P,Q\right)  \in \Adm \EE$, we conclude that
 $P$ and $Q$ are subsets of $E$ satisfying $P\cap Q=\varnothing$ and $P\cup
 Q=E$ and having the property that
 \begin{equation}
@@ -2481,7 +2486,7 @@ Since the map $\sigma$ is packed, we have $\sigma\left(  P\right)  =\left\{
 1,2,\ldots,k\right\}  $ (since $\left\vert \sigma\left(  P\right)  \right\vert
 =k$).
 
-From $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, we conclude that
+From $\left(  P,Q\right)  \in \Adm \EE$, we conclude that
 $P$ and $Q$ are subsets of $E$ satisfying $P\cap Q=\varnothing$ and $P\cup
 Q=E$. Hence, $Q=E\setminus P$ and $P=E\setminus Q$.
 
@@ -2615,11 +2620,11 @@ and (\ref{eq.lem.Gammaw.coprod.bij.def2}). The definition of $\Phi$ shows that
 $\Phi\left(  \varphi,k\right)  =\left( \left(P,Q\right),\sigma,\tau\right)  $. From Lemma
 \ref{lem.Gammaw.coprod.bij.a}, we know that $\left(  \left(  P,Q\right)
 ,\sigma,\tau\right)  \in\mathcal{T}$. In other words, we know that $\left(
-P,Q\right)  \in\operatorname{Adm} \EE $, that $\sigma$ is a packed
+P,Q\right)  \in \Adm \EE $, that $\sigma$ is a packed
 $ \EE \mid_{P}$-partition, and that $\tau$ is a packed ${\mathbf{E}%
 }\mid_{Q}$-partition.
 
-From $\left(  P,Q\right)  \in\operatorname*{Adm}\mathbf{E}$, we conclude that
+From $\left(  P,Q\right)  \in \Adm \EE$, we conclude that
 $P$ and $Q$ are subsets of $E$ satisfying $P\cap Q=\varnothing$ and $P\cup
 Q=E$.
 
@@ -2774,7 +2779,7 @@ Recall that $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  =\Phi\left(
 ) (according to the definition of $\Phi$). We know (from Lemma
 \ref{lem.Gammaw.coprod.bij.a}) that $\left(  \left(  P,Q\right)  ,\sigma
 ,\tau\right)  \in\mathcal{T}$. In other words, we know that $\left(
-P,Q\right)  \in\operatorname{Adm} \EE $, that $\sigma$ is a packed
+P,Q\right)  \in \Adm \EE $, that $\sigma$ is a packed
 $ \EE \mid_{P}$-partition, and that $\tau$ is a packed ${\mathbf{E}%
 }\mid_{Q}$-partition.
 \par
@@ -2960,7 +2965,7 @@ _{w}\varphi\right)  \left[  k:\right]  }\nonumber\\
 On the other hand, rewriting each of the tensorands on the right hand side of
 \eqref{eq.prop.Gammaw.coprod} using \eqref{eq.prop.Gammaw.packed}, we obtain
 \begin{align*}
-&  \sum_{\left(  P,Q\right)  \in\operatorname{Adm} \EE }%
+&  \sum_{\left(  P,Q\right)  \in \Adm \EE }%
 \underbrace{\Gamma\left(   \EE \mid_{P},w\mid_{P}\right)
 }_{\substack{=\sum_{\varphi\text{ is a packed } \EE \mid_{P}%
 \text{-partition}}M_{\operatorname{ev}_{w\mid_{P}}\varphi}\\\text{(by
@@ -2989,12 +2994,12 @@ On the other hand, rewriting each of the tensorands on the right hand side of
     \text{summation index } \varphi \text{ as } \tau \text{)}
     }}
 \\
-&  =\sum_{\left(  P,Q\right)  \in\operatorname{Adm} \EE }\left(
+&  =\sum_{\left(  P,Q\right)  \in \Adm \EE }\left(
 \sum_{\sigma\text{ is a packed } \EE \mid_{P}\text{-partition}%
 }M_{\operatorname{ev}_{w\mid_{P}}\sigma}\right)  \otimes\left(  \sum
 _{\tau\text{ is a packed } \EE \mid_{Q}\text{-partition}}%
 M_{\operatorname{ev}_{w\mid_{Q}}\tau}\right)  \\
-&  =\underbrace{\sum_{\left(  P,Q\right)  \in\operatorname{Adm} \EE %
+&  =\underbrace{\sum_{\left(  P,Q\right)  \in \Adm \EE %
 }\sum_{\sigma\text{ is a packed } \EE \mid_{P}\text{-partition}}%
 \sum_{\tau\text{ is a packed } \EE \mid_{Q}\text{-partition}}%
 }_{\substack{=\sum_{\left(  \left(  P,Q\right)  ,\sigma,\tau\right)
@@ -3019,7 +3024,7 @@ k:\right]  }$). Comparing this with (\ref{pf.Gammaw.coprod.long.lhs}), we
 obtain%
 \[
 \Delta\left(  \Gamma\left(   \EE ,w\right)  \right)  =\sum_{\left(
-P,Q\right)  \in\operatorname{Adm} \EE }\Gamma\left(   \EE %
+P,Q\right)  \in \Adm \EE }\Gamma\left(   \EE %
 \mid_{P},w\mid_{P}\right)  \otimes\Gamma\left(   \EE \mid_{Q},w\mid
 _{Q}\right)  .
 \]
@@ -3633,7 +3638,7 @@ P,Q\right)  \in Z_{0}}}1.
 \end{align*}
 Finally,
 \begin{align*}
-& \underbrace{\sum_{\substack{\left(  P,Q\right)  \in\operatorname{Adm}%
+& \underbrace{\sum_{\substack{\left(  P,Q\right)  \in \Adm%
  \EE ;\\\pi\mid_{P}\text{ is a }\left(  P,>_{1},<_{2}\right)
 \text{-partition;}\\\pi\mid_{Q}\text{ is a }\left(  Q,<_{1},<_{2}\right)
 \text{-partition}}}}_{\substack{=\sum_{\left(  P,Q\right)  \in Z}\\\text{(by
@@ -3695,12 +3700,12 @@ for every $\left(  P,Q\right)  \in Z$.
 
 \textit{Proof of \eqref{pf.thm.antipode.Gammaw.Zwd}:} Fix $\left(  P,Q\right)
 \in Z$. Thus, $\left(  P,Q\right)  $ is an element of
-$\operatorname{Adm} \EE$ with the property that
+$ \Adm \EE$ with the property that
 $\pi\mid_{P}$ is a $\left(  P,>_{1},<_{2}\right)  $-partition
 and $\pi\mid_{Q}$ is a $\left(  Q,<_{1},<_{2}\right)  $-partition
 (by the definition of $Z$).
 
-From $\left(  P,Q\right)  \in\operatorname{Adm} \EE$, we see that
+From $\left(  P,Q\right)  \in \Adm \EE$, we see that
 $P\cap Q=\varnothing$ and $P\cup Q=E$, and furthermore that
 \begin{equation}
 \text{no }p\in P\text{ and }q\in Q\text{ satisfy }q<_{1}
@@ -3781,7 +3786,7 @@ This contradiction shows that our
 assumption was wrong, qed.}. Hence, Lemma~\ref{lem.admissible.cover} (applied
 to $P\setminus\left\{  f\right\}  $ and $Q\cup\left\{  f\right\}  $ instead of
 $P$ and $Q$) shows that $\left(  P\setminus\left\{  f\right\}  ,Q\cup\left\{
-f\right\}  \right)  \in\operatorname{Adm}{ \EE }$.
+f\right\}  \right)  \in \Adm \EE$.
 
 Furthermore, $\pi\mid_{P}$ is a $\left(  P,>_{1},<_{2}\right)  $-partition.
 Hence, $\pi\mid_{P\setminus\left\{  f\right\}  }$ is a $\left(
@@ -3794,7 +3799,7 @@ Lemma~\ref{lem.Gammaw.toggle} (b) (since $\pi\mid_Q$ is a
 $\left(Q, <_1, <_2\right)$-partition).}.
 
 Altogether, we now know that $\left(  P\setminus\left\{  f\right\}
-,Q\cup\left\{  f\right\}  \right)  \in\operatorname{Adm}{ \EE }$, that
+,Q\cup\left\{  f\right\}  \right)  \in \Adm \EE$, that
 $\pi\mid_{P\setminus\left\{  f\right\}  }$ is a $\left(  P\setminus\left\{
 f\right\}  ,>_{1},<_{2}\right)  $-partition, and that $\pi\mid_{Q\cup\left\{
 f\right\}  }$ is a $\left(  Q\cup\left\{  f\right\}  ,<_{1},<_{2}\right)
@@ -3876,7 +3881,7 @@ This contradiction shows that our
 assumption was wrong, qed.}. Hence, Lemma \ref{lem.admissible.cover} (applied
 to $P\cup\left\{  f\right\}  $ and $Q\setminus\left\{  f\right\}  $ instead of
 $P$ and $Q$) shows that $\left(  P\cup\left\{  f\right\}  ,Q\setminus\left\{
-f\right\}  \right)  \in\operatorname{Adm}{ \EE }$.
+f\right\}  \right)  \in \Adm \EE$.
 
 Furthermore, $\pi\mid_{Q}$ is a $\left(  Q,<_{1},<_{2}\right)  $-partition.
 Hence, $\pi\mid_{Q\setminus\left\{  f\right\}  }$ is a $\left(
@@ -3891,7 +3896,7 @@ $\left(E, <_1, <_2\right)$, $>_1$, $P$ and $Q$), since $\pi\mid_P$ is a
 $\left(P, >_1, <_2\right)$-partition.}.
 
 Altogether, we now know that $\left(  P\cup\left\{  f\right\}  ,Q\setminus
-\left\{  f\right\}  \right)  \in\operatorname{Adm}{ \EE }$, that $\pi
+\left\{  f\right\}  \right)  \in \Adm \EE$, that $\pi
 \mid_{P\cup\left\{  f\right\}  }$ is a $\left(  P\cup\left\{  f\right\}
 ,>_{1},<_{2}\right)  $-partition, and that $\pi\mid_{Q\setminus\left\{
 f\right\}  }$ is a $\left(  Q\setminus\left\{  f\right\}  ,<_{1},<_{2}\right)
@@ -3939,12 +3944,12 @@ Let $\alpha\in Z$. We want to show that $\left(  T\circ T\right)  \left(
 \par
 We have $\alpha\in Z$. In other words, $\alpha$ can be written in the form
 $\alpha=\left(  P,Q\right)  $ for some $\left(  P,Q\right)  \in
-\operatorname{Adm} \EE $ having the property that $\pi\mid_{P}$ is a
+\Adm \EE $ having the property that $\pi\mid_{P}$ is a
 $\left(  P,>_{1},<_{2}\right)  $-partition and $\pi\mid_{Q}$ is a $\left(
 Q,<_{1},<_{2}\right)  $-partition (by the definition of $Z$). Write $\alpha$
 in this form.
 \par
-From $\left(  P,Q\right)  \in\operatorname{Adm} \EE $, we see that
+From $\left(  P,Q\right)  \in \Adm \EE $, we see that
 $P\cap Q=\varnothing$ and $P\cup Q=E$, and furthermore that no $p\in P$ and
 $q\in Q$ satisfy $q<_{1}p$. From $P\cap Q=\varnothing$ and $P\cup Q=E$, we
 conclude that $P=E\setminus Q$ and $Q=E\setminus P$.
