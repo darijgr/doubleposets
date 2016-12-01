@@ -1062,6 +1062,7 @@ S\left(\Gamma\left(\EE, w, G\right)\right)
 = \left(-1\right)^{\left|E\right|}
 \Gamma^+\left(\left(E, >_1, <_2\right), w, G\right) .
 \]
+Here, $>_1$ denotes the opposite relation of $<_1$.
 \end{theorem}
 
 This theorem, which combines Theorem~\ref{thm.antipode.Gammaw} with the
@@ -6067,10 +6068,13 @@ Hence,
 Lemma~\ref{lem.burnside.sums} (a).
 
 (b) We need to prove (\ref{eq.lem.burnside.sums.b}). Assume first that $O$ is
-$E$-coeven. Thus, $\pi$ is $E$-coeven (by the definition of what it means for
-$O$ to be $E$-coeven). This means that every $g\in G$ satisfying $g\pi=\pi$ is
+$E$-coeven. Thus, all elements of $O$ are $E$-coeven (by the
+definition of what it means for
+$O$ to be $E$-coeven). Hence, $\pi$ is $E$-coeven (since $\pi \in O$).
+This means that every $g\in G$ satisfying $g\pi=\pi$ is
 $E$-even. Hence, every $g\in G$ satisfying $g\pi=\pi$ satisfies
-$\sign_E g=1$. Thus,
+$\sign_E g = 1$ (since $g$ is $E$-even if and only if
+$\sign_E g = 1$). Thus,
 \begin{align*}
 \dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
 }}\underbrace{\sign_E g}_{=1} &  =\dfrac
@@ -6089,21 +6093,25 @@ $\sign_E g=1$. Thus,
 
 Thus, we have proven (\ref{eq.lem.burnside.sums.b}) under the assumption that
 $O$ is $E$-coeven. We can therefore WLOG assume the opposite now. Thus, assume
-that $O$ is not $E$-coeven. Hence, no element of $O$ is $E$-coeven (due to the
-contrapositive of Lemma~\ref{lem.coeven.all-one}). In particular, $\pi$ is not
-$E$-coeven. In other words, not every $g\in G$ satisfying $g\pi=\pi$ is
+WLOG that $O$ is not $E$-coeven. Hence, no element of $O$ is
+$E$-coeven (due to the contrapositive of Lemma~\ref{lem.coeven.all-one}).
+In particular, $\pi$ is not $E$-coeven (since $\pi \in O$).
+In other words, not every $g\in G$ satisfying $g\pi=\pi$ is
 $E$-even. In other words, not every $g\in \Stab_G \pi$
 is $E$-even (since the elements $g\in G$ satisfying $g\pi=\pi$ are exactly the
 elements $g\in \Stab_G \pi$). In other words, not
 every $g\in \Stab_G \pi$ satisfies
-$\sign_E g = 1$.
+$\sign_E g = 1$ (since $g$ is $E$-even if and only if
+$\sign_E g = 1$).
 
 Now, the map
 \[
  \Stab_G \pi\rightarrow\left\{  1,-1\right\}
 ,\ \ \ \ \ \ \ \ \ \ g \mapsto \sign_E g
 \]
-is a group homomorphism (since the sign of a permutation is multiplicative)
+is a group homomorphism (since the action of $G$ on $E$ is a group
+homomorphism $G \to \operatorname{Aut} E$, and since
+the sign of a permutation is multiplicative)
 and is not the trivial homomorphism (since not every
 $g \in \Stab_G \pi$ satisfies $\sign_E g = 1$). Hence, it
 must send exactly half the elements of $ \Stab_G \pi$
