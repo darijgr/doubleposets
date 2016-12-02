@@ -1215,7 +1215,7 @@ using dualization.
 \begin{remark}
 \label{rmk.antipode.Gamma.converse}
 Corollary \ref{cor.antipode.Gamma} has a
-sort of converse. Namely, let us assume that $\mathbf{k}=\mathbb{Z}$. If
+sort of converse. Namely, let us assume that $\kk = \ZZ$. If
 $\left(  E,<_{1},<_{2}\right)  $ is a double poset satisfying $S\left(
 \Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \right)  =\left(
 -1\right)  ^{\left\vert E\right\vert }\Gamma\left(  \left(  E,>_{1}%
@@ -1225,10 +1225,10 @@ More precisely, the following holds: Define the \textit{length} $\ell\left(
 \alpha\right)  $ of a composition $\alpha$ to be the number of entries of
 $\alpha$. Define the \textit{size} $\left\vert \alpha\right\vert $ of a
 composition $\alpha$ to be the sum of the entries of $\alpha$. Let
-$\eta: \QSym \rightarrow \QSym $ be the $\mathbf{k}%
-$-linear map defined by%
+$\eta : \QSym \to \QSym$ be the $\kk$-linear map defined by
 \[
-\eta\left(  M_{\alpha}\right)  =%
+\eta \left( M_{\alpha} \right)
+=
 \begin{cases}
 M_{\alpha}, & \text{if }\ell\left(  \alpha\right)  \geq\left\vert
 \alpha\right\vert -1;\\
@@ -1239,10 +1239,11 @@ M_{\alpha}, & \text{if }\ell\left(  \alpha\right)  \geq\left\vert
 Thus, $\eta$ transforms a quasisymmetric function by removing all monomials
 $\mathfrak{m}$ for which the number of indeterminates appearing in
 $\mathfrak{m}$ is $<\deg\mathfrak{m}-1$. We partially order the ring
-$\mathbf{k}\left[  \left[ \xx \right]  \right]  $ by a coefficientwise
+$\mathbf{k}\left[  \left[ x_1, x_2, x_3, \ldots \right]  \right]  $
+by a coefficientwise
 order (i.e., two power series $a$ and $b$ satisfy $a\leq b$ if and only if
 each coefficient of $a$ is $\leq$ to the corresponding coefficient of $b$).
-Now, every double poset $\left(  E,<_{1},<_{2}\right)  $ satisfies%
+Now, every double poset $\left(  E,<_{1},<_{2}\right)  $ satisfies
 \begin{equation}
 \eta\left(  \left(  -1\right)  ^{\left\vert E\right\vert }S\left(
 \Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \right)  \right)
@@ -6256,7 +6257,12 @@ in $\kk$ (and so are the Hopf algebra $\QSym$ and its antipode
 $S$), and thus any identity between these series that holds
 over $\ZZ$ must hold over any $\kk$). Therefore, it is sufficient
 to prove Theorem~\ref{thm.antipode.GammawG} for $\kk = \QQ$ (since
-$\QSym_{\ZZ}$ embeds into $\QSym_{\QQ}$\ \ \ \ \footnote{Here, we
+$\ZZ\left[\left[x_1,x_2,x_3,\ldots\right]\right]$ embeds into
+$\QQ\left[\left[x_1,x_2,x_3,\ldots\right]\right]$, and using
+this embedding we have
+$\QSym_{\ZZ} = \QSym_{\QQ} \cap
+\ZZ\left[\left[x_1,x_2,x_3,\ldots\right]\right]$
+\ \ \ \ \footnote{Here, we
 are using the notation $\QSym_{\kk}$ for the Hopf algebra $\QSym$
 defined over a base ring $\kk$.}).
 Thus, we WLOG assume that $\kk = \QQ$.
