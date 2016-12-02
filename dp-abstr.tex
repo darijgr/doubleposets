@@ -6723,10 +6723,10 @@ is $<_1$-covered by $a$.)}.
 Furthermore, Lemma~\ref{lem.tertispecial.op} shows that
 $\left( E, >_1, <_2 \right)$ is a tertispecial double poset.
 \end{verlong}
-Hence, applying
+Hence, we can apply
 \eqref{pf.thm.antipode.GammawG.Gammaplus}
-to $\left(  E,>_{1},<_{2}\right)  $ instead of $ \EE $, we
-obtain
+to $\left(  E,>_{1},<_{2}\right)  $, $>_1$ and $>_1^g$
+instead of $\EE$, $<_1$ and $<_1^g$. As a result, we obtain
 \[
 \Gamma^{+}\left(  \left(  E,>_{1},<_{2}\right)  ,w,G\right)  =\dfrac
 {1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)  ^{\left\vert
@@ -6734,10 +6734,16 @@ E\right\vert -\left\vert E^{g}\right\vert }\Gamma\left(  \left(  E^{g}%
 ,>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  .
 \]
 Multiplying both sides of this equality by $\left(  -1\right)  ^{\left\vert
-E\right\vert }$, we transform it into%
+E\right\vert }$, we transform it into
 \begin{align*}
 \left(  -1\right)  ^{\left\vert E\right\vert }\Gamma^{+}\left(  \left(
-E,>_{1},<_{2}\right)  ,w,G\right)    & =\dfrac{1}{\left\vert G\right\vert
+E,>_{1},<_{2}\right)  ,w,G\right)
+& = \left(  -1\right)  ^{\left\vert E\right\vert}
+\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}
+\left(  -1\right)  ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }%
+\Gamma\left(  \left(
+E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  \\
+& =\dfrac{1}{\left\vert G\right\vert
 }\sum_{g\in G}\underbrace{\left(  -1\right)  ^{\left\vert E\right\vert
 }\left(  -1\right)  ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }%
 }_{=\left(  -1\right)  ^{\left\vert E^{g}\right\vert }}\Gamma\left(  \left(
@@ -6749,7 +6755,7 @@ E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  \\
 \ \ \ \ \ \ \ \ \ \ 
 \left(  \text{by \eqref{pf.thm.antipode.GammawG.1S}}\right)  .
 \end{align*}
-This proves Theorem~\ref{thm.antipode.GammawG}.
+This completes the proof of Theorem~\ref{thm.antipode.GammawG}.
 \end{proof}
 
 
