@@ -3056,6 +3056,112 @@ Proposition~\ref{prop.Gammaw.coprod}).
 \section{Proof of Theorem~\ref{thm.antipode.Gammaw}}
 \label{sect.proof}
 
+\begin{verlong}
+Let us first state a nearly-trivial lemma for warmup:
+
+\begin{lemma}
+\label{lem.tertispecial.op}
+Let $\left(  E,<_{1},<_{2}\right)  $ be a
+tertispecial double poset. Let $>_{1}$ be the opposite relation of $<_{1}$.
+Then, $\left(  E,>_{1},<_{2}\right)  $ is a tertispecial double poset.
+\end{lemma}
+
+\begin{proof}
+[Proof of Lemma \ref{lem.tertispecial.op}.] The relations $<_{1}$ and $<_{2}$
+are strict partial orders (since $\left(  E,<_{1},<_{2}\right)  $ is a double
+poset). The relation $>_{1}$ is the opposite relation of $<_{1}$, and thus is
+a strict partial order (since $<_{1}$ is a strict partial order). Now we know
+that both relations $>_{1}$ and $<_{2}$ are strict partial orders on the set
+$E$. Hence, $\left(  E,>_{1},<_{2}\right)  $ is a double poset. It remains to
+prove that this double poset $\left(  E,>_{1},<_{2}\right)  $ is tertispecial.
+
+We know that the double poset $\left(  E,<_{1},<_{2}\right)  $ is
+tertispecial. In other words, the following statement holds:
+
+\textit{Statement 1:} If $a$ and $b$ are two elements of $E$ such that $a$ is
+$<_{1}$-covered by $b$, then $a$ and $b$ are $<_{2}$-comparable.
+
+On the other hand, the following statement holds:
+
+\textit{Statement 2:} Let $a$ and $b$ be two elements of $E$. Then, we have
+the following logical equivalence:%
+\[
+\left(  a\text{ is }>_{1}\text{-covered by }b\right)  \ \Longleftrightarrow
+\ \left(  b\text{ is }<_{1}\text{-covered by }a\right)  .
+\]
+
+
+[\textit{Proof of Statement 2:} We have the following chain of logical
+equivalences:%
+\begin{align}
+& \ \left(  a\text{ is }>_{1}\text{-covered by }b\right)  \nonumber\\
+& \Longleftrightarrow\ \left(  \text{we have }a>_{1}b\text{, and there exists
+no }c\in E\text{ satisfying }\underbrace{a>_{1}c>_{1}b}_{\Longleftrightarrow
+\ \left(  a>_{1}c\right)  \wedge\left(  c>_{1}b\right)  }\right)  \nonumber\\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the notion
+\textquotedblleft}>_{1}\text{-covered by\textquotedblright}\right)
+\nonumber\\
+& \Longleftrightarrow\ \left(  \text{we have }\underbrace{a>_{1}%
+b}_{\substack{\Longleftrightarrow~\left(  b<_{1}a\right)  \\\text{(since
+}>_{1}\text{ is the}\\\text{opposite relation}\\\text{of }<_{1}\text{)}%
+}}\text{, and there exists no }c\in E\text{ satisfying }\underbrace{\left(
+a>_{1}c\right)  }_{\substack{\Longleftrightarrow~\left(  c<_{1}a\right)
+\\\text{(since }>_{1}\text{ is the}\\\text{opposite relation}\\\text{of }%
+<_{1}\text{)}}}\wedge\underbrace{\left(  c>_{1}b\right)  }%
+_{\substack{\Longleftrightarrow~\left(  b<_{1}c\right)  \\\text{(since }%
+>_{1}\text{ is the}\\\text{opposite relation}\\\text{of }<_{1}\text{)}%
+}}\right)  \nonumber\\
+& \Longleftrightarrow\ \left(  \text{we have }b<_{1}a\text{, and there exists
+no }c\in E\text{ satisfying }\underbrace{\left(  c<_{1}a\right)  \wedge\left(
+b<_{1}c\right)  }_{\substack{\Longleftrightarrow\ \left(  b<_{1}c\right)
+\wedge\left(  c<_{1}a\right)  \\\Longleftrightarrow\ \left(  b<_{1}%
+c<_{1}a\right)  }}\right)  \nonumber\\
+& \Longleftrightarrow\ \left(  \text{we have }b<_{1}a\text{, and there exists
+no }c\in E\text{ satisfying }b<_{1}c<_{1}a\right)
+.\label{pf.lem.tertispecial.op.5}%
+\end{align}
+On the other hand, we have the following chain of logical equivalences:%
+\begin{align*}
+& \ \left(  b\text{ is }<_{1}\text{-covered by }a\right)  \\
+& \Longleftrightarrow\ \left(  \text{we have }b<_{1}a\text{, and there exists
+no }c\in E\text{ satisfying }b<_{1}c<_{1}a\right)  \\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the notion
+\textquotedblleft}<_{1}\text{-covered by\textquotedblright}\right)  \\
+& \Longleftrightarrow\ \left(  a\text{ is }>_{1}\text{-covered by }b\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.tertispecial.op.5})}\right)
+.
+\end{align*}
+This proves Statement 2.]
+
+Now, we shall prove the following statement:
+
+\textit{Statement 3:} If $a$ and $b$ are two elements of $E$ such that $a$ is
+$>_{1}$-covered by $b$, then $a$ and $b$ are $<_{2}$-comparable.
+
+[\textit{Proof of Statement 3:} Let $a$ and $b$ be two elements of $E$ such
+that $a$ is $>_{1}$-covered by $b$. We must show that $a$ and $b$ are $<_{2}$-comparable.
+
+Statement 2 shows that we have the following logical equivalence:%
+\[
+\left(  a\text{ is }>_{1}\text{-covered by }b\right)  \ \Longleftrightarrow
+\ \left(  b\text{ is }<_{1}\text{-covered by }a\right)  .
+\]
+Hence, $b$ is $<_{1}$-covered by $a$ (since $a$ is $>_{1}$-covered by $b$).
+Thus, Statement 1 (applied to $b$ and $a$ instead of $a$ and $b$) yields that
+$b$ and $a$ are $<_{2}$-comparable. In other words, either $b<_{2}a$ or $b=a$
+or $a<_{2}b$. In other words, either $a<_{2}b$ or $b=a$ or $b<_{2}a$. In other
+words, either $a<_{2}b$ or $a=b$ or $b<_{2}a$ (since $b=a$ is equivalent to
+$a=b$). In other words, $a$ and $b$ are $<_{2}$-comparable. This proves
+Statement 3.]
+
+But the double poset $\left(  E,>_{1},<_{2}\right)  $ is tertispecial if and
+only if Statement 3 holds (by the definition of \textquotedblleft
+tertispecial\textquotedblright). Hence, the double poset $\left(
+E,>_{1},<_{2}\right)  $ is tertispecial (since Statement 3 holds). This
+completes the proof of Lemma~\ref{lem.tertispecial.op}.
+\end{proof}
+\end{verlong}
+
 Before we come to the proof of Theorem~\ref{thm.antipode.Gammaw},
 let us state five lemmas:
 
@@ -6413,6 +6519,7 @@ $\sign_E g = \left(  -1\right)  ^{\left\vert
 E\right\vert -\left\vert E^{g}\right\vert }$ (since
 $\sign_E g$ is the sign of $\zeta$), qed.}.
 
+\begin{vershort}
 Now,%
 \begin{align}
 &  \Gamma^{+}\left(   \EE ,w,G\right)  \nonumber\\
@@ -6481,9 +6588,142 @@ is an } \EE \text{-partition;}\\g\pi=\pi}}\xx_{\pi,w}%
 \end{align}
 Hence, $\Gamma^+\left( \EE ,w,G\right) \in \QSym$
 (by Proposition~\ref{prop.Gammaw.qsym}).
+\end{vershort}
+
+\begin{verlong}
+Now,%
+\begin{align*}
+&  \Gamma^{+}\left(   \EE ,w,G\right)  \\
+&  =\sum_{O\text{ is an }E\text{-coeven }G\text{-orbit on } \Par
+ \EE }\underbrace{\xx_{O,w}}_{\substack{=\dfrac{1}{\left\vert
+O\right\vert }\sum\limits_{\pi\in O}\xx_{\pi,w}\\\text{(by
+\eqref{pf.thm.antipode.GammawG.averaging})}}}
+=\underbrace{\sum_{O\text{ is an
+}E\text{-coeven }G\text{-orbit on } \Par \EE }}%
+_{=\sum_{\substack{O\text{ is a }G\text{-orbit on } \Par
+ \EE ;\\O\text{ is }E\text{-coeven}}}}\dfrac{1}{\left\vert O\right\vert
+}\sum\limits_{\pi\in O} \xx_{\pi,w}\\
+&  =\sum_{\substack{O\text{ is a }G\text{-orbit on } \Par
+ \EE ;\\O\text{ is }E\text{-coeven}}}\dfrac{1}{\left\vert O\right\vert
+}\sum\limits_{\pi\in O} \xx_{\pi,w}\\
+&  =\sum_{\substack{O\text{ is a }G\text{-orbit on } \Par
+ \EE ;\\O\text{ is }E\text{-coeven}}}\underbrace{\dfrac{1}{\left\vert
+O\right\vert }}_{\substack{=%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+\\\text{(since }O\text{ is }E\text{-coeven)}}}\sum\limits_{\pi\in
+O} \xx_{\pi,w} \\
+& \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{O\text{ is a }G\text{-orbit on
+} \Par \EE ;\\O\text{ is not }E\text{-coeven}%
+}}\underbrace{0}_{\substack{=%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+\\\text{(since }O\text{ is not }E\text{-coeven)}}}\sum\limits_{\pi\in
+O} \xx_{\pi,w}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\sum_{\substack{O\text{ is a }G\text{-orbit on }%
+ \Par \EE ;\\O\text{ is }E\text{-coeven}}}\dfrac
+{1}{\left\vert O\right\vert }\sum\limits_{\pi\in O} \xx_{\pi
+,w}+\underbrace{\sum_{\substack{O\text{ is a }G\text{-orbit on }%
+ \Par \EE ;\\O\text{ is not }E\text{-coeven}}%
+}0\sum\limits_{\pi\in O} \xx_{\pi,w}}_{=0}\\
+=\sum_{\substack{O\text{ is a }G\text{-orbit on } \Par
+ \EE ;\\O\text{ is }E\text{-coeven}}}\dfrac{1}{\left\vert O\right\vert
+}\sum\limits_{\pi\in O} \xx_{\pi,w}%
+\end{array}
+\right)  \\
+&  =\sum_{\substack{O\text{ is a }G\text{-orbit on } \Par
+ \EE ;\\O\text{ is }E\text{-coeven}}}%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+\sum\limits_{\pi\in O} \xx_{\pi,w} \\
+& \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{O\text{ is a
+}G\text{-orbit on } \Par \EE ;\\O\text{ is not
+}E\text{-coeven}}}%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+\sum\limits_{\pi\in O} \xx_{\pi,w}\\
+&  =\sum_{O\text{ is a }G\text{-orbit on } \Par \EE }%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+\sum\limits_{\pi\in O} \xx_{\pi,w}
+\end{align*}
+\begin{align}
+&  =\sum_{O\text{ is a }G\text{-orbit on } \Par \EE }
+\sum\limits_{\pi\in O}\underbrace{%
+\begin{cases}
+\dfrac{1}{\left\vert O\right\vert }, & \text{if }O\text{ is }E\text{-coeven}%
+;\\
+0, & \text{if }O\text{ is not }E\text{-coeven}%
+\end{cases}
+}_{\substack{=\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in
+G;\\g\pi=\pi}} \sign_E g \\\text{(by
+\eqref{pf.thm.antipode.GammawG.signed})}}}\xx_{\pi,w}\nonumber\\
+&  =\underbrace{\sum_{O\text{ is a }G\text{-orbit on } \Par
+\EE }\sum\limits_{\pi\in O}}_{=\sum_{\pi\in \Par
+\EE }=\sum_{\pi\text{ is an } \EE \text{-partition}}}\left(
+\dfrac{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi
+}} \sign_E g \right)  \xx_{\pi,w}\nonumber\\
+&  =\sum_{\pi\text{ is an } \EE \text{-partition}}\left(  \dfrac
+{1}{\left\vert G\right\vert }\sum_{\substack{g\in G;\\g\pi=\pi}%
+} \sign_E g \right)  \xx_{\pi,w}=\dfrac
+{1}{\left\vert G\right\vert }\underbrace{\sum_{\pi\text{ is an }
+\EE\text{-partition}}
+\sum_{\substack{g\in G;\\g\pi=\pi}}}_{=\sum_{g\in G}%
+\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi}%
+}}\left(   \sign_E g \right)  \xx_{\pi,w}
+\nonumber\\
+&  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}%
+\underbrace{ \sign_E g }_{\substack{=\left(  -1\right)
+^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\\\text{(by
+\eqref{pf.thm.antipode.GammawG.sign})}}}\underbrace{\sum_{\substack{\pi\text{
+is an } \EE \text{-partition;}\\g\pi=\pi}}\xx_{\pi,w}%
+}_{\substack{=\Gamma\left(   \EE ^{g},w^{g}\right)  \\\text{(by
+\eqref{pf.thm.antipode.GammawG.red})}}}
+=\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
+^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\Gamma\left(
+ \underbrace{\EE^{g}}_{=\left(E^g, <_1^g, <_2^g\right)},w^{g}\right)
+\nonumber\\
+&= \dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
+^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\Gamma\left(
+ \left(E^g, <_1^g, <_2^g\right),w^{g}\right) .
+\label{pf.thm.antipode.GammawG.Gammaplus}
+\end{align}
+Hence, $\Gamma^+\left( \EE ,w,G\right) \in \QSym$
+(by Proposition~\ref{prop.Gammaw.qsym}).
+\end{verlong}
 
 The group $G$ preserves the relation $>_1$ (since it preserves the
-relation $<_1$). Hence, applying
+relation $<_1$).
+\begin{vershort}
+Furthermore, the double poset $\left( E, >_1, <_2 \right)$ is
+tertispecial\footnote{This can be easily derived from the fact
+that $\left( E, <_1, <_2 \right)$ is tertispecial. (Observe that
+an $a \in E$ is $>_1$-covered by a $b \in E$ if and only if $b$
+is $<_1$-covered by $a$.)}.
+\end{vershort}
+\begin{verlong}
+Furthermore, Lemma~\ref{lem.tertispecial.op} shows that
+$\left( E, >_1, <_2 \right)$ is a tertispecial double poset.
+\end{verlong}
+Hence, applying
 \eqref{pf.thm.antipode.GammawG.Gammaplus}
 to $\left(  E,>_{1},<_{2}\right)  $ instead of $ \EE $, we
 obtain
