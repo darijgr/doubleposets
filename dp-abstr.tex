@@ -6322,11 +6322,13 @@ _{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
 Hence, $\Gamma\left(  { \EE },w,G\right) \in \QSym$
 (by Proposition~\ref{prop.Gammaw.qsym}).
 
+\begin{vershort}
 Applying the map $S$ to both sides of the equality
 \eqref{pf.thm.antipode.GammawG.1}, we obtain
 \begin{align}
-S\left(  \Gamma\left(  { \EE },w,G\right)  \right)    & =\dfrac
-{1}{\left\vert G\right\vert }\sum_{g\in G}\underbrace{S\left(  \Gamma\left(
+S\left(  \Gamma\left(  { \EE },w,G\right)  \right)
+& = \dfrac{1}{
+\left\vert G\right\vert }\sum_{g\in G}\underbrace{S\left(  \Gamma\left(
 \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  \right)
 }_{\substack{=\left(  -1\right)  ^{\left\vert E^{g}\right\vert }\Gamma\left(
 \left(  E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  \\\text{(by
@@ -6337,6 +6339,29 @@ S\left(  \Gamma\left(  { \EE },w,G\right)  \right)    & =\dfrac
 .
 \label{pf.thm.antipode.GammawG.1S}
 \end{align}
+\end{vershort}
+\begin{verlong}
+Applying the map $S$ to both sides of the equality
+\eqref{pf.thm.antipode.GammawG.1}, we obtain
+\begin{align}
+S\left(  \Gamma\left(  { \EE },w,G\right)  \right)
+& = S \left( \dfrac{1}{
+\left\vert G\right\vert }\sum_{g\in G} \Gamma\left(
+\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)
+\right)
+= \dfrac{1}{
+\left\vert G\right\vert }\sum_{g\in G}\underbrace{S\left(  \Gamma\left(
+\left(  E^{g},<_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  \right)
+}_{\substack{=\left(  -1\right)  ^{\left\vert E^{g}\right\vert }\Gamma\left(
+\left(  E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)  \\\text{(by
+\eqref{pf.thm.antipode.GammawG.S1})}}}\nonumber\\
+& =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
+^{\left\vert E^{g}\right\vert }
+\Gamma\left(  \left(  E^{g},>_{1}^{g},<_{2}^{g}\right)  ,w^{g}\right)
+.
+\label{pf.thm.antipode.GammawG.1S}
+\end{align}
+\end{verlong}
 
 On the other hand, for every $g\in G$, let $\sign_E g$
 denote the sign of the permutation of $E$ that sends every
@@ -6440,13 +6465,17 @@ G;\\g\pi=\pi}} \sign_E g \\\text{(by
 \eqref{pf.thm.antipode.GammawG.sign})}}}\underbrace{\sum_{\substack{\pi\text{
 is an } \EE \text{-partition;}\\g\pi=\pi}}\xx_{\pi,w}%
 }_{\substack{=\Gamma\left(   \EE ^{g},w^{g}\right)  \\\text{(by
-\eqref{pf.thm.antipode.GammawG.red})}}}\nonumber\\
-&  =\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
+\eqref{pf.thm.antipode.GammawG.red})}}}
+=\dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
 ^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\Gamma\left(
- \EE ^{g},w^{g}\right)  .
-\label{pf.thm.antipode.GammawG.Gammaplus}%
+ \underbrace{\EE^{g}}_{=\left(E^g, <_1^g, <_2^g\right)},w^{g}\right)
+\nonumber\\
+&= \dfrac{1}{\left\vert G\right\vert }\sum_{g\in G}\left(  -1\right)
+^{\left\vert E\right\vert -\left\vert E^{g}\right\vert }\Gamma\left(
+ \left(E^g, <_1^g, <_2^g\right),w^{g}\right) .
+\label{pf.thm.antipode.GammawG.Gammaplus}
 \end{align}
-Hence, $\Gamma^+\left(  { \EE },w,G\right) \in \QSym$
+Hence, $\Gamma^+\left( \EE ,w,G\right) \in \QSym$
 (by Proposition~\ref{prop.Gammaw.qsym}).
 
 The group $G$ preserves the relation $>_1$ (since it preserves the
@@ -6541,7 +6570,8 @@ f\right)  \left(  q\right)  \in\mathbb{Q}$ by%
 \underbrace{1,1,\ldots,1}_{q\text{ times}},0,0,0,\ldots\right)
 \]
 (that is, $\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)
-$ is the result of substituting $1$ for $x_{1},x_{2},\ldots,x_{q}$ and $0$ for
+$ is the result of substituting $1$ for each of the variables
+$x_{1},x_{2},\ldots,x_{q}$ and $0$ for each of the variables
 $x_{q+1},x_{q+2},x_{q+3},\ldots$ in the power series $f$).
 
 (a) Consider the elements $\Gamma\left(   \EE ,w,G\right)  $ and
