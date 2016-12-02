@@ -6161,8 +6161,9 @@ by $w^{g}\left(  u\right)  =\sum\limits_{a\in u}w\left(
 a\right)  $. (Since $G$ preserves $w$, the numbers $w\left(  a\right)  $ for
 all $a\in u$ are equal (for given $u$), and thus $\sum\limits_{a\in u}w\left(
 a\right)  $ can be rewritten as $\left\vert u\right\vert \cdot w\left(
-b\right)  $ for any particular $b\in u$.)
-Now,
+b\right)  $ for any particular $b\in u$. But we shall not use
+this observation.)
+Now, every $g \in G$ satisfies
 \begin{equation}
 S\left(  \Gamma\left(  \left(  E^{g},<_{1}^{g},<_{2}^{g}\right)
 ,w^{g}\right)  \right)  =\left(  -1\right)  ^{\left\vert E^{g}\right\vert
@@ -6178,7 +6179,8 @@ $\left( E^g, <_1^g, <_2^g \right)$ is tertispecial.)
 For every $g\in G$, we have
 \begin{equation}
 \sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
-}}\xx_{\pi,w}=\Gamma\left(   \EE ^{g},w^{g}\right)
+}}\xx_{\pi,w}
+= \Gamma \left( \EE^g , w^g \right)
 \label{pf.thm.antipode.GammawG.red}
 \end{equation}
 \footnote{\textit{Proof of \eqref{pf.thm.antipode.GammawG.red}:} Let $g\in G$.
@@ -6188,7 +6190,7 @@ The definition of $\Gamma \left( \EE^g , w^g \right)$ yields
 = \sum_{\pi\text{ is an }
 \EE ^{g}\text{-partition}}\xx_{\pi,w^{g}}
 = \sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
-\xx_{\pi,w^{g}}
+\xx_{\overline{\pi},w^{g}}
 \label{pf.thm.antipode.GammawG.red.pf.1}
 \end{equation}
 (here, we have renamed the summation index $\pi$ as
@@ -6213,23 +6215,24 @@ Parts (a) and (b) of Proposition~\ref{prop.G-poset.quot.Phi} show that
 this bijection $\Phi$ restricts to a bijection between
 \par
 \begin{itemize}
-\item the $ \EE $-partitions $\pi:E\rightarrow\left\{  1,2,3,\ldots
+\item the $\EE$-partitions $\pi:E\rightarrow\left\{  1,2,3,\ldots
 \right\}  $ satisfying $g\pi=\pi$
 \end{itemize}
 \par
 and
 \par
 \begin{itemize}
-\item the $ \EE ^{g}$-partitions $\overline{\pi}:E^{g}\rightarrow\left\{
+\item the $\EE ^g$-partitions $\overline{\pi}:E^{g}\rightarrow\left\{
 1,2,3,\ldots\right\}  $.
 \end{itemize}
 \par
-Hence, we can substitute $\Phi\left(\pi\right)$ for $\pi$ in the
-sum $\sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
-\xx_{\pi,w^{g}}$. We thus obtain
+Hence, we can substitute $\Phi\left(\pi\right)$ for
+$\overline{\pi}$ in the sum
+$\sum_{\overline{\pi} \text{ is an } \EE ^g\text{-partition}}
+\xx_{\overline{\pi},w^{g}}$. We thus obtain
 \[
-\sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
-\xx_{\pi,w^{g}}
+\sum_{\overline{\pi}\text{ is an } \EE ^g\text{-partition}}
+\xx_{\overline{\pi},w^{g}}
 =\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}\\g\pi=\pi
 }}
 \underbrace{\xx_{\Phi\left(  \pi\right)  ,w^{g}}}_{
@@ -6240,8 +6243,9 @@ sum $\sum_{\overline{\pi}\text{ is an } \EE ^{g}\text{-partition}}
 \\ g\pi=\pi}}\xx_{\pi,w},
 \]
 whence $\sum_{\substack{\pi\text{ is an } \EE \text{-partition;}
-\\g\pi=\pi}}\xx_{\pi,w}=\sum_{\pi\text{ is an }
-\EE ^{g}\text{-partition}}\xx_{\pi,w^{g}}
+\\g\pi=\pi}}\xx_{\pi,w}
+=\sum_{\overline{\pi}\text{ is an }
+\EE ^{g}\text{-partition}}\xx_{\overline{\pi},w^{g}}
 =\Gamma\left(  \EE^{g},w^{g}\right)  $
 (by \eqref{pf.thm.antipode.GammawG.red.pf.1}).
 This proves \eqref{pf.thm.antipode.GammawG.red}.}.
@@ -6249,7 +6253,8 @@ This proves \eqref{pf.thm.antipode.GammawG.red}.}.
 It is clearly sufficient to prove
 Theorem~\ref{thm.antipode.GammawG} for $\kk = \ZZ$ (since all
 the power series that we are discussing are defined functorially
-in $\kk$, and thus any identity between these series that holds
+in $\kk$ (and so are the Hopf algebra $\QSym$ and its antipode
+$S$), and thus any identity between these series that holds
 over $\ZZ$ must hold over any $\kk$). Therefore, it is sufficient
 to prove Theorem~\ref{thm.antipode.GammawG} for $\kk = \QQ$ (since
 $\QSym_{\ZZ}$ embeds into $\QSym_{\QQ}$\ \ \ \ \footnote{Here, we
