@@ -184,13 +184,13 @@ quasisymmetric functions
 \maketitle
 
 \begin{abstract}
-We assign a quasisymmetric function to every double poset (that is,
+A quasisymmetric function is assigned to every double poset (that is,
 every finite set endowed with two partial orders) and any weight function
 on its ground set. This generalizes well-known objects such as monomial
 and fundamental quasisymmetric functions, (skew) Schur functions, dual
 immaculate functions, and quasisymmetric
 $\left(P, \omega\right)$-partition enumerators.
-We then prove a formula for the antipode of this function that
+We prove a formula for the antipode of this function that
 holds under certain conditions (which are satisfied when the second order
 of the double poset is total, but also in some other cases); this
 restates (in a way that to us seems more natural) a
@@ -203,7 +203,7 @@ setting, where a group acts on the double poset by automorphisms.
 % Here goes the French abstract (``R\'esum\'e''):
 
 \begin{abstract}
-Nous attribuons une fonction quasi-symétrique à chaque ``double
+Une fonction quasi-symétrique est attribu\'e à chaque ``double
 poset'' (c'est-à-dire, ensemble fini doté de deux ordres
 partiels) et chaque fonction de poids sur son ensemble
 sous-jacent. Cela généralise des objets bien connus tels que les
@@ -211,7 +211,7 @@ fonctions quasi-symétriques fondamentales et monomiales, les
 fonctions de Schur (obliques), les fonctions immaculées duales,
 et les $\left(P, \omega \right)$-partition enumerateurs
 quasi-symétriques.
-Nous montrons ensuite une formule pour l'antipode de cette fonction
+Nous montrons une formule pour l'antipode de cette fonction
 valable dans certaines conditions (qui sont satisfaits lorsque le second ordre
 de la double poset est totale, mais aussi dans d'autres cas); ce
 réaffirme (d'une manière qui nous semble plus naturelle) un
@@ -235,8 +235,8 @@ Malvenuto-Reutenauer Hopf algebra of permutations. In this note,
 we shall employ these same notions to restate in a simpler form,
 and reprove in a more elementary fashion, a formula for the
 antipode in the Hopf algebra $\QSym$ of quasisymmetric functions
-due to (the same) Malvenuto and Reutenauer (generalizing
-an earlier result by Gessel). We then further generalize this
+due to (the same) Malvenuto and Reutenauer
+\cite[Theorem 3.1]{Mal-Reu}. We then further generalize this
 formula to a setting in which a group acts on the double poset
 (a generalization inspired by Katharina Jochemko's
 \cite{Joch}).
@@ -391,7 +391,10 @@ of $\QSym$. The quasisymmetric functions have a rich theory which
 is related to, and often sheds new light on, the classical theory of
 symmetric functions; expositions can be found in
 \cite[\S\S 7.19, 7.23]{Stanley-EC2} and \cite[\S\S 5-6]{Reiner} and
-other sources.
+other sources.\footnote{The notion of quasisymmetric functions goes
+back to Gessel in 1984 \cite{Gessel}; they have been studied by many
+authors, most significantly Malvenuto and Reutenauer
+\cite{Mal-Reu-dua}.}
 
 As a $\kk$-module, $\QSym$ has a basis
 $\left(M_\alpha\right)_{\alpha \in \Comp}$ indexed by all
@@ -586,7 +589,9 @@ is the opposite relation $>$ of $<$.
 Clearly, every special double poset is semispecial, and every
 semispecial double poset is tertispecial.\footnote{The notions of a
 double poset and of a special double poset come from
-\cite{Mal-Reu-DP}. The notion of a ``tertispecial double poset''
+\cite{Mal-Reu-DP}. See \cite{Foissy13} for further results on
+special double posets.
+The notion of a ``tertispecial double poset''
 (Dog Latin for ``slightly less special than semispecial''; in
 hindsight, ``locally special'' would have been better terminology)
 appears to be new and arguably sounds artificial, but is the
@@ -786,7 +791,8 @@ can find one which is a total order.) Then,
 \end{align*}
 This power series is known as the $\alpha$-th
 \textit{fundamental quasisymmetric function}, usually called
-$F_\alpha$ (in \cite[\S 2.4]{BBSSZ} and \cite[\S 2]{Gri-dimm})
+$F_\alpha$ (in \cite{Gessel}, \cite[\S 2]{Mal-Reu-dua},
+\cite[\S 2.4]{BBSSZ} and \cite[\S 2]{Gri-dimm})
 or $L_\alpha$ (in \cite[\S 7.19]{Stanley-EC2} or
 \cite[Definition 5.15]{Reiner}).
 
@@ -886,8 +892,9 @@ $<_2$ by a linear extension, thus turning the tertispecial double
 poset $\left(E, <_1, <_2\right)$ into a special one; argue that
 this does not change $\Gamma\left(\left(E, <_1, <_2\right)\right)$
 and $\Gamma\left(\left(E, >_1, <_2\right)\right)$).}
-(a result found by Malvenuto and Reutenauer, as well as by Ehrenborg
-in an equivalent form).
+(a result found by Malvenuto and Reutenauer
+\cite[Lemma 3.2]{Mal-Reu}).
+%, as well as by Ehrenborg in an equivalent form).
 Theorem~\ref{thm.antipode.Gammaw} is equivalent to Malvenuto's
 and Reutenauer's \cite[Theorem 3.1]{Mal-Reu}\footnote{This equivalence
 requires some work to set up. First of all, Malvenuto and
@@ -1119,7 +1126,8 @@ S\left(M_\alpha\right)
   M_\gamma .
 \end{align*}
 This is the formula for $S\left(M_\alpha\right)$
-given in \cite[(4.26)]{Malve-Thesis}, in
+given in \cite[Proposition 3.4]{Ehrenb96},
+in \cite[(4.26)]{Malve-Thesis}, in
 \cite[Theorem 5.11]{Reiner}, and in
 \cite[Theorem 4.1]{BenSag} (originally due to Ehrenborg
 and to Malvenuto and Reutenauer).
@@ -7040,9 +7048,21 @@ to non-commutative symmetric functions}, Canadian Journal of Mathematics 66
 \bibitem[DNR01]{Dasca-HA}Sorin D\u{a}sc\u{a}lescu, Constantin
 N\u{a}st\u{a}sescu, \c{S}erban Raianu, \textit{Hopf Algebras}, Marcel Dekker 2001.
 
+\bibitem[Ehrenb96]{Ehrenb96}Richard Ehrenborg,
+\textit{On Posets and Hopf Algebras},
+Advances in Mathematics \textbf{119} (1996), pp. 1--25.
+\newline\url{http://dx.doi.org/10.1006/aima.1996.0026}
+
+\bibitem[Foissy13]{Foissy13}
+Lo\"ic Foissy,
+\textit{Plane posets, special posets, and permutations},
+Advances in Mathematics 240 (2013), pp. 24--60.
+\newline A preprint is available as arXiv:1109.1101v3.\newline
+\url{https://arxiv.org/abs/1109.1101v3}
+
 \bibitem[Fresse14]{Fresse-Op}Benoit Fresse, \textit{Homotopy of operads \&
 Grothendieck-Teichm\"{u}ller groups, First Volume},
-preprint, 6 July 2016.\newline
+preprint, 18 February 2017.\newline
 \url{http://math.univ-lille1.fr/~fresse/OperadHomotopyBook/OperadHomotopy-FirstVolume.pdf}
 \newline
 To appear in the Series ``Mathematical Surveys and Monographs'' (AMS).
@@ -7106,6 +7126,13 @@ for a preprint.
 coproduits des fonctions quasi-sym\'{e}triques et de l'alg\`{e}bre des
 descentes}, thesis, defended November 1993.\newline
 \url{http://www1.mat.uniroma1.it/people/malvenuto/Thesis.pdf}
+
+\bibitem[MalReu95]{Mal-Reu-dua}
+Claudia Malvenuto, Christophe Reutenauer,
+\textit{Duality between Quasi-Symmetric Functions and the Solomon
+Descent Algebra},
+Journal of Algebra \textbf{177} (1995), pp. 967--982.
+\newline\url{http://dx.doi.org/10.1006/jabr.1995.1336}
 
 \bibitem[MalReu98]{Mal-Reu}Claudia Malvenuto, Christophe Reutenauer,
 \textit{Plethysm and conjugation of quasi-symmetric functions}, Discrete
