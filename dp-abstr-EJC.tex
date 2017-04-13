@@ -6,91 +6,38 @@
 % (in particular, it uses the EJC's style package, and \doi and
 % \arxiv commands).
 
-%\documentclass[12pt]{article}
-%\usepackage{e-jc}
-
-\documentclass[numbers=enddot,12pt,final,onecolumn,notitlepage,abstracton]{scrartcl}%
-\usepackage[headsepline,footsepline,manualmark]{scrlayer-scrpage}
+\documentclass[12pt]{article}
+\usepackage{e-jc}
 \usepackage[all,cmtip]{xy}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{framed}
-\usepackage{color}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage[colorlinks=true,citecolor=black,linkcolor=black,urlcolor=blue]{hyperref}
 \usepackage{tabu}
-\usepackage[sc]{mathpazo}
-\usepackage[T1]{fontenc}
 \usepackage{needspace}
-\usepackage[breaklinks]{hyperref}
-%TCIDATA{OutputFilter=latex2.dll}
-%TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, September 21, 2015 16:27:34}
-%TCIDATA{SuppressPackageManagement}
-%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
-%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
-%TCIDATA{BibliographyScheme=Manual}
-%TCIDATA{Language=American English}
-%BeginMSIPreambleData
-\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
-%EndMSIPreambleData
-\newcounter{exer}
+
+% declare theorem-like environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{claim}[theorem]{Claim}
+
 \theoremstyle{definition}
-\newtheorem{theo}{Theorem}[section]
-\newenvironment{theorem}[1][]
-{\begin{theo}[#1]\begin{leftbar}}
-{\end{leftbar}\end{theo}}
-\newtheorem{lem}[theo]{Lemma}
-\newenvironment{lemma}[1][]
-{\begin{lem}[#1]\begin{leftbar}}
-{\end{leftbar}\end{lem}}
-\newtheorem{prop}[theo]{Proposition}
-\newenvironment{proposition}[1][]
-{\begin{prop}[#1]\begin{leftbar}}
-{\end{leftbar}\end{prop}}
-\newtheorem{defi}[theo]{Definition}
-\newenvironment{definition}[1][]
-{\begin{defi}[#1]\begin{leftbar}}
-{\end{leftbar}\end{defi}}
-\newtheorem{remk}[theo]{Remark}
-\newenvironment{remark}[1][]
-{\begin{remk}[#1]\begin{leftbar}}
-{\end{leftbar}\end{remk}}
-\newtheorem{coro}[theo]{Corollary}
-\newenvironment{corollary}[1][]
-{\begin{coro}[#1]\begin{leftbar}}
-{\end{leftbar}\end{coro}}
-\newtheorem{conv}[theo]{Convention}
-\newenvironment{condition}[1][]
-{\begin{conv}[#1]\begin{leftbar}}
-{\end{leftbar}\end{conv}}
-\newtheorem{quest}[theo]{Question}
-\newenvironment{question}[1][]
-{\begin{quest}[#1]\begin{leftbar}}
-{\end{leftbar}\end{quest}}
-\newtheorem{warn}[theo]{Warning}
-\newenvironment{conclusion}[1][]
-{\begin{warn}[#1]\begin{leftbar}}
-{\end{leftbar}\end{warn}}
-\newtheorem{soln}{Solution}
-\newenvironment{solution}[1][]
-{\begin{soln}[#1]}
-{\end{soln}}
-\newtheorem{conj}[theo]{Conjecture}
-\newenvironment{conjecture}[1][]
-{\begin{conj}[#1]\begin{leftbar}}
-{\end{leftbar}\end{conj}}
-\newtheorem{exam}[theo]{Example}
-\newenvironment{example}[1][]
-{\begin{exam}[#1]\begin{leftbar}}
-{\end{leftbar}\end{exam}}
-\newtheorem{exmp}[exer]{Exercise}
-\newenvironment{exercise}[1][]
-{\begin{exmp}[#1]\begin{leftbar}}
-{\end{leftbar}\end{exmp}}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{open}[theorem]{Open Problem}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{question}[theorem]{Question}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+
 \newenvironment{statement}{\begin{quote}}{\end{quote}}
-\iffalse
-\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
-\fi
+
 \let\sumnonlimits\sum
 \let\prodnonlimits\prod
 \let\cupnonlimits\bigcup
@@ -99,10 +46,6 @@
 \renewcommand{\prod}{\prodnonlimits\limits}
 \renewcommand{\bigcup}{\cupnonlimits\limits}
 \renewcommand{\bigcap}{\capnonlimits\limits}
-\voffset=0cm
-\hoffset=-0.7cm
-\setlength\textheight{22.5cm}
-\setlength\textwidth{15.5cm}
 \newcommand{\kk}{{\mathbf{k}}}
 \newcommand{\xx}{{\mathbf{x}}}
 \newcommand{\id}{{\operatorname{id}}}
@@ -121,39 +64,44 @@
 \newcommand{\EE}{{\mathbf{E}}}
 \newcommand{\FF}{{\mathbf{F}}}
 \newcommand{\bk}{{\mathbf{k}}}
-%\newcommand{\Nplus}{{\mathbb{N}_{+}}}
 \newcommand{\NN}{{\mathbb{N}}}
 \newcommand{\ZZ}{{\mathbb{Z}}}
 \newcommand{\QQ}{{\mathbb{Q}}}
-%\newcommand{\arr}{\ar@{=>}}
-%\newcommand{\bluenum}[1]{{\color{blue} #1 }}
-\ihead{Double posets and the antipode of $\QSym$}
-\ohead{page \thepage}
-\cfoot{}
-\begin{document}
-
-\author{Darij Grinberg}
+\newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{\texttt{doi:#1}}}
+\newcommand{\arxiv}[1]{\href{http://arxiv.org/abs/#1}{\texttt{arXiv:#1}}}
 
 \title{Double posets and the antipode of $\QSym$}
 
-\date{version 2.5 (\today)}
+\author{Darij Grinberg\\
+\small School of Mathematics\\[-0.8ex]
+\small University of Minnesota\\[-0.8ex]
+\small Minnesota, U.S.A.\\
+\small\tt darijgrinberg@gmail.com}
+
+\date{\dateline{Apr 13, 2017}{Apr 13, 2017}\\
+\small Mathematics Subject Classifications: 05E05, 05E18}
+
+\begin{document}
 
 \maketitle
 
 \begin{abstract}
-A quasisymmetric function is assigned to every double poset (that is,
-every finite set endowed with two partial orders) and any weight function
-on its ground set. This generalizes well-known objects such as monomial
-and fundamental quasisymmetric functions, (skew) Schur functions, dual
-immaculate functions, and quasisymmetric
-$\left(P, \omega\right)$-partition enumerators.
-We prove a formula for the antipode of this function that
-holds under certain conditions (which are satisfied when the second order
-of the double poset is total, but also in some other cases); this
-restates (in a way that to us seems more natural) a
-result by Malvenuto and Reutenauer, but our proof is new and
-self-contained. We generalize it further to an even more comprehensive
-setting, where a group acts on the double poset by automorphisms.
+  A quasisymmetric function is assigned to every double poset (that is,
+  every finite set endowed with two partial orders) and any weight function
+  on its ground set. This generalizes well-known objects such as monomial
+  and fundamental quasisymmetric functions, (skew) Schur functions, dual
+  immaculate functions, and quasisymmetric
+  $\left(P, \omega\right)$-partition enumerators.
+  We prove a formula for the antipode of this function that
+  holds under certain conditions (which are satisfied when the second order
+  of the double poset is total, but also in some other cases); this
+  restates (in a way that to us seems more natural) a
+  result by Malvenuto and Reutenauer, but our proof is new and
+  self-contained. We generalize it further to an even more comprehensive
+  setting, where a group acts on the double poset by automorphisms.
+  
+  \bigskip\noindent \textbf{Keywords:} antipodes, double posets, Hopf
+  algebras, posets, P-partitions, quasisymmetric functions
 \end{abstract}
 
 \section{Introduction}
@@ -178,7 +126,7 @@ formula to a setting in which a group acts on the double poset
 In the present version of the paper, some (classical and/or
 straightforward) proofs are missing or sketched. A more detailed
 version exists, in which at least a few of these proofs are
-elaborated on more\footnote{It can be downloaded from \newline
+elaborated on more\footnote{It can be downloaded from
 \url{http://www.cip.ifi.lmu.de/~grinberg/algebra/dp-abstr-long.pdf} .
 It is also archived as an ancillary file on
 \url{http://arxiv.org/abs/1509.08355v3}, although the former version
@@ -186,13 +134,6 @@ website is more likely to be updated.}.
 
 A short summary of this paper has been submitted to the FPSAC
 conference \cite{Gri-extabs}.
-
-\subsection*{Acknowledgments}
-
-Katharina Jochemko's work \cite{Joch} provoked this research.
-I learnt a lot about $\QSym$ from Victor Reiner. The SageMath
-computer algebra system \cite{SageMath} was used for some
-computations that suggested one of the proofs.
 
 \section{Quasisymmetric functions}
 \label{sect.qsym-intro}
@@ -4124,17 +4065,17 @@ defined on the ground set. Is there a connection between the two results, or
 even a common generalization?
 \end{question}
 
-\begin{thebibliography}{99999999}                                                                                         %
+\subsection*{Acknowledgments}
+Katharina Jochemko's work \cite{Joch} provoked this research.
+I learnt a lot about $\QSym$ from Victor Reiner. The SageMath
+computer algebra system \cite{SageMath} was used for some
+computations that suggested one of the proofs.
 
-\bibitem[Abe77]{Abe-HA}Eiichi Abe, \textit{Hopf Algebras}, CUP 1977.
+\begin{thebibliography}{10}                                                                                         %
 
-%\bibitem[ABS03]{ABS}Marcelo Aguiar, Nantel Bergeron, Frank Sottile,
-%\textit{Combinatorial Hopf algebras and generalized Dehn-Sommerville
-%relations}, Compositio Mathematica, vol. 142, Issue 01, January 2006, pp.
-%1--30.\newline Also available as arXiv:math/0310016.\newline Newer version at
-%\url{http://www.math.tamu.edu/~maguiar/CHalgebra.pdf}
+\bibitem{Abe-HA}Eiichi Abe, \textit{Hopf Algebras}, CUP 1977.
 
-\bibitem[BenSag14]{BenSag}Carolina Benedetti, Bruce Sagan,
+\bibitem{BenSag}Carolina Benedetti, Bruce Sagan,
 \textit{Antipodes and involutions},
 Journal of Combinatorial Theory, Series A,
 Volume 148, May 2017, pp. 275--315.
@@ -4142,7 +4083,7 @@ Volume 148, May 2017, pp. 275--315.
 \newline A preprint is available as arXiv:1410.5023v4.\newline
 \url{http://arxiv.org/abs/1410.5023v4}
 
-\bibitem[BBSSZ13]{BBSSZ}Chris Berg, Nantel Bergeron, Franco Saliola, Luis
+\bibitem{BBSSZ}Chris Berg, Nantel Bergeron, Franco Saliola, Luis
 Serrano, Mike Zabrocki, \textit{A lift of the Schur and Hall-Littlewood bases
 to non-commutative symmetric functions}, Canadian Journal of Mathematics 66
 (2014), pp. 525--565.\newline
@@ -4150,15 +4091,15 @@ to non-commutative symmetric functions}, Canadian Journal of Mathematics 66
 \newline Also available as arXiv:1208.5191v3.\newline
 \url{http://arxiv.org/abs/1208.5191v3}
 
-\bibitem[DNR01]{Dasca-HA}Sorin D\u{a}sc\u{a}lescu, Constantin
+\bibitem{Dasca-HA}Sorin D\u{a}sc\u{a}lescu, Constantin
 N\u{a}st\u{a}sescu, \c{S}erban Raianu, \textit{Hopf Algebras}, Marcel Dekker 2001.
 
-\bibitem[Ehrenb96]{Ehrenb96}Richard Ehrenborg,
+\bibitem{Ehrenb96}Richard Ehrenborg,
 \textit{On Posets and Hopf Algebras},
 Advances in Mathematics \textbf{119} (1996), pp. 1--25.
 \newline\url{http://dx.doi.org/10.1006/aima.1996.0026}
 
-\bibitem[Foissy13]{Foissy13}
+\bibitem{Foissy13}
 Lo\"ic Foissy,
 \textit{Plane posets, special posets, and permutations},
 Advances in Mathematics 240 (2013), pp. 24--60.
@@ -4166,19 +4107,19 @@ Advances in Mathematics 240 (2013), pp. 24--60.
 \newline A preprint is available as arXiv:1109.1101v3.\newline
 \url{https://arxiv.org/abs/1109.1101v3}
 
-\bibitem[Fresse14]{Fresse-Op}Benoit Fresse, \textit{Homotopy of operads \&
+\bibitem{Fresse-Op}Benoit Fresse, \textit{Homotopy of operads \&
 Grothendieck-Teichm\"{u}ller groups, First Volume},
 preprint, 18 February 2017.\newline
 \url{http://math.univ-lille1.fr/~fresse/OperadHomotopyBook/OperadHomotopy-FirstVolume.pdf}
 \newline
 To appear in the Series ``Mathematical Surveys and Monographs'' (AMS).
 
-\bibitem[Gessel84]{Gessel}Ira M. Gessel, \textit{Multipartite
+\bibitem{Gessel}Ira M. Gessel, \textit{Multipartite
 P-partitions and Inner Products of Skew Schur Functions}, Contemporary
 Mathematics, vol. 34, 1984, pp. 289--301.\newline%
 \url{http://people.brandeis.edu/~gessel/homepage/papers/multipartite.pdf}
 
-\bibitem[Gessel15]{Gessel-Ppar}Ira M. Gessel, \textit{A Historical Survey of
+\bibitem{Gessel-Ppar}Ira M. Gessel, \textit{A Historical Survey of
 $P$-Partitions}, to be published in Richard Stanley's 70th Birthday Festschrift,
 arXiv:1506.03508v1.\newline
 \url{http://arxiv.org/abs/1506.03508v1}
@@ -4187,72 +4128,56 @@ Patricia Hersh, Thomas Lam, Pavlo Pylyavskyy, Victor Reiner (eds.),
 \textit{The mathematical legacy of Richard P. Stanley},
 AMS, Providence (RI) 2016.)
 
-%\bibitem[GesReu93]{Gessel-Reutenauer}Ira M. Gessel, Christophe Reutenauer,
-%\textit{Counting Permutations with Given Cycle Structure
-%and Descent Set},
-%Journal of Combinatorial Theory, Series A 64, pp. 189--215 (1993).
-
-\bibitem[Grin14]{Gri-dimm}Darij Grinberg,
+\bibitem{Gri-dimm}Darij Grinberg,
 \textit{Dual immaculate creation operators and a dendriform algebra
 structure on the quasisymmetric functions},
 Canad. J. Math. \textbf{69} (2017), pp. 21--53,
 \href{http://arxiv.org/abs/1410.0079v6}{arXiv:1410.0079v6}.
 
-\bibitem[Grin16a]{Gri-nbc}Darij Grinberg,
+\bibitem{Gri-nbc}Darij Grinberg,
 \textit{A note on non-broken-circuit sets and the chromatic polynomial},
 \href{https://arxiv.org/abs/1604.03063v1}{arXiv:1604.03063v1}.
 
-\bibitem[Grin16b]{Gri-extabs}
+\bibitem{Gri-extabs}
 Darij Grinbrg, \textit{Double posets and the antipode of $\QSym$
 (extended abstract)},
 extended abstract submitted to \href{https://sites.google.com/site/fpsac2017/}{FPSAC 2017}.
 \url{http://www.cip.ifi.lmu.de/~grinberg/algebra/fpsac2017.pdf}
 
-\bibitem[GriRei14]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
+\bibitem{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
 in Combinatorics}, August 22, 2016, arXiv:1409.8356v4.\newline
 \url{http://www.cip.ifi.lmu.de/~grinberg/algebra/HopfComb-sols.pdf}
 
-\bibitem[HaGuKi10]{HGK}Michiel Hazewinkel, Nadiya Gubareni, V. V. Kirichenko,
+\bibitem{HGK}Michiel Hazewinkel, Nadiya Gubareni, V. V. Kirichenko,
 \textit{Algebras, Rings and Modules: Lie Algebras and Hopf Algebras},
 AMS 2010.
 
-%\bibitem[Hivert99]{Hivert-CQS}Florent Hivert, \textit{Combinatoire des
-%fonctions quasi-sym\'{e}triques}, PhD thesis, defended 1999, January the
-%15.\newline
-%\url{https://www.lri.fr/~hivert/PAPER/these.ps}
-
-\bibitem[Joch13]{Joch}Katharina Jochemko, \textit{Order polynomials and
+\bibitem{Joch}Katharina Jochemko, \textit{Order polynomials and
 P\'{o}lya's enumeration theorem},
 The Electronic Journal of Combinatorics 21(2) (2014), P2.52.
 See also
 \texttt{\href{http://arxiv.org/abs/1310.0838v2}{arXiv:1310.0838v2}}
 for a preprint.
 
-%\bibitem[LMvW13]{LMvW}Kurt Luoto, Stefan Mykytiuk and Stephanie van
-%Willigenburg, \textit{An introduction to quasisymmetric Schur functions --
-%Hopf algebras, quasisymmetric functions, and Young composition tableaux}, May
-%23, 2013.\newline
-%\url{http://www.math.ubc.ca/~steph/papers/QuasiSchurBook.pdf}
-
-\bibitem[Malve93]{Malve-Thesis}Claudia Malvenuto, \textit{Produits et
+\bibitem{Malve-Thesis}Claudia Malvenuto, \textit{Produits et
 coproduits des fonctions quasi-sym\'{e}triques et de l'alg\`{e}bre des
 descentes}, thesis, defended November 1993.\newline
 \url{http://www1.mat.uniroma1.it/people/malvenuto/Thesis.pdf}
 
-\bibitem[MalReu95]{Mal-Reu-dua}
+\bibitem{Mal-Reu-dua}
 Claudia Malvenuto, Christophe Reutenauer,
 \textit{Duality between Quasi-Symmetric Functions and the Solomon
 Descent Algebra},
 Journal of Algebra \textbf{177} (1995), pp. 967--982.
 \newline\url{http://dx.doi.org/10.1006/jabr.1995.1336}
 
-\bibitem[MalReu98]{Mal-Reu}Claudia Malvenuto, Christophe Reutenauer,
+\bibitem{Mal-Reu}Claudia Malvenuto, Christophe Reutenauer,
 \textit{Plethysm and conjugation of quasi-symmetric functions}, Discrete
 Mathematics, Volume 193, Issues 1--3, 28 November 1998, pp.
 225--233.\newline
 \url{http://www.sciencedirect.com/science/article/pii/S0012365X98001423}
 
-\bibitem[MalReu09]{Mal-Reu-DP}Claudia Malvenuto, Christophe Reutenauer,
+\bibitem{Mal-Reu-DP}Claudia Malvenuto, Christophe Reutenauer,
 \textit{A self paired Hopf algebra on double posets and
 a Littlewood-Richardson rule},
 Journal of Combinatorial Theory, Series A 118 (2011), pp. 1322--1333.
@@ -4261,40 +4186,40 @@ Journal of Combinatorial Theory, Series A 118 (2011), pp. 1322--1333.
 A preprint version appeared as
 \href{http://arxiv.org/abs/0905.3508v1}{arXiv:0905.3508v1}.
 
-\bibitem[Manchon04]{Manchon-HA}Dominique Manchon, \textit{Hopf algebras, from
+\bibitem{Manchon-HA}Dominique Manchon, \textit{Hopf algebras, from
 basics to applications to renormalization}, Comptes Rendus des Rencontres
 Mathematiques de Glanon 2001 (published in 2003), arXiv:math/0408405v2.\newline%
 \url{http://arxiv.org/abs/math/0408405v2}
 
-\bibitem[Montg93]{Montg-Hopf}Susan Montgomery, \textit{Hopf Algebras and their
+\bibitem{Montg-Hopf}Susan Montgomery, \textit{Hopf Algebras and their
 Actions on Rings}, Regional Conference Series in Mathematics Nr. 82, AMS 1993.
 
-\bibitem[NovThi05]{Nov-Thi} Jean-Christophe Novelli, Jean-Yves Thibon,
+\bibitem{Nov-Thi} Jean-Christophe Novelli, Jean-Yves Thibon,
 \textit{Hopf algebras and dendriform structures arising from parking functions},
 Fundamenta Mathematicae 193 (2007), 189--241. A preprint also appears
 on arXiv as \href{http://arxiv.org/abs/math/0511200v1}{arXiv:math/0511200v1}.
 
-\bibitem[Sage16]{SageMath}The Sage Developers, \textit{SageMath,
+\bibitem{SageMath}The Sage Developers, \textit{SageMath,
 the Sage Mathematics Software System} (Version 7.4), 2016.
 \url{http://www.sagemath.org}
 
-\bibitem[Stan11]{Stanley-EC1}Richard P. Stanley, \textit{Enumerative
+\bibitem{Stanley-EC1}Richard P. Stanley, \textit{Enumerative
 Combinatorics, volume 1}, Cambridge University Press, 2011. \newline%
 \url{http://math.mit.edu/~rstan/ec/ec1/}
 
-\bibitem[Stan99]{Stanley-EC2}Richard P. Stanley, \textit{Enumerative
+\bibitem{Stanley-EC2}Richard P. Stanley, \textit{Enumerative
 Combinatorics, volume 2}, Cambridge University Press, 1999.
 
-\bibitem[Stan71]{Stanley-Thes}Richard P. Stanley, \textit{Ordered Structures and
+\bibitem{Stanley-Thes}Richard P. Stanley, \textit{Ordered Structures and
 Partitions}, Memoirs of the American Mathematical Society, No. 119, American
 Mathematical Society, Providence, R.I., 1972. \newline
 \url{http://www-math.mit.edu/~rstan/pubs/pubfiles/9.pdf}
 
-\bibitem[Stan84]{Stanley-Peck}Richard P. Stanley,
+\bibitem{Stanley-Peck}Richard P. Stanley,
 \textit{Quotients of Peck posets}, Order, 1 (1984), pp. 29--34. \newline
 \url{http://dedekind.mit.edu/~rstan/pubs/pubfiles/60.pdf}
 
-\bibitem[Sweed69]{Sweedler-HA}Moss E. Sweedler, \textit{Hopf Algebras},
+\bibitem{Sweedler-HA}Moss E. Sweedler, \textit{Hopf Algebras},
 W. A. Benjamin 1969.
 
 \end{thebibliography}
