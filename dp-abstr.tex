@@ -285,21 +285,21 @@ on $\Powser$. (This definition has been copied from
 \cite[\S 2]{Gri-dimm}, essentially unchanged.)
 
 Let $x_{1},x_{2},x_{3},\ldots$ be countably many distinct symbols. We
-let $\operatorname*{Mon}$ be the free abelian monoid on the set $\left\{
+let $\operatorname{Mon}$ be the free abelian monoid on the set $\left\{
 x_{1},x_{2},x_{3},\ldots\right\}  $ (written multiplicatively); it consists of
 elements of the form $x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots$ for
 finitely supported $\left(  a_{1},a_{2},a_{3},\ldots\right)  \in
  \NN ^{\infty}$ (where \textquotedblleft finitely
 supported\textquotedblright\ means that all but finitely many positive
 integers $i$ satisfy $a_{i}=0$). A \textit{monomial} will mean an element of
-$\operatorname*{Mon}$. Thus, a monomial is a combinatorial
+$\operatorname{Mon}$. Thus, a monomial is a combinatorial
 object, independent of $\mathbf{k}$; it does not carry a coefficient.
 
 We consider the $\mathbf{k}$-algebra $\Powser$ of (commutative) power
 series in
 countably many distinct indeterminates $x_{1},x_{2},x_{3},\ldots$ over
 $\mathbf{k}$. By abuse of notation, we shall identify every monomial
-$x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots\in\operatorname*{Mon}$ with the
+$x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots\in\operatorname{Mon}$ with the
 corresponding element $x_{1}^{a_{1}}\cdot x_{2}^{a_{2}}\cdot x_{3}^{a_{3}%
 }\cdot\cdots$ of $\Powser$ when necessary
 (e.g., when we speak of the sum of two monomials or
@@ -1814,7 +1814,7 @@ $ be a map satisfying $\operatorname{pack}\pi=\varphi$ and $\pi\left(
 E\right)  =T$. The definition of $\operatorname{pack}\pi$ shows that
 $\operatorname{pack}\pi=r_{\pi\left(  E\right)  }^{-1}\circ\pi=r_{T}^{-1}%
 \circ\pi$ (since $\pi\left(  E\right)  =T$). Hence, $r_{T}^{-1}\circ
-\pi=\operatorname*{pack}\pi=\varphi$, so that $\pi=r_{T}\circ\varphi$. This
+\pi=\operatorname{pack}\pi=\varphi$, so that $\pi=r_{T}\circ\varphi$. This
 proves Claim 2.
 
 Now, both Claims 1 and 2 are proven; hence, our proof is complete.
@@ -2100,7 +2100,7 @@ Let $\mathcal{T}$ be the set of all triples $\left(  \left(  P,Q\right)
 \Adm \EE $, a packed $ \EE \mid_{P}$-partition
 $\sigma$ and a packed $ \EE \mid_{Q}$-partition $\tau$.
 
-For every $\ell\in\mathbb{Z}$, we let $\operatorname*{add}\nolimits_{\ell}$
+For every $\ell\in\mathbb{Z}$, we let $\operatorname{add}_{\ell}$
 denote the bijective map $\mathbb{Z}\rightarrow\mathbb{Z},\ z\mapsto z+\ell$.
 
 Fix $\left(  \varphi,k\right)  \in\mathcal{S}$. Set%
@@ -2110,7 +2110,7 @@ P  &  =\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
 \varphi\left(  E\right)  \right\vert \right\}  \right)
 ,\label{eq.lem.Gammaw.coprod.bij.def1}\\
 \sigma &  =\varphi\mid_{P}\ \ \ \ \ \ \ \ \ \ \text{and}%
-\ \ \ \ \ \ \ \ \ \ \tau=\operatorname*{add}\nolimits_{-k}\circ\left(
+\ \ \ \ \ \ \ \ \ \ \tau=\operatorname{add}_{-k}\circ\left(
 \varphi\mid_{Q}\right)  . \label{eq.lem.Gammaw.coprod.bij.def2}%
 \end{align}
 Then, $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$.
@@ -2136,8 +2136,9 @@ $. Then, $\left(  \varphi,k\right)  \in\mathcal{S}$.
 \begin{lemma}
 \label{lem.Gammaw.coprod.bij}
 Let $\EE = \left(  E,<_{1},<_{2}\right)  $
-be a double poset. Let $\mathcal{S}$, $\mathcal{T}$ and $\operatorname*{add}%
-\nolimits_{\ell}$ be defined as in Lemma \ref{lem.Gammaw.coprod.bij.a}.
+be a double poset. Let $\mathcal{S}$, $\mathcal{T}$ and
+$\operatorname{add}_{\ell}$ be defined as in
+Lemma \ref{lem.Gammaw.coprod.bij.a}.
 
 Define a map $\Phi:\mathcal{S}\rightarrow\mathcal{T}$ as follows: Let $\left(
 \varphi,k\right)  \in\mathcal{S}$. Then, define $P$, $Q$, $\sigma$ and $\tau$
@@ -2261,18 +2262,18 @@ E\right)  \right\vert \right\}  . \label{pf.lem.Gammaw.coprod.bij.a.4}%
 \end{equation}
 Hence,%
 \begin{align*}
-\left(  \operatorname*{add}\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)
-\right)  \left(  Q\right)   &  =\operatorname*{add}\nolimits_{-k}\left(
+\left(  \operatorname{add}_{-k}\circ\left(  \varphi\mid_{Q}\right)
+\right)  \left(  Q\right)   &  =\operatorname{add}_{-k}\left(
 \underbrace{\left(  \varphi\mid_{Q}\right)  \left(  Q\right)  }_{=\varphi
 \left(  Q\right)  =\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)
 \right\vert \right\}  }\right) \\
-&=  \operatorname*{add}\nolimits_{-k}\left(
+&=  \operatorname{add}_{-k}\left(
 \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
 \right\}  \right) \\
 &  =\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
 -k\right\}
 \end{align*}
-(by the definition of $\operatorname*{add}\nolimits_{-k}$). Since $\left(
+(by the definition of $\operatorname{add}_{-k}$). Since $\left(
 \varphi\mid_{P}\right)  \left(  P\right)  =\varphi\left(  P\right)  =\left\{
 1,2,\ldots,k\right\}  $ is an initial interval, we deduce that the
 $\EE\mid_{P}$-partition $\varphi\mid_{P}$ is packed. Thus,
@@ -2280,19 +2281,21 @@ $\sigma=\varphi\mid_{P}$ is a packed $\EE\mid_{P}$-partition.
 
 On the other hand, (\ref{pf.lem.Gammaw.coprod.bij.a.1}) (applied to $T=Q$)
 shows that $\varphi\mid_{Q}$ is an $\EE\mid_{Q}$-partition. Hence, the
-map $\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  $
-is an $\EE\mid_{Q}$-partition (since the map $\operatorname*{add}%
-\nolimits_{-k}$ is strictly increasing, and since $\left(  \operatorname*{add}%
-\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  \right)  \left(  Q\right)
+map $\operatorname{add}_{-k}\circ\left(  \varphi\mid_{Q}\right)  $
+is an $\EE\mid_{Q}$-partition (since the map
+$\operatorname{add}_{-k}$ is strictly increasing, and since
+$\left(  \operatorname{add}_{-k}\circ\left(  \varphi\mid_{Q}\right)
+ \right)  \left(  Q\right)
 =\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
 -k\right\}  \subseteq\left\{  1,2,3,\ldots\right\}  $). This $\EE%
-\mid_{Q}$-partition $\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi
-\mid_{Q}\right)  $ is packed (since $\left(  \operatorname*{add}%
-\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  \right)  \left(  Q\right)
+\mid_{Q}$-partition $\operatorname{add}_{-k}\circ\left(  \varphi
+\mid_{Q}\right)  $ is packed (since
+$\left(  \operatorname{add}_{-k}\circ
+\left(  \varphi\mid_{Q}\right)  \right)  \left(  Q\right)
 =\left\{  1,2,\ldots,\left\vert \varphi\left(  E\right)  \right\vert
--k\right\}  $ is an initial interval). Thus, $\tau=\operatorname*{add}%
-\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  $ is a packed
-$\EE\mid_{Q}$-partition.
+-k\right\}  $ is an initial interval). Thus,
+$\tau = \operatorname{add}_{-k} \circ\left(  \varphi\mid_{Q}\right)  $
+is a packed $\EE\mid_{Q}$-partition.
 
 We now know that $\left(  P,Q\right)  \in \Adm \EE$, that
 $\sigma$ is a packed $\EE\mid_{P}$-partition, and that $\tau$ is a
@@ -2466,9 +2469,9 @@ and that $k\in\left\{  0,1,\ldots,\left\vert \varphi\left(  E\right)
 [Proof of Lemma \ref{lem.Gammaw.coprod.bij}.]We need to prove the following
 two claims:
 
-\textit{Claim 1:} We have $\Phi\circ\Psi=\operatorname*{id}$.
+\textit{Claim 1:} We have $\Phi\circ\Psi=\id$.
 
-\textit{Claim 2:} We have $\Psi\circ\Phi=\operatorname*{id}$.
+\textit{Claim 2:} We have $\Psi\circ\Phi=\id$.
 
 \textit{Proof of Claim 1:} Fix $\left(  \left(  P,Q\right)  ,\sigma
 ,\tau\right)  \in\mathcal{T}$. Set $k=\left\vert \sigma\left(  P\right)
@@ -2490,9 +2493,9 @@ E\right)  \right\vert \right\}  $. Since $\varphi$ is packed, we have
 $\varphi\left(  E\right)  =\left\{  1,2,\ldots,\left\vert \varphi\left(
 E\right)  \right\vert \right\}  $.
 
-The map $\operatorname*{add}\nolimits_{k}:\mathbb{Z}\rightarrow\mathbb{Z}$ is
-a bijection, and its inverse is $\left(  \operatorname*{add}\nolimits_{k}%
-\right)  ^{-1}=\operatorname*{add}\nolimits_{-k}$.
+The map $\operatorname{add}_{k}:\mathbb{Z}\rightarrow\mathbb{Z}$ is
+a bijection, and its inverse is $\left(  \operatorname{add}_{k}%
+\right)  ^{-1}=\operatorname{add}_{-k}$.
 
 Since the map $\sigma$ is packed, we have $\sigma\left(  P\right)  =\left\{
 1,2,\ldots,\left\vert \sigma\left(  P\right)  \right\vert \right\}  =\left\{
@@ -2517,18 +2520,18 @@ Hence, $\varphi\mid_{P}=\sigma$. Also, the definition of $\varphi$ shows that%
 \end{equation}
 Thus, every $e\in Q$ satisfies%
 \begin{align}
-\varphi\left(  e\right)   &  =\tau\left(  e\right)  +k=\operatorname*{add}%
-\nolimits_{k}\left(  \tau\left(  e\right)  \right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{add}\nolimits_{k}%
+\varphi\left(  e\right)   &  =\tau\left(  e\right)  +k
+= \operatorname{add}_{k}\left(  \tau\left(  e\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname{add}_{k}%
 \left(  \tau\left(  e\right)  \right)  \text{ is defined to be }\tau\left(
 e\right)  +k\right) \nonumber\\
-&  =\left(  \operatorname*{add}\nolimits_{k}\circ\tau\right)  \left(
+&  =\left(  \operatorname{add}_{k}\circ\tau\right)  \left(
 e\right)  . \label{pf.lem.Gammaw.coprod.bij.c.2b}%
 \end{align}
-Hence, $\varphi\mid_{Q}=\operatorname*{add}\nolimits_{k}\circ\tau$, so that
-$\tau=\underbrace{\left(  \operatorname*{add}\nolimits_{k}\right)  ^{-1}%
-}_{=\operatorname*{add}\nolimits_{-k}}\circ\left(  \varphi\mid_{Q}\right)
-=\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi\mid_{Q}\right)  $.
+Hence, $\varphi\mid_{Q}=\operatorname{add}_{k}\circ\tau$, so that
+$\tau=\underbrace{\left(  \operatorname{add}_{k}\right)  ^{-1}%
+}_{=\operatorname{add}_{-k}}\circ\left(  \varphi\mid_{Q}\right)
+=\operatorname{add}_{-k}\circ\left(  \varphi\mid_{Q}\right)  $.
 
 Furthermore, $P=\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
 $\ \ \ \ \footnote{\textit{Proof.} Let $e\in\varphi^{-1}\left(  \left\{
@@ -2608,7 +2611,7 @@ P  &  =\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
 ,\ \ \ \ \ \ \ \ \ \ Q=\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert
 \varphi\left(  E\right)  \right\vert \right\}  \right)  ,\\
 \sigma &  =\varphi\mid_{P}\ \ \ \ \ \ \ \ \ \ \text{and}%
-\ \ \ \ \ \ \ \ \ \ \tau=\operatorname*{add}\nolimits_{-k}\circ\left(
+\ \ \ \ \ \ \ \ \ \ \tau=\operatorname{add}_{-k}\circ\left(
 \varphi\mid_{Q}\right)  .
 \end{align*}
 These equations are identical with the equations
@@ -2625,7 +2628,7 @@ Now, let us forget that we fixed $\left(  \left(  P,Q\right)  ,\sigma
 P,Q\right)  ,\sigma,\tau\right)  \right)  =\left(  \left(  P,Q\right)
 ,\sigma,\tau\right)  $ for every $\left(  \left(  P,Q\right)  ,\sigma
 ,\tau\right)  \in\mathcal{T}$. In other words, $\Phi\circ\Psi
-=\operatorname*{id}$. This proves Claim 1.
+=\id$. This proves Claim 1.
 
 \textit{Proof of Claim 2:} Fix $\left(  \varphi,k\right)  \in\mathcal{S}$.
 Define $P$, $Q$, $\sigma$ and $\tau$ by (\ref{eq.lem.Gammaw.coprod.bij.def1})
@@ -2652,16 +2655,16 @@ $\sigma\left(  e\right)  =\left(  \varphi\mid_{P}\right)  \left(  e\right)
 \varphi\left(  e\right)  =\sigma\left(  e\right)  .
 \label{pf.lem.Gammaw.coprod.bij.c.11}%
 \end{equation}
-Also, $\tau=\operatorname*{add}\nolimits_{-k}\circ\left(  \varphi\mid
+Also, $\tau=\operatorname{add}_{-k}\circ\left(  \varphi\mid
 _{Q}\right)  $. Hence, for every $e\in Q$, we have%
 \begin{align*}
-\tau\left(  e\right)   &  =\left(  \operatorname*{add}\nolimits_{-k}%
+\tau\left(  e\right)   &  =\left(  \operatorname{add}_{-k}%
 \circ\left(  \varphi\mid_{Q}\right)  \right)  \left(  e\right)
-=\operatorname*{add}\nolimits_{-k}\left(  \underbrace{\left(  \varphi\mid
+=\operatorname{add}_{-k}\left(  \underbrace{\left(  \varphi\mid
 _{Q}\right)  \left(  e\right)  }_{=\varphi\left(  e\right)  }\right) \\
-&  =\operatorname*{add}\nolimits_{-k}\left(  \varphi\left(  e\right)  \right)
+&  =\operatorname{add}_{-k}\left(  \varphi\left(  e\right)  \right)
 =\varphi\left(  e\right)  +\left(  -k\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{by the definition of }\operatorname*{add}\nolimits_{-k}\right) \\
+\text{by the definition of }\operatorname{add}_{-k}\right) \\
 &  =\varphi\left(  e\right)  -k.
 \end{align*}
 Thus, for every $e\in Q$, we have%
@@ -2708,7 +2711,7 @@ $\left(  \varphi,k\right)  =\Psi\underbrace{\left(  \left(  P,Q\right)
 Now, let us forget that we fixed $\left(  \varphi,k\right)  $. We thus have
 shown that $\Psi\left(  \Phi\left(  \varphi,k\right)  \right)  =\left(
 \varphi,k\right)  $ for every $\left(  \varphi,k\right)  \in\mathcal{S}$. In
-other words, $\Psi\circ\Phi=\operatorname*{id}$. This proves Claim 2.
+other words, $\Psi\circ\Phi=\id$. This proves Claim 2.
 
 Now, both Claims 1 and 2 are proven. Thus, the maps $\Phi$ and $\Psi$ are
 mutually inverse. This proves Lemma \ref{lem.Gammaw.coprod.bij}.
@@ -2753,9 +2756,9 @@ where $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  =\Phi\left(
 =\Phi\left(  \varphi,k\right)  $. We must prove the equalities
 (\ref{pf.prop.Gammaw.coprod.evs}).
 \par
-For every $\ell\in\mathbb{Z}$, define the map $\operatorname*{add}%
-\nolimits_{\ell}:\mathbb{Z}\rightarrow\mathbb{Z}$ as in Lemma
-\ref{lem.Gammaw.coprod.bij.a}.
+For every $\ell\in\mathbb{Z}$, define the map
+$\operatorname{add}_{\ell}:\mathbb{Z}\rightarrow\mathbb{Z}$ as in
+Lemma \ref{lem.Gammaw.coprod.bij.a}.
 \par
 Let $\ell=\left\vert \varphi\left(  E\right)  \right\vert $; thus,
 $\varphi\left(  E\right)  =\left\{  1,2,\ldots,\ell\right\}  $ (since
@@ -2765,9 +2768,9 @@ define $\alpha_{i}\in \NN $ by
 \alpha_{i}=\sum_{e\in\varphi^{-1}\left(  i\right)  }w\left(  e\right)  .
 \label{pf.prop.Gammaw.coprod.evs.pf.alphai}%
 \end{equation}
-Then, $\operatorname*{ev}\nolimits_{w}\varphi=\left(  \alpha_{1},\alpha
-_{2},\ldots,\alpha_{\ell}\right)  $ (by the definition of $\operatorname*{ev}%
-\nolimits_{w}\varphi$).
+Then, $\operatorname{ev}_{w}\varphi=\left(  \alpha_{1},\alpha
+_{2},\ldots,\alpha_{\ell}\right)  $ (by the definition of
+$\operatorname{ev}_{w}\varphi$).
 \par
 We have $\left(  \varphi,k\right)  \in\mathcal{S}$. Thus, $\varphi$ is a
 packed $\EE$-partition, and $k$ is an element of $\left\{
@@ -2777,7 +2780,7 @@ definition of $\mathcal{S}$). Thus, $k\in\left\{  0,1,\ldots,\left\vert
 ,\ell\right\}  $ (since $\left\vert \varphi\left(  E\right)  \right\vert
 =\ell$).
 \par
-Now, from $\operatorname*{ev}\nolimits_{w}\varphi=\left(  \alpha_{1}%
+Now, from $\operatorname{ev}_{w}\varphi=\left(  \alpha_{1}%
 ,\alpha_{2},\ldots,\alpha_{\ell}\right)  $, we obtain%
 \[
 \left(  \operatorname{ev}_{w}\varphi\right)  \left[  :k\right]  =\left(
@@ -2806,15 +2809,16 @@ For every $e\in P$, we have%
 \par
 For every $e\in Q$, we have%
 \begin{align}
-\underbrace{\tau}_{\substack{=\operatorname*{add}\nolimits_{-k}\circ\left(
+\underbrace{\tau}_{\substack{=\operatorname{add}_{-k}\circ\left(
 \varphi\mid_{Q}\right)  \\\text{(by (\ref{eq.lem.Gammaw.coprod.bij.def2}))}%
-}}\left(  e\right)   &  =\left(  \operatorname*{add}\nolimits_{-k}\circ\left(
-\varphi\mid_{Q}\right)  \right)  \left(  e\right)  =\operatorname*{add}%
-\nolimits_{-k}\left(  \left(  \varphi\mid_{Q}\right)  \left(  e\right)
+}}\left(  e\right)   &  =\left(  \operatorname{add}_{-k}\circ\left(
+\varphi\mid_{Q}\right)  \right)  \left(  e\right)
+= \operatorname{add}_{-k}
+\left(  \left(  \varphi\mid_{Q}\right)  \left(  e\right)
 \right) \nonumber\\
 &  =\underbrace{\left(  \varphi\mid_{Q}\right)  \left(  e\right)  }%
 _{=\varphi\left(  e\right)  }+\left(  -k\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{by the definition of }\operatorname*{add}\nolimits_{-k}\right)
+\text{by the definition of }\operatorname{add}_{-k}\right)
 \nonumber\\
 &  =\varphi\left(  e\right)  -k. \label{pf.prop.Gammaw.coprod.evs.pf.2}%
 \end{align}
@@ -4059,9 +4063,9 @@ In other words, the involution $T$ satisfies Property P.
 \end{vershort}
 \begin{verlong}
 Every $\alpha\in Z$ satisfies $\left(  T\circ T\right)  \left(  \alpha\right)
-=\operatorname*{id}\left(  \alpha\right)  $\ \ \ \ \footnote{\textit{Proof.}
+=\id\left(  \alpha\right)  $\ \ \ \ \footnote{\textit{Proof.}
 Let $\alpha\in Z$. We want to show that $\left(  T\circ T\right)  \left(
-\alpha\right)  =\operatorname*{id}\left(  \alpha\right)  $.
+\alpha\right)  = \id \left(  \alpha\right)  $.
 \par
 We have $\alpha\in Z$. In other words, $\alpha$ can be written in the form
 $\alpha=\left(  P,Q\right)  $ for some $\left(  P,Q\right)  \in
@@ -4122,10 +4126,10 @@ f\right\}  ,\left(  Q\cup\left\{  f\right\}  \right)  \cup\left\{  f\right\}
 and }\left\{  f\right\}  \text{ are disjoint)}}}\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\notin P\setminus\left\{  f\right\}
 \right)  \\
-& =\left(  P,Q\right)  =\alpha=\operatorname*{id}\left(  \alpha\right)  .
+& =\left(  P,Q\right)  =\alpha = \id \left(  \alpha\right)  .
 \end{align*}
-Hence, $\left(  T\circ T\right)  \left(  \alpha\right)  =\operatorname*{id}%
-\left(  \alpha\right)  $ is proven in Case 1.
+Hence, $\left(  T\circ T\right)  \left(  \alpha\right)
+= \id \left(  \alpha\right)  $ is proven in Case 1.
 \par
 Let us now consider Case 2. In this case, we have $f\notin P$. Hence, $f\in
 E\setminus P=Q$. Clearly, $f\in\left\{  f\right\}  \subseteq P\cup\left\{
@@ -4168,16 +4172,16 @@ Q\setminus\left\{  f\right\}  \right)  \cup\left\{  f\right\}  }%
 _{\substack{=Q\\\text{(since }\left\{  f\right\}  \subseteq Q\text{)}%
 }}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\in P\cup\left\{
 f\right\}  \right)  \\
-& =\left(  P,Q\right)  =\alpha=\operatorname*{id}\left(  \alpha\right)  .
+& =\left(  P,Q\right)  =\alpha = \id \left(  \alpha\right)  .
 \end{align*}
-Hence, $\left(  T\circ T\right)  \left(  \alpha\right)  =\operatorname*{id}%
-\left(  \alpha\right)  $ is proven in Case 2.
+Hence, $\left(  T\circ T\right)  \left(  \alpha\right)
+= \id \left(  \alpha\right)  $ is proven in Case 2.
 \par
 We have now proven $\left(  T\circ T\right)  \left(  \alpha\right)
-=\operatorname*{id}\left(  \alpha\right)  $ in both Cases 1 and 2. Thus,
-$\left(  T\circ T\right)  \left(  \alpha\right)  =\operatorname*{id}\left(
+= \id \left(  \alpha\right)  $ in both Cases 1 and 2. Thus,
+$\left(  T\circ T\right)  \left(  \alpha\right)  = \id \left(
 \alpha\right)  $ always holds. Qed.}. In other words, $T\circ
-T=\operatorname*{id}$. In other words, the map $T$ is an involution.
+T = \id$. In other words, the map $T$ is an involution.
 Furthermore, this involution $T$ satisfies Property
 P\ \ \ \ \footnote{\textit{Proof.} Let $\left(  P,Q\right)  \in Z$. Write
 $T\left(  \left(  P,Q\right)  \right)  $ in the form $\left(  P^{\prime
@@ -5152,8 +5156,8 @@ $h^{-1}gh$ instead of $g$) shows that $h^{-1}gh$ is $E$-even. In other words,%
 
 
 Now, let $\varepsilon$ be the group homomorphism from $G$ to
-$\operatorname*{Aut}E$\ \ \ \ \footnote{We use the notation
-$\operatorname*{Aut}E$ for the group of all permutations
+$\operatorname{Aut}E$\ \ \ \ \footnote{We use the notation
+$\operatorname{Aut}E$ for the group of all permutations
 of the set $E$.} which describes the $G$-action on $E$. Then,
 $\varepsilon\left(  h^{-1}gh\right)  $ is the action of $h^{-1}gh$ on $E$, and
 thus is an even permutation of $E$ (by (\ref{pf.lem.coeven-all-one.2})).
@@ -5681,7 +5685,7 @@ Now, let $\Psi$ be the map%
 (This is well-defined, since $\overline{\pi}\circ\mathfrak{o}\in\mathfrak{A}$
 for every $\overline{\pi}\in\mathfrak{B}$.)
 
-Now, we have the equalities $\Phi\circ\Psi=\operatorname*{id}$%
+Now, we have the equalities $\Phi\circ\Psi=\id$%
 \ \ \ \ \footnote{\textit{Proof.} Let $\beta\in\mathfrak{B}$. Then,
 $\Psi\left(  \beta\right)  =\beta\circ\mathfrak{o}$ (by the definition of
 $\Psi$). Let $\pi=\Psi\left(  \beta\right)  $. Thus, $\pi=\Psi\left(
@@ -5704,13 +5708,13 @@ u\right)  =\beta\left(  u\right)  $ for each $u\in E^{g}$. In other words,
 $\pi^{\circ}=\beta$. But the definition of $\Phi$ yields $\Phi\left(
 \pi\right)  =\pi^{\circ}=\beta$. Now, $\left(  \Phi\circ\Psi\right)  \left(
 \beta\right)  =\Phi\left(  \underbrace{\Psi\left(  \beta\right)  }_{=\pi
-}\right)  =\Phi\left(  \pi\right)  =\beta=\operatorname*{id}\left(
+}\right)  =\Phi\left(  \pi\right)  =\beta = \id\left(
 \beta\right)  $.
 \par
 Now, forget that we fixed $\beta$. We thus have proven that $\left(  \Phi
-\circ\Psi\right)  \left(  \beta\right)  =\operatorname*{id}\left(
+\circ\Psi\right)  \left(  \beta\right)  = \id \left(
 \beta\right)  $ for each $\beta\in\mathfrak{B}$. In other words, $\Phi
-\circ\Psi=\operatorname*{id}$, qed.} and $\Psi\circ\Phi=\operatorname*{id}%
+\circ\Psi = \id$, qed.} and $\Psi\circ\Phi = \id%
 $\ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in\mathfrak{A}$. Then, the
 definition of $\Phi$ yields $\Phi\left(  \alpha\right)  =\alpha^{\circ}$.
 \par
@@ -5734,13 +5738,13 @@ But $\left(  \Psi\circ\Phi\right)  \left(  \alpha\right)  =\Psi\left(
 \underbrace{\Phi\left(  \alpha\right)  }_{=\alpha^{\circ}}\right)
 =\Psi\left(  \alpha^{\circ}\right)  =\alpha^{\circ}\circ\mathfrak{o}$ (by the
 definition of $\Psi$). Hence, $\left(  \Psi\circ\Phi\right)  \left(
-\alpha\right)  =\alpha^{\circ}\circ\mathfrak{o}=\alpha=\operatorname*{id}%
+\alpha\right)  =\alpha^{\circ}\circ\mathfrak{o}=\alpha = \id
 \left(  \alpha\right)  $.
 \par
 Now, forget that we fixed $\alpha$. We thus have proven that $\left(
-\Psi\circ\Phi\right)  \left(  \alpha\right)  =\operatorname*{id}\left(
+\Psi\circ\Phi\right)  \left(  \alpha\right)  = \id \left(
 \alpha\right)  $ for each $\alpha\in\mathfrak{A}$. In other words, $\Psi
-\circ\Phi=\operatorname*{id}$. Qed.}. These two equalities show that the maps
+\circ\Phi = \id$. Qed.}. These two equalities show that the maps
 $\Phi$ and $\Psi$ are mutually inverse. Hence, the map $\Phi$ is invertible.
 In other words, $\Phi$ is a bijection.
 
@@ -6826,13 +6830,13 @@ for all $q\in \NN $.
 \begin{proof}
 [Proof of Corollary \ref{cor.reciprocity.GammawG} (sketched).]
 Set $\kk = \QQ$. For any $f \in \QSym$ and any
-$q\in \NN $, we define an element $\operatorname*{ps}\nolimits^{1}\left(
+$q\in \NN $, we define an element $\operatorname{ps}^{1}\left(
 f\right)  \left(  q\right)  \in \QQ$ by
 \[
-\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)  =f\left(
+\operatorname{ps}^{1}\left(  f\right)  \left(  q\right)  =f\left(
 \underbrace{1,1,\ldots,1}_{q\text{ times}},0,0,0,\ldots\right)
 \]
-(that is, $\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)
+(that is, $\operatorname{ps}^{1}\left(  f\right)  \left(  q\right)
 $ is the result of substituting $1$ for each of the variables
 $x_{1},x_{2},\ldots,x_{q}$ and $0$ for each of the variables
 $x_{q+1},x_{q+2},x_{q+3},\ldots$ in the power series $f$).
@@ -6854,14 +6858,14 @@ one such polynomial.
 Now, \cite[Proposition 7.7 (i)]{Reiner} shows that, for any given
 $f\in \QSym $, there exists a unique polynomial in $\mathbb{Q}%
 \left[  X\right]  $ whose value on each $q\in \NN $ equals
-$\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)  $.
+$\operatorname{ps}^{1}\left(  f\right)  \left(  q\right)  $.
 Applying this to $f=\Gamma\left(   \EE ,w,G\right)  $, we conclude that
 there exists a unique polynomial in $\mathbb{Q}\left[  X\right]  $ whose value
-on each $q\in \NN $ equals $\operatorname*{ps}\nolimits^{1}\left(
+on each $q\in \NN $ equals $\operatorname{ps}^{1}\left(
 \Gamma\left(   \EE ,w,G\right)  \right)  \left(  q\right)  $. But since
 every $q\in \NN $ satisfies
 \begin{align}
-\operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(   \EE ,w,G\right)
+\operatorname{ps}^{1}\left(  \Gamma\left(   \EE ,w,G\right)
 \right)  \left(  q\right)   &  =\underbrace{\left(  \Gamma\left( \EE
 ,w,G\right)  \right)  }_{=\sum_{O\text{ is a }G\text{-orbit on }
 \Par \EE } \xx_{O,w}}\left(
@@ -6893,47 +6897,49 @@ this rewrites as follows: There exists a unique polynomial in $\QQ
 (b) \cite[Proposition 7.7 (i)]{Reiner} shows that, for any given
 $f\in \QSym $, there exists a unique polynomial in $\QQ
 \left[  X\right]  $ whose value on each $q\in \NN $ equals
-$\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  q\right)  $. This
-polynomial is denoted by $\operatorname*{ps}\nolimits^{1}\left(  f\right)  $
+$\operatorname{ps}^{1}\left(  f\right)  \left(  q\right)  $. This
+polynomial is denoted by $\operatorname{ps}^{1}\left(  f\right)  $
 in \cite[Proposition 7.7]{Reiner}. From our above proof of Corollary
 \ref{cor.reciprocity.GammawG} (a), we see that
 \[
-\Omega_{\mathbf{E},G}=\operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(
+\Omega_{\mathbf{E},G}=\operatorname{ps}^{1}\left(  \Gamma\left(
  \EE ,w,G\right)  \right)  .
 \]
 
 
-But \cite[Proposition 7.7 (iii)]{Reiner} shows that, for any $f\in
- \QSym $ and $m\in \NN $, we have $\operatorname*{ps}%
-\nolimits^{1}\left(  S\left(  f\right)  \right)  \left(  m\right)
-=\operatorname*{ps}\nolimits^{1}\left(  f\right)  \left(  -m\right)  $.
-Applying this to $f=\Gamma\left(   \EE ,w,G\right)  $, we obtain%
+But \cite[Proposition 7.7 (iii)]{Reiner} shows that, for any
+$f \in \QSym$ and $m \in \NN$, we have
+$\operatorname{ps}^{1}\left(  S\left(  f\right)  \right)
+\left(  m\right)
+=\operatorname{ps}^{1}\left(  f\right)  \left(  -m\right)  $.
+Applying this to $f=\Gamma\left(   \EE ,w,G\right)  $, we obtain
 \[
-\operatorname*{ps}\nolimits^{1}\left(  S\left(  \Gamma\left(  {\mathbf{E}%
+\operatorname{ps}^{1}\left(  S\left(  \Gamma\left(  {\mathbf{E}%
 },w,G\right)  \right)  \right)  \left(  m\right)
-=\underbrace{\operatorname*{ps}\nolimits^{1}\left(  \Gamma\left(  {\mathbf{E}%
+=\underbrace{\operatorname{ps}^{1}\left(  \Gamma\left(  {\mathbf{E}%
 },w,G\right)  \right)  }_{=\Omega_{\mathbf{E},G}}\left(  -m\right)
 =\Omega_{\mathbf{E},G}\left(  -m\right)
 \]
 for any $m\in \NN $. Thus, any $m\in \NN $ satsfies%
 \begin{align*}
-\Omega_{\mathbf{E},G}\left(  -m\right)   &  =\operatorname*{ps}\nolimits^{1}%
+\Omega_{\mathbf{E},G}\left(  -m\right)   &  =\operatorname{ps}^{1}%
 \left(  \underbrace{S\left(  \Gamma\left(  \EE ,w,G\right)  \right)
 }_{\substack{=\left(  -1\right)  ^{\left\vert E\right\vert }\Gamma^{+}\left(
 \left(  E,>_{1},<_{2}\right)  ,w,G\right)  \\\text{(by Theorem
 \ref{thm.antipode.GammawG})}}}\right)  \left(  m\right) \\
-&  =\operatorname*{ps}\nolimits^{1}\left(  \left(  -1\right)  ^{\left\vert
+&  =\operatorname{ps}^{1}\left(  \left(  -1\right)  ^{\left\vert
 E\right\vert }\Gamma^{+}\left(  \left(  E,>_{1},<_{2}\right)  ,w,G\right)
 \right)  \left(  m\right) \\
-&  =\left(  -1\right)  ^{\left\vert E\right\vert }\operatorname*{ps}%
-\nolimits^{1}\left(  \Gamma^{+}\left(  \left(  E,>_{1},<_{2}\right)
+&  =\left(  -1\right)  ^{\left\vert E\right\vert }
+\operatorname{ps}^{1}
+\left(  \Gamma^{+}\left(  \left(  E,>_{1},<_{2}\right)
 ,w,G\right)  \right)  \left(  m\right)  .
 \end{align*}
 Renaming $m$ as $q$ in this equality, we see that every $q\in \NN $
 satisfies
 \begin{equation}
 \Omega_{\mathbf{E},G}\left(  -q\right)  =\left(  -1\right)  ^{\left\vert
-E\right\vert }\operatorname*{ps}\nolimits^{1}\left(  \Gamma^{+}\left(  \left(
+E\right\vert }\operatorname{ps}^{1}\left(  \Gamma^{+}\left(  \left(
 E,>_{1},<_{2}\right)  ,w,G\right)  \right)  \left(  q\right)  .
 \label{pf.cor.reciprocity.GammawG.b.2}
 \end{equation}
@@ -6942,14 +6948,14 @@ E,>_{1},<_{2}\right)  ,w,G\right)  \right)  \left(  q\right)  .
 But just as we proved (\ref{pf.cor.reciprocity.GammawG.a.1}), we can show that
 every $q\in \NN $ satisfies
 \[
-\operatorname*{ps}\nolimits^{1}\left(  \Gamma^{+}\left( \EE ,
+\operatorname{ps}^{1}\left(  \Gamma^{+}\left( \EE ,
 w,G\right)  \right)  \left(  q\right)  =\left(  \text{the number of all even
 }G\text{-orbits on } \Par_q \EE \right)  .
 \]
 Applying this to $\left(  E,>_{1},<_{2}\right)  $ instead of $\mathbf{E}$, we
 obtain%
 \begin{align*}
-&  \operatorname*{ps}\nolimits^{1}\left(  \Gamma^{+}\left(  \left(
+&  \operatorname{ps}^{1}\left(  \Gamma^{+}\left(  \left(
 E,>_{1},<_{2}\right)  ,w,G\right)  \right)  \left(  q\right) \\
 &  =\left(  \text{the number of all even }G\text{-orbits on }%
 \Par_q \left(  E,>_{1},<_{2}\right)  \right)  .
@@ -6957,7 +6963,7 @@ E,>_{1},<_{2}\right)  ,w,G\right)  \right)  \left(  q\right) \\
 Now, (\ref{pf.cor.reciprocity.GammawG.b.2}) becomes%
 \begin{align*}
 \Omega_{\EE, G}\left(  -q\right)   &  =\left(  -1\right)  ^{\left\vert
-E\right\vert }\underbrace{\operatorname*{ps}\nolimits^{1}\left(  \Gamma
+E\right\vert }\underbrace{\operatorname{ps}^{1}\left(  \Gamma
 ^{+}\left(  \left(  E,>_{1},<_{2}\right)  ,w,G\right)  \right)  \left(
 q\right)  }_{=\left(  \text{the number of all even }G\text{-orbits on }
 \Par_q \left(  E,>_{1},<_{2}\right)  \right)  }\\
