@@ -141,6 +141,7 @@
 \newcommand{\ev}{\operatorname{ev}}
 \newcommand{\Adm}{\operatorname{Adm}}
 \newcommand{\pack}{\operatorname{pack}}
+\newcommand{\Mon}{\operatorname{Mon}}
 \newcommand{\Comp}{{\operatorname{Comp}}}
 \newcommand{\QSym}{{\operatorname{QSym}}}
 \newcommand{\QSYM}{{\operatorname{QSYM}}}
@@ -285,27 +286,27 @@ on $\Powser$. (This definition has been copied from
 \cite[\S 2]{Gri-dimm}, essentially unchanged.)
 
 Let $x_{1},x_{2},x_{3},\ldots$ be countably many distinct symbols. We
-let $\operatorname{Mon}$ be the free abelian monoid on the set $\left\{
+let $\Mon$ be the free abelian monoid on the set $\left\{
 x_{1},x_{2},x_{3},\ldots\right\}  $ (written multiplicatively); it consists of
 elements of the form $x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots$ for
 finitely supported $\left(  a_{1},a_{2},a_{3},\ldots\right)  \in
  \NN ^{\infty}$ (where \textquotedblleft finitely
 supported\textquotedblright\ means that all but finitely many positive
 integers $i$ satisfy $a_{i}=0$). A \textit{monomial} will mean an element of
-$\operatorname{Mon}$. Thus, a monomial is a combinatorial
+$\Mon$. Thus, a monomial is a combinatorial
 object, independent of $\mathbf{k}$; it does not carry a coefficient.
 
 We consider the $\mathbf{k}$-algebra $\Powser$ of (commutative) power
 series in
 countably many distinct indeterminates $x_{1},x_{2},x_{3},\ldots$ over
 $\mathbf{k}$. By abuse of notation, we shall identify every monomial
-$x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots\in\operatorname{Mon}$ with the
+$x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots\in \Mon $ with the
 corresponding element $x_{1}^{a_{1}}\cdot x_{2}^{a_{2}}\cdot x_{3}^{a_{3}%
 }\cdot\cdots$ of $\Powser$ when necessary
 (e.g., when we speak of the sum of two monomials or
 when we multiply a monomial with an element of $\mathbf{k}$). (To be
 very pedantic, this identification is slightly dangerous, because
-it can happen that two distinct monomials in $\operatorname{Mon}$ get
+it can happen that two distinct monomials in $\Mon$ get
 identified with two identical elements of $\Powser$. However, this
 can only happen when the ring $\kk$ is trivial, and even then it is
 not a real problem unless we infer the equality of monomials from the
@@ -318,15 +319,15 @@ We furthermore endow the ring $\Powser$ with the following topology
 We endow the ring $\mathbf{k}$ with the discrete topology. To define a
 topology on the $\mathbf{k}$-algebra $\Powser$, we (temporarily) regard every power
 series in $\Powser$ as the family of its coefficients (indexed by the
-set $\operatorname{Mon}$). More precisely, we have a
+set $\Mon$). More precisely, we have a
 $\kk$-module isomorphism
 \[
-\prod_{\mathfrak{m} \in \operatorname{Mon}} \kk \to \Powser,
-\qquad \qquad \left(\lambda_{\mathfrak{m}}\right)_{\mathfrak{m} \in \operatorname{Mon}}
-\mapsto \sum_{\mathfrak{m} \in \operatorname{Mon}} \lambda_{\mathfrak{m}} \mathfrak{m} .
+\prod_{\mathfrak{m} \in  \Mon } \kk \to \Powser,
+\qquad \qquad \left(\lambda_{\mathfrak{m}}\right)_{\mathfrak{m} \in  \Mon }
+\mapsto \sum_{\mathfrak{m} \in  \Mon } \lambda_{\mathfrak{m}} \mathfrak{m} .
 \]
 We use this isomorphism to transport the product topology on
-$\prod_{\mathfrak{m} \in \operatorname{Mon}} \kk$ to $\Powser$. The
+$\prod_{\mathfrak{m} \in  \Mon } \kk$ to $\Powser$. The
 resulting topology on $\Powser$ turns $\Powser$ into a topological
 $\kk$-algebra; this is the topology that we will
 be using whenever we make statements about convergence in $\Powser$
@@ -1773,15 +1774,15 @@ $\pi = r_T \circ \varphi$\ \ \ \ \footnote{\textit{Proof.}
 Let $T$ be an $\ell$-element subset of $\left\{
 1,2,3,\ldots\right\}  $. We need to show that there exists exactly one
 $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying
-$\operatorname{pack}\pi=\varphi$ and $\pi\left(  E\right)  =T$: namely,
+$ \pack \pi=\varphi$ and $\pi\left(  E\right)  =T$: namely,
 $\pi=r_{T}\circ\varphi$. In other words, we need to prove the following two claims:
 
 \textit{Claim 1:} The map $r_{T}\circ\varphi$ is a map $\pi:E\rightarrow
-\left\{  1,2,3,\ldots\right\}  $ satisfying $\operatorname{pack}\pi=\varphi$
+\left\{  1,2,3,\ldots\right\}  $ satisfying $ \pack \pi=\varphi$
 and $\pi\left(  E\right)  =T$.
 
 \textit{Claim 2:} If $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ is a
-map satisfying $\operatorname{pack}\pi=\varphi$ and $\pi\left(  E\right)  =T$,
+map satisfying $ \pack \pi=\varphi$ and $\pi\left(  E\right)  =T$,
 then $\pi=r_{T}\circ\varphi$.
 
 \textit{Proof of Claim 1.} We have $\left|T\right| = \ell$ (since the set
@@ -1792,10 +1793,10 @@ E\right)  =r_{T}\left(  \underbrace{\varphi\left(  E\right)  }_{=\left\{
 ,\underbrace{\ell}_{=\left\vert T\right\vert }\right\}  \right)
 =r_{T}\left(  \left\{
 1,2,\ldots,\left\vert T\right\vert \right\}  \right)  =T$ (by the definition
-of $r_{T}$). Now, the definition of $\operatorname{pack}\left(  r_{T}%
+of $r_{T}$). Now, the definition of $ \pack \left(  r_{T}%
 \circ\varphi\right)  $ shows that
 \begin{align*}
-\operatorname{pack}\left(  r_{T}\circ\varphi\right)   & =r_{\left(  r_{T}%
+ \pack \left(  r_{T}\circ\varphi\right)   & =r_{\left(  r_{T}%
 \circ\varphi\right)  \left(  E\right)  }^{-1}\circ\left(  r_{T}\circ
 \varphi\right)  =r_{T}^{-1}\circ\left(  r_{T}\circ\varphi\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  r_{T}\circ\varphi\right)
@@ -1803,18 +1804,18 @@ of $r_{T}$). Now, the definition of $\operatorname{pack}\left(  r_{T}%
 & =\varphi.
 \end{align*}
 Thus, the map $r_{T}\circ\varphi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $
-satisfies $\operatorname{pack}\left(  r_{T}\circ\varphi\right)  =\varphi$ and
+satisfies $ \pack \left(  r_{T}\circ\varphi\right)  =\varphi$ and
 $\left(  r_{T}\circ\varphi\right)  \left(  E\right)  =T$. In other words,
 $r_{T}\circ\varphi$ is a map $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}  $
-satisfying $\operatorname{pack}\pi=\varphi$ and $\pi\left(  E\right)  =T$.
+satisfying $ \pack \pi=\varphi$ and $\pi\left(  E\right)  =T$.
 This proves Claim 1.
 
 \textit{Proof of Claim 2.} Let $\pi:E\rightarrow\left\{  1,2,3,\ldots\right\}
-$ be a map satisfying $\operatorname{pack}\pi=\varphi$ and $\pi\left(
-E\right)  =T$. The definition of $\operatorname{pack}\pi$ shows that
-$\operatorname{pack}\pi=r_{\pi\left(  E\right)  }^{-1}\circ\pi=r_{T}^{-1}%
+$ be a map satisfying $ \pack \pi=\varphi$ and $\pi\left(
+E\right)  =T$. The definition of $ \pack \pi$ shows that
+$ \pack \pi=r_{\pi\left(  E\right)  }^{-1}\circ\pi=r_{T}^{-1}%
 \circ\pi$ (since $\pi\left(  E\right)  =T$). Hence, $r_{T}^{-1}\circ
-\pi=\operatorname{pack}\pi=\varphi$, so that $\pi=r_{T}\circ\varphi$. This
+\pi= \pack \pi=\varphi$, so that $\pi=r_{T}\circ\varphi$. This
 proves Claim 2.
 
 Now, both Claims 1 and 2 are proven; hence, our proof is complete.
@@ -6804,7 +6805,7 @@ definition of the latter).
 
 \begin{enumerate}
 \item[(a)] There exists a unique polynomial $\Omega_{\EE, G}
-\in\mathbb{Q}\left[  X\right]  $ such that every $q\in \NN $ satisfies%
+\in \QQ \left[  X\right]  $ such that every $q\in \NN $ satisfies%
 \begin{equation}
 \Omega_{\EE, G}\left(  q\right)  =\left(  \text{the number of all
 }G\text{-orbits on } \Par_q \EE \right)  .
@@ -6850,17 +6851,17 @@ $\Par_q \EE$ is a $G$-subset of $\Par \EE$.
 Clearly, there exists \textbf{at most} one polynomial $\Omega_{\EE,
 G} \in \QQ \left[  X\right]  $ such that every $q\in \NN $ satisfies
 (\ref{eq.cor.reciprocity.GammawG.a.def}) (because a polynomial in
-$\mathbb{Q}\left[  X\right]  $ is uniquely determined by its values at all
+$\QQ \left[  X\right]  $ is uniquely determined by its values at all
 nonnegative integers). It remains to show that there exists \textbf{at least}
 one such polynomial.
 \end{noncompile}
 
 Now, \cite[Proposition 7.7 (i)]{Reiner} shows that, for any given
-$f\in \QSym $, there exists a unique polynomial in $\mathbb{Q}%
+$f\in \QSym $, there exists a unique polynomial in $\QQ
 \left[  X\right]  $ whose value on each $q\in \NN $ equals
 $\operatorname{ps}^{1}\left(  f\right)  \left(  q\right)  $.
 Applying this to $f=\Gamma\left(   \EE ,w,G\right)  $, we conclude that
-there exists a unique polynomial in $\mathbb{Q}\left[  X\right]  $ whose value
+there exists a unique polynomial in $\QQ \left[  X\right]  $ whose value
 on each $q\in \NN $ equals $\operatorname{ps}^{1}\left(
 \Gamma\left(   \EE ,w,G\right)  \right)  \left(  q\right)  $. But since
 every $q\in \NN $ satisfies
