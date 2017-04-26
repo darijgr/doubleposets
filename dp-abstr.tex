@@ -5241,7 +5241,7 @@ Thus, Claim 4 is proven.
 We thus have derived Claim 4 from Claim 2. Similarly, Claim 3 can be
 derived from Claim 1. Thus, Claim 3 and Claim 4 are proven. As
 explained above, this shows that $g \pi$ is an $\EE$-partition. In
-other words, $g \pi \in \EE$. This completes our proof of
+other words, $g \pi \in \Par \EE$. This completes our proof of
 Proposition~\ref{prop.xxOw} (a).
 
 (b) We need to show that $\xx_{\pi, w} = \xx_{\psi, w}$ for any two
@@ -5276,7 +5276,10 @@ The definition of $\xx_{\psi, w}$ yields
 \xx_{\psi, w}
 &= \prod_{e \in E} \underbrace{x_{\psi\left(e\right)}^{w\left(e\right)}}_{\substack{= x_{\pi \left(g^{-1} e\right)}^{w\left(e\right)} \\ \text{(by (\ref{pf.prop.xxOw.b.3}))}}}
 = \prod_{e \in E} x_{\pi \left(g^{-1} e\right)}^{w\left(e\right)}
-= \prod_{e \in E} \underbrace{x_{\pi \left(g^{-1} g e\right)}^{w\left(g e\right)}}_{= x_{\pi\left(e\right)}^{w\left(g e\right)}} \\
+= \prod_{e \in E}
+     \underbrace{x_{\pi \left(g^{-1} g e\right)}^{w\left(g e\right)}}_{
+                \substack{= x_{\pi\left(e\right)}^{w\left(g e\right)} \\
+                           \text{(since } g^{-1} g e = e \text{)}}} \\
 & \ \ \ \ \ \ \ \ \ \ \left( \begin{array}{c}
 \text{here, we have substituted } g e \text{ for } e \text{ in the product,} \\
 \text{since the map } E \to E, \ e \mapsto g e \text{ is a bijection}
