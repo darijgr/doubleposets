@@ -34,7 +34,7 @@
 % and until the line
 %   {\end{leftbar}\end{exmp}}
 
-\documentclass[numbers=enddot,12pt,final,onecolumn,notitlepage,abstracton]{scrartcl}%
+\documentclass[numbers=enddot,12pt,final,onecolumn,notitlepage,abstracton]{scrartcl}
 \usepackage[headsepline,footsepline,manualmark]{scrlayer-scrpage}
 \usepackage[all,cmtip]{xy}
 \usepackage{amssymb}
@@ -159,7 +159,6 @@
 \newcommand{\ZZ}{{\mathbb{Z}}}
 \newcommand{\QQ}{{\mathbb{Q}}}
 %\newcommand{\arr}{\ar@{=>}}
-%\newcommand{\bluenum}[1]{{\color{blue} #1 }}
 \ihead{Double posets and the antipode of $\QSym$}
 \ohead{page \thepage}
 \cfoot{}
@@ -302,9 +301,10 @@ We consider the $\kk$-algebra $\Powser$ of (commutative) power
 series in
 countably many distinct indeterminates $x_{1},x_{2},x_{3},\ldots$ over
 $\kk$. By abuse of notation, we shall identify every monomial
-$x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}}\cdots\in \Mon $ with the
-corresponding element $x_{1}^{a_{1}}\cdot x_{2}^{a_{2}}\cdot x_{3}^{a_{3}%
-}\cdot\cdots$ of $\Powser$ when necessary
+$x_{1}^{a_{1}} x_{2}^{a_{2}} x_{3}^{a_{3}} \cdots \in \Mon$ with the
+corresponding element
+$x_{1}^{a_{1}} \cdot x_{2}^{a_{2}} \cdot x_{3}^{a_{3}} \cdot \cdots$
+of $\Powser$ when necessary
 (e.g., when we speak of the sum of two monomials or
 when we multiply a monomial with an element of $\kk$). (To be
 very pedantic, this identification is slightly dangerous, because
@@ -1263,11 +1263,11 @@ Now, every double poset $\left(  E,<_{1},<_{2}\right)  $ satisfies
 \eta\left(  \left(  -1\right)  ^{\left\vert E\right\vert }S\left(
 \Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \right)  \right)
 \leq\eta\left(  \Gamma\left(  \left(  E,>_{1},<_{2}\right)  \right)  \right)
-,\label{eq.rmk.antipode.Gamma.converse.ineq}%
+,\label{eq.rmk.antipode.Gamma.converse.ineq}
 \end{equation}
-and equality holds if and only if the double poset $\left(  E,<_{1}%
-,<_{2}\right)  $ is tertispecial. (If we omit $\eta$, then the inequality
-fails in general.)
+and equality holds if and only if the double poset
+$\left( E, <_{1}, <_{2} \right)  $ is tertispecial.
+(If we omit $\eta$, then the inequality fails in general.)
 
 \begin{vershort}
 The proof of (\ref{eq.rmk.antipode.Gamma.converse.ineq}) is somewhat
@@ -1311,7 +1311,7 @@ satisfying }\phi\left(  k\right)  <_{1}\phi\left(  k+1\right) \right. \\
 & \ \ \ \ \ \ \ \ \ \ \qquad \left. \text{ and
 }\phi\left(  k\right)  >_{2}\phi\left(  k+1\right)  \right)  .
 \end{align*}
-Hence,%
+Hence,
 \begin{align*}
 & \eta\left(  \Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \right)
 \\
@@ -1320,7 +1320,7 @@ Hence,%
 ,k}M_{\left(  1^{k-1},2,1^{n-k-1}\right)  }.
 \end{align*}
 Using this (and the formula for $S\left(  M_{\alpha}\right)  $ in Example
-\ref{exam.antipode.Gammaw} (b)), it is easy to show that%
+\ref{exam.antipode.Gammaw} (b)), it is easy to show that
 \begin{align*}
 & \eta\left(  \left(  -1\right)  ^{\left\vert E\right\vert }S\left(
 \Gamma\left(  \left(  E,<_{1},<_{2}\right)  \right)  \right)  \right)  \\
@@ -1345,7 +1345,7 @@ E,<_{1},<_{2}\right)  \right)  \right)  $, we can derive the formula
 1^{n}\right)  }+\sum_{k=1}^{n-1}\widetilde{\gamma}_{\left(  E,<_{1}%
 ,<_{2}\right)  ,k}M_{\left(  1^{k-1},2,1^{n-k-1}\right)  },
 \end{align*}
-where%
+where
 \begin{align*}
 & \widetilde{\gamma}_{\left(  E,<_{1},<_{2}\right)  ,k}\\
 & =\left(  \text{the number of all anticostrictors}\right)  \\
@@ -1471,12 +1471,12 @@ nor }e=b\right\}  $. Then, we set $k=\left\vert E_{1}\right\vert +1$, and
 choose strictly increasing bijections $\alpha:E_{1}\rightarrow\left[
 k-1\right]  $ and $\beta:E_{2}\rightarrow\left[  n-k-1\right]  $. Finally, we
 define a map $\gamma:E\rightarrow\left[  n\right]  $ by $\gamma\left(
-e\right)  =%
+e\right)  =
 \begin{cases}
 \alpha\left(  e\right)  , & \text{if }e\in E_{1};\\
 k, & \text{if }e=a;\\
 k+1, & \text{if }e=b;\\
-k+1+\beta\left(  e\right)  , & \text{if }e\in E_{2}%
+k+1+\beta\left(  e\right)  , & \text{if }e\in E_{2}
 \end{cases}
 $, and define $\phi$ to be $\gamma^{-1}$. It is not hard to check that $\phi$
 is a costrictor.) This causes one of the inequalities from which we obtained
@@ -1555,7 +1555,7 @@ This proves Proposition \ref{prop.ev.comp} (a).
 $f\in E$ such that $i=\pi\left(  f\right)  $. Consider this $f$. We have
 $f\in\pi^{-1}\left(  i\right)  $ (since $\pi\left(  f\right)  =i$). Also,
 $w\left(  f\right)  \in\left\{  1,2,3,\ldots\right\}  $ (since $w$ is a map
-$E\rightarrow\left\{  1,2,3,\ldots\right\}  $). Now,%
+$E\rightarrow\left\{  1,2,3,\ldots\right\}  $). Now,
 \begin{align*}
 \alpha_{i}  & =\sum_{e\in\pi^{-1}\left(  i\right)  }w\left(  e\right)
 =\underbrace{w\left(  f\right)  }_{>0}+\sum_{\substack{e\in\pi^{-1}\left(
@@ -1563,8 +1563,7 @@ i\right)  ;\\e\neq f}}\underbrace{w\left(  e\right)  }_{\substack{\geq
 0\\\text{(since }w\left(  e\right)  \in\left\{  1,2,3,\ldots\right\}
 \text{)}}}\\
 & \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
+\begin{array}[c]{c}
 \text{here, we have split off the addend for }e=f\text{ from the sum}\\
 \text{(since }f\in\pi^{-1}\left(  i\right)  \text{)}%
 \end{array}
@@ -2118,15 +2117,16 @@ $\sigma$ and a packed $ \EE \mid_{Q}$-partition $\tau$.
 For every $\ell\in\mathbb{Z}$, we let $\operatorname{add}_{\ell}$
 denote the bijective map $\mathbb{Z}\rightarrow\mathbb{Z},\ z\mapsto z+\ell$.
 
-Fix $\left(  \varphi,k\right)  \in\mathcal{S}$. Set%
+Fix $\left(  \varphi,k\right)  \in\mathcal{S}$. Set
 \begin{align}
 P  &  =\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
 ,\ \ \ \ \ \ \ \ \ \ Q=\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert
 \varphi\left(  E\right)  \right\vert \right\}  \right)
 ,\label{eq.lem.Gammaw.coprod.bij.def1}\\
-\sigma &  =\varphi\mid_{P}\ \ \ \ \ \ \ \ \ \ \text{and}%
+\sigma &  =\varphi\mid_{P}\ \ \ \ \ \ \ \ \ \ \text{and}
 \ \ \ \ \ \ \ \ \ \ \tau=\operatorname{add}_{-k}\circ\left(
-\varphi\mid_{Q}\right)  . \label{eq.lem.Gammaw.coprod.bij.def2}%
+\varphi\mid_{Q}\right)  .
+\label{eq.lem.Gammaw.coprod.bij.def2}
 \end{align}
 Then, $\left(  \left(  P,Q\right)  ,\sigma,\tau\right)  \in\mathcal{T}$.
 \end{lemma}
@@ -2177,8 +2177,8 @@ $. From Lemma \ref{lem.Gammaw.coprod.bij.b}, we know that $\left(
 ,\sigma,\tau\right)  =\left(  \varphi,k\right)  $. Thus, a map $\Psi
 :\mathcal{T}\rightarrow\mathcal{S}$ is defined.
 
-The maps $\Phi:\mathcal{S}\rightarrow\mathcal{T}$ and $\Psi:\mathcal{T}%
-\rightarrow\mathcal{S}$ are mutually inverse.
+The maps $\Phi : \mathcal{S} \rightarrow \mathcal{T}$ and
+$\Psi : \mathcal{T} \rightarrow \mathcal{S}$ are mutually inverse.
 \end{lemma}
 
 The preceding three lemmas should be obvious if the reader has
@@ -2207,7 +2207,7 @@ instead of $\pi$ and $\ell$)).
 
 Now, $\left(  P,Q\right)  \in \Adm \EE$%
 \ \ \ \ \footnote{\textit{Proof.} It is clear that $P$ and $Q$ are subsets of
-$E$. Also, from (\ref{eq.lem.Gammaw.coprod.bij.def1}), we obtain%
+$E$. Also, from (\ref{eq.lem.Gammaw.coprod.bij.def1}), we obtain
 \begin{align*}
 P\cap Q  &  =\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
 \cap\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
@@ -2217,7 +2217,7 @@ E\right)  \right\vert \right\}  \right) \\
 \right\}  }_{=\varnothing}\right)  =\varphi^{-1}\left(  \varnothing\right)
 =\varnothing
 \end{align*}
-and%
+and
 \begin{align*}
 P\cup Q  &  =\varphi^{-1}\left(  \left\{  1,2,\ldots,k\right\}  \right)
 \cup\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
@@ -2234,8 +2234,9 @@ Hence, in order to prove that $\left( P, Q \right) \in \Adm
 $q<_{1}p$.
 \par
 Let us assume the contrary (for the sake of contradiction). Thus, let $p\in P$
-and $q\in Q$ be such that $q<_{1}p$. Since $\varphi$ is an $\EE%
-$-partition, we have $\varphi\left(  q\right)  \leq\varphi\left(  p\right)  $
+and $q\in Q$ be such that $q<_{1}p$. Since $\varphi$ is an
+$\EE$-partition, we have
+$\varphi\left(  q\right)  \leq\varphi\left(  p\right)  $
 (because $q<_{1}p$). But $p\in P=\varphi^{-1}\left(  \left\{  1,2,\ldots
 ,k\right\}  \right)  $, so that $\varphi\left(  p\right)  \leq k$. On the
 other hand, $q\in Q=\varphi^{-1}\left(  \left\{  k+1,k+2,\ldots,\left\vert
@@ -2244,11 +2245,11 @@ $\varphi\left(  q\right)  >k$. This contradicts $\varphi\left(  q\right)
 \leq\varphi\left(  p\right)  \leq k$. This contradiction shows that our
 assumption was false. Hence, the proof of $\left(  P,Q\right)  \in
 \Adm \EE$ is complete.}. Furthermore, it is
-straightforward to see that for every subset $T$ of $E$,%
+straightforward to see that for every subset $T$ of $E$,
 \begin{equation}
-\text{the map }\varphi\mid_{T}\text{ is an } \EE\mid_{T}%
-\text{-partition}.
-\label{pf.lem.Gammaw.coprod.bij.a.1}%
+\text{the map }\varphi\mid_{T}\text{ is an }
+\EE\mid_{T}\text{-partition}.
+\label{pf.lem.Gammaw.coprod.bij.a.1}
 \end{equation}
 Applying this to $T=P$, we conclude that $\varphi\mid_{P}$ is an
 $\EE\mid_{P}$-partition.
@@ -2271,17 +2272,18 @@ $g\in\left\{  1,2,\ldots,k\right\}  $. In other words, $\left\{
 1,2,\ldots,k\right\}  \subseteq\varphi\left(  P\right)  $. Combining this with
 $\varphi\left(  P\right)  \subseteq\left\{  1,2,\ldots,k\right\}  $, we obtain
 $\varphi\left(  P\right)  =\left\{  1,2,\ldots,k\right\}  $, qed.}. In other
-words, we have%
+words, we have
 \begin{equation}
 \varphi\left(  P\right)  =\left\{  1,2,\ldots,k\right\}  .
-\label{pf.lem.Gammaw.coprod.bij.a.3}%
+\label{pf.lem.Gammaw.coprod.bij.a.3}
 \end{equation}
 Similarly,
 \begin{equation}
 \varphi\left(  Q\right)  =\left\{  k+1,k+2,\ldots,\left\vert \varphi\left(
-E\right)  \right\vert \right\}  . \label{pf.lem.Gammaw.coprod.bij.a.4}%
+E\right)  \right\vert \right\}  .
+\label{pf.lem.Gammaw.coprod.bij.a.4}
 \end{equation}
-Hence,%
+Hence,
 \begin{align*}
 \left(  \operatorname{add}_{-k}\circ\left(  \varphi\mid_{Q}\right)
 \right)  \left(  Q\right)   &  =\operatorname{add}_{-k}\left(
@@ -2338,7 +2340,7 @@ $P$ and $Q$ are subsets of $E$ satisfying $P\cap Q=\varnothing$ and $P\cup
 Q=E$ and having the property that
 \begin{equation}
 \text{no }p\in P\text{ and }q\in Q\text{ satisfy }q<_{1}p.
-\label{pf.lem.Gammaw.coprod.bij.b.Adm}%
+\label{pf.lem.Gammaw.coprod.bij.b.Adm}
 \end{equation}
 Using $P \cap Q = \varnothing$ and $P \cup Q = E$, we see that the
 map $\varphi$ is well-defined. (Indeed, we defined it as the map
@@ -2379,7 +2381,7 @@ Also, the definition of $\varphi$ shows that%
 \begin{equation}
 \varphi\left(  e\right)  =\tau\left(  e\right)
 +k\ \ \ \ \ \ \ \ \ \ \text{for every }e\in Q.
-\label{pf.lem.Gammaw.coprod.bij.b.2o}%
+\label{pf.lem.Gammaw.coprod.bij.b.2o}
 \end{equation}
 Thus,
 \begin{align*}
@@ -2463,7 +2465,7 @@ definition of $\varphi$ yields $\varphi\left(  e\right)  =%
 \tau\left(  f\right)  +k=\varphi\left(  f\right)  $. Qed.}. In Case 2, it
 clearly holds\footnote{\textit{Proof.} Assume that we are in Case 2. Thus, we
 have $e\in P$ and $f\in Q$. The definition of $\varphi$ yields $\varphi\left(
-e\right)  =%
+e\right)  =
 \begin{cases}
 \sigma\left(  e\right)  , & \text{if }e\in P;\\
 \tau\left(  e\right)  +k, & \text{if }e\in Q
