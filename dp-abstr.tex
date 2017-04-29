@@ -7643,10 +7643,8 @@ k\right\}  \in\left\{  p\in\left[  \ell\right]  \ \mid\ s_{p}\geq k\right\}
 \]
 (by (\ref{pf.prop.Malpha.D.min.1}), applied to $A=\left\{  p\in\left[
 \ell\right]  \ \mid\ s_{p}\geq k\right\}  $). In other words, $f\left(
-k\right)  $ is an element $p$ of $\left[  \ell\right]  $ satisfying $s_{p}\geq
-k$. In other words, $f\left(  k\right)  $ is an element of $\left[
-\ell\right]  $ and satisfies $s_{f\left(  k\right)  }\geq k$. From
-$s_{f\left(  k\right)  }\geq k$, we obtain $k\leq s_{f\left(  k\right)  }$.
+k\right)  $ is an element of $\left[  \ell\right]  $ and satisfies
+$s_{f\left(  k\right)  }\geq k$.
 
 On the other hand, let us prove that $s_{f\left(  k\right)  -1}<k$. Indeed,
 assume the contrary (for the sake of contradiction). Hence, $s_{f\left(
@@ -7659,12 +7657,10 @@ k\right)  \in\left[  \ell\right]  $, this shows that $f\left(  k\right)
 k\right)  -1\in\left[  \ell-1\right]  \subseteq\left[  \ell\right]  $. Now,
 $f\left(  k\right)  -1$ is an element of $\left[  \ell\right]  $ and satisfies
 $s_{f\left(  k\right)  -1}\geq k$. In other words, $f\left(  k\right)  -1$ is
-an element $p$ of $\left[  \ell\right]  $ satisfying $s_{p}\geq k$. In other
-words, $f\left(  k\right)  -1$ is an element of the set $\left\{  p\in\left[
-\ell\right]  \ \mid\ s_{p}\geq k\right\}  $. Hence,
-(\ref{pf.prop.Malpha.D.min.2}) (applied to $A=\left\{  p\in\left[
-\ell\right]  \ \mid\ s_{p}\geq k\right\}  $ and $a=f\left(  k\right)  -1$)
-shows that%
+an element of the set $\left\{  p\in\left[  \ell\right]  \ \mid\ s_{p}\geq
+k\right\}  $. Hence, (\ref{pf.prop.Malpha.D.min.2}) (applied to $A=\left\{
+p\in\left[  \ell\right]  \ \mid\ s_{p}\geq k\right\}  $ and $a=f\left(
+k\right)  -1$) shows that%
 \[
 f\left(  k\right)  -1\geq\min\left\{  p\in\left[  \ell\right]  \ \mid
 \ s_{p}\geq k\right\}  =f\left(  k\right)  .
@@ -7672,7 +7668,8 @@ f\left(  k\right)  -1\geq\min\left\{  p\in\left[  \ell\right]  \ \mid
 In other words, $-1\geq0$. This is absurd. This contradiction proves that our
 assumption was wrong; thus, the proof of $s_{f\left(  k\right)  -1}<k$ is
 complete. Now, we know that $s_{f\left(  k\right)  -1}<k\leq s_{f\left(
-k\right)  }$. This proves Lemma \ref{lem.Dalpha.s2} (a).
+k\right)  }$ (since $s_{f\left(  k\right)  }\geq k$). This proves Lemma
+\ref{lem.Dalpha.s2} (a).
 
 (b) Let $k\in D\left(  \alpha\right)  $. Thus, $k\in D\left(  \alpha\right)
 \subseteq\left[  n-1\right]  $ (by Lemma \ref{lem.Dalpha.n-1}). Hence,
@@ -7696,11 +7693,9 @@ $u=k$) shows that $j=f\left(  k\right)  $. Hence, $s_{j}=s_{f\left(  k\right)
 }$, so that $k=s_{j}=s_{f\left(  k\right)  }$. This proves Lemma
 \ref{lem.Dalpha.s2} (b).
 
-(c) Let $i\in\left[  \ell\right]  $. Clearly, $i$ is an element of $\left[
-\ell\right]  $ and satisfies $s_{i}\geq s_{i}$. In other words, $i$ is an
-element $p$ of $\left[  \ell\right]  $ satisfying $s_{p}\geq s_{i}$. In other
-words, $i$ is an element of the set $\left\{  p\in\left[  \ell\right]
-\ \mid\ s_{p}\geq s_{i}\right\}  $.
+(c) Let $i\in\left[  \ell\right]  $. Clearly, $i$ is an element of the set
+$\left\{  p\in\left[  \ell\right]  \ \mid\ s_{p}\geq s_{i}\right\}  $ (since
+$i\in\left[  \ell\right]  $ and $s_{i}\geq s_{i}$).
 
 Now, the definition of $f\left(  s_{i}\right)  $ yields $f\left(
 s_{i}\right)  =\min\left\{  p\in\left[  \ell\right]  \ \mid\ s_{p}\geq
@@ -7813,7 +7808,7 @@ k\right)  =f\left(  k+1\right)  $ is proven. This completes the proof of Lemma
 (g) Let $j\in\left[  \ell\right]  $.
 
 From Lemma \ref{lem.Dalpha.s} (b), we have $s_{0}<s_{1}<\cdots<s_{\ell}$.
-Thus, $s_{j-1}<s_{j}$. Consequently, $0\leq s_{j-1}<s_{j}$.
+Thus, $s_{j-1}<s_{j}$.
 
 Let $k\in f^{-1}\left(  j\right)  $. Thus, $k\in\left[  n\right]  $ and
 $f\left(  k\right)  =j$. From (\ref{pf.prop.Malpha.D.f.1}), we obtain
@@ -7840,8 +7835,7 @@ g\right)  -1}<g\leq s_{f\left(  g\right)  }$.
 
 We have $f\left(  g\right)  \in\left[  \ell\right]  $ and $j\in\left[
 \ell\right]  $, and we have $s_{f\left(  g\right)  -1}<g\leq s_{f\left(
-g\right)  }$ and $s_{j-1}<g\leq s_{j}$. Also, Lemma \ref{lem.Dalpha.s} (b)
-shows that $s_{0}<s_{1}<\cdots<s_{\ell}$. Hence, Lemma
+g\right)  }$ and $s_{j-1}<g\leq s_{j}$. Hence, Lemma
 \ref{lem.Dalpha.s-interval} (b) (applied to $a=f\left(  g\right)  $, $b=j$ and
 $c=g$) yields $f\left(  g\right)  =j$. Hence, $g\in f^{-1}\left(  j\right)  $.
 
@@ -7860,9 +7854,10 @@ s_{j-1}\right]  =\left\{  s_{j-1}+1,s_{j-1}+2,\ldots,s_{j}\right\}  $, so that%
 \[
 \left\vert \left[  s_{j}\right]  \setminus\left[  s_{j-1}\right]  \right\vert
 =\left\vert \left\{  s_{j-1}+1,s_{j-1}+2,\ldots,s_{j}\right\}  \right\vert
-=s_{j}-s_{j-1}%
+=s_{j}-s_{j-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }s_{j-1}<s_{j}\right)
+.
 \]
-(since $s_{j-1}<s_{j}$).
+
 
 But (\ref{pf.prop.Malpha.D.f-1.1}) shows that $f^{-1}\left(  j\right)
 =\left[  s_{j}\right]  \setminus\left[  s_{j-1}\right]  $. Therefore,
@@ -7908,9 +7903,6 @@ n\right]  $.
 [Proof of Lemma \ref{lem.Dalpha.ItoJ}.]Lemma \ref{lem.Dalpha.s} (b) shows that
 $s_{0}<s_{1}<\cdots<s_{\ell}$.
 
-From $\left(  i_{1},i_{2},\ldots,i_{n}\right)  \in\left\{  1,2,3,\ldots
-\right\}  ^{n}$, we conclude that $i_{1},i_{2},\ldots,i_{n}$ are positive integers.
-
 Recall that $i_{1}\leq i_{2}\leq\cdots\leq i_{n}$. In other words,%
 \begin{equation}
 i_{u}\leq i_{v} \label{pf.lem.Dalpha.ItoJ.rise}%
@@ -7922,7 +7914,7 @@ for every $k\in\left[  n\right]  $\ \ \ \ \footnote{\textit{Proof.} Let
 $k\in\left[  n\right]  $. Thus, $f\left(  k\right)  \in\left[  \ell\right]  $.
 Therefore, Lemma \ref{lem.Dalpha.s} (a) (applied to $i=f\left(  k\right)  $)
 yields $s_{f\left(  k\right)  }\in\left[  n\right]  $. Thus, $i_{s_{f\left(
-k\right)  }}$ is well-defined. Qed.}.
+k\right)  }}$ is well-defined.}.
 
 We must show that $i_{s_{f\left(  k\right)  }}=i_{k}$ for every $k\in\left[
 n\right]  $.
@@ -7951,9 +7943,8 @@ _{2}+\cdots+\alpha_{\ell}=\left(  \text{empty sum}\right)  =0$, which would
 contradict $\alpha_{1}+\alpha_{2}+\cdots+\alpha_{\ell}\neq0$. Thus, we cannot
 have $\ell=0$. Therefore, we have $\ell>0$, so that $\ell\in\left[
 \ell\right]  $. Thus, $f\left(  s_{\ell}\right)  =\ell$ (by
-(\ref{pf.prop.Malpha.D.f.7}), applied to $i=\ell$).
-
-Also, $n\in\left[  n\right]  $ (since $n\geq1$).
+(\ref{pf.prop.Malpha.D.f.7}), applied to $i=\ell$). Also, $n\in\left[
+n\right]  $ (since $n\geq1$).
 
 From Lemma \ref{lem.Dalpha.s} (e), we obtain $n=s_{\ell}$. If we had $g=n$,
 then we would have $f\left(  \underbrace{g}_{=n=s_{\ell}}\right)  =f\left(
@@ -7990,29 +7981,24 @@ $i_{g}\leq i_{g+1}$ (since $g\leq g+1$). Combined with $i_{g}\neq i_{g+1}$,
 this yields $i_{g}<i_{g+1}$.
 
 Now, $g$ is an element of $\left[  n-1\right]  $ and satisfies $i_{g}<i_{g+1}%
-$. In other words, $g$ is an element $j$ of $\left[  n-1\right]  $ satisfying
-$i_{j}<i_{j+1}$. In other words, $g\in\left\{  j\in\left[  n-1\right]
-\ \mid\ i_{j}<i_{j+1}\right\}  $. In other words, $g\in D\left(
-\alpha\right)  $ (since $\left\{  j\in\left[  n-1\right]  \ \mid
-\ i_{j}<i_{j+1}\right\}  =D\left(  \alpha\right)  $). This contradicts
-$g\notin D\left(  \alpha\right)  $. This contradiction proves that our
-assumption was wrong. Hence, Lemma \ref{lem.Dalpha.ItoJ} (a) is proven.
+$. In other words, $g\in\left\{  j\in\left[  n-1\right]  \ \mid\ i_{j}%
+<i_{j+1}\right\}  $. In other words, $g\in D\left(  \alpha\right)  $ (since
+$\left\{  j\in\left[  n-1\right]  \ \mid\ i_{j}<i_{j+1}\right\}  =D\left(
+\alpha\right)  $). This contradicts $g\notin D\left(  \alpha\right)  $. This
+contradiction proves that our assumption was wrong. Hence, Lemma
+\ref{lem.Dalpha.ItoJ} (a) is proven.
 
 (b) From Lemma \ref{lem.Dalpha.s} (a), we see that $s_{i}\in\left[  n\right]
-$ for every $i\in\left[  \ell\right]  $. Thus, $i_{s_{i}}$ is a well-defined
-positive integer for every $i\in\left[  \ell\right]  $ (since $i_{1}%
-,i_{2},\ldots,i_{n}$ are positive integers). Hence, $\left(  i_{s_{1}%
-},i_{s_{2}},\ldots,i_{s_{\ell}}\right)  \in\left\{  1,2,3,\ldots\right\}
-^{\ell}$.
+$ for every $i\in\left[  \ell\right]  $. Thus, from $\left(  i_{1}%
+,i_{2},\ldots,i_{n}\right)  \in\left\{  1,2,3,\ldots\right\}  ^{n}$, we obtain
+$\left(  i_{s_{1}},i_{s_{2}},\ldots,i_{s_{\ell}}\right)  \in\left\{
+1,2,3,\ldots\right\}  ^{\ell}$.
 
 It remains to prove that $i_{s_{1}}\leq i_{s_{2}}\leq\cdots\leq i_{s_{\ell}}$.
 
-Let $k\in\left[  \ell-1\right]  $ be arbitrary. Then, $k\in\left[
-\ell-1\right]  \subseteq\left[  \ell\right]  $ and thus $s_{k}\in\left[
-n\right]  $ (by Lemma \ref{lem.Dalpha.s} (a) (applied to $k$ instead of $i$)).
-Also, $k+1\in\left[  \ell\right]  $ (since $k\in\left[  \ell-1\right]  $).
-Thus, $s_{k+1}\in\left[  n\right]  $ (by Lemma \ref{lem.Dalpha.s} (a) (applied
-to $k+1$ instead of $i$)).
+Let $k\in\left[  \ell-1\right]  $ be arbitrary. Then, both $k$ and $k+1$
+belong to $\left[  \ell\right]  $. Hence, both $s_{k}$ and $s_{k+1}$ belong to
+$\left[  n\right]  $ (by Lemma \ref{lem.Dalpha.s} (a)).
 
 Now, $s_{k}<s_{k+1}$ (because of $s_{0}<s_{1}<\cdots<s_{\ell}$). Hence,
 $s_{k}\leq s_{k+1}$.
@@ -8048,10 +8034,8 @@ s_{k}  &  \in\left\{  s_{1},s_{2},\ldots,s_{\ell-1}\right\}  =D\left(
 (c)}\right) \\
 &  =\left\{  j\in\left[  n-1\right]  \ \mid\ i_{j}<i_{j+1}\right\}  .
 \end{align*}
-In other words, $s_{k}$ is an element $j$ of $\left[  n-1\right]  $ satisfying
-$i_{j}<i_{j+1}$. In other words, $s_{k}$ is an element of $\left[  n-1\right]
-$ and satisfies $i_{s_{k}}<i_{s_{k}+1}$. Hence, $i_{s_{k}}<i_{s_{k}+1}\leq
-i_{s_{k+1}}$.
+In other words, $s_{k}$ is an element of $\left[  n-1\right]  $ and satisfies
+$i_{s_{k}}<i_{s_{k}+1}$. Hence, $i_{s_{k}}<i_{s_{k}+1}\leq i_{s_{k+1}}$.
 
 Now, forget that we fixed $k$. We thus have proven that $i_{s_{k}}<i_{s_{k+1}%
 }$ for every $k\in\left[  \ell-1\right]  $. In other words, $i_{s_{1}%
@@ -8095,11 +8079,9 @@ n-1\right]  \ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}
 \begin{proof}
 [Proof of Lemma \ref{lem.Dalpha.JtoI}.]We have $\left(  h_{1},h_{2}%
 ,\ldots,h_{\ell}\right)  \in\left\{  1,2,3,\ldots\right\}  ^{\ell}$. Hence,
-$h_{j}\in\left\{  1,2,3,\ldots\right\}  $ for each $j\in\left[  \ell\right]
-$. Thus, $h_{f\left(  i\right)  }\in\left\{  1,2,3,\ldots\right\}  $ for each
-$i\in\left[  n\right]  $. In other words, $\left(  h_{f\left(  1\right)
-},h_{f\left(  2\right)  },\ldots,h_{f\left(  n\right)  }\right)  \in\left\{
-1,2,3,\ldots\right\}  ^{n}$.
+\newline
+$\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  },\ldots,h_{f\left(
+n\right)  }\right)  \in\left\{  1,2,3,\ldots\right\}  ^{n}$.
 
 (a) We have $h_{1}\leq h_{2}\leq\cdots\leq h_{\ell}$. Thus,%
 \begin{equation}
@@ -8115,28 +8097,23 @@ k\right)  }\leq h_{f\left(  k+1\right)  }$ (by
 (\ref{pf.prop.SMalpha.Psi-wd.pf.2}), applied to $u=f\left(  k\right)  $ and
 $v=f\left(  k+1\right)  $). Now, let us forget that we fixed $k$. Thus we have
 shown that $h_{f\left(  k\right)  }\leq h_{f\left(  k+1\right)  }$ for every
-$k\in\left[  n-1\right]  $. In other words,%
-\begin{equation}
-h_{f\left(  1\right)  }\leq h_{f\left(  2\right)  }\leq\cdots\leq h_{f\left(
-n\right)  }. \label{pf.prop.SMalpha.Psi-wd.pf.3}%
-\end{equation}
-Combined with $\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  }%
-,\ldots,h_{f\left(  n\right)  }\right)  \in\left\{  1,2,3,\ldots\right\}
-^{n}$, this completes the proof of Lemma \ref{lem.Dalpha.JtoI} (a).
+$k\in\left[  n-1\right]  $. In other words, $h_{f\left(  1\right)  }\leq
+h_{f\left(  2\right)  }\leq\cdots\leq h_{f\left(  n\right)  }$. Combined with
+$\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  },\ldots,h_{f\left(
+n\right)  }\right)  \in\left\{  1,2,3,\ldots\right\}  ^{n}$, this completes
+the proof of Lemma \ref{lem.Dalpha.JtoI} (a).
 
 (b) Let $k\in\left\{  j\in\left[  n-1\right]  \ \mid\ h_{f\left(  j\right)
-}<h_{f\left(  j+1\right)  }\right\}  $. Thus, $k$ is an element $j$ of
-$\left[  n-1\right]  $ satisfying $h_{f\left(  j\right)  }<h_{f\left(
-j+1\right)  }$. In other words, $k$ is an element of $\left[  n-1\right]  $
-and satisfies $h_{f\left(  k\right)  }<h_{f\left(  k+1\right)  }$. If we had
-$k\notin D\left(  \alpha\right)  $, then we would have $k\in\left[
-n-1\right]  \setminus D\left(  \alpha\right)  $ (since $k\in\left[
-n-1\right]  $ and $k\notin D\left(  \alpha\right)  $) and therefore $f\left(
-k\right)  =f\left(  k+1\right)  $ (by (\ref{pf.prop.Malpha.D.f.5})), and thus
-$h_{f\left(  k\right)  }=h_{f\left(  k+1\right)  }$; but this would contradict
-$h_{f\left(  k\right)  }<h_{f\left(  k+1\right)  }$. Hence, we cannot have
-$k\notin D\left(  \alpha\right)  $. Thus, we have $k\in D\left(
-\alpha\right)  $.
+}<h_{f\left(  j+1\right)  }\right\}  $. Thus, $k$ is an element of $\left[
+n-1\right]  $ and satisfies $h_{f\left(  k\right)  }<h_{f\left(  k+1\right)
+}$. If we had $k\notin D\left(  \alpha\right)  $, then we would have
+$k\in\left[  n-1\right]  \setminus D\left(  \alpha\right)  $ (since
+$k\in\left[  n-1\right]  $ and $k\notin D\left(  \alpha\right)  $) and
+therefore $f\left(  k\right)  =f\left(  k+1\right)  $ (by
+(\ref{pf.prop.Malpha.D.f.5})), and thus $h_{f\left(  k\right)  }=h_{f\left(
+k+1\right)  }$; but this would contradict $h_{f\left(  k\right)  }<h_{f\left(
+k+1\right)  }$. Hence, we cannot have $k\notin D\left(  \alpha\right)  $.
+Thus, we have $k\in D\left(  \alpha\right)  $.
 
 Now, let us forget that we fixed $k$. We thus have shown that $k\in D\left(
 \alpha\right)  $ for every \newline
@@ -8177,26 +8154,21 @@ k+1\right)  }$ (by (\ref{pf.prop.Malpha.Psi-wd.pf.1}), applied to $u=f\left(
 k\right)  $ and $v=f\left(  k+1\right)  $). Also, $k\in D\left(
 \alpha\right)  \subseteq\left[  n-1\right]  $ (by Lemma \ref{lem.Dalpha.n-1}).
 Thus, $k$ is an element of $\left[  n-1\right]  $ and satisfies $h_{f\left(
-k\right)  }<h_{f\left(  k+1\right)  }$. In other words, $k$ is an element $j$
-of $\left[  n-1\right]  $ satisfying $h_{f\left(  j\right)  }<h_{f\left(
-j+1\right)  }$. In other words, $k\in\left\{  j\in\left[  n-1\right]
-\ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}  $.
+k\right)  }<h_{f\left(  k+1\right)  }$. In other words, $k\in\left\{
+j\in\left[  n-1\right]  \ \mid\ h_{f\left(  j\right)  }<h_{f\left(
+j+1\right)  }\right\}  $.
 
-Now, let us forget that we fixed $k$. We thus have shown that \newline%
-$k\in\left\{  j\in\left[  n-1\right]  \ \mid\ h_{f\left(  j\right)
-}<h_{f\left(  j+1\right)  }\right\}  $ for every $k\in D\left(  \alpha\right)
-$. In other words, \newline
-$D\left(  \alpha\right)  \subseteq\left\{  j\in\left[
-n-1\right]  \ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}
-$. This proves (\ref{pf.prop.Malpha.Psi-wd.pf.5}).]
+Now, let us forget that we fixed $k$. We thus have shown that $k\in\left\{
+j\in\left[  n-1\right]  \ \mid\ h_{f\left(  j\right)  }<h_{f\left(
+j+1\right)  }\right\}  $ for every $k\in D\left(  \alpha\right)  $. In other
+words, $D\left(  \alpha\right)  \subseteq\left\{  j\in\left[  n-1\right]
+\ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}  $. This
+proves (\ref{pf.prop.Malpha.Psi-wd.pf.5}).]
 
 Combining (\ref{pf.prop.Malpha.Psi-wd.pf.4}) with
-(\ref{pf.prop.Malpha.Psi-wd.pf.5}), we obtain%
-\[
-\left\{  j\in\left[  n-1\right]  \ \mid\ h_{f\left(  j\right)  }<h_{f\left(
-j+1\right)  }\right\}  =D\left(  \alpha\right)  .
-\]
-This proves Lemma \ref{lem.Dalpha.JtoI} (c).
+(\ref{pf.prop.Malpha.Psi-wd.pf.5}), we obtain $\left\{  j\in\left[
+n-1\right]  \ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}
+=D\left(  \alpha\right)  $. This proves Lemma \ref{lem.Dalpha.JtoI} (c).
 \end{proof}
 
 \begin{proposition}
@@ -8211,31 +8183,21 @@ j\in\left[  n-1\right]  \ \mid\ i_{j}<i_{j+1}\right\}  =D\left(
 \end{proposition}
 
 \begin{proof}
-[Proof of Proposition \ref{prop.Malpha.D}.]Write the composition $\alpha$ in
-the form $\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $. Thus,
-$\alpha=\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $. Hence,
-$\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $ is a composition
-of $n$ (since $\alpha$ is a composition of $n$). Thus, $\alpha_{1},\alpha
-_{2},\ldots,\alpha_{\ell}$ are positive integers, and their sum is $\alpha
-_{1}+\alpha_{2}+\cdots+\alpha_{\ell}=n$.
-
-Let $\mathcal{J}$ denote the set of all length-$\ell$ strictly increasing
-sequences of positive integers. In other words,%
+[Proof of Proposition \ref{prop.Malpha.D}.]Let $\mathcal{J}$ denote the set of
+all length-$\ell$ strictly increasing sequences of positive integers. In other
+words,%
 \begin{equation}
 \mathcal{J}=\left\{  \left(  i_{1},i_{2},\ldots,i_{\ell}\right)  \in\left\{
 1,2,3,\ldots\right\}  ^{\ell}\ \mid\ i_{1}<i_{2}<\cdots<i_{\ell}\right\}  .
 \label{pf.prop.Malpha.D.J=}%
 \end{equation}
-Thus,%
-\begin{align*}
-\mathcal{J}  &  =\left\{  \left(  i_{1},i_{2},\ldots,i_{\ell}\right)
-\in\left\{  1,2,3,\ldots\right\}  ^{\ell}\ \mid\ i_{1}<i_{2}<\cdots<i_{\ell
-}\right\} \\
-&  =\left\{  \left(  j_{1},j_{2},\ldots,j_{\ell}\right)  \in\left\{
-1,2,3,\ldots\right\}  ^{\ell}\ \mid\ j_{1}<j_{2}<\cdots<j_{\ell}\right\}
-\end{align*}
-(here, we have renamed the index $\left(  i_{1},i_{2},\ldots,i_{\ell}\right)
-$ as $\left(  j_{1},j_{2},\ldots,j_{\ell}\right)  $).
+Renaming the index $\left(  i_{1},i_{2},\ldots,i_{\ell}\right)  $ as $\left(
+j_{1},j_{2},\ldots,j_{\ell}\right)  $ in this formula, we obtain
+\[
+\mathcal{J}=\left\{  \left(  j_{1},j_{2},\ldots,j_{\ell}\right)  \in\left\{
+1,2,3,\ldots\right\}  ^{\ell}\ \mid\ j_{1}<j_{2}<\cdots<j_{\ell}\right\}  .
+\]
+
 
 The definition of $M_{\alpha}$ yields%
 \begin{align}
@@ -8316,14 +8278,10 @@ $\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i_{1},i_{2},\ldots
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{and }\left\{  j\in\left[  n-1\right]
 \ \mid\ k_{j}<k_{j+1}\right\}  =D\left(  \alpha\right)  \right\}  .
 \end{align*}
-In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $ is an element
-$\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left\{  1,2,3,\ldots\right\}
-^{n}$ satisfying $k_{1}\leq k_{2}\leq\cdots\leq k_{n}$ and $\left\{
-j\in\left[  n-1\right]  \ \mid\ k_{j}<k_{j+1}\right\}  =D\left(
-\alpha\right)  $. In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $
-is an element of $\left\{  1,2,3,\ldots\right\}  ^{n}$ satisfying $i_{1}\leq
-i_{2}\leq\cdots\leq i_{n}$ and $\left\{  j\in\left[  n-1\right]  \ \mid
-\ i_{j}<i_{j+1}\right\}  =D\left(  \alpha\right)  $.
+In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $ is an element of
+$\left\{  1,2,3,\ldots\right\}  ^{n}$ satisfying $i_{1}\leq i_{2}\leq
+\cdots\leq i_{n}$ and $\left\{  j\in\left[  n-1\right]  \ \mid\ i_{j}%
+<i_{j+1}\right\}  =D\left(  \alpha\right)  $.
 \par
 Thus, $\left\{  j\in\left[  n-1\right]  \ \mid\ i_{j}<i_{j+1}\right\}
 =D\left(  \alpha\right)  \subseteq D\left(  \alpha\right)  $. Hence, Lemma
@@ -8361,10 +8319,7 @@ i_{s_{f\left(  k\right)  }}=i_{k}\ \ \ \ \ \ \ \ \ \ \text{for every }%
 k\in\left[  n\right]  \label{pf.prop.Malpha.D.sf.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.Malpha.D.sf.1}):} Fix $\left(
-i_{1},i_{2},\ldots,i_{n}\right)  \in\mathcal{I}$. We need to prove the
-equality (\ref{pf.prop.Malpha.D.sf.1}).
-\par
-We have $\left(  i_{1},i_{2},\ldots,i_{n}\right)  \in\mathcal{I}$. Thus,%
+i_{1},i_{2},\ldots,i_{n}\right)  \in\mathcal{I}$. Thus,%
 \begin{align*}
 \left(  i_{1},i_{2},\ldots,i_{n}\right)   &  \in\mathcal{I}\\
 &  =\left\{  \left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left\{
@@ -8373,16 +8328,10 @@ We have $\left(  i_{1},i_{2},\ldots,i_{n}\right)  \in\mathcal{I}$. Thus,%
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{and }\left\{  j\in\left[  n-1\right]
 \ \mid\ k_{j}<k_{j+1}\right\}  =D\left(  \alpha\right)  \right\}  .
 \end{align*}
-In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $ is an element
-$\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left\{  1,2,3,\ldots\right\}
-^{n}$ satisfying $k_{1}\leq k_{2}\leq\cdots\leq k_{n}$ and $\left\{
-j\in\left[  n-1\right]  \ \mid\ k_{j}<k_{j+1}\right\}  =D\left(
-\alpha\right)  $. In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $
-is an element of $\left\{  1,2,3,\ldots\right\}  ^{n}$ satisfying $i_{1}\leq
-i_{2}\leq\cdots\leq i_{n}$ and $\left\{  j\in\left[  n-1\right]  \ \mid
-\ i_{j}<i_{j+1}\right\}  =D\left(  \alpha\right)  $. Thus, $\left\{
-j\in\left[  n-1\right]  \ \mid\ i_{j}<i_{j+1}\right\}  =D\left(
-\alpha\right)  \subseteq D\left(  \alpha\right)  $.
+In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $ is an element of
+$\left\{  1,2,3,\ldots\right\}  ^{n}$ satisfying $i_{1}\leq i_{2}\leq
+\cdots\leq i_{n}$ and $\left\{  j\in\left[  n-1\right]  \ \mid\ i_{j}%
+<i_{j+1}\right\}  =D\left(  \alpha\right)  $.
 \par
 Hence, Lemma \ref{lem.Dalpha.ItoJ} (a) shows that we have $i_{s_{f\left(
 k\right)  }}=i_{k}$ for every $k\in\left[  n\right]  $. Hence,
@@ -8396,11 +8345,8 @@ we have $\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  }%
 \in\mathcal{J}=\left\{  \left(  i_{1},i_{2},\ldots,i_{\ell}\right)
 \in\left\{  1,2,3,\ldots\right\}  ^{\ell}\ \mid\ i_{1}<i_{2}<\cdots<i_{\ell
 }\right\}  $. In other words, $\left(  h_{1},h_{2},\ldots,h_{\ell}\right)  $
-is an $\ell$-tuple $\left(  i_{1},i_{2},\ldots,i_{\ell}\right)  \in\left\{
-1,2,3,\ldots\right\}  ^{\ell}$ satisfying $i_{1}<i_{2}<\cdots<i_{\ell}$. In
-other words, $\left(  h_{1},h_{2},\ldots,h_{\ell}\right)  $ is an $\ell$-tuple
-in $\left\{  1,2,3,\ldots\right\}  ^{\ell}$ and satisfies $h_{1}<h_{2}%
-<\cdots<h_{\ell}$.
+is an $\ell$-tuple in $\left\{  1,2,3,\ldots\right\}  ^{\ell}$ and satisfies
+$h_{1}<h_{2}<\cdots<h_{\ell}$.
 \par
 From $h_{1}<h_{2}<\cdots<h_{\ell}$, we obtain $h_{1}\leq h_{2}\leq\cdots\leq
 h_{\ell}$. Hence, Lemma \ref{lem.Dalpha.JtoI} (a) shows that we have $\left(
@@ -8409,27 +8355,19 @@ h_{f\left(  1\right)  },h_{f\left(  2\right)  },\ldots,h_{f\left(  n\right)
 }\leq h_{f\left(  2\right)  }\leq\cdots\leq h_{f\left(  n\right)  }$.
 Furthermore, Lemma \ref{lem.Dalpha.JtoI} (c) yields $\left\{  j\in\left[
 n-1\right]  \ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}
-=D\left(  \alpha\right)  $ (since $h_{1}<h_{2}<\cdots<h_{\ell}$).
+=D\left(  \alpha\right)  $.
 \par
 Thus, $\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  },\ldots
-,h_{f\left(  n\right)  }\right)  $ is an $n$-tuple in $\left\{  1,2,3,\ldots
-\right\}  ^{n}$ (since $\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)
-},\ldots,h_{f\left(  n\right)  }\right)  \in\left\{  1,2,3,\ldots\right\}
-^{n}$) which satisfies $h_{f\left(  1\right)  }\leq h_{f\left(  2\right)
-}\leq\cdots\leq h_{f\left(  n\right)  }$ and $\left\{  j\in\left[  n-1\right]
-\ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}  =D\left(
-\alpha\right)  $. In other words, $\left(  h_{f\left(  1\right)  },h_{f\left(
-2\right)  },\ldots,h_{f\left(  n\right)  }\right)  $ is an $n$-tuple $\left(
-i_{1},i_{2},\ldots,i_{n}\right)  \in\left\{  1,2,3,\ldots\right\}  ^{n}$
-satisfying $i_{1}\leq i_{2}\leq\cdots\leq i_{n}$ and $\left\{  j\in\left[
-n-1\right]  \ \mid\ i_{j}<i_{j+1}\right\}  =D\left(  \alpha\right)  $. In
-other words,%
+,h_{f\left(  n\right)  }\right)  $ is an element of $\left\{  1,2,3,\ldots
+\right\}  ^{n}$ which satisfies $h_{f\left(  1\right)  }\leq h_{f\left(
+2\right)  }\leq\cdots\leq h_{f\left(  n\right)  }$ and $\left\{  j\in\left[
+n-1\right]  \ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}
+=D\left(  \alpha\right)  $. In other words,%
 \begin{align*}
-&  \left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  },\ldots,h_{f\left(
-n\right)  }\right) \\
-&  \in\left\{  \left(  i_{1},i_{2},\ldots,i_{n}\right)  \in\left\{
-1,2,3,\ldots\right\}  ^{n}\ \mid\ i_{1}\leq i_{2}\leq\cdots\leq i_{n}\right.
-\\
+\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  },\ldots,h_{f\left(
+n\right)  }\right)   &  \in\left\{  \left(  i_{1},i_{2},\ldots,i_{n}\right)
+\in\left\{  1,2,3,\ldots\right\}  ^{n}\ \mid\ i_{1}\leq i_{2}\leq\cdots\leq
+i_{n}\right. \\
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{and }\left\{  j\in\left[  n-1\right]
 \ \mid\ i_{j}<i_{j+1}\right\}  =D\left(  \alpha\right)  \right\}  .
 \end{align*}
@@ -8622,28 +8560,20 @@ I\cup\left\{  0,n\right\}  \right)  $ in the form $\left(  i_{0},i_{1}%
 [Proof of Lemma \ref{lem.Dalpha.ilis}.]We have $\left(  i_{0},i_{1}%
 ,\ldots,i_{m}\right)  =\operatorname*{ilis}\left(  I\cup\left\{  0,n\right\}
 \right)  $ (by the definition of $\left(  i_{0},i_{1},\ldots,i_{m}\right)  $).
-But recall that $\operatorname*{ilis}\left(  I\cup\left\{  0,n\right\}
-\right)  $ is the list of all elements of $I\cup\left\{  0,n\right\}  $ in
-increasing order (by the definition of $\operatorname*{ilis}\left(
-I\cup\left\{  0,n\right\}  \right)  $). In other words, $\left(  i_{0}%
-,i_{1},\ldots,i_{m}\right)  $ is the list of all elements of $I\cup\left\{
-0,n\right\}  $ in increasing order (since $\left(  i_{0},i_{1},\ldots
-,i_{m}\right)  =\operatorname*{ilis}\left(  I\cup\left\{  0,n\right\}
-\right)  $). Thus, the list $\left(  i_{0},i_{1},\ldots,i_{m}\right)  $ is
-strictly increasing and contains precisely the elements of $I\cup\left\{
-0,n\right\}  $.
-
-We have%
+In other words, $\left(  i_{0},i_{1},\ldots,i_{m}\right)  $ is the list of all
+elements of $I\cup\left\{  0,n\right\}  $ in increasing order (since this is
+what we defined $\operatorname*{ilis}\left(  I\cup\left\{  0,n\right\}
+\right)  $ to be). Thus,
 \[
 \left\{  i_{0},i_{1},\ldots,i_{m}\right\}  =I\cup\left\{  0,n\right\}
 \]
-(since the list $\left(  i_{0},i_{1},\ldots,i_{m}\right)  $ contains precisely
-the elements of $I\cup\left\{  0,n\right\}  $). Also,%
+(since the list $\left(  i_{0},i_{1},\ldots,i_{m}\right)  $ is a list of all
+elements of $I\cup\left\{  0,n\right\}  $). Also,
 \[
 i_{0}<i_{1}<\cdots<i_{m}%
 \]
-(since the list $\left(  i_{0},i_{1},\ldots,i_{m}\right)  $ is strictly
-increasing). Thus,%
+(since the list $\left(  i_{0},i_{1},\ldots,i_{m}\right)  $ is in increasing
+order). Thus,%
 \begin{equation}
 i_{u}<i_{v}\ \ \ \ \ \ \ \ \ \ \text{for any two elements }u\text{ and
 }v\text{ of }\left\{  0,1,\ldots,m\right\}  \text{ satisfying }u<v.
@@ -8662,18 +8592,11 @@ $I\subseteq\left[  n-1\right]  \subseteq\left[  n\right]  \subseteq\left\{
 \]
 
 
-(a) Assume the contrary. Thus, $m<0$. Hence, the list $\left(  i_{0}%
-,i_{1},\ldots,i_{m}\right)  $ is an empty list. In other words, the list
-$\operatorname*{ilis}\left(  I\cup\left\{  0,n\right\}  \right)  $ is an empty
-list (since $\left(  i_{0},i_{1},\ldots,i_{m}\right)  =\operatorname*{ilis}%
-\left(  I\cup\left\{  0,n\right\}  \right)  $). In other words, $I\cup\left\{
-0,n\right\}  $ is an empty set.
-
-But $0\in\left\{  0,n\right\}  \subseteq I\cup\left\{  0,n\right\}  $. Hence,
-the set $I\cup\left\{  0,n\right\}  $ is nonempty (since it contains the
-element $0$). This contradicts the fact that $I\cup\left\{  0,n\right\}  $ is
-an empty set. This contradiction proves that our assumption was false. Hence,
-Lemma \ref{lem.Dalpha.ilis} (a) is proven.
+(a) Assume the contrary. Thus, $m<0$. Now, $0 \in\left\{  0, n\right\}
+\subseteq I\cup\left\{  0,n\right\}  = \left\{  i_{0},i_{1},\ldots
+,i_{m}\right\}  = \left\{  \right\}  $ (since $m < 0$). This contradicts the
+fact that the set $\left\{  \right\}  $ is empty. This contradiction proves
+that our assumption was false. Hence, Lemma \ref{lem.Dalpha.ilis} (a) is proven.
 
 (b) We have $0\in\left\{  0,n\right\}  \subseteq I\cup\left\{  0,n\right\}
 =\left\{  i_{0},i_{1},\ldots,i_{m}\right\}  $. Hence, there exists some
@@ -8948,14 +8871,14 @@ D\left(  \alpha\right)  \cup\left\{  0,n\right\}  =\left\{  s_{0},s_{1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{pf.prop.Dalpha.comp.11}):} From Lemma
 \ref{lem.Dalpha.s} (c), we have $D\left(  \alpha\right)  =\left\{  s_{1}%
-,s_{2},\ldots,s_{\ell-1}\right\}  $. Thus,%
+,s_{2},\ldots,s_{\ell-1}\right\}  $. Lemma \ref{lem.Dalpha.s} (f) yields $0 =
+s_{0}$. Lemma \ref{lem.Dalpha.s} (e) yields $n = s_{\ell}$. Thus,%
 \begin{align*}
 &  \underbrace{D\left(  \alpha\right)  }_{=\left\{  s_{1},s_{2},\ldots
-,s_{\ell-1}\right\}  }\cup\left\{  \underbrace{0}_{\substack{=s_{0}\\\text{(by
-Lemma \ref{lem.Dalpha.s} (f))}}},\underbrace{n}_{\substack{=s_{\ell
-}\\\text{(by Lemma \ref{lem.Dalpha.s} (e))}}}\right\} \\
-&  =\left\{  s_{1},s_{2},\ldots,s_{\ell-1}\right\}  \cup\left\{  s_{0}%
-,s_{\ell}\right\}  =\left\{  s_{0},s_{1},\ldots,s_{\ell}\right\}  .
+,s_{\ell-1}\right\}  }\cup\left\{  \underbrace{0}_{=s_{0}}, \underbrace{n}%
+_{=s_{\ell}}\right\}  =\left\{  s_{1},s_{2},\ldots,s_{\ell-1}\right\}
+\cup\left\{  s_{0},s_{\ell}\right\}  =\left\{  s_{0},s_{1},\ldots,s_{\ell
+}\right\}  .
 \end{align*}
 This proves (\ref{pf.prop.Dalpha.comp.11}).}. Thus, the list $\left(
 s_{0},s_{1},\ldots,s_{\ell}\right)  $ contains precisely the elements of the
@@ -8968,10 +8891,9 @@ order (with each element appearing only once). In other words, the list
 $\left(  s_{0},s_{1},\ldots,s_{\ell}\right)  $ is $\operatorname*{ilis}\left(
 D\left(  \alpha\right)  \cup\left\{  0,n\right\}  \right)  $ (since
 $\operatorname*{ilis}\left(  D\left(  \alpha\right)  \cup\left\{  0,n\right\}
-\right)  $ is the list of all elements of $D\left(  \alpha\right)
-\cup\left\{  0,n\right\}  $ in increasing order (with each element appearing
-only once)\footnote{by the definition of $\operatorname*{ilis}\left(  D\left(
-\alpha\right)  \cup\left\{  0,n\right\}  \right)  $}). In other words,%
+\right)  $ is defined to be the list of all elements of $D\left(
+\alpha\right)  \cup\left\{  0,n\right\}  $ in increasing order (with each
+element appearing only once)). In other words,%
 \[
 \operatorname*{ilis}\left(  D\left(  \alpha\right)  \cup\left\{  0,n\right\}
 \right)  =\left(  s_{0},s_{1},\ldots,s_{\ell}\right)  .
@@ -9198,119 +9120,36 @@ If $A$ and $B$ are sets, and if $C$ is a subset of $B$, then
 \left\{  \pi\in B^{A}\ \mid\ \pi\left(  A\right)  \subseteq C\right\}  \cong
 C^{A}\text{ as sets} \label{pf.prop.Gammaw.welldef.1}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{pf.prop.Gammaw.welldef.1}):} Let $A$ and $B$
-be sets. Let $C$ be a subset of $B$.
+\footnote{\textit{Proof of (\ref{pf.prop.Gammaw.welldef.1}):} This is a
+well-known fact about sets. The proof proceeds as follows:
 \par
-Define a map $\Phi:\left\{  \pi\in B^{A}\ \mid\ \pi\left(  A\right)  \subseteq
-C\right\}  \rightarrow C^{A}$ as follows: Let $f\in\left\{  \pi\in B^{A}%
-\ \mid\ \pi\left(  A\right)  \subseteq C\right\}  $. Thus, $f$ is a $\pi\in
-B^{A}$ satisfying $\pi\left(  A\right)  \subseteq C$. In other words, $f$ is
-an element of $B^{A}$ and satisfies $f\left(  A\right)  \subseteq C$. We thus
-have $f\left(  \underbrace{a}_{\in A}\right)  \in f\left(  A\right)  \subseteq
-C$ for every $a\in A$. Hence, we can define a map $f^{\prime}:A\rightarrow C$
+Let $A$ and $B$ be sets. Let $C$ be a subset of $B$. Let $\iota:C\rightarrow
+B$ be the canonical inclusion map.
+\par
+\begin{itemize}
+\item Define a map $\Phi:\left\{  \pi\in B^{A}\ \mid\ \pi\left(  A\right)
+\subseteq C\right\}  \rightarrow C^{A}$ as follows:
+\par
+Let $f\in\left\{  \pi\in B^{A}\ \mid\ \pi\left(  A\right)  \subseteq
+C\right\}  $. Thus, $f$ is an element of $B^{A}$ and satisfies $f \left(
+A\right)  \subseteq C$. Hence, we can define a map $f^{\prime}:A\rightarrow C$
 by $\left(  f^{\prime}\left(  a\right)  =f\left(  a\right)  \text{ for every
-}a\in A\right)  $. Consider this $f^{\prime}$. Thus, $f^{\prime}$ is a map
-$A\rightarrow C$. In other words, $f^{\prime}\in C^{A}$. Define $\Phi\left(
-f\right)  $ to be $f^{\prime}$. Thus, a map $\Phi:\left\{  \pi\in B^{A}%
-\ \mid\ \pi\left(  A\right)  \subseteq C\right\}  \rightarrow C^{A}$ is
-defined. For every $f\in\left\{  \pi\in B^{A}\ \mid\ \pi\left(  A\right)
-\subseteq C\right\}  $, we have%
-\begin{equation}
-\left(  \Phi\left(  f\right)  \right)  \left(  a\right)  =f\left(  a\right)
-\ \ \ \ \ \ \ \ \ \ \text{for every }a\in A.
-\label{pf.prop.Gammaw.welldef.1.pf.1}%
-\end{equation}
+}a\in A\right)  $. Define $\Phi\left(  f\right)  $ to be this map $f^{\prime}%
+$. Hence, a map $\Phi:\left\{  \pi\in B^{A}\ \mid\ \pi\left(  A\right)
+\subseteq C\right\}  \rightarrow C^{A}$ is defined.
 \par
-[\textit{Proof of (\ref{pf.prop.Gammaw.welldef.1.pf.1}):} Let $f\in\left\{
-\pi\in B^{A}\ \mid\ \pi\left(  A\right)  \subseteq C\right\}  $. Then,
-$\Phi\left(  f\right)  $ is the map $f^{\prime}:A\rightarrow C$ which is
-defined by $\left(  f^{\prime}\left(  a\right)  =f\left(  a\right)  \text{ for
-every }a\in A\right)  $ (by the definition of $\Phi$). Consider this map
-$f^{\prime}$. Thus, $\Phi\left(  f\right)  =f^{\prime}$. Now,
-$\underbrace{\left(  \Phi\left(  f\right)  \right)  }_{=f^{\prime}}\left(
-a\right)  =f^{\prime}\left(  a\right)  =f\left(  a\right)  $ for every $a\in
-A$. This proves (\ref{pf.prop.Gammaw.welldef.1.pf.1}).]
+\item Define a map $\Psi:C^{A}\rightarrow\left\{  \pi\in B^{A}\ \mid
+\ \pi\left(  A\right)  \subseteq C\right\}  $ by
+\[
+\left(  \Psi\left(  g\right)  = \iota\circ g \qquad\text{for each } g \in
+C^{A} \right)  .
+\]
+\end{itemize}
 \par
-On the other hand, let $\iota:C\rightarrow B$ be the canonical inclusion map.
-Thus, $\iota\left(  C\right)  =C$.
-\par
-Define a map $\Psi:C^{A}\rightarrow\left\{  \pi\in B^{A}\ \mid\ \pi\left(
-A\right)  \subseteq C\right\}  $ as follows: Let $g\in C^{A}$. Then, $g$ is a
-map $A\rightarrow C$, so that $\iota\circ g$ is a map $A\rightarrow B$ (since
-$\iota$ is a map $C\rightarrow B$). In other words, $\iota\circ g\in B^{A}$.
-Also, $\left(  \iota\circ g\right)  \left(  A\right)  =\iota\left(
-\underbrace{g\left(  A\right)  }_{\subseteq C}\right)  \subseteq\iota\left(
-C\right)  =C$. Thus, $\iota\circ g$ is an element of $B^{A}$ and satisfies
-$\left(  \iota\circ g\right)  \left(  A\right)  \subseteq C$. In other words,
-$\iota\circ g$ is an element $\pi$ of $B^{A}$ satisfying $\pi\left(  A\right)
-\subseteq C$. In other words, $\iota\circ g\in\left\{  \pi\in B^{A}\ \mid
-\ \pi\left(  A\right)  \subseteq C\right\}  $. Define $\Psi\left(  g\right)  $
-to be $\iota\circ g$. Thus, a map $\Psi:C^{A}\rightarrow\left\{  \pi\in
-B^{A}\ \mid\ \pi\left(  A\right)  \subseteq C\right\}  $ is defined.
-\par
-Now, we claim that
-\begin{equation}
-\Psi\circ\Phi=\operatorname*{id}. \label{pf.prop.Gammaw.welldef.1.pf.2}%
-\end{equation}
-\par
-[\textit{Proof of (\ref{pf.prop.Gammaw.welldef.1.pf.2}):} Let $f\in\left\{
-\pi\in B^{A}\ \mid\ \pi\left(  A\right)  \subseteq C\right\}  $. Then,
-$\left(  \Psi\circ\Phi\right)  \left(  f\right)  =\Psi\left(  \Phi\left(
-f\right)  \right)  =\iota\circ\left(  \Phi\left(  f\right)  \right)  $ (by the
-definition of $\Psi$). Thus, every $a\in A$ satisfies%
-\begin{align*}
-\underbrace{\left(  \left(  \Psi\circ\Phi\right)  \left(  f\right)  \right)
-}_{=\iota\circ\left(  \Phi\left(  f\right)  \right)  }\left(  a\right)   &
-=\left(  \iota\circ\left(  \Phi\left(  f\right)  \right)  \right)  \left(
-a\right)  =\iota\left(  \left(  \Phi\left(  f\right)  \right)  \left(
-a\right)  \right)  =\left(  \Phi\left(  f\right)  \right)  \left(  a\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\iota\text{ is an inclusion
-map}\right) \\
-&  =f\left(  a\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.prop.Gammaw.welldef.1.pf.1})}\right)  .
-\end{align*}
-In other words, $\left(  \Psi\circ\Phi\right)  \left(  f\right)  =f$. Hence,
-$\left(  \Psi\circ\Phi\right)  \left(  f\right)  =f=\operatorname*{id}\left(
-f\right)  $. Now, forget that we fixed $f$. We thus have proven that $\left(
-\Psi\circ\Phi\right)  \left(  f\right)  =\operatorname*{id}\left(  f\right)  $
-for every $f\in\left\{  \pi\in B^{A}\ \mid\ \pi\left(  A\right)  \subseteq
-C\right\}  $. In other words, $\Psi\circ\Phi=\operatorname*{id}$. This proves
-(\ref{pf.prop.Gammaw.welldef.1.pf.2}).]
-\par
-Next, we claim that
-\begin{equation}
-\Phi\circ\Psi=\operatorname*{id}. \label{pf.prop.Gammaw.welldef.1.pf.3}%
-\end{equation}
-\par
-[\textit{Proof of (\ref{pf.prop.Gammaw.welldef.1.pf.3}):} Let $g\in C^{A}$.
-Then, every $a\in A$ satisfies%
-\begin{align*}
-\underbrace{\left(  \left(  \Phi\circ\Psi\right)  \left(  g\right)  \right)
-}_{=\Phi\left(  \Psi\left(  g\right)  \right)  }\left(  a\right)   &  =\left(
-\Phi\left(  \Psi\left(  g\right)  \right)  \right)  \left(  a\right)
-=\underbrace{\left(  \Psi\left(  g\right)  \right)  }_{\substack{=\iota\circ
-g\\\text{(by the definition of }\Psi\text{)}}}\left(  a\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.prop.Gammaw.welldef.1.pf.1})
-(applied to }f=\Psi\left(  g\right)  \text{)}\right) \\
-&  =\left(  \iota\circ g\right)  \left(  a\right)  =\iota\left(  g\left(
-a\right)  \right)  =g\left(  a\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}\iota\text{ is an inclusion map}\right)  .
-\end{align*}
-In other words, $\left(  \Phi\circ\Psi\right)  \left(  g\right)  =g$. Hence,
-$\left(  \Phi\circ\Psi\right)  \left(  g\right)  =g=\operatorname*{id}\left(
-g\right)  $. Now, forget that we fixed $g$. We thus have proven that $\left(
-\Phi\circ\Psi\right)  \left(  g\right)  =\operatorname*{id}\left(  g\right)  $
-for every $g\in C^{A}$. In other words, $\Phi\circ\Psi=\operatorname*{id}$.
-This proves (\ref{pf.prop.Gammaw.welldef.1.pf.3}).]
-\par
-Combining (\ref{pf.prop.Gammaw.welldef.1.pf.2}) with
-(\ref{pf.prop.Gammaw.welldef.1.pf.3}), we conclude that the maps $\Phi$ and
-$\Psi$ are mutually inverse. Hence, the map $\Phi$ is invertible, and thus a
-bijection. Thus, there is a bijection from $\left\{  \pi\in B^{A}\ \mid
+It is easy to see that the maps $\Phi$ and $\Psi$ are mutually inverse
+bijections. Hence, there is a bijection from $\left\{  \pi\in B^{A}\ \mid
 \ \pi\left(  A\right)  \subseteq C\right\}  $ to $C^{A}$ (namely, the map
-$\Phi$). In other words, $\left\{  \pi\in B^{A}\ \mid\ \pi\left(  A\right)
-\subseteq C\right\}  \cong C^{A}$ as sets. This proves
-(\ref{pf.prop.Gammaw.welldef.1}).}.
+$\Phi$). This proves (\ref{pf.prop.Gammaw.welldef.1}).}.
 
 Let $\operatorname*{Par}\mathbf{E}$ be the set of all $\mathbf{E}$-partitions.
 Thus, every element of $\operatorname*{Par}\mathbf{E}$ is an $\mathbf{E}%
@@ -9375,15 +9214,10 @@ monomials). Hence, $x_{\phi\left(  f\right)  }\mid x_{\phi\left(  f\right)
 }^{w\left(  f\right)  }\mid\prod_{e\in E}x_{\phi\left(  e\right)  }^{w\left(
 e\right)  }=\mathfrak{m}$ (as monomials). Thus, the indeterminate
 $x_{\phi\left(  f\right)  }$ appears in the monomial $\mathfrak{m}$. Thus,
-$\phi\left(  f\right)  $ is a positive integer such that the indeterminate
-$x_{\phi\left(  f\right)  }$ appears in the monomial $\mathfrak{m}$. In other
-words, $\phi\left(  f\right)  $ is a positive integer $i$ such that the
-indeterminate $x_{i}$ appears in the monomial $\mathfrak{m}$. In other words,
-$\phi\left(  f\right)  $ belongs to the set of all positive integers $i$ such
-that the indeterminate $x_{i}$ appears in the monomial $\mathfrak{m}$. In
-other words, $\phi\left(  f\right)  $ belongs to $Z$ (since $Z$ is the set of
-all positive integers $i$ such that the indeterminate $x_{i}$ appears in the
-monomial $\mathfrak{m}$). In other words, $\phi\left(  f\right)  \in Z$.
+$\phi\left(  f\right)  $ is a positive integer $i$ such that the indeterminate
+$x_{i}$ appears in the monomial $\mathfrak{m}$. In other words, $\phi\left(
+f\right)  \in Z$ (since $Z$ is the set of all positive integers $i$ such that
+the indeterminate $x_{i}$ appears in the monomial $\mathfrak{m}$).
 \par
 Now, forget that we fixed $f$. We thus have shown that $\phi\left(  f\right)
 \in Z$ for each $f\in E$. In other words, $\phi\left(  E\right)  \subseteq Z$.
@@ -9391,13 +9225,11 @@ Now, forget that we fixed $f$. We thus have shown that $\phi\left(  f\right)
 Now, $\phi\in\left(  \operatorname*{Par}\mathbf{E}\right)  \setminus Q$. In
 other words, $\phi\in\operatorname*{Par}\mathbf{E}$ but $\phi\notin Q$. We now
 know that $\phi$ is an element of $\operatorname*{Par}\mathbf{E}$ satisfying
-$\phi\left(  E\right)  \subseteq Z$. In other words, $\phi$ is an element
-$\pi$ of $\operatorname*{Par}\mathbf{E}$ satisfying $\pi\left(  E\right)
-\subseteq Z$. In other words, $\phi\in\left\{  \pi\in\operatorname*{Par}%
-\mathbf{E}\ \mid\ \pi\left(  E\right)  \subseteq Z\right\}  $. In other words,
-$\phi\in Q$ (since $Q=\left\{  \pi\in\operatorname*{Par}\mathbf{E}\ \mid
-\ \pi\left(  E\right)  \subseteq Z\right\}  $). This contradicts $\phi\notin
-Q$.
+$\phi\left(  E\right)  \subseteq Z$. In other words, $\phi\in\left\{  \pi
+\in\operatorname*{Par}\mathbf{E}\ \mid\ \pi\left(  E\right)  \subseteq
+Z\right\}  $. In other words, $\phi\in Q$ (since $Q=\left\{  \pi
+\in\operatorname*{Par}\mathbf{E}\ \mid\ \pi\left(  E\right)  \subseteq
+Z\right\}  $). This contradicts $\phi\notin Q$.
 \par
 This contradiction proves that our assumption was wrong. Hence, $\mathfrak{m}%
 \neq{\mathbf{x}}_{\phi,w}$ is proven. Now, (\ref{pf.prop.Gammaw.welldef.mn})
@@ -9476,51 +9308,22 @@ the set of all $\mathbf{E}$-partitions). In other words, $g\in
 
 Now, $\operatorname*{Par}\mathbf{E}=\left\{  g\right\}  $%
 \ \ \ \ \footnote{\textit{Proof.} Let $\phi\in\operatorname*{Par}\mathbf{E}$.
-Thus, $\phi$ belongs to $\operatorname*{Par}\mathbf{E}$. In other words,
-$\phi$ belongs to the set of all $\mathbf{E}$-partitions (since
-$\operatorname*{Par}\mathbf{E}$ is the set of all $\mathbf{E}$-partitions). In
-other words, $\phi$ is an $\mathbf{E}$-partition.
-\par
-Recall that $E=\varnothing$. Hence, there exists no $e\in E$.
-\par
-Recall the definition of an $\mathbf{E}$-partition. This definition shows that
-$\phi$ is an $\mathbf{E}$-partition if and only if $\phi$ is a map
-$E\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying the following two
-assertions:
-\par
-\textit{Assertion }$\mathcal{A}_{1}$\textit{:} Every $e\in E$ and $f\in E$
-satisfying $e<_{1}f$ satisfy $\phi\left(  e\right)  \leq\phi\left(  f\right)
-$.
-\par
-\textit{Assertion }$\mathcal{A}_{2}$\textit{:} Every $e\in E$ and $f\in E$
-satisfying $e<_{1}f$ and $f<_{2}e$ satisfy $\phi\left(  e\right)  <\phi\left(
-f\right)  $.
-\par
-Now, $\phi$ is an $\mathbf{E}$-partition. In other words, $\phi$ is a map
-$E\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying the two Assertions
-$\mathcal{A}_{1}$ and $\mathcal{A}_{2}$ (since $\phi$ is an $\mathbf{E}%
-$-partition if and only if $\phi$ is a map $E\rightarrow\left\{
-1,2,3,\ldots\right\}  $ satisfying the two Assertions $\mathcal{A}_{1}$ and
-$\mathcal{A}_{2}$). Every $e\in E$ satisfies $\phi\left(  e\right)  =g\left(
-e\right)  $ (indeed, this is vacuously true, because there exists no $e\in
-E$). In other words, $\phi=g$. Hence, $\phi=g\in\left\{  g\right\}  $.
-\par
-Now, forget that we fixed $\phi$. We thus have shown that $\phi\in\left\{
-g\right\}  $ for each $\phi\in\operatorname*{Par}\mathbf{E}$. In other words,
-$\operatorname*{Par}\mathbf{E}\subseteq\left\{  g\right\}  $. Combining this
-with $\left\{  g\right\}  \subseteq\operatorname*{Par}\mathbf{E}$, we obtain
-$\operatorname*{Par}\mathbf{E}=\left\{  g\right\}  $, qed.}. Also,
-$\mathbf{x}_{g,w}=1$\ \ \ \ \footnote{\textit{Proof.} The definition of
-$\mathbf{x}_{g,w}$ yields
+We have $\operatorname*{Par}\mathbf{E}\subseteq\left\{  1,2,3,\ldots\right\}
+^{E}$ (indeed, we have shown this in the proof of Proposition
+\ref{prop.Gammaw.welldef}). Since $E = \varnothing$, this rewrites as
+$\operatorname*{Par}\mathbf{E}\subseteq\left\{  1,2,3,\ldots\right\}
+^{\varnothing} = \left\{  g\right\}  $. Combining this with $\left\{
+g\right\}  \subseteq\operatorname*{Par}\mathbf{E}$, we obtain
+$\operatorname*{Par}\mathbf{E}=\left\{  g\right\}  $, qed.} and $\mathbf{x}%
+_{g,w}=1$\ \ \ \ \footnote{\textit{Proof.} The definition of $\mathbf{x}%
+_{g,w}$ yields
 \begin{align*}
 {\mathbf{x}}_{g,w}  &  =\prod_{e\in E}x_{g\left(  e\right)  }^{w\left(
 e\right)  }=\prod_{e\in\varnothing}x_{g\left(  e\right)  }^{w\left(  e\right)
 }\ \ \ \ \ \ \ \ \ \ \left(  \text{since }E=\varnothing\right) \\
 &  =\left(  \text{empty product}\right)  =1,
 \end{align*}
-qed.}.
-
-Now, the definition of $\Gamma\left(  \mathbf{E},w\right)  $ yields%
+qed.}. Now, the definition of $\Gamma\left(  \mathbf{E},w\right)  $ yields%
 \begin{align*}
 \Gamma\left(  {\mathbf{E}},w\right)   &  =\underbrace{\sum_{\pi\text{ is an
 }{\mathbf{E}}\text{-partition}}}_{\substack{=\sum_{\pi\in\operatorname*{Par}%
@@ -9867,12 +9670,14 @@ b_{3}$. Then,
 
 \begin{proof}
 [Proof of Lemma~\ref{lem.example.sst.convex}.]Write the partition $\mu$ in the
-form $\left(  \mu_{1},\mu_{2},\mu_{3},\ldots\right)  $. Thus, $\mu=\left(
-\mu_{1},\mu_{2},\mu_{3},\ldots\right)  $.
+form $\left(  \mu_{1},\mu_{2},\mu_{3},\ldots\right)  $.
+%Thus, $\mu=\left( \mu_{1},\mu_{2},\mu_{3},\ldots\right)  $.
+
 
 Write the partition $\lambda$ in the form $\left(  \lambda_{1},\lambda
-_{2},\lambda_{3},\ldots\right)  $. Thus, $\lambda=\left(  \lambda_{1}%
-,\lambda_{2},\lambda_{3},\ldots\right)  $.
+_{2},\lambda_{3},\ldots\right)  $.
+%Thus, $\lambda=\left(  \lambda_{1},\lambda_{2},\lambda_{3},\ldots\right)  $.
+
 
 Now, $Y\left(  \lambda/\mu\right)  $ is the set of all $\left(  i,j\right)
 \in\left\{  1,2,3,\ldots\right\}  ^{2}$ satisfying $\mu_{i}<j\leq\lambda_{i}$
@@ -9889,8 +9694,6 @@ Now,
 i,j\right)  \in\left\{  1,2,3,\ldots\right\}  ^{2}\ \mid\ \mu_{i}<j\leq
 \lambda_{i}\right\}  .
 \]
-In other words, $\left(  a_{1},b_{1}\right)  $ is an $\left(  i,j\right)
-\in\left\{  1,2,3,\ldots\right\}  ^{2}$ satisfying $\mu_{i}<j\leq\lambda_{i}$.
 In other words, $\left(  a_{1},b_{1}\right)  $ is an element of $\left\{
 1,2,3,\ldots\right\}  ^{2}$ and satisfies $\mu_{a_{1}}<b_{1}\leq\lambda
 _{a_{1}}$.
@@ -9901,23 +9704,14 @@ Also,
 i,j\right)  \in\left\{  1,2,3,\ldots\right\}  ^{2}\ \mid\ \mu_{i}<j\leq
 \lambda_{i}\right\}  .
 \]
-In other words, $\left(  a_{3},b_{3}\right)  $ is an $\left(  i,j\right)
-\in\left\{  1,2,3,\ldots\right\}  ^{2}$ satisfying $\mu_{i}<j\leq\lambda_{i}$.
 In other words, $\left(  a_{3},b_{3}\right)  $ is an element of $\left\{
 1,2,3,\ldots\right\}  ^{2}$ and satisfies $\mu_{a_{3}}<b_{3}\leq\lambda
 _{a_{3}}$.
 
 From $\left(  a_{1},b_{1}\right)  \in\left\{  1,2,3,\ldots\right\}  ^{2}$, we
-obtain $a_{1}\in\left\{  1,2,3,\ldots\right\}  $ and $b_{1}\in\left\{
-1,2,3,\ldots\right\}  $. Thus, $a_{1}\geq1$ (since $a_{1}\in\left\{
-1,2,3,\ldots\right\}  $) and $b_{1}\geq1$ (since $b_{1}\in\left\{
-1,2,3,\ldots\right\}  $). From $a_{2}\geq a_{1}\geq1$, we obtain $a_{2}%
-\in\left\{  1,2,3,\ldots\right\}  $. From $b_{2}\geq b_{1}\geq1$, we obtain
-$b_{2}\in\left\{  1,2,3,\ldots\right\}  $. Combining $a_{2}\in\left\{
-1,2,3,\ldots\right\}  $ with $b_{2}\in\left\{  1,2,3,\ldots\right\}  $, we
-obtain $\left(  a_{2},b_{2}\right)  \in\left\{  1,2,3,\ldots\right\}  ^{2}$.
-From $a_{2}\in\left\{  1,2,3,\ldots\right\}  $, we also conclude that
-$\lambda_{a_{2}}$ and $\mu_{a_{2}}$ are well-defined.
+$a_{1} \geq1$ and $b_{1} \geq1$. Now, $\left(  a_{2},b_{2}\right)  \in\left\{
+1,2,3,\ldots\right\}  ^{2}$ (since $a_{2} \geq a_{1} \geq1$ and $b_{2} \geq
+b_{1} \geq1$). Hence, $\lambda_{a_{2}}$ and $\mu_{a_{2}}$ are well-defined.
 
 The sequence $\left(  \mu_{1},\mu_{2},\mu_{3},\ldots\right)  =\mu$ is a
 partition. Thus, $\mu_{1}\geq\mu_{2}\geq\mu_{3}\geq\cdots$. In other words,
@@ -9937,9 +9731,7 @@ $b_{2}\leq b_{3}\leq\lambda_{a_{3}}\leq\lambda_{a_{2}}$. Hence, $\mu_{a_{2}%
 
 Now, we know that $\left(  a_{2},b_{2}\right)  $ is an element of $\left\{
 1,2,3,\ldots\right\}  ^{2}$ and satisfies $\mu_{a_{2}}<b_{2}\leq\lambda
-_{a_{2}}$. In other words, $\left(  a_{2},b_{2}\right)  $ is an $\left(
-i,j\right)  \in\left\{  1,2,3,\ldots\right\}  ^{2}$ satisfying $\mu_{i}%
-<j\leq\lambda_{i}$. Hence,%
+_{a_{2}}$. Hence,
 \[
 \left(  a_{2},b_{2}\right)  \in\left\{  \left(  i,j\right)  \in\left\{
 1,2,3,\ldots\right\}  ^{2}\ \mid\ \mu_{i}<j\leq\lambda_{i}\right\}  =Y\left(
@@ -9969,9 +9761,7 @@ Let $\phi:Y\left(  \lambda/\mu\right)  \rightarrow\left\{  1,2,3,\ldots
 \right\}  $ be a map.
 
 Recall the definition of a $\left(  Y\left(  \lambda/\mu\right)  ,<_{1}%
-,\prec\right)  $-partition. This definition shows that $\phi$ is a
-\newline
-$\left(
+,\prec\right)  $-partition. This definition shows that $\phi$ is a $\left(
 Y\left(  \lambda/\mu\right)  ,<_{1},\prec\right)  $-partition if and only if
 it satisfies the following two assertions:
 
@@ -10166,9 +9956,10 @@ On the other hand, $\left(  a_{1},b_{1}\right)  <_{1}\left(  a_{3}%
 a_{3},b_{3}\right)  \right)  $ (by the definition of the relation $<_{1}$).
 Thus, we have $\left(  a_{1}\leq a_{3}\text{ and }b_{1}\leq b_{3}\text{ and
 }\left(  a_{1},b_{1}\right)  \neq\left(  a_{3},b_{3}\right)  \right)  $ (since
-$\left(  a_{1},b_{1}\right)  <_{1}\left(  a_{3},b_{3}\right)  $ holds). Hence,
-$a_{1}\leq a_{3}$ and $b_{1}\leq b_{3}$ and $\left(  a_{1},b_{1}\right)
-\neq\left(  a_{3},b_{3}\right)  $.
+$\left(  a_{1},b_{1}\right)  <_{1}\left(  a_{3},b_{3}\right)  $ holds).
+%Hence,
+%$a_{1}\leq a_{3}$ and $b_{1}\leq b_{3}$ and $\left(  a_{1},b_{1}\right)
+%\neq\left(  a_{3},b_{3}\right)  $.
 \par
 Now, $a_{1}\leq a_{3}\leq a_{3}$ and $b_{1}\leq b_{1}\leq b_{3}$. Hence,
 (\ref{pf.prop.example.sst.gen.2}) (applied to $\left(  a_{2},b_{2}\right)
@@ -10222,9 +10013,10 @@ On the other hand, $\left(  a_{1},b_{1}\right)  <_{1}\left(  a_{3}%
 a_{3},b_{3}\right)  \right)  $ (by the definition of the relation $<_{1}$).
 Thus, we have $\left(  a_{1}\leq a_{3}\text{ and }b_{1}\leq b_{3}\text{ and
 }\left(  a_{1},b_{1}\right)  \neq\left(  a_{3},b_{3}\right)  \right)  $ (since
-$\left(  a_{1},b_{1}\right)  <_{1}\left(  a_{3},b_{3}\right)  $ holds). Hence,
-$a_{1}\leq a_{3}$ and $b_{1}\leq b_{3}$ and $\left(  a_{1},b_{1}\right)
-\neq\left(  a_{3},b_{3}\right)  $.
+$\left(  a_{1},b_{1}\right)  <_{1}\left(  a_{3},b_{3}\right)  $ holds).
+%Hence,
+%$a_{1}\leq a_{3}$ and $b_{1}\leq b_{3}$ and $\left(  a_{1},b_{1}\right)
+%\neq\left(  a_{3},b_{3}\right)  $.
 \par
 Now, $a_{1}\leq a_{3}\leq a_{3}$ and $b_{1}\leq b_{1}\leq b_{3}$. Hence,
 (\ref{pf.prop.example.sst.gen.2}) (applied to $\left(  a_{2},b_{2}\right)
@@ -10345,17 +10137,10 @@ $-partitions are precisely the semistandard tableaux of shape $\lambda/\mu$
 /\mu\right)  ,<_{1},<_{2}\right)  $). This proves Proposition
 \ref{prop.example.sst} (a).
 
-(b) It is straightforward to see that the relation $<_{h}$ satisfies the
-Conditions $\mathcal{O}_{1}$ and $\mathcal{O}_{2}$ in the statement of
-Proposition \ref{prop.example.sst.gen} (with $\prec$ replaced by $<_{h}$).
-Hence, Proposition \ref{prop.example.sst.gen} (applied to $<_{h}$ instead of
-$\prec$) shows that the $\left(  Y\left(  \lambda/\mu\right)  ,<_{1}%
-,<_{h}\right)  $-partitions are precisely the semistandard tableaux of shape
-$\lambda/\mu$. In other words, the $\mathbf{Y}_{h}\left(  \lambda/\mu\right)
-$-partitions are precisely the semistandard tableaux of shape $\lambda/\mu$
-(since $\mathbf{Y}_{h}\left(  \lambda/\mu\right)  =\left(  Y\left(
-\lambda/\mu\right)  ,<_{1},<_{h}\right)  $). This proves Proposition
-\ref{prop.example.sst} (b).
+(b) The proof of Proposition \ref{prop.example.sst} (b) is analogous to that
+of Proposition \ref{prop.example.sst} (a) (but now, the relation $<_{h}$ and
+the double poset $\mathbf{Y}_{h}\left(  \lambda/\mu\right)  $ replace the
+relation $<_{2}$ and the double poset $\mathbf{Y}\left(  \lambda/\mu\right)  $).
 \end{proof}
 
 \subsection{$M_{\alpha}$ as $\Gamma\left(  \mathbf{E},w\right)  $}
@@ -10394,12 +10179,14 @@ This proves Proposition \ref{prop.example.Gamma.b} (a).
 (b) The map $w$ is a map $E\rightarrow\left\{  1,2,3,\ldots\right\}  $. In
 other words, the map $w$ is a map $\left\{  1,2,\ldots,\ell\right\}
 \rightarrow\left\{  1,2,3,\ldots\right\}  $ (since $E=\left\{  1,2,\ldots
-,\ell\right\}  $). Hence, for every $i\in\left\{  1,2,\ldots,\ell\right\}  $,
-we have $w\left(  i\right)  \in\left\{  1,2,3,\ldots\right\}  $. Thus,
-$\left(  w\left(  1\right)  ,w\left(  2\right)  ,\ldots,w\left(  \ell\right)
-\right)  $ is a sequence of positive integers, i.e., a composition. In other
-words, $\alpha$ is a composition (since $\alpha=\left(  w\left(  1\right)
-,w\left(  2\right)  ,\ldots,w\left(  \ell\right)  \right)  $).
+,\ell\right\}  $).
+%Hence, for every $i\in\left\{  1,2,\ldots,\ell\right\}  $,
+%we have $w\left(  i\right)  \in\left\{  1,2,3,\ldots\right\}  $.
+Thus, $\left(  w\left(  1\right)  ,w\left(  2\right)  ,\ldots,w\left(
+\ell\right)  \right)  $ is a sequence of positive integers, i.e., a
+composition. In other words, $\alpha$ is a composition (since $\alpha=\left(
+w\left(  1\right)  ,w\left(  2\right)  ,\ldots,w\left(  \ell\right)  \right)
+$).
 
 We have $\alpha=\left(  w\left(  1\right)  ,w\left(  2\right)  ,\ldots
 ,w\left(  \ell\right)  \right)  $. Thus, the definition of $M_{\alpha}$ yields%
@@ -10456,21 +10243,21 @@ map\textquotedblright).
 The map $\phi$ is a map $E\rightarrow\left\{  1,2,3,\ldots\right\}  $. In
 other words, the map $\phi$ is a map $\left\{  1,2,\ldots,\ell\right\}
 \rightarrow\left\{  1,2,3,\ldots\right\}  $ (since $E=\left\{  1,2,\ldots
-,\ell\right\}  $). Thus, $\phi\left(  i\right)  \in\left\{  1,2,3,\ldots
-\right\}  $ for every $i\in\left\{  1,2,\ldots,\ell\right\}  $. Hence,
-$\left(  \phi\left(  1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(
-\ell\right)  \right)  $ is an element of $\left\{  1,2,3,\ldots\right\}
-^{\ell}$.
+,\ell\right\}  $).
+%Thus, $\phi\left(  i\right)  \in\left\{  1,2,3,\ldots
+%\right\}  $ for every $i\in\left\{  1,2,\ldots,\ell\right\}  $.
+Hence, $\left(  \phi\left(  1\right)  ,\phi\left(  2\right)  ,\ldots
+,\phi\left(  \ell\right)  \right)  $ is an element of $\left\{  1,2,3,\ldots
+\right\}  ^{\ell}$.
 \par
 Now, let $i$ and $j$ be two elements of $\left\{  1,2,\ldots,\ell\right\}  $
-satisfying $i<j$. We have $i\in\left\{  1,2,\ldots,\ell\right\}  =E$; thus,
-$\phi\left(  i\right)  $ is well-defined. Similarly, $\phi\left(  j\right)  $
-is well-defined. The definition of the relation $<_{1}$ shows that the
-relation $<_{1}$ is the restriction of the standard relation $<$ on
-$\mathbb{Z}$ to the subset $E$. Thus, $i<_{1}j$ if and only if $i<j$. Hence,
-$i<_{1}j$ (since $i<j$). Thus, (\ref{pf.prop.example.Gamma.b.b.fn1.1})
-(applied to $e=i$ and $f=j$) shows that $\phi\left(  i\right)  <\phi\left(
-j\right)  $.
+satisfying $i<j$. The elements $\phi\left(  i\right)  $ and $\phi\left(
+j\right)  $ are well-defined (since $i$ and $j$ belong to $\left\{
+1,2,\ldots,\ell\right\}  = E$). We furthermore have $i < j$. In other words,
+$i <_{1} j$ (since the relation $<_{1}$ is the restriction of the standard
+relation $<$ on $\mathbb{Z}$ to the subset $E$). Thus,
+(\ref{pf.prop.example.Gamma.b.b.fn1.1}) (applied to $e=i$ and $f=j$) shows
+that $\phi\left(  i\right)  <\phi\left(  j\right)  $.
 \par
 Now, forget that we fixed $i$ and $j$. We thus have shown that if $i$ and $j$
 are two elements of $\left\{  1,2,\ldots,\ell\right\}  $ satisfying $i<j$,
@@ -10481,16 +10268,12 @@ $.
 Now, $\left(  \phi\left(  1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(
 \ell\right)  \right)  $ is an element of $\left\{  1,2,3,\ldots\right\}
 ^{\ell}$ and satisfies $\phi\left(  1\right)  <\phi\left(  2\right)
-<\cdots<\phi\left(  \ell\right)  $. In other words, $\left(  \phi\left(
-1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(  \ell\right)  \right)  $
-is an $\left(  i_{1},i_{2},\ldots,i_{\ell}\right)  \in\left\{  1,2,3,\ldots
-\right\}  ^{\ell}$ satisfying $i_{1}<i_{2}<\cdots<i_{\ell}$. Hence,%
+<\cdots<\phi\left(  \ell\right)  $. Hence,
 \begin{align*}
 &  \left(  \phi\left(  1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(
-\ell\right)  \right) \\
-&  \in\left\{  \left(  i_{1},i_{2},\ldots,i_{\ell}\right)  \in\left\{
-1,2,3,\ldots\right\}  ^{\ell}\ \mid\ i_{1}<i_{2}<\cdots<i_{\ell}\right\}
-=\mathcal{J},
+\ell\right)  \right)  \in\left\{  \left(  i_{1},i_{2},\ldots,i_{\ell}\right)
+\in\left\{  1,2,3,\ldots\right\}  ^{\ell}\ \mid\ i_{1}<i_{2}<\cdots<i_{\ell
+}\right\}  =\mathcal{J},
 \end{align*}
 qed.}. Hence, we can define a map $\Phi:Z\rightarrow\mathcal{J}$ by%
 \[
@@ -10549,10 +10332,9 @@ elements of $\left\{  1,2,\ldots,\ell\right\}  $ such that $e<f$, then%
 i_{e}<i_{f}. \label{pf.prop.example.Gamma.b.b.fn3.1}%
 \end{equation}
 \par
-Let $e$ and $f$ be two elements of $E$ satisfying $e<_{1}f$. The definition of
-the relation $<_{1}$ shows that the relation $<_{1}$ is the restriction of the
-standard relation $<$ on $\mathbb{Z}$ to the subset $E$. Thus, $e<_{1}f$ if
-and only if $e<f$. Hence, $e<f$ (since $e<_{1}f$). Thus,
+Let $e$ and $f$ be two elements of $E$ satisfying $e<_{1}f$. From $e <_{1} f$,
+we obtain $e < f$ (since the relation $<_{1}$ is the restriction of the
+standard relation $<$ on $\mathbb{Z}$ to the subset $E$). Thus,
 (\ref{pf.prop.example.Gamma.b.b.fn3.1}) shows that $i_{e}<i_{f}$. But the
 definition of $\phi$ shows that $\phi\left(  e\right)  =i_{e}$ and
 $\phi\left(  f\right)  =i_{f}$. Hence, $\phi\left(  e\right)  =i_{e}%
@@ -10563,12 +10345,11 @@ are two elements of $E$ satisfying $e<_{1}f$, then $\phi\left(  e\right)
 <\phi\left(  f\right)  $. In other words, $\phi$ is a strictly increasing map
 from the poset $\left(  E,<_{1}\right)  $ to the totally ordered set $\left\{
 1,2,3,\ldots\right\}  $ (by the definition of a \textquotedblleft strictly
-increasing map\textquotedblright\ (since $\phi$ is a map from $E$ to $\left\{
-1,2,3,\ldots\right\}  $)). In other words, $\phi$ is an $\mathbf{E}$-partition
-(since the $\mathbf{E}$-partitions are precisely the strictly increasing maps
-from the poset $\left(  E,<_{1}\right)  $ to the totally ordered set $\left\{
-1,2,3,\ldots\right\}  $). In other words, $\phi$ is an element of $Z$ (since
-$Z$ is the set of all $\mathbf{E}$-partitions). In other words, $\phi\in Z$.
+increasing map\textquotedblright). In other words, $\phi$ is an $\mathbf{E}%
+$-partition (since the $\mathbf{E}$-partitions are precisely the strictly
+increasing maps from the poset $\left(  E,<_{1}\right)  $ to the totally
+ordered set $\left\{  1,2,3,\ldots\right\}  $). In other words, $\phi\in Z$
+(since $Z$ is the set of all $\mathbf{E}$-partitions).
 \par
 We have $\phi\left(  e\right)  =i_{e}$ for every $e\in E$ (by the definition
 of $\phi$). In other words, $\phi\left(  e\right)  =i_{e}$ for every
@@ -10597,10 +10378,10 @@ Z\rightarrow\mathcal{J},\ \ \ \ \ \ \ \ \ \ \phi\mapsto\left(  \phi\left(
 1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(  \ell\right)  \right)
 \label{pf.prop.example.Gamma.b.b.themap}%
 \end{equation}
-is a bijection (since the map (\ref{pf.prop.example.Gamma.b.b.themap}) is the
-map $\Phi$ (because $\Phi\left(  \phi\right)  =\left(  \phi\left(  1\right)
-,\phi\left(  2\right)  ,\ldots,\phi\left(  \ell\right)  \right)  $ for every
-$\phi\in Z$)).
+is a bijection\footnote{since the map (\ref{pf.prop.example.Gamma.b.b.themap})
+is the map $\Phi$ (because $\Phi\left(  \phi\right)  =\left(  \phi\left(
+1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(  \ell\right)  \right)  $
+for every $\phi\in Z$)}.
 
 For every $\pi\in Z$, we have%
 \begin{equation}
@@ -10612,14 +10393,11 @@ x_{\pi\left(  2\right)  }^{w\left(  2\right)  }\cdots x_{\pi\left(
 Z$. Then, the definition of $\mathbf{x}_{\pi,w}$ yields%
 \begin{align*}
 {\mathbf{x}}_{\pi,w}  &  =\prod_{e\in E}x_{\pi\left(  e\right)  }^{w\left(
-e\right)  }=\prod_{i\in E}x_{\pi\left(  i\right)  }^{w\left(  i\right)
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }e\text{ as
-}i\right) \\
-&  =\underbrace{\prod_{i\in\left\{  1,2,\ldots,\ell\right\}  }}_{=\prod
-_{i=1}^{\ell}}x_{\pi\left(  i\right)  }^{w\left(  i\right)  }%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }E=\left\{  1,2,\ldots,\ell\right\}
+e\right)  } =\underbrace{\prod_{e\in\left\{  1,2,\ldots,\ell\right\}  }%
+}_{=\prod_{e=1}^{\ell}}x_{\pi\left(  e\right)  }^{w\left(  e\right)
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }E=\left\{  1,2,\ldots,\ell\right\}
 \right) \\
-&  =\prod_{i=1}^{\ell}x_{\pi\left(  i\right)  }^{w\left(  i\right)  }%
+&  =\prod_{e=1}^{\ell}x_{\pi\left(  e\right)  }^{w\left(  e\right)  }%
 =x_{\pi\left(  1\right)  }^{w\left(  1\right)  }x_{\pi\left(  2\right)
 }^{w\left(  2\right)  }\cdots x_{\pi\left(  \ell\right)  }^{w\left(
 \ell\right)  }.
@@ -10638,11 +10416,6 @@ Now, the definition of $\Gamma\left(  \mathbf{E},w\right)  $ yields%
 _{\pi\in Z}x_{\pi\left(  1\right)  }^{w\left(  1\right)  }x_{\pi\left(
 2\right)  }^{w\left(  2\right)  }\cdots x_{\pi\left(  \ell\right)  }^{w\left(
 \ell\right)  }\\
-&  =\sum_{\phi\in Z}x_{\phi\left(  1\right)  }^{w\left(  1\right)  }%
-x_{\phi\left(  2\right)  }^{w\left(  2\right)  }\cdots x_{\phi\left(
-\ell\right)  }^{w\left(  \ell\right)  }\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the summation index }
-\pi\text{ as } \phi\right) \\
 &  =\underbrace{\sum_{\left(  i_{1},i_{2},\ldots,i_{\ell}\right)
 \in\mathcal{J}}}_{=\sum_{i_{1}<i_{2}<\cdots<i_{\ell}}}x_{i_{1}}^{w\left(
 1\right)  }x_{i_{2}}^{w\left(  2\right)  }\cdots x_{i_{\ell}}^{w\left(
@@ -10651,8 +10424,8 @@ x_{\phi\left(  2\right)  }^{w\left(  2\right)  }\cdots x_{\phi\left(
 \begin{array}
 [c]{c}%
 \text{here, we have substituted }\left(  i_{1},i_{2},\ldots,i_{\ell}\right)
-\text{ for }\left(  \phi\left(  1\right)  ,\phi\left(  2\right)  ,\ldots
-,\phi\left(  \ell\right)  \right)  \text{,}\\
+\text{ for }\left(  \pi\left(  1\right)  ,\pi\left(  2\right)  ,\ldots
+,\pi\left(  \ell\right)  \right)  \text{,}\\
 \text{since the map }Z\rightarrow\mathcal{J},\ \phi\mapsto\left(  \phi\left(
 1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(  \ell\right)  \right) \\
 \text{is a bijection}%
@@ -10678,19 +10451,17 @@ $\Gamma\left(  {\mathbf{E}},w\right)  =M_{\alpha}$.
 
 \begin{proof}
 [Proof of Corollary \ref{cor.Malpha.Gamma}.]Write the composition $\alpha$ in
-the form $\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $. Thus,
-$\alpha=\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $. Hence,
-$\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $ is a composition
-(since $\alpha$ is a composition). Therefore, $\alpha_{i}\in\left\{
-1,2,3,\ldots\right\}  $ for every $i\in\left\{  1,2,\ldots,\ell\right\}  $.
+the form $\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $.
+%Thus, $\alpha=\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $.
+Hence, $\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $ is a
+composition (since $\alpha$ is a composition). Therefore, $\alpha_{i}%
+\in\left\{  1,2,3,\ldots\right\}  $ for every $i\in\left\{  1,2,\ldots
+,\ell\right\}  $.
 
-Let $E=\left\{  1,2,\ldots,\ell\right\}  $. Let $<_{1}$ be the restriction of
-the standard relation $<$ on $\mathbb{Z}$ to the subset $E$. (Thus, two
-elements $e$ and $f$ of $E$ satisfy $e<_{1}f$ if and only if $e<f$.) Let
-$>_{1}$ be the opposite relation of $<_{1}$. (Thus, two elements $e$ and $f$
-of $E$ satisfy $e>_{1}f$ if and only if $f<_{1}e$.) Let ${\mathbf{E}}=\left(
-E,<_{1},>_{1}\right)  $. Proposition \ref{prop.example.Gamma.b} (a) then shows
-that $\mathbf{E}$ is a special double poset.
+Define the set $E$, the relations $<_{1}$ and $<_{1}$, and the double poset
+${\mathbf{E}} = \left(  E, <_{1}, >_{1}\right)  $ as in Proposition
+\ref{prop.example.Gamma.b} (a). Then, Proposition \ref{prop.example.Gamma.b}
+(a) shows that $\mathbf{E}$ is a special double poset.
 
 Define a map $w:\left\{  1,2,\ldots,\ell\right\}  \rightarrow\left\{
 1,2,3,\ldots\right\}  $ by $\left(  w\left(  i\right)  =\alpha_{i}\text{ for
@@ -10699,21 +10470,23 @@ well-defined, since $\alpha_{i}\in\left\{  1,2,3,\ldots\right\}  $ for every
 $i\in\left\{  1,2,\ldots,\ell\right\}  $). Then, $w$ is a map $\left\{
 1,2,\ldots,\ell\right\}  \rightarrow\left\{  1,2,3,\ldots\right\}  $. In other
 words, $w$ is a map $E\rightarrow\left\{  1,2,3,\ldots\right\}  $ (since
-$E=\left\{  1,2,\ldots,\ell\right\}  $). We have
+$E=\left\{  1,2,\ldots,\ell\right\}  $).
+
+Recall that $w\left(  i\right)  =\alpha_{i}$ for every $i\in\left\{
+1,2,\ldots,\ell\right\}  $. Thus,
 \begin{align*}
 \left(  w\left(  1\right)  ,w\left(  2\right)  ,\ldots,w\left(  \ell\right)
-\right)   &  =\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }w\left(  i\right)  =\alpha
-_{i}\text{ for every }i\in\left\{  1,2,\ldots,\ell\right\}  \right) \\
-&  =\alpha.
+\right)   &  =\left(  \alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)
+=\alpha.
 \end{align*}
 In other words, $\alpha=\left(  w\left(  1\right)  ,w\left(  2\right)
 ,\ldots,w\left(  \ell\right)  \right)  $. Proposition
 \ref{prop.example.Gamma.b} (b) thus shows that $\alpha$ is a composition and
 satisfies $\Gamma\left(  {\mathbf{E}},w\right)  =M_{\alpha}$.
 
-Now, let us forget that we have defined $E$, $<_{1}$, $>_{1}$ and $\mathbf{E}%
-$. We thus have constructed a set $E$, a special double poset ${\mathbf{E}%
+%Now, let us forget that we have defined $E$, $<_{1}$, $>_{1}$ and $\mathbf{E}%
+%$.
+We thus have constructed a set $E$, a special double poset ${\mathbf{E}%
 }=\left(  E,<_{1},>_{1}\right)  $, and a map $w:E\rightarrow\left\{
 1,2,3,\ldots\right\}  $ satisfying $\Gamma\left(  {\mathbf{E}},w\right)
 =M_{\alpha}$. Hence, there exist a set $E$, a special double poset
@@ -10739,7 +10512,7 @@ set. Then, we define a set $\bigsqcup_{i\in I}E_{i}$ by%
 E_{i}\right)  .
 \]
 (Notice that the sets $\left\{  i\right\}  \times E_{i}$ for distinct $i\in I$
-are disjoint\footnotemark.) The set $\bigsqcup_{i\in I}E_{i}$ is called the
+are disjoint.) The set $\bigsqcup_{i\in I}E_{i}$ is called the
 \textit{disjoint union} of the sets $E_{i}$. Thus, an element of this disjoint
 union $\bigsqcup_{i\in I}E_{i}$ is a pair $\left(  i,e\right)  $, where $i$ is
 an element of $I$ and where $e$ is an element of $E_{i}$.
@@ -10774,44 +10547,6 @@ each $E_{i}$ is canonically embedded in such a way that all the embeddings
 have disjoint images).
 \end{definition}
 
-\footnotetext{\textit{Proof.} Let $i$ and $j$ be two distinct elements of $I$.
-We shall show that the sets $\left\{  i\right\}  \times E_{i}$ and $\left\{
-j\right\}  \times E_{j}$ are disjoint.
-\par
-Indeed, assume the contrary. Thus, the sets $\left\{  i\right\}  \times E_{i}$
-and $\left\{  j\right\}  \times E_{j}$ are not disjoint. In other words,
-$\left(  \left\{  i\right\}  \times E_{i}\right)  \cap\left(  \left\{
-j\right\}  \times E_{j}\right)  \neq\varnothing$. Hence, the set $\left(
-\left\{  i\right\}  \times E_{i}\right)  \cap\left(  \left\{  j\right\}
-\times E_{j}\right)  $ is nonempty, and thus contains an element. In other
-words, there exists some $v\in\left(  \left\{  i\right\}  \times E_{i}\right)
-\cap\left(  \left\{  j\right\}  \times E_{j}\right)  $. Consider this $v$.
-\par
-We have $v\in\left(  \left\{  i\right\}  \times E_{i}\right)  \cap\left(
-\left\{  j\right\}  \times E_{j}\right)  \subseteq\left\{  i\right\}  \times
-E_{i}$. In other words, $v=\left(  p,e\right)  $ for some $p\in\left\{
-i\right\}  $ and $e\in E_{i}$. Consider these $p$ and $e$.
-\par
-We have $v\in\left(  \left\{  i\right\}  \times E_{i}\right)  \cap\left(
-\left\{  j\right\}  \times E_{j}\right)  \subseteq\left\{  j\right\}  \times
-E_{j}$. In other words, $v=\left(  q,f\right)  $ for some $q\in\left\{
-j\right\}  $ and $f\in E_{j}$. Consider these $q$ and $f$.
-\par
-We have $\left(  p,e\right)  =v=\left(  q,f\right)  $. In other words, $p=q$
-and $e=f$. Now, $p\in\left\{  i\right\}  $, so that $p=i$. Hence,
-$i=p=q\in\left\{  j\right\}  $, so that $i=j$. This contradicts the fact that
-$i$ and $j$ are distinct.
-\par
-This contradiction proves that our assumption was wrong. Hence, the sets
-$\left\{  i\right\}  \times E_{i}$ and $\left\{  j\right\}  \times E_{j}$ are
-disjoint.
-\par
-Now, forget that we fixed $i$ and $j$. We thus have shown that if $i$ and $j$
-are two distinct elements of $I$, then the sets $\left\{  i\right\}  \times
-E_{i}$ and $\left\{  j\right\}  \times E_{j}$ are disjoint. In other words,
-the sets $\left\{  i\right\}  \times E_{i}$ for distinct $i\in I$ are
-disjoint. Qed.}
-
 We have thus defined the disjoint union of arbitrarily many sets. As a
 particular case of this construction, we can define the disjoint union of two sets:
 
@@ -10843,34 +10578,6 @@ and an $e\in E_{i}$ such that $x=\left(  i,e\right)  $.
 \end{enumerate}
 \end{remark}
 
-\begin{proof}
-[Proof of Remark \ref{rmk.djun.elt}.](a) The claim of Remark
-\ref{rmk.djun.elt} (a) was already proven in Definition \ref{def.djun.sets}.
-
-(b) Let $j\in I$ and $e\in E_{j}$. Then, $\left(  j,e\right)  \in\left\{
-j\right\}  \times E_{j}$ (since $j\in\left\{  j\right\}  $ and $e\in E_{j}$).
-But $\left\{  j\right\}  \times E_{j}$ is a term in the union $\bigcup_{i\in
-I}\left(  \left\{  i\right\}  \times E_{i}\right)  $. Hence, $\left\{
-j\right\}  \times E_{j}\subseteq\bigcup_{i\in I}\left(  \left\{  i\right\}
-\times E_{i}\right)  $. Finally, the definition of $\bigsqcup_{i\in I}E_{i}$
-yields $\bigsqcup_{i\in I}E_{i}=\bigcup_{i\in I}\left(  \left\{  i\right\}
-\times E_{i}\right)  $. Now, $\left(  j,e\right)  \in\left\{  j\right\}
-\times E_{j}\subseteq\bigcup_{i\in I}\left(  \left\{  i\right\}  \times
-E_{i}\right)  =\bigsqcup_{i\in I}E_{i}$. This proves Remark \ref{rmk.djun.elt} (b).
-
-(c) We have $x\in\bigsqcup_{i\in I}E_{i}=\bigcup_{i\in I}\left(  \left\{
-i\right\}  \times E_{i}\right)  $. In other words, there exists some $i\in I$
-such that $x\in\left\{  i\right\}  \times E_{i}$. Denote this $i$ by $j$.
-Thus, $j\in I$ and $x\in\left\{  j\right\}  \times E_{j}$.
-
-We have $x\in\left\{  j\right\}  \times E_{j}$. In other words, $x=\left(
-u,f\right)  $ for some $u\in\left\{  j\right\}  $ and $f\in E_{j}$. Consider
-these $u$ and $f$. We have $u\in\left\{  j\right\}  $ and thus $u=j$. Hence,
-$x=\left(  \underbrace{u}_{=j},f\right)  =\left(  j,f\right)  $. Thus, there
-exist an $i\in I$ and an $e\in E_{i}$ such that $x=\left(  i,e\right)  $
-(namely, $i=j$ and $e=f$). This proves Remark \ref{rmk.djun.elt} (c).
-\end{proof}
-
 A basic map associated to any disjoint union is its \textit{index map}:
 
 \begin{definition}
@@ -10895,22 +10602,6 @@ be a set. For each $j\in I$ and $e\in E_{j}$, we have $\operatorname*{ind}%
 \left(  j,e\right)  =j$.
 \end{remark}
 
-\begin{proof}
-[Proof of Remark \ref{rmk.djun.ind.explicit}.]The definition of
-$\operatorname*{ind}$ shows that if $x\in\bigsqcup_{i\in I}E_{i}$, and if
-$i\in I$ and $e\in E_{i}$ are such that $x=\left(  i,e\right)  $, then
-\begin{equation}
-\operatorname*{ind}\left(  x\right)  =i. \label{pf.rmk.djun.ind.explicit.1}%
-\end{equation}
-
-
-Let $j\in I$ and $e\in E_{j}$. Then, $\left(  j,e\right)  \in\bigsqcup_{i\in
-I}E_{i}$ (by Remark \ref{rmk.djun.elt} (b)). Thus,
-(\ref{pf.rmk.djun.ind.explicit.1}) (applied to $x=\left(  j,e\right)  $ and
-$i=j$) yields that $\operatorname*{ind}\left(  j,e\right)  =j$. This proves
-Remark \ref{rmk.djun.ind.explicit}.
-\end{proof}
-
 \begin{proposition}
 \label{prop.djun.ind.bij}Let $I$ be a set. For each $i\in I$, let $E_{i}$ be a
 set. Consider the map $\operatorname*{ind}:\bigsqcup_{i\in I}E_{i}\rightarrow
@@ -10924,103 +10615,9 @@ E_{j}\rightarrow\operatorname*{ind}\nolimits^{-1}\left(  j\right)
 is well-defined and a bijection.
 \end{proposition}
 
-\begin{proof}
-[Proof of Proposition \ref{prop.djun.ind.bij}.]For every $e\in E_{j}$, we have
-$\left(  j,e\right)  \in\operatorname*{ind}\nolimits^{-1}\left(  j\right)
-$\ \ \ \ \footnote{\textit{Proof.} Let $e\in E_{j}$. Then, $\left(
-j,e\right)  \in\bigsqcup_{i\in I}E_{i}$ (by Remark \ref{rmk.djun.elt} (b)).
-Moreover, $\operatorname*{ind}\left(  j,e\right)  =j$ (by Remark
-\ref{rmk.djun.ind.explicit}), so that $\left(  j,e\right)  \in
-\operatorname*{ind}\nolimits^{-1}\left(  j\right)  $. Qed.}. Thus, the map%
-\[
-E_{j}\rightarrow\operatorname*{ind}\nolimits^{-1}\left(  j\right)
-,\ \ \ \ \ \ \ \ \ \ e\mapsto\left(  j,e\right)
-\]
-is well-defined. Denote this map by $\alpha$. Thus, $\alpha$ is a map
-$E_{j}\rightarrow\operatorname*{ind}\nolimits^{-1}\left(  j\right)  $, and
-satisfies $\alpha\left(  e\right)  =\left(  j,e\right)  $ for each $e\in
-E_{j}$.
-
-We now define a map $\beta:\operatorname*{ind}\nolimits^{-1}\left(  j\right)
-\rightarrow E_{j}$ as follows: Let $x\in\operatorname*{ind}\nolimits^{-1}%
-\left(  j\right)  $. Thus, $x\in E$ and $\operatorname*{ind}\left(  x\right)
-=j$. We have $x\in E=\bigsqcup_{i\in I}E_{i}$. Thus, there exist an $i\in I$
-and an $e\in E_{i}$ such that $x=\left(  i,e\right)  $ (by Remark
-\ref{rmk.djun.elt} (c)). Consider these $i$ and $e$. We have
-$\operatorname*{ind}\left(  i,e\right)  =i$ (by Remark
-\ref{rmk.djun.ind.explicit}, applied to $i$ instead of $j$). Thus,
-$i=\operatorname*{ind}\underbrace{\left(  i,e\right)  }_{=x}%
-=\operatorname*{ind}\left(  x\right)  =j$. Now, $e\in E_{i}=E_{j}$ (since
-$i=j$).
-
-Clearly, $\left(  i,e\right)  $ is uniquely determined by $x$ (since $\left(
-i,e\right)  =x$). Hence, both $i$ and $e$ are uniquely determined by $x$
-(since $i$ and $e$ are the two entries of the pair $\left(  i,e\right)  $).
-Set $\beta\left(  x\right)  =e$. Thus, a map $\beta:\operatorname*{ind}%
-\nolimits^{-1}\left(  j\right)  \rightarrow E_{j}$ is defined (since $e\in
-E_{j}$).
-
-The definition of $\beta$ shows that if $x\in\operatorname*{ind}%
-\nolimits^{-1}\left(  j\right)  $, and if $i\in I$ and $e\in E_{i}$ are such
-that $x=\left(  i,e\right)  $, then%
-\begin{equation}
-\beta\left(  x\right)  =e. \label{pf.prop.djun.ind.bij.beta1}%
-\end{equation}
-
-
-Now, $\alpha\circ\beta=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.}
-Let $x\in\operatorname*{ind}\nolimits^{-1}\left(  j\right)  $. Thus, $x\in E$
-and $\operatorname*{ind}\left(  x\right)  =j$. We have $x\in E=\bigsqcup_{i\in
-I}E_{i}$. Thus, there exist an $i\in I$ and an $e\in E_{i}$ such that
-$x=\left(  i,e\right)  $ (by Remark \ref{rmk.djun.elt} (c)). Consider these
-$i$ and $e$. We have $\operatorname*{ind}\left(  i,e\right)  =i$ (by Remark
-\ref{rmk.djun.ind.explicit}, applied to $i$ instead of $j$). Thus,
-$i=\operatorname*{ind}\underbrace{\left(  i,e\right)  }_{=x}%
-=\operatorname*{ind}\left(  x\right)  =j$. Now, $e\in E_{i}=E_{j}$ (since
-$i=j$) and $\beta\left(  x\right)  =e$ (by (\ref{pf.prop.djun.ind.bij.beta1}%
-)). Now,%
-\[
-\left(  \alpha\circ\beta\right)  \left(  x\right)  =\alpha\left(
-\underbrace{\beta\left(  x\right)  }_{=j}\right)  =\alpha\left(  e\right)
-=\left(  j,e\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of
-}\alpha\right)  .
-\]
-Comparing this with $\operatorname*{id}\left(  x\right)  =x=\left(
-\underbrace{i}_{=j},e\right)  =\left(  j,e\right)  $, we obtain $\left(
-\alpha\circ\beta\right)  \left(  x\right)  =\operatorname*{id}\left(
-x\right)  $.
-\par
-Now, forget that we fixed $x$. We thus have shown that $\left(  \alpha
-\circ\beta\right)  \left(  x\right)  =\operatorname*{id}\left(  x\right)  $
-for each $x\in\operatorname*{ind}\nolimits^{-1}\left(  j\right)  $. In other
-words, $\alpha\circ\beta=\operatorname*{id}$. Qed.} and $\beta\circ
-\alpha=\operatorname*{id}$\ \ \ \ \footnote{\textit{Proof.} Let $e\in E_{j}$.
-Then, $\alpha\left(  e\right)  =\left(  j,e\right)  $ (by the definition of
-$\alpha$) and $\alpha\left(  e\right)  \in\operatorname*{ind}\nolimits^{-1}%
-\left(  j\right)  $ (since $\alpha$ is a map $E_{j}\rightarrow
-\operatorname*{ind}\nolimits^{-1}\left(  j\right)  $). Thus,
-(\ref{pf.prop.djun.ind.bij.beta1}) (applied to $\alpha\left(  e\right)  $ and
-$j$ instead of $x$ and $i$) yields $\beta\left(  \alpha\left(  e\right)
-\right)  =e$. Now, $\left(  \beta\circ\alpha\right)  \left(  e\right)
-=\beta\left(  \alpha\left(  e\right)  \right)  =e=\operatorname*{id}\left(
-e\right)  $.
-\par
-Now, forget that we fixed $e$. Thus, we have proven that $\left(  \beta
-\circ\alpha\right)  \left(  e\right)  =\operatorname*{id}\left(  e\right)  $
-for each $e\in E_{j}$. In other words, $\beta\circ\alpha=\operatorname*{id}$.
-Qed.}. Thus, the maps $\alpha$ and $\beta$ are mutually inverse. Hence, the
-map $\alpha$ is invertible, i.e., a bijection. In other words, the map
-\[
-E_{j}\rightarrow\operatorname*{ind}\nolimits^{-1}\left(  j\right)
-,\ \ \ \ \ \ \ \ \ \ e\mapsto\left(  j,e\right)
-\]
-is a bijection (since $\alpha$ is the map%
-\[
-E_{j}\rightarrow\operatorname*{ind}\nolimits^{-1}\left(  j\right)
-,\ \ \ \ \ \ \ \ \ \ e\mapsto\left(  j,e\right)
-\]
-). This completes the proof of Proposition \ref{prop.djun.ind.bij}.
-\end{proof}
+Remark~\ref{rmk.djun.elt}, Remark~\ref{rmk.djun.ind.explicit} and
+Proposition~\ref{prop.djun.ind.bij} are standard facts about sets, and their
+proofs are straightforward; we will not dwell on them here any longer.
 
 Here is a sample application of Proposition \ref{prop.djun.ind.bij} that we
 will actually use:
@@ -11056,11 +10653,7 @@ $\bigsqcup_{i\in I}E_{i}=\bigcup_{i\in I}\left(  \left\{  i\right\}  \times
 E_{i}\right)  $ (by the definition of $\bigsqcup_{i\in I}E_{i}$)). This proves
 Proposition \ref{prop.djun.ind.prod} (a).
 
-(b) The map $\operatorname{ind}$ is a map from $\bigsqcup_{i\in I}E_{i}$ to
-$I$. In other words, the map $\operatorname{ind}$ is a map from $E$ to $I$
-(since $\bigsqcup_{i\in I}E_{i} = E$).
-
-Let $i\in I$. Then, Proposition \ref{prop.djun.ind.bij} (applied to $j=i$)
+(b) Let $i\in I$. Then, Proposition \ref{prop.djun.ind.bij} (applied to $j=i$)
 shows that the map%
 \[
 E_{i}\rightarrow\operatorname*{ind}\nolimits^{-1}\left(  i\right)
@@ -11110,129 +10703,16 @@ such that every $j\in I$ satisfies $f_{j}=f\circ\operatorname*{inc}%
 \end{proposition}
 
 \begin{proof}
-[Proof of Proposition \ref{prop.djun.uniprop}.]We shall prove two claims:
-
-\textit{Claim 1:} There exists \textbf{at least one} map $f:\bigsqcup_{i\in
+[Proof of Proposition \ref{prop.djun.uniprop}.]Proposition
+\ref{prop.djun.uniprop} is another basic property of sets that we are not
+going to prove; let us merely exhibit the unique map $f:\bigsqcup_{i\in
 I}E_{i}\rightarrow F$ such that every $j\in I$ satisfies $f_{j}=f\circ
-\operatorname*{inc}\nolimits_{j}$.
-
-\textit{Claim 2:} There exists \textbf{at most one} map $f:\bigsqcup_{i\in
-I}E_{i}\rightarrow F$ such that every $j\in I$ satisfies $f_{j}=f\circ
-\operatorname*{inc}\nolimits_{j}$.
-
-\textit{Proof of Claim 1:} We define a map $\phi:\bigsqcup_{i\in I}%
-E_{i}\rightarrow F$ as follows:
-
-Let $x\in\bigsqcup_{i\in I}E_{i}$. Then, Remark \ref{rmk.djun.elt} (c) shows
-that there exist an $i\in I$ and an $e\in E_{i}$ such that $x=\left(
-i,e\right)  $. Consider these $i$ and $e$. The image $f_{i}\left(  e\right)
-\in F$ is well-defined (since $i\in I$ and $e\in E_{i}$). Moreover, $i$ and
-$e$ are clearly uniquely determined by $x$ (since they can be reconstructed
-from the pair $\left(  i,e\right)  =x$). Therefore, $f_{i}\left(  e\right)  $
-is uniquely determined by $x$. Hence, we can set $\phi\left(  x\right)
-=f_{i}\left(  e\right)  $.
-
-Thus, a map $\phi:\bigsqcup_{i\in I}E_{i}\rightarrow F$ is well-defined.
-According to its definition, it has the following property: For any
-$x\in\bigsqcup_{i\in I}E_{i}$, we have%
-\begin{equation}
-\phi\left(  x\right)  =f_{i}\left(  e\right)  ,
-\label{pf.prop.djun.uniprop.defphi}%
-\end{equation}
-if $i\in I$ and $e\in E_{i}$ are such that $x=\left(  i,e\right)  $.
-Therefore, every $i\in I$ and every $e\in E_{i}$ satisfy%
-\begin{equation}
-\phi\left(  i,e\right)  =f_{i}\left(  e\right)
-\label{pf.prop.djun.uniprop.defphi2}%
-\end{equation}
-\footnote{\textit{Proof of (\ref{pf.prop.djun.uniprop.defphi2}):} Let $j\in I$
-and $e\in E_{j}$. Then, $\left(  j,e\right)  \in\bigsqcup_{i\in I}E_{i}$ (by
-Remark \ref{rmk.djun.elt} (b)). Hence, (\ref{pf.prop.djun.uniprop.defphi})
-(applied to $x=\left(  j,e\right)  $ and $i=j$) shows that $\phi\left(
-j,e\right)  =f_{j}\left(  e\right)  $ (since $\left(  j,e\right)  =\left(
-j,e\right)  $).
-\par
-Now, forget that we fixed $j$ and $e$. We thus have shown that every $j\in I$
-and every $e\in E_{j}$ satisfy $\phi\left(  j,e\right)  =f_{j}\left(
-e\right)  $. Renaming $j$ as $i$ in this result, we conclude that every $i\in
-I$ and every $e\in E_{i}$ satisfy $\phi\left(  i,e\right)  =f_{i}\left(
-e\right)  $. This proves (\ref{pf.prop.djun.uniprop.defphi2}).}.
-
-Now, every $j\in I$ satisfies $f_{j}=\phi\circ\operatorname*{inc}%
-\nolimits_{j}$\ \ \ \ \footnote{\textit{Proof.} Let $j\in I$. Let $e\in E_{j}%
-$. Then, $\operatorname*{inc}\nolimits_{j}\left(  e\right)  =\left(
-j,e\right)  $ (by the definition of $\operatorname*{inc}\nolimits_{j}$). Now,%
+\operatorname*{inc}\nolimits_{j}$. Namely, this is the map
 \[
-\left(  \phi\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  e\right)
-=\phi\left(  \underbrace{\operatorname*{inc}\nolimits_{j}\left(  e\right)
-}_{=\left(  j,e\right)  }\right)  =\phi\left(  j,e\right)  =f_{j}\left(
-e\right)
+\bigsqcup_{i\in I}E_{i}\rightarrow F,\ \ \ \ \ \ \ \ \ \ \left(  i,e\right)
+\mapsto f_{i}\left(  e\right)  .
 \]
-(by (\ref{pf.prop.djun.uniprop.defphi2}), applied to $i=j$).
-\par
-Now, forget that we fixed $e$. We thus have proven that $\left(  \phi
-\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  e\right)  =f_{j}\left(
-e\right)  $ for every $e\in E_{j}$. In other words, $\phi\circ
-\operatorname*{inc}\nolimits_{j}=f_{j}$. In other words, $f_{j}=\phi
-\circ\operatorname*{inc}\nolimits_{j}$, qed.}. Hence, $\phi$ is a map
-$\bigsqcup_{i\in I}E_{i}\rightarrow F$ such that every $j\in I$ satisfies
-$f_{j}=\phi\circ\operatorname*{inc}\nolimits_{j}$. In other words, $\phi$ is a
-map $f:\bigsqcup_{i\in I}E_{i}\rightarrow F$ such that every $j\in I$
-satisfies $f_{j}=f\circ\operatorname*{inc}\nolimits_{j}$. Hence, there exists
-\textbf{at least one} map $f:\bigsqcup_{i\in I}E_{i}\rightarrow F$ such that
-every $j\in I$ satisfies $f_{j}=f\circ\operatorname*{inc}\nolimits_{j}$
-(namely, $\phi$). This proves Claim 1.
 
-\textit{Proof of Claim 2:} Let $\alpha$ and $\beta$ be two maps $f:\bigsqcup
-_{i\in I}E_{i}\rightarrow F$ such that every $j\in I$ satisfies $f_{j}%
-=f\circ\operatorname*{inc}\nolimits_{j}$. We shall prove that $\alpha=\beta$.
-
-We know that $\alpha$ is a map $f:\bigsqcup_{i\in I}E_{i}\rightarrow F$ such
-that every $j\in I$ satisfies $f_{j}=f\circ\operatorname*{inc}\nolimits_{j}$.
-In other words, $\alpha$ is a map $\bigsqcup_{i\in I}E_{i}\rightarrow F$ such
-that every $j\in I$ satisfies $f_{j}=\alpha\circ\operatorname*{inc}%
-\nolimits_{j}$.
-
-The same argument (applied to $\beta$ instead of $\alpha$) shows that $\beta$
-is a map $\bigsqcup_{i\in I}E_{i}\rightarrow F$ such that every $j\in I$
-satisfies $f_{j}=\beta\circ\operatorname*{inc}\nolimits_{j}$.
-
-Now, let $x\in\bigsqcup_{i\in I}E_{i}$. We shall prove that $\alpha\left(
-x\right)  =\beta\left(  x\right)  $.
-
-There exist an $i\in I$ and an $e\in E_{i}$ such that $x=\left(  i,e\right)  $
-(by Remark \ref{rmk.djun.elt} (c)). Denote these $i$ and $e$ by $j$ and $e$.
-Thus, $j\in I$ and $e\in E_{j}$ are such that $x=\left(  j,e\right)  $. But
-the definition of $\operatorname*{inc}\nolimits_{j}$ shows that
-$\operatorname*{inc}\nolimits_{j}\left(  e\right)  =\left(  j,e\right)  =x$.
-Now,%
-\[
-\underbrace{f_{j}}_{=\alpha\circ\operatorname*{inc}\nolimits_{j}}\left(
-e\right)  =\left(  \alpha\circ\operatorname*{inc}\nolimits_{j}\right)  \left(
-e\right)  =\alpha\left(  \underbrace{\operatorname*{inc}\nolimits_{j}\left(
-e\right)  }_{=x}\right)  =\alpha\left(  x\right)  .
-\]
-Hence, $\alpha\left(  x\right)  =f_{j}\left(  e\right)  $. The same argument
-(applied to $\beta$ instead of $\alpha$) shows that $\beta\left(  x\right)
-=f_{j}\left(  e\right)  $. Hence, $\alpha\left(  x\right)  =f_{j}\left(
-e\right)  =\beta\left(  x\right)  $.
-
-Now, forget that we fixed $x$. We thus have proven that $\alpha\left(
-x\right)  =\beta\left(  x\right)  $ for every $x\in\bigsqcup_{i\in I}E_{i}$.
-In other words, $\alpha=\beta$ (since both $\alpha$ and $\beta$ are maps
-$\bigsqcup_{i\in I}E_{i}\rightarrow F$).
-
-Now, forget that we fixed $\alpha$ and $\beta$. We thus have shown that if
-$\alpha$ and $\beta$ are two maps $f:\bigsqcup_{i\in I}E_{i}\rightarrow F$
-such that every $j\in I$ satisfies $f_{j}=f\circ\operatorname*{inc}%
-\nolimits_{j}$, then $\alpha=\beta$. In other words, there exists \textbf{at
-most one} map $f:\bigsqcup_{i\in I}E_{i}\rightarrow F$ such that every $j\in
-I$ satisfies $f_{j}=f\circ\operatorname*{inc}\nolimits_{j}$. This proves Claim 2.
-
-Combining Claim 1 and Claim 2, we conclude that there exists a unique map
-$f:\bigsqcup_{i\in I}E_{i}\rightarrow F$ such that every $j\in I$ satisfies
-$f_{j}=f\circ\operatorname*{inc}\nolimits_{j}$. This proves Proposition
-\ref{prop.djun.uniprop}.
 \end{proof}
 
 \begin{definition}
@@ -11265,11 +10745,8 @@ injective\footnote{\textit{Proof.} Let $\alpha$ and $\beta$ be two elements of
 $F^{\bigsqcup_{i\in I}E_{i}}$ such that $\operatorname*{Restr}\alpha
 =\operatorname*{Restr}\beta$. We shall prove that $\alpha=\beta$.
 \par
-We have $\alpha\in F^{\bigsqcup_{i\in I}E_{i}}$. In other words, $\alpha$ is a
-map $\bigsqcup_{i\in I}E_{i}\rightarrow F$.
-\par
-We have $\beta\in F^{\bigsqcup_{i\in I}E_{i}}$. In other words, $\beta$ is a
-map $\bigsqcup_{i\in I}E_{i}\rightarrow F$.
+Both $\alpha$ and $\beta$ are elements of $F^{\bigsqcup_{i\in I}E_{i}}$, hence
+are maps $\bigsqcup_{i\in I}E_{i}\rightarrow F$.
 \par
 We have $\operatorname*{Restr}\alpha=\left(  \alpha\circ\operatorname*{inc}%
 \nolimits_{i}\right)  _{i\in I}$ (by the definition of $\operatorname*{Restr}%
@@ -11312,8 +10789,7 @@ so that%
 \par
 Now, forget that we fixed $x$. We thus have proven that $\alpha\left(
 x\right)  =\beta\left(  x\right)  $ for every $x\in\bigsqcup_{i\in I}E_{i}$.
-In other words, $\alpha=\beta$ (since both $\alpha$ and $\beta$ are maps
-$\bigsqcup_{i\in I}E_{i}\rightarrow F$).
+In other words, $\alpha=\beta$.
 \par
 Now, forget that we fixed $\alpha$ and $\beta$. We thus have shown that if
 $\alpha$ and $\beta$ are two elements of $F^{\bigsqcup_{i\in I}E_{i}}$ such
@@ -11382,10 +10858,10 @@ called the \textit{direct sum} of the relations $\rho_{i}$.
 
 Notice that we are denoting the relation $\rho$ in Definition
 \ref{def.djun.rels} by $\bigoplus_{i\in I}\rho_{i}$ and not by $\bigsqcup
-_{i\in I}\rho_{i}$. The reason for this is that the relations $\rho_{i}$ are
-sets (of pairs of elements of $E_{i}$), and thus the expression $\bigsqcup
-_{i\in I}\rho_{i}$ already has a meaning, which is not the meaning we want to
-give $\bigoplus_{i\in I}\rho_{i}$.
+_{i\in I}\rho_{i}$. The (rather pedantic) reason for this is that the
+relations $\rho_{i}$ are sets (of pairs of elements of $E_{i}$), and thus the
+expression $\bigsqcup_{i\in I}\rho_{i}$ already has a meaning, which is not
+the meaning we want to give $\bigoplus_{i\in I}\rho_{i}$.
 
 \begin{proposition}
 \label{prop.djun.rels.strict}Let $I$ be a set. For each $i\in I$, let $E_{i}$
@@ -11443,44 +10919,36 @@ that $w=\left(  c,\gamma\right)  $. Thus, $\left(  c,\gamma\right)
 \par
 We have $u\rho v$. This rewrites as $\left(  a,\alpha\right)  \rho\left(
 b,\beta\right)  $ (since $u=\left(  a,\alpha\right)  $ and $v=\left(
-b,\beta\right)  $). But $\left(  a,\alpha\right)  $ and $\left(
-b,\beta\right)  $ are two elements of $\bigsqcup_{i\in I}E_{i}$. Hence,
-(\ref{pf.prop.djun.rels.strict.rhodef}) (applied to $\left(  j,e\right)
-=\left(  a,\alpha\right)  $ and $\left(  k,f\right)  =\left(  b,\beta\right)
-$) shows that we have the equivalence%
+b,\beta\right)  $). But (\ref{pf.prop.djun.rels.strict.rhodef}) (applied to
+$\left(  j,e\right)  =\left(  a,\alpha\right)  $ and $\left(  k,f\right)
+=\left(  b,\beta\right)  $) shows that we have the equivalence%
 \[
 \left(  \left(  a,\alpha\right)  \rho\left(  b,\beta\right)  \right)
 \ \Longleftrightarrow\ \left(  a=b\text{ and }\alpha\rho_{a}\beta\right)  .
 \]
 Thus, we have $\left(  a=b\text{ and }\alpha\rho_{a}\beta\right)  $ (since we
-have $\left(  a,\alpha\right)  \rho\left(  b,\beta\right)  $). Hence, $a=b$
-and $\alpha\rho_{a}\beta$.
+have $\left(  a,\alpha\right)  \rho\left(  b,\beta\right)  $).
 \par
 We have $v\rho w$. This rewrites as $\left(  b,\beta\right)  \rho\left(
 c,\gamma\right)  $ (since $v=\left(  b,\beta\right)  $ and $w=\left(
-c,\gamma\right)  $). But $\left(  b,\beta\right)  $ and $\left(
-c,\gamma\right)  $ are two elements of $\bigsqcup_{i\in I}E_{i}$. Hence,
-(\ref{pf.prop.djun.rels.strict.rhodef}) (applied to $\left(  j,e\right)
-=\left(  b,\beta\right)  $ and $\left(  k,f\right)  =\left(  c,\gamma\right)
-$) shows that we have the equivalence%
+c,\gamma\right)  $). But (\ref{pf.prop.djun.rels.strict.rhodef}) (applied to
+$\left(  j,e\right)  =\left(  b,\beta\right)  $ and $\left(  k,f\right)
+=\left(  c,\gamma\right)  $) shows that we have the equivalence%
 \[
 \left(  \left(  b,\beta\right)  \rho\left(  c,\gamma\right)  \right)
 \ \Longleftrightarrow\ \left(  b=c\text{ and }\beta\rho_{b}\gamma\right)  .
 \]
 Thus, we have $\left(  b=c\text{ and }\beta\rho_{b}\gamma\right)  $ (since we
 have $\left(  b,\beta\right)  \rho\left(  c,\gamma\right)  $). This rewrites
-as $\left(  a=c\text{ and }\beta\rho_{a}\gamma\right)  $ (since $a=b$). Hence,
-$a=c$ and $\beta\rho_{a}\gamma$.
+as $\left(  a=c\text{ and }\beta\rho_{a}\gamma\right)  $ (since $a=b$).
 \par
 The relation $\rho_{a}$ is a strict partial order on the set $E_{a}$ (since
 $\rho_{i}$ is a strict partial order on the set $E_{i}$ for each $i\in I$),
 and thus is transitive. Hence, from $\alpha\rho_{a}\beta$ and $\beta\rho
 _{a}\gamma$, we obtain $\alpha\rho_{a}\gamma$. Hence, $\left(  a=c\text{ and
-}\alpha\rho_{a}\gamma\right)  $. But $\left(  a,\alpha\right)  $ and $\left(
-c,\gamma\right)  $ are two elements of $\bigsqcup_{i\in I}E_{i}$. Hence,
-(\ref{pf.prop.djun.rels.strict.rhodef}) (applied to $\left(  j,e\right)
-=\left(  a,\alpha\right)  $ and $\left(  k,f\right)  =\left(  c,\gamma\right)
-$) shows that we have the equivalence%
+}\alpha\rho_{a}\gamma\right)  $. But (\ref{pf.prop.djun.rels.strict.rhodef})
+(applied to $\left(  j,e\right)  =\left(  a,\alpha\right)  $ and $\left(
+k,f\right)  =\left(  c,\gamma\right)  $) shows that we have the equivalence%
 \[
 \left(  \left(  a,\alpha\right)  \rho\left(  c,\gamma\right)  \right)
 \ \Longleftrightarrow\ \left(  a=c\text{ and }\alpha\rho_{a}\gamma\right)  .
@@ -11504,8 +10972,7 @@ that $u=\left(  a,\alpha\right)  $. Thus, $\left(  a,\alpha\right)
 =u\in\bigsqcup_{i\in I}E_{i}$.
 \par
 We have $u\rho u$. This rewrites as $\left(  a,\alpha\right)  \rho\left(
-a,\alpha\right)  $ (since $u=\left(  a,\alpha\right)  $). But $\left(
-a,\alpha\right)  $ is an element of $\bigsqcup_{i\in I}E_{i}$. Hence,
+a,\alpha\right)  $ (since $u=\left(  a,\alpha\right)  $). Hence,
 (\ref{pf.prop.djun.rels.strict.rhodef}) (applied to $\left(  j,e\right)
 =\left(  a,\alpha\right)  $ and $\left(  k,f\right)  =\left(  a,\alpha\right)
 $) shows that we have the equivalence%
@@ -11554,21 +11021,14 @@ double poset.
 [Proof of Proposition \ref{prop.djun.doubs}.]For each $i\in I$, we know that
 $E_{i}$ is a finite set (since $\left(  E_{i},<_{1,i},<_{2,i}\right)  $ is a
 double poset), and that $<_{1,i}$ and $<_{2,i}$ are two strict partial orders
-on the set $E_{i}$\ \ \ \ \footnote{\textit{Proof.} Let $i\in I$. We know that
-$\mathbf{E}_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $ be a double poset. In
-other words, $E_{i}$ is a finite set, and $<_{1,i}$ and $<_{2,i}$ are two
-strict partial orders on $E_{i}$ (by the definition of a \textquotedblleft
-double poset\textquotedblright). Qed.}.
+on the set $E_{i}$ (for the same reason).
 
 For each $i\in I$, the relation $<_{1,i}$ is a strict partial order on the set
 $E_{i}$. Thus, $\bigoplus_{i\in I}\left(  <_{1,i}\right)  $ is a strict
 partial order on the set $\bigsqcup_{i\in I}E_{i}$ (by Proposition
 \ref{prop.djun.rels.strict}, applied to $<_{1,i}$ instead of $\rho_{i}$).
-
-For each $i\in I$, the relation $<_{2,i}$ is a strict partial order on the set
-$E_{i}$. Thus, $\bigoplus_{i\in I}\left(  <_{2,i}\right)  $ is a strict
-partial order on the set $\bigsqcup_{i\in I}E_{i}$ (by Proposition
-\ref{prop.djun.rels.strict}, applied to $<_{2,i}$ instead of $\rho_{i}$).
+Similarly, $\bigoplus_{i\in I}\left(  <_{2,i}\right)  $ is a strict partial
+order on the set $\bigsqcup_{i\in I}E_{i}$.
 
 Proposition \ref{prop.djun.ind.prod} (a) shows that the set $\bigsqcup_{i\in
 I}E_{i}$ is finite. Thus, $\bigsqcup_{i\in I}E_{i}$ is a finite set, and
@@ -11643,7 +11103,7 @@ _{i}\right)  \right)  \ \Longleftrightarrow\ \left(  \operatorname*{Restr}%
 \begin{proof}
 [Proof of Proposition \ref{prop.djun.Epars}.]Let $\mathbf{E}$ denote the
 double poset $\bigsqcup_{i\in I}\mathbf{E}_{i}$. Thus, \newline
-$\mathbf{E}
+$\mathbf{E}%
 =\bigsqcup_{i\in I}\mathbf{E}_{i}=\left(  \bigsqcup_{i\in I}E_{i}%
 ,\bigoplus_{i\in I}\left(  <_{1,i}\right)  ,\bigoplus_{i\in I}\left(
 <_{2,i}\right)  \right)  $ (by the definition of $\bigsqcup_{i\in I}%
@@ -11684,15 +11144,12 @@ f\right)  $.
 
 We have the following chain of logical equivalences:%
 \begin{align*}
-&  \ \left(  \phi\in\operatorname*{Par}\mathbf{E}\right) \\
-&  \Longleftrightarrow\ \left(  \phi\text{ belongs to }%
-\underbrace{\operatorname*{Par}\mathbf{E}}_{\substack{=\left(  \text{the set
-of all }\mathbf{E}\text{-partitions}\right)  \\\text{(by the definition of
-}\operatorname*{Par}\mathbf{E}\text{)}}}\right) \\
-&  \Longleftrightarrow\ \left(  \phi\text{ belongs to the set of all
-}\mathbf{E}\text{-partitions}\right) \\
+\ \left(  \phi\in\operatorname*{Par}\mathbf{E}\right)   &  \Longleftrightarrow
+\ \left(  \phi\text{ belongs to }\operatorname*{Par}\mathbf{E}\right) \\
 &  \Longleftrightarrow\ \left(  \phi\text{ is an }\mathbf{E}\text{-partition}%
 \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{Par}\mathbf{E}%
+\text{ is the set of all }\mathbf{E}\text{-partitions}\right) \\
 &  \Longleftrightarrow\ \left(  \phi\text{ satisfies Conditions }%
 \mathcal{P}_{1}\text{ and }\mathcal{P}_{2}\right)
 \end{align*}
@@ -11746,16 +11203,13 @@ We have the following chain of logical equivalences:%
 &  \ \left(  \phi\circ\operatorname*{inc}\nolimits_{j}\in\operatorname*{Par}%
 \left(  \mathbf{E}_{j}\right)  \right) \nonumber\\
 &  \Longleftrightarrow\ \left(  \phi\circ\operatorname*{inc}\nolimits_{j}%
-\text{ belongs to }\underbrace{\operatorname*{Par}\left(  \mathbf{E}%
-_{j}\right)  }_{\substack{=\left(  \text{the set of all }\mathbf{E}%
-_{j}\text{-partitions}\right)  \\\text{(by the definition of }%
-\operatorname*{Par}\left(  \mathbf{E}_{j}\right)  \text{)}}}\right)
-\nonumber\\
-&  \Longleftrightarrow\ \left(  \phi\circ\operatorname*{inc}\nolimits_{j}%
-\text{ belongs to the set of all }\mathbf{E}_{j}\text{-partitions}\right)
+\text{ belongs to }\operatorname*{Par}\left(  \mathbf{E}_{j}\right)  \right)
 \nonumber\\
 &  \Longleftrightarrow\ \left(  \phi\circ\operatorname*{inc}\nolimits_{j}%
 \text{ is an }\mathbf{E}_{j}\text{-partition}\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{Par}\left(
+\mathbf{E}_{j}\right)  \text{ is the set of all }\mathbf{E}_{j}%
+\text{-partitions}\right) \nonumber\\
 &  \Longleftrightarrow\ \left(  \phi\circ\operatorname*{inc}\nolimits_{j}%
 \text{ satisfies Conditions }\mathcal{Q}_{1}\left(  j\right)  \text{ and
 }\mathcal{Q}_{2}\left(  j\right)  \right)  \label{pf.prop.djun.Epars.eq2a}%
@@ -11846,44 +11300,14 @@ In other words,%
 \]
 (since $\bigoplus_{i\in I}\left(  <_{1,i}\right)  =\left(  <_{1}\right)  $ and
 $\bigsqcup_{i\in I}E_{i}=E$). This proves (\ref{pf.prop.djun.Epars.le1}).}.
-Also, for any two elements $\left(  j,e\right)  $ and $\left(  k,f\right)  $
-of $E$, we have the equivalence%
+Similarly, for any two elements $\left(  j,e\right)  $ and $\left(
+k,f\right)  $ of $E$, we have the equivalence%
 \begin{equation}
 \left(  \left(  j,e\right)  <_{2}\left(  k,f\right)  \right)
-\ \Longleftrightarrow\ \left(  j=k\text{ and }e<_{2,j}f\right)
+\ \Longleftrightarrow\ \left(  j=k\text{ and }e<_{2,j}f\right)  .
 \label{pf.prop.djun.Epars.le2}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{pf.prop.djun.Epars.le2}):} Recall that
-$\bigoplus_{i\in I}\left(  <_{2,i}\right)  =\left(  <_{2}\right)  $.
-\par
-Now, the definition of the relation $\bigoplus_{i\in I}\left(  <_{2,i}\right)
-$ shows that%
-\[
-\left(
-\begin{array}
-[c]{l}%
-\left(  \left(  j,e\right)  \left(  \bigoplus_{i\in I}\left(  <_{2,i}\right)
-\right)  \left(  k,f\right)  \right)  \ \Longleftrightarrow\ \left(  j=k\text{
-and }e<_{2,j}f\right) \\
-\ \ \ \ \ \ \ \ \ \ \text{for any two elements }\left(  j,e\right)  \text{ and
-}\left(  k,f\right)  \text{ of }\bigsqcup_{i\in I}E_{i}%
-\end{array}
-\right)  .
-\]
-In other words,%
-\[
-\left(
-\begin{array}
-[c]{l}%
-\left(  \left(  j,e\right)  <_{2}\left(  k,f\right)  \right)
-\ \Longleftrightarrow\ \left(  j=k\text{ and }e<_{2,j}f\right) \\
-\ \ \ \ \ \ \ \ \ \ \text{for any two elements }\left(  j,e\right)  \text{ and
-}\left(  k,f\right)  \text{ of }E
-\end{array}
-\right)
-\]
-(since $\bigoplus_{i\in I}\left(  <_{2,i}\right)  =\left(  <_{2}\right)  $ and
-$\bigsqcup_{i\in I}E_{i}=E$). This proves (\ref{pf.prop.djun.Epars.le2}).}.
+
 
 We observe that every $j\in I$ and every $e\in E_{j}$ satisfy%
 \begin{equation}
@@ -11907,7 +11331,7 @@ each }j\in I\right)  . \label{pf.prop.djun.Epars.dir1a}%
 
 
 [\textit{Proof of (\ref{pf.prop.djun.Epars.dir1a}):} Assume that Condition
-$\mathcal{P}_{1}$ holds. We shall prove that Condition $\mathcal{Q}_{1}\left(
+$\mathcal{P}_{1}$ holds. We must prove that Condition $\mathcal{Q}_{1}\left(
 j\right)  $ holds for each $j\in I$.
 
 Indeed, fix $j\in I$. Let $e\in E_{j}$ and $f\in E_{j}$ be such that
@@ -11960,12 +11384,8 @@ E_{j}$ and $f\in E_{j}$ satisfying $e<_{1,j}f$ satisfy $\left(  \phi
 other words, Condition $\mathcal{Q}_{1}\left(  j\right)  $ holds.
 
 Now, forget that we fixed $j$. We thus have shown that Condition
-$\mathcal{Q}_{1}\left(  j\right)  $ holds for each $j\in I$.
-
-Now, forget that we assumed that Condition $\mathcal{P}_{1}$ holds. We thus
-have proven that if Condition $\mathcal{P}_{1}$ holds, then Condition
-$\mathcal{Q}_{1}\left(  j\right)  $ holds for each $j\in I$. This proves the
-implication (\ref{pf.prop.djun.Epars.dir1a}).]
+$\mathcal{Q}_{1}\left(  j\right)  $ holds for each $j\in I$. This completes
+the proof of the implication (\ref{pf.prop.djun.Epars.dir1a}).]
 
 Next, let us prove the implication%
 \begin{equation}
@@ -11976,7 +11396,7 @@ _{1}\text{ holds}\right)  . \label{pf.prop.djun.Epars.dir1b}%
 
 
 [\textit{Proof of (\ref{pf.prop.djun.Epars.dir1b}):} Assume that Condition
-$\mathcal{Q}_{1}\left(  j\right)  $ holds for each $j\in I$. We shall prove
+$\mathcal{Q}_{1}\left(  j\right)  $ holds for each $j\in I$. We must prove
 that Condition $\mathcal{P}_{1}$ holds.
 
 We have assumed that%
@@ -12035,12 +11455,8 @@ and $v\in E$ satisfying $u<_{1}v$ satisfy $\phi\left(  u\right)  \leq
 \phi\left(  v\right)  $. Renaming $u$ and $v$ as $e$ and $f$ in this
 statement, we obtain the following: Every $e\in E$ and $f\in E$ satisfying
 $e<_{1}f$ satisfy $\phi\left(  e\right)  \leq\phi\left(  f\right)  $. In other
-words, Condition $\mathcal{P}_{1}$ holds.
-
-Now, forget that we assumed that Condition $\mathcal{Q}_{1}\left(  j\right)  $
-holds for each $j\in I$. We thus have proven that if Condition $\mathcal{Q}%
-_{1}\left(  j\right)  $ holds for each $j\in I$, then Condition $\mathcal{P}%
-_{1}$ holds. This proves the implication (\ref{pf.prop.djun.Epars.dir1b}).]
+words, Condition $\mathcal{P}_{1}$ holds. This proves the implication
+(\ref{pf.prop.djun.Epars.dir1b}).]
 
 Combining the two implications (\ref{pf.prop.djun.Epars.dir1a}) and
 (\ref{pf.prop.djun.Epars.dir1b}), we obtain the logical equivalence%
@@ -12060,7 +11476,7 @@ each }j\in I\right)  . \label{pf.prop.djun.Epars.dir2a}%
 
 
 [\textit{Proof of (\ref{pf.prop.djun.Epars.dir2a}):} Assume that Condition
-$\mathcal{P}_{2}$ holds. We shall prove that Condition $\mathcal{Q}_{2}\left(
+$\mathcal{P}_{2}$ holds. We must prove that Condition $\mathcal{Q}_{2}\left(
 j\right)  $ holds for each $j\in I$.
 
 Indeed, fix $j\in I$. Let $e\in E_{j}$ and $f\in E_{j}$ be such that
@@ -12068,31 +11484,20 @@ $e<_{1,j}f$ and $f<_{2,j}e$. We shall show that $\left(  \phi\circ
 \operatorname*{inc}\nolimits_{j}\right)  \left(  e\right)  <\left(  \phi
 \circ\operatorname*{inc}\nolimits_{j}\right)  \left(  f\right)  $.
 
-The definition of $\operatorname*{inc}\nolimits_{j}$ yields
-$\operatorname*{inc}\nolimits_{j}\left(  e\right)  =\left(  j,e\right)  $ and
-$\operatorname*{inc}\nolimits_{j}\left(  f\right)  =\left(  j,f\right)  $.
+Just as in the proof of (\ref{pf.prop.djun.Epars.dir1a}), we can
 
-Recall that $\operatorname*{inc}\nolimits_{j}$ is a map $E_{j}\rightarrow
-\bigsqcup_{i\in I}E_{i}$. In other words, $\operatorname*{inc}\nolimits_{j}$
-is a map $E_{j}\rightarrow E$ (since $\bigsqcup_{i\in I}E_{i}=E$).
+\begin{itemize}
+\item show that $\left(  j,e\right)  \in E$ and $\left(  j,f\right)  \in E$
+and $\left(  j,e\right)  <_{1}\left(  j,f\right)  $;
 
-We have $\left(  j,e\right)  =\operatorname*{inc}\nolimits_{j}\left(
-e\right)  \in E$ (since $\operatorname*{inc}\nolimits_{j}$ is a map
-$E_{j}\rightarrow E$). Also, $\left(  j,f\right)  =\operatorname*{inc}%
-\nolimits_{j}\left(  f\right)  \in E$ (since $\operatorname*{inc}%
-\nolimits_{j}$ is a map $E_{j}\rightarrow E$). Thus,
-(\ref{pf.prop.djun.Epars.le1}) (applied to $j$ instead of $k$) shows that we
-have the equivalence%
-\[
-\left(  \left(  j,e\right)  <_{1}\left(  j,f\right)  \right)
-\ \Longleftrightarrow\ \left(  j=j\text{ and }e<_{1,j}f\right)  .
-\]
-Thus, we have $\left(  j,e\right)  <_{1}\left(  j,f\right)  $ (since we have
-$\left(  j=j\text{ and }e<_{1,j}f\right)  $).
+\item show that $\phi\left(  j,e\right)  =\left(  \phi\circ\operatorname*{inc}%
+\nolimits_{j}\right)  \left(  e\right)  $ and $\phi\left(  j,f\right)
+=\left(  \phi\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  f\right)  $.
+\end{itemize}
 
-Recall again that $\left(  j,f\right)  \in E$ and $\left(  j,e\right)  \in E$.
-Thus, (\ref{pf.prop.djun.Epars.le2}) (applied to $j$, $f$, $j$ and $e$ instead
-of $j$, $e$, $k$ and $f$) shows that we have the equivalence%
+Furthermore, recall that $\left(  j,f\right)  \in E$ and $\left(  j,e\right)
+\in E$. Thus, (\ref{pf.prop.djun.Epars.le2}) (applied to $j$, $f$, $j$ and $e$
+instead of $j$, $e$, $k$ and $f$) shows that we have the equivalence%
 \[
 \left(  \left(  j,f\right)  <_{2}\left(  j,e\right)  \right)
 \ \Longleftrightarrow\ \left(  j=j\text{ and }f<_{2,j}e\right)  .
@@ -12104,12 +11509,7 @@ Now, recall that Condition $\mathcal{P}_{2}$ holds. Hence, Condition
 $\mathcal{P}_{2}$ (applied to $\left(  j,e\right)  $ and $\left(  j,f\right)
 $ instead of $e$ and $f$) shows that $\phi\left(  j,e\right)  <\phi\left(
 j,f\right)  $ (since $\left(  j,e\right)  <_{1}\left(  j,f\right)  $ and
-$\left(  j,f\right)  <_{2}\left(  j,e\right)  $). But
-(\ref{pf.prop.djun.Epars.phije}) yields $\phi\left(  j,e\right)  =\left(
-\phi\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  e\right)  $. Also,
-(\ref{pf.prop.djun.Epars.phije}) (applied to $f$ instead of $e$) yields
-$\phi\left(  j,f\right)  =\left(  \phi\circ\operatorname*{inc}\nolimits_{j}%
-\right)  \left(  f\right)  $. Now,%
+$\left(  j,f\right)  <_{2}\left(  j,e\right)  $). Now,%
 \[
 \left(  \phi\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  e\right)
 =\phi\left(  j,e\right)  <\phi\left(  j,f\right)  =\left(  \phi\circ
@@ -12124,10 +11524,6 @@ $\left(  \phi\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  e\right)
 $. In other words, Condition $\mathcal{Q}_{2}\left(  j\right)  $ holds.
 
 Now, forget that we fixed $j$. We thus have shown that Condition
-$\mathcal{Q}_{2}\left(  j\right)  $ holds for each $j\in I$.
-
-Now, forget that we assumed that Condition $\mathcal{P}_{2}$ holds. We thus
-have proven that if Condition $\mathcal{P}_{2}$ holds, then Condition
 $\mathcal{Q}_{2}\left(  j\right)  $ holds for each $j\in I$. This proves the
 implication (\ref{pf.prop.djun.Epars.dir2a}).]
 
@@ -12140,7 +11536,7 @@ _{2}\text{ holds}\right)  . \label{pf.prop.djun.Epars.dir2b}%
 
 
 [\textit{Proof of (\ref{pf.prop.djun.Epars.dir2b}):} Assume that Condition
-$\mathcal{Q}_{2}\left(  j\right)  $ holds for each $j\in I$. We shall prove
+$\mathcal{Q}_{2}\left(  j\right)  $ holds for each $j\in I$. We must prove
 that Condition $\mathcal{P}_{2}$ holds.
 
 We have assumed that%
@@ -12153,28 +11549,22 @@ I\text{.} \label{pf.prop.djun.Epars.dir2b.pf.1}%
 Now, let $u\in E$ and $v\in E$ be such that $u<_{1}v$ and $v<_{2}u$. We shall
 show that $\phi\left(  u\right)  <\phi\left(  v\right)  $.
 
-We have $v\in E=\bigsqcup_{i\in I}E_{i}$. Thus, Remark \ref{rmk.djun.elt} (c)
-(applied to $x=v$) shows that there exist an $i\in I$ and an $e\in E_{i}$ such
-that $v=\left(  i,e\right)  $. Denote these $i$ and $e$ by $k$ and $f$. Thus,
-$k\in I$ and $f\in E_{k}$ are such that $v=\left(  k,f\right)  $.
+Just as in the proof of (\ref{pf.prop.djun.Epars.dir1b}), we can
 
-We have $u\in E=\bigsqcup_{i\in I}E_{i}$. Thus, Remark \ref{rmk.djun.elt} (c)
-(applied to $x=u$) shows that there exist an $i\in I$ and an $e\in E_{i}$ such
-that $u=\left(  i,e\right)  $. Denote these $i$ and $e$ by $j$ and $e$. Thus,
-$j\in I$ and $e\in E_{j}$ are such that $u=\left(  j,e\right)  $.
+\begin{itemize}
+\item construct $k\in I$ and $f\in E_{k}$ such that $v=\left(  k,f\right)  $;
 
-Now, $u<_{1}v$. In other words, $\left(  j,e\right)  <_{1}\left(  k,f\right)
-$ (since $u=\left(  j,e\right)  $ and $v=\left(  k,f\right)  $).
+\item construct $j\in I$ and $e\in E_{j}$ such that $u=\left(  j,e\right)  $;
 
-We have $\left(  j,e\right)  =u\in E$ and $\left(  k,f\right)  =v\in E$. Thus,
-(\ref{pf.prop.djun.Epars.le1}) shows that we have the equivalence%
-\[
-\left(  \left(  j,e\right)  <_{1}\left(  k,f\right)  \right)
-\ \Longleftrightarrow\ \left(  j=k\text{ and }e<_{1,j}f\right)  .
-\]
-Thus, we have $\left(  j=k\text{ and }e<_{1,j}f\right)  $ (since we have
-$\left(  j,e\right)  <_{1}\left(  k,f\right)  $). Hence, $j=k$ and $e<_{1,j}%
-f$. Now, $f\in E_{k}=E_{j}$ (since $k=j$).
+\item show that $\left(  j,e\right)  =u\in E$ and $\left(  k,f\right)  =v\in
+E$;
+
+\item show that $j=k$ and $e<_{1,j}f$ and $f\in E_{j}$;
+
+\item show that $\phi\left(  j,e\right)  =\left(  \phi\circ\operatorname*{inc}%
+\nolimits_{j}\right)  \left(  e\right)  $ and $\phi\left(  j,f\right)
+=\left(  \phi\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  f\right)  $.
+\end{itemize}
 
 On the other hand, $v<_{2}u$. In other words, $\left(  k,f\right)
 <_{2}\left(  j,e\right)  $ (since $u=\left(  j,e\right)  $ and $v=\left(
@@ -12188,19 +11578,14 @@ $j$, $e$, $k$ and $f$) shows that we have the equivalence%
 \ \Longleftrightarrow\ \left(  k=j\text{ and }f<_{2,k}e\right)  .
 \]
 Thus, we have $\left(  k=j\text{ and }f<_{2,k}e\right)  $ (since we have
-$\left(  k,f\right)  <_{2}\left(  j,e\right)  $). Hence, $k=j$ and $f<_{2,k}%
-e$. Now, $f\in E_{k}=E_{j}$ (since $k=j$). Also, $f<_{2,k}e$. In other words,
-$f<_{2,j}e$ (since $k=j$).
+$\left(  k,f\right)  <_{2}\left(  j,e\right)  $). Hence, $f<_{2,k}e$. In other
+words, $f<_{2,j}e$ (since $k=j$).
 
 But (\ref{pf.prop.djun.Epars.dir2b.pf.1}) shows that Condition $\mathcal{Q}%
 _{2}\left(  j\right)  $ holds. Thus, this condition shows that $\left(
 \phi\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  e\right)  <\left(
 \phi\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  f\right)  $ (since
-$e<_{1,j}f$ and $f<_{2,j}e$). But (\ref{pf.prop.djun.Epars.phije}) yields
-$\phi\left(  j,e\right)  =\left(  \phi\circ\operatorname*{inc}\nolimits_{j}%
-\right)  \left(  e\right)  $. Also, (\ref{pf.prop.djun.Epars.phije}) (applied
-to $f$ instead of $e$) yields $\phi\left(  j,f\right)  =\left(  \phi
-\circ\operatorname*{inc}\nolimits_{j}\right)  \left(  f\right)  $. Now,%
+$e<_{1,j}f$ and $f<_{2,j}e$). Now,%
 \begin{align*}
 \phi\left(  \underbrace{u}_{=\left(  j,e\right)  }\right)   &  =\phi\left(
 j,e\right)  =\left(  \phi\circ\operatorname*{inc}\nolimits_{j}\right)  \left(
@@ -12215,12 +11600,8 @@ and $v\in E$ satisfying $u<_{1}v$ and $v<_{2}u$ satisfy $\phi\left(  u\right)
 <\phi\left(  v\right)  $. Renaming $u$ and $v$ as $e$ and $f$ in this
 statement, we obtain the following: Every $e\in E$ and $f\in E$ satisfying
 $e<_{1}f$ and $f<_{2}e$ satisfy $\phi\left(  e\right)  <\phi\left(  f\right)
-$. In other words, Condition $\mathcal{P}_{2}$ holds.
-
-Now, forget that we assumed that Condition $\mathcal{Q}_{2}\left(  j\right)  $
-holds for each $j\in I$. We thus have proven that if Condition $\mathcal{Q}%
-_{2}\left(  j\right)  $ holds for each $j\in I$, then Condition $\mathcal{P}%
-_{2}$ holds. This proves the implication (\ref{pf.prop.djun.Epars.dir2b}).]
+$. In other words, Condition $\mathcal{P}_{2}$ holds. This proves the
+implication (\ref{pf.prop.djun.Epars.dir2b}).]
 
 Combining the two implications (\ref{pf.prop.djun.Epars.dir2a}) and
 (\ref{pf.prop.djun.Epars.dir2b}), we obtain the logical equivalence%
@@ -12272,12 +11653,9 @@ Let $A$ be the commutative ring $\mathbf{k}\left[  \left[  x_{1},x_{2}%
 }\ \ \ \ \ \ \ \ \ \ \text{for every }e\in E\right)  .
 \label{pf.prop.djun.Epars.b.defa}%
 \end{equation}
-(This is well-defined, since $w\left(  e\right)  $ and $\phi\left(  e\right)
-$ are well-defined elements of $\left\{  1,2,3,\ldots\right\}  $ for each
-$e\in E$.)
 
-Both $w$ and $\phi$ are maps $E\rightarrow\left\{  1,2,3,\ldots\right\}  $.
-Hence, the definition of $\mathbf{x}_{\phi,w}$ yields%
+
+The definition of $\mathbf{x}_{\phi,w}$ yields%
 \begin{align*}
 \mathbf{x}_{\phi,w}  &  =\prod_{e\in E}\underbrace{x_{\phi\left(  e\right)
 }^{w\left(  e\right)  }}_{\substack{=a\left(  e\right)  \\\text{(by
@@ -12408,8 +11786,7 @@ and $\pi_{2}$ be two elements of $\operatorname*{Par}\left(  \bigsqcup_{i\in
 I}\mathbf{E}_{i}\right)  $ such that $\rho\left(  \pi_{1}\right)  =\rho\left(
 \pi_{2}\right)  $. We must show that $\pi_{1}=\pi_{2}$.
 \par
-The map $\operatorname*{Restr}$ is a bijection, thus bijective, thus
-injective.
+The map $\operatorname*{Restr}$ is a bijection, thus injective.
 \par
 The definition of $\rho$ yields $\rho\left(  \pi_{1}\right)
 =\operatorname*{Restr}\left(  \pi_{1}\right)  $ and $\rho\left(  \pi
@@ -12428,17 +11805,12 @@ surjective\footnote{\textit{Proof.} Let $\gamma\in\prod_{i\in I}%
 $\gamma\in\rho\left(  \operatorname*{Par}\left(  \bigsqcup_{i\in I}%
 \mathbf{E}_{i}\right)  \right)  $.
 \par
-The map $\operatorname*{Restr}$ is a bijection, thus bijective, thus
-surjective. Hence, $\prod_{i\in I}F^{E_{i}}=\operatorname*{Restr}\left(
-F^{\bigsqcup_{i\in I}E_{i}}\right)  $.
-\par
-We have $\gamma\in\prod_{i\in I}\underbrace{\operatorname*{Par}\left(
-\mathbf{E}_{i}\right)  }_{\subseteq F^{E_{i}}}\subseteq\prod_{i\in I}F^{E_{i}%
-}=\operatorname*{Restr}\left(  F^{\bigsqcup_{i\in I}E_{i}}\right)  $. In other
-words, there exists a $\phi\in F^{\bigsqcup_{i\in I}E_{i}}$ such that
-$\gamma=\operatorname*{Restr}\left(  \phi\right)  $. Consider this $\phi$.
-Then, $\operatorname*{Restr}\left(  \phi\right)  =\gamma\in\prod_{i\in
-I}\operatorname*{Par}\left(  \mathbf{E}_{i}\right)  $.
+The map $\operatorname*{Restr}:F^{\bigsqcup_{i\in I}E_{i}}\rightarrow
+\prod_{i\in I}F^{E_{i}}$ is a bijection, thus surjective. Hence, there exists
+a $\phi\in F^{\bigsqcup_{i\in I}E_{i}}$ such that $\gamma
+=\operatorname*{Restr}\left(  \phi\right)  $ (since $\gamma\in\prod_{i\in
+I}\underbrace{\operatorname*{Par}\left(  \mathbf{E}_{i}\right)  }_{\subseteq
+F^{E_{i}}}\subseteq\prod_{i\in I}F^{E_{i}}$). Consider this $\phi$.
 \par
 Proposition \ref{prop.djun.Epars} (a) shows that we have the following logical
 equivalence:%
@@ -12450,7 +11822,7 @@ _{i}\right)  \right)  \ \Longleftrightarrow\ \left(  \operatorname*{Restr}%
 \]
 Thus, we have $\phi\in\operatorname*{Par}\left(  \bigsqcup_{i\in I}%
 \mathbf{E}_{i}\right)  $ (since we have $\operatorname*{Restr}\left(
-\phi\right)  \in\prod_{i\in I}\operatorname*{Par}\left(  \mathbf{E}%
+\phi\right)  =\gamma\in\prod_{i\in I}\operatorname*{Par}\left(  \mathbf{E}%
 _{i}\right)  $).
 \par
 The definition of $\rho$ yields $\rho\left(  \phi\right)
@@ -12498,7 +11870,7 @@ _{i}\right)  \subseteq F^{\bigsqcup_{i\in I}E_{i}}$. Hence, Proposition
 \mathbf{x}_{\pi,w}=\prod_{i\in I}\mathbf{x}_{\pi\circ\operatorname*{inc}%
 \nolimits_{i},w\circ\operatorname*{inc}\nolimits_{i}}.
 \]
-Qed.}.
+}.
 
 Now, recall that $\bigsqcup_{i\in I}\mathbf{E}_{i}=\left(  \bigsqcup_{i\in
 I}E_{i},\bigoplus_{i\in I}\left(  <_{1,i}\right)  ,\bigoplus_{i\in I}\left(
@@ -12519,22 +11891,14 @@ _{\pi\circ\operatorname*{inc}\nolimits_{i},w\circ\operatorname*{inc}%
 ,w\circ\operatorname*{inc}\nolimits_{i}}\\
 &  =\sum_{\left(  \pi_{i}\right)  _{i\in I}\in\prod_{i\in I}%
 \operatorname*{Par}\left(  \mathbf{E}_{i}\right)  }\prod_{i\in I}%
-\mathbf{x}_{\pi_{i},w\circ\operatorname*{inc}\nolimits_{i}}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{here, we have substituted }\left(  \pi_{i}\right)  _{i\in I}\text{ for
-}\left(  \pi\circ\operatorname*{inc}\nolimits_{i}\right)  _{i\in I}\text{ in
-the sum,}\\
-\text{since the map }\operatorname*{Par}\left(  \bigsqcup_{i\in I}%
-\mathbf{E}_{i}\right)  \rightarrow\prod_{i\in I}\operatorname*{Par}\left(
-\mathbf{E}_{i}\right)  ,\ \pi\mapsto\left(  \pi\circ\operatorname*{inc}%
-\nolimits_{i}\right)  _{i\in I}\\
-\text{is a bijection}%
-\end{array}
-\right)  .
+\mathbf{x}_{\pi_{i},w\circ\operatorname*{inc}\nolimits_{i}}%
 \end{align*}
-Comparing this with%
+(here, we have substituted $\left(  \pi_{i}\right)  _{i\in I}$ for $\left(
+\pi\circ\operatorname*{inc}\nolimits_{i}\right)  _{i\in I}$ in the sum, since
+the map $\operatorname*{Par}\left(  \bigsqcup_{i\in I}\mathbf{E}_{i}\right)
+\rightarrow\prod_{i\in I}\operatorname*{Par}\left(  \mathbf{E}_{i}\right)
+,\ \pi\mapsto\left(  \pi\circ\operatorname*{inc}\nolimits_{i}\right)  _{i\in
+I}$ is a bijection). Comparing this with%
 \begin{align*}
 \prod_{i\in I}\underbrace{\Gamma\left(  \mathbf{E}_{i},w\circ
 \operatorname*{inc}\nolimits_{i}\right)  }_{\substack{=\sum_{\pi
@@ -12545,11 +11909,10 @@ Comparing this with%
 \\\text{instead of }\mathbf{E}\text{, }E\text{, }<_{1}\text{, }<_{2}\text{ and
 }w\text{)}}}  &  =\prod_{i\in I}\sum_{\pi\in\operatorname*{Par}\left(
 \mathbf{E}_{i}\right)  }\mathbf{x}_{\pi,w\circ\operatorname*{inc}%
-\nolimits_{i}}\\
-&  =\sum_{\left(  \pi_{i}\right)  _{i\in I}\in\prod_{i\in I}%
-\operatorname*{Par}\left(  \mathbf{E}_{i}\right)  }\prod_{i\in I}%
-\mathbf{x}_{\pi_{i},w\circ\operatorname*{inc}\nolimits_{i}}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the product rule}\right)  ,
+\nolimits_{i}}=\sum_{\left(  \pi_{i}\right)  _{i\in I}\in\prod_{i\in
+I}\operatorname*{Par}\left(  \mathbf{E}_{i}\right)  }\prod_{i\in I}%
+\mathbf{x}_{\pi_{i},w\circ\operatorname*{inc}\nolimits_{i}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the product rule}\right)  ,
 \end{align*}
 we obtain $\Gamma\left(  \bigsqcup_{i\in I}\mathbf{E}_{i},w\right)
 =\prod_{i\in I}\Gamma\left(  \mathbf{E}_{i},w\circ\operatorname*{inc}%
@@ -12658,35 +12021,20 @@ $\mathbf{E}\sqcup\mathbf{F}=\bigsqcup_{i\in\left\{  0,1\right\}  }%
 \mathbf{E}_{i}$ (by the definition of $\mathbf{E}\sqcup\mathbf{F}$).
 
 We have $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $ for every
-$i\in\left\{  0,1\right\}  $\ \ \ \ \footnote{\textit{Proof.} Let
-$i\in\left\{  0,1\right\}  $. We must prove that $\mathbf{E}_{i}=\left(
-E_{i},<_{1,i},<_{2,i}\right)  $.
+$i\in\left\{  0,1\right\}  $\ \ \ \ \footnote{\textit{Proof:}
 \par
-We have $i\in\left\{  0,1\right\}  $. Thus, either $i=0$ or $i=1$. Hence, we
-are in one of the following two cases:
+\begin{itemize}
+\item For $i=0$, this follows from $\mathbf{E}_{0}=\mathbf{E}=\left(
+\underbrace{E}_{=E_{0}},<_{1,0},<_{2,0}\right)  =\left(  E_{0},<_{1,0}%
+,<_{2,0}\right)  $.
 \par
-\textit{Case 1:} We have $i=0$.
-\par
-\textit{Case 2:} We have $i=1$.
-\par
-Let us first consider Case 1. In this case, we have $i=0$. Now, $\mathbf{E}%
-_{0}=\mathbf{E}=\left(  \underbrace{E}_{=E_{0}},<_{1,0},<_{2,0}\right)
-=\left(  E_{0},<_{1,0},<_{2,0}\right)  $. This rewrites as $\mathbf{E}%
-_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $ (since $i=0$). Thus,
-$\mathbf{E}_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $ is proven in Case 1.
-\par
-Let us now consider Case 2. In this case, we have $i=1$. Now, $\mathbf{E}%
-_{1}=\mathbf{F}=\left(  \underbrace{F}_{=E_{1}},<_{1,1},<_{2,1}\right)
-=\left(  E_{1},<_{1,1},<_{2,1}\right)  $. This rewrites as $\mathbf{E}%
-_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $ (since $i=1$). Thus,
-$\mathbf{E}_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $ is proven in Case 2.
-\par
-Now, $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $ is proven in each
-of the two Cases 1 and 2. Since these two Cases cover all possibilities, we
-thus conclude that $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $
-always holds. Qed.}. Also, $w$ is a map $E\sqcup F\rightarrow\left\{
-1,2,3,\ldots\right\}  $. In other words, $w$ is a map $\bigsqcup_{i\in\left\{
-0,1\right\}  }E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $ (since $E\sqcup
+\item For $i=1$, this follows from $\mathbf{E}_{1}=\mathbf{F}=\left(
+\underbrace{F}_{=E_{1}},<_{1,1},<_{2,1}\right)  =\left(  E_{1},<_{1,1}%
+,<_{2,1}\right)  $.
+\end{itemize}
+}. Also, $w$ is a map $E\sqcup F\rightarrow\left\{  1,2,3,\ldots\right\}  $.
+In other words, $w$ is a map $\bigsqcup_{i\in\left\{  0,1\right\}  }%
+E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $ (since $E\sqcup
 F=\bigsqcup_{i\in\left\{  0,1\right\}  }E_{i}$). Thus, Proposition
 \ref{prop.djun.Gamma} (applied to $I=\left\{  0,1\right\}  $) yields%
 \begin{align*}
@@ -12816,60 +12164,27 @@ $\Gamma\left(  {\mathbf{E}}_{0},w_{0}\right)  =M_{\alpha}$. Consider these
 $E_{0}$, $\mathbf{E}_{0}$, $<_{1,0}$, $>_{1,0}$ and $w_{0}$.
 
 Now, $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ for every
-$i\in\left\{  0,1\right\}  $\ \ \ \ \footnote{\textit{Proof.} Let
-$i\in\left\{  0,1\right\}  $. We must prove that $\mathbf{E}_{i}=\left(
-E_{i},<_{1,i},>_{1,i}\right)  $.
+$i\in\left\{  0,1\right\}  $\ \ \ \ \footnote{\textit{Proof:}
 \par
-We have $i\in\left\{  0,1\right\}  $. Thus, either $i=0$ or $i=1$. Hence, we
-are in one of the following two cases:
+\begin{itemize}
+\item For $i=0$, this follows from $\mathbf{E}_{0}=\left(  E_{0}%
+,<_{1,0},<_{2,0}\right)  $.
 \par
-\textit{Case 1:} We have $i=0$.
+\item For $i=1$, this follows from $\mathbf{E}_{1}=\left(  E_{1}%
+,<_{1,1},<_{2,1}\right)  $.
+\end{itemize}
+}. Moreover, $w_{i}$ is a map $E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}
+$ for each $i\in\left\{  0,1\right\}  $\ \ \ \ \footnote{\textit{Proof:}
 \par
-\textit{Case 2:} We have $i=1$.
-\par
-Let us first consider Case 1. In this case, we have $i=0$. Now, $\mathbf{E}%
-_{0}=\left(  E_{0},<_{1,0},>_{1,0}\right)  $. This rewrites as $\mathbf{E}%
-_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ (since $i=0$). Thus,
-$\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ is proven in Case 1.
-\par
-Let us now consider Case 2. In this case, we have $i=1$. Now, $\mathbf{E}%
-_{1}=\left(  E_{1},<_{1,1},>_{1,1}\right)  $. This rewrites as $\mathbf{E}%
-_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ (since $i=1$). Thus,
-$\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ is proven in Case 2.
-\par
-Now, $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ is proven in each
-of the two Cases 1 and 2. Since these two Cases cover all possibilities, we
-thus conclude that $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $
-always holds. Qed.}. Moreover, $w_{i}$ is a map $E_{i}\rightarrow\left\{
-1,2,3,\ldots\right\}  $ for each $i\in\left\{  0,1\right\}  $%
-\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  0,1\right\}  $. We must
-prove that $w_{i}$ is a map $E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $.
-\par
-We have $i\in\left\{  0,1\right\}  $. Thus, either $i=0$ or $i=1$. Hence, we
-are in one of the following two cases:
-\par
-\textit{Case 1:} We have $i=0$.
-\par
-\textit{Case 2:} We have $i=1$.
-\par
-Let us first consider Case 1. In this case, we have $i=0$. Now, $w_{0}$ is a
-map $E_{0}\rightarrow\left\{  1,2,3,\ldots\right\}  $. In other words, $w_{i}$
-is a map $E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $ (since $i=0$).
-Thus, in Case 1, we have shown that $w_{i}$ is a map $E_{i}\rightarrow\left\{
+\begin{itemize}
+\item For $i=0$, this holds because $w_{0}$ is a map $E_{0}\rightarrow\left\{
 1,2,3,\ldots\right\}  $.
 \par
-Let us first consider Case 2. In this case, we have $i=1$. Now, $w_{1}$ is a
-map $E_{1}\rightarrow\left\{  1,2,3,\ldots\right\}  $. In other words, $w_{i}$
-is a map $E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $ (since $i=1$).
-Thus, in Case 2, we have shown that $w_{i}$ is a map $E_{i}\rightarrow\left\{
+\item For $i=1$, this holds because $w_{1}$ is a map $E_{1}\rightarrow\left\{
 1,2,3,\ldots\right\}  $.
-\par
-Now, in each of the two Cases 1 and 2, we have proven that $w_{i}$ is a map
-$E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $. Since these two Cases cover
-all possibilities, we thus conclude that $w_{i}$ is always a map
-$E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $. Qed.}. Hence, Corollary
-\ref{cor.djun.Gamma.2.cor} (applied to $\left\{  0,1\right\}  $ and $>_{1,i}$
-instead of $I$ and $<_{2,i}$) shows that
+\end{itemize}
+}. Hence, Corollary \ref{cor.djun.Gamma.2.cor} (applied to $\left\{
+0,1\right\}  $ and $>_{1,i}$ instead of $I$ and $<_{2,i}$) shows that
 \[
 \prod_{i\in\left\{  0,1\right\}  }\Gamma\left(  \mathbf{E}_{i},w_{i}\right)
 \in\operatorname*{QSym}.
@@ -12911,13 +12226,9 @@ M_{\alpha}\right)  _{\alpha\in\operatorname*{Comp}}$ of the $\mathbf{k}%
 $-module $\operatorname*{QSym}$. Assume this. Thus, $a=M_{\alpha}$ for some
 $\alpha\in\operatorname*{Comp}$. Consider this $\alpha$.
 
-Now,%
-\[
-\underbrace{a}_{=M_{\alpha}}\underbrace{b}_{=M_{\beta}}=M_{\alpha}M_{\beta}%
-\in\operatorname*{QSym}\ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.prop.QSym.alg.prod.1})}\right)  .
-\]
-This proves (\ref{pf.prop.QSym.alg.prod.3}).]
+Now, $\underbrace{a}_{=M_{\alpha}}\underbrace{b}_{=M_{\beta}}=M_{\alpha
+}M_{\beta}\in\operatorname*{QSym}$ (by (\ref{pf.prop.QSym.alg.prod.1})). This
+proves (\ref{pf.prop.QSym.alg.prod.3}).]
 
 Finally, let us prove that%
 \begin{equation}
@@ -12988,45 +12299,14 @@ _{T}\right)  $.
 \end{proposition}
 
 \begin{proof}
-[Proof of Proposition \ref{prop.djun.restrict-rewr}.]We know that $\left(
-<_{1}\right)  \mid_{T}$ denotes the restriction of the relation $<_{1}$ to
-$T$. Similarly, $\left(  <_{2}\right)  \mid_{T}$ denotes the restriction of
-the relation $<_{2}$ to $T$.
-
-Recall that the double poset ${\mathbf{E}}\mid_{T}$ is defined as the double
-poset $\left(  T,<_{1},<_{2}\right)  $, where $<_{1}$ and $<_{2}$ (by abuse of
-notation) denote the restrictions of the relations $<_{1}$ and $<_{2}$ to $T$.
-Avoiding the abuse of notation, we can rewrite this definition as
-follows\footnote{We are merely renaming $<_{1}$ and $<_{2}$ as $\prec_{1}$ and
-$\prec_{2}$ in the preceding definition.}:
-
-\begin{statement}
-\textit{Statement 1:} The double poset ${\mathbf{E}}\mid_{T}$ is defined as
-the double poset $\left(  T,\prec_{1},\prec_{2}\right)  $, where $\prec_{1}$
-and $\prec_{2}$ denote the restrictions of the relations $<_{1}$ and $<_{2}$
-to $T$.
-\end{statement}
-
-Let $\prec_{1}$ and $\prec_{2}$ denote the restrictions of the relations
-$<_{1}$ and $<_{2}$ to $T$.
-
-Each of the two relations $\left(  <_{1}\right)  \mid_{T}$ and $\prec_{1}$ is
-the restriction of the relation $<_{1}$ to $T$. Hence, the two relations
-$\left(  <_{1}\right)  \mid_{T}$ and $\prec_{1}$ are defined in the same way.
-Hence, they are equal. In other words, $\left(  <_{1}\right)  \mid_{T}=\left(
-\prec_{1}\right)  $. Similarly, $\left(  <_{2}\right)  \mid_{T}=\left(
-\prec_{2}\right)  $.
-
-Now, recall that the double poset ${\mathbf{E}}\mid_{T}$ is defined as the
-double poset $\left(  T,\prec_{1},\prec_{2}\right)  $ (because of Statement
-1). Hence,%
-\[
-{\mathbf{E}}\mid_{T}=\left(  T,\underbrace{\prec_{1}}_{=\left(  <_{1}\right)
-\mid_{T}},\underbrace{\prec_{2}}_{=\left(  <_{2}\right)  \mid_{T}}\right)
-=\left(  T,\left(  <_{1}\right)  \mid_{T},\left(  <_{2}\right)  \mid
-_{T}\right)  .
-\]
-This proves Proposition \ref{prop.djun.restrict-rewr}.
+[Proof of Proposition \ref{prop.djun.restrict-rewr}.]Recall that the double
+poset ${\mathbf{E}}\mid_{T}$ is defined as the double poset $\left(
+T,<_{1},<_{2}\right)  $, where $<_{1}$ and $<_{2}$ (by abuse of notation)
+denote the restrictions of the relations $<_{1}$ and $<_{2}$ to $T$. Avoiding
+the abuse of notation, this rewrites as follows: The double poset
+${\mathbf{E}}\mid_{T}$ is defined as the double poset $\left(  T,\left(
+<_{1}\right)  \mid_{T},\left(  <_{2}\right)  \mid_{T}\right)  $. This proves
+Proposition \ref{prop.djun.restrict-rewr}.
 \end{proof}
 
 \begin{lemma}
@@ -13044,121 +12324,8 @@ _{i\in I}T_{i}}=\bigoplus_{i\in I}\left(  \rho_{i}\mid_{T_{i}}\right)  $.
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma \ref{lem.djun.restrict.rel}.]It is easy to see that
-$\bigsqcup_{i\in I}T_{i}\subseteq\bigsqcup_{i\in I}E_{i}$%
-\ \ \ \ \footnote{\textit{Proof.} The definition of $\bigsqcup_{i\in I}E_{i}$
-yields $\bigsqcup_{i\in I}E_{i}=\bigcup_{i\in I}\left(  \left\{  i\right\}
-\times E_{i}\right)  $.
-\par
-The definition of $\bigsqcup_{i\in I}T_{i}$ yields%
-\[
-\bigsqcup_{i\in I}T_{i}=\bigcup_{i\in I}\left(  \left\{  i\right\}
-\times\underbrace{T_{i}}_{\substack{\subseteq E_{i}\\\text{(since }T_{i}\text{
-is a subset of }E_{i}\text{)}}}\right)  \subseteq\bigcup_{i\in I}\left(
-\left\{  i\right\}  \times E_{i}\right)  =\bigsqcup_{i\in I}E_{i}.
-\]
-}. This proves Lemma \ref{lem.djun.restrict.rel} (a).
-
-(b) Within this proof, we shall write all binary relations in infix
-notation\footnote{This means the following: If $X$ is a set and $\rho$ is a
-binary relation on $X$, then we shall write $e\rho f$ instead of $\left(
-e,f\right)  \in\rho$ when we want to say that two elements $e$ and $f$ of $X$
-are related by $\rho$.}.
-
-The definition of $\bigoplus_{i\in I}\rho_{i}$ shows that we have the
-equivalence%
-\begin{equation}
-\left(  \left(  j,e\right)  \left(  \bigoplus_{i\in I}\rho_{i}\right)  \left(
-k,f\right)  \right)  \ \Longleftrightarrow\ \left(  j=k\text{ and }e\rho
-_{j}f\right)  \label{pf.lem.djun.restrict.rel.rel1}%
-\end{equation}
-for any two elements $\left(  j,e\right)  $ and $\left(  k,f\right)  $ of
-$\bigsqcup_{i\in I}E_{i}$.
-
-The definition of $\bigoplus_{i\in I}\left(  \rho_{i}\mid_{T_{i}}\right)  $
-shows that we have the equivalence%
-\begin{equation}
-\left(  \left(  j,e\right)  \left(  \bigoplus_{i\in I}\left(  \rho_{i}%
-\mid_{T_{i}}\right)  \right)  \left(  k,f\right)  \right)
-\ \Longleftrightarrow\ \left(  j=k\text{ and }e\left(  \rho_{j}\mid_{T_{j}%
-}\right)  f\right)  \label{pf.lem.djun.restrict.rel.rel2}%
-\end{equation}
-for any two elements $\left(  j,e\right)  $ and $\left(  k,f\right)  $ of
-$\bigsqcup_{i\in I}T_{i}$.
-
-Now, let $x$ and $y$ be two elements of $\bigsqcup_{i\in I}T_{i}$. We shall
-prove the equivalence%
-\begin{equation}
-\left(  x\left(  \left(  \bigoplus_{i\in I}\rho_{i}\right)  \mid
-_{\bigsqcup_{i\in I}T_{i}}\right)  y\right)  \ \Longleftrightarrow\ \left(
-x\left(  \bigoplus_{i\in I}\left(  \rho_{i}\mid_{T_{i}}\right)  \right)
-y\right)  . \label{pf.lem.djun.restrict.rel.rel-goal}%
-\end{equation}
-
-
-Indeed, $y\in\bigsqcup_{i\in I}T_{i}$. Hence, Remark \ref{rmk.djun.elt} (c)
-(applied to $y$ and $T_{i}$ instead of $x$ and $E_{i}$) shows that there exist
-an $i\in I$ and an $e\in T_{i}$ such that $y=\left(  i,e\right)  $. Fix these
-$i$ and $e$, and denote them by $k$ and $f$. Thus, $k\in I$ and $f\in T_{k}$
-are such that $y=\left(  k,f\right)  $.
-
-Also, $x\in\bigsqcup_{i\in I}T_{i}$. Hence, Remark \ref{rmk.djun.elt} (c)
-(applied to $T_{i}$ instead of $E_{i}$) shows that there exist an $i\in I$ and
-an $e\in T_{i}$ such that $x=\left(  i,e\right)  $. Fix these $i$ and $e$, and
-denote them by $j$ and $e$. Thus, $j\in I$ and $e\in T_{j}$ are such that
-$x=\left(  j,e\right)  $.
-
-Now, we have the following chain of logical equivalences:%
-\begin{align}
-&  \ \left(  \underbrace{x}_{=\left(  j,e\right)  }\left(  \bigoplus_{i\in
-I}\left(  \rho_{i}\mid_{T_{i}}\right)  \right)  \underbrace{y}_{=\left(
-k,f\right)  }\right) \nonumber\\
-&  \Longleftrightarrow\ \left(  \left(  j,e\right)  \left(  \bigoplus_{i\in
-I}\left(  \rho_{i}\mid_{T_{i}}\right)  \right)  \left(  k,f\right)  \right)
-\nonumber\\
-&  \Longleftrightarrow\ \left(  j=k\text{ and }\underbrace{e\left(  \rho
-_{j}\mid_{T_{j}}\right)  f}_{\substack{\Longleftrightarrow\ \left(  e\rho
-_{j}f\right)  \\\text{(since }\rho_{j}\mid_{T_{j}}\text{ is a restriction}%
-\\\text{of the relation }\rho_{j}\text{)}}}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.djun.restrict.rel.rel2}%
-)}\right) \nonumber\\
-&  \Longleftrightarrow\ \left(  j=k\text{ and }e\rho_{j}f\right) \nonumber\\
-&  \Longleftrightarrow\ \left(  \underbrace{\left(  j,e\right)  }_{=x}\left(
-\bigoplus_{i\in I}\rho_{i}\right)  \underbrace{\left(  k,f\right)  }%
-_{=y}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.lem.djun.restrict.rel.rel1})}\right) \nonumber\\
-&  \Longleftrightarrow\ \left(  x\left(  \bigoplus_{i\in I}\rho_{i}\right)
-y\right)  . \label{pf.lem.djun.restrict.rel.rel-6}%
-\end{align}
-But we also have the following chain of logical equivalences:%
-\begin{align*}
-&  \ \left(  x\left(  \left(  \bigoplus_{i\in I}\rho_{i}\right)
-\mid_{\bigsqcup_{i\in I}T_{i}}\right)  y\right) \\
-&  \Longleftrightarrow\ \left(  x\left(  \bigoplus_{i\in I}\rho_{i}\right)
-y\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{since }\left(  \bigoplus_{i\in I}\rho_{i}\right)  \mid_{\bigsqcup_{i\in
-I}T_{i}}\text{ is a restriction}\\
-\text{of the relation }\bigoplus_{i\in I}\rho_{i}%
-\end{array}
-\right) \\
-&  \Longleftrightarrow\ \left(  x\left(  \bigoplus_{i\in I}\left(  \rho
-_{i}\mid_{T_{i}}\right)  \right)  y\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{by (\ref{pf.lem.djun.restrict.rel.rel-6})}\right)  .
-\end{align*}
-Thus, (\ref{pf.lem.djun.restrict.rel.rel-goal}) is proven.
-
-Now, forget that we fixed $x$ and $y$. We thus have proven the equivalence
-(\ref{pf.lem.djun.restrict.rel.rel-goal}) for each two elements $x$ and $y$ of
-$\bigsqcup_{i\in I}T_{i}$. Therefore, the relations $\left(  \bigoplus_{i\in
-I}\rho_{i}\right)  \mid_{\bigsqcup_{i\in I}T_{i}}$ and $\bigoplus_{i\in
-I}\left(  \rho_{i}\mid_{T_{i}}\right)  $ relate exactly the same pairs of
-elements of $\bigsqcup_{i\in I}T_{i}$ (since both of these relations are
-binary relations on $\bigsqcup_{i\in I}T_{i}$). Thus, these two relations are
-equal. In other words, we have $\left(  \bigoplus_{i\in I}\rho_{i}\right)
-\mid_{\bigsqcup_{i\in I}T_{i}}=\bigoplus_{i\in I}\left(  \rho_{i}\mid_{T_{i}%
-}\right)  $. This proves Lemma \ref{lem.djun.restrict.rel} (b).
+[Proof of Lemma \ref{lem.djun.restrict.rel}.]This is a straightforward
+consequence of the definitions.
 \end{proof}
 
 \begin{proof}
@@ -13173,8 +12340,8 @@ We have
 \mathbf{E}  &  =\bigsqcup_{i\in I}\mathbf{E}_{i}=\left(  \underbrace{\bigsqcup
 _{i\in I}E_{i}}_{=E},\underbrace{\bigoplus_{i\in I}\left(  <_{1,i}\right)
 }_{=\left(  <_{1}\right)  },\underbrace{\bigoplus_{i\in I}\left(
-<_{2,i}\right)  }_{=\left(  <_{2}\right)  }\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\bigsqcup_{i\in
+<_{2,i}\right)  }_{=\left(  <_{2}\right)  }\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\bigsqcup_{i\in
 I}\mathbf{E}_{i}\right) \\
 &  =\left(  E,<_{1},<_{2}\right)  .
 \end{align*}
@@ -13193,29 +12360,23 @@ We have%
 \bigoplus_{i\in I}\left(  \left(  <_{1,i}\right)  \mid_{T_{i}}\right)
 =\left(  <_{1}\right)  \mid_{T} \label{pf.prop.djun.restrict.5a}%
 \end{equation}
-\footnote{\textit{Proof of (\ref{pf.prop.djun.restrict.5a}):} Fix $i\in I$.
-Then, $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $ is a double
-poset. Also, $<_{1,i}$ is a strict partial order on the set $E_{i}$ (since
-$\left(  E_{i},<_{1,i},<_{2,i}\right)  $ is a double poset), and thus is a
-binary relation on the set $E_{i}$.
-\par
-Now, forget that we fixed $i$. We thus have shown that $<_{1,i}$ is a binary
-relation on the set $E_{i}$ for each $i\in I$. Recall furthermore that $T_{i}$
-is a subset of $E_{i}$ for each $i\in I$. Hence, Lemma
-\ref{lem.djun.restrict.rel} (b) (applied to $<_{1,i}$ instead of $\rho_{i}$)
-shows that $\left(  \bigoplus_{i\in I}\left(  <_{1,i}\right)  \right)
-\mid_{\bigsqcup_{i\in I}T_{i}}=\bigoplus_{i\in I}\left(  \left(
+\footnote{\textit{Proof of (\ref{pf.prop.djun.restrict.5a}):} For each $i\in
+I$, the relation $<_{1,i}$ is a binary relation on the set $E_{i}$ (since
+$\left(  E_{i},<_{1,i},<_{2,i}\right)  $ is a double poset). Recall
+furthermore that $T_{i}$ is a subset of $E_{i}$ for each $i\in I$. Hence,
+Lemma \ref{lem.djun.restrict.rel} (b) (applied to $<_{1,i}$ instead of
+$\rho_{i}$) shows that $\left(  \bigoplus_{i\in I}\left(  <_{1,i}\right)
+\right)  \mid_{\bigsqcup_{i\in I}T_{i}}=\bigoplus_{i\in I}\left(  \left(
 <_{1,i}\right)  \mid_{T_{i}}\right)  $. Thus,%
-\begin{align*}
-\bigoplus_{i\in I}\left(  \left(  <_{1,i}\right)  \mid_{T_{i}}\right)   &
+\[
+\bigoplus_{i\in I}\left(  \left(  <_{1,i}\right)  \mid_{T_{i}}\right)
 =\underbrace{\left(  \bigoplus_{i\in I}\left(  <_{1,i}\right)  \right)
 }_{\substack{=\left(  <_{1}\right)  \\\text{(since }<_{1}\text{ was
 defined}\\\text{as }\bigoplus_{i\in I}\left(  <_{1,i}\right)  \text{)}}%
 }\mid_{\bigsqcup_{i\in I}T_{i}}=\left(  <_{1}\right)  \mid_{\bigsqcup_{i\in
-I}T_{i}}\\
-&  =\left(  <_{1}\right)  \mid_{T}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+I}T_{i}}=\left(  <_{1}\right)  \mid_{T}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
 }\bigsqcup_{i\in I}T_{i}=T\right)  .
-\end{align*}
+\]
 This proves (\ref{pf.prop.djun.restrict.5a}).}. The same argument (applied to
 $<_{2,i}$ and $<_{2}$ instead of $<_{1,i}$ and $<_{1}$) shows that%
 \begin{equation}
@@ -13486,15 +12647,8 @@ Q_{i}=E_{i}$ and having the property that
 
 [\textit{Proof of Observation 1:} From (\ref{pf.prop.djun.Adm1.b.1}), we
 obtain $\left(  P_{i},Q_{i}\right)  \in\operatorname*{Adm}\left(
-\mathbf{E}_{i}\right)  $. In other words, $P_{i}$ and $Q_{i}$ are subsets of
-$E_{i}$ satisfying $P_{i}\cap Q_{i}=\varnothing$ and $P_{i}\cup Q_{i}=E_{i}$
-and having the property that
-\[
-\text{no }p\in P_{i}\text{ and }q\in Q_{i}\text{ satisfy }q<_{1,i}p
-\]
-(by the definition of $\operatorname*{Adm}\left(  \mathbf{E}_{i}\right)  $
-(since $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $)). This proves
-Observation 1.]
+\mathbf{E}_{i}\right)  $. From this, Observation 1 immediately follows by the
+definition of $\operatorname*{Adm}\left(  \mathbf{E}_{i}\right)  $.]
 
 Now, $\bigsqcup_{i\in I}P_{i}$ and $\bigsqcup_{i\in I}Q_{i}$ are subsets of
 $E$\ \ \ \ \footnote{\textit{Proof.} For each $i\in I$, the set $P_{i}$ is a
@@ -13513,21 +12667,20 @@ We have $x\in\left(  \bigsqcup_{i\in I}P_{i}\right)  \cap\left(
 \bigsqcup_{i\in I}Q_{i}\right)  \subseteq\bigsqcup_{i\in I}P_{i}$. Hence,
 Remark \ref{rmk.djun.elt} (c) (applied to $P_{i}$ instead of $E_{i}$) shows
 that there exist an $i\in I$ and an $e\in P_{i}$ such that $x=\left(
-i,e\right)  $. Fix these $i$ and $e$, and denote them by $j$ and $f$. Thus,
-$j\in I$ and $f\in P_{j}$ satisfy $x=\left(  j,f\right)  $.
+i,e\right)  $. Denote these $i$ and $e$ by $j$ and $f$. Thus, $j\in I$ and
+$f\in P_{j}$ satisfy $x=\left(  j,f\right)  $.
 \par
 We have $x\in\left(  \bigsqcup_{i\in I}P_{i}\right)  \cap\left(
 \bigsqcup_{i\in I}Q_{i}\right)  \subseteq\bigsqcup_{i\in I}Q_{i}$. Hence,
 Remark \ref{rmk.djun.elt} (c) (applied to $Q_{i}$ instead of $E_{i}$) shows
 that there exist an $i\in I$ and an $e\in Q_{i}$ such that $x=\left(
-i,e\right)  $. Fix these $i$ and $e$, and denote them by $k$ and $g$. Thus,
-$k\in I$ and $g\in Q_{k}$ satisfy $x=\left(  k,g\right)  $.
+i,e\right)  $. Denote these $i$ and $e$ by $k$ and $g$. Thus, $k\in I$ and
+$g\in Q_{k}$ satisfy $x=\left(  k,g\right)  $.
 \par
 We have $\left(  j,f\right)  =x=\left(  k,g\right)  $. In other words, $j=k$
 and $f=g$. Hence, $f=g\in Q_{k}=Q_{j}$ (since $k=j$).
 \par
-Set $i=j$. Thus, Observation 1 yields $P_{i}\cap Q_{i}=\varnothing$ (since
-$i=j\in I$). This rewrites as $P_{j}\cap Q_{j}=\varnothing$ (since $i=j$). But
+Observation 1 (applied to $i=j$) yields $P_{j}\cap Q_{j}=\varnothing$. But
 combining $f\in P_{j}$ with $f\in Q_{j}$, we obtain $f\in P_{j}\cap
 Q_{j}=\varnothing$. This shows that the set $\varnothing$ is nonempty (because
 it contains the element $f$). But this is absurd.
@@ -13576,15 +12729,15 @@ $q<_{1}p$. Fix these $p$ and $q$.
 \par
 We have $p\in\bigsqcup_{i\in I}P_{i}$. Hence, Remark \ref{rmk.djun.elt} (c)
 (applied to $p$ and $P_{i}$ instead of $x$ and $E_{i}$) shows that there exist
-an $i\in I$ and an $e\in P_{i}$ such that $p=\left(  i,e\right)  $. Fix these
-$i$ and $e$, and denote them by $k$ and $f$. Thus, $k\in I$ and $f\in P_{k}$
-satisfy $p=\left(  k,f\right)  $.
+an $i\in I$ and an $e\in P_{i}$ such that $p=\left(  i,e\right)  $. Denote
+these $i$ and $e$ by $k$ and $f$. Thus, $k\in I$ and $f\in P_{k}$ satisfy
+$p=\left(  k,f\right)  $.
 \par
 We have $q\in\bigsqcup_{i\in I}Q_{i}$. Hence, Remark \ref{rmk.djun.elt} (c)
 (applied to $q$ and $Q_{i}$ instead of $x$ and $E_{i}$) shows that there exist
-an $i\in I$ and an $e\in Q_{i}$ such that $q=\left(  i,e\right)  $. Fix these
-$i$ and $e$, and denote them by $j$ and $e$. Thus, $j\in I$ and $e\in Q_{j}$
-satisfy $q=\left(  j,e\right)  $.
+an $i\in I$ and an $e\in Q_{i}$ such that $q=\left(  i,e\right)  $. Denote
+these $i$ and $e$ by $j$ and $e$. Thus, $j\in I$ and $e\in Q_{j}$ satisfy
+$q=\left(  j,e\right)  $.
 \par
 We have $\left(  k,f\right)  =p\in\bigsqcup_{i\in I}P_{i}\subseteq E$ and
 $\left(  j,e\right)  =q\in\bigsqcup_{i\in I}Q_{i}\subseteq E$. Also, $\left(
@@ -13682,127 +12835,8 @@ I$. Then, $\left(  \operatorname*{inc}\nolimits_{j}\right)  ^{-1}\left(
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma \ref{lem.djun.Adm-bij.1}.](a) Let $R$ be a subset of
-$\bigsqcup_{i\in I}E_{i}$.
-
-The definition of the disjoint union $\bigsqcup_{i\in I}\left(
-\operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  R\right)  $ yields
-\begin{equation}
-\bigsqcup_{i\in I}\left(  \operatorname*{inc}\nolimits_{i}\right)
-^{-1}\left(  R\right)  =\bigcup_{i\in I}\left(  \left\{  i\right\}
-\times\left(  \operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  R\right)
-\right)  . \label{pf.lem.djun.Adm-bij.1.a.1}%
-\end{equation}
-
-
-Each $x\in R$ satisfies $x\in\bigsqcup_{i\in I}\left(  \operatorname*{inc}%
-\nolimits_{i}\right)  ^{-1}\left(  R\right)  $%
-\ \ \ \ \footnote{\textit{Proof.} Let $x\in R$. Thus, $x\in R\subseteq
-\bigsqcup_{i\in I}E_{i}$. Hence, there exist an $i\in I$ and an $e\in E_{i}$
-such that $x=\left(  i,e\right)  $ (according to Remark \ref{rmk.djun.elt}
-(c)). Fix these $i$ and $e$, and denote them by $j$ and $e$. Thus, $j\in I$
-and $e\in E_{j}$ satisfy $x=\left(  j,e\right)  $.
-\par
-We have $e\in E_{j}$. Hence, the definition of $\operatorname*{inc}%
-\nolimits_{j}$ yields $\operatorname*{inc}\nolimits_{j}\left(  e\right)
-=\left(  j,e\right)  =x\in R$, so that $e\in\left(  \operatorname*{inc}%
-\nolimits_{j}\right)  ^{-1}\left(  R\right)  $.
-\par
-Now,%
-\[
-x=\left(  \underbrace{j}_{\in\left\{  j\right\}  },\underbrace{e}_{\in\left(
-\operatorname*{inc}\nolimits_{j}\right)  ^{-1}\left(  R\right)  }\right)
-\in\left\{  j\right\}  \times\left(  \operatorname*{inc}\nolimits_{j}\right)
-^{-1}\left(  R\right)  \subseteq\bigcup_{i\in I}\left(  \left\{  i\right\}
-\times\left(  \operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  R\right)
-\right)
-\]
-(since $\left\{  j\right\}  \times\left(  \operatorname*{inc}\nolimits_{j}%
-\right)  ^{-1}\left(  R\right)  $ is a term in the union $\bigcup_{i\in
-I}\left(  \left\{  i\right\}  \times\left(  \operatorname*{inc}\nolimits_{i}%
-\right)  ^{-1}\left(  R\right)  \right)  $). In view of
-(\ref{pf.lem.djun.Adm-bij.1.a.1}), this rewrites as $x\in\bigsqcup_{i\in
-I}\left(  \operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  R\right)  $.
-Qed.}. In other words, $R\subseteq\bigsqcup_{i\in I}\left(
-\operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  R\right)  $.
-
-Each $x\in\bigsqcup_{i\in I}\left(  \operatorname*{inc}\nolimits_{i}\right)
-^{-1}\left(  R\right)  $ satisfies $x\in R$\ \ \ \ \footnote{\textit{Proof.}
-Let $x\in\bigsqcup_{i\in I}\left(  \operatorname*{inc}\nolimits_{i}\right)
-^{-1}\left(  R\right)  $. Thus, Remark \ref{rmk.djun.elt} (c) (applied to
-$\left(  \operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  R\right)  $
-instead of $E_{i}$) shows that there exist an $i\in I$ and an $e\in\left(
-\operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  R\right)  $ such that
-$x=\left(  i,e\right)  $. Consider these $i$ and $e$.
-\par
-We have $e\in\left(  \operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(
-R\right)  $. In other words, $e\in E_{i}$ and $\operatorname*{inc}%
-\nolimits_{i}\left(  e\right)  \in R$. But the definition of
-$\operatorname*{inc}\nolimits_{i}$ yields $\operatorname*{inc}\nolimits_{i}%
-\left(  e\right)  =\left(  i,e\right)  $. Hence, $\left(  i,e\right)
-=\operatorname*{inc}\nolimits_{i}\left(  e\right)  \in R$, so that $x=\left(
-i,e\right)  \in R$. Qed.}. In other words, $\bigsqcup_{i\in I}\left(
-\operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  R\right)  \subseteq R$.
-Combining this with $R\subseteq\bigsqcup_{i\in I}\left(  \operatorname*{inc}%
-\nolimits_{i}\right)  ^{-1}\left(  R\right)  $, we obtain $\bigsqcup_{i\in
-I}\left(  \operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  R\right)  =R$.
-This proves Lemma \ref{lem.djun.Adm-bij.1} (a).
-
-(b) The definition of the disjoint union $\bigsqcup_{i\in I}R_{i}$ yields%
-\begin{equation}
-\bigsqcup_{i\in I}R_{i}=\bigcup_{i\in I}\left(  \left\{  i\right\}  \times
-R_{i}\right)  . \label{pf.lem.djun.Adm-bij.1.b.1}%
-\end{equation}
-
-
-Each $x\in\left(  \operatorname*{inc}\nolimits_{j}\right)  ^{-1}\left(
-\bigsqcup_{i\in I}R_{i}\right)  $ satisfies $x\in R_{j}$%
-\ \ \ \ \footnote{\textit{Proof.} Let $x\in\left(  \operatorname*{inc}%
-\nolimits_{j}\right)  ^{-1}\left(  \bigsqcup_{i\in I}R_{i}\right)  $. Thus,
-$x$ is an element of $E_{j}$ and satisfies $\operatorname*{inc}\nolimits_{j}%
-\left(  x\right)  \in\bigsqcup_{i\in I}R_{i}$.
-\par
-We have $\operatorname*{inc}\nolimits_{j}\left(  x\right)  \in\bigsqcup_{i\in
-I}R_{i}$. Thus, Remark \ref{rmk.djun.elt} (c) (applied to $\operatorname*{inc}%
-\nolimits_{j}\left(  x\right)  $ and $R_{i}$ instead of $x$ and $E_{i}$) shows
-that there exist an $i\in I$ and an $e\in R_{i}$ such that
-$\operatorname*{inc}\nolimits_{j}\left(  x\right)  =\left(  i,e\right)  $.
-Consider these $i$ and $e$.
-\par
-But the definition of $\operatorname*{inc}\nolimits_{j}$ yields
-$\operatorname*{inc}\nolimits_{j}\left(  x\right)  =\left(  j,x\right)  $.
-Hence, $\left(  j,x\right)  =\operatorname*{inc}\nolimits_{j}\left(  x\right)
-=\left(  i,e\right)  $. In other words, $j=i$ and $x=e$. Hence, $i=j$.
-\par
-Now, $x=e\in R_{i}=R_{j}$ (since $i=j$). Qed.}. In other words, $\left(
-\operatorname*{inc}\nolimits_{j}\right)  ^{-1}\left(  \bigsqcup_{i\in I}%
-R_{i}\right)  \subseteq R_{j}$.
-
-Each $x\in R_{j}$ satisfies $x\in\left(  \operatorname*{inc}\nolimits_{j}%
-\right)  ^{-1}\left(  \bigsqcup_{i\in I}R_{i}\right)  $%
-\ \ \ \ \footnote{\textit{Proof.} Let $x\in R_{j}$. Thus, $x\in R_{j}\subseteq
-E_{j}$ (since $R_{j}$ is a subset of $E_{j}$). Hence, $\operatorname*{inc}%
-\nolimits_{j}\left(  x\right)  $ is well-defined.
-\par
-The definition of $\operatorname*{inc}\nolimits_{j}$ yields
-\[
-\operatorname*{inc}\nolimits_{j}\left(  x\right)  =\left(  \underbrace{j}%
-_{\in\left\{  j\right\}  },\underbrace{x}_{\in R_{j}}\right)  \in\left\{
-j\right\}  \times R_{j}\subseteq\bigcup_{i\in I}\left(  \left\{  i\right\}
-\times R_{i}\right)
-\]
-(since $\left\{  j\right\}  \times R_{j}$ is a term in the union
-$\bigcup_{i\in I}\left(  \left\{  i\right\}  \times R_{i}\right)  $). In view
-of (\ref{pf.lem.djun.Adm-bij.1.b.1}), this rewrites as $\operatorname*{inc}%
-\nolimits_{j}\left(  x\right)  \in\bigsqcup_{i\in I}R_{i}$. In other words,
-$x\in\left(  \operatorname*{inc}\nolimits_{j}\right)  ^{-1}\left(
-\bigsqcup_{i\in I}R_{i}\right)  $. Qed.}. In other words, $R_{j}%
-\subseteq\left(  \operatorname*{inc}\nolimits_{j}\right)  ^{-1}\left(
-\bigsqcup_{i\in I}R_{i}\right)  $. Combining this with $\left(
-\operatorname*{inc}\nolimits_{j}\right)  ^{-1}\left(  \bigsqcup_{i\in I}%
-R_{i}\right)  \subseteq R_{j}$, we obtain $\left(  \operatorname*{inc}%
-\nolimits_{j}\right)  ^{-1}\left(  \bigsqcup_{i\in I}R_{i}\right)  =R_{j}$.
-This proves Lemma \ref{lem.djun.Adm-bij.1} (b).
+[Proof of Lemma \ref{lem.djun.Adm-bij.1}.]This is, again, a straightforward
+fact about sets, and its proof is left to the reader.
 \end{proof}
 
 \begin{proposition}
@@ -13845,13 +12879,10 @@ $\operatorname*{Adm}\left(  \mathbf{E}_{i}\right)  $ (since $\mathbf{E}%
 _{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $)). Consider these $P_{i}$ and
 $Q_{i}$.
 \par
-Now,%
-\[
-\alpha=\left(  \underbrace{\alpha_{i}}_{=\left(  P_{i},Q_{i}\right)  }\right)
-_{i\in I}=\left(  \left(  P_{i},Q_{i}\right)  \right)  _{i\in I}.
-\]
-Applying the map $\operatorname*{Combine}$ to both sides of this equality, we
-find%
+Now, $\alpha=\left(  \alpha_{i} \right)  _{i\in I} =\left(  \left(
+P_{i},Q_{i}\right)  \right)  _{i\in I} $ (since $\alpha_{i}=\left(
+P_{i},Q_{i}\right)  $ for all $i \in I$). Applying the map
+$\operatorname*{Combine}$ to both sides of this equality, we find%
 \[
 \operatorname*{Combine}\left(  \alpha\right)  =\operatorname*{Combine}\left(
 \left(  \left(  P_{i},Q_{i}\right)  \right)  _{i\in I}\right)  =\left(
@@ -13884,7 +12915,7 @@ But
 \left(  \operatorname*{Split}\circ\operatorname*{Combine}\right)  \left(
 \alpha\right)   &  =\operatorname*{Split}\left(
 \underbrace{\operatorname*{Combine}\left(  \alpha\right)  }_{=\left(
-\bigsqcup_{i\in I}P_{i},\bigsqcup_{i\in I}Q_{i}\right)  }\right)  &
+\bigsqcup_{i\in I}P_{i},\bigsqcup_{i\in I}Q_{i}\right)  }\right)
 =\operatorname*{Split}\left(  \left(  \bigsqcup_{i\in I}P_{i},\bigsqcup_{i\in
 I}Q_{i}\right)  \right)  =\alpha=\operatorname*{id}\left(  \alpha\right)  .
 \end{align*}
@@ -13924,7 +12955,7 @@ to both sides of this equality, we find%
 ,\left(  \operatorname*{inc}\nolimits_{i}\right)  ^{-1}\left(  Q\right)
 \right)  \right)  _{i\in I}=\operatorname*{Split}\left(  \alpha\right)
 \in\prod_{i\in I}\operatorname*{Adm}\left(  \mathbf{E}_{i}\right)  $. Thus,
-the definition of the map $\operatorname*{Combine}$ yields%
+the definition of the map $\operatorname*{Combine}$ yields
 \begin{align*}
 \operatorname*{Combine}\left(  \left(  \left(  \left(  \operatorname*{inc}%
 \nolimits_{i}\right)  ^{-1}\left(  P\right)  ,\left(  \operatorname*{inc}%
@@ -13979,19 +13010,15 @@ _{T_{i}},\left(  w\circ\operatorname*{inc}\nolimits_{i}\right)  \mid_{T_{i}%
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma \ref{lem.djun.restrict.2lem}.]Proposition
-\ref{prop.djun.restrict} yields $\mathbf{E}\mid_{\bigsqcup_{i\in I}T_{i}%
-}=\bigsqcup_{i\in I}\left(  \mathbf{E}_{i}\mid_{T_{i}}\right)  $.
-
-We notice that the notation $\operatorname*{inc}\nolimits_{j}$ (for $j\in I$)
-is slightly ambiguous: It may mean both the map $\operatorname*{inc}%
-\nolimits_{j}:E_{j}\rightarrow\bigsqcup_{i\in I}E_{i}$ and the map
-$\operatorname*{inc}\nolimits_{j}:T_{j}\rightarrow\bigsqcup_{i\in I}T_{i}$. In
-order to resolve this ambiguity, let us agree to denote the latter map by
-$\operatorname*{inc}\nolimits_{j,T}$ (instead of just calling it
-$\operatorname*{inc}\nolimits_{j}$). Thus, $\operatorname*{inc}\nolimits_{j}$
-shall only mean the map $\operatorname*{inc}\nolimits_{j}:E_{j}\rightarrow
-\bigsqcup_{i\in I}E_{i}$.
+[Proof of Lemma \ref{lem.djun.restrict.2lem}.]We notice that the notation
+$\operatorname*{inc}\nolimits_{j}$ (for $j\in I$) is slightly ambiguous: It
+may mean both the map $\operatorname*{inc}\nolimits_{j}:E_{j}\rightarrow
+\bigsqcup_{i\in I}E_{i}$ and the map $\operatorname*{inc}\nolimits_{j}%
+:T_{j}\rightarrow\bigsqcup_{i\in I}T_{i}$. In order to resolve this ambiguity,
+let us agree to denote the latter map by $\operatorname*{inc}\nolimits_{j,T}$
+(instead of just calling it $\operatorname*{inc}\nolimits_{j}$). Thus,
+$\operatorname*{inc}\nolimits_{j}$ shall only mean the map
+$\operatorname*{inc}\nolimits_{j}:E_{j}\rightarrow\bigsqcup_{i\in I}E_{i}$.
 
 Set $T=\bigsqcup_{i\in I}T_{i}$.
 
@@ -14007,27 +13034,29 @@ Notice that the map $\left(  w\mid_{T}\right)  \circ\operatorname*{inc}%
 \nolimits_{j,T}$ is well-defined, since $\operatorname*{inc}\nolimits_{j,T}$
 is a map from $T_{j}$ to $\bigsqcup_{i\in I}T_{i}=T$.
 \par
-Let $g\in T_{j}$. Then, $g \in T_{j} \subseteq E_{j}$ (since $T_{i} \subseteq
-E_{i}$ for all $i \in I$ (because $T_{i}$ is a subset of $E_{i}$ for all $i
-\in I$)). Now, $\operatorname*{inc}\nolimits_{j}\left(  g\right)  =\left(
-j,g\right)  $ (by the definition of the map $\operatorname*{inc}\nolimits_{j}%
-$) and $\operatorname*{inc}\nolimits_{j,T}\left(  g\right)  =\left(
-j,g\right)  $ (by the definition of the map $\operatorname*{inc}%
-\nolimits_{j,T}$). Now,%
+Let $g\in T_{j}$. Then, $\operatorname*{inc}\nolimits_{j}\left(  g\right)
+=\left(  j,g\right)  $ (by the definition of the map $\operatorname*{inc}%
+\nolimits_{j}$). Applying the map $w$ to both sides of this equality, we
+obtain $w \left(  \operatorname{inc}_{j} \left(  g\right)  \right)  = w
+\left(  \left(  j, g\right)  \right)  $. On the other hand,
+$\operatorname*{inc}\nolimits_{j,T}\left(  g\right)  =\left(  j,g\right)  $
+(by the definition of the map $\operatorname*{inc}\nolimits_{j,T}$). Applying
+the map $w$ to both sides of this equality, we obtain $w \left(
+\operatorname{inc}_{j,T} \left(  g\right)  \right)  = w \left(  \left(  j,
+g\right)  \right)  $. Now,
 \[
 \left(  \left(  w\circ\operatorname*{inc}\nolimits_{j}\right)  \mid_{T_{j}%
 }\right)  \left(  g\right)  =\left(  w\circ\operatorname*{inc}\nolimits_{j}%
-\right)  \left(  g\right)  =w\left(  \underbrace{\operatorname*{inc}%
-\nolimits_{j}\left(  g\right)  }_{=\left(  j,g\right)  }\right)  =w\left(
-\left(  j,g\right)  \right)  .
+\right)  \left(  g\right)  =w\left(  \operatorname*{inc}\nolimits_{j}\left(
+g\right)  \right)  =w\left(  \left(  j,g\right)  \right)  .
 \]
 Comparing this with%
 \[
 \left(  \left(  w\mid_{T}\right)  \circ\operatorname*{inc}\nolimits_{j,T}%
 \right)  \left(  g\right)  =\left(  w\mid_{T}\right)  \left(
 \operatorname*{inc}\nolimits_{j,T}\left(  g\right)  \right)  =w\left(
-\underbrace{\operatorname*{inc}\nolimits_{j,T}\left(  g\right)  }_{=\left(
-j,g\right)  }\right)  =w\left(  \left(  j,g\right)  \right)  ,
+\operatorname*{inc}\nolimits_{j,T}\left(  g\right)  \right)  =w\left(  \left(
+j,g\right)  \right)  ,
 \]
 we obtain $\left(  \left(  w\circ\operatorname*{inc}\nolimits_{j}\right)
 \mid_{T_{j}}\right)  \left(  g\right)  =\left(  \left(  w\mid_{T}\right)
@@ -14140,9 +13169,8 @@ Applying the map $\Delta$ to both sides of this equality, we obtain%
 &  =\Delta\left(  \Gamma\left(  \mathbf{E},w\right)  \right) \nonumber\\
 &  =\sum_{\left(  P,Q\right)  \in\operatorname{Adm}\mathbf{E}}\Gamma\left(
 {\mathbf{E}}\mid_{P},w\mid_{P}\right)  \otimes\Gamma\left(  {\mathbf{E}}%
-\mid_{Q},w\mid_{Q}\right) \nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition \ref{prop.Gammaw.coprod}%
-}\right) \nonumber\\
+\mid_{Q},w\mid_{Q}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition
+\ref{prop.Gammaw.coprod}}\right) \nonumber\\
 &  =\sum_{\left(  \left(  P_{i},Q_{i}\right)  \right)  _{i\in I}\in\prod_{i\in
 I}\operatorname*{Adm}\left(  \mathbf{E}_{i}\right)  }\Gamma\left(
 {\mathbf{E}}\mid_{\bigsqcup_{i\in I}P_{i}},w\mid_{\bigsqcup_{i\in I}P_{i}%
@@ -14197,19 +13225,12 @@ _{Q_{i}},w_{i}\mid_{Q_{i}}\right)  \label{pf.cor.djun.restrict.2.factor2}%
 
 [\textit{Proof of Observation 1:} Let $\left(  \left(  P_{i},Q_{i}\right)
 \right)  _{i\in I}\in\prod_{i\in I}\operatorname*{Adm}\left(  \mathbf{E}%
-_{i}\right)  $. Thus, for each $i\in I$, we have%
-\begin{equation}
-\left(  P_{i},Q_{i}\right)  \in\operatorname*{Adm}\left(  \mathbf{E}%
-_{i}\right)  . \label{pf.cor.djun.restrict.2.factor2.pf.1}%
-\end{equation}
-Hence, for each $i\in I$, the sets $P_{i}$ and $Q_{i}$ are two subsets of
-$E_{i}$\ \ \ \ \footnote{\textit{Proof.} Let $i\in I$. Then, $\left(
-P_{i},Q_{i}\right)  \in\operatorname*{Adm}\left(  \mathbf{E}_{i}\right)  $ (by
-(\ref{pf.cor.djun.restrict.2.factor2.pf.1})). Hence, $P_{i}$ and $Q_{i}$ are
-two subsets of $E_{i}$ (by the definition of $\operatorname*{Adm}\left(
-\mathbf{E}_{i}\right)  $ (since $\mathbf{E}_{i}=\left(  E_{i},<_{1,i}%
-,<_{2,i}\right)  $)). Qed.}. Hence, Lemma \ref{lem.djun.restrict.2lem}
-(applied to $T_{i}=P_{i}$) yields%
+_{i}\right)  $. Thus, for each $i\in I$, we have $\left(  P_{i},Q_{i}\right)
+\in\operatorname*{Adm}\left(  \mathbf{E}_{i}\right)  $. Hence, for each $i\in
+I$, the sets $P_{i}$ and $Q_{i}$ are two subsets of $E_{i}$ (by the definition
+of $\operatorname*{Adm}\left(  \mathbf{E}_{i}\right)  $ (since $\mathbf{E}%
+_{i}=\left(  E_{i},<_{1,i},<_{2,i}\right)  $)). Hence, Lemma
+\ref{lem.djun.restrict.2lem} (applied to $T_{i}=P_{i}$) yields%
 \[
 \Gamma\left(  {\mathbf{E}}\mid_{\bigsqcup_{i\in I}P_{i}},w\mid_{\bigsqcup
 _{i\in I}P_{i}}\right)  =\prod_{i\in I}\Gamma\left(  \mathbf{E}_{i}\mid
@@ -14322,88 +13343,28 @@ We shall now prove that
 [\textit{Proof of (\ref{pf.cor.djun.restrict.3.1}):} Let $\alpha
 \in\operatorname*{Comp}$ and $\beta\in\operatorname*{Comp}$.
 
-We know that $\beta\in\operatorname*{Comp}$. In other words, $\beta$ is a
-composition (since $\operatorname*{Comp}$ is the set of all compositions).
-Corollary \ref{cor.Malpha.Gamma} (applied to $\beta$ instead of $\alpha$) thus
-shows that there exist a set $E$, a special double poset ${\mathbf{E}}=\left(
-E,<_{1},>_{1}\right)  $, and a map $w:E\rightarrow\left\{  1,2,3,\ldots
-\right\}  $ satisfying $\Gamma\left(  {\mathbf{E}},w\right)  =M_{\beta}$.
-Renaming $E$, $\mathbf{E}$, $<_{1}$, $>_{1}$ and $w$ as $E_{1}$,
-$\mathbf{E}_{1}$, $<_{1,1}$, $>_{1,1}$ and $w_{1}$ in this statement, we
-obtain the following: There exist a set $E_{1}$, a special double poset
-$\mathbf{E}_{1}=\left(  E_{1},<_{1,1},>_{1,1}\right)  $, and a map
-$w_{1}:E_{1}\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying
-$\Gamma\left(  {\mathbf{E}}_{1},w_{1}\right)  =M_{\beta}$. Consider these
-$E_{1}$, $\mathbf{E}_{1}$, $<_{1,1}$, $>_{1,1}$ and $w_{1}$.
+As in the proof of (\ref{pf.prop.QSym.alg.prod.1}), we can
 
-We know that $\alpha\in\operatorname*{Comp}$. In other words, $\alpha$ is a
-composition (since $\operatorname*{Comp}$ is the set of all compositions).
-Corollary \ref{cor.Malpha.Gamma} thus shows that there exist a set $E$, a
-special double poset ${\mathbf{E}}=\left(  E,<_{1},>_{1}\right)  $, and a map
-$w:E\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying $\Gamma\left(
-{\mathbf{E}},w\right)  =M_{\alpha}$. Renaming $E$, $\mathbf{E}$, $<_{1}$,
-$>_{1}$ and $w$ as $E_{0}$, $\mathbf{E}_{0}$, $<_{1,0}$, $>_{1,0}$ and $w_{0}$
-in this statement, we obtain the following: There exist a set $E_{0}$, a
-special double poset $\mathbf{E}_{0}=\left(  E_{0},<_{1,0},>_{1,0}\right)  $,
-and a map $w_{0}:E_{0}\rightarrow\left\{  1,2,3,\ldots\right\}  $ satisfying
-$\Gamma\left(  {\mathbf{E}}_{0},w_{0}\right)  =M_{\alpha}$. Consider these
-$E_{0}$, $\mathbf{E}_{0}$, $<_{1,0}$, $>_{1,0}$ and $w_{0}$.
+\begin{itemize}
+\item find a set $E_{1}$, a special double poset $\mathbf{E}_{1}=\left(
+E_{1},<_{1,1},>_{1,1}\right)  $, and a map $w_{1}:E_{1}\rightarrow\left\{
+1,2,3,\ldots\right\}  $ satisfying $\Gamma\left(  {\mathbf{E}}_{1}%
+,w_{1}\right)  =M_{\beta}$;
 
-Now, $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ for every
-$i\in\left\{  0,1\right\}  $\ \ \ \ \footnote{\textit{Proof.} Let
-$i\in\left\{  0,1\right\}  $. We must prove that $\mathbf{E}_{i}=\left(
-E_{i},<_{1,i},>_{1,i}\right)  $.
-\par
-We have $i\in\left\{  0,1\right\}  $. Thus, either $i=0$ or $i=1$. Hence, we
-are in one of the following two cases:
-\par
-\textit{Case 1:} We have $i=0$.
-\par
-\textit{Case 2:} We have $i=1$.
-\par
-Let us first consider Case 1. In this case, we have $i=0$. Now, $\mathbf{E}%
-_{0}=\left(  E_{0},<_{1,0},>_{1,0}\right)  $. This rewrites as $\mathbf{E}%
-_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ (since $i=0$). Thus,
-$\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ is proven in Case 1.
-\par
-Let us now consider Case 2. In this case, we have $i=1$. Now, $\mathbf{E}%
-_{1}=\left(  E_{1},<_{1,1},>_{1,1}\right)  $. This rewrites as $\mathbf{E}%
-_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ (since $i=1$). Thus,
-$\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ is proven in Case 2.
-\par
-Now, $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ is proven in each
-of the two Cases 1 and 2. Since these two Cases cover all possibilities, we
-thus conclude that $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $
-always holds. Qed.}. Moreover, $w_{i}$ is a map $E_{i}\rightarrow\left\{
-1,2,3,\ldots\right\}  $ for each $i\in\left\{  0,1\right\}  $%
-\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{  0,1\right\}  $. We must
-prove that $w_{i}$ is a map $E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $.
-\par
-We have $i\in\left\{  0,1\right\}  $. Thus, either $i=0$ or $i=1$. Hence, we
-are in one of the following two cases:
-\par
-\textit{Case 1:} We have $i=0$.
-\par
-\textit{Case 2:} We have $i=1$.
-\par
-Let us first consider Case 1. In this case, we have $i=0$. Now, $w_{0}$ is a
-map $E_{0}\rightarrow\left\{  1,2,3,\ldots\right\}  $. In other words, $w_{i}$
-is a map $E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $ (since $i=0$).
-Thus, in Case 1, we have shown that $w_{i}$ is a map $E_{i}\rightarrow\left\{
-1,2,3,\ldots\right\}  $.
-\par
-Let us first consider Case 2. In this case, we have $i=1$. Now, $w_{1}$ is a
-map $E_{1}\rightarrow\left\{  1,2,3,\ldots\right\}  $. In other words, $w_{i}$
-is a map $E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $ (since $i=1$).
-Thus, in Case 2, we have shown that $w_{i}$ is a map $E_{i}\rightarrow\left\{
-1,2,3,\ldots\right\}  $.
-\par
-Now, in each of the two Cases 1 and 2, we have proven that $w_{i}$ is a map
-$E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $. Since these two Cases cover
-all possibilities, we thus conclude that $w_{i}$ is always a map
-$E_{i}\rightarrow\left\{  1,2,3,\ldots\right\}  $. Qed.}. Hence, Corollary
-\ref{cor.djun.restrict.2} (applied to $\left\{  0,1\right\}  $ and $>_{1,i}$
-instead of $I$ and $<_{2,i}$) shows that
+\item find a set $E_{0}$, a special double poset $\mathbf{E}_{0}=\left(
+E_{0},<_{1,0},>_{1,0}\right)  $, and a map $w_{0}:E_{0}\rightarrow\left\{
+1,2,3,\ldots\right\}  $ satisfying $\Gamma\left(  {\mathbf{E}}_{0}%
+,w_{0}\right)  =M_{\alpha}$;
+
+\item show that $\mathbf{E}_{i}=\left(  E_{i},<_{1,i},>_{1,i}\right)  $ for
+every $i\in\left\{  0,1\right\}  $;
+
+\item show that $w_{i}$ is a map $E_{i}\rightarrow\left\{  1,2,3,\ldots
+\right\}  $ for each $i\in\left\{  0,1\right\}  $.
+\end{itemize}
+
+Now, Corollary \ref{cor.djun.restrict.2} (applied to $\left\{  0,1\right\}  $
+and $>_{1,i}$ instead of $I$ and $<_{2,i}$) shows that
 \[
 \Delta\left(  \prod_{i\in\left\{  0,1\right\}  }\Gamma\left(  \mathbf{E}%
 _{i},w_{i}\right)  \right)  =\prod_{i\in\left\{  0,1\right\}  }\Delta\left(
@@ -14456,23 +13417,17 @@ belongs to the basis $\left(  M_{\alpha}\right)  _{\alpha\in
 Assume this. Thus, $a=M_{\alpha}$ for some $\alpha\in\operatorname*{Comp}$.
 Consider this $\alpha$.
 
-Now, $\underbrace{a}_{=M_{\alpha}}\underbrace{b}_{=M_{\beta}}=M_{\alpha
-}M_{\beta}$. Applying the map $\Delta$ to both sides of this equality, we
-obtain%
-\begin{align*}
-\Delta\left(  ab\right)   &  =\Delta\left(  M_{\alpha}M_{\beta}\right)
-=\Delta\left(  \underbrace{M_{\alpha}}_{=a}\right)  \Delta\left(
-\underbrace{M_{\beta}}_{=b}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-(\ref{pf.cor.djun.restrict.3.1})}\right) \\
-&  =\Delta\left(  a\right)  \Delta\left(  b\right)  .
-\end{align*}
-This proves (\ref{pf.cor.djun.restrict.3.3}).]
+Now, \eqref{pf.cor.djun.restrict.3.1} yields $\Delta\left(  M_{\alpha}%
+M_{\beta}\right)  =\Delta\left(  M_{\alpha}\right)  \Delta\left(  M_{\beta
+}\right)  $. Since $a = M_{\alpha}$ and $b = M_{\beta}$, this rewrites as
+$\Delta\left(  ab \right)  = \Delta\left(  a \right)  \Delta\left(  b \right)
+$. This proves (\ref{pf.cor.djun.restrict.3.3}).]
 
 Corollary \ref{cor.djun.restrict.3} immediately follows from
 (\ref{pf.cor.djun.restrict.3.3}).
 \end{proof}
 
-Now, we can finally prove that $\operatorname*{QSym}$ is a bialgebra:
+Now, we can prove that $\operatorname*{QSym}$ is a bialgebra:
 
 \begin{proposition}
 \label{prop.QSym.bialg}The $\mathbf{k}$-algebra $\operatorname*{QSym}$,
@@ -14607,10 +13562,8 @@ and
 
 \end{proposition}
 
-Let us actually show a slightly more general statement\footnote{Actually,
-Proposition \ref{prop.example.Gamma.c2} is easily seen to be equivalent to
-Proposition \ref{prop.example.Gamma.c1}, but we will only need to derive the
-latter from the former.}:
+We shall actually prove the following fact first (which is easily seen to be
+equivalent to Proposition~\ref{prop.example.Gamma.c1}):
 
 \begin{proposition}
 \label{prop.example.Gamma.c2}Let $n\in\mathbb{N}$. Let $E=\left\{
@@ -14633,8 +13586,8 @@ Usually, there are, in fact, several total orders $<_{2}$ satisfying the
 conditions of Proposition \ref{prop.example.Gamma.c2}, but of course it
 suffices to construct one of them in order to prove the proposition.
 
-Before we prove Proposition \ref{prop.example.Gamma.c2}, let us prove a really
-simple fact:
+Before we prove Proposition \ref{prop.example.Gamma.c2}, let us record a
+really simple fact:
 
 \begin{proposition}
 \label{prop.order.pullback}Let $E$ and $F$ be two sets. Let $\omega
@@ -14650,6 +13603,12 @@ E$ and $b\in E$, we set $a\prec b$ if and only if $\omega\left(  a\right)
 $\omega$ is injective. Then, the relation $\prec$ is a total order.
 \end{enumerate}
 \end{proposition}
+
+Proposition \ref{prop.order.pullback} is a basic fact about partial and total
+orders; its easy proof is left to the reader.
+
+\begin{noncompile}
+
 
 \begin{proof}
 [Proof of Proposition \ref{prop.order.pullback}.]The relation $<$ is a strict
@@ -14772,6 +13731,7 @@ the relation $\prec$ is a total order (since the relation $\prec$ is a total
 order if and only if every two elements of $E$ are $\prec$-comparable). This
 proves Proposition \ref{prop.order.pullback} (b).
 \end{proof}
+\end{noncompile}
 
 \begin{proof}
 [Proof of Proposition \ref{prop.example.Gamma.c2}.]We shall use the notation
@@ -14920,8 +13880,8 @@ Q\right]  $ (since $\left[  i\in Q\right]  =0$ (since $i\notin Q$)). Thus,
 (\ref{pf.prop.example.Gamma.c2.Deltarho}) is proven in Case 2.
 \par
 We have now proven (\ref{pf.prop.example.Gamma.c2.Deltarho}) in each of the
-two Cases 1 and 2. Since these two Cases cover all possibilities, this shows
-that (\ref{pf.prop.example.Gamma.c2.Deltarho}) always holds. Qed.}.
+two Cases 1 and 2. Therefore, (\ref{pf.prop.example.Gamma.c2.Deltarho}) always
+holds.}.
 
 We now claim that%
 \begin{equation}
@@ -15143,17 +14103,17 @@ For every $\pi\in Z$, we have $\left(  \pi\left(  1\right)  ,\pi\left(
 \par
 First, let us see that $\left(  \pi\left(  1\right)  ,\pi\left(  2\right)
 ,\ldots,\pi\left(  n\right)  \right)  $ is well-defined. We have $\pi\in Z$.
-In other words, $\pi$ belongs to $Z$. In other words, $\pi$ belongs to the set
-of all $\left(  E,<_{1},<_{2}\right)  $-partitions (since $Z$ is the set of
-all $\left(  E,<_{1},<_{2}\right)  $-partitions). In other words, $\pi$ is an
-$\left(  E,<_{1},<_{2}\right)  $-partition. Hence, $\pi$ is a map
-$E\rightarrow\left\{  1,2,3,\ldots\right\}  $. In other words, $\pi$ is a map
-$\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,3,\ldots\right\}  $
-(since $E=\left\{  1,2,\ldots,n\right\}  $). Thus, $\pi\left(  1\right)
-,\pi\left(  2\right)  ,\ldots,\pi\left(  n\right)  $ are well-defined elements
-of $\left\{  1,2,3,\ldots\right\}  $. Hence, $\left(  \pi\left(  1\right)
-,\pi\left(  2\right)  ,\ldots,\pi\left(  n\right)  \right)  $ is well-defined
-and an element of $\left\{  1,2,3,\ldots\right\}  ^{n}$.
+In other words, $\pi$ is an $\left(  E,<_{1},<_{2}\right)  $-partition (since
+$Z$ is the set of all $\left(  E,<_{1},<_{2}\right)  $-partitions). Hence,
+$\pi$ is a map $E\rightarrow\left\{  1,2,3,\ldots\right\}  $. In other words,
+$\pi$ is a map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,3,\ldots\right\}  $ (since $E=\left\{  1,2,\ldots,n\right\}  $).
+%Thus, $\pi\left(  1\right)
+%,\pi\left(  2\right)  ,\ldots,\pi\left(  n\right)  $ are well-defined elements
+%of $\left\{  1,2,3,\ldots\right\}  $.
+Hence, $\left(  \pi\left(  1\right)  ,\pi\left(  2\right)  ,\ldots,\pi\left(
+n\right)  \right)  $ is well-defined and an element of $\left\{
+1,2,3,\ldots\right\}  ^{n}$.
 \par
 Recall the definition of an $\left(  E,<_{1},<_{2}\right)  $-partition. This
 definition shows that $\pi$ is an $\left(  E,<_{1},<_{2}\right)  $-partition
@@ -15185,10 +14145,10 @@ belong to the set $\left\{  1,2,\ldots,n\right\}  $. In other words, both $k$
 and $k+1$ belong to the set $E$ (since $E=\left\{  1,2,\ldots,n\right\}  $).
 \par
 Recall that $<_{1}$ is the total order on the set $E$ inherited from
-$\mathbb{Z}$. Hence, $k<_{1}k+1$ holds if and only if $k<k+1$. Thus,
-$k<_{1}k+1$ holds (since $k<k+1$). Therefore, Assertion $\mathcal{A}_{1}$
-(applied to $e=k$ and $f=k+1$) yields $\pi\left(  k\right)  \leq\pi\left(
-k+1\right)  $. This proves (\ref{pf.prop.example.Gamma.c3.ZW.1}).]
+$\mathbb{Z}$. Hence, $k<_{1}k+1$ (since $k<k+1$). Therefore, Assertion
+$\mathcal{A}_{1}$ (applied to $e=k$ and $f=k+1$) yields $\pi\left(  k\right)
+\leq\pi\left(  k+1\right)  $. This proves (\ref{pf.prop.example.Gamma.c3.ZW.1}%
+).]
 \par
 Now, (\ref{pf.prop.example.Gamma.c3.ZW.1}) shows that $\pi\left(  1\right)
 \leq\pi\left(  2\right)  \leq\cdots\leq\pi\left(  n\right)  $.
@@ -15214,8 +14174,7 @@ $. Hence, $j\in D\left(  \alpha\right)  \subseteq\left\{  1,2,\ldots
 $E$ (since $E=\left\{  1,2,\ldots,n\right\}  $).
 \par
 Recall that $<_{1}$ is the total order on the set $E$ inherited from
-$\mathbb{Z}$. Hence, $j<_{1}j+1$ holds if and only if $j<j+1$. Thus,
-$j<_{1}j+1$ holds (since $j<j+1$). Also, $j+1<_{2}j$ (by
+$\mathbb{Z}$. Hence, $j<_{1}j+1$ (since $j<j+1$). Also, $j+1<_{2}j$ (by
 (\ref{eq.prop.example.Gamma.c1.cond1}), applied to $i=j$). Therefore,
 Assertion $\mathcal{A}_{2}$ (applied to $e=j$ and $f=j+1$) yields $\pi\left(
 k\right)  <\pi\left(  k+1\right)  $. This proves
@@ -15226,11 +14185,7 @@ Now, we know that $\left(  \pi\left(  1\right)  ,\pi\left(  2\right)
 1,2,3,\ldots\right\}  ^{n}$ and satisfies $\pi\left(  1\right)  \leq\pi\left(
 2\right)  \leq\cdots\leq\pi\left(  n\right)  $ and $\left(  \pi\left(
 j\right)  <\pi\left(  j+1\right)  \text{ whenever }j\in D\left(
-\alpha\right)  \right)  $. In other words, $\left(  \pi\left(  1\right)
-,\pi\left(  2\right)  ,\ldots,\pi\left(  n\right)  \right)  $ is an $\left(
-i_{1},i_{2},\ldots,i_{n}\right)  \in\left\{  1,2,3,\ldots\right\}  ^{n}$
-satisfying $i_{1}\leq i_{2}\leq\cdots\leq i_{n}$ and $\left(  i_{j}%
-<i_{j+1}\text{ whenever }j\in D\left(  \alpha\right)  \right)  $. Thus,
+\alpha\right)  \right)  $. Thus,
 \begin{align*}
 \left(  \pi\left(  1\right)  ,\pi\left(  2\right)  ,\ldots,\pi\left(
 n\right)  \right)   &  \in\left\{  \left(  i_{1},i_{2},\ldots,i_{n}\right)
@@ -15240,7 +14195,7 @@ i_{n}\right.  \\
 }j\in D\left(  \alpha\right)  \right)  \right\}  \\
 &  =W.
 \end{align*}
-Qed.}. Hence, we can define a map $\Phi:Z\rightarrow W$ by setting%
+}. Hence, we can define a map $\Phi:Z\rightarrow W$ by setting%
 \[
 \left(  \Phi\left(  \pi\right)  =\left(  \pi\left(  1\right)  ,\pi\left(
 2\right)  ,\ldots,\pi\left(  n\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for
@@ -15248,9 +14203,7 @@ every }\pi\in Z\right)  .
 \]
 Consider this map $\Phi$. Thus, $\Phi$ is the map $Z\rightarrow W,\ \pi
 \mapsto\left(  \pi\left(  1\right)  ,\pi\left(  2\right)  ,\ldots,\pi\left(
-n\right)  \right)  $ (since $\Phi\left(  \pi\right)  =\left(  \pi\left(
-1\right)  ,\pi\left(  2\right)  ,\ldots,\pi\left(  n\right)  \right)  $ for
-every $\pi\in Z$).
+n\right)  \right)  $.
 
 The map $\Phi$ is surjective\footnote{\textit{Proof.} Let $\mathbf{g}\in W$.
 We shall show that $\mathbf{g}\in\Phi\left(  Z\right)  $.
@@ -15260,7 +14213,7 @@ We have%
 \mathbf{g}  &  \in W=\left\{  \left(  i_{1},i_{2},\ldots,i_{n}\right)
 \in\left\{  1,2,3,\ldots\right\}  ^{n}\ \mid\ i_{1}\leq i_{2}\leq\cdots\leq
 i_{n}\right. \\
-&  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left.  \text{and } \left(
+&  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left.  \text{and }\left(
 i_{j}<i_{j+1}\text{ whenever }j\in D\left(  \alpha\right)  \right)  \right\}
 .
 \end{align*}
@@ -15289,9 +14242,11 @@ Define a map $\pi:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
 \left(  \pi\left(  k\right)  =i_{k}\ \ \ \ \ \ \ \ \ \ \text{for every }%
 k\in\left\{  1,2,\ldots,n\right\}  \right)  .
 \]
-Thus, $\pi$ is a map from $\left\{  1,2,\ldots,n\right\}  $ to $\left\{
-1,2,3,\ldots\right\}  $. In other words, $\pi$ is a map from $E$ to $\left\{
-1,2,3,\ldots\right\}  $ (since $E=\left\{  1,2,\ldots,n\right\}  $).
+Thus,
+%$\pi$ is a map from $\left\{  1,2,\ldots,n\right\}  $ to $\left\{
+%1,2,3,\ldots\right\}  $. In other words,
+$\pi$ is a map from $E$ to $\left\{  1,2,3,\ldots\right\}  $ (since
+$E=\left\{  1,2,\ldots,n\right\}  $).
 \par
 Recall the definition of an $\left(  E,<_{1},<_{2}\right)  $-partition. This
 definition shows that $\pi$ is an $\left(  E,<_{1},<_{2}\right)  $-partition
@@ -15359,10 +14314,8 @@ Now, we have shown that $\pi$ satisfies Assertions $\mathcal{A}_{1}$ and
 $\mathcal{A}_{2}$. Thus, $\pi$ is an $\left(  E,<_{1},<_{2}\right)
 $-partition (since we know that $\pi$ is an $\left(  E,<_{1},<_{2}\right)
 $-partition if and only if it satisfies Assertions $\mathcal{A}_{1}$ and
-$\mathcal{A}_{2}$). In other words, $\pi$ belongs to the set of all $\left(
-E,<_{1},<_{2}\right)  $-partitions. In other words, $\pi$ belongs to $Z$
-(since $Z$ is the set of all $\left(  E,<_{1},<_{2}\right)  $-partitions). In
-other words, $\pi\in Z$.
+$\mathcal{A}_{2}$). In other words, $\pi\in Z$ (since $Z$ is the set of all
+$\left(  E,<_{1},<_{2}\right)  $-partitions).
 \par
 Now, the definition of $\Phi$ yields%
 \begin{align*}
@@ -15661,16 +14614,16 @@ Let $Z$ denote the set of all $\mathbf{E}^{\prime}$-partitions.
 
 For every $\phi\in Z$, we have $\left(  \phi\left(  1\right)  ,\phi\left(
 2\right)  ,\ldots,\phi\left(  \ell\right)  \right)  \in\mathcal{J}%
-$\ \ \ \ \footnote{\textit{Proof.} Let $\phi\in Z$. Thus, $\phi$ is an element
-of $Z$. In other words, $\phi$ is an $\mathbf{E}^{\prime}$-partition (since
-$Z$ is the set of all $\mathbf{E}^{\prime}$-partitions). In other words,
-$\phi$ is a weakly increasing map from the poset $\left(  E,>_{1}\right)  $ to
-the totally ordered set $\left\{  1,2,3,\ldots\right\}  $ (since the
-$\mathbf{E}^{\prime}$-partitions are precisely the weakly increasing maps from
+$\ \ \ \ \footnote{\textit{Proof.} Let $\phi\in Z$. Thus, $\phi$ is an
+$\mathbf{E}^{\prime}$-partition (since $Z$ is the set of all $\mathbf{E}%
+^{\prime}$-partitions). In other words, $\phi$ is a weakly increasing map from
 the poset $\left(  E,>_{1}\right)  $ to the totally ordered set $\left\{
-1,2,3,\ldots\right\}  $). In other words, $\phi$ is a map $E\rightarrow
-\left\{  1,2,3,\ldots\right\}  $ which has the property that if $e$ and $f$
-are two elements of $E$ satisfying $e>_{1}f$, then%
+1,2,3,\ldots\right\}  $ (since the $\mathbf{E}^{\prime}$-partitions are
+precisely the weakly increasing maps from the poset $\left(  E,>_{1}\right)  $
+to the totally ordered set $\left\{  1,2,3,\ldots\right\}  $). In other words,
+$\phi$ is a map $E\rightarrow\left\{  1,2,3,\ldots\right\}  $ which has the
+property that if $e$ and $f$ are two elements of $E$ satisfying $e>_{1}f$,
+then%
 \begin{equation}
 \phi\left(  e\right)  \leq\phi\left(  f\right)
 \label{pf.prop.example.Gamma.Sb.b.fn1.1}%
@@ -15681,11 +14634,9 @@ map\textquotedblright).
 The map $\phi$ is a map $E\rightarrow\left\{  1,2,3,\ldots\right\}  $. In
 other words, the map $\phi$ is a map $\left\{  1,2,\ldots,\ell\right\}
 \rightarrow\left\{  1,2,3,\ldots\right\}  $ (since $E=\left\{  1,2,\ldots
-,\ell\right\}  $). Thus, $\phi\left(  i\right)  \in\left\{  1,2,3,\ldots
-\right\}  $ for every $i\in\left\{  1,2,\ldots,\ell\right\}  $. Hence,
-$\left(  \phi\left(  1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(
-\ell\right)  \right)  $ is an element of $\left\{  1,2,3,\ldots\right\}
-^{\ell}$.
+,\ell\right\}  $). Thus, $\left(  \phi\left(  1\right)  ,\phi\left(  2\right)
+,\ldots,\phi\left(  \ell\right)  \right)  $ is an element of $\left\{
+1,2,3,\ldots\right\}  ^{\ell}$.
 \par
 Now, let $i$ and $j$ be two elements of $\left\{  1,2,\ldots,\ell\right\}  $
 satisfying $i<j$. We have $i\in\left\{  1,2,\ldots,\ell\right\}  =E$; thus,
@@ -15708,10 +14659,7 @@ $\phi\left(  1\right)  \geq\phi\left(  2\right)  \geq\cdots\geq\phi\left(
 Now, $\left(  \phi\left(  1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(
 \ell\right)  \right)  $ is an element of $\left\{  1,2,3,\ldots\right\}
 ^{\ell}$ and satisfies $\phi\left(  1\right)  \geq\phi\left(  2\right)
-\geq\cdots\geq\phi\left(  \ell\right)  $. In other words, $\left(  \phi\left(
-1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(  \ell\right)  \right)  $
-is an $\left(  i_{1},i_{2},\ldots,i_{\ell}\right)  \in\left\{  1,2,3,\ldots
-\right\}  ^{\ell}$ satisfying $i_{1}\geq i_{2}\geq\cdots\geq i_{\ell}$. Hence,%
+\geq\cdots\geq\phi\left(  \ell\right)  $. In other words,%
 \begin{align*}
 &  \left(  \phi\left(  1\right)  ,\phi\left(  2\right)  ,\ldots,\phi\left(
 \ell\right)  \right) \\
@@ -15777,44 +14725,40 @@ then%
 i_{e}\geq i_{f}. \label{pf.prop.example.Gamma.Sb.b.fn3.1}%
 \end{equation}
 \par
-Let $e$ and $f$ be two elements of $E$ satisfying $e>_{1}f$. We have $e>_{1}f$
-if and only if $f<_{1}e$ (since $>_{1}$ is the opposite relation of $<_{1}$).
-Thus, $f<_{1}e$ (since $e>_{1}f$). The definition of the relation $<_{1}$
-shows that the relation $<_{1}$ is the restriction of the standard relation
-$<$ on $\mathbb{Z}$ to the subset $E$. Thus, $f<_{1}e$ if and only if $f<e$.
-Hence, $f<e$ (since $f<_{1}e$). Thus, (\ref{pf.prop.example.Gamma.Sb.b.fn3.1})
-(applied to $f$ and $e$ instead of $e$ and $f$) shows that $i_{f}\geq i_{e}$.
-In other words, $i_{e}\leq i_{f}$. But the definition of $\phi$ shows that
-$\phi\left(  e\right)  =i_{e}$ and $\phi\left(  f\right)  =i_{f}$. Hence,
-$\phi\left(  e\right)  =i_{e}\leq i_{f}=\phi\left(  f\right)  $.
+Let $e$ and $f$ be two elements of $E$ satisfying $e>_{1}f$. We have $e>_{1}%
+f$. In other words, $f<_{1}e$ (since $>_{1}$ is the opposite relation of
+$<_{1}$). In other words, $f<e$ (since $<_{1}$ is the restriction of the
+standard relation $<$ on $\mathbb{Z}$ to the subset $E$). Thus,
+(\ref{pf.prop.example.Gamma.Sb.b.fn3.1}) (applied to $f$ and $e$ instead of
+$e$ and $f$) shows that $i_{f}\geq i_{e}$. In other words, $i_{e}\leq i_{f}$.
+But the definition of $\phi$ shows that $\phi\left(  e\right)  =i_{e}$ and
+$\phi\left(  f\right)  =i_{f}$. Hence, $\phi\left(  e\right)  =i_{e}\leq
+i_{f}=\phi\left(  f\right)  $.
 \par
 Now, forget that we fixed $e$ and $f$. We thus have shown that if $e$ and $f$
 are two elements of $E$ satisfying $e>_{1}f$, then $\phi\left(  e\right)
 \leq\phi\left(  f\right)  $. In other words, $\phi$ is a weakly increasing map
 from the poset $\left(  E,>_{1}\right)  $ to the totally ordered set $\left\{
 1,2,3,\ldots\right\}  $ (by the definition of a \textquotedblleft weakly
-increasing map\textquotedblright\ (since $\phi$ is a map from $E$ to $\left\{
-1,2,3,\ldots\right\}  $)). In other words, $\phi$ is an $\mathbf{E}^{\prime}%
-$-partition (since the $\mathbf{E}^{\prime}$-partitions are precisely the
-weakly increasing maps from the poset $\left(  E,>_{1}\right)  $ to the
-totally ordered set $\left\{  1,2,3,\ldots\right\}  $). In other words, $\phi$
-is an element of $Z$ (since $Z$ is the set of all $\mathbf{E}^{\prime}%
-$-partitions). In other words, $\phi\in Z$.
+increasing map\textquotedblright). In other words, $\phi$ is an $\mathbf{E}%
+^{\prime}$-partition (since the $\mathbf{E}^{\prime}$-partitions are precisely
+the weakly increasing maps from the poset $\left(  E,>_{1}\right)  $ to the
+totally ordered set $\left\{  1,2,3,\ldots\right\}  $). In other words,
+$\phi\in Z$ (since $Z$ is the set of all $\mathbf{E}^{\prime}$-partitions).
 \par
 We have $\phi\left(  e\right)  =i_{e}$ for every $e\in E$ (by the definition
 of $\phi$). In other words, $\phi\left(  e\right)  =i_{e}$ for every
 $e\in\left\{  1,2,\ldots,\ell\right\}  $ (since $E=\left\{  1,2,\ldots
-,\ell\right\}  $).
+,\ell\right\}  $). In other words, $\left(  \phi\left(  1\right)  ,\phi\left(
+2\right)  ,\ldots,\phi\left(  \ell\right)  \right)  =\left(  i_{1}%
+,i_{2},\ldots,i_{\ell}\right)  $.
 \par
 Now, the definition of $\Phi$ yields%
-\begin{align*}
-\Phi\left(  \phi\right)   &  =\left(  \phi\left(  1\right)  ,\phi\left(
-2\right)  ,\ldots,\phi\left(  \ell\right)  \right)  =\left(  i_{1}%
-,i_{2},\ldots,i_{\ell}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\phi\left(  e\right)  =i_{e}\text{
-for every }e\in\left\{  1,2,\ldots,\ell\right\}  \right) \\
-&  =\mathbf{j}.
-\end{align*}
+\[
+\Phi\left(  \phi\right)  =\left(  \phi\left(  1\right)  ,\phi\left(  2\right)
+,\ldots,\phi\left(  \ell\right)  \right)  =\left(  i_{1},i_{2},\ldots,i_{\ell
+}\right)  =\mathbf{j}.
+\]
 Thus, $\mathbf{j}=\Phi\left(  \underbrace{\phi}_{\in Z}\right)  \in\Phi\left(
 Z\right)  $.
 \par
@@ -15829,9 +14773,7 @@ Z\rightarrow\mathcal{J},\ \ \ \ \ \ \ \ \ \ \pi\mapsto\left(  \pi\left(
 \label{pf.prop.example.Gamma.Sb.b.themap}%
 \end{equation}
 is a bijection (since the map (\ref{pf.prop.example.Gamma.Sb.b.themap}) is the
-map $\Phi$ (because $\Phi\left(  \pi\right)  =\left(  \pi\left(  1\right)
-,\pi\left(  2\right)  ,\ldots,\pi\left(  \ell\right)  \right)  $ for every
-$\pi\in Z$ (by the definition of $\Phi$))).
+map $\Phi$).
 
 For every $\pi\in Z$, we have%
 \begin{equation}
@@ -15843,14 +14785,11 @@ x_{\pi\left(  2\right)  }^{w\left(  2\right)  }\cdots x_{\pi\left(
 Z$. Then, the definition of $\mathbf{x}_{\pi,w}$ yields%
 \begin{align*}
 {\mathbf{x}}_{\pi,w}  &  =\prod_{e\in E}x_{\pi\left(  e\right)  }^{w\left(
-e\right)  }=\prod_{i\in E}x_{\pi\left(  i\right)  }^{w\left(  i\right)
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }e\text{ as
-}i\right) \\
-&  =\underbrace{\prod_{i\in\left\{  1,2,\ldots,\ell\right\}  }}_{=\prod
-_{i=1}^{\ell}}x_{\pi\left(  i\right)  }^{w\left(  i\right)  }%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }E=\left\{  1,2,\ldots,\ell\right\}
+e\right)  }=\underbrace{\prod_{e\in\left\{  1,2,\ldots,\ell\right\}  }%
+}_{=\prod_{e=1}^{\ell}}x_{\pi\left(  e\right)  }^{w\left(  e\right)
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }E=\left\{  1,2,\ldots,\ell\right\}
 \right) \\
-&  =\prod_{i=1}^{\ell}x_{\pi\left(  i\right)  }^{w\left(  i\right)  }%
+&  =\prod_{e=1}^{\ell}x_{\pi\left(  e\right)  }^{w\left(  e\right)  }%
 =x_{\pi\left(  1\right)  }^{w\left(  1\right)  }x_{\pi\left(  2\right)
 }^{w\left(  2\right)  }\cdots x_{\pi\left(  \ell\right)  }^{w\left(
 \ell\right)  }.
@@ -15909,31 +14848,22 @@ x_{i_{2}}\cdots x_{i_{n}}.
 \end{proposition}
 
 \begin{proof}
-[Proof of Proposition \ref{prop.SMalpha.D}.]We know that $\alpha=\left(
-\alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $. Thus, $\left(
-\alpha_{1},\alpha_{2},\ldots,\alpha_{\ell}\right)  $ is a composition of $n$
-(since $\alpha$ is a composition of $n$). Thus, $\alpha_{1},\alpha_{2}%
-,\ldots,\alpha_{\ell}$ are positive integers, and their sum is $\alpha
-_{1}+\alpha_{2}+\cdots+\alpha_{\ell}=n$.
-
-Let $\mathcal{J}$ denote the set of all length-$\ell$ weakly increasing
-sequences of positive integers. In other words,%
+[Proof of Proposition \ref{prop.SMalpha.D}.]Let $\mathcal{J}$ denote the set
+of all length-$\ell$ weakly increasing sequences of positive integers. In
+other words,%
 \begin{equation}
 \mathcal{J}=\left\{  \left(  i_{1},i_{2},\ldots,i_{\ell}\right)  \in\left\{
 1,2,3,\ldots\right\}  ^{\ell}\ \mid\ i_{1}\leq i_{2}\leq\cdots\leq i_{\ell
 }\right\}  . \label{pf.prop.SMalpha.D.J=}%
 \end{equation}
-Thus,%
-\begin{align*}
-\mathcal{J}  &  =\left\{  \left(  i_{1},i_{2},\ldots,i_{\ell}\right)
-\in\left\{  1,2,3,\ldots\right\}  ^{\ell}\ \mid\ i_{1}\leq i_{2}\leq\cdots\leq
-i_{\ell}\right\} \\
-&  =\left\{  \left(  j_{1},j_{2},\ldots,j_{\ell}\right)  \in\left\{
+Renaming the index $\left(  i_{1},i_{2},\ldots,i_{\ell}\right)  $ as $\left(
+j_{1},j_{2},\ldots,j_{\ell}\right)  $ in this formula, we obtain%
+\[
+\mathcal{J}=\left\{  \left(  j_{1},j_{2},\ldots,j_{\ell}\right)  \in\left\{
 1,2,3,\ldots\right\}  ^{\ell}\ \mid\ j_{1}\leq j_{2}\leq\cdots\leq j_{\ell
-}\right\}
-\end{align*}
-(here, we have renamed the index $\left(  i_{1},i_{2},\ldots,i_{\ell}\right)
-$ as $\left(  j_{1},j_{2},\ldots,j_{\ell}\right)  $).
+}\right\}  .
+\]
+
 
 Now,%
 \begin{align}
@@ -16014,24 +14944,15 @@ $\ \ \ \ \footnote{\textit{Proof.} Let $\left(  i_{1},i_{2},\ldots
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{and }\left\{  j\in\left[  n-1\right]
 \ \mid\ k_{j}<k_{j+1}\right\}  \subseteq D\left(  \alpha\right)  \right\}  .
 \end{align*}
-In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $ is an element
-$\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left\{  1,2,3,\ldots\right\}
-^{n}$ satisfying $k_{1}\leq k_{2}\leq\cdots\leq k_{n}$ and $\left\{
-j\in\left[  n-1\right]  \ \mid\ k_{j}<k_{j+1}\right\}  \subseteq D\left(
-\alpha\right)  $. In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $
-is an element of $\left\{  1,2,3,\ldots\right\}  ^{n}$ satisfying $i_{1}\leq
-i_{2}\leq\cdots\leq i_{n}$ and $\left\{  j\in\left[  n-1\right]  \ \mid
-\ i_{j}<i_{j+1}\right\}  \subseteq D\left(  \alpha\right)  $.
+In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $ is an element of
+$\left\{  1,2,3,\ldots\right\}  ^{n}$ satisfying $i_{1}\leq i_{2}\leq
+\cdots\leq i_{n}$ and $\left\{  j\in\left[  n-1\right]  \ \mid\ i_{j}%
+<i_{j+1}\right\}  \subseteq D\left(  \alpha\right)  $.
 \par
 Lemma \ref{lem.Dalpha.ItoJ} (b) shows that we have $\left(  i_{s_{1}}%
 ,i_{s_{2}},\ldots,i_{s_{\ell}}\right)  \in\left\{  1,2,3,\ldots\right\}
 ^{\ell}$ and $i_{s_{1}}\leq i_{s_{2}}\leq\cdots\leq i_{s_{\ell}}$. In other
-words, $\left(  i_{s_{1}},i_{s_{2}},\ldots,i_{s_{\ell}}\right)  $ is an
-element of $\left\{  1,2,3,\ldots\right\}  ^{\ell}$ and satisfies $i_{s_{1}%
-}\leq i_{s_{2}}\leq\cdots\leq i_{s_{\ell}}$. In other words, $\left(
-i_{s_{1}},i_{s_{2}},\ldots,i_{s_{\ell}}\right)  $ is a $\left(  j_{1}%
-,j_{2},\ldots,j_{\ell}\right)  \in\left\{  1,2,3,\ldots\right\}  ^{\ell}$
-satisfying $j_{1}\leq j_{2}\leq\cdots\leq j_{\ell}$. In other words,%
+words,%
 \[
 \left(  i_{s_{1}},i_{s_{2}},\ldots,i_{s_{\ell}}\right)  \in\left\{  \left(
 j_{1},j_{2},\ldots,j_{\ell}\right)  \in\left\{  1,2,3,\ldots\right\}  ^{\ell
@@ -16064,14 +14985,10 @@ We have%
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{and }\left\{  j\in\left[  n-1\right]
 \ \mid\ k_{j}<k_{j+1}\right\}  \subseteq D\left(  \alpha\right)  \right\}  .
 \end{align*}
-In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $ is an element
-$\left(  k_{1},k_{2},\ldots,k_{n}\right)  \in\left\{  1,2,3,\ldots\right\}
-^{n}$ satisfying $k_{1}\leq k_{2}\leq\cdots\leq k_{n}$ and $\left\{
-j\in\left[  n-1\right]  \ \mid\ k_{j}<k_{j+1}\right\}  \subseteq D\left(
-\alpha\right)  $. In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $
-is an element of $\left\{  1,2,3,\ldots\right\}  ^{n}$ satisfying $i_{1}\leq
-i_{2}\leq\cdots\leq i_{n}$ and $\left\{  j\in\left[  n-1\right]  \ \mid
-\ i_{j}<i_{j+1}\right\}  \subseteq D\left(  \alpha\right)  $. Hence, Lemma
+In other words, $\left(  i_{1},i_{2},\ldots,i_{n}\right)  $ is an element of
+$\left\{  1,2,3,\ldots\right\}  ^{n}$ satisfying $i_{1}\leq i_{2}\leq
+\cdots\leq i_{n}$ and $\left\{  j\in\left[  n-1\right]  \ \mid\ i_{j}%
+<i_{j+1}\right\}  \subseteq D\left(  \alpha\right)  $. Hence, Lemma
 \ref{lem.Dalpha.ItoJ} (a) shows that we have $i_{s_{f\left(  k\right)  }%
 }=i_{k}$ for every $k\in\left[  n\right]  $. Hence,
 (\ref{pf.prop.SMalpha.D.sf.1}) is proven.}.
@@ -16084,9 +15001,6 @@ we have $\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  }%
 \in\mathcal{J}=\left\{  \left(  i_{1},i_{2},\ldots,i_{\ell}\right)
 \in\left\{  1,2,3,\ldots\right\}  ^{\ell}\ \mid\ i_{1}\leq i_{2}\leq\cdots\leq
 i_{\ell}\right\}  $. In other words, $\left(  h_{1},h_{2},\ldots,h_{\ell
-}\right)  $ is an $\ell$-tuple $\left(  i_{1},i_{2},\ldots,i_{\ell}\right)
-\in\left\{  1,2,3,\ldots\right\}  ^{\ell}$ satisfying $i_{1}\leq i_{2}%
-\leq\cdots\leq i_{\ell}$. In other words, $\left(  h_{1},h_{2},\ldots,h_{\ell
 }\right)  $ is an $\ell$-tuple in $\left\{  1,2,3,\ldots\right\}  ^{\ell}$ and
 satisfies $h_{1}\leq h_{2}\leq\cdots\leq h_{\ell}$. Hence, Lemma
 \ref{lem.Dalpha.JtoI} (a) shows that we have $\left(  h_{f\left(  1\right)
@@ -16099,17 +15013,10 @@ D\left(  \alpha\right)  $.
 \par
 Thus, $\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  },\ldots
 ,h_{f\left(  n\right)  }\right)  $ is an $n$-tuple in $\left\{  1,2,3,\ldots
-\right\}  ^{n}$ (since $\left(  h_{f\left(  1\right)  },h_{f\left(  2\right)
-},\ldots,h_{f\left(  n\right)  }\right)  \in\left\{  1,2,3,\ldots\right\}
-^{n}$) which satisfies $h_{f\left(  1\right)  }\leq h_{f\left(  2\right)
-}\leq\cdots\leq h_{f\left(  n\right)  }$ and $\left\{  j\in\left[  n-1\right]
-\ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}  \subseteq
-D\left(  \alpha\right)  $. In other words, $\left(  h_{f\left(  1\right)
-},h_{f\left(  2\right)  },\ldots,h_{f\left(  n\right)  }\right)  $ is an
-$n$-tuple $\left(  i_{1},i_{2},\ldots,i_{n}\right)  \in\left\{  1,2,3,\ldots
-\right\}  ^{n}$ satisfying $i_{1}\leq i_{2}\leq\cdots\leq i_{n}$ and $\left\{
-j\in\left[  n-1\right]  \ \mid\ i_{j}<i_{j+1}\right\}  \subseteq D\left(
-\alpha\right)  $. In other words,%
+\right\}  ^{n}$ which satisfies $h_{f\left(  1\right)  }\leq h_{f\left(
+2\right)  }\leq\cdots\leq h_{f\left(  n\right)  }$ and $\left\{  j\in\left[
+n-1\right]  \ \mid\ h_{f\left(  j\right)  }<h_{f\left(  j+1\right)  }\right\}
+\subseteq D\left(  \alpha\right)  $. In other words,%
 \begin{align*}
 &  \left(  h_{f\left(  1\right)  },h_{f\left(  2\right)  },\ldots,h_{f\left(
 n\right)  }\right) \\
@@ -16716,17 +15623,14 @@ For every $\pi\in Z$, we have $\left(  \pi\left(  1\right)  ,\pi\left(
 \par
 First, let us see that $\left(  \pi\left(  1\right)  ,\pi\left(  2\right)
 ,\ldots,\pi\left(  n\right)  \right)  $ is well-defined. We have $\pi\in Z$.
-In other words, $\pi$ belongs to $Z$. In other words, $\pi$ belongs to the set
-of all $\left(  E,>_{1},<_{2}\right)  $-partitions (since $Z$ is the set of
-all $\left(  E,>_{1},<_{2}\right)  $-partitions). In other words, $\pi$ is an
-$\left(  E,>_{1},<_{2}\right)  $-partition. Hence, $\pi$ is a map
-$E\rightarrow\left\{  1,2,3,\ldots\right\}  $. In other words, $\pi$ is a map
-$\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{  1,2,3,\ldots\right\}  $
-(since $E=\left\{  1,2,\ldots,n\right\}  $). Thus, $\pi\left(  1\right)
-,\pi\left(  2\right)  ,\ldots,\pi\left(  n\right)  $ are well-defined elements
-of $\left\{  1,2,3,\ldots\right\}  $. Hence, $\left(  \pi\left(  1\right)
-,\pi\left(  2\right)  ,\ldots,\pi\left(  n\right)  \right)  $ is well-defined
-and an element of $\left\{  1,2,3,\ldots\right\}  ^{n}$.
+In other words, $\pi$ is an $\left(  E,>_{1},<_{2}\right)  $-partition (since
+$Z$ is the set of all $\left(  E,>_{1},<_{2}\right)  $-partitions). Hence,
+$\pi$ is a map $E\rightarrow\left\{  1,2,3,\ldots\right\}  $. In other words,
+$\pi$ is a map $\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
+1,2,3,\ldots\right\}  $ (since $E=\left\{  1,2,\ldots,n\right\}  $). Thus,
+$\left(  \pi\left(  1\right)  ,\pi\left(  2\right)  ,\ldots,\pi\left(
+n\right)  \right)  $ is well-defined and an element of $\left\{
+1,2,3,\ldots\right\}  ^{n}$.
 \par
 Recall the definition of an $\left(  E,>_{1},<_{2}\right)  $-partition. This
 definition shows that $\pi$ is an $\left(  E,>_{1},<_{2}\right)  $-partition
@@ -16758,8 +15662,7 @@ belong to the set $\left\{  1,2,\ldots,n\right\}  $. In other words, both $k$
 and $k+1$ belong to the set $E$ (since $E=\left\{  1,2,\ldots,n\right\}  $).
 \par
 Recall that $<_{1}$ is the total order on the set $E$ inherited from
-$\mathbb{Z}$. Hence, $k<_{1}k+1$ holds if and only if $k<k+1$. Thus,
-$k<_{1}k+1$ holds (since $k<k+1$).
+$\mathbb{Z}$. Hence, $k<_{1}k+1$ (since $k<k+1$).
 \par
 But $k+1>_{1}k$ holds if and only if $k<_{1}k+1$ (since $>_{1}$ is the
 opposite relation of $<_{1}$). Thus, $k+1>_{1}k$ holds (since $k<_{1}k+1$).
@@ -16791,9 +15694,8 @@ In other words, both $j$ and $j+1$ belong to the set $E$ (since $E=\left\{
 $j<_{2}j+1$ (by (\ref{eq.prop.example.Gamma.c1.cond2}), applied to $i=j$).
 \par
 Recall that $<_{1}$ is the total order on the set $E$ inherited from
-$\mathbb{Z}$. Hence, $j<_{1}j+1$ holds if and only if $j<j+1$. Thus,
-$j<_{1}j+1$ holds (since $j<j+1$). But $j+1>_{1}j$ holds if and only if
-$j<_{1}j+1$ (since $>_{1}$ is the opposite relation of $<_{1}$). Thus,
+$\mathbb{Z}$. Hence, $j<_{1}j+1$ (since $j<j+1$). But $j+1>_{1}j$ holds if and
+only if $j<_{1}j+1$ (since $>_{1}$ is the opposite relation of $<_{1}$). Thus,
 $j+1>_{1}j$ holds (since $j<_{1}j+1$). Also, $j<_{2}j+1$. Therefore, Assertion
 $\mathcal{A}_{2}$ (applied to $e=j+1$ and $f=j$) yields $\pi\left(
 j+1\right)  <\pi\left(  j\right)  $. In other words, $\pi\left(  j\right)
@@ -16805,12 +15707,7 @@ Now, we know that $\left(  \pi\left(  1\right)  ,\pi\left(  2\right)
 1,2,3,\ldots\right\}  ^{n}$ and satisfies $\pi\left(  1\right)  \geq\pi\left(
 2\right)  \geq\cdots\geq\pi\left(  n\right)  $ and $\left(  \pi\left(
 j\right)  >\pi\left(  j+1\right)  \text{ whenever }j\in\left[  n-1\right]
-\setminus D\left(  \alpha\right)  \right)  $. In other words, $\left(
-\pi\left(  1\right)  ,\pi\left(  2\right)  ,\ldots,\pi\left(  n\right)
-\right)  $ is an $\left(  i_{1},i_{2},\ldots,i_{n}\right)  \in\left\{
-1,2,3,\ldots\right\}  ^{n}$ satisfying $i_{1}\geq i_{2}\geq\cdots\geq i_{n}$
-and $\left(  i_{j}>i_{j+1}\text{ whenever }j\in\left[  n-1\right]  \setminus
-D\left(  \alpha\right)  \right)  $. Thus,
+\setminus D\left(  \alpha\right)  \right)  $. In other words,%
 \begin{align*}
 \left(  \pi\left(  1\right)  ,\pi\left(  2\right)  ,\ldots,\pi\left(
 n\right)  \right)   &  \in\left\{  \left(  i_{1},i_{2},\ldots,i_{n}\right)
@@ -16821,7 +15718,7 @@ i_{n}\right.  \\
 \\
 &  =W.
 \end{align*}
-Qed.}. Hence, we can define a map $\Phi:Z\rightarrow W$ by setting%
+}. Hence, we can define a map $\Phi:Z\rightarrow W$ by setting%
 \[
 \left(  \Phi\left(  \pi\right)  =\left(  \pi\left(  1\right)  ,\pi\left(
 2\right)  ,\ldots,\pi\left(  n\right)  \right)  \ \ \ \ \ \ \ \ \ \ \text{for
@@ -16838,9 +15735,9 @@ We shall show that $\mathbf{g}\in\Phi\left(  Z\right)  $.
 \par
 We have%
 \begin{align*}
-\mathbf{g}  &  \in W=\left\{  \left(  i_{1},i_{2},\ldots,i_{n}\right)
+\mathbf{g} &  \in W=\left\{  \left(  i_{1},i_{2},\ldots,i_{n}\right)
 \in\left\{  1,2,3,\ldots\right\}  ^{n}\ \mid\ i_{1}\geq i_{2}\geq\cdots\geq
-i_{n}\right. \\
+i_{n}\right.  \\
 &  \ \ \ \ \ \ \ \ \ \ \left.  \text{and }\left(  i_{j}>i_{j+1}\text{ whenever
 }j\in\left[  n-1\right]  \setminus D\left(  \alpha\right)  \right)  \right\}
 .
@@ -16856,12 +15753,12 @@ We have $i_{1}\geq i_{2}\geq\cdots\geq i_{n}$. In other words, for any
 $u\in\left\{  1,2,\ldots,n\right\}  $ and $v\in\left\{  1,2,\ldots,n\right\}
 $ satisfying $u\leq v$, we have%
 \begin{equation}
-i_{u}\geq i_{v}. \label{pf.prop.example.Gamma.Sc3.surj.1}%
+i_{u}\geq i_{v}.\label{pf.prop.example.Gamma.Sc3.surj.1}%
 \end{equation}
 Notice also that we have%
 \begin{equation}
 \left(  i_{j}>i_{j+1}\text{ whenever }j\in\left[  n-1\right]  \setminus
-D\left(  \alpha\right)  \right)  . \label{pf.prop.example.Gamma.Sc3.surj.2}%
+D\left(  \alpha\right)  \right)  .\label{pf.prop.example.Gamma.Sc3.surj.2}%
 \end{equation}
 \par
 Define a map $\pi:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
@@ -16870,9 +15767,8 @@ Define a map $\pi:\left\{  1,2,\ldots,n\right\}  \rightarrow\left\{
 \left(  \pi\left(  k\right)  =i_{k}\ \ \ \ \ \ \ \ \ \ \text{for every }%
 k\in\left\{  1,2,\ldots,n\right\}  \right)  .
 \]
-Thus, $\pi$ is a map from $\left\{  1,2,\ldots,n\right\}  $ to $\left\{
-1,2,3,\ldots\right\}  $. In other words, $\pi$ is a map from $E$ to $\left\{
-1,2,3,\ldots\right\}  $ (since $E=\left\{  1,2,\ldots,n\right\}  $).
+Thus, $\pi$ is a map from $E$ to $\left\{  1,2,3,\ldots\right\}  $ (since
+$E=\left\{  1,2,\ldots,n\right\}  $).
 \par
 Recall the definition of an $\left(  E,>_{1},<_{2}\right)  $-partition. This
 definition shows that $\pi$ is an $\left(  E,>_{1},<_{2}\right)  $-partition
@@ -16901,11 +15797,8 @@ Hence, $\pi\left(  e\right)  =i_{e}\leq i_{f}=\pi\left(  f\right)  $. This
 proves Assertion $\mathcal{A}_{1}$.
 \par
 \textit{Proof of Assertion }$\mathcal{A}_{2}$\textit{:} Let $e\in E$ and $f\in
-E$ be such that $e>_{1}f$ and $f<_{2}e$. Recall that $>_{1}$ is the opposite
-relation of $<_{1}$. Hence, $e>_{1}f$ holds if and only if $f<_{1}e$. Thus,
-$f<_{1}e$ (since $e>_{1}f$ holds). Now, recall that $<_{1}$ is the total order
-on the set $E$ inherited from $\mathbb{Z}$. Hence, $f<_{1}e$ holds if and only
-if $f<e$. Thus, $f<e$ (since $f<_{1}e$ holds). Hence, $f\leq e$.
+E$ be such that $e>_{1}f$ and $f<_{2}e$. Thus, $f<e$ (indeed, this can be
+proven just as in our proof of Assertion $\mathcal{A}_{1}$).
 \par
 Both $e$ and $f$ are elements of $E$. In other words, both $e$ and $f$ are
 elements of $\left\{  1,2,\ldots,n\right\}  $ (since $E=\left\{
@@ -16942,18 +15835,16 @@ Now, we have shown that $\pi$ satisfies Assertions $\mathcal{A}_{1}$ and
 $\mathcal{A}_{2}$. Thus, $\pi$ is an $\left(  E,>_{1},<_{2}\right)
 $-partition (since we know that $\pi$ is an $\left(  E,>_{1},<_{2}\right)
 $-partition if and only if it satisfies Assertions $\mathcal{A}_{1}$ and
-$\mathcal{A}_{2}$). In other words, $\pi$ belongs to the set of all $\left(
-E,>_{1},<_{2}\right)  $-partitions. In other words, $\pi$ belongs to $Z$
-(since $Z$ is the set of all $\left(  E,>_{1},<_{2}\right)  $-partitions). In
-other words, $\pi\in Z$.
+$\mathcal{A}_{2}$). In other words, $\pi\in Z$ (since $Z$ is the set of all
+$\left(  E,>_{1},<_{2}\right)  $-partitions).
 \par
 Now, the definition of $\Phi$ yields%
 \begin{align*}
 \Phi\left(  \pi\right)   &  =\left(  \pi\left(  1\right)  ,\pi\left(
 2\right)  ,\ldots,\pi\left(  n\right)  \right)  =\left(  i_{1},i_{2}%
-,\ldots,i_{n}\right) \\
+,\ldots,i_{n}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\pi\left(  k\right)  =i_{k}\text{
-for every }k\in\left\{  1,2,\ldots,n\right\}  \right) \\
+for every }k\in\left\{  1,2,\ldots,n\right\}  \right)  \\
 &  =\mathbf{g}.
 \end{align*}
 Hence, $\mathbf{g}=\Phi\left(  \underbrace{\pi}_{\in Z}\right)  \in\Phi\left(
@@ -17231,14 +16122,14 @@ whenever }j\in\left[  n-1\right]  \setminus D\left(  \operatorname*{rev}%
 Now, recall that $\omega\left(  \alpha\right)  $ is a composition of $n$
 (since $\alpha$ is a composition of $n$). Hence, the definition of
 $F_{\omega\left(  \alpha\right)  }$ yields%
-\begin{align*}
-F_{\omega\left(  \alpha\right)  }  &  =\sum_{\substack{i_{1}\leq i_{2}%
-\leq\cdots\leq i_{n};\\i_{j}<i_{j+1}\text{ whenever }j\in D\left(
-\omega\left(  \alpha\right)  \right)  }}x_{i_{1}}x_{i_{2}}\cdots x_{i_{n}}\\
-&  =\sum_{\substack{i_{1}\leq i_{2}\leq\cdots\leq i_{n};\\i_{j}<i_{j+1}\text{
-whenever }j\in\left[  n-1\right]  \setminus D\left(  \operatorname*{rev}%
-\alpha\right)  }}x_{i_{1}}x_{i_{2}}\cdots x_{i_{n}}%
-\end{align*}
+\[
+F_{\omega\left(  \alpha\right)  }=\sum_{\substack{i_{1}\leq i_{2}\leq
+\cdots\leq i_{n};\\i_{j}<i_{j+1}\text{ whenever }j\in D\left(  \omega\left(
+\alpha\right)  \right)  }}x_{i_{1}}x_{i_{2}}\cdots x_{i_{n}}=\sum
+_{\substack{i_{1}\leq i_{2}\leq\cdots\leq i_{n};\\i_{j}<i_{j+1}\text{ whenever
+}j\in\left[  n-1\right]  \setminus D\left(  \operatorname*{rev}\alpha\right)
+}}x_{i_{1}}x_{i_{2}}\cdots x_{i_{n}}%
+\]
 (since $D\left(  \omega\left(  \alpha\right)  \right)  =\left[  n-1\right]
 \setminus D\left(  \operatorname*{rev}\alpha\right)  $ (by Remark
 \ref{rmk.conjugate.D})). Comparing this with
