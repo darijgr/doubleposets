@@ -3858,9 +3858,11 @@ Moreover,
 \qquad\text{for every } h\in E \text{ satisfying } h<_{2}f
 \label{pf.thm.antipode.Gammaw.Zwd.pf.min2}
 \end{equation}
-\footnote{\textit{Proof of \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2}:} Let
-$h\in E$ be such that $h<_{2}f$. We must prove
-\eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2}. Indeed, assume the contrary. Thus,
+\begin{vershort}
+\footnote{\textit{Proof of \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2}:}
+Let $h \in E$ be such that $h <_2 f$. We must prove
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2}.
+Indeed, assume the contrary. Thus,
 $\pi \left( f \right) \geq \pi \left( h \right)$.
 But every $g \in E$ satisfies
 $\pi \left( f \right) \leq \pi \left( g \right)$
@@ -3872,14 +3874,44 @@ $h$ is one of those $e\in E$ for which the value
 $\pi \left( e \right)$ is minimum.
 \par
 But recall that $F$ is the subset of $E$ consisting
-of those $e\in E$ for which the value $\pi \left( e \right)$
-is minimum. Since $h$ is one of these $e\in E$,
-we thus conclude that $h \in F$.
+of those $e \in E$ for which the value $\pi \left( e \right)$
+is minimum.
+Since $h$ is one of these $e \in E$, we thus conclude that $h \in F$.
 But $f$ is a minimal element
 of the subposet $F$ of $\left(E, <_2\right)$.
-In other words, no $g\in F$ satisfies $g<_{2}f$. This contradicts the
-fact that $h\in F$ satisfies $h<_{2}f$. This contradiction proves that our
-assumption was wrong, qed.}.
+In other words, no $g\in F$ satisfies $g<_{2}f$.
+This contradicts the fact that $h\in F$ satisfies $h <_2 f$.
+This contradiction proves that our assumption was wrong, qed.}.
+\end{vershort}
+\begin{verlong}
+\footnote{\textit{Proof of \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2}:}
+Let $h \in E$ be such that $h <_2 f$. We must prove
+\eqref{pf.thm.antipode.Gammaw.Zwd.pf.min2}.
+Indeed, assume the contrary. Thus,
+$\pi \left( f \right) \geq \pi \left( h \right)$.
+But every $g \in E$ satisfies
+$\pi \left( f \right) \leq \pi \left( g \right)$
+(by \eqref{pf.thm.antipode.Gammaw.Zwd.pf.min}, applied to
+$g$ instead of $h$). Hence, every $g \in E$ satisfies
+$\pi \left( g \right) \geq \pi \left( f \right)
+\geq \pi \left( h \right)$. In other words,
+$h$ is one of those $e\in E$ for which the value
+$\pi \left( e \right)$ is minimum.
+\par
+But recall that $F$ is the subset of $E$ consisting
+of those $e \in E$ for which the value $\pi \left( e \right)$
+is minimum.
+Since $h$ is one of these $e \in E$, we thus conclude that $h \in F$.
+Recall also that $h <_2 f$.
+Hence, there exists some $g \in F$ satisfying $g <_2 f$
+(namely, $g = h$).
+But $f$ is a minimal element
+of the subposet $F$ of $\left(E, <_2\right)$.
+In other words, no $g\in F$ satisfies $g<_{2}f$.
+This contradicts the fact that there exists some $g \in F$ satisfying
+$g <_2 f$.
+This contradiction proves that our assumption was wrong, qed.}.
+\end{verlong}
 
 We need to prove \eqref{pf.thm.antipode.Gammaw.Zwd}. We are in one of the
 following two cases:
