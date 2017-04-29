@@ -1665,10 +1665,21 @@ M_{\ev_w \varphi} ,
 and Proposition~\ref{prop.Gammaw.packed} will be proven.
 
 So it remains to prove \eqref{pf.prop.Gammaw.packed.1}. Let $\varphi$
-be a packed $\EE$-partition. Let
+be a packed $\EE$-partition.
+\begin{verlong}
+Hence, $\varphi$ is a packed map
+$E \to \left\{ 1, 2, 3, \ldots \right\}$.
+\end{verlong}
+Let
 $\ell = \left|\varphi\left(E\right)\right|$; thus
 $\varphi\left(E\right) = \left\{1, 2, \ldots, \ell\right\}$
+\begin{vershort}
 (since $\varphi$ is packed).
+\end{vershort}
+\begin{verlong}
+(by Proposition~\ref{prop.ev.comp} (a) (applied to $\psi$ instead of
+$\pi$)).
+\end{verlong}
 Let $\alpha_i = \sum_{e \in \varphi^{-1}\left(i\right)}
 w\left(e\right)$ for every $i \in \left\{ 1, 2, \ldots, \ell \right\}$;
 thus,
@@ -2185,8 +2196,14 @@ of $\left\{  0,1,\ldots,\left\vert
 \varphi\left(  E\right)  \right\vert \right\}  $ (by the definition of
 $\mathcal{S}$).
 
-We have $\varphi\left(  E\right)  =\left\{  1,2,\ldots,\left\vert
-\varphi\left(  E\right)  \right\vert \right\}  $ (since $\varphi$ is packed).
+The map $\varphi : E \to \left\{ 1, 2, 3, \ldots \right\}$ is packed
+and satisfies
+$\left| \varphi\left(E\right) \right| = \left| \varphi\left(E\right) \right|$.
+Hence, $\varphi\left(  E\right)  =\left\{  1,2,\ldots,\left\vert
+\varphi\left(  E\right)  \right\vert \right\}  $
+(by Proposition~\ref{prop.ev.comp} (a) (applied to $\varphi$ and
+$\left| \varphi\left(E\right) \right|$
+instead of $\pi$ and $\ell$)).
 
 Now, $\left(  P,Q\right)  \in \Adm \EE$%
 \ \ \ \ \footnote{\textit{Proof.} It is clear that $P$ and $Q$ are subsets of
@@ -2332,12 +2349,21 @@ $E \to \left\{1,2,3,\ldots\right\}$ which sends every $e\in E$ to $%
 \end{cases}
 $.)
 
-Since the map $\sigma$ is packed, we have $\sigma\left(  P\right)  =\left\{
-1,2,\ldots,\left\vert \sigma\left(  P\right)  \right\vert \right\}  =\left\{
-1,2,\ldots,k\right\}  $ (since $\left\vert \sigma\left(  P\right)  \right\vert
-=k$).
+The map $\sigma : P \to \left\{ 1, 2, 3, \ldots \right\}$ is packed,
+and we have
+$k = \left\vert \sigma\left(  P\right)  \right\vert$.
+Hence, Proposition~\ref{prop.ev.comp} (a) (applied to $P$, $\sigma$ and
+$k$ instead of $E$, $\pi$ and $\ell$)
+yields $\sigma\left(  P\right)  = \left\{ 1,2,\ldots,k\right\}  $.
 
-Since the map $\tau$ is packed, we have $\tau\left(  Q\right)  =\left\{
+The map $\tau : Q \to \left\{ 1, 2, 3, \ldots \right\}$ is packed,
+and we have
+$\left\vert \tau\left(  Q\right)  \right\vert
+= \left\vert \tau\left(  Q\right)  \right\vert$.
+Hence, Proposition~\ref{prop.ev.comp} (a) (applied to $Q$, $\tau$ and
+$\left\vert \tau\left(  Q\right)  \right\vert$ instead of
+$E$, $\pi$ and $\ell$)
+yields $\tau\left(  Q\right)  =\left\{
 1,2,\ldots,\left\vert \tau\left(  Q\right)  \right\vert \right\}  $.
 
 The definition of $\varphi$ shows that%
@@ -2493,18 +2519,29 @@ $\Phi\left(  \varphi,k\right)  =\left(  \left(  P,Q\right)  ,\sigma
 Lemma \ref{lem.Gammaw.coprod.bij.b} shows that $\left(  \varphi,k\right)
 \in\mathcal{S}$. In other words, $\varphi$ is a packed $ \EE %
 $-partition, and we have $k\in\left\{  0,1,\ldots,\left\vert \varphi\left(
-E\right)  \right\vert \right\}  $. Since $\varphi$ is packed, we have
-$\varphi\left(  E\right)  =\left\{  1,2,\ldots,\left\vert \varphi\left(
 E\right)  \right\vert \right\}  $.
+The map $\varphi : E \to \left\{ 1, 2, 3, \ldots \right\}$ is packed
+and satisfies
+$\left\vert \varphi\left( E\right) \right\vert
+= \left\vert \varphi\left( E\right) \right\vert $.
+Hence, we have
+$\varphi \left( E \right)
+= \left\{ 1, 2, \ldots, \left\vert \varphi\left( E\right)
+            \right\vert \right\}$
+(by Proposition~\ref{prop.ev.comp} (a) (applied to $\varphi$ and
+$\left| \varphi\left(E\right) \right|$
+instead of $\pi$ and $\ell$)).
 
 The map $\operatorname{add}_{k}:\mathbb{Z}\rightarrow\mathbb{Z}$ is
 a bijection, and its inverse is $\left(  \operatorname{add}_{k}%
 \right)  ^{-1}=\operatorname{add}_{-k}$.
 
-Since the map $\sigma$ is packed, we have $\sigma\left(  P\right)  =\left\{
-1,2,\ldots,\left\vert \sigma\left(  P\right)  \right\vert \right\}  =\left\{
-1,2,\ldots,k\right\}  $ (since $\left\vert \sigma\left(  P\right)  \right\vert
-=k$).
+The map $\sigma : P \to \left\{ 1, 2, 3, \ldots \right\}$ is packed,
+and we have
+$k = \left\vert \sigma\left(  P\right)  \right\vert$.
+Hence, Proposition~\ref{prop.ev.comp} (a) (applied to $P$, $\sigma$ and
+$k$ instead of $E$, $\pi$ and $\ell$)
+yields $\sigma\left(  P\right) = \left\{ 1,2,\ldots,k\right\}  $.
 
 From $\left(  P,Q\right)  \in \Adm \EE$, we conclude that
 $P$ and $Q$ are subsets of $E$ satisfying $P\cap Q=\varnothing$ and $P\cup
@@ -2686,7 +2723,14 @@ Combining this with (\ref{pf.lem.Gammaw.coprod.bij.c.11}), we conclude that%
 \label{pf.lem.Gammaw.coprod.bij.c.12}%
 \end{equation}
 \footnote{The right hand side of this equality makes sense because $P\cap
-Q=\varnothing$ and $P\cup Q=E$.}. Moreover, $\sigma$ is a packed map; thus,
+Q=\varnothing$ and $P\cup Q=E$.}.
+Moreover, $\sigma : P \to \left\{ 1, 2, 3, \ldots \right\}$ is a
+packed map and satisfies
+$\left\vert \sigma\left(  P\right)  \right\vert
+= \left\vert \sigma\left(  P\right)  \right\vert$. Thus,
+Proposition~\ref{prop.ev.comp} (a) (applied to $P$, $\sigma$ and
+$\left\vert \sigma\left(  P\right)  \right\vert$ instead of $E$, $\pi$
+and $\ell$) yields
 $\sigma\left(  P\right)  =\left\{  1,2,\ldots,\left\vert \sigma\left(
 P\right)  \right\vert \right\}  $. Hence,%
 \[
@@ -2764,9 +2808,12 @@ For every $\ell\in\mathbb{Z}$, define the map
 $\operatorname{add}_{\ell}:\mathbb{Z}\rightarrow\mathbb{Z}$ as in
 Lemma \ref{lem.Gammaw.coprod.bij.a}.
 \par
-Let $\ell=\left\vert \varphi\left(  E\right)  \right\vert $; thus,
+Let $\ell=\left\vert \varphi\left(  E\right)  \right\vert $.
+Thus, Proposition~\ref{prop.ev.comp} (a) (applied to $\varphi$
+instead of $\pi$) yields
 $\varphi\left(  E\right)  =\left\{  1,2,\ldots,\ell\right\}  $ (since
-$\varphi$ is packed). For each $i\in\left\{  1,2,\ldots,\ell\right\}  $,
+the map $\varphi : E \to \left\{ 1, 2, 3, \ldots \right\}$ is packed).
+For each $i\in\left\{  1,2,\ldots,\ell\right\}  $,
 define $\alpha_{i}\in \NN $ by
 \begin{equation}
 \alpha_{i}=\sum_{e\in\varphi^{-1}\left(  i\right)  }w\left(  e\right)  .
