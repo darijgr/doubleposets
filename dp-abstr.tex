@@ -22,7 +22,7 @@
 % -------------------------------------------------------------
 % One of my pet peeves with amsthm is its use of italics in the theorem and
 % proposition environments; this makes math and text indistinguishable in said
-% enviroments. To avoid this, I redefine the enviroments to use the standard
+% environments. To avoid this, I redefine the environments to use the standard
 % font and to use a hanging indent, along with a bold vertical bar to its
 % left, to distinguish these environments from surrounding text. (Along with
 % the advantage of distinguishing math from text, this also allows nesting
@@ -59,7 +59,6 @@
 %BeginMSIPreambleData
 \providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
 %EndMSIPreambleData
-\newcounter{exer}
 \theoremstyle{definition}
 \newtheorem{theo}{Theorem}[section]
 \newenvironment{theorem}[1][]
@@ -109,10 +108,6 @@
 \newenvironment{example}[1][]
 {\begin{exam}[#1]\begin{leftbar}}
 {\end{leftbar}\end{exam}}
-\newtheorem{exmp}[exer]{Exercise}
-\newenvironment{exercise}[1][]
-{\begin{exmp}[#1]\begin{leftbar}}
-{\end{leftbar}\end{exmp}}
 \newenvironment{statement}{\begin{quote}}{\end{quote}}
 \iffalse
 \newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
@@ -154,11 +149,9 @@
 \newcommand{\EE}{{\mathbf{E}}}
 \newcommand{\FF}{{\mathbf{F}}}
 \newcommand{\bk}{{\mathbf{k}}}
-%\newcommand{\Nplus}{{\mathbb{N}_{+}}}
 \newcommand{\NN}{{\mathbb{N}}}
 \newcommand{\ZZ}{{\mathbb{Z}}}
 \newcommand{\QQ}{{\mathbb{Q}}}
-%\newcommand{\arr}{\ar@{=>}}
 \ihead{Double posets and the antipode of $\QSym$}
 \ohead{page \thepage}
 \cfoot{}
@@ -168,7 +161,12 @@
 
 \title{Double posets and the antipode of $\QSym$}
 
-\date{version 3.0 (April 28, 2017)}
+\date{version 3.1 (April 28, 2017, typos corrected 2026) \\[1pc]
+Corrected version of:
+\href{https://doi.org/10.37236/6660}{%
+Darij Grinberg, \textit{Double Posets and the Antipode of QSym},
+The Electronic Journal of Combinatorics \textbf{24} (2), P2.22.}
+}
 
 \maketitle
 
@@ -205,22 +203,23 @@ quasisymmetric functions.
 % Here goes the French abstract (``R\'esum\'e''):
 
 \begin{abstract}
-Une fonction quasi-symétrique est attribu\'e à chaque ``double
-poset'' (c'est-à-dire, ensemble fini doté de deux ordres
+Une fonction quasi-sym\'etrique est attribu\'ee \`a chaque ``double
+poset'' (c'est-\`a-dire, ensemble fini dot\'e de deux ordres
 partiels) et chaque fonction de poids sur son ensemble
-sous-jacent. Cela généralise des objets bien connus tels que les
-fonctions quasi-symétriques fondamentales et monomiales, les
-fonctions de Schur (obliques), les fonctions immaculées duales,
+sous-jacent. Cela g\'en\'eralise des objets bien connus tels que les
+fonctions quasi-sym\'etriques fondamentales et monomiales, les
+fonctions de Schur (obliques), les fonctions immacul\'ees duales,
 et les $\left(P, \omega \right)$-partition enumerateurs
-quasi-symétriques.
+quasi-sym\'etriques.
 Nous montrons une formule pour l'antipode de cette fonction
-valable dans certaines conditions (qui sont satisfaits lorsque le second ordre
-de la double poset est totale, mais aussi dans d'autres cas); ce
-réaffirme (d'une manière qui nous semble plus naturelle) un
-résultat par Malvenuto et Reutenauer, mais notre preuve est nouvelle et
-autonome. Nous généralisons cet resultat plus loin à une situation
+valable dans certaines conditions (qui sont satisfaites
+lorsque le second ordre
+de la double poset est total, mais aussi dans d'autres cas); ce
+r\'eaffirme (d'une mani\`ere qui nous semble plus naturelle) un
+r\'esultat par Malvenuto et Reutenauer, mais notre preuve est nouvelle et
+autonome. Nous g\'en\'eralisons ce r\'esultat plus loin \`a une situation
 plus complexe,
-où un groupe agit sur le ``double poset'' par automorphismes.
+oÃ¹ un groupe agit sur le ``double poset'' par automorphismes.
 \end{abstract}
 \end{comment}
 
@@ -266,7 +265,7 @@ It is also archived as an ancillary file on
 \url{http://arxiv.org/abs/1509.08355v3}, although the former
 website is more likely to be updated.}.
 A standard version is also available\footnote{at
-\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/dp-abstr-long.pdf}
+\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/dp-abstr.pdf}
 and
 \url{http://arxiv.org/abs/1509.08355v3}}.
 The two versions differ in that the detailed version contains extra
@@ -291,10 +290,13 @@ The document you are reading is the
 detailed version of a
 \end{verlong}
 preprint of a paper (of the
-same title) that was accepted for publication in the
+same title) that was
+published in the
 \href{http://www.combinatorics.org/}{Electronic Journal of
 Combinatorics}
-in 2017.
+in 2017
+(\href{https://doi.org/10.37236/6660}{Volume 24, Issue 2,
+doi:10.37236/6660}).
 The published version differs from
 \begin{vershort}
 this preprint
@@ -364,7 +366,7 @@ equality of their counterparts in $\Powser$, which we are not going to
 do.)
 
 We furthermore endow the ring $\Powser$ with the following topology
-(as in \cite[Section 2.6]{Reiner}):
+(as in \cite[Proof of Corollary 2.6.11]{Reiner}):
 
 We endow the ring $\kk$ with the discrete topology. To define a
 topology on the $\kk$-algebra $\Powser$, we (temporarily) regard every power
@@ -540,7 +542,7 @@ $f \in \QSym$
 to the result $f\left(0,0,0,\ldots\right)$ of substituting zeroes
 for the variables $x_1, x_2, x_3, \ldots$ in $f$. The map $\Delta$
 can also be described in such terms, but with greater
-difficulty\footnote{See \cite[(5.3)]{Reiner} for the details.}.
+difficulty\footnote{See \cite[(5.1.7)]{Reiner} for the details.}.
 
 It is well-known that these maps $\Delta$ and
 $\varepsilon$ make the three diagrams
@@ -905,7 +907,7 @@ This power series is known as the $\alpha$-th
 $F_\alpha$ (in \cite{Gessel}, \cite[\S 2]{Mal-Reu-dua},
 \cite[\S 2.4]{BBSSZ} and \cite[\S 2]{Gri-dimm})
 or $L_\alpha$ (in \cite[\S 7.19]{Stanley-EC2} or
-\cite[Definition 5.15]{Reiner}).
+\cite[Definition 5.2.4]{Reiner}).
 
 \item[(d)] Let $\EE$ be one of the two double posets
 $\mathbf{Y}\left(\lambda / \mu\right)$ and
@@ -941,11 +943,11 @@ double poset $\EE = \left(E, <_1, <_2\right)$ is a total order, we can
 relabel the elements of $E$ by the integers $1, 2, \ldots, n$
 (where $n = \left|E\right|$) in such
 a way that $1 <_2 2 <_2 \cdots <_2 n$; then, the $\EE$-partitions are
-the $P$-partitions in the terminology of \cite[Definition 5.12]{Reiner},
+the $P$-partitions in the terminology of \cite[Definition 5.2.1]{Reiner},
 where $P$ is the labelled poset $\left(E, <_1\right)$; and furthermore,
 our $\Gamma\left(\EE\right)$ is the $F_P\left(\xx\right)$ of
-\cite[Definition 5.12]{Reiner}. Conversely, if $P$ is a labelled poset, then
-the $F_P\left(\xx\right)$ of \cite[Definition 5.12]{Reiner} is our
+\cite[Definition 5.2.1]{Reiner}. Conversely, if $P$ is a labelled poset, then
+the $F_P\left(\xx\right)$ of \cite[Definition 5.2.1]{Reiner} is our
 $\Gamma\left(\left(P, <_P, <_{\ZZ}\right)\right)$.
 
 \end{enumerate}
@@ -988,8 +990,8 @@ We shall give examples for consequences of these facts shortly
 (Example~\ref{exam.antipode.Gammaw}), but
 let us first explain where they have already appeared.
 Corollary~\ref{cor.antipode.Gamma} is equivalent to
-\cite[Corollary 5.27]{Reiner}\footnote{It is easiest to derive
-\cite[Corollary 5.27]{Reiner} from our Corollary~\ref{cor.antipode.Gamma},
+\cite[Corollary 5.2.20]{Reiner}\footnote{It is easiest to derive
+\cite[Corollary 5.2.20]{Reiner} from our Corollary~\ref{cor.antipode.Gamma},
 as this only requires setting $\EE = \left(P, <_P, <_{\ZZ}\right)$
 (this is a special double poset, thus in particular a tertispecial
 one) and noticing that
@@ -1245,7 +1247,7 @@ S\left(M_\alpha\right)
 This is the formula for $S\left(M_\alpha\right)$
 given in \cite[Proposition 3.4]{Ehrenb96},
 in \cite[(4.26)]{Malve-Thesis}, in
-\cite[Theorem 5.11]{Reiner}, and in
+\cite[Theorem 5.1.11]{Reiner}, and in
 \cite[Theorem 4.1]{BenSag} (originally due to Ehrenborg
 and to Malvenuto and Reutenauer).
 
@@ -1253,7 +1255,7 @@ and to Malvenuto and Reutenauer).
 double poset of Example~\ref{exam.Gamma} (c) (where the relation
 $<_2$ is chosen to be a total order) yields the formula for the
 antipode of a fundamental quasisymmetric function
-(\cite[(4.27)]{Malve-Thesis}, \cite[(5.9)]{Reiner}, \cite[Theorem 5.1]{BenSag}).
+(\cite[(4.27)]{Malve-Thesis}, \cite[(5.2.7)]{Reiner}, \cite[Theorem 5.1]{BenSag}).
 
 \item[(d)] Let us use the notations of Example~\ref{exam.dp}.
 For any partition $\lambda$, let $\lambda^t$ denote the
@@ -1297,7 +1299,7 @@ S\left(\Gamma\left(\mathbf{Y}\left(\lambda / \mu\right)\right)\right)
 But from Example~\ref{exam.Gamma} (d), we know that
 $\Gamma\left(\mathbf{Y}\left(\lambda / \mu\right)\right)
 = s_{\lambda / \mu}$. Moreover, a similar argument using
-\cite[Remark 2.12]{Reiner} shows that
+\cite[Remark 2.2.5]{Reiner} shows that
 $\Gamma\left(\left(Y\left(\lambda / \mu\right), >_1, >_2\right)\right)
 = s_{\lambda / \mu}$. Applying this to $\lambda^t$ and $\mu^t$
 instead of $\lambda$ and $\mu$, we obtain
@@ -1326,7 +1328,7 @@ It is also possible (but more difficult) to derive
 \eqref{eq.exam.antipode.Gammaw.schur.2} by using the double
 poset $\mathbf{Y}_h\left(\lambda / \mu\right)$ instead of
 $\mathbf{Y}\left(\lambda / \mu\right)$. (This boils down to what
-was done in \cite[proof of Corollary 5.29]{Reiner}.)
+was done in \cite[proof of Corollary 5.2.22]{Reiner}.)
 
 \item[(e)] A result of Benedetti and Sagan
 \cite[Theorem 8.2]{BenSag} on the antipodes of immaculate
@@ -1786,8 +1788,8 @@ $\varphi\left(E\right) = \left\{1, 2, \ldots, \ell\right\}$
 (since $\varphi$ is packed).
 \end{vershort}
 \begin{verlong}
-(by Proposition~\ref{prop.ev.comp} (a) (applied to $\psi$ instead of
-$\pi$)).
+(by Proposition~\ref{prop.ev.comp} (a) (applied to $\varphi$
+instead of $\pi$)).
 \end{verlong}
 Let $\alpha_i = \sum_{e \in \varphi^{-1}\left(i\right)}
 w\left(e\right)$ for every $i \in \left\{ 1, 2, \ldots, \ell \right\}$;
@@ -3027,7 +3029,7 @@ k+1,k+2,\ldots,\ell\right\}  \right)  =\varphi^{-1}\left(  k+i\right)
 k+1,k+2,\ldots,\ell\right\}  \right)  $ (since $k+i\in\left\{  k+1,k+2,\ldots
 ,\ell\right\}  $ (since $i\in\left\{  1,2,\ldots,\ell-k\right\}  $))).
 \par
-We have $\varphi\left(  Q\right)  =\left\{  1,2,\ldots,k\right\}  $. (This was
+We have $\varphi\left(  P\right)  =\left\{  1,2,\ldots,k\right\}  $. (This was
 proven in our proof of Lemma \ref{lem.Gammaw.coprod.bij.a} above; see the
 equality (\ref{pf.lem.Gammaw.coprod.bij.a.3}).) But $\sigma=\varphi\mid_{P}$,
 so that $\sigma\left(  P\right)  =\left(  \varphi\mid_{P}\right)  \left(
@@ -3820,7 +3822,7 @@ $T\left(  \left(  P,Q\right)  \right)  $ in the form $\left(  P^{\prime
 (because Property P is satisfied).
 We now need to prove the equality \eqref{pf.thm.antipode.Gammaw.signrev}.
 
-The map $Z$ is an involution, and thus a bijection.
+The map $T$ is an involution, and thus a bijection.
 
 Now, let $Z_{0}$ be the subset $\left\{  \left(  P,Q\right)  \in
 Z\ \mid\ \left\vert P\right\vert \text{ is even}\right\}  $ of $Z$. Thus, for
@@ -3881,8 +3883,7 @@ odd}\right)  \ \Longleftrightarrow\ \left(  \underbrace{\left(  -1\right)
 & \Longleftrightarrow\ \left(  \left(  -1\right)  ^{\left\vert P\right\vert
 }=1\right)  \ \Longleftrightarrow\ \left(  \left\vert P\right\vert \text{ is
 even}\right)  \ \Longleftrightarrow\ \left(  \left(  P,Q\right)  \in
-Z_{0}\right)  \\
-& \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+Z_{0}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{pf.thm.antipode.Gammaw.signrev.final.defZ0})}\right)  .
 \end{align*}
 Hence, we have the following logical equivalence:%
@@ -7069,7 +7070,7 @@ nonnegative integers). It remains to show that there exists \textbf{at least}
 one such polynomial.
 \end{noncompile}
 
-Now, \cite[Proposition 7.7 (i)]{Reiner} shows that, for any given
+Now, \cite[Proposition 7.1.7 (i)]{Reiner} shows that, for any given
 $f\in \QSym $, there exists a unique polynomial in $\QQ
 \left[  X\right]  $ whose value on each $q\in \NN $ equals
 $\operatorname{ps}^{1}\left(  f\right)  \left(  q\right)  $.
@@ -7108,12 +7109,12 @@ this rewrites as follows: There exists a unique polynomial in $\QQ
 \text{the number of all }G\text{-orbits on } \Par_q \EE
 \right)  $. This proves Corollary~\ref{cor.reciprocity.GammawG} (a).
 
-(b) \cite[Proposition 7.7 (i)]{Reiner} shows that, for any given
+(b) \cite[Proposition 7.1.7 (i)]{Reiner} shows that, for any given
 $f\in \QSym $, there exists a unique polynomial in $\QQ
 \left[  X\right]  $ whose value on each $q\in \NN $ equals
 $\operatorname{ps}^{1}\left(  f\right)  \left(  q\right)  $. This
 polynomial is denoted by $\operatorname{ps}^{1}\left(  f\right)  $
-in \cite[Proposition 7.7]{Reiner}. From our above proof of Corollary
+in \cite[Proposition 7.1.7]{Reiner}. From our above proof of Corollary
 \ref{cor.reciprocity.GammawG} (a), we see that
 \[
 \Omega_{\mathbf{E},G}=\operatorname{ps}^{1}\left(  \Gamma\left(
@@ -7121,7 +7122,7 @@ in \cite[Proposition 7.7]{Reiner}. From our above proof of Corollary
 \]
 
 
-But \cite[Proposition 7.7 (iii)]{Reiner} shows that, for any
+But \cite[Proposition 7.1.7 (iii)]{Reiner} shows that, for any
 $f \in \QSym$ and $m \in \NN$, we have
 $\operatorname{ps}^{1}\left(  S\left(  f\right)  \right)
 \left(  m\right)
@@ -7236,8 +7237,9 @@ question arises:
 \begin{question}
 In \cite{Gri-nbc}, I have studied generalizations of Whitney's famous
 non-broken-circuit theorem for graphs and matroids. One of the cornerstones of
-that study is the bijection $\Phi$ in \cite[proofs of Lemma 2.7 and Lemma
-5.25]{Gri-nbc}, which is uncannily reminiscent of the involution $T$ in the proof
+that study is the bijection $\Phi$ in \cite[proofs of Lemma 2.8, Lemma
+5.29 and Lemma 8.25]{Gri-nbc}, which is uncannily reminiscent of the
+involution $T$ in the proof
 of Theorem~\ref{thm.antipode.Gammaw}. (Actually, this bijection $\Phi$ can be
 extended to an involution, thus making the analogy even more palpable.) Both
 $\Phi$ and $T$ are defined by toggling a certain element in or out of a
@@ -7355,7 +7357,7 @@ _{3},\ldots,\alpha_{1}+\alpha_{2}+\cdots+\alpha_{\ell-1}\right\} \\
 \end{definition}
 
 (We notice that this definition of $D\left(  \alpha\right)  $ is identical
-with that given in \cite[Definition 5.10]{Reiner}.)
+with that given in \cite[Definition 5.1.10]{Reiner}.)
 
 \begin{lemma}
 \label{lem.Dalpha.n-1}Let $\alpha$ be a composition of a nonnegative integer
@@ -13547,7 +13549,7 @@ $-coalgebra, and because $\Delta$ and $\varepsilon$ are $\mathbf{k}$-algebra
 homomorphisms). This proves Proposition \ref{prop.QSym.bialg}.
 \end{proof}
 
-Finally, using \cite[Proposition 1.36]{Reiner}, we can leverage Proposition
+Finally, using \cite[Proposition 1.4.16]{Reiner}, we can leverage Proposition
 \ref{prop.QSym.bialg} to a proof of the following fact:
 
 \begin{proposition}
@@ -13571,7 +13573,7 @@ basis $\left(  M_{\alpha}\right)  _{\alpha\in\operatorname*{Comp}%
 
 A well-known result states that every connected graded $\mathbf{k}$-bialgebra
 is a Hopf algebra (i.e., it has an antipode).\footnote{This is proven, for
-example, in \cite[Proposition 1.36]{Reiner}.} Applying this to the connected
+example, in \cite[Proposition 1.4.16]{Reiner}.} Applying this to the connected
 graded $\mathbf{k}$-bialgebra $\operatorname*{QSym}$, we thus conclude that
 the $\mathbf{k}$-bialgebra $\operatorname*{QSym}$ is a Hopf algebra (i.e., it
 has an antipode). This proves Proposition \ref{prop.QSym.hopfalg}.
@@ -15410,16 +15412,16 @@ composition of }n;\\D\left(  \gamma\right)  \subseteq D\left(
 \end{proof}
 
 Proposition \ref{prop.exam.antipode.Gammaw.b.rev} is easily seen to be
-equivalent to \cite[Theorem 5.11]{Reiner}.\footnote{Indeed, the $\ell\left(
-\alpha\right)  $ in \cite[Theorem 5.11]{Reiner} is precisely what we call
+equivalent to \cite[Theorem 5.1.11]{Reiner}.\footnote{Indeed, the $\ell\left(
+\alpha\right)  $ in \cite[Theorem 5.1.11]{Reiner} is precisely what we call
 $\ell$ in Proposition \ref{prop.exam.antipode.Gammaw.b.rev}, whereas the
 condition \textquotedblleft$\gamma$ coarsens $\operatorname*{rev}\left(
-\alpha\right)  $\textquotedblright\ in \cite[Theorem 5.11]{Reiner} is
+\alpha\right)  $\textquotedblright\ in \cite[Theorem 5.1.11]{Reiner} is
 equivalent to \textquotedblleft$D\left(  \gamma\right)  \subseteq D\left(
 \operatorname*{rev}\alpha\right)  $\textquotedblright.}
 
 Next, let us define the conjugate of a composition (following \cite[Definition
-5.22]{Reiner}):
+5.2.14]{Reiner}):
 
 \begin{definition}
 \label{def.conjugate}Let $\alpha$ be a composition of a nonnegative integer
@@ -16191,7 +16193,7 @@ Then, $S\left(  F_{\alpha}\right)  =\left(  -1\right)  ^{n}F_{\omega\left(
 \alpha\right)  }$.
 \end{proposition}
 
-Proposition \ref{prop.SF} is \cite[(5.9)]{Reiner} (although \cite{Reiner} uses
+Proposition \ref{prop.SF} is \cite[(5.2.7)]{Reiner} (although \cite{Reiner} uses
 the notation $L_{\alpha}$ for what we call $F_{\alpha}$).
 
 \begin{proof}
@@ -16271,7 +16273,7 @@ Volume 148, May 2017, pp. 275--315.
 Serrano, Mike Zabrocki, \textit{A lift of the Schur and Hall-Littlewood bases
 to non-commutative symmetric functions}, Canadian Journal of Mathematics 66
 (2014), pp. 525--565.\newline
-\url{http://dx.doi.org/10.4153/CJM-2013-013-0}
+\url{https://doi.org/10.4153/CJM-2013-013-0}
 \newline Also available as arXiv:1208.5191v3.\newline
 \url{http://arxiv.org/abs/1208.5191v3}
 
@@ -16281,22 +16283,23 @@ N\u{a}st\u{a}sescu, \c{S}erban Raianu, \textit{Hopf Algebras}, Marcel Dekker 200
 \bibitem[Ehrenb96]{Ehrenb96}Richard Ehrenborg,
 \textit{On Posets and Hopf Algebras},
 Advances in Mathematics \textbf{119} (1996), pp. 1--25.
-\newline\url{http://dx.doi.org/10.1006/aima.1996.0026}
+\newline\url{https://doi.org/10.1006/aima.1996.0026}
 
 \bibitem[Foissy13]{Foissy13}
 Lo\"ic Foissy,
 \textit{Plane posets, special posets, and permutations},
 Advances in Mathematics 240 (2013), pp. 24--60.
 \newline\url{http://doi.org/10.1016/j.aim.2013.03.007}
-\newline A preprint is available as arXiv:1109.1101v3.\newline
-\url{https://arxiv.org/abs/1109.1101v3}
+\newline A preprint is available as arXiv:1109.1101v4.\newline
+\url{https://arxiv.org/abs/1109.1101v4}
 
-\bibitem[Fresse14]{Fresse-Op}Benoit Fresse, \textit{Homotopy of operads \&
-Grothendieck-Teichm\"{u}ller groups, First Volume},
-preprint, 18 February 2017.\newline
-\url{http://math.univ-lille1.fr/~fresse/OperadHomotopyBook/OperadHomotopy-FirstVolume.pdf}
-\newline
-To appear in the Series ``Mathematical Surveys and Monographs'' (AMS).
+\bibitem[Fresse14]{Fresse-Op}
+Benoit Fresse, \textit{Homotopy of operads and
+Grothendieck--Teichm\"{u}ller groups, Part I},
+Mathematical Surveys and Monographs \textbf{217},
+AMS 2017.
+A preprint can be found at
+\url{http://web.archive.org/web/20160213160358/http://math.univ-lille1.fr/~fresse/OperadHomotopyBook/OperadHomotopy-FirstVolume.pdf} .
 
 \bibitem[Gessel84]{Gessel}Ira M. Gessel, \textit{Multipartite
 P-partitions and Inner Products of Skew Schur Functions}, Contemporary
@@ -16321,20 +16324,23 @@ AMS, Providence (RI) 2016.)
 \textit{Dual immaculate creation operators and a dendriform algebra
 structure on the quasisymmetric functions},
 Canad. J. Math. \textbf{69} (2017), pp. 21--53,
-\href{http://arxiv.org/abs/1410.0079v6}{arXiv:1410.0079v6}.
+\href{http://arxiv.org/abs/1410.0079v7}{arXiv:1410.0079v7}.
 
 \bibitem[Grin16a]{Gri-nbc}Darij Grinberg,
-\textit{A note on non-broken-circuit sets and the chromatic polynomial},
-\href{https://arxiv.org/abs/1604.03063v1}{arXiv:1604.03063v1}.
+\textit{Generalized Whitney formulas for
+broken circuits in ambigraphs and
+matroids},
+\href{https://arxiv.org/abs/1604.03063v2}{arXiv:1604.03063v2}.
 
 \bibitem[Grin16b]{Gri-extabs}
-Darij Grinbrg, \textit{Double posets and the antipode of $\QSym$
+Darij Grinberg, \textit{Double posets and the antipode of $\QSym$
 (extended abstract)},
 extended abstract submitted to \href{https://sites.google.com/site/fpsac2017/}{FPSAC 2017}.
 \url{http://www.cip.ifi.lmu.de/~grinberg/algebra/fpsac2017.pdf}
 
 \bibitem[GriRei14]{Reiner}Darij Grinberg, Victor Reiner, \textit{Hopf algebras
-in Combinatorics}, August 22, 2016, arXiv:1409.8356v4.\newline
+in Combinatorics}, July 28, 2020,
+\href{https://arxiv.org/abs/1409.8356v7}{arXiv:1409.8356v7}.\newline
 \url{http://www.cip.ifi.lmu.de/~grinberg/algebra/HopfComb-sols.pdf}
 
 \bibitem[HaGuKi10]{HGK}Michiel Hazewinkel, Nadiya Gubareni, V. V. Kirichenko,
@@ -16369,22 +16375,25 @@ Claudia Malvenuto, Christophe Reutenauer,
 \textit{Duality between Quasi-Symmetric Functions and the Solomon
 Descent Algebra},
 Journal of Algebra \textbf{177} (1995), pp. 967--982.
-\newline\url{http://dx.doi.org/10.1006/jabr.1995.1336}
+\newline\url{https://doi.org/10.1006/jabr.1995.1336}
 
 \bibitem[MalReu98]{Mal-Reu}Claudia Malvenuto, Christophe Reutenauer,
 \textit{Plethysm and conjugation of quasi-symmetric functions}, Discrete
 Mathematics, Volume 193, Issues 1--3, 28 November 1998, pp.
 225--233.\newline
-\url{http://www.sciencedirect.com/science/article/pii/S0012365X98001423}
+%\url{http://www.sciencedirect.com/science/article/pii/S0012365X98001423}
+\url{https://doi.org/10.1016/S0012-365X(98)00142-3}
 
 \bibitem[MalReu09]{Mal-Reu-DP}Claudia Malvenuto, Christophe Reutenauer,
 \textit{A self paired Hopf algebra on double posets and
 a Littlewood-Richardson rule},
 Journal of Combinatorial Theory, Series A 118 (2011), pp. 1322--1333.
 \newline
-\url{http://dx.doi.org/10.1016/j.jcta.2010.10.010} . \\
+\url{https://doi.org/10.1016/j.jcta.2010.10.010} . \\
 A preprint version appeared as
-\href{http://arxiv.org/abs/0905.3508v1}{arXiv:0905.3508v1}.
+\href{http://arxiv.org/abs/0905.3508v1}{arXiv:0905.3508v1}. \\
+See \url{https://www.cip.ifi.lmu.de/~grinberg/algebra/doubleposets-errata.pdf}
+for errata.
 
 \bibitem[Manchon04]{Manchon-HA}Dominique Manchon, \textit{Hopf algebras, from
 basics to applications to renormalization}, Comptes Rendus des Rencontres
@@ -16392,7 +16401,8 @@ Mathematiques de Glanon 2001 (published in 2003), arXiv:math/0408405v2.\newline%
 \url{http://arxiv.org/abs/math/0408405v2}
 
 \bibitem[Montg93]{Montg-Hopf}Susan Montgomery, \textit{Hopf Algebras and their
-Actions on Rings}, Regional Conference Series in Mathematics Nr. 82, AMS 1993.
+Actions on Rings}, Regional Conference Series in Mathematics \textbf{82},
+AMS 1993.
 
 \bibitem[NovThi05]{Nov-Thi} Jean-Christophe Novelli, Jean-Yves Thibon,
 \textit{Hopf algebras and dendriform structures arising from parking functions},
@@ -16404,16 +16414,17 @@ the Sage Mathematics Software System} (Version 7.4), 2016.
 \url{http://www.sagemath.org}
 
 \bibitem[Stan11]{Stanley-EC1}Richard P. Stanley, \textit{Enumerative
-Combinatorics, volume 1}, Cambridge University Press, 2011. \newline%
-\url{http://math.mit.edu/~rstan/ec/ec1/}
+Combinatorics, volume 1}, Cambridge University Press, 2nd edition 2011.
+\newline \url{http://math.mit.edu/~rstan/ec/ec1/}
 
 \bibitem[Stan99]{Stanley-EC2}Richard P. Stanley, \textit{Enumerative
-Combinatorics, volume 2}, Cambridge University Press, 1999.
+Combinatorics, volume 2}, Cambridge University Press, 2nd edition 2024.
+\newline \url{https://math.mit.edu/~rstan/ec/}
 
 \bibitem[Stan71]{Stanley-Thes}Richard P. Stanley, \textit{Ordered Structures and
 Partitions}, Memoirs of the American Mathematical Society, No. 119, American
 Mathematical Society, Providence, R.I., 1972. \newline
-\url{http://www-math.mit.edu/~rstan/pubs/pubfiles/9.pdf}
+\url{https://math.mit.edu/~rstan/pubs/pubfiles/9.pdf}
 
 \bibitem[Stan84]{Stanley-Peck}Richard P. Stanley,
 \textit{Quotients of Peck posets}, Order, 1 (1984), pp. 29--34. \newline
